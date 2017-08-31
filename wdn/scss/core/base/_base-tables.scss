@@ -1,0 +1,107 @@
+////////////////
+// !BASE: TABLES
+////////////////
+
+table {
+  line-height: 1.5;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+caption {
+  @include pt3;
+  @include pb3;
+  @include left;
+  caption-side: bottom;
+  @include sm-txt-2;
+  color: #666;
+}
+
+th {
+  text-align: left;
+}
+
+.dcf--table {
+//   display: block; // !responsive by default?
+  width: 100%;
+  max-width: 100%;
+//   overflow-x: auto; // !responsive by default?
+}
+
+.dcf--table th,
+.dcf--table td {
+  border-top: 1px solid $border-color;
+}
+
+// .dcf--table thead th {
+//   border-bottom: 2px solid #ddd;
+// }
+
+.dcf--table thead th,
+.dcf--table thead td {
+  padding-top: 1.25em;
+  @include pr3;
+  @include pb3;
+  @include pl3;
+}
+
+.dcf--table thead th {
+  @include bottom;
+}
+
+.dcf--table tbody th,
+.dcf--table tbody td {
+  @include p3;
+}
+
+// !Small Table
+.dcf--table-sm thead th,
+.dcf--table-sm thead td {
+  @include pt4;
+  @include pr2;
+  @include pb2;
+  @include pl2;
+}
+
+.dcf--table-sm tbody th,
+.dcf--table-sm tbody td {
+  @include p2;
+}
+
+// !Striped Table
+.dcf--table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+// !Bordered Table
+.dcf--table-bordered,
+.dcf--table-bordered th,
+.dcf--table-bordered td {
+  border: 1px solid $border-color;
+}
+
+// !Hoverable Rows
+.dcf--table-hover tbody tr:hover {
+  background-color: rgba(0,0,0,.1);
+}
+
+// !Contextual Classes
+.dcf--table-active {
+  background-color: rgba(0,0,0,.1);
+}
+
+.dcf--table-info {
+  background-color: rgba(0,102,255,.1);
+}
+
+.dcf--table-success {
+  background-color: rgba(0,153,0,.1);
+}
+
+.dcf--table-warning {
+  background-color: rgba(255,102,0,.1);
+}
+
+.dcf--table-danger {
+  background-color: rgba(255,0,0,.1);
+}

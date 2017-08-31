@@ -1,0 +1,434 @@
+//////////////////
+// !CONFIG: MIXINS
+//////////////////
+
+// !Visibility
+@mixin invisible($imp:null) { visibility: hidden $imp; }
+@mixin visible($imp:null) { visibility: visible $imp; }
+
+@mixin sr-only {
+  position: absolute;
+  height: 1px; // allow VoiceOver to see the text
+  width: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  word-wrap: normal; // ???
+}
+
+@mixin sr-only-focusable {
+  position: static;
+  height: auto;
+  width: auto;
+  clip: auto;
+  overflow: visible;
+}
+
+// !Display
+@mixin d-none($imp:null) { display: none $imp; }
+@mixin d-block($imp:null) { display: block $imp; }
+@mixin d-inline($imp:null) { display: inline $imp; }
+@mixin d-inline-block($imp:null) { display: inline-block $imp; }
+@mixin d-flex($imp:null) { display: flex $imp; }
+@mixin d-inline-flex($imp:null) { display: inline-flex $imp; }
+@mixin d-grid($imp:null) { display: grid $imp; }
+@mixin d-inline-grid($imp:null) { display: inline-grid $imp; }
+@mixin d-subgrid($imp:null) { display: subgrid $imp; }
+
+// !Flexbox
+@mixin f-column($imp:null) { flex-direction: column $imp; }
+@mixin f-column-rev($imp:null) { flex-direction: column-reverse $imp; }
+@mixin f-row($imp:null) { flex-direction: row $imp; }
+@mixin f-row-rev($imp:null) { flex-direction: row-reverse $imp; }
+@mixin f-wrap($imp:null) { flex-wrap: wrap $imp; }
+@mixin f-wrap-rev($imp:null) { flex-wrap: wrap-reverse $imp; }
+@mixin f-nowrap($imp:null) { flex-wrap: nowrap $imp; }
+
+// !Box Alignment for Flexbox
+// align-items
+@mixin f-ai-start($imp:null) { align-items: flex-start $imp; }
+@mixin f-ai-end($imp:null) { align-items: flex-end $imp; }
+@mixin f-ai-center($imp:null) { align-items: center $imp; }
+@mixin f-ai-baseline($imp:null) { align-items: baseline $imp; }
+@mixin f-ai-stretch($imp:null) { align-items: stretch $imp; }
+
+// align-content
+@mixin f-ac-start($imp:null) { align-content: flex-start $imp; }
+@mixin f-ac-end($imp:null) { align-content: flex-end $imp; }
+@mixin f-ac-center($imp:null) { align-content: center $imp; }
+@mixin f-ac-stretch($imp:null) { align-content: stretch $imp; }
+@mixin f-ac-around($imp:null) { align-content: space-around $imp; }
+@mixin f-ac-between($imp:null) { align-content: space-between $imp; }
+
+// align-self
+@mixin f-as-auto($imp:null) { align-self: auto $imp; }
+@mixin f-as-start($imp:null) { align-self: flex-start $imp; }
+@mixin f-as-end($imp:null) { align-self: flex-end $imp; }
+@mixin f-as-center($imp:null) { align-self: center $imp; }
+@mixin f-as-baseline($imp:null) { align-self: baseline $imp; }
+@mixin f-as-stretch($imp:null) { align-self: stretch $imp; }
+
+// justify-content
+@mixin f-jc-start($imp:null) { justify-content: flex-start $imp; }
+@mixin f-jc-end($imp:null) { justify-content: flex-end $imp; }
+@mixin f-jc-center($imp:null) { justify-content: center $imp; }
+@mixin f-jc-around($imp:null) { justify-content: space-around $imp; }
+@mixin f-jc-between($imp:null) { justify-content: space-between $imp; }
+@mixin f-jc-evenly($imp:null) { justify-content: space-evenly $imp; }
+
+// !Box Alignment for Grid
+// align-items
+@mixin g-ai-start($imp:null) { align-items: start $imp; }
+@mixin g-ai-end($imp:null) { align-items: end $imp; }
+@mixin g-ai-center($imp:null) { align-items: center $imp; }
+@mixin g-ai-stretch($imp:null) { align-items: stretch $imp; }
+
+// align-content
+@mixin g-ac-start($imp:null) { align-content: start $imp; }
+@mixin g-ac-end($imp:null) { align-content: end $imp; }
+@mixin g-ac-center($imp:null) { align-content: center $imp; }
+@mixin g-ac-stretch($imp:null) { align-content: stretch $imp; }
+@mixin g-ac-around($imp:null) { align-content: space-around $imp; }
+@mixin g-ac-between($imp:null) { align-content: space-between $imp; }
+@mixin g-ac-evenly($imp:null) { align-content: space-evenly $imp; }
+
+// align-self
+@mixin g-as-start($imp:null) { align-self: start $imp; }
+@mixin g-as-center($imp:null) { align-self: center $imp; }
+@mixin g-as-end($imp:null) { align-self: end $imp; }
+@mixin g-as-stretch($imp:null) { align-self: stretch $imp; }
+
+// justify-items
+@mixin g-ji-start($imp:null) { justify-items: start $imp; }
+@mixin g-ji-end($imp:null) { justify-items: end $imp; }
+@mixin g-ji-center($imp:null) { justify-items: center $imp; }
+@mixin g-ji-stretch($imp:null) { justify-items: stretch $imp; }
+
+// justify-content
+@mixin g-jc-start($imp:null) { justify-content: start $imp; }
+@mixin g-jc-end($imp:null) { justify-content: end $imp; }
+@mixin g-jc-center($imp:null) { justify-content: center $imp; }
+@mixin g-jc-stretch($imp:null) { justify-content: stretch $imp; }
+@mixin g-jc-around($imp:null) { justify-content: space-around $imp; }
+@mixin g-jc-between($imp:null) { justify-content: space-between $imp; }
+@mixin g-jc-evenly($imp:null) { justify-content: space-evenly $imp; }
+
+// justify-self
+@mixin g-js-start($imp:null) { justify-self: start $imp; }
+@mixin g-js-center($imp:null) { justify-self: center $imp; }
+@mixin g-js-end($imp:null) { justify-self: end $imp; }
+@mixin g-js-stretch($imp:null) { justify-self: stretch $imp; }
+
+// !Position
+@mixin static($imp:null) { position: static $imp; }
+@mixin relative($imp:null) { position: relative $imp; }
+@mixin absolute($imp:null) { position: absolute $imp; }
+@mixin fixed($imp:null) { position: fixed $imp; }
+@mixin sticky($imp:null) { position: sticky $imp; }
+
+// !Floats
+@mixin float-left($imp:null) { float: left $imp; }
+@mixin float-right($imp:null) { float: right $imp; }
+
+// !Height and Width
+@mixin h100($imp:null) { height: 100% $imp; }
+@mixin w100($imp:null) { width: 100% $imp; }
+@mixin h0($imp:null) { height: 0 $imp; }
+@mixin w0($imp:null) { width: 0 $imp; }
+
+// !Margin
+// margin, all sides
+@mixin m0($imp:null) { margin: $spacing-0 $imp; }
+@mixin m1($imp:null) { margin: $spacing-1 $imp; }
+@mixin m2($imp:null) { margin: $spacing-2 $imp; }
+@mixin m3($imp:null) { margin: $spacing-3 $imp; }
+@mixin m4($imp:null) { margin: $spacing-4 $imp; }
+@mixin m5($imp:null) { margin: $spacing-5 $imp; }
+@mixin m6($imp:null) { margin: $spacing-6 $imp; }
+
+// margin-top
+@mixin mt0($imp:null) { margin-top: $spacing-0 $imp; }
+@mixin mt1($imp:null) { margin-top: $spacing-1 $imp; }
+@mixin mt2($imp:null) { margin-top: $spacing-2 $imp; }
+@mixin mt3($imp:null) { margin-top: $spacing-3 $imp; }
+@mixin mt4($imp:null) { margin-top: $spacing-4 $imp; }
+@mixin mt5($imp:null) { margin-top: $spacing-5 $imp; }
+@mixin mt6($imp:null) { margin-top: $spacing-6 $imp; }
+
+// margin-right
+@mixin mr0($imp:null) { margin-right: $spacing-0 $imp; }
+@mixin mr1($imp:null) { margin-right: $spacing-1 $imp; }
+@mixin mr2($imp:null) { margin-right: $spacing-2 $imp; }
+@mixin mr3($imp:null) { margin-right: $spacing-3 $imp; }
+@mixin mr4($imp:null) { margin-right: $spacing-4 $imp; }
+@mixin mr5($imp:null) { margin-right: $spacing-5 $imp; }
+@mixin mr6($imp:null) { margin-right: $spacing-6 $imp; }
+
+// margin-bottom
+@mixin mb0($imp:null) { margin-bottom: $spacing-0 $imp; }
+@mixin mb1($imp:null) { margin-bottom: $spacing-1 $imp; }
+@mixin mb2($imp:null) { margin-bottom: $spacing-2 $imp; }
+@mixin mb3($imp:null) { margin-bottom: $spacing-3 $imp; }
+@mixin mb4($imp:null) { margin-bottom: $spacing-4 $imp; }
+@mixin mb5($imp:null) { margin-bottom: $spacing-5 $imp; }
+@mixin mb6($imp:null) { margin-bottom: $spacing-6 $imp; }
+
+// margin-left
+@mixin ml0($imp:null) { margin-left: $spacing-0 $imp; }
+@mixin ml1($imp:null) { margin-left: $spacing-1 $imp; }
+@mixin ml2($imp:null) { margin-left: $spacing-2 $imp; }
+@mixin ml3($imp:null) { margin-left: $spacing-3 $imp; }
+@mixin ml4($imp:null) { margin-left: $spacing-4 $imp; }
+@mixin ml5($imp:null) { margin-left: $spacing-5 $imp; }
+@mixin ml6($imp:null) { margin-left: $spacing-6 $imp; }
+
+// !Padding
+// padding, all sides
+@mixin p0($imp:null) { padding: $spacing-0 $imp; }
+@mixin p1($imp:null) { padding: $spacing-1 $imp; }
+@mixin p2($imp:null) { padding: $spacing-2 $imp; }
+@mixin p3($imp:null) { padding: $spacing-3 $imp; }
+@mixin p4($imp:null) { padding: $spacing-4 $imp; }
+@mixin p5($imp:null) { padding: $spacing-5 $imp; }
+@mixin p6($imp:null) { padding: $spacing-6 $imp; }
+
+// padding-top
+@mixin pt0($imp:null) { padding-top: $spacing-0 $imp; }
+@mixin pt1($imp:null) { padding-top: $spacing-1 $imp; }
+@mixin pt2($imp:null) { padding-top: $spacing-2 $imp; }
+@mixin pt3($imp:null) { padding-top: $spacing-3 $imp; }
+@mixin pt4($imp:null) { padding-top: $spacing-4 $imp; }
+@mixin pt5($imp:null) { padding-top: $spacing-5 $imp; }
+@mixin pt6($imp:null) { padding-top: $spacing-6 $imp; }
+
+// padding-right
+@mixin pr0($imp:null) { padding-right: $spacing-0 $imp; }
+@mixin pr1($imp:null) { padding-right: $spacing-1 $imp; }
+@mixin pr2($imp:null) { padding-right: $spacing-2 $imp; }
+@mixin pr3($imp:null) { padding-right: $spacing-3 $imp; }
+@mixin pr4($imp:null) { padding-right: $spacing-4 $imp; }
+@mixin pr5($imp:null) { padding-right: $spacing-5 $imp; }
+@mixin pr6($imp:null) { padding-right: $spacing-6 $imp; }
+
+// padding-bottom
+@mixin pb0($imp:null) { padding-bottom: $spacing-0 $imp; }
+@mixin pb1($imp:null) { padding-bottom: $spacing-1 $imp; }
+@mixin pb2($imp:null) { padding-bottom: $spacing-2 $imp; }
+@mixin pb3($imp:null) { padding-bottom: $spacing-3 $imp; }
+@mixin pb4($imp:null) { padding-bottom: $spacing-4 $imp; }
+@mixin pb5($imp:null) { padding-bottom: $spacing-5 $imp; }
+@mixin pb6($imp:null) { padding-bottom: $spacing-6 $imp; }
+
+// padding-left
+@mixin pl0($imp:null) { padding-left: $spacing-0 $imp; }
+@mixin pl1($imp:null) { padding-left: $spacing-1 $imp; }
+@mixin pl2($imp:null) { padding-left: $spacing-2 $imp; }
+@mixin pl3($imp:null) { padding-left: $spacing-3 $imp; }
+@mixin pl4($imp:null) { padding-left: $spacing-4 $imp; }
+@mixin pl5($imp:null) { padding-left: $spacing-5 $imp; }
+@mixin pl6($imp:null) { padding-left: $spacing-6 $imp; }
+
+// !Vertical Alignment
+@mixin baseline($imp:null) { vertical-align: baseline $imp; }
+@mixin top($imp:null) { vertical-align: top $imp; }
+@mixin middle($imp:null) { vertical-align: middle $imp; }
+@mixin bottom($imp:null) { vertical-align: bottom $imp; }
+@mixin text-top($imp:null) { vertical-align: text-top $imp; }
+@mixin text-bottom($imp:null) { vertical-align: text-bottom $imp; }
+
+// !Text Alignment
+@mixin center($imp:null) { text-align: center $imp; }
+@mixin left($imp:null) { text-align: left $imp; }
+@mixin right($imp:null) { text-align: right $imp; }
+
+// !Text Transform
+@mixin capitalize($imp:null) { text-transform: capitalize $imp; }
+@mixin lowercase($imp:null) { text-transform: lowercase $imp; }
+@mixin uppercase($imp:null) { text-transform: uppercase $imp; }
+
+// !Font Weights and Styles
+@mixin regular($imp:null) { font-weight: normal $imp; }
+@mixin bold($imp:null) { font-weight: bold $imp; }
+@mixin roman($imp:null) { font-style: normal $imp; }
+@mixin italic($imp:null) { font-style: italic $imp; }
+
+// !Small Text
+@mixin sm-txt-1($imp:null) { font-size: .875em $imp; }
+@mixin sm-txt-2($imp:null) { font-size: .75em $imp; }
+@mixin sm-txt-3($imp:null) { font-size: .625em $imp; }
+@mixin sm-txt-4($imp:null) { font-size: .5em $imp; }
+
+// !Miscellaneous Text
+@mixin nowrap($imp:null) { white-space: nowrap $imp; }
+
+// !Borders
+// border, all sides
+@mixin b1($imp:null) {
+  border-style: solid $imp;
+  border-width: 1px $imp;
+}
+
+// border-top
+@mixin bt($imp:null) {
+  border-top-style: solid $imp;
+  border-top-width: 1px $imp;
+}
+
+// border-right
+@mixin br($imp:null) {
+  border-right-style: solid $imp;
+  border-right-width: 1px $imp;
+}
+
+// border-bottom
+@mixin bb($imp:null) {
+  border-bottom-style: solid $imp;
+  border-bottom-width: 1px $imp;
+}
+
+// border-left
+@mixin bl($imp:null) {
+  border-left-style: solid $imp;
+  border-left-width: 1px $imp;
+}
+
+// no border
+@mixin b0($imp:null) {
+  border: 0 $imp;
+}
+
+// !Border Radius
+// circle
+@mixin circle($imp:null) {
+  border-radius: $circle $imp;
+}
+
+// rounded, all sides
+@mixin rounded($imp:null) {
+  border-radius: $roundrect $imp;
+}
+
+// rounded top (top right, top left)
+@mixin rounded-top($imp:null) {
+  border-top-right-radius: $roundrect $imp;
+  border-top-left-radius: $roundrect $imp;
+}
+
+// rounded right (top right, bottom right)
+@mixin rounded-right($imp:null) {
+  border-top-right-radius: $roundrect $imp;
+  border-bottom-right-radius: $roundrect $imp;
+}
+
+// rounded bottom (bottom right, bottom left)
+@mixin rounded-bottom($imp:null) {
+  border-bottom-right-radius: $roundrect $imp;
+  border-bottom-left-radius: $roundrect $imp;
+}
+
+// rounded left (bottom left, top left)
+@mixin rounded-left($imp:null) {
+  border-bottom-left-radius: $roundrect $imp;
+  border-top-left-radius: $roundrect $imp;
+}
+
+
+// !Responsive Embed
+// @mixin embed-responsive {
+// 	position: relative;
+// 	display: block;
+// 	height: 0;
+// 	padding: 0;
+// 	overflow: hidden;
+//
+// 	&:before {
+//   	content: '';
+//   	display: block;
+// 	}
+// }
+//
+// @mixin embed-responsive-16by9 { padding-top: 56.25%; }
+// @mixin embed-responsive-4by3 { padding-top: 75%; }
+// @mixin embed-responsive-1by1 { padding-top: 100%; }
+
+// !Overlay
+@mixin overlay-dark {
+  color: #fff;
+  background-color: rgba(0,0,0,.96);
+
+  @supports (backdrop-filter: blur(6px)) {
+    background-color: rgba(0,0,0,.94);
+    backdrop-filter: blur(6px);
+  }
+}
+
+@mixin overlay-light {
+  background-color: rgba(255,255,255,.98);
+
+  @supports (backdrop-filter: blur(6px)) {
+    background-color: rgba(0,0,0,.96);
+    backdrop-filter: blur(6px);
+  }
+}
+
+// !Disabled
+@mixin disabled($imp:null) {
+  cursor: not-allowed $imp;
+  pointer-events: none $imp;
+  opacity: .7 $imp;
+}
+
+
+// !Breakpoints
+@mixin bp($size) {
+  // Retrieves the value from the key
+  $value: map-get($breakpoints, $size);
+
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// @mixin bp($qualifier, $size) {
+//   // Retrieves the value from the key
+//   $value: map-get($breakpoint-sizes, $breakpoint);
+//
+//   // If the key exists in the map
+//   @if $value != null {
+//     // Prints a media query based on the value
+//     @media (min-width: $value) {
+//       @content;
+//     }
+//   }
+//
+//   // If the key doesn't exist in the map
+//   @else {
+//     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+//         + "Please make sure it is defined in `$breakpoints` map.";
+//   }
+// }
+
+// @include bp-min(sm) {}
+// @include bp-min(md) {}
+// @include bp-min(lg) {}
+// @include bp-min(xl) {}
+//
+// @include bp-max(sm) {}
+// @include bp-max(md) {}
+// @include bp-max(lg) {}
+// @include bp-max(xl) {}
+//
+// @include bp-btw(sm, md) {}
+// @include bp-btw(md) {}
+// @include bp-btw(lg) {}
+// @include bp-btw(xl) {}

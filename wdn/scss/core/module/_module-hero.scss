@@ -1,0 +1,58 @@
+////////////////
+// !MODULE: HERO
+////////////////
+
+.dcf--hero {
+
+}
+
+.dcf--hero-fg {
+
+}
+
+.dcf--hero-bg {
+
+}
+
+.dcf--hero-video {
+
+}
+
+.dcf--hero-img {
+
+}
+
+.dcf--hero video,
+.dcf--hero img {
+  @include d-block;
+  @include w100;
+
+  @supports (object-fit: cover) {
+    @include h100;
+    object-fit: cover;
+  }
+}
+
+@include bp(md) {
+
+  .dcf--hero {
+    @include relative;
+    height: 75vh;
+    min-height: 32em;
+  }
+
+  .dcf--hero-layer {
+    @include absolute;
+    @include h100;
+    @include w100;
+  }
+
+  .dcf--hero-fg {
+    z-index: 2;
+  }
+
+  .dcf--hero-bg {
+    overflow: hidden;
+    z-index: 1;
+  }
+}

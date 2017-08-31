@@ -1,0 +1,61 @@
+//////////////
+// !BASE: CODE
+//////////////
+
+code,
+kbd,
+pre {
+  line-height: 1.5;
+  border-radius: $roundrect;
+}
+
+code,
+kbd {
+  padding-top: .125rem;
+  padding-right: .25rem;
+  padding-bottom: .125rem;
+  padding-left: .25rem;
+  @include sm-txt-1;
+}
+
+code,
+pre {
+  word-break: normal;
+  hyphens: none;
+}
+
+code {
+  color: lighten($body-color, 10%);
+  background-color: rgba(0,0,0,0.05);
+}
+
+pre {
+  tab-size: 2;
+}
+
+pre code {
+  @include d-block;
+  @include p0;
+  white-space: pre;
+  overflow-x: scroll;
+  background-color: transparent;
+}
+
+.dcf--pre {
+  @include p4;
+  background-color: rgba(0,0,0,0.05);
+}
+
+kbd {
+  color: #0f0;
+  background-color: #000;
+}
+
+kbd kbd {
+  @include p0;
+  font-size: 100%;
+}
+
+// samp {
+//
+// }

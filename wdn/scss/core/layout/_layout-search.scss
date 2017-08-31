@@ -1,0 +1,16 @@
+//////////////////
+// !LAYOUT: SEARCH
+//////////////////
+
+.dcf--search-icon {
+  height: 1em;
+  width: 1em;
+  @include middle;
+}
+
+@include bp(md) {
+
+  .dcf--search-toggle {
+    @include d-none;
+  }
+}

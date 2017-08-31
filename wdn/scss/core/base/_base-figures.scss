@@ -1,0 +1,14 @@
+/////////////////
+// !BASE: FIGURES
+/////////////////
+
+figure {
+  @include m0;
+}
+
+figcaption {
+  @include mt2;
+  @include sm-txt-2;
+  line-height: 1.5;
+  color: #666;
+}

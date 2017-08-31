@@ -1,0 +1,371 @@
+////////////////////
+// !BASE: TYPOGRAPHY
+////////////////////
+
+// !:root
+:root {
+  font-size: #{$min_font_size}em;
+  line-height: 1.5;
+}
+
+// @media screen and (max-width: #{$min_lerp_width - .001}em) {
+//   :root {
+//   }
+// }
+
+@media screen and (min-width: #{$min_lerp_width}em) {
+  :root {
+    font-size: calc(#{$min_font_size}em + (#{$max_font_size} - #{$min_font_size}) * ( (100vw - #{$min_lerp_width}em) / ( #{$max_lerp_width} - #{$min_lerp_width})));
+  }
+}
+
+@media screen and (min-width: #{$max_lerp_width}em) {
+  :root {
+    font-size: #{$max_font_size}em;
+  }
+}
+
+// !Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+}
+
+h1 > small,
+h2 > small,
+h3 > small,
+h4 > small,
+h5 > small,
+h6 > small {
+  font-weight: normal;
+}
+
+h1,
+.dcf--h1,
+h2,
+.dcf--h2,
+h3,
+.dcf--h3,
+h4,
+.dcf--h4,
+h5,
+.dcf--h5,
+h6,
+.dcf--h6 {
+  @include mt0;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+
+  p + &,
+  ol + &,
+  ul + &,
+  dl + & {
+    @include mt5;
+  }
+}
+
+h1,
+.dcf--h1 {
+  font-size: 2.5rem; // line-height ~50px
+}
+
+h2,
+.dcf--h2 {
+  font-size: 2rem; // line-height ~40px
+}
+
+h3,
+.dcf--h3 {
+  font-size: 1.75rem; // line-height ~35px
+}
+
+h4,
+.dcf--h4 {
+  font-size: 1.5rem; // line-height ~30px
+}
+
+h5,
+.dcf--h5 {
+  font-size: 1.25rem; // line-height ~25px
+}
+
+h6,
+.dcf--h6 {
+  font-size: 1rem; // line-height ~20px
+}
+
+// !Display Headings
+.dcf--display-1 { font-size: 6rem; }
+.dcf--display-2 { font-size: 5rem; }
+.dcf--display-3 { font-size: 4rem; }
+.dcf--display-4 { font-size: 3rem; }
+
+// !Heading Groups
+.dcf--hgroup {
+  @include d-flex;
+  @include f-column;
+}
+
+// !Subhead
+.dcf--subhead {
+  @include d-block;
+  @include mb4;
+  @include uppercase;
+  font-size: .75rem;
+  letter-spacing: .05em;
+}
+
+// !Body Text
+p {
+  max-width: 36rem;
+  @include mt0;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+
+//   & + & {
+//     margin-top: 1.5em;
+//   }
+//
+//   article & + &,
+//   article dl + &,
+//   article ol + &,
+//   article ul + & {
+//     @include mt1;
+//     @include mb1;
+//     text-indent: 1.5em;
+//   }
+}
+
+// !Anchors
+a {
+  text-decoration-skip: ink;
+}
+
+a:link {
+  color: $link-color;
+  transition: color 500ms ease-out;
+}
+
+a:visited {
+  color: scale-color($link-color, $lightness: -10%, $saturation: -100%);
+}
+
+a:hover {
+  color: scale-color($link-color, $lightness: -20%, $saturation: 100%);
+  transition: color 250ms ease-out;
+}
+
+a:active {
+  color: scale-color($link-color, $lightness: -30%, $saturation: 100%);
+}
+
+// !Quotes
+
+body:lang(en) {
+  quotes: '“' '”' '‘' '’' '“' '”' '‘' '’';
+}
+
+q:before { content: open-quote; }
+q:after { content: close-quote; }
+
+blockquote {
+//   position: relative;
+  max-width: 36rem;
+  @include mt0;
+  @include mr0;
+  @include mb4;
+  line-height: 1.5;
+}
+
+cite {
+  font-style: normal;
+}
+
+.dcf--blockquote {
+  @include relative;
+  max-width: 36rem;
+  @include ml0;
+  @include pt4;
+  @include pb4;
+//   line-height: 1.5;
+}
+
+.dcf--blockquote:before {
+  content: open-quote;
+  @include absolute;
+  font-size: 10em;
+  line-height: 1;
+}
+
+.dcf--blockquote p {
+  padding-top: 3.5em;
+  @include pt6;
+  font-size: 1.5rem;
+}
+
+.dcf--blockquote p:after {
+  content: close-quote;
+}
+
+.dcf--attribution {
+  @include mt4;
+}
+
+.dcf--attribution:before {
+  content: '— '; // em dash (&mdash;) followed by a thin space (&thinsp;)
+}
+
+// !Lists
+dl,
+ol,
+ul {
+  @include mt0;
+  @include mb4;
+  line-height: 1.5;
+
+  dl,
+  ol,
+  ul {
+    @include mt2;
+  }
+}
+
+ol,
+ul {
+  padding-left: 1.5em;
+}
+
+li, dt, dd {
+  max-width: 36em;
+  @include mt0;
+}
+
+li {
+  @include mb2;
+}
+
+// !Description List
+// dl {
+//
+//   p + & {
+//     padding-left: 1.5em;
+//   }
+// }
+
+dt, dd {
+  @include mb1;
+}
+
+dt {
+  @include bold;
+}
+
+dd {
+  @include ml0;
+}
+
+dd + dt {
+  @include mt4;
+}
+
+// dd:not(:last-child) {
+//   @include mb2;
+// }
+
+// !Unstyled List
+.dcf--list-unstyled {
+  list-style: none;
+  @include pl0;
+}
+
+// !Inline List
+.dcf--list-inline-item {
+  @include d-inline-block;
+}
+
+.dcf--list-inline-item:not(:last-child) {
+  @include mr2;
+}
+
+// !Lead Paragraph
+.dcf--lead {
+  font-size: 1.25rem;
+}
+
+// !Mark
+mark,
+.dcf--mark {
+  padding-top: .125em;
+  @include pr1;
+  padding-bottom: .125em;
+  @include pl1;
+  background-color: #ff0;
+}
+
+// !Small
+small {
+  font-size: 1rem;
+}
+
+.dcf--small {
+  @include sm-txt-2;
+}
+
+// !Superscript & Subscript
+sup,
+sub {
+  @include relative;
+  @include baseline;
+  @include sm-txt-3;
+}
+
+sup {
+  top: -.625em;
+}
+
+sub {
+  top: .25em;
+}
+
+// !Abbreviations
+abbr {
+  letter-spacing: .05em;
+}
+
+abbr[title] {
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    @include absolute;
+    top: 0;
+    left: 0;
+    @include h100;
+    @include w100;
+    border-bottom: 1px dotted currentColor;
+    opacity: .5;
+  }
+}
+
+.dcf--initialism {
+  @include sm-txt-1;
+}
+
+// !Address
+address {
+  max-width: 36rem;
+  @include mt0;
+  @include mb4;
+  line-height: 1.5;
+  @include roman;
+}
+
+.dcf--drop-cap:first-letter {
+  @include float-left;
+  // apply custom styling in _theme-typography
+}

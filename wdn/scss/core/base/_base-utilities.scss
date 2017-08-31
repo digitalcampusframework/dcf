@@ -1,0 +1,269 @@
+///////////////////
+// !BASE: UTILITIES
+///////////////////
+
+// !Visibility
+.dcf--invisible { @include invisible(!important); }
+.dcf--visible { @include visible(!important); }
+.dcf--sr-only { @include sr-only; }
+
+.dcf--sr-only.dcf--sr-only-focusable:active,
+.dcf--sr-only.dcf--sr-only-focusable:focus {
+  @include sr-only-focusable;
+}
+
+// !Display
+.dcf--d-none { @include d-none(!important); }
+.dcf--d-block { @include d-block(!important); }
+.dcf--d-inline { @include d-inline(!important); }
+.dcf--d-inline-block { @include d-inline-block(!important); }
+.dcf--d-flex { @include d-flex(!important); }
+.dcf--d-inline-flex { @include d-inline-flex(!important); }
+.dcf--d-grid { @include d-grid(!important); }
+.dcf--d-inline-grid { @include d-inline-grid(!important); }
+.dcf--d-subgrid { @include d-subgrid(!important); }
+
+// !Flexbox
+.dcf--f-column { @include f-column(!important); }
+.dcf--f-column-rev { @include f-column-rev(!important); }
+.dcf--f-row { @include f-row(!important); }
+.dcf--f-row-rev { @include f-row-rev(!important); }
+
+// !Box Alignment for Flexbox
+// align-items
+.dcf--f-ai-start { @include f-ai-start(!important); }
+.dcf--f-ai-end { @include f-ai-end(!important); }
+.dcf--f-ai-center { @include f-ai-center(!important); }
+.dcf--f-ai-baseline { @include f-ai-baseline(!important); }
+.dcf--f-ai-stretch { @include f-ai-stretch(!important); }
+
+// align-content
+.dcf--f-ac-start { @include f-ac-start(!important); }
+.dcf--f-ac-end { @include f-ac-end(!important); }
+.dcf--f-ac-center { @include f-ac-center(!important); }
+.dcf--f-ac-stretch { @include f-ac-stretch(!important); }
+.dcf--f-ac-around { @include f-ac-around(!important); }
+.dcf--f-ac-between { @include f-ac-between(!important); }
+
+// align-self
+.dcf--f-as-auto { @include f-as-auto(!important); }
+.dcf--f-as-start { @include f-as-start(!important); }
+.dcf--f-as-end { @include f-as-end(!important); }
+.dcf--f-as-center { @include f-as-center(!important); }
+.dcf--f-as-baseline { @include f-as-baseline(!important); }
+.dcf--f-as-stretch { @include f-as-stretch(!important); }
+
+// justify-content
+.dcf--f-jc-start { @include f-jc-start(!important); }
+.dcf--f-jc-end { @include f-jc-end(!important); }
+.dcf--f-jc-center { @include f-jc-center(!important); }
+.dcf--f-jc-around { @include f-jc-around(!important); }
+.dcf--f-jc-between { @include f-jc-between(!important); }
+.dcf--f-jc-evenly { @include f-jc-evenly(!important); }
+
+// !Box Alignment for Grid
+// align-items
+.dcf--g-ai-start { @include g-ai-start(!important); }
+.dcf--g-ai-end { @include g-ai-end(!important); }
+.dcf--g-ai-center { @include g-ai-center(!important); }
+.dcf--g-ai-stretch { @include g-ai-stretch(!important); }
+
+// align-content
+.dcf--g-ac-start { @include g-ac-start(!important); }
+.dcf--g-ac-end { @include g-ac-end(!important); }
+.dcf--g-ac-center { @include g-ac-center(!important); }
+.dcf--g-ac-stretch { @include g-ac-stretch(!important); }
+.dcf--g-ac-around { @include g-ac-around(!important); }
+.dcf--g-ac-between { @include g-ac-between(!important); }
+.dcf--g-ac-evenly { @include g-ac-evenly(!important); }
+
+// align-self
+.dcf--g-as-start { @include g-as-start(!important); }
+.dcf--g-as-center { @include g-as-center(!important); }
+.dcf--g-as-end { @include g-as-end(!important); }
+.dcf--g-as-stretch { @include g-as-stretch(!important); }
+
+// justify-items
+.dcf--g-ji-start { @include g-ji-start(!important); }
+.dcf--g-ji-end { @include g-ji-end(!important); }
+.dcf--g-ji-center { @include g-ji-center(!important); }
+.dcf--g-ji-stretch { @include g-ji-stretch(!important); }
+
+// justify-content
+.dcf--g-jc-start { @include g-jc-start(!important); }
+.dcf--g-jc-end { @include g-jc-end(!important); }
+.dcf--g-jc-center { @include g-jc-center(!important); }
+.dcf--g-jc-stretch { @include g-jc-stretch(!important); }
+.dcf--g-jc-around { @include g-jc-around(!important); }
+.dcf--g-jc-between { @include g-jc-between(!important); }
+.dcf--g-jc-evenly { @include g-jc-evenly(!important); }
+
+// justify-self
+.dcf--g-js-start { @include g-js-start(!important); }
+.dcf--g-js-center { @include g-js-center(!important); }
+.dcf--g-js-end { @include g-js-end(!important); }
+.dcf--g-js-stretch { @include g-js-stretch(!important); }
+
+// !Position
+.dcf--static { @include static(!important); }
+.dcf--relative { @include relative(!important); }
+.dcf--absolute { @include absolute(!important); }
+.dcf--fixed { @include fixed(!important); }
+.dcf--sticky { @include sticky(!important); }
+
+// !Floats
+.dcf--float-left { @include float-left(!important); }
+.dcf--float-right { @include float-right(!important); }
+
+// !Height and Width
+.dcf--h100 { @include h100(!important); }
+.dcf--w100 { @include w100(!important); }
+.dcf--h0 { @include h0(!important); }
+.dcf--w0 { @include w0(!important); }
+
+// !Margin
+// margin, all sides
+.dcf--m0 { @include m0(!important); }
+.dcf--m1 { @include m1(!important); }
+.dcf--m2 { @include m2(!important); }
+.dcf--m3 { @include m3(!important); }
+.dcf--m4 { @include m4(!important); }
+.dcf--m5 { @include m5(!important); }
+.dcf--m6 { @include m6(!important); }
+
+// margin-top
+.dcf--mt0 { @include mt0(!important); }
+.dcf--mt1 { @include mt1(!important); }
+.dcf--mt2 { @include mt2(!important); }
+.dcf--mt3 { @include mt3(!important); }
+.dcf--mt4 { @include mt4(!important); }
+.dcf--mt5 { @include mt5(!important); }
+.dcf--mt6 { @include mt6(!important); }
+
+// margin-right
+.dcf--mr0 { @include mr0(!important); }
+.dcf--mr1 { @include mr1(!important); }
+.dcf--mr2 { @include mr2(!important); }
+.dcf--mr3 { @include mr3(!important); }
+.dcf--mr4 { @include mr4(!important); }
+.dcf--mr5 { @include mr5(!important); }
+.dcf--mr6 { @include mr6(!important); }
+
+// margin-bottom
+.dcf--mb0 { @include mb0(!important); }
+.dcf--mb1 { @include mb1(!important); }
+.dcf--mb2 { @include mb2(!important); }
+.dcf--mb3 { @include mb3(!important); }
+.dcf--mb4 { @include mb4(!important); }
+.dcf--mb5 { @include mb5(!important); }
+.dcf--mb6 { @include mb6(!important); }
+
+// margin-left
+.dcf--ml0 { @include ml0(!important); }
+.dcf--ml1 { @include ml1(!important); }
+.dcf--ml2 { @include ml2(!important); }
+.dcf--ml3 { @include ml3(!important); }
+.dcf--ml4 { @include ml4(!important); }
+.dcf--ml5 { @include ml5(!important); }
+.dcf--ml6 { @include ml6(!important); }
+
+// !Padding
+// padding, all sides
+.dcf--p0 { @include p0(!important); }
+.dcf--p1 { @include p1(!important); }
+.dcf--p2 { @include p2(!important); }
+.dcf--p3 { @include p3(!important); }
+.dcf--p4 { @include p4(!important); }
+.dcf--p5 { @include p5(!important); }
+.dcf--p6 { @include p6(!important); }
+
+// padding-top
+.dcf--pt0 { @include pt0(!important); }
+.dcf--pt1 { @include pt1(!important); }
+.dcf--pt2 { @include pt2(!important); }
+.dcf--pt3 { @include pt3(!important); }
+.dcf--pt4 { @include pt4(!important); }
+.dcf--pt5 { @include pt5(!important); }
+.dcf--pt6 { @include pt6(!important); }
+
+// padding-right
+.dcf--pr0 { @include pr0(!important); }
+.dcf--pr1 { @include pr1(!important); }
+.dcf--pr2 { @include pr2(!important); }
+.dcf--pr3 { @include pr3(!important); }
+.dcf--pr4 { @include pr4(!important); }
+.dcf--pr5 { @include pr5(!important); }
+.dcf--pr6 { @include pr6(!important); }
+
+// padding-bottom
+.dcf--pb0 { @include pb0(!important); }
+.dcf--pb1 { @include pb1(!important); }
+.dcf--pb2 { @include pb2(!important); }
+.dcf--pb3 { @include pb3(!important); }
+.dcf--pb4 { @include pb4(!important); }
+.dcf--pb5 { @include pb5(!important); }
+.dcf--pb6 { @include pb6(!important); }
+
+// padding-left
+.dcf--pl0 { @include pl0(!important); }
+.dcf--pl1 { @include pl1(!important); }
+.dcf--pl2 { @include pl2(!important); }
+.dcf--pl3 { @include pl3(!important); }
+.dcf--pl4 { @include pl4(!important); }
+.dcf--pl5 { @include pl5(!important); }
+.dcf--pl6 { @include pl6(!important); }
+
+// !Vertical Alignment
+.dcf--baseline { @include baseline(!important); }
+.dcf--top { @include top(!important); }
+.dcf--middle { @include middle(!important); }
+.dcf--bottom { @include bottom(!important); }
+.dcf--text-top { @include text-top(!important); }
+.dcf--text-bottom { @include text-bottom(!important); }
+
+// !Text Alignment
+.dcf--center { @include center(!important); }
+.dcf--left { @include left(!important); }
+.dcf--right { @include right(!important); }
+
+// !Text Transform
+.dcf--capitalize { @include capitalize(!important); }
+.dcf--lowercase { @include lowercase(!important); }
+.dcf--uppercase { @include uppercase(!important); }
+
+// !Font Weights and Styles
+.dcf--regular { @include regular(!important); }
+.dcf--bold { @include bold(!important); }
+.dcf--roman { @include roman(!important); }
+.dcf--italic { @include italic(!important); }
+
+// !Small Text
+.dcf--sm-txt-1 { @include sm-txt-1(!important); }
+.dcf--sm-txt-2 { @include sm-txt-2(!important); }
+.dcf--sm-txt-3 { @include sm-txt-3(!important); }
+.dcf--sm-txt-4 { @include sm-txt-4(!important); }
+
+// !Miscellaneous Text
+.dcf--nowrap { @include nowrap(!important); }
+
+// !Border Radius
+.dcf--circle { @include circle(!important); }
+.dcf--rounded { @include rounded(!important); }
+.dcf--rounded-top { @include rounded-top(!important); }
+.dcf--rounded-right { @include rounded-right(!important); }
+.dcf--rounded-bottom { @include rounded-bottom(!important); }
+.dcf--rounded-left { @include rounded-left(!important); }
+
+
+// !Responsive Embed
+// .dcf--embed-responsive { @include embed-responsive; }
+// .dcf--embed-responsive-16by9:before { padding-top: 56.25%; }
+// .dcf--embed-responsive-4by3:before { padding-top: 75%; }
+// .dcf--embed-responsive-1by1:before { padding-top: 100%; }
+
+// !Overlay
+.dcf--overlay-dark { @include overlay-dark; }
+.dcf--overlay-light { @include overlay-light; }
+
+// !Disabled
+.dcf--disabled { @include disabled(!important); }

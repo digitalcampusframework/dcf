@@ -1,0 +1,165 @@
+////////////////////
+// !BASE: TYPOGRAPHY
+////////////////////
+
+// !:root
+
+$min_lerp_width: ms(28);
+$max_lerp_width: ms(40);
+
+$min_font_size: ms(-2);
+$max_font_size: ms(3);
+
+// $min_line_height: 1.25;
+// $max_line_height: 1.5;
+
+:root {
+  line-height: 1;
+}
+
+@media screen and (max-width: #{$min_lerp_width - .001}em) {
+  :root {
+//   font-size: $min_font;
+//   font-size: .75em;
+    font-size: #{$min_font_size}em;
+  }
+}
+
+// @media (min-width: 30em) and (max-width: 99.999em) {
+// @media all and (min-width: #{$min_width}em) and (max-width: #{$max_width}em) {
+@media screen and (min-width: #{$min_lerp_width}em) and (max-width: #{$max_lerp_width - .001}em) {
+  :root {
+//     font-size: between($min_font, $max_font, $min_width, $max_width);
+    font-size: calc(#{$min_font_size}em + (#{$max_font_size} - #{$min_font_size}) * ( (100vw - #{$min_lerp_width}em) / ( #{$max_lerp_width} - #{$min_lerp_width})));
+//     font-size: calc(.75em + (1.25 - .75) * ( (100vw - 30em) / ( 100 - 30) ) );
+  }
+}
+
+// @media (min-width: 100em) {
+// @media all and (min-width: #{$max_width}em) {
+@media screen and (min-width: #{$max_lerp_width}em) {
+  :root {
+//     font-size: $max_font;
+    font-size: #{$max_font_size}em;
+//     font-size: 1.25em;
+  }
+}
+
+// !Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: #{ms(-4)}em;
+  margin-bottom: #{ms(-4)}em;
+  line-height: ms(2);
+}
+
+h1,
+.wdn--h1 {
+  font-size: #{ms(8)}rem;
+
+  p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+h2,
+.wdn--h2 {
+  font-size: #{ms(7)}rem;
+
+  p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+h3,
+.wdn--h3 {
+  font-size: #{ms(6)}rem;
+
+  p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+h4,
+.wdn--h4 {
+  font-size: #{ms(5)}rem;
+
+  p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+h5,
+.wdn--h5 {
+  font-size: #{ms(4)}rem;
+
+  p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+h6,
+.wdn--h6 {
+  font-size: #{ms(3)}rem;
+
+   p + & {
+    margin-top: #{ms(0)}em;
+  }
+}
+
+// !Display Headings
+.wdn--display-1 { font-size: 6rem; }
+.wdn--display-2 { font-size: 5rem; }
+.wdn--display-3 { font-size: 4rem; }
+.wdn--display-4 { font-size: 3rem; }
+
+// !Body Text
+p {
+  max-width: #{ms(30)}em; // 36.932em
+  margin-top: #{ms(-8)}em;
+  margin-bottom: #{ms(-8)}em;
+  line-height: ms(3);
+
+  & + &,
+  ul + &,
+  ol + & {
+    text-indent: #{ms(4)}em;
+  }
+}
+
+// !Lists
+
+ol,
+ul {
+  padding-left: #{ms(4)}em;
+}
+
+li {
+  max-width: #{ms(30)}em; // 36.932em
+  margin-top: #{ms(-6)}em;
+  margin-bottom: #{ms(-6)}em;
+  line-height: ms(2);
+}
+
+// !Lead Paragraph
+.wdn--lead {
+  font-size: #{ms(2)}rem;
+}
+
+// !General Typography
+.wdn--mark {
+  padding: 1em;
+  background-color: #fcf8e3;
+}
+
+.wdn--small {
+  font-size: 80%;
+}
+
+.wdn--initialism {
+  font-size: 90%;
+}

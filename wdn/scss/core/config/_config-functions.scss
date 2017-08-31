@@ -1,0 +1,15 @@
+/////////////////////
+// !CONFIG: FUNCTIONS
+/////////////////////
+
+// !Between https://css-tricks.com/between-the-lines/
+// Computes a CSS calc function that betweens a value from
+// A to B over viewport-width A to viewport-width B.
+// Requires a media query to cap the value at B.
+
+// @function between($to, $from, $toWidth, $fromWidth) {
+//   $slope: ($to - $from) / ($toWidth - $fromWidth);
+//   $base: $from - $slope * $fromWidth;
+//
+//   @return calc(#{$base} + #{100vw * $slope});
+// }

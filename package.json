@@ -1,0 +1,68 @@
+{
+  "name": "wdntemplates",
+  "version": "4.1.21",
+  "description": "Web Framework for the UNLedu website.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/unl/wdntemplates.git"
+  },
+  "author": {
+    "name": "University of Nebraska-Lincoln",
+    "url": "http://wdn.unl.edu/"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/unl/wdntemplates/issues"
+  },
+  "homepage": "https://github.com/unl/wdntemplates#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "css-loader": "^0.28.4",
+    "csso": "^2.1.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-concurrent": "^2.2.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-includes": "^1.0.0",
+    "grunt-sync": "^0.5.2",
+    "grunt-then": "^1.0.0",
+    "grunt-zip": "^0.17.1",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "load-grunt-tasks": "^3.4.1",
+    "modularscale-sass": "^3.0.3",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.5",
+    "postcss-normalize": "^3.0.0",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.2",
+    "stylelint": "^7.10.1",
+    "stylelint-no-unsupported-browser-features": "^1.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
+    "sync-exec": "^0.6.2",
+    "tar-fs": "^1.11.1",
+    "webpack": "^3.0.0"
+  },
+  "engines": {
+    "node": "node >= 0.10.0"
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p"
+  },
+  "browserlist": [
+    "last 1 Chrome version",
+    "last 1 Explorer version",
+    "last 1 Firefox version",
+    "Firefox ESR",
+    "last 1 Safari version",
+    "Android >= 4.0",
+    "BlackBerry >= 4.0",
+    "iOS >= 10",
+    "> 1% in my stats"
+  ]
+}
