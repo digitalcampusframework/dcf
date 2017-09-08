@@ -1,0 +1,48 @@
+/////////////////////
+// !COMPONENTS: FORMS
+/////////////////////
+
+
+.dcf--form-group {
+  @include mb4;
+}
+
+.dcf--input-textual {
+  @include d-block;
+  padding-top: .8em;
+  @include pr4;
+  padding-bottom: .7em;
+  @include pl4;
+  border: 1px solid $border-color;
+  appearance: none;
+}
+
+.dcf--input-textual:focus {
+  outline: none;
+  border-color: $button-color;
+}
+
+.dcf--form-group .dcf--input-textual {
+  @include mt1;
+  border-radius: $roundrect;
+}
+
+.dcf--input-control {
+  @include mr1;
+}
+
+.dcf--input-file {
+  @include d-block;
+  @include mt1;
+}
+
+.dcf--input-required {
+  @include pl2;
+  @include italic;
+  @include sm2;
+}
+
+.dcf--form-help {
+  @include mt1;
+  @include sm2;
+}

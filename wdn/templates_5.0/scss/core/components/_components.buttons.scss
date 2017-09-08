@@ -1,0 +1,127 @@
+///////////////////////
+// !COMPONENTS: BUTTONS
+///////////////////////
+
+
+// !Button
+.dcf--btn {
+  cursor: pointer;
+  @include d-inline-block;
+//   @include middle;
+  padding-top: .8em;
+  @include pr4;
+  padding-bottom: .7em;
+  @include pl4;
+  font-size: 1rem;
+//   font-family: inherit;
+//   -webkit-appearance: none;
+//   -webkit-transition: none;
+  @include lh1;
+  @include center;
+}
+
+.dcf--btn {
+  border-radius: $roundrect;
+}
+
+a.dcf--btn {
+  text-decoration: none;
+}
+
+
+// !Button Hierarchy
+.dcf--btn-primary {
+  color: #fff;
+  border: 1px solid $button-color;
+  background-color: $button-color;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: #fff;
+  }
+
+//   &:link {
+//   }
+
+  &:visited {
+    border-color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
+    background-color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
+  }
+
+  &:hover {
+    border-color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
+    background-color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
+    transition: border-color ease-out 250ms, background-color ease-out 250ms;
+  }
+
+  &:active,
+  &.dcf--active {
+    border-color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
+    background-color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
+  }
+}
+
+.dcf--btn-secondary {
+  color: $button-color;
+  border: 1px solid currentcolor;
+  background-color: #fff;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: #333;
+  }
+
+  &:visited {
+    color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
+    border-color: currentcolor;
+  }
+
+  &:hover {
+    color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
+    border-color: currentcolor;
+    background-color: scale-color($button-color, $lightness: 95%, $saturation: -10%);
+  }
+
+  &:active,
+  &.dcf--active {
+    color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
+    border-color: currentcolor;
+  }
+}
+
+.dcf--btn-inverse {
+  color: #fff;
+  border: 1px solid currentcolor;
+  background-color: rgba(0,0,0,.1);
+
+  &:hover {
+    background-color: rgba(0,0,0,.2);
+  }
+}
+
+
+//////////////////
+// !STATE: BUTTONS
+//////////////////
+
+// !Active
+.dcf--active {
+
+}
+
+button.dcf--active,
+.dcf--btn.dcf--active {
+//   @extend .dcf--active;
+}
+
+// !Disabled
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+.dcf--btn:disabled {
+  @include disabled;
+}

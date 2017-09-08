@@ -1,0 +1,24 @@
+///////////////////////////
+// !ELEMENTS: ABBREVIATIONS
+///////////////////////////
+
+
+abbr {
+  letter-spacing: .05em;
+}
+
+abbr[title] {
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    @include absolute;
+    top: 0;
+    left: 0;
+    @include h100;
+    @include w100;
+    border-bottom: 1px dotted currentColor;
+    opacity: .5;
+  }
+}

@@ -1,0 +1,29 @@
+//////////////////////
+// !COMPONENTS: FOOTER
+//////////////////////
+
+
+// !Footer - both Local and Global
+.dcf--footer {
+  @include sm2;
+}
+
+// !Local Footer
+.dcf--footer-local {
+  @include d-grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  grid-gap: 1em;
+  @include pt6;
+  @include pb6;
+  background-color: #ddd;
+}
+
+// !Global Footer
+.dcf--footer-global {
+  @include d-grid;
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  grid-gap: 1em;
+  @include pt6;
+  @include pb6;
+  background-color: #ccc;
+}

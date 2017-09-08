@@ -1,0 +1,66 @@
+////////////////////////////
+// !COMPONENTS: INPUT GROUPS
+////////////////////////////
+
+
+.dcf--input-group {
+  @include d-inline-flex;
+  @include f-ai-center;
+  @include w100;
+}
+
+
+// !Input Group Label
+.dcf--input-group label {
+  padding-top: .8em;
+  padding-bottom: .7em;
+}
+
+
+// !Input Group Input Field
+.dcf--input-group .dcf--input-textual {
+  flex: 1 1 auto;
+  @include w0;
+  @include rounded-left;
+}
+
+
+// !Input Group Button
+.dcf--input-group .dcf--btn {
+  @include f-as-stretch;
+  margin-left: -1px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+// !Input Group Add-on
+.dcf--input-group-addon {
+  padding-top: .8em;
+  @include pr4;
+  padding-bottom: .7em;
+  @include pl4;
+  border-style: solid;
+  border-color: $border-color;
+  background-color: #eee;
+}
+
+.dcf--input-group-addon:not(:last-child) {
+  border-top-width: 1px;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  @include rounded-left;
+}
+
+.dcf--input-group-addon:last-child {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  @include rounded-right;
+}
+
+.dcf--input-group-addon + .dcf--input-textual {
+  border-radius: 0 $roundrect $roundrect 0;
+}

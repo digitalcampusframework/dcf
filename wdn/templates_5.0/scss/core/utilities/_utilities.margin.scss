@@ -1,0 +1,48 @@
+/////////////////////
+// !UTILITIES: MARGIN
+/////////////////////
+
+// !all sides
+.dcf--m0 { @include m0(!important); }
+.dcf--m1 { @include m1(!important); }
+.dcf--m2 { @include m2(!important); }
+.dcf--m3 { @include m3(!important); }
+.dcf--m4 { @include m4(!important); }
+.dcf--m5 { @include m5(!important); }
+.dcf--m6 { @include m6(!important); }
+
+// !margin-top
+.dcf--mt0 { @include mt0(!important); }
+.dcf--mt1 { @include mt1(!important); }
+.dcf--mt2 { @include mt2(!important); }
+.dcf--mt3 { @include mt3(!important); }
+.dcf--mt4 { @include mt4(!important); }
+.dcf--mt5 { @include mt5(!important); }
+.dcf--mt6 { @include mt6(!important); }
+
+// !margin-right
+.dcf--mr0 { @include mr0(!important); }
+.dcf--mr1 { @include mr1(!important); }
+.dcf--mr2 { @include mr2(!important); }
+.dcf--mr3 { @include mr3(!important); }
+.dcf--mr4 { @include mr4(!important); }
+.dcf--mr5 { @include mr5(!important); }
+.dcf--mr6 { @include mr6(!important); }
+
+// !margin-bottom
+.dcf--mb0 { @include mb0(!important); }
+.dcf--mb1 { @include mb1(!important); }
+.dcf--mb2 { @include mb2(!important); }
+.dcf--mb3 { @include mb3(!important); }
+.dcf--mb4 { @include mb4(!important); }
+.dcf--mb5 { @include mb5(!important); }
+.dcf--mb6 { @include mb6(!important); }
+
+// !margin-left
+.dcf--ml0 { @include ml0(!important); }
+.dcf--ml1 { @include ml1(!important); }
+.dcf--ml2 { @include ml2(!important); }
+.dcf--ml3 { @include ml3(!important); }
+.dcf--ml4 { @include ml4(!important); }
+.dcf--ml5 { @include ml5(!important); }
+.dcf--ml6 { @include ml6(!important); }

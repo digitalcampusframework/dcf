@@ -1,0 +1,16 @@
+//////////////////////////
+// !COMPONENTS: PARAGRAPHS
+//////////////////////////
+
+
+// !Lead Paragraphs
+.dcf--lead {
+  font-size: 1.25rem;
+}
+
+
+// !Drop Caps
+.dcf--drop-cap:first-letter {
+  @include float-left;
+  // apply custom styling in _theme-typography
+}

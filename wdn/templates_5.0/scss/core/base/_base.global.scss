@@ -1,0 +1,56 @@
+////////////////
+// !BASE: GLOBAL
+////////////////
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// html {
+//   margin: 0;
+//   padding: 0;
+// }
+
+body {
+  @include m0;
+//   overflow-x: hidden;
+  color: $body-color;
+  background-color: $body-bg-color;
+}
+
+// main {
+//   display: flex;
+// }
+
+// .dcf-band {
+//   flex: 0 1 5000px;
+//   overflow: hidden;
+// }
+
+main {
+  &:focus {
+    outline: none; // !temp
+  }
+}
+
+// $min_page_offset: 5;
+// $max_page_offset: 4;
+
+.dcf--wrapper {
+//   padding-right: calc(#{$min_page_offset}vw + (#{$max_page_offset} - #{$min_page_offset}) * ( (100vw - #{$min_lerp_width}em) / ( #{$max_lerp_width} - #{$min_lerp_width})));
+//   padding-left: calc(#{$min_page_offset}vw + (#{$max_page_offset} - #{$min_page_offset}) * ( (100vw - #{$min_lerp_width}em) / ( #{$max_lerp_width} - #{$min_lerp_width})));
+  padding-right: 5vw;
+  padding-left: 5vw;
+}
+
+.dcf--full-width {
+  @include relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

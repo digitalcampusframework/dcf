@@ -1,0 +1,23 @@
+/////////////////////
+// !ELEMENTS: BUTTONS
+/////////////////////
+
+
+// !Button
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+  @include d-inline-block;
+//   @include middle;
+  padding-top: .8em;
+  @include pr4;
+  padding-bottom: .7em;
+  @include pl4;
+  font-size: 1rem;
+//   font-family: inherit;
+//   -webkit-appearance: none;
+//   -webkit-transition: none;
+  @include lh1;
+  @include center;
+}

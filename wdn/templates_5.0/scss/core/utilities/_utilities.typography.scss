@@ -1,0 +1,54 @@
+/////////////////////////
+// !UTILITIES: TYPOGRAPHY
+/////////////////////////
+
+
+// !Sizing
+// Larger
+.dcf--lg4 { @include lg4(!important); }
+.dcf--lg3 { @include lg3(!important); }
+.dcf--lg2 { @include lg2(!important); }
+.dcf--lg1 { @include lg1(!important); }
+
+// Smaller
+.dcf--sm1 { @include sm1(!important); }
+.dcf--sm2 { @include sm2(!important); }
+.dcf--sm3 { @include sm3(!important); }
+.dcf--sm4 { @include sm4(!important); }
+
+// !Line Height
+.dcf--lh1 { @include lh1(!important); }
+.dcf--lh2 { @include lh2(!important); }
+.dcf--lh3 { @include lh3(!important); }
+
+
+// !Vertical Alignment
+.dcf--baseline { @include baseline(!important); }
+.dcf--top { @include top(!important); }
+.dcf--middle { @include middle(!important); }
+.dcf--bottom { @include bottom(!important); }
+.dcf--text-top { @include text-top(!important); }
+.dcf--text-bottom { @include text-bottom(!important); }
+
+
+// !Text Alignment
+.dcf--center { @include center(!important); }
+.dcf--left { @include left(!important); }
+.dcf--right { @include right(!important); }
+
+
+// !Text Transform
+.dcf--capitalize { @include capitalize(!important); }
+.dcf--lowercase { @include lowercase(!important); }
+.dcf--uppercase { @include uppercase(!important); }
+
+
+// !Font Weights and Styles
+.dcf--regular { @include regular(!important); }
+.dcf--bold { @include bold(!important); }
+.dcf--roman { @include roman(!important); }
+.dcf--italic { @include italic(!important); }
+
+
+// !Text Wrapping
+.dcf--nowrap { @include nowrap(!important); }

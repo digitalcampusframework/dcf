@@ -1,0 +1,40 @@
+//////////////////////
+// !ELEMENTS: HEADINGS
+//////////////////////
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include mt0;
+  margin-bottom: 1rem;
+  @include lh2;
+  color: $heading-color;
+
+  // ?
+  p + &,
+  ol + &,
+  ul + &,
+  dl + & {
+    @include mt5;
+  }
+}
+
+h1 { font-size: 2.5rem; }  // line-height ~50px
+h2 { font-size: 2rem; }    // line-height ~40px
+h3 { font-size: 1.75rem; } // line-height ~35px
+h4 { font-size: 1.5rem; }  // line-height ~30px
+h5 { font-size: 1.25rem; } // line-height ~25px
+h6 { font-size: 1rem; }    // line-height ~20px
+
+h1 > small,
+h2 > small,
+h3 > small,
+h4 > small,
+h5 > small,
+h6 > small {
+  font-weight: normal;
+}

@@ -1,0 +1,24 @@
+///////////////////////
+// !ELEMENTS: SUP & SUB
+///////////////////////
+
+
+// !Superscript & Subscript
+sup,
+sub {
+  @include relative;
+  @include baseline;
+  @include sm3;
+}
+
+
+// !Superscript
+sup {
+  top: -.625em;
+}
+
+
+// !Subscript
+sub {
+  top: .25em;
+}

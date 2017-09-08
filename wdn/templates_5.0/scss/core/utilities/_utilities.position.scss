@@ -1,0 +1,9 @@
+///////////////////////
+// !UTILITIES: POSITION
+///////////////////////
+
+.dcf--static { @include static(!important); }
+.dcf--relative { @include relative(!important); }
+.dcf--absolute { @include absolute(!important); }
+.dcf--fixed { @include fixed(!important); }
+.dcf--sticky { @include sticky(!important); }

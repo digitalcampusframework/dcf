@@ -1,0 +1,24 @@
+//////////////////////
+// !COMPONENTS: ALERTS
+//////////////////////
+
+
+.dcf--alert {
+  @include d-grid;
+//   grid-gap: 1em;
+  grid-template-areas:
+    "header footer"
+    "msg footer";
+}
+
+.dcf--alert-header {
+  grid-area: header;
+}
+
+.dcf--alert-msg {
+  grid-area: msg;
+}
+
+.dcf--alert-footer {
+  grid-area: footer;
+}

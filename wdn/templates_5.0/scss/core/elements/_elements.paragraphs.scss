@@ -1,0 +1,23 @@
+////////////////////////
+// !ELEMENTS: PARAGRAPHS
+////////////////////////
+
+
+p {
+  max-width: 36rem;
+  @include mt0;
+  margin-bottom: 1rem;
+
+//   & + & {
+//     margin-top: 1.5em;
+//   }
+//
+//   article & + &,
+//   article dl + &,
+//   article ol + &,
+//   article ul + & {
+//     @include mt1;
+//     @include mb1;
+//     text-indent: 1.5em;
+//   }
+}

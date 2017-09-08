@@ -1,0 +1,48 @@
+//////////////////////
+// !UTILITIES: PADDING
+//////////////////////
+
+// !all sides
+.dcf--p0 { @include p0(!important); }
+.dcf--p1 { @include p1(!important); }
+.dcf--p2 { @include p2(!important); }
+.dcf--p3 { @include p3(!important); }
+.dcf--p4 { @include p4(!important); }
+.dcf--p5 { @include p5(!important); }
+.dcf--p6 { @include p6(!important); }
+
+// !padding-top
+.dcf--pt0 { @include pt0(!important); }
+.dcf--pt1 { @include pt1(!important); }
+.dcf--pt2 { @include pt2(!important); }
+.dcf--pt3 { @include pt3(!important); }
+.dcf--pt4 { @include pt4(!important); }
+.dcf--pt5 { @include pt5(!important); }
+.dcf--pt6 { @include pt6(!important); }
+
+// !padding-right
+.dcf--pr0 { @include pr0(!important); }
+.dcf--pr1 { @include pr1(!important); }
+.dcf--pr2 { @include pr2(!important); }
+.dcf--pr3 { @include pr3(!important); }
+.dcf--pr4 { @include pr4(!important); }
+.dcf--pr5 { @include pr5(!important); }
+.dcf--pr6 { @include pr6(!important); }
+
+// !padding-bottom
+.dcf--pb0 { @include pb0(!important); }
+.dcf--pb1 { @include pb1(!important); }
+.dcf--pb2 { @include pb2(!important); }
+.dcf--pb3 { @include pb3(!important); }
+.dcf--pb4 { @include pb4(!important); }
+.dcf--pb5 { @include pb5(!important); }
+.dcf--pb6 { @include pb6(!important); }
+
+// !padding-left
+.dcf--pl0 { @include pl0(!important); }
+.dcf--pl1 { @include pl1(!important); }
+.dcf--pl2 { @include pl2(!important); }
+.dcf--pl3 { @include pl3(!important); }
+.dcf--pl4 { @include pl4(!important); }
+.dcf--pl5 { @include pl5(!important); }
+.dcf--pl6 { @include pl6(!important); }
