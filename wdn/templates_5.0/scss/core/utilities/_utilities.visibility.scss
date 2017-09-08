@@ -3,10 +3,19 @@
 /////////////////////////
 
 
+// !Invisible
 .dcf--invisible { @include invisible(!important); }
+
+
+// !Visible
 .dcf--visible { @include visible(!important); }
+
+
+// !Screen Reader Only
 .dcf--sr-only { @include sr-only; }
 
+
+// !Screen Reader Only, Show On Focus
 .dcf--sr-only.dcf--sr-only-focusable:active,
 .dcf--sr-only.dcf--sr-only-focusable:focus {
   @include sr-only-focusable;

@@ -2,7 +2,9 @@
 // !UTILITIES: FLEXBOX
 //////////////////////
 
+
 // Flexbox display rules (.dcf--d-flex and .dcf--d-inline-flex) located in _utilities.display
+
 
 // !Flexbox Rows and Columns
 .dcf--f-column { @include f-column(!important); }
@@ -10,16 +12,16 @@
 .dcf--f-row { @include f-row(!important); }
 .dcf--f-row-rev { @include f-row-rev(!important); }
 
-// !Box Alignment for Flexbox
 
-// !align-items
+// !Align Items
 .dcf--f-ai-start { @include f-ai-start(!important); }
 .dcf--f-ai-end { @include f-ai-end(!important); }
 .dcf--f-ai-center { @include f-ai-center(!important); }
 .dcf--f-ai-baseline { @include f-ai-baseline(!important); }
 .dcf--f-ai-stretch { @include f-ai-stretch(!important); }
 
-// !align-content
+
+// !Align Content
 .dcf--f-ac-start { @include f-ac-start(!important); }
 .dcf--f-ac-end { @include f-ac-end(!important); }
 .dcf--f-ac-center { @include f-ac-center(!important); }
@@ -27,7 +29,8 @@
 .dcf--f-ac-around { @include f-ac-around(!important); }
 .dcf--f-ac-between { @include f-ac-between(!important); }
 
-// !align-self
+
+// !Align Self
 .dcf--f-as-auto { @include f-as-auto(!important); }
 .dcf--f-as-start { @include f-as-start(!important); }
 .dcf--f-as-end { @include f-as-end(!important); }
@@ -35,11 +38,11 @@
 .dcf--f-as-baseline { @include f-as-baseline(!important); }
 .dcf--f-as-stretch { @include f-as-stretch(!important); }
 
-// !justify-content
+
+// !Justify Content
 .dcf--f-jc-start { @include f-jc-start(!important); }
 .dcf--f-jc-end { @include f-jc-end(!important); }
 .dcf--f-jc-center { @include f-jc-center(!important); }
 .dcf--f-jc-around { @include f-jc-around(!important); }
 .dcf--f-jc-between { @include f-jc-between(!important); }
 .dcf--f-jc-evenly { @include f-jc-evenly(!important); }
-

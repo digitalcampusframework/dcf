@@ -1,0 +1,11 @@
+//////////////////
+// !MIXINS: FLOATS
+//////////////////
+
+
+// !Float Right
+@mixin float-right($imp:null) { float: right $imp; }
+
+
+// !Float Left
+@mixin float-left($imp:null) { float: left $imp; }

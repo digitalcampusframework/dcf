@@ -1,0 +1,86 @@
+///////////////////
+// !MIXINS: BORDERS
+///////////////////
+
+
+// All Sides
+@mixin b1($imp:null) {
+  border-style: solid $imp;
+  border-width: 1px $imp;
+}
+
+
+// !Top
+@mixin bt($imp:null) {
+  border-top-style: solid $imp;
+  border-top-width: 1px $imp;
+}
+
+
+// !Right
+@mixin br($imp:null) {
+  border-right-style: solid $imp;
+  border-right-width: 1px $imp;
+}
+
+
+// !Bottom
+@mixin bb($imp:null) {
+  border-bottom-style: solid $imp;
+  border-bottom-width: 1px $imp;
+}
+
+
+// !Left
+@mixin bl($imp:null) {
+  border-left-style: solid $imp;
+  border-left-width: 1px $imp;
+}
+
+
+// !No Border
+@mixin b0($imp:null) {
+  border: 0 $imp;
+}
+
+
+// !Border Radius
+
+// !Circle
+@mixin circle($imp:null) {
+  border-radius: $circle $imp;
+}
+
+
+// !Rounded, All Sides
+@mixin rounded($imp:null) {
+  border-radius: $roundrect $imp;
+}
+
+
+// !Rounded Top (Top Right, Top Left)
+@mixin rounded-top($imp:null) {
+  border-top-right-radius: $roundrect $imp;
+  border-top-left-radius: $roundrect $imp;
+}
+
+
+// !Rounded Right (Top Right, Bottom Right)
+@mixin rounded-right($imp:null) {
+  border-top-right-radius: $roundrect $imp;
+  border-bottom-right-radius: $roundrect $imp;
+}
+
+
+// !Rounded Bottom (Bottom Right, Bottom Left)
+@mixin rounded-bottom($imp:null) {
+  border-bottom-right-radius: $roundrect $imp;
+  border-bottom-left-radius: $roundrect $imp;
+}
+
+
+// !Rounded Left (Bottom Left, Top Left)
+@mixin rounded-left($imp:null) {
+  border-bottom-left-radius: $roundrect $imp;
+  border-top-left-radius: $roundrect $imp;
+}

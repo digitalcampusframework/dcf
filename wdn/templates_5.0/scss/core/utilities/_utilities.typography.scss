@@ -3,18 +3,19 @@
 /////////////////////////
 
 
-// !Sizing
-// Larger
+// !Larger Size
 .dcf--lg4 { @include lg4(!important); }
 .dcf--lg3 { @include lg3(!important); }
 .dcf--lg2 { @include lg2(!important); }
 .dcf--lg1 { @include lg1(!important); }
 
-// Smaller
+
+// !Smaller Size
 .dcf--sm1 { @include sm1(!important); }
 .dcf--sm2 { @include sm2(!important); }
 .dcf--sm3 { @include sm3(!important); }
 .dcf--sm4 { @include sm4(!important); }
+
 
 // !Line Height
 .dcf--lh1 { @include lh1(!important); }

@@ -2,5 +2,10 @@
 // !UTILITIES: FLOATS
 /////////////////////
 
-.dcf--float-left { @include float-left(!important); }
+
+// !Float Right
 .dcf--float-right { @include float-right(!important); }
+
+
+// !Float Left
+.dcf--float-left { @include float-left(!important); }
