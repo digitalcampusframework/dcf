@@ -1,0 +1,15 @@
+/////////////////////
+// !ELEMENTS: FIGURES
+/////////////////////
+
+
+figure {
+  @include m0;
+}
+
+figcaption {
+  @include mt2;
+  @include sm2;
+//   line-height: 1.5;
+  color: $light-text;
+}

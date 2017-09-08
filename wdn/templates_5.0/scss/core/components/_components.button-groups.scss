@@ -1,0 +1,26 @@
+/////////////////////////////
+// !COMPONENTS: BUTTON GROUPS
+/////////////////////////////
+
+
+.dcf--btn-group {
+  @include d-inline-flex;
+}
+
+.dcf--btn-group > .dcf--btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dcf--btn-group > .dcf--btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.dcf--btn-group > .dcf--btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.dcf--btn-group .dcf--btn + .dcf--btn {
+  margin-left: -1px;
+}

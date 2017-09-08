@@ -1,0 +1,77 @@
+/////////////////////
+// !THEME: TYPOGRAPHY
+/////////////////////
+
+
+html {
+  @include serif-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include sans-serif-font;
+  @include bold;
+  letter-spacing: -.03em;
+}
+
+.dcf--subhead {
+//   color: $light-text;
+  @include sans-serif-font;
+}
+
+.dcf--article-3 {
+//   color: $light-text;
+  @include sans-serif-font;
+}
+
+.dcf--article-aside {
+  @include sans-serif-font;
+}
+
+figcaption {
+  @include sans-serif-font;
+}
+
+table {
+  @include sans-serif-font;
+}
+
+input {
+  @include sans-serif-font;
+}
+
+.dcf--btn {
+  @include sans-serif-font;
+}
+
+.dcf--badge {
+  @include sans-serif-font;
+}
+
+.dcf--pagination {
+  @include sans-serif-font;
+}
+
+.dcf--header {
+  @include sans-serif-font;
+}
+
+.dcf--footer {
+  @include sans-serif-font;
+}
+
+.dcf--article-meta {
+  @include sans-serif-font;
+}
+
+.unl .dcf--drop-cap:first-letter {
+  margin-top: 0.75rem; // first, adjust margin-top for Firefox
+  padding-right: 0.5rem;
+  padding-left: .25rem;
+  font-size: 5em;
+  line-height: .69; // then, adjust line-height for Chrome and Safari
+}

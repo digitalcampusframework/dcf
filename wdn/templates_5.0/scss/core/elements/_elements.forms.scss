@@ -1,0 +1,36 @@
+///////////////////
+// !ELEMENTS: FORMS
+///////////////////
+
+
+form,
+input,
+textarea {
+  font-size: 1rem;
+  @include lh1;
+}
+
+fieldset {
+  @include m0;
+  @include p0;
+  @include b0;
+}
+
+legend {
+  @extend .dcf--h5;
+}
+
+label {
+  @include d-inline-block;
+}
+
+select {
+  @include d-block;
+  @include mb4;
+}
+
+textarea {
+  @include d-block;
+  @include w100;
+  resize: vertical;
+}

@@ -1,0 +1,57 @@
+////////////////////////
+// !COMPONENTS: HEADINGS
+////////////////////////
+
+
+// !Headings
+.dcf--h1,
+.dcf--h2,
+.dcf--h3,
+.dcf--h4,
+.dcf--h5,
+.dcf--h6 {
+  @include mt0;
+  margin-bottom: 1rem;
+  @include lh2;
+
+  // ?
+  p + &,
+  ol + &,
+  ul + &,
+  dl + & {
+    @include mt5;
+  }
+}
+
+
+// !Heading Sizes
+.dcf--h1 { font-size: 2.5rem; }  // line-height ~50px
+.dcf--h2 { font-size: 2rem; }    // line-height ~40px
+.dcf--h3 { font-size: 1.75rem; } // line-height ~35px
+.dcf--h4 { font-size: 1.5rem; }  // line-height ~30px
+.dcf--h5 { font-size: 1.25rem; } // line-height ~25px
+.dcf--h6 { font-size: 1rem; }    // line-height ~20px
+
+
+// !Display Headings
+.dcf--display-1 { font-size: 3rem; }
+.dcf--display-2 { font-size: 4rem; }
+.dcf--display-3 { font-size: 5rem; }
+.dcf--display-4 { font-size: 6rem; }
+
+
+// !Heading Groups
+.dcf--hgroup {
+  @include d-flex;
+  @include f-column;
+}
+
+
+// !Subheads
+.dcf--subhead {
+  @include d-block;
+  @include mb4;
+  @include uppercase;
+  font-size: .75rem;
+  letter-spacing: .05em;
+}

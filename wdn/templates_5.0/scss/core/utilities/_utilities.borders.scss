@@ -1,0 +1,11 @@
+//////////////////////
+// !UTILITIES: BORDERS
+//////////////////////
+
+// !Border Radius
+.dcf--circle { @include circle(!important); }
+.dcf--rounded { @include rounded(!important); }
+.dcf--rounded-top { @include rounded-top(!important); }
+.dcf--rounded-right { @include rounded-right(!important); }
+.dcf--rounded-bottom { @include rounded-bottom(!important); }
+.dcf--rounded-left { @include rounded-left(!important); }

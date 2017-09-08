@@ -1,0 +1,8 @@
+////////////////////////////
+// !UTILITIES: ASPECT RATIOS
+////////////////////////////
+
+.dcf--aspect-ratio { @include aspect-ratio; }
+.dcf--ratio-16x9:before { padding-top: 56.25%; }
+.dcf--ratio-4x3:before { padding-top: 75%; }
+.dcf--ratio-1x1:before { padding-top: 100%; }

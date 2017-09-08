@@ -1,0 +1,13 @@
+//////////////////////
+// !UTILITIES: DISPLAY
+//////////////////////
+
+.dcf--d-none { @include d-none(!important); }
+.dcf--d-block { @include d-block(!important); }
+.dcf--d-inline { @include d-inline(!important); }
+.dcf--d-inline-block { @include d-inline-block(!important); }
+.dcf--d-flex { @include d-flex(!important); }
+.dcf--d-inline-flex { @include d-inline-flex(!important); }
+.dcf--d-grid { @include d-grid(!important); }
+.dcf--d-inline-grid { @include d-inline-grid(!important); }
+.dcf--d-subgrid { @include d-subgrid(!important); }

@@ -1,0 +1,39 @@
+//////////////////////
+// !COMPONENTS: QUOTES
+//////////////////////
+
+
+.dcf--blockquote {
+  @include relative;
+//   max-width: 36rem;
+  @include ml0;
+  @include pt4;
+  @include pb4;
+}
+
+.dcf--blockquote:before {
+  content: open-quote;
+  @include absolute;
+  font-size: 10em;
+  @include lh3;
+}
+
+.dcf--blockquote p {
+  padding-top: 3.5em;
+  @include pt6;
+  font-size: 1.5rem;
+}
+
+.dcf--blockquote p:after {
+  content: close-quote;
+}
+
+
+// !Attribution
+.dcf--attribution {
+  @include mt4;
+}
+
+.dcf--attribution:before {
+  content: '— '; // em dash (&mdash;) followed by a thin space (&thinsp;)
+}
