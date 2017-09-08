@@ -1,18 +1,45 @@
 // !CORE
 
-// !Import settings files
+
+// !Import theme configuration files
 @import 'theme/theme.colors';
 @import 'theme/theme.mixins';
 @import 'theme/theme.fonts';
-@import 'settings/settings.colors';
-@import 'settings/settings.variables';
 
-// !Import tools files
-@import 'tools/tools.mixins';
-@import 'tools/tools.functions';
+
+// !Import variables files
+@import 'variables/variables.borders';
+@import 'variables/variables.breakpoints';
+@import 'variables/variables.colors';
+@import 'variables/variables.sizing';
+@import 'variables/variables.z-index';
+
+
+// !Import mixins files
+@import 'mixins/mixins.aspect-ratios';
+@import 'mixins/mixins.borders';
+@import 'mixins/mixins.breakpoints';
+@import 'mixins/mixins.disabled';
+@import 'mixins/mixins.display';
+@import 'mixins/mixins.flexbox';
+@import 'mixins/mixins.floats';
+@import 'mixins/mixins.grid';
+@import 'mixins/mixins.height-width';
+@import 'mixins/mixins.margins';
+@import 'mixins/mixins.overlays';
+@import 'mixins/mixins.padding';
+@import 'mixins/mixins.position';
+@import 'mixins/mixins.typography';
+@import 'mixins/mixins.visibility';
+
+
+// !Import functions files
+// @import 'functions/functions.functions';
+
 
 // !Import generic files
 @import 'base/base.global';
+
 
 // !Import elements files
 @import 'elements/elements.abbreviations';
@@ -32,6 +59,7 @@
 @import 'elements/elements.tables';
 
 @import 'base/base.typography';
+
 
 // !Import components files
 @import 'components/components.abbreviations';
@@ -61,9 +89,11 @@
 @import 'components/components.small';
 @import 'components/components.tables';
 
+
 // !Import theme files
 @import 'theme/theme.typography';
 @import 'theme/theme.layout';
+
 
 // !Import utilities files
 @import 'utilities/utilities.aspect-ratios';
@@ -74,7 +104,7 @@
 @import 'utilities/utilities.floats';
 @import 'utilities/utilities.grid';
 @import 'utilities/utilities.height-width';
-@import 'utilities/utilities.margin';
+@import 'utilities/utilities.margins';
 @import 'utilities/utilities.overlays';
 @import 'utilities/utilities.padding';
 @import 'utilities/utilities.position';

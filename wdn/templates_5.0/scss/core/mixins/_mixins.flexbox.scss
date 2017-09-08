@@ -1,0 +1,51 @@
+///////////////////
+// !MIXINS: FLEXBOX
+///////////////////
+
+
+// Flexbox display rules (d-flex and d-inline-flex) located in _mixins.display
+
+
+// !Flexbox Rows and Columns
+@mixin f-column($imp:null) { flex-direction: column $imp; }
+@mixin f-column-rev($imp:null) { flex-direction: column-reverse $imp; }
+@mixin f-row($imp:null) { flex-direction: row $imp; }
+@mixin f-row-rev($imp:null) { flex-direction: row-reverse $imp; }
+@mixin f-wrap($imp:null) { flex-wrap: wrap $imp; }
+@mixin f-wrap-rev($imp:null) { flex-wrap: wrap-reverse $imp; }
+@mixin f-nowrap($imp:null) { flex-wrap: nowrap $imp; }
+
+
+// !Align Items
+@mixin f-ai-start($imp:null) { align-items: flex-start $imp; }
+@mixin f-ai-end($imp:null) { align-items: flex-end $imp; }
+@mixin f-ai-center($imp:null) { align-items: center $imp; }
+@mixin f-ai-baseline($imp:null) { align-items: baseline $imp; }
+@mixin f-ai-stretch($imp:null) { align-items: stretch $imp; }
+
+
+// !Align Content
+@mixin f-ac-start($imp:null) { align-content: flex-start $imp; }
+@mixin f-ac-end($imp:null) { align-content: flex-end $imp; }
+@mixin f-ac-center($imp:null) { align-content: center $imp; }
+@mixin f-ac-stretch($imp:null) { align-content: stretch $imp; }
+@mixin f-ac-around($imp:null) { align-content: space-around $imp; }
+@mixin f-ac-between($imp:null) { align-content: space-between $imp; }
+
+
+// !Align Self
+@mixin f-as-auto($imp:null) { align-self: auto $imp; }
+@mixin f-as-start($imp:null) { align-self: flex-start $imp; }
+@mixin f-as-end($imp:null) { align-self: flex-end $imp; }
+@mixin f-as-center($imp:null) { align-self: center $imp; }
+@mixin f-as-baseline($imp:null) { align-self: baseline $imp; }
+@mixin f-as-stretch($imp:null) { align-self: stretch $imp; }
+
+
+// !Justify Content
+@mixin f-jc-start($imp:null) { justify-content: flex-start $imp; }
+@mixin f-jc-end($imp:null) { justify-content: flex-end $imp; }
+@mixin f-jc-center($imp:null) { justify-content: center $imp; }
+@mixin f-jc-around($imp:null) { justify-content: space-around $imp; }
+@mixin f-jc-between($imp:null) { justify-content: space-between $imp; }
+@mixin f-jc-evenly($imp:null) { justify-content: space-evenly $imp; }

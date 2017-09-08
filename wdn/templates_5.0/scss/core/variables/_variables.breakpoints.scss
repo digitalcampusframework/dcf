@@ -1,28 +1,8 @@
-///////////////////////
-// !SETTINGS: VARIABLES
-///////////////////////
+//////////////////////////
+// !VARIABLES: BREAKPOINTS
+//////////////////////////
 
 
-// !Modular Scale
-// @import '~modularscale-sass/stylesheets/modularscale';
-//
-// $modularscale: (
-//   base: 1 1.128 1.272 1.435,
-//   ratio: $golden
-// );
-
-// !Font Size
-$min_font_size: 1;
-$max_font_size: 1.25;
-
-// !Line Height
-$line-height: 1.5;
-
-// !Linear Inetrpolation
-$min_lerp_width: 32;
-$max_lerp_width: 128;
-
-// !Breakpoints
 $breakpoints: (
   'sm': 32em, // ~ 512px
   'md': 48em, // ~ 768px
@@ -65,18 +45,7 @@ $breakpoints: (
 //   'max-xl': ( max-width: #{ms(31) - .01}em )
 // );
 
-// !Spacing
-$spacing-0: 0;
-$spacing-1: .25em;
-$spacing-2: .5em;
-$spacing-3: .75em;
-$spacing-4: 1em;
-$spacing-5: 2em;
-$spacing-6: 4em;
 
-// !Border Radii
-$circle: 50%;
-$pill: 1em;
-$roundrect: 2px;
-
-// !Z-index
+// !Linear Inetrpolation
+$min_lerp_width: 32;
+$max_lerp_width: 128;

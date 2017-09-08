@@ -1,0 +1,53 @@
+///////////////////
+// !MIXINS: PADDING
+///////////////////
+
+
+// !All Sides
+@mixin p0($imp:null) { padding: $spacing-0 $imp; }
+@mixin p1($imp:null) { padding: $spacing-1 $imp; }
+@mixin p2($imp:null) { padding: $spacing-2 $imp; }
+@mixin p3($imp:null) { padding: $spacing-3 $imp; }
+@mixin p4($imp:null) { padding: $spacing-4 $imp; }
+@mixin p5($imp:null) { padding: $spacing-5 $imp; }
+@mixin p6($imp:null) { padding: $spacing-6 $imp; }
+
+
+// !Top
+@mixin pt0($imp:null) { padding-top: $spacing-0 $imp; }
+@mixin pt1($imp:null) { padding-top: $spacing-1 $imp; }
+@mixin pt2($imp:null) { padding-top: $spacing-2 $imp; }
+@mixin pt3($imp:null) { padding-top: $spacing-3 $imp; }
+@mixin pt4($imp:null) { padding-top: $spacing-4 $imp; }
+@mixin pt5($imp:null) { padding-top: $spacing-5 $imp; }
+@mixin pt6($imp:null) { padding-top: $spacing-6 $imp; }
+
+
+// !Right
+@mixin pr0($imp:null) { padding-right: $spacing-0 $imp; }
+@mixin pr1($imp:null) { padding-right: $spacing-1 $imp; }
+@mixin pr2($imp:null) { padding-right: $spacing-2 $imp; }
+@mixin pr3($imp:null) { padding-right: $spacing-3 $imp; }
+@mixin pr4($imp:null) { padding-right: $spacing-4 $imp; }
+@mixin pr5($imp:null) { padding-right: $spacing-5 $imp; }
+@mixin pr6($imp:null) { padding-right: $spacing-6 $imp; }
+
+
+// !Bottom
+@mixin pb0($imp:null) { padding-bottom: $spacing-0 $imp; }
+@mixin pb1($imp:null) { padding-bottom: $spacing-1 $imp; }
+@mixin pb2($imp:null) { padding-bottom: $spacing-2 $imp; }
+@mixin pb3($imp:null) { padding-bottom: $spacing-3 $imp; }
+@mixin pb4($imp:null) { padding-bottom: $spacing-4 $imp; }
+@mixin pb5($imp:null) { padding-bottom: $spacing-5 $imp; }
+@mixin pb6($imp:null) { padding-bottom: $spacing-6 $imp; }
+
+
+// !Left
+@mixin pl0($imp:null) { padding-left: $spacing-0 $imp; }
+@mixin pl1($imp:null) { padding-left: $spacing-1 $imp; }
+@mixin pl2($imp:null) { padding-left: $spacing-2 $imp; }
+@mixin pl3($imp:null) { padding-left: $spacing-3 $imp; }
+@mixin pl4($imp:null) { padding-left: $spacing-4 $imp; }
+@mixin pl5($imp:null) { padding-left: $spacing-5 $imp; }
+@mixin pl6($imp:null) { padding-left: $spacing-6 $imp; }

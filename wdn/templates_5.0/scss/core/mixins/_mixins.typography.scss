@@ -1,0 +1,55 @@
+//////////////////////
+// !MIXINS: TYPOGRAPHY
+//////////////////////
+
+
+// !Larger Size
+@mixin lg4($imp:null) { font-size: 1.5em $imp; }
+@mixin lg3($imp:null) { font-size: 1.375em $imp; }
+@mixin lg2($imp:null) { font-size: 1.25em $imp; }
+@mixin lg1($imp:null) { font-size: 1.125em $imp; }
+
+
+// !Smaller Size
+@mixin sm1($imp:null) { font-size: .875em $imp; }
+@mixin sm2($imp:null) { font-size: .75em $imp; }
+@mixin sm3($imp:null) { font-size: .625em $imp; }
+@mixin sm4($imp:null) { font-size: .5em $imp; }
+
+
+// !Line Height
+@mixin lh1($imp:null) { line-height: 1.5 $imp; }
+@mixin lh2($imp:null) { line-height: 1.25 $imp; }
+@mixin lh3($imp:null) { line-height: 1 $imp; }
+
+
+// !Vertical Alignment
+@mixin baseline($imp:null) { vertical-align: baseline $imp; }
+@mixin top($imp:null) { vertical-align: top $imp; }
+@mixin middle($imp:null) { vertical-align: middle $imp; }
+@mixin bottom($imp:null) { vertical-align: bottom $imp; }
+@mixin text-top($imp:null) { vertical-align: text-top $imp; }
+@mixin text-bottom($imp:null) { vertical-align: text-bottom $imp; }
+
+
+// !Text Alignment
+@mixin center($imp:null) { text-align: center $imp; }
+@mixin left($imp:null) { text-align: left $imp; }
+@mixin right($imp:null) { text-align: right $imp; }
+
+
+// !Text Transform
+@mixin capitalize($imp:null) { text-transform: capitalize $imp; }
+@mixin lowercase($imp:null) { text-transform: lowercase $imp; }
+@mixin uppercase($imp:null) { text-transform: uppercase $imp; }
+
+
+// !Font Weights and Styles
+@mixin regular($imp:null) { font-weight: normal $imp; }
+@mixin bold($imp:null) { font-weight: bold $imp; }
+@mixin roman($imp:null) { font-style: normal $imp; }
+@mixin italic($imp:null) { font-style: italic $imp; }
+
+
+// !Text Wrapping
+@mixin nowrap($imp:null) { white-space: nowrap $imp; }

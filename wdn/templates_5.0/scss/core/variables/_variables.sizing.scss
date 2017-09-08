@@ -1,0 +1,25 @@
+/////////////////////
+// !VARIABLES: SIZING
+/////////////////////
+
+
+// !Modular Scale
+// @import '~modularscale-sass/stylesheets/modularscale';
+//
+// $modularscale: (
+//   base: 1 1.128 1.272 1.435,
+//   ratio: $golden
+// );
+
+// !Font Size
+$min_font_size: 1;
+$max_font_size: 1.25;
+
+// !Spacing
+$spacing-0: 0;
+$spacing-1: .25em;
+$spacing-2: .5em;
+$spacing-3: .75em;
+$spacing-4: 1em;
+$spacing-5: 2em;
+$spacing-6: 4em;
