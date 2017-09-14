@@ -37,7 +37,3 @@
 
 // !Subgrid
 @mixin d-subgrid($imp:null) { display: subgrid $imp; }
-
-
-// !Table
-@mixin d-table($imp:null) { display: table $imp; }

@@ -17,8 +17,8 @@
 body {
   @include m0;
 //   overflow-x: hidden;
-  color: $body-color;
-  background-color: $body-bg-color;
+  color: $color-body;
+  background-color: $color-body-bg;
 }
 
 // main {

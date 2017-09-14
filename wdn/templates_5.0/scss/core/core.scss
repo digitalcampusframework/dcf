@@ -1,24 +1,25 @@
 // !CORE
 
 
-// !Import theme configuration files
+// !Theme (Configuration)
 @import 'theme/theme.colors';
 @import 'theme/theme.mixins';
 @import 'theme/theme.fonts';
 
 
-// !Import variables files
+// !Variables
 @import 'variables/variables.borders';
 @import 'variables/variables.breakpoints';
 @import 'variables/variables.colors';
 @import 'variables/variables.sizing';
+@import 'variables/variables.transitions';
 @import 'variables/variables.z-index';
 
 
-// !Import mixins files
+// !Mixins
 @import 'mixins/mixins.aspect-ratios';
 @import 'mixins/mixins.borders';
-@import 'mixins/mixins.breakpoints';
+@import 'mixins/mixins.media-queries';
 @import 'mixins/mixins.disabled';
 @import 'mixins/mixins.display';
 @import 'mixins/mixins.flexbox';
@@ -35,13 +36,14 @@
 
 // !Import functions files
 // @import 'functions/functions.functions';
+@import 'functions/functions.media-queries';
 
 
 // !Import generic files
 @import 'base/base.global';
 
 
-// !Import elements files
+// !Elements
 @import 'elements/elements.abbreviations';
 @import 'elements/elements.addresses';
 @import 'elements/elements.anchors';
@@ -61,7 +63,7 @@
 @import 'base/base.typography';
 
 
-// !Import components files
+// !Components
 @import 'components/components.abbreviations';
 @import 'components/components.alerts';
 @import 'components/components.articles';
@@ -90,12 +92,12 @@
 @import 'components/components.tables';
 
 
-// !Import theme files
+// !Theme (Custom)
 @import 'theme/theme.typography';
 @import 'theme/theme.layout';
 
 
-// !Import utilities files
+// !Utilities
 @import 'utilities/utilities.aspect-ratios';
 @import 'utilities/utilities.borders';
 @import 'utilities/utilities.disabled';

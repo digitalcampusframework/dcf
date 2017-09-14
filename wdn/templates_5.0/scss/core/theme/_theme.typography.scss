@@ -40,7 +40,11 @@ table {
   @include sans-serif-font;
 }
 
-input {
+.dcf--input-textual {
+  @include sans-serif-font;
+}
+
+.dcf--input-select select {
   @include sans-serif-font;
 }
 

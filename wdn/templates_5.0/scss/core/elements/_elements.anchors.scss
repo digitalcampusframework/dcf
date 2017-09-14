@@ -10,25 +10,25 @@ a {
 
 // !Link
 a:link {
-  color: $link-color;
+  color: $color-link;
   transition: color 500ms ease-out;
 }
 
 
 // !Visited
 a:visited {
-  color: scale-color($link-color, $lightness: -10%, $saturation: -100%);
+  color: scale-color($color-link, $lightness: -10%, $saturation: -100%);
 }
 
 
 // !Hover
 a:hover {
-  color: scale-color($link-color, $lightness: -20%, $saturation: 100%);
+  color: scale-color($color-link, $lightness: -20%, $saturation: 100%);
   transition: color 250ms ease-out;
 }
 
 
 // !Active
 a:active {
-  color: scale-color($link-color, $lightness: -30%, $saturation: 100%);
+  color: scale-color($color-link, $lightness: -30%, $saturation: 100%);
 }

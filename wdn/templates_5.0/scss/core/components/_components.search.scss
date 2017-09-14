@@ -9,7 +9,7 @@
   @include middle;
 }
 
-@include bp(md) {
+@include mq(md) {
 
   .dcf--search-toggle {
     @include d-none;

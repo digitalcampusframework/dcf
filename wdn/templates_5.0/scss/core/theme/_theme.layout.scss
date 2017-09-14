@@ -7,7 +7,7 @@
 .rd-color-box {
   height: 8em;
   width: 8em;
-  border: 1px solid $border-color;
+  border: 1px solid $color-border;
 
   &.primary {
     background-color: $scarlet;
@@ -16,10 +16,6 @@
   &.accent {
     background-color: $cream;
   }
-
-//   @include bp(sm) {
-//     border: 1px solid #000;
-//   }
 }
 
 .unl--input-required {

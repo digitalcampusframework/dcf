@@ -12,7 +12,7 @@ h6 {
   @include mt0;
   margin-bottom: 1rem;
   @include lh2;
-  color: $heading-color;
+  color: $color-heading;
 
   // ?
   p + &,

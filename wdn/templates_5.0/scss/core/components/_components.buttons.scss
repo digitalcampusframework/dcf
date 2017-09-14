@@ -7,10 +7,12 @@
 .dcf--btn {
   cursor: pointer;
   @include d-inline-block;
-//   @include middle;
-  padding-top: .8em;
+//   @include relative;
+//   padding-top: .6em;
+  @include pt2;
   @include pr4;
-  padding-bottom: .7em;
+//   padding-bottom: .4em;
+  @include pb2;
   @include pl4;
   font-size: 1rem;
 //   font-family: inherit;
@@ -18,6 +20,7 @@
 //   -webkit-transition: none;
   @include lh1;
   @include center;
+//   box-shadow: inset 0 -.25em 1em 1px rgba(0,0,0,.1)
 }
 
 .dcf--btn {
@@ -32,8 +35,9 @@ a.dcf--btn {
 // !Button Hierarchy
 .dcf--btn-primary {
   color: #fff;
-  border: 1px solid $button-color;
-  background-color: $button-color;
+  border: 1px solid $color-button;
+  background-color: $color-button;
+  transition: border ease-out .4s, background-color ease-out .4s;
 
   &:link,
   &:visited,
@@ -46,27 +50,28 @@ a.dcf--btn {
 //   }
 
   &:visited {
-    border-color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
-    background-color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
+    border-color: darken($color-button,10%);
+    background-color: darken($color-button,10%);
   }
 
   &:hover {
-    border-color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
-    background-color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
-    transition: border-color ease-out 250ms, background-color ease-out 250ms;
+    border-color: darken($color-button,10%);
+    background-color: darken($color-button,10%);
+  transition: border ease-out .2s, background-color ease-out .2s;
   }
 
   &:active,
   &.dcf--active {
-    border-color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
-    background-color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
+    border-color: darken($color-button,20%);
+    background-color: darken($color-button,20%);
   }
 }
 
 .dcf--btn-secondary {
-  color: $button-color;
+  color: $color-button;
   border: 1px solid currentcolor;
   background-color: #fff;
+  transition: border ease-out .4s, background-color ease-out .4s;
 
   &:link,
   &:visited,
@@ -75,20 +80,24 @@ a.dcf--btn {
     color: #333;
   }
 
+//   &:link {
+//   }
+
   &:visited {
-    color: scale-color($button-color, $lightness: -10%, $saturation: 10%);
+    color: darken($color-button, 10%);
     border-color: currentcolor;
   }
 
   &:hover {
-    color: scale-color($button-color, $lightness: -20%, $saturation: 10%);
+    color: darken($color-button, 10%);
     border-color: currentcolor;
-    background-color: scale-color($button-color, $lightness: 95%, $saturation: -10%);
+  	background-color: lighten($color-button,55%);
+    transition: border ease-out .2s, background-color ease-out .2s;
   }
 
   &:active,
   &.dcf--active {
-    color: scale-color($button-color, $lightness: -30%, $saturation: 10%);
+    color: darken($color-button, 20%);
     border-color: currentcolor;
   }
 }
