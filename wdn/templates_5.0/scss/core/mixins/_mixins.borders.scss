@@ -84,3 +84,23 @@
   border-bottom-left-radius: $roundrect $imp;
   border-top-left-radius: $roundrect $imp;
 }
+
+
+// !Sharp, All Sides
+@mixin sharp {
+  border-radius: 0;
+}
+
+
+// !Sharp Right (Top Right, Bottom Right)
+@mixin sharp-right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+// !Sharp Left (Bottom Left, Top Left)
+@mixin sharp-left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

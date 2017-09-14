@@ -4,18 +4,16 @@
 
 
 table {
-//   line-height: 1.5;
   border-collapse: collapse;
   background-color: transparent;
 }
 
 caption {
   @include pt3;
-  @include pb3;
   @include left;
   caption-side: bottom;
   @include sm2;
-  color: $light-text;
+  color: $color-light-text;
 }
 
 th {

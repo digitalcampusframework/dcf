@@ -34,7 +34,7 @@
   }
 }
 
-@include bp(md) {
+@include mq(md) {
 
   .dcf--hero {
     @include relative;

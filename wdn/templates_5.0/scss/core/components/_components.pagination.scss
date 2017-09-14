@@ -6,35 +6,35 @@
 .dcf--pagination {
   @include d-flex;
   @include mt5;
-  @include pl0;
   @extend .dcf--list-unstyled; // !!!!
 }
 
-.dcf--page-link {
-  @include d-block;
-  margin-left: -1px;
-  @include pt2;
-  @include pr3;
-  @include pb2;
-  @include pl3;
-  text-decoration: none;
-//   border-width: 1px;
-//   border-style: solid;
-//   border-color: #ccc;
-//   transition: color 1s ease-out, border-color 1s ease-out;
-}
+// .dcf--page-link {
+//   @include d-block;
+//   margin-left: -1px;
+// //   @include pt2;
+//   padding-top: .8em;
+//   @include pr4;
+// //   @include pb2;
+//   padding-bottom: .7em;
+//   @include pl4;
+//   text-decoration: none;
+// //   border-width: 1px;
+// //   border-style: solid;
+// //   border-color: #ccc;
+// //   transition: color 1s ease-out, border-color 1s ease-out;
+// }
 
-a.dcf--page-link {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $border-color;
-  transition: color 500ms ease-out, border-color 500ms ease-out;
-}
-
-a.dcf--page-link:hover {
-  border-color: currentcolor;
-  transition: color 250ms ease-out, border-color 250ms ease-out;
-}
+// a.dcf--page-link {
+//   @include b1;
+//   border-color: $color-border;
+//   transition: color 500ms ease-out, border-color 500ms ease-out;
+// }
+//
+// a.dcf--page-link:hover {
+//   border-color: currentcolor;
+//   transition: color 250ms ease-out, border-color 250ms ease-out;
+// }
 
 // .dcf--page-link:hover {
 //   margin-right: 0;
@@ -43,15 +43,35 @@ a.dcf--page-link:hover {
 //   transition: color .25s ease-out, border-color .25s ease-out;
 // }
 
-.dcf--page-item:hover + .dcf--page-item .dcf--page-link {
-  border-left-color: transparent;
+// .dcf--page-item:hover + .dcf--page-item .dcf--page-link {
+//   border-left-color: transparent;
+// }
+
+// .dcf--page-item:first-child .dcf--page-link {
+//   @include ml0;
+//   @include rounded-left;
+// }
+//
+// .dcf--page-item:last-child .dcf--page-link {
+//   @include rounded-right;
+// }
+
+.dcf--page-item .dcf--btn:focus {
+  z-index: 1;
 }
 
-.dcf--page-item:first-child .dcf--page-link {
-  @include ml0;
-  @include rounded-left;
+.dcf--page-item:first-child > .dcf--btn {
+  @include sharp-right;
 }
 
-.dcf--page-item:last-child .dcf--page-link {
-  @include rounded-right;
+.dcf--page-item:last-child > .dcf--btn {
+  @include sharp-left;
+}
+
+.dcf--page-item:not(:first-child):not(:last-child) > .dcf--btn {
+  @include sharp;
+}
+
+.dcf--page-item + .dcf--page-item .dcf--btn {
+  margin-left: -1px;
 }
