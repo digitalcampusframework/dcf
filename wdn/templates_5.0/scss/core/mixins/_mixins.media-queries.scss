@@ -5,6 +5,7 @@
 
 //  mq-sass, https://github.com/jonsuh/mq-sass
 @mixin mq($breakpoint, $minmax: min, $widthheight: width) {
+
   @if $breakpoint == landscape or $breakpoint == portrait or $breakpoint == retina or map-has-key($mq-breakpoints, $breakpoint) or type-of($breakpoint) == "number" {
     $media: $mq-media + " and ";
     $media-query: "";
@@ -57,4 +58,5 @@
         + "It must be defined in the `$mq-breakpoints` map, a valid CSS value, \a"
         + "or a predefined (e.g. retina, landscape, portrait).";
   }
+
 }

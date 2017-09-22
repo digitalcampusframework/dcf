@@ -10,11 +10,15 @@
   box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
 }
 
+
+// !Card Image
 .dcf--card img {
   @include d-block;
   @include w100;
 }
 
+
+// !Card Block
 .dcf--card-block {
   @include pt5;
   @include pr5;
@@ -28,6 +32,7 @@
   @include mb0;
 }
 
+
 // !Deck of Cards
 .dcf--card-deck {
   @extend .dcf--list-unstyled;
@@ -37,4 +42,5 @@
     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
     grid-gap: 1em;
   }
+
 }

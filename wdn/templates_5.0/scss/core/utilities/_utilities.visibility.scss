@@ -12,11 +12,23 @@
 
 
 // !Screen Reader Only
-.dcf--sr-only { @include sr-only; }
+.dcf--sr-only {
+  @include absolute;
+  height: 1px; // allow VoiceOver to see the text
+  width: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  word-wrap: normal; // ???
+}
 
 
 // !Screen Reader Only, Show On Focus
 .dcf--sr-only.dcf--sr-only-focusable:active,
 .dcf--sr-only.dcf--sr-only-focusable:focus {
-  @include sr-only-focusable;
+  @include static;
+  height: auto;
+  width: auto;
+  clip: auto;
+  overflow: visible;
 }

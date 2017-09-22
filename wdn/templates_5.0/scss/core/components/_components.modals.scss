@@ -21,12 +21,14 @@
   }
 }
 
+
 // !Modal Content
 .dcf--modal-content {
   width: 80%;
   height: auto;
 //   box-shadow: 0 0 1.777em 0 fadeout(@ui14, 25%);
 }
+
 
 // !Modal Controls
 .dcf--close-modal {
@@ -39,9 +41,11 @@
   background-color: transparent;
 }
 
+
 ////////////////
 // !STATE: MODAL
 ////////////////
+
 
 // !Modal Overlay
 .dcf--modal-overlay {
@@ -54,9 +58,11 @@
   }
 }
 
+
 // !Modal Content
 // .dcf--modal-content {
 // }
+
 
 // !Modal Controls
 // .dcf--close-modal {

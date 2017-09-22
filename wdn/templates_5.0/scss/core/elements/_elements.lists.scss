@@ -14,17 +14,23 @@ ul {
   ul {
     @include mt2;
   }
+
 }
+
 
 ol,
 ul {
   padding-left: 1.5em;
 }
 
-li, dt, dd {
+
+li,
+dt,
+dd {
   max-width: 36em;
   @include mt0;
 }
+
 
 li {
   @include mb2;
@@ -38,21 +44,27 @@ li {
 //   }
 // }
 
-dt, dd {
+
+dt,
+dd {
   @include mb1;
 }
+
 
 dt {
   @include bold;
 }
 
+
 dd {
   @include ml0;
 }
 
+
 dd + dt {
   @include mt4;
 }
+
 
 // dd:not(:last-child) {
 //   @include mb2;
