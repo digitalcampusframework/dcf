@@ -7,8 +7,8 @@
 
 
 // !Flexbox Rows and Columns
-@mixin f-column($imp:null) { flex-direction: column $imp; }
-@mixin f-column-rev($imp:null) { flex-direction: column-reverse $imp; }
+@mixin f-col($imp:null) { flex-direction: column $imp; }
+@mixin f-col-rev($imp:null) { flex-direction: column-reverse $imp; }
 @mixin f-row($imp:null) { flex-direction: row $imp; }
 @mixin f-row-rev($imp:null) { flex-direction: row-reverse $imp; }
 @mixin f-wrap($imp:null) { flex-wrap: wrap $imp; }

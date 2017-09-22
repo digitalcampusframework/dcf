@@ -3,15 +3,18 @@
 ///////////////////////////
 
 
+// !Abbreviation
 abbr {
   letter-spacing: .05em;
 }
 
+
+// !Abbreviation Title
 abbr[title] {
   position: relative;
   text-decoration: none;
 
-  &:after {
+  &::after {
     content: '';
     @include absolute;
     top: 0;
@@ -21,4 +24,5 @@ abbr[title] {
     border-bottom: 1px dotted currentColor;
     opacity: .5;
   }
+
 }

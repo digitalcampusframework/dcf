@@ -32,6 +32,7 @@
     @include h100;
     object-fit: cover;
   }
+
 }
 
 @include mq(md) {
@@ -56,4 +57,5 @@
     overflow: hidden;
     z-index: 1;
   }
+
 }

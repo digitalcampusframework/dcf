@@ -3,10 +3,13 @@
 /////////////////////
 
 
+// !Figure
 figure {
   @include m0;
 }
 
+
+// !Figcaption
 figcaption {
 //   @include mt2;
   @include sm2;

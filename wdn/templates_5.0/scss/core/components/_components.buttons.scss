@@ -57,7 +57,7 @@ a.dcf--btn {
   &:hover {
     border-color: darken($color-button,10%);
     background-color: darken($color-button,10%);
-  transition: border ease-out .2s, background-color ease-out .2s;
+    transition: border ease-out .2s, background-color ease-out .2s;
   }
 
   &:active,
@@ -118,14 +118,14 @@ a.dcf--btn {
 //////////////////
 
 // !Active
-.dcf--active {
+// .dcf--active {
+//
+// }
 
-}
-
-button.dcf--active,
-.dcf--btn.dcf--active {
-//   @extend .dcf--active;
-}
+// button.dcf--active,
+// .dcf--btn.dcf--active {
+// //   @extend .dcf--active;
+// }
 
 // !Disabled
 button:disabled,

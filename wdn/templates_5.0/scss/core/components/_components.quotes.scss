@@ -11,12 +11,14 @@
   @include pb4;
 }
 
-.dcf--blockquote:before {
+
+.dcf--blockquote::before {
   content: open-quote;
   @include absolute;
   font-size: 10em;
   @include lh3;
 }
+
 
 .dcf--blockquote p {
   padding-top: 3.5em;
@@ -24,7 +26,8 @@
   font-size: 1.5rem;
 }
 
-.dcf--blockquote p:after {
+
+.dcf--blockquote p::after {
   content: close-quote;
 }
 

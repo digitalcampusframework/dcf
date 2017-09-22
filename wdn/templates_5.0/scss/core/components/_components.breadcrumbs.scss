@@ -1,0 +1,16 @@
+///////////////////////////
+// !COMPONENTS: BREADCRUMBS
+///////////////////////////
+
+
+.dcf--breadcrumbs ul {
+  @include d-flex;
+  @include pl0;
+  list-style: none;
+  @include sm3;
+}
+
+
+.dcf--breadcrumbs li {
+  @include mr2;
+}

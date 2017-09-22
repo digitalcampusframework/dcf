@@ -44,6 +44,7 @@
     @include mt1;
     text-indent: 1.5em;
   }
+
 }
 
 
@@ -115,7 +116,7 @@
   }
 
   .dcf--author {
-    @include f-column;
+    @include f-col;
     @include f-wrap;
     @include mt0;
   }
@@ -123,4 +124,5 @@
   .dcf--author-img img {
     width: 5em;
   }
+
 }

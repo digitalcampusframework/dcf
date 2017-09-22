@@ -10,14 +10,17 @@
 //   overflow-x: auto; // !responsive by default?
 }
 
+
 .dcf--table th,
 .dcf--table td {
   border-top: 1px solid $color-border;
 }
 
+
 // .dcf--table thead th {
 //   border-bottom: 2px solid #ddd;
 // }
+
 
 .dcf--table thead th,
 .dcf--table thead td {
@@ -27,9 +30,11 @@
   @include pl3;
 }
 
+
 .dcf--table thead th {
   @include bottom;
 }
+
 
 .dcf--table tbody th,
 .dcf--table tbody td {
@@ -45,6 +50,7 @@
   @include pb2;
   @include pl2;
 }
+
 
 .dcf--table-sm tbody th,
 .dcf--table-sm tbody td {
@@ -77,17 +83,21 @@
   background-color: $color-active;
 }
 
+
 .dcf--table-info {
   background-color: $color-info;
 }
+
 
 .dcf--table-success {
   background-color: $color-success;
 }
 
+
 .dcf--table-warning {
   background-color: $color-warning;
 }
+
 
 .dcf--table-danger {
   background-color: $color-danger;

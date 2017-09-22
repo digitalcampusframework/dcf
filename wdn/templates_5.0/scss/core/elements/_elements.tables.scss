@@ -3,11 +3,14 @@
 ////////////////////
 
 
+// !Table
 table {
   border-collapse: collapse;
   background-color: transparent;
 }
 
+
+// !Caption
 caption {
   @include pt3;
   @include left;
@@ -16,6 +19,8 @@ caption {
   color: $color-light-text;
 }
 
+
+// !Table Header
 th {
   @include left;
 }

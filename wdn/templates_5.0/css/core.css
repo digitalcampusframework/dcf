@@ -115,19 +115,14 @@ template{
   font-weight: 400;
   font-style: normal; }
 
-.unl--brand-font {
-  font-family: 'Tungsten A', 'Tungsten B', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal; }
-
 .unl--display-font {
   font-family: 'Tungsten A', 'Tungsten B', 'Arial Narrow', Arial, sans-serif;
   font-weight: 600;
   font-style: normal; }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
@@ -157,7 +152,7 @@ abbr {
 abbr[title] {
   position: relative;
   text-decoration: none; }
-  abbr[title]:after {
+  abbr[title]::after {
     content: '';
     position: absolute;
     top: 0;
@@ -242,10 +237,6 @@ pre code {
   white-space: pre;
   overflow-x: scroll;
   background-color: transparent; }
-
-.dcf--pre {
-  padding: 1em;
-  background-color: rgba(0, 0, 0, 0.05); }
 
 kbd {
   color: #0f0;
@@ -386,14 +377,17 @@ ol,
 ul {
   padding-left: 1.5em; }
 
-li, dt, dd {
+li,
+dt,
+dd {
   max-width: 36em;
   margin-top: 0; }
 
 li {
   margin-bottom: 0.5em; }
 
-dt, dd {
+dt,
+dd {
   margin-bottom: 0.25em; }
 
 dt {
@@ -413,10 +407,10 @@ p {
 body:lang(en) {
   quotes: '\201C' '\201D' '\2018' '\2019' '\201C' '\201D' '\2018' '\2019'; }
 
-q:before {
+q::before {
   content: open-quote; }
 
-q:after {
+q::after {
   content: close-quote; }
 
 blockquote {
@@ -602,6 +596,17 @@ th {
   padding-right: 1em;
   padding-left: 1em;
   border-radius: 1em; }
+
+.dcf--breadcrumbs ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.625em; }
+
+.dcf--breadcrumbs li {
+  margin-right: 0.5em; }
 
 .dcf--btn {
   cursor: pointer;
@@ -1154,18 +1159,8 @@ legend,
     transition: opacity 0.2s ease-out; }
 
 .dcf--skip-nav {
-  position: absolute;
   top: 0.5em;
   left: 0.5em; }
-  .dcf--skip-nav a {
-    color: #fff;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.96); }
-    @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
-      .dcf--skip-nav a {
-        background-color: rgba(0, 0, 0, 0.94);
-        -webkit-backdrop-filter: blur(6px);
-                backdrop-filter: blur(6px); } }
 
 .dcf--primary-nav ul {
   margin-bottom: 0;
@@ -1181,17 +1176,6 @@ legend,
 
 .dcf--primary-nav ul ul {
   font-size: 0.75em; }
-
-.dcf--breadcrumbs ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-  font-size: 0.625em; }
-
-.dcf--breadcrumbs li {
-  margin-right: 0.5em; }
 
 .dcf--pagination {
   display: -webkit-box;
@@ -1228,7 +1212,7 @@ legend,
   padding-top: 1em;
   padding-bottom: 1em; }
 
-.dcf--blockquote:before {
+.dcf--blockquote::before {
   content: open-quote;
   position: absolute;
   font-size: 10em;
@@ -1239,7 +1223,7 @@ legend,
   padding-top: 4em;
   font-size: 1.5rem; }
 
-.dcf--blockquote p:after {
+.dcf--blockquote p::after {
   content: close-quote; }
 
 .dcf--attribution {
@@ -1426,7 +1410,7 @@ table {
   height: 0;
   padding: 0;
   overflow: hidden; }
-  .dcf--aspect-ratio:before {
+  .dcf--aspect-ratio::before {
     content: '';
     display: block; }
 
@@ -1500,13 +1484,13 @@ table {
 .dcf--d-table {
   display: table !important; }
 
-.dcf--f-column {
+.dcf--f-col {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
           flex-direction: column !important; }
 
-.dcf--f-column-rev {
+.dcf--f-col-rev {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: reverse !important;
       -ms-flex-direction: column-reverse !important;

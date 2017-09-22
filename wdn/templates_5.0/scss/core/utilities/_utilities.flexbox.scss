@@ -7,8 +7,8 @@
 
 
 // !Flexbox Rows and Columns
-.dcf--f-column { @include f-column(!important); }
-.dcf--f-column-rev { @include f-column-rev(!important); }
+.dcf--f-col { @include f-col(!important); }
+.dcf--f-col-rev { @include f-col-rev(!important); }
 .dcf--f-row { @include f-row(!important); }
 .dcf--f-row-rev { @include f-row-rev(!important); }
 

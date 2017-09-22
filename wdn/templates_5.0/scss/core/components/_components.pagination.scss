@@ -56,21 +56,26 @@
 //   @include rounded-right;
 // }
 
+
 .dcf--page-item .dcf--btn:focus {
   z-index: 1;
 }
+
 
 .dcf--page-item:first-child > .dcf--btn {
   @include sharp-right;
 }
 
+
 .dcf--page-item:last-child > .dcf--btn {
   @include sharp-left;
 }
 
+
 .dcf--page-item:not(:first-child):not(:last-child) > .dcf--btn {
   @include sharp;
 }
+
 
 .dcf--page-item + .dcf--page-item .dcf--btn {
   margin-left: -1px;
