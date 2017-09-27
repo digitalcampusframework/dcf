@@ -21,6 +21,7 @@
   dl + & {
     @include mt5;
   }
+
 }
 
 
@@ -43,7 +44,7 @@
 // !Heading Groups
 .dcf--hgroup {
   @include d-flex;
-  @include f-column;
+  @include f-col;
 }
 
 

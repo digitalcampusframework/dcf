@@ -1,0 +1,23 @@
+////////////////////
+// !MIXINS: POSITION
+////////////////////
+
+
+// !Static
+@mixin static($imp:null) { position: static $imp; }
+
+
+// !Relative
+@mixin relative($imp:null) { position: relative $imp; }
+
+
+// !Absolute
+@mixin absolute($imp:null) { position: absolute $imp; }
+
+
+// !Fixed
+@mixin fixed($imp:null) { position: fixed $imp; }
+
+
+// !Sticky
+@mixin sticky($imp:null) { position: sticky $imp; }

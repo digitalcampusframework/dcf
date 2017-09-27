@@ -2,7 +2,18 @@
 // !UTILITIES: HEIGHT AND WIDTH
 ///////////////////////////////
 
-.dcf--h100 { @include h100(!important); }
-.dcf--w100 { @include w100(!important); }
+
+// !Height (0–100%)
 .dcf--h0 { @include h0(!important); }
+.dcf--h25 { @include h25(!important); }
+.dcf--h50 { @include h50(!important); }
+.dcf--h75 { @include h75(!important); }
+.dcf--h100 { @include h100(!important); }
+
+
+// !Width (0–100%)
 .dcf--w0 { @include w0(!important); }
+.dcf--w25 { @include w25(!important); }
+.dcf--w50 { @include w50(!important); }
+.dcf--w75 { @include w75(!important); }
+.dcf--w100 { @include w100(!important); }

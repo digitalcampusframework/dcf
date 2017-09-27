@@ -1,0 +1,11 @@
+//////////////////////
+// !MIXINS: VISIBILITY
+//////////////////////
+
+
+// !Invisible
+@mixin invisible($imp:null) { visibility: hidden $imp; }
+
+
+// !Visible
+@mixin visible($imp:null) { visibility: visible $imp; }

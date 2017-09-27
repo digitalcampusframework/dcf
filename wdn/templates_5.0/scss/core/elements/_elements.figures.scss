@@ -3,13 +3,16 @@
 /////////////////////
 
 
+// !Figure
 figure {
   @include m0;
 }
 
+
+// !Figcaption
 figcaption {
-  @include mt2;
+//   @include mt2;
   @include sm2;
 //   line-height: 1.5;
-  color: $light-text;
+  color: $color-light-text;
 }

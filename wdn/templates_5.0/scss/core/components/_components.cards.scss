@@ -7,13 +7,18 @@
 .dcf--card {
   @include sm1;
 //   border: 1px solid $border-color;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
 }
 
+
+// !Card Image
 .dcf--card img {
-  width: 100%;
+  @include d-block;
+  @include w100;
 }
 
+
+// !Card Block
 .dcf--card-block {
   @include pt5;
   @include pr5;
@@ -27,6 +32,7 @@
   @include mb0;
 }
 
+
 // !Deck of Cards
 .dcf--card-deck {
   @extend .dcf--list-unstyled;
@@ -36,4 +42,5 @@
     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
     grid-gap: 1em;
   }
+
 }

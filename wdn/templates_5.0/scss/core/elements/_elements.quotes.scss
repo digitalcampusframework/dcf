@@ -3,19 +3,25 @@
 ////////////////////
 
 
+// !Quotation Marks
 body:lang(en) {
   quotes: '“' '”' '‘' '’' '“' '”' '‘' '’';
 }
 
-q:before { content: open-quote; }
-q:after { content: close-quote; }
 
+// !Inline Quotes
+q::before { content: open-quote; }
+q::after { content: close-quote; }
+
+
+// !Blockquote
 blockquote {
   max-width: 36rem;
   @include mt0;
   @include mr0;
   @include mb4;
 }
+
 
 // cite {
 //   font-style: normal;

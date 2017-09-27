@@ -2,8 +2,22 @@
 // !UTILITIES: POSITION
 ///////////////////////
 
+
+// !Static
 .dcf--static { @include static(!important); }
+
+
+// !Relative
 .dcf--relative { @include relative(!important); }
+
+
+// !Absolute
 .dcf--absolute { @include absolute(!important); }
+
+
+// !Fixed
 .dcf--fixed { @include fixed(!important); }
+
+
+// !Sticky
 .dcf--sticky { @include sticky(!important); }

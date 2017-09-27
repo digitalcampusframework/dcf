@@ -4,8 +4,8 @@
 
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,8 +17,8 @@
 body {
   @include m0;
 //   overflow-x: hidden;
-  color: $body-color;
-  background-color: $body-bg-color;
+  color: $color-body;
+  background-color: $color-body-bg;
 }
 
 // main {
@@ -31,9 +31,11 @@ body {
 // }
 
 main {
+
   &:focus {
     outline: none; // !temp
   }
+
 }
 
 // $min_page_offset: 5;

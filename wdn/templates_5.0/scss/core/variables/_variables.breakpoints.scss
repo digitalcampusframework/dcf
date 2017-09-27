@@ -1,0 +1,25 @@
+//////////////////////////
+// !VARIABLES: BREAKPOINTS
+//////////////////////////
+
+
+// !Ems
+$mq-ems    : true;
+$mq-em-base: 16px !default;
+
+
+// !Breakpoints
+$mq-breakpoints: (
+  'sm': 512px,  // 32em
+  'md': 768px,  // 48em
+  'lg': 1024px, // 64em
+  'xl': 1536px, // 96em
+) !default;
+
+$mq-media: "only screen" !default;
+
+
+// !Linear Inetrpolation
+// Values in ems
+$min_lerp_width: 32;
+$max_lerp_width: 128;

@@ -2,15 +2,18 @@
 // !UTILITIES: GRID
 ///////////////////
 
-// !Box Alignment for Grid
 
-// !align-items
+// Grid display rules (.dcf--d-grid and .dcf--d-inline-grid) located in _utilities.display
+
+
+// !Align Items
 .dcf--g-ai-start { @include g-ai-start(!important); }
 .dcf--g-ai-end { @include g-ai-end(!important); }
 .dcf--g-ai-center { @include g-ai-center(!important); }
 .dcf--g-ai-stretch { @include g-ai-stretch(!important); }
 
-// !align-content
+
+// !Align Content
 .dcf--g-ac-start { @include g-ac-start(!important); }
 .dcf--g-ac-end { @include g-ac-end(!important); }
 .dcf--g-ac-center { @include g-ac-center(!important); }
@@ -19,19 +22,22 @@
 .dcf--g-ac-between { @include g-ac-between(!important); }
 .dcf--g-ac-evenly { @include g-ac-evenly(!important); }
 
-// !align-self
+
+// !Align Self
 .dcf--g-as-start { @include g-as-start(!important); }
 .dcf--g-as-center { @include g-as-center(!important); }
 .dcf--g-as-end { @include g-as-end(!important); }
 .dcf--g-as-stretch { @include g-as-stretch(!important); }
 
-// !justify-items
+
+// !Justify Items
 .dcf--g-ji-start { @include g-ji-start(!important); }
 .dcf--g-ji-end { @include g-ji-end(!important); }
 .dcf--g-ji-center { @include g-ji-center(!important); }
 .dcf--g-ji-stretch { @include g-ji-stretch(!important); }
 
-// !justify-content
+
+// !Justify Content
 .dcf--g-jc-start { @include g-jc-start(!important); }
 .dcf--g-jc-end { @include g-jc-end(!important); }
 .dcf--g-jc-center { @include g-jc-center(!important); }
@@ -40,7 +46,8 @@
 .dcf--g-jc-between { @include g-jc-between(!important); }
 .dcf--g-jc-evenly { @include g-jc-evenly(!important); }
 
-// !justify-self
+
+// !Justify Self
 .dcf--g-js-start { @include g-js-start(!important); }
 .dcf--g-js-center { @include g-js-center(!important); }
 .dcf--g-js-end { @include g-js-end(!important); }

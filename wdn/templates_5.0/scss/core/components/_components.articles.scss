@@ -3,17 +3,15 @@
 ////////////////////////
 
 
-.dcf--article {
-
-}
-
-.dcf--article-1 {
+.dcf--article-header {
   grid-area: header;
 }
+
 
 .dcf--article-body {
   grid-area: body;
 }
+
 
 .dcf--article-meta {
   grid-area: meta;
@@ -24,12 +22,14 @@
 //     "photo text";
 }
 
+
 .dcf--article p:not(.dcf--lead),
 .dcf--article dl,
 .dcf--article ol,
 .dcf--article ul {
   @include mb0;
 }
+
 
 .dcf--article p,
 .dcf--article dl,
@@ -44,7 +44,9 @@
     @include mt1;
     text-indent: 1.5em;
   }
+
 }
+
 
 .dcf--author {
   @include d-flex;
@@ -60,38 +62,48 @@
 
 .dcf--author-img img {
   width: 3em;
-//   @include mr4;
 }
 
 .dcf--byline {
   order: 2;
 }
 
+
 .dcf--pubdate {
   @include d-block;
 }
+
 
 .dcf--article-share {
   top: 1em;
 }
 
-.dcf--article-tags {
-  grid-area: contact;
-}
 
 .dcf--article-tags {
   grid-area: tags;
 }
 
+
 .dcf--article-related {
   grid-area: related;
 }
+
 
 .dcf--article-downloads {
   grid-area: downloads;
 }
 
-@include bp(md) {
+
+@include mq(md, max, width) {
+
+  .dcf--author-img img {
+    @include mr4;
+  }
+
+}
+
+
+@include mq(md) {
 
   .dcf--article {
     @include d-grid;
@@ -104,7 +116,7 @@
   }
 
   .dcf--author {
-    @include f-column;
+    @include f-col;
     @include f-wrap;
     @include mt0;
   }
@@ -112,4 +124,5 @@
   .dcf--author-img img {
     width: 5em;
   }
+
 }

@@ -32,9 +32,10 @@
     @include h100;
     object-fit: cover;
   }
+
 }
 
-@include bp(md) {
+@include mq(md) {
 
   .dcf--hero {
     @include relative;
@@ -56,4 +57,5 @@
     overflow: hidden;
     z-index: 1;
   }
+
 }

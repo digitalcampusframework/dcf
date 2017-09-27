@@ -10,9 +10,11 @@ input[type="submit"] {
   cursor: pointer;
   @include d-inline-block;
 //   @include middle;
-  padding-top: .8em;
+//   padding-top: .6em;
+  @include pt2;
   @include pr4;
-  padding-bottom: .7em;
+//   padding-bottom: .4em;
+  @include pb2;
   @include pl4;
   font-size: 1rem;
 //   font-family: inherit;

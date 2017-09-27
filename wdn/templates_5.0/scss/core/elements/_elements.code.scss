@@ -10,6 +10,7 @@ pre {
   border-radius: $roundrect;
 }
 
+
 code,
 kbd {
   padding-top: .125rem;
@@ -19,20 +20,24 @@ kbd {
   @include sm1;
 }
 
+
 code,
 pre {
   word-break: normal;
   hyphens: none;
 }
 
+
 code {
-  color: lighten($body-color, 10%);
+  color: lighten($color-body, 10%);
   background-color: rgba(0,0,0,0.05);
 }
+
 
 pre {
   tab-size: 2;
 }
+
 
 pre code {
   @include d-block;
@@ -42,15 +47,12 @@ pre code {
   background-color: transparent;
 }
 
-.dcf--pre {
-  @include p4;
-  background-color: rgba(0,0,0,0.05);
-}
 
 kbd {
   color: #0f0;
   background-color: #000;
 }
+
 
 kbd kbd {
   @include p0;

@@ -1,20 +1,51 @@
+////////
 // !CORE
+////////
 
-// !Import settings files
+
+// !Theme (Configuration)
 @import 'theme/theme.colors';
 @import 'theme/theme.mixins';
 @import 'theme/theme.fonts';
-@import 'settings/settings.colors';
-@import 'settings/settings.variables';
 
-// !Import tools files
-@import 'tools/tools.mixins';
-@import 'tools/tools.functions';
+
+// !Variables
+@import 'variables/variables.borders';
+@import 'variables/variables.breakpoints';
+@import 'variables/variables.colors';
+@import 'variables/variables.sizing';
+@import 'variables/variables.transitions';
+@import 'variables/variables.z-index';
+
+
+// !Mixins
+@import 'mixins/mixins.aspect-ratios';
+@import 'mixins/mixins.borders';
+@import 'mixins/mixins.media-queries';
+@import 'mixins/mixins.disabled';
+@import 'mixins/mixins.display';
+@import 'mixins/mixins.flexbox';
+@import 'mixins/mixins.floats';
+@import 'mixins/mixins.grid';
+@import 'mixins/mixins.height-width';
+@import 'mixins/mixins.margins';
+@import 'mixins/mixins.overlays';
+@import 'mixins/mixins.padding';
+@import 'mixins/mixins.position';
+@import 'mixins/mixins.typography';
+@import 'mixins/mixins.visibility';
+
+
+// !Import functions files
+// @import 'functions/functions.functions';
+@import 'functions/functions.media-queries';
+
 
 // !Import generic files
 @import 'base/base.global';
 
-// !Import elements files
+
+// !Elements
 @import 'elements/elements.abbreviations';
 @import 'elements/elements.addresses';
 @import 'elements/elements.anchors';
@@ -33,11 +64,13 @@
 
 @import 'base/base.typography';
 
-// !Import components files
+
+// !Components
 @import 'components/components.abbreviations';
 @import 'components/components.alerts';
 @import 'components/components.articles';
 @import 'components/components.badges';
+@import 'components/components.breadcrumbs';
 @import 'components/components.buttons';
 @import 'components/components.button-groups';
 @import 'components/components.cards';
@@ -61,11 +94,13 @@
 @import 'components/components.small';
 @import 'components/components.tables';
 
-// !Import theme files
+
+// !Theme (Custom)
 @import 'theme/theme.typography';
 @import 'theme/theme.layout';
 
-// !Import utilities files
+
+// !Utilities
 @import 'utilities/utilities.aspect-ratios';
 @import 'utilities/utilities.borders';
 @import 'utilities/utilities.disabled';
@@ -74,7 +109,7 @@
 @import 'utilities/utilities.floats';
 @import 'utilities/utilities.grid';
 @import 'utilities/utilities.height-width';
-@import 'utilities/utilities.margin';
+@import 'utilities/utilities.margins';
 @import 'utilities/utilities.overlays';
 @import 'utilities/utilities.padding';
 @import 'utilities/utilities.position';
