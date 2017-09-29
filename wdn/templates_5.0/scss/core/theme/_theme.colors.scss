@@ -35,11 +35,19 @@ $color-heading: mix($cream, #000, 11%);
 $color-light-text: mix($cream, #000, 33%);
 
 
+// !Links
 $color-link: $scarlet;
+$color-link-visited: scale-color($color-link, $lightness: -10%, $saturation: -100%);
+$color-link-hover: scale-color($color-link, $lightness: -20%, $saturation: 100%);
+$color-link-active: scale-color($color-link, $lightness: -30%, $saturation: 100%);
+
+
+// !Buttons
 $color-button: #686868;
 
 
-$color-border: #ccc;
+// !Borders
+$color-border: mix($color-body-bg, $color-body, 75%);
 $color-border-hover: darken($color-border,10%);
 
 
