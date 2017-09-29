@@ -11,24 +11,24 @@ a {
 // !Link
 a:link {
   color: $color-link;
-  transition: color 500ms ease-out;
+  transition: color $hover-off;
 }
 
 
 // !Visited
 a:visited {
-  color: scale-color($color-link, $lightness: -10%, $saturation: -100%);
+  color: $color-link-visited;
 }
 
 
 // !Hover
 a:hover {
-  color: scale-color($color-link, $lightness: -20%, $saturation: 100%);
-  transition: color 250ms ease-out;
+  color: $color-link-hover;
+  transition: color $hover-on;
 }
 
 
 // !Active
 a:active {
-  color: scale-color($color-link, $lightness: -30%, $saturation: 100%);
+  color: $color-link-active;
 }

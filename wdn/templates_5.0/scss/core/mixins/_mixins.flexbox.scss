@@ -49,3 +49,15 @@
 @mixin f-jc-around($imp:null) { justify-content: space-around $imp; }
 @mixin f-jc-between($imp:null) { justify-content: space-between $imp; }
 @mixin f-jc-evenly($imp:null) { justify-content: space-evenly $imp; }
+
+
+// !Order
+@mixin f-o1($imp:null) { order: 1 $imp; }
+@mixin f-o2($imp:null) { order: 2 $imp; }
+@mixin f-o3($imp:null) { order: 3 $imp; }
+@mixin f-o4($imp:null) { order: 4 $imp; }
+@mixin f-o5($imp:null) { order: 5 $imp; }
+@mixin f-o6($imp:null) { order: 6 $imp; }
+@mixin f-o7($imp:null) { order: 7 $imp; }
+@mixin f-o8($imp:null) { order: 8 $imp; }
+@mixin f-o9($imp:null) { order: 9 $imp; }

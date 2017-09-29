@@ -174,16 +174,16 @@ a {
 
 a:link {
   color: #d00000;
-  -webkit-transition: color 500ms ease-out;
-  transition: color 500ms ease-out; }
+  -webkit-transition: color 400ms ease-out;
+  transition: color 400ms ease-out; }
 
 a:visited {
   color: #5e5e5e; }
 
 a:hover {
   color: #a60000;
-  -webkit-transition: color 250ms ease-out;
-  transition: color 250ms ease-out; }
+  -webkit-transition: color 200ms ease-out;
+  transition: color 200ms ease-out; }
 
 a:active {
   color: #920000; }
@@ -460,9 +460,6 @@ th {
   :root {
     font-size: 1.25em; } }
 
-.dcf--initialism {
-  font-size: 0.875em; }
-
 .dcf--alert {
   display: grid;
   grid-template-areas: "header footer" "msg footer"; }
@@ -526,18 +523,8 @@ th {
       flex-wrap: nowrap;
   margin-top: 1em; }
 
-.dcf--author-img {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1; }
-
 .dcf--author-img img {
   width: 3em; }
-
-.dcf--byline {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2; }
 
 .dcf--pubdate {
   display: block; }
@@ -731,6 +718,65 @@ input[type="submit"]:disabled,
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.05); }
 
+.dcf--calendar-caption {
+  caption-side: top;
+  font-size: 1em;
+  background-color: #383837; }
+
+.dcf--calendar-cell {
+  width: 14.28%; }
+
+.dcf--calendar-weekday {
+  color: #545353;
+  background-color: #efefef; }
+
+a.dcf--calendar-date {
+  outline: 2px solid transparent;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out; }
+
+a.dcf--calendar-date:hover {
+  outline: 2px solid #a60000;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
+
+a.dcf--calendar-date:active {
+  outline: 2px solid #920000; }
+
+a.dcf--calendar-date:focus {
+  outline: 2px solid #a60000; }
+
+a.dcf--calendar-date-today {
+  background-color: #383837; }
+
+a.dcf--calendar-date-active {
+  background-color: #d00000;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out; }
+
+a.dcf--calendar-date-active:hover {
+  background-color: #a60000;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
+
+a.dcf--calendar-date-active:focus {
+  background-color: #a60000;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
+
+.dcf--calendar-not-current-month {
+  background-color: #f7f7f7; }
+
+.dcf--event-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 1px;
+          flex: 1 0 1px; }
+
+.dcf--event-date-time {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 4em;
+          flex: 0 1 4em; }
+
 .dcf--footer {
   font-size: 0.75em; }
 
@@ -760,7 +806,7 @@ input[type="submit"]:disabled,
   padding-right: 0.75em;
   padding-bottom: 0.5em;
   padding-left: 0.75em;
-  border: 1px solid #ccc;
+  border: 1px solid #cdcdcd;
   border-radius: 2px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -769,7 +815,7 @@ input[type="submit"]:disabled,
   transition: border-color 400ms ease-out; }
 
 .dcf--input-textual:hover {
-  border-color: #b3b3b3;
+  border-color: #b4b4b4;
   -webkit-transition: border-color 200ms ease-out;
   transition: border-color 200ms ease-out; }
 
@@ -863,7 +909,7 @@ input[type="submit"]:disabled,
 /* These are the "theme" styles for our button applied via separate button class, style as you like */
 /* Set the background fallback to solid #fff so Firefox renders the <option> list readably. */
 .dcf--input-select {
-  border: 1px solid #ccc;
+  border: 1px solid #cdcdcd;
   border-radius: 2px;
   -webkit-transition: border-color 400ms ease-out;
   transition: border-color 400ms ease-out; }
@@ -876,7 +922,7 @@ input[type="submit"]:disabled,
 
 /* Hover style */
 .dcf--input-select:hover {
-  border-color: #b3b3b3;
+  border-color: #b4b4b4;
   -webkit-transition: border-color 200ms ease-out;
   transition: border-color 200ms ease-out; }
 
@@ -1055,6 +1101,10 @@ legend,
     overflow: hidden;
     z-index: 1; } }
 
+.dcf--icon {
+  height: 1em;
+  width: 1em; }
+
 .dcf--input-group {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1093,7 +1143,7 @@ legend,
   padding-left: 0.75em;
   color: #545353;
   border-style: solid;
-  border-color: #ccc;
+  border-color: #cdcdcd;
   background-color: #eee; }
 
 .dcf--input-group-addon:not(:last-child) {
@@ -1250,7 +1300,7 @@ legend,
 
 .dcf--table th,
 .dcf--table td {
-  border-top: 1px solid #ccc; }
+  border-top: 1px solid #cdcdcd; }
 
 .dcf--table thead th,
 .dcf--table thead td {
@@ -1283,7 +1333,7 @@ legend,
 .dcf--table-bordered,
 .dcf--table-bordered th,
 .dcf--table-bordered td {
-  border: 1px solid #ccc; }
+  border: 1px solid #cdcdcd; }
 
 .dcf--table-hover tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.1); }
@@ -1395,7 +1445,7 @@ table {
 .rd-color-box {
   height: 8em;
   width: 8em;
-  border: 1px solid #ccc; }
+  border: 1px solid #cdcdcd; }
   .rd-color-box.primary {
     background-color: #d00000; }
   .rd-color-box.accent {
@@ -1403,6 +1453,9 @@ table {
 
 .unl--input-required {
   color: #d00000; }
+
+.dcf--no-text-decor {
+  text-decoration: none !important; }
 
 .dcf--aspect-ratio {
   position: relative;
@@ -1422,6 +1475,35 @@ table {
 
 .dcf--1x1:before {
   padding-top: 100%; }
+
+.dcf--b1 {
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #cdcdcd; }
+
+.dcf--bt {
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
+  border-color: #cdcdcd; }
+
+.dcf--br {
+  border-right-style: solid !important;
+  border-right-width: 1px !important;
+  border-color: #cdcdcd; }
+
+.dcf--bb {
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px !important;
+  border-color: #cdcdcd; }
+
+.dcf--bl {
+  border-left-style: solid !important;
+  border-left-width: 1px !important;
+  border-color: #cdcdcd; }
+
+.dcf--b0 {
+  border: 0 !important;
+  border-color: #cdcdcd; }
 
 .dcf--circle {
   border-radius: 50% !important; }
@@ -1444,6 +1526,21 @@ table {
 .dcf--rounded-left {
   border-bottom-left-radius: 2px !important;
   border-top-left-radius: 2px !important; }
+
+.dcf--inverse {
+  color: #fff !important; }
+
+a.dcf-inverse:link {
+  color: #fff !important; }
+
+a.dcf-inverse:visited {
+  color: #fff !important; }
+
+a.dcf-inverse:hover {
+  color: #fff !important; }
+
+a.dcf-inverse:active {
+  color: #fff !important; }
 
 .dcf--disabled {
   cursor: not-allowed !important;
@@ -1609,6 +1706,51 @@ table {
   -webkit-box-pack: space-evenly !important;
       -ms-flex-pack: space-evenly !important;
           justify-content: space-evenly !important; }
+
+.dcf--f-o1 {
+  -webkit-box-ordinal-group: 2 !important;
+      -ms-flex-order: 1 !important;
+          order: 1 !important; }
+
+.dcf--f-o2 {
+  -webkit-box-ordinal-group: 3 !important;
+      -ms-flex-order: 2 !important;
+          order: 2 !important; }
+
+.dcf--f-o3 {
+  -webkit-box-ordinal-group: 4 !important;
+      -ms-flex-order: 3 !important;
+          order: 3 !important; }
+
+.dcf--f-o4 {
+  -webkit-box-ordinal-group: 5 !important;
+      -ms-flex-order: 4 !important;
+          order: 4 !important; }
+
+.dcf--f-o5 {
+  -webkit-box-ordinal-group: 6 !important;
+      -ms-flex-order: 5 !important;
+          order: 5 !important; }
+
+.dcf--f-o6 {
+  -webkit-box-ordinal-group: 7 !important;
+      -ms-flex-order: 6 !important;
+          order: 6 !important; }
+
+.dcf--f-o7 {
+  -webkit-box-ordinal-group: 8 !important;
+      -ms-flex-order: 7 !important;
+          order: 7 !important; }
+
+.dcf--f-o8 {
+  -webkit-box-ordinal-group: 9 !important;
+      -ms-flex-order: 8 !important;
+          order: 8 !important; }
+
+.dcf--f-o9 {
+  -webkit-box-ordinal-group: 10 !important;
+      -ms-flex-order: 9 !important;
+          order: 9 !important; }
 
 .dcf--float-right {
   float: right !important; }
