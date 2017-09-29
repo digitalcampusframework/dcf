@@ -1,0 +1,29 @@
+//////////////////
+// !MIXINS: COLORS
+//////////////////
+
+
+// !Inverse (light text for dark backgrounds)
+@mixin inverse($imp:null) {
+  color: $color-body-bg $imp;
+}
+
+// !Inverse Link
+@mixin inverse-link($imp:null) {
+  color: $color-body-bg $imp;
+}
+
+// !Inverse Visited
+@mixin inverse-visited($imp:null) {
+  color: $color-body-bg $imp;
+}
+
+// !Inverse Hover
+@mixin inverse-hover($imp:null) {
+  color: $color-body-bg $imp;
+}
+
+// !Inverse Active
+@mixin inverse-active($imp:null) {
+  color: $color-body-bg $imp;
+}
