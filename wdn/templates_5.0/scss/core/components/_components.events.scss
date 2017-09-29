@@ -1,0 +1,89 @@
+//////////////////////
+// !COMPONENTS: EVENTS
+//////////////////////
+
+
+// !Caption
+.dcf--calendar-caption {
+  caption-side: top;
+  font-size: 1em;
+  background-color: $color-body;
+}
+
+
+// !Calendar Cells
+.dcf--calendar-cell {
+  width: 14.28%;
+}
+
+
+// !Calendar Weekdays
+.dcf--calendar-weekday {
+  color: $color-light-text;
+  background-color: mix($color-body-bg, $color-body, 92%);
+}
+
+
+// !Calendar Date
+a.dcf--calendar-date {
+  outline: 2px solid transparent;
+  transition: all $hover-off;
+}
+
+
+a.dcf--calendar-date:hover {
+  outline: 2px solid $color-link-hover;
+  transition: all $hover-on;
+}
+
+
+a.dcf--calendar-date:active {
+  outline: 2px solid $color-link-active;
+}
+
+
+a.dcf--calendar-date:focus {
+  outline: 2px solid $color-link-hover;
+}
+
+
+// !Calendar Date, Today
+a.dcf--calendar-date-today {
+  background-color: $color-body;
+}
+
+
+// !Calendar Date, Active
+a.dcf--calendar-date-active {
+  background-color: $color-link;
+  transition: all $hover-off;
+}
+
+
+a.dcf--calendar-date-active:hover {
+  background-color: $color-link-hover;
+  transition: all $hover-on;
+}
+
+
+a.dcf--calendar-date-active:focus {
+  background-color: $color-link-hover;
+  transition: all $hover-on;
+}
+
+
+// !Calendar Date, Not Current Month
+.dcf--calendar-not-current-month {
+  background-color: mix($color-body-bg, $color-body, 96%);
+}
+
+
+// !Event Listing
+.dcf--event-info {
+  flex: 1 0 1px;
+}
+
+
+.dcf--event-date-time {
+  flex: 0 1 4em;
+}
