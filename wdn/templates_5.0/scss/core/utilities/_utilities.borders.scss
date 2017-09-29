@@ -3,6 +3,48 @@
 //////////////////////
 
 
+// All Sides
+.dcf--b1 {
+  @include b1(!important);
+  border-color: $color-border;
+}
+
+
+// !Top
+.dcf--bt {
+  @include bt(!important);
+  border-color: $color-border;
+}
+
+
+// !Right
+.dcf--br {
+  @include br(!important);
+  border-color: $color-border;
+}
+
+
+// !Bottom
+.dcf--bb {
+  @include bb(!important);
+  border-color: $color-border;
+}
+
+
+// !Left
+.dcf--bl {
+  @include bl(!important);
+  border-color: $color-border;
+}
+
+
+// !No Border
+.dcf--b0 {
+  @include b0(!important);
+  border-color: $color-border;
+}
+
+
 // !BORDER RADIUS
 
 
