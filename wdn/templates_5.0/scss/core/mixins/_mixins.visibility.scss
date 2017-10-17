@@ -9,3 +9,25 @@
 
 // !Visible
 @mixin visible($imp:null) { visibility: visible $imp; }
+
+
+// !Screen Reader Only
+@mixin sr-only {
+  position: absolute;
+  height: 1px; // allow VoiceOver to see the text
+  width: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  word-wrap: normal; // ???
+}
+
+
+// !Screen Reader Only, Show On Focus
+@mixin sr-only-focusable {
+  position: static;
+  height: auto;
+  width: auto;
+  clip: auto;
+  overflow: visible;
+}

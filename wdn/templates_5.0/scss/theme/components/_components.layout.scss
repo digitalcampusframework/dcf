@@ -1,0 +1,50 @@
+/////////////////
+// !THEME: LAYOUT
+/////////////////
+
+
+.rd-color-box {
+  height: 8em;
+  width: 8em;
+  border: 1px solid $color-border;
+
+  &.primary {
+    background-color: $scarlet;
+  }
+
+  &.accent {
+    background-color: $cream;
+  }
+
+}
+
+.unl--header {
+  border-top: 3px solid $scarlet;
+}
+
+.unl--header a:visited {
+  color: $color-link;
+}
+
+.unl--header a:hover {
+  color: $color-link-hover;
+}
+
+.unl--institution-title {
+  letter-spacing: .1em;
+}
+
+.unl--primary-nav ul {
+  @include sans-serif-font;
+}
+
+.unl--primary-nav > ul > li > a {
+  @include bold;
+  @include uppercase;
+  letter-spacing: .1em;
+}
+
+.unl--input-required {
+  color: $scarlet;
+}
+

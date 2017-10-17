@@ -23,7 +23,7 @@
 .dcf--lh3 { @include lh3(!important); }
 
 
-// !Vertical Alignment
+// !Vertical Text Alignment
 .dcf--baseline { @include baseline(!important); }
 .dcf--top { @include top(!important); }
 .dcf--middle { @include middle(!important); }
@@ -32,7 +32,7 @@
 .dcf--text-bottom { @include text-bottom(!important); }
 
 
-// !Text Alignment
+// !Horizontal Text Alignment
 .dcf--center { @include center(!important); }
 .dcf--left { @include left(!important); }
 .dcf--right { @include right(!important); }

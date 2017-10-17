@@ -23,7 +23,7 @@
 @mixin lh3($imp:null) { line-height: 1 $imp; }
 
 
-// !Vertical Alignment
+// !Vertical Text Alignment
 @mixin baseline($imp:null) { vertical-align: baseline $imp; }
 @mixin top($imp:null) { vertical-align: top $imp; }
 @mixin middle($imp:null) { vertical-align: middle $imp; }
@@ -32,7 +32,7 @@
 @mixin text-bottom($imp:null) { vertical-align: text-bottom $imp; }
 
 
-// !Text Alignment
+// !Horizontal Text Alignment
 @mixin center($imp:null) { text-align: center $imp; }
 @mixin left($imp:null) { text-align: left $imp; }
 @mixin right($imp:null) { text-align: right $imp; }

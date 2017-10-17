@@ -24,9 +24,10 @@
 .dcf--primary-nav > ul {
   @include d-flex;
   @include f-jc-around;
+  @include sm2;
 }
 
 
 .dcf--primary-nav ul ul {
-  @include sm2;
+  @include sm1;
 }
