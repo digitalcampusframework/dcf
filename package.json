@@ -54,7 +54,7 @@
     "dev": "webpack -d --watch",
     "prod": "webpack -p"
   },
-  "browserlist": [
+  "browserslist": [
     "last 1 Chrome version",
     "last 1 Explorer version",
     "last 1 Firefox version",
