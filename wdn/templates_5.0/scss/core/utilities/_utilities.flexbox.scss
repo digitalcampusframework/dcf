@@ -13,6 +13,12 @@
 .dcf--f-row-rev { @include f-row-rev(!important); }
 
 
+// !Flexbox Wrap
+.dcf--f-wrap { @include f-wrap(!important); }
+.dcf--f-wrap-rev { @include f-wrap-rev(!important); }
+.dcf--f-nowrap { @include f-nowrap(!important); }
+
+
 // !Align Items
 .dcf--f-ai-start { @include f-ai-start(!important); }
 .dcf--f-ai-end { @include f-ai-end(!important); }

@@ -20,6 +20,7 @@
 // !Mixins
 @import 'core/mixins/mixins.anchors';
 @import 'core/mixins/mixins.aspect-ratios';
+@import 'core/mixins/mixins.backgrounds';
 @import 'core/mixins/mixins.borders';
 @import 'core/mixins/mixins.colors';
 @import 'core/mixins/mixins.media-queries';
@@ -68,6 +69,7 @@
 
 // !Objects
 @import 'core/objects/objects.wrapper';
+@import 'core/objects/objects.full-width';
 
 
 // !Components
@@ -93,7 +95,7 @@
 @import 'core/components/components.lists';
 @import 'core/components/components.media-objects';
 @import 'core/components/components.modals';
-@import 'core/components/components.nav';
+@import 'core/components/components.navigation';
 @import 'core/components/components.pagination';
 @import 'core/components/components.paragraphs';
 @import 'core/components/components.quotes';
@@ -111,6 +113,7 @@
 // !Utilities
 @import 'core/utilities/utilities.anchors';
 @import 'core/utilities/utilities.aspect-ratios';
+@import 'core/utilities/utilities.backgrounds';
 @import 'core/utilities/utilities.borders';
 @import 'core/utilities/utilities.colors';
 @import 'core/utilities/utilities.disabled';

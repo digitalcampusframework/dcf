@@ -14,7 +14,7 @@
   @include sm4;
   @include lh3;
   color: #fff;
-  @include center;
+  @include text-center;
   @include nowrap;
   @include text-top;
   border-radius: $roundrect;

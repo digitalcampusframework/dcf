@@ -1,0 +1,13 @@
+///////////////////////
+// !OBJECTS: FULL-WIDTH
+///////////////////////
+
+
+.dcf--full-width {
+  @include relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

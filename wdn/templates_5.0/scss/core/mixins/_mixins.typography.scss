@@ -4,6 +4,7 @@
 
 
 // !Larger Size
+@mixin lg5($imp:null) { font-size: 2em $imp; }
 @mixin lg4($imp:null) { font-size: 1.5em $imp; }
 @mixin lg3($imp:null) { font-size: 1.375em $imp; }
 @mixin lg2($imp:null) { font-size: 1.25em $imp; }
@@ -33,9 +34,9 @@
 
 
 // !Horizontal Text Alignment
-@mixin center($imp:null) { text-align: center $imp; }
-@mixin left($imp:null) { text-align: left $imp; }
-@mixin right($imp:null) { text-align: right $imp; }
+@mixin text-center($imp:null) { text-align: center $imp; }
+@mixin text-left($imp:null) { text-align: left $imp; }
+@mixin text-right($imp:null) { text-align: right $imp; }
 
 
 // !Text Transform
@@ -49,6 +50,11 @@
 @mixin bold($imp:null) { font-weight: bold $imp; }
 @mixin roman($imp:null) { font-style: normal $imp; }
 @mixin italic($imp:null) { font-style: italic $imp; }
+
+
+// !Letter Spacing
+@mixin ls1($imp:null) { letter-spacing: .1em $imp; }
+@mixin ls2($imp:null) { letter-spacing: .01em $imp; }
 
 
 // !Text Wrapping

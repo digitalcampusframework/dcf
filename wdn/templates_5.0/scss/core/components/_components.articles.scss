@@ -98,14 +98,17 @@
 
 @include mq(md) {
 
-  .dcf--article {
-    @include d-grid;
-    grid-gap: 2em;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-template-areas:
-      "meta header header header"
-      "meta body body body"
-      "contact tags related downloads";
+  @supports (display: grid) {
+
+    .dcf--article {
+      @include d-grid;
+      grid-gap: 2em;
+      grid-template-columns: 1fr 2fr 2fr 1fr;
+      grid-template-areas:
+        "meta header header header"
+        "meta body body body"
+        "contact tags related downloads";
+    }
   }
 
   .dcf--author {

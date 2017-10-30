@@ -1,0 +1,51 @@
+////////////////////
+// !MIXINS: OVERFLOW
+////////////////////
+
+
+// !Visible
+@mixin overflow-visible($imp:null) { overflow: visible $imp; }
+
+
+// !Hidden
+@mixin overflow-hidden($imp:null) { overflow: hidden $imp; }
+
+
+// !Scroll
+@mixin overflow-scroll($imp:null) { overflow: scroll $imp; }
+
+
+// !Auto
+@mixin overflow-auto($imp:null) { overflow: auto $imp; }
+
+
+// !Overflow-X: Visible
+@mixin overflow-x-visible($imp:null) { overflow-x: visible $imp; }
+
+
+// !Overflow-X: Hidden
+@mixin overflow-x-hidden($imp:null) { overflow-x: hidden $imp; }
+
+
+// !Overflow-X: Scroll
+@mixin overflow-x-scroll($imp:null) { overflow-x: scroll $imp; }
+
+
+// !Overflow-X: Auto
+@mixin overflow-x-auto($imp:null) { overflow-x: auto $imp; }
+
+
+// !Overflow-Y: Visible
+@mixin overflow-y-visible($imp:null) { overflow-y: visible $imp; }
+
+
+// !Overflow-Y: Hidden
+@mixin overflow-y-hidden($imp:null) { overflow-y: hidden $imp; }
+
+
+// !Overflow-Y: Scroll
+@mixin overflow-y-scroll($imp:null) { overflow-y: scroll $imp; }
+
+
+// !Overflow-Y: Auto
+@mixin overflow-y-auto($imp:null) { overflow-y: auto $imp; }
