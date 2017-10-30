@@ -77,7 +77,7 @@ table {
 // }
 
 
-.dcf--footer {
+.dcf--footer-local {
   @include sans-serif-font;
 }
 
@@ -85,6 +85,17 @@ table {
 .dcf--article-meta {
   @include sans-serif-font;
 }
+
+.unl--nav-primary ul {
+  @include sans-serif-font;
+}
+
+.unl--nav-primary > ul > li > a {
+  @include bold;
+  @include uppercase;
+  @include ls1;
+}
+
 
 
 .unl .dcf--drop-cap:first-letter {

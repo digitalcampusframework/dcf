@@ -11,6 +11,9 @@
 @mixin f-col-rev($imp:null) { flex-direction: column-reverse $imp; }
 @mixin f-row($imp:null) { flex-direction: row $imp; }
 @mixin f-row-rev($imp:null) { flex-direction: row-reverse $imp; }
+
+
+// !Flexbox Wrap
 @mixin f-wrap($imp:null) { flex-wrap: wrap $imp; }
 @mixin f-wrap-rev($imp:null) { flex-wrap: wrap-reverse $imp; }
 @mixin f-nowrap($imp:null) { flex-wrap: nowrap $imp; }

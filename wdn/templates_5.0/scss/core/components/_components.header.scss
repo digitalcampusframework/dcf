@@ -3,12 +3,68 @@
 //////////////////////
 
 
-.dcf--header {
-  @include pt2;
-  @include pb4;
-  border-bottom: 1px solid $color-border;
-}
+// .dcf--header {
+//   border-bottom: 1px solid $color-border;
+// }
 
 .dcf--header a {
   text-decoration: none;
 }
+
+.dcf--header button {
+  color: $color-link;
+}
+
+.dcf--header button:hover {
+  color: $color-link-hover;
+}
+
+.dcf--header button:active {
+  color: $color-link-active;
+}
+
+
+@include mq(md, max, width) {
+
+  .dcf--header:after {
+    content: '';
+    @include fixed;
+    height: 4em;
+    @include w100;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 0 4px 0 fade-out($color-body, .75);
+    background-color: #fff;
+  }
+
+}
+
+
+
+
+@include mq(md, min, width) {
+
+  @supports (display: grid) {
+
+    .dcf--header {
+      @include d-grid;
+      grid-template-columns: 1fr auto auto;
+      grid-column-gap: 2em;
+      grid-template-areas:
+        "first nav2 nav2"
+        "logo search idm"
+        "nav1 nav1 nav1";
+    }
+
+    .dcf--institution-title {
+      grid-area: first;
+    }
+
+    .dcf--logo {
+      grid-area: logo;
+    }
+
+  }
+}
+

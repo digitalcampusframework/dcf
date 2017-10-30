@@ -18,8 +18,17 @@
 
 }
 
+body.unl {
+  background-color: $scarlet;
+}
+
 .unl--header {
   border-top: 3px solid $scarlet;
+  background-color: $color-body-bg;
+}
+
+.dcf--main {
+  background-color: $color-body-bg;
 }
 
 .unl--header a:visited {
@@ -28,20 +37,6 @@
 
 .unl--header a:hover {
   color: $color-link-hover;
-}
-
-.unl--institution-title {
-  letter-spacing: .1em;
-}
-
-.unl--primary-nav ul {
-  @include sans-serif-font;
-}
-
-.unl--primary-nav > ul > li > a {
-  @include bold;
-  @include uppercase;
-  letter-spacing: .1em;
 }
 
 .unl--input-required {

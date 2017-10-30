@@ -4,6 +4,7 @@
 
 
 // !Larger Size
+.dcf--lg5 { @include lg5(!important); }
 .dcf--lg4 { @include lg4(!important); }
 .dcf--lg3 { @include lg3(!important); }
 .dcf--lg2 { @include lg2(!important); }
@@ -33,9 +34,9 @@
 
 
 // !Horizontal Text Alignment
-.dcf--center { @include center(!important); }
-.dcf--left { @include left(!important); }
-.dcf--right { @include right(!important); }
+.dcf--text-center { @include text-center(!important); }
+.dcf--text-left { @include text-left(!important); }
+.dcf--text-right { @include text-right(!important); }
 
 
 // !Text Transform
@@ -49,6 +50,11 @@
 .dcf--bold { @include bold(!important); }
 .dcf--roman { @include roman(!important); }
 .dcf--italic { @include italic(!important); }
+
+
+// !Letter Spacing
+.dcf--ls1 { @include ls1(!important); }
+.dcf--ls2 { @include ls2(!important); }
 
 
 // !Text Wrapping

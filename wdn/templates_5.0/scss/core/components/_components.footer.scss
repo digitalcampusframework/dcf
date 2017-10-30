@@ -4,9 +4,7 @@
 
 
 // !Footer - both Local and Global
-.dcf--footer {
-  @include sm2;
-}
+
 
 
 // !Local Footer
@@ -16,6 +14,7 @@
   grid-gap: 1em;
   @include pt6;
   @include pb6;
+  @include sm2;
   background-color: #ddd;
 }
 

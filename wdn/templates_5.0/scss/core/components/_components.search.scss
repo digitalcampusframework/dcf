@@ -3,17 +3,39 @@
 //////////////////////
 
 
-.dcf--search-icon {
-  height: 1em;
-  width: 1em;
-  @include middle;
+// .dcf--search-icon {
+//   height: 1em;
+//   width: 1em;
+//   @include middle;
+// }
+
+
+// @include mq(md) {
+//
+//   .dcf--search-toggle {
+//     @include d-none;
+//   }
+//
+// }
+
+
+@include mq(md, max, width) {
+
+  .dcf--search-toggle {
+    left: 50%;
+  }
+
 }
 
 
-@include mq(md) {
+@include mq(md, min, width) {
 
-  .dcf--search-toggle {
-    @include d-none;
+  .dcf--search {
+
+    @supports (display: grid) {
+      grid-area: search;
+    }
+
   }
 
 }
