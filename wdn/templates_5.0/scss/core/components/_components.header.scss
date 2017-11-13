@@ -3,30 +3,30 @@
 //////////////////////
 
 
-// .dcf--header {
+// .dcf-c-header {
 //   border-bottom: 1px solid $color-border;
 // }
 
-.dcf--header a {
-  text-decoration: none;
+.dcf-c-header a {
+  @include txt-decor-none;
 }
 
-.dcf--header button {
+.dcf-c-header button {
   color: $color-link;
 }
 
-.dcf--header button:hover {
+.dcf-c-header button:hover {
   color: $color-link-hover;
 }
 
-.dcf--header button:active {
+.dcf-c-header button:active {
   color: $color-link-active;
 }
 
 
 @include mq(md, max, width) {
 
-  .dcf--header:after {
+  .dcf-c-header:after {
     content: '';
     @include fixed;
     height: 4em;
@@ -47,8 +47,8 @@
 
   @supports (display: grid) {
 
-    .dcf--header {
-      @include d-grid;
+    .dcf-c-header {
+      @include grid;
       grid-template-columns: 1fr auto auto;
       grid-column-gap: 2em;
       grid-template-areas:
@@ -57,11 +57,11 @@
         "nav1 nav1 nav1";
     }
 
-    .dcf--institution-title {
+    .dcf-c-institution-title {
       grid-area: first;
     }
 
-    .dcf--logo {
+    .dcf-c-logo {
       grid-area: logo;
     }
 

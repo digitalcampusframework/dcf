@@ -7,3 +7,8 @@
 @mixin bg-transparent($imp:null) {
   background-color: transparent $imp;
 }
+
+// !White
+@mixin bg-white($imp:null) {
+  background-color: #fff $imp;
+}

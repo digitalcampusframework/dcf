@@ -1,0 +1,14 @@
+/////////////////
+// !OBJECTS: GRID
+/////////////////
+
+
+// !Proportional
+.dcf-o-grid {
+
+  @supports (display: grid) {
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(38)}em, 1fr));
+    grid-gap: 1em;
+  }
+}

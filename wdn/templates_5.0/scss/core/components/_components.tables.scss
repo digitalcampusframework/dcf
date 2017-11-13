@@ -3,102 +3,137 @@
 //////////////////////
 
 
-.dcf--table {
+.dcf-c-table {
 //   display: block; // !responsive by default?
-  width: 100%;
-  max-width: 100%;
+//   @include w100;
+//   max-width: 100%;
 //   overflow-x: auto; // !responsive by default?
+  @include sm1;
 }
 
-
-.dcf--table th,
-.dcf--table td {
-  border-top: 1px solid $color-border;
+.dcf-c-table thead,
+.dcf-c-table tbody {
+  @include bb;
+  border-color: $color-border;
 }
 
+// .dcf-c-table thead {
+//   @include uppercase;
+// }
 
-// .dcf--table thead th {
+// .dcf-c-table th,
+// .dcf-c-table td {
+//   border-top: 1px solid $color-border;
+// }
+
+
+// .dcf-c-table thead th {
 //   border-bottom: 2px solid #ddd;
 // }
 
 
-.dcf--table thead th,
-.dcf--table thead td {
-  padding-top: 1.25em;
-  @include pr3;
+.dcf-c-table th:not(:last-child),
+.dcf-c-table td:not(:last-child) {
+  @include pr5;
+}
+
+// .dcf-c-table thead th,
+// .dcf-c-table thead td {
+// //   padding-top: 1.25em;
+//   @include pb4;
+// //   @include pl4;
+// }
+
+
+.dcf-c-table thead th,
+.dcf-c-table thead td {
   @include pb3;
-  @include pl3;
+  @include txt-bottom;
 }
 
-
-.dcf--table thead th {
-  @include bottom;
+.dcf-c-table tbody th,
+.dcf-c-table tbody td {
+//   @include pt4;
+  @include pb4;
+  @include txt-top;
 }
 
-
-.dcf--table tbody th,
-.dcf--table tbody td {
-  @include p3;
-}
-
-
-// !Small Table
-.dcf--table-sm thead th,
-.dcf--table-sm thead td {
+.dcf-c-table tbody tr:first-child th,
+.dcf-c-table tbody tr:first-child td {
   @include pt4;
-  @include pr2;
+}
+
+
+// !Compact Table
+.dcf-c-table--compact th:not(:last-child),
+.dcf-c-table--compact td:not(:last-child) {
+  @include pr4;
+}
+
+.dcf-c-table--compact thead th,
+.dcf-c-table--compact thead td {
   @include pb2;
-  @include pl2;
+}
+
+.dcf-c-table--compact tbody th,
+.dcf-c-table--compact tbody td {
+  @include pb3;
+}
+
+.dcf-c-table--compact tbody tr:first-child th,
+.dcf-c-table--compact tbody tr:first-child td {
+  @include pt3;
 }
 
 
-.dcf--table-sm tbody th,
-.dcf--table-sm tbody td {
-  @include p2;
-}
+// .dcf-c-table--compact tbody th,
+// .dcf-c-table--compact tbody td {
+//   @include pb2;
+// }
+
 
 
 // !Striped Table
-.dcf--table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.05);
-}
+// .dcf-c-table-striped tbody tr:nth-of-type(odd) {
+//   background-color: rgba(0,0,0,.05);
+// }
 
 
 // !Bordered Table
-.dcf--table-bordered,
-.dcf--table-bordered th,
-.dcf--table-bordered td {
-  border: 1px solid $color-border;
-}
+// .dcf-c-table-bordered,
+// .dcf-c-table-bordered th,
+// .dcf-c-table-bordered td {
+//   border: 1px solid $color-border;
+// }
 
 
 // !Hoverable Rows
-.dcf--table-hover tbody tr:hover {
-  background-color: $color-active;
-}
+// .dcf-c-table-hover tbody tr:hover {
+//   background-color: $color-active;
+// }
 
 
 // !Contextual Colors
-.dcf--table-active {
-  background-color: $color-active;
-}
-
-
-.dcf--table-info {
-  background-color: $color-info;
-}
-
-
-.dcf--table-success {
-  background-color: $color-success;
-}
-
-
-.dcf--table-warning {
-  background-color: $color-warning;
-}
-
-
-.dcf--table-danger {
-  background-color: $color-danger;
-}
+// .dcf-c-table-active {
+//   background-color: $color-active;
+// }
+//
+//
+// .dcf-c-table-info {
+//   background-color: $color-info;
+// }
+//
+//
+// .dcf-c-table-success {
+//   background-color: $color-success;
+// }
+//
+//
+// .dcf-c-table-warning {
+//   background-color: $color-warning;
+// }
+//
+//
+// .dcf-c-table-danger {
+//   background-color: $color-danger;
+// }

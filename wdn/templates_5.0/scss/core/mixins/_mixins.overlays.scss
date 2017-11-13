@@ -24,3 +24,25 @@
     backdrop-filter: blur(6px);
   }
 }
+
+
+// // !Brand: Alpha
+// @mixin overlay-brand-alpha {
+//   background-color: fade-out($color-brand-alpha, .02);
+//
+//   @supports (backdrop-filter: blur(6px)) {
+//     background-color: fade-out($color-brand-alpha, .04);
+//     backdrop-filter: blur(6px);
+//   }
+// }
+//
+//
+// // !Brand: Beta
+// @mixin overlay-brand-beta {
+//   background-color: fade-out($color-brand-beta, .02);
+//
+//   @supports (backdrop-filter: blur(6px)) {
+//     background-color: fade-out($color-brand-beta, .04);
+//     backdrop-filter: blur(6px);
+//   }
+// }

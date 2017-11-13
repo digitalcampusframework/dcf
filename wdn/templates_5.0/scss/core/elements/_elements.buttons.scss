@@ -8,7 +8,7 @@ button,
 input[type="button"],
 input[type="submit"] {
   cursor: pointer;
-  @include d-inline-block;
+  @include inlineblock;
 //   @include middle;
 //   padding-top: .6em;
   @include pt2;
@@ -16,10 +16,10 @@ input[type="submit"] {
 //   padding-bottom: .4em;
   @include pb2;
   @include pl4;
-  font-size: 1rem;
+  font-size: 1em;
 //   font-family: inherit;
 //   -webkit-appearance: none;
 //   -webkit-transition: none;
   @include lh1;
-  @include text-center;
+  @include txt-center;
 }

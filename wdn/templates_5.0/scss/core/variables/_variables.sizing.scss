@@ -4,24 +4,24 @@
 
 
 // !Modular Scale
-// @import '~modularscale-sass/stylesheets/modularscale';
-//
-// $modularscale: (
-//   base: 1 1.128 1.272 1.435,
-//   ratio: $golden
-// );
+@import '~modularscale-sass/stylesheets/modularscale';
+
+$modularscale: (
+  base: 1 1.075 1.155 1.241,
+  ratio: $fourth,
+);
 
 
 // !Font Size
-$min_font_size: 1;
-$max_font_size: 1.25;
+$min_font_size: ms(0);
+$max_font_size: ms(4);
 
 
 // !Spacing
-$spacing-0: 0;
-$spacing-1: .25em;
-$spacing-2: .5em;
-$spacing-3: .75em;
-$spacing-4: 1em;
-$spacing-5: 2em;
-$spacing-6: 4em;
+$length0: 0;
+$length1: #{ms(-12)}em;
+$length2: #{ms(-8)}em;
+$length3: #{ms(-4)}em;
+$length4: #{ms(0)}em;
+$length5: #{ms(4)}em;
+$length6: #{ms(8)}em;

@@ -1,9 +1,0 @@
-///////////////////
-// !MIXINS: ANCHORS
-///////////////////
-
-
-// No Text Decoration
-@mixin no-text-decor($imp:null) {
-  text-decoration: none $imp;
-}

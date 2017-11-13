@@ -3,31 +3,31 @@
 /////////////////////////////
 
 
-.dcf--btn-group {
-  @include d-inline-flex;
+.dcf-c-btn-group {
+  @include inlineflex;
 }
 
 
-.dcf--btn-group .dcf--btn:focus {
+.dcf-c-btn-group .dcf-c-btn:focus {
   z-index: 1;
 }
 
 
-.dcf--btn-group > .dcf--btn:not(:first-child):not(:last-child) {
+.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
   @include sharp;
 }
 
 
-.dcf--btn-group > .dcf--btn:first-child {
+.dcf-c-btn-group > .dcf-c-btn:first-child {
   @include sharp-right;
 }
 
 
-.dcf--btn-group > .dcf--btn:last-child {
+.dcf-c-btn-group > .dcf-c-btn:last-child {
   @include sharp-left;
 }
 
 
-.dcf--btn-group .dcf--btn + .dcf--btn {
+.dcf-c-btn-group .dcf-c-btn + .dcf-c-btn {
   margin-left: -1px;
 }

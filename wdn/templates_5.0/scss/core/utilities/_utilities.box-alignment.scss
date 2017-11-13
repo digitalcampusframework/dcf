@@ -4,59 +4,59 @@
 
 
 // !Align Items
-.dcf--ai-flex-start { @include ai-flex-start(!important); }
-.dcf--ai-flex-end { @include ai-flex-end(!important); }
-.dcf--ai-center { @include ai-center(!important); }
-.dcf--ai-baseline { @include ai-baseline(!important); }
-.dcf--ai-stretch { @include ai-stretch(!important); }
-.dcf--ai-start { @include ai-start(!important); }
-.dcf--ai-end { @include ai-end(!important); }
+.dcf-u-ai-flexstart { @include ai-flexstart(!important); }
+.dcf-u-ai-flexend { @include ai-flexend(!important); }
+.dcf-u-ai-center { @include ai-center(!important); }
+.dcf-u-ai-baseline { @include ai-baseline(!important); }
+.dcf-u-ai-stretch { @include ai-stretch(!important); }
+.dcf-u-ai-start { @include ai-start(!important); }
+.dcf-u-ai-end { @include ai-end(!important); }
 
 
 // !Align Content
-.dcf--ac-flex-start { @include ac-flex-start(!important); }
-.dcf--ac-flex-end { @include ac-flex-end(!important); }
-.dcf--ac-center { @include ac-center(!important); }
-.dcf--ac-stretch { @include ac-stretch(!important); }
-.dcf--ac-around { @include ac-around(!important); }
-.dcf--ac-between { @include ac-between(!important); }
-.dcf--ac-evenly { @include ac-evenly(!important); }
-.dcf--ac-start { @include ac-start(!important); }
-.dcf--ac-end { @include ac-end(!important); }
+.dcf-u-ac-flexstart { @include ac-flexstart(!important); }
+.dcf-u-ac-flexend { @include ac-flexend(!important); }
+.dcf-u-ac-center { @include ac-center(!important); }
+.dcf-u-ac-stretch { @include ac-stretch(!important); }
+.dcf-u-ac-around { @include ac-around(!important); }
+.dcf-u-ac-between { @include ac-between(!important); }
+.dcf-u-ac-evenly { @include ac-evenly(!important); }
+.dcf-u-ac-start { @include ac-start(!important); }
+.dcf-u-ac-end { @include ac-end(!important); }
 
 
 // !Align Self
-.dcf--as-auto { @include as-auto(!important); }
-.dcf--as-flex-start { @include as-flex-start(!important); }
-.dcf--as-flex-end { @include as-flex-end(!important); }
-.dcf--as-center { @include as-center(!important); }
-.dcf--as-baseline { @include as-baseline(!important); }
-.dcf--as-stretch { @include as-stretch(!important); }
-.dcf--as-start { @include as-start(!important); }
-.dcf--as-end { @include as-end(!important); }
+.dcf-u-as-auto { @include as-auto(!important); }
+.dcf-u-as-flexstart { @include as-flexstart(!important); }
+.dcf-u-as-flexend { @include as-flexend(!important); }
+.dcf-u-as-center { @include as-center(!important); }
+.dcf-u-as-baseline { @include as-baseline(!important); }
+.dcf-u-as-stretch { @include as-stretch(!important); }
+.dcf-u-as-start { @include as-start(!important); }
+.dcf-u-as-end { @include as-end(!important); }
 
 
 // !Justify Items
-.dcf--ji-start { @include ji-start(!important); }
-.dcf--ji-end { @include ji-end(!important); }
-.dcf--ji-center { @include ji-center(!important); }
-.dcf--ji-stretch { @include ji-stretch(!important); }
+.dcf-u-ji-start { @include ji-start(!important); }
+.dcf-u-ji-end { @include ji-end(!important); }
+.dcf-u-ji-center { @include ji-center(!important); }
+.dcf-u-ji-stretch { @include ji-stretch(!important); }
 
 
 // !Justify Content
-.dcf--jc-flex-start { @include jc-flex-start(!important); }
-.dcf--jc-flex-end { @include jc-flex-end(!important); }
-.dcf--jc-center { @include jc-center(!important); }
-.dcf--jc-around { @include jc-around(!important); }
-.dcf--jc-between { @include jc-between(!important); }
-.dcf--jc-evenly { @include jc-evenly(!important); }
-.dcf--jc-start { @include jc-start(!important); }
-.dcf--jc-end { @include jc-end(!important); }
-.dcf--jc-stretch { @include jc-stretch(!important); }
+.dcf-u-jc-flexstart { @include jc-flexstart(!important); }
+.dcf-u-jc-flexend { @include jc-flexend(!important); }
+.dcf-u-jc-center { @include jc-center(!important); }
+.dcf-u-jc-around { @include jc-around(!important); }
+.dcf-u-jc-between { @include jc-between(!important); }
+.dcf-u-jc-evenly { @include jc-evenly(!important); }
+.dcf-u-jc-start { @include jc-start(!important); }
+.dcf-u-jc-end { @include jc-end(!important); }
+.dcf-u-jc-stretch { @include jc-stretch(!important); }
 
 
 // !Justify Self
-.dcf--js-start { @include js-start(!important); }
-.dcf--js-center { @include js-center(!important); }
-.dcf--js-end { @include js-end(!important); }
-.dcf--js-stretch { @include js-stretch(!important); }
+.dcf-u-js-start { @include js-start(!important); }
+.dcf-u-js-center { @include js-center(!important); }
+.dcf-u-js-end { @include js-end(!important); }
+.dcf-u-js-stretch { @include js-stretch(!important); }

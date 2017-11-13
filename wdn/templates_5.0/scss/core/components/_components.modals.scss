@@ -4,66 +4,41 @@
 
 
 // !Modal Overlay
-.dcf--modal-overlay {
-//   .is-hidden();
-  @include d-flex;
-  @include f-ai-center;
-  @include f-jc-center;
+.dcf-c-modal__overlay {
+  @include flex;
+  @include ai-center;
+  @include jc-center;
   @include fixed;
   top: 0;
   left: 0;
   z-index: 999;
   @include h100;
   @include w100;
-
-  .dcf--modal-open & {
-//     .is-visible();
-  }
-}
-
-
-// !Modal Content
-.dcf--modal-content {
-  width: 80%;
-  height: auto;
-//   box-shadow: 0 0 1.777em 0 fadeout(@ui14, 25%);
-}
-
-
-// !Modal Controls
-.dcf--close-modal {
-  @include absolute;
-  top: 1%;
-  right: 1%;
-  cursor: pointer;
-//   color: @cream;
-  @include b0;
-  background-color: transparent;
-}
-
-
-////////////////
-// !STATE: MODAL
-////////////////
-
-
-// !Modal Overlay
-.dcf--modal-overlay {
-//   .is-hidden();
+  @include invisible;
+  opacity: 0;
   transition: opacity 0.5s ease-out, visibility 0s linear 0.6s;
 
-  .dcf--modal-open & {
-//     .is-visible();
+  &.dcf-is-open {
+    @include visible;
+    opacity: 1;
     transition: opacity 0.2s ease-out;
   }
 }
 
 
 // !Modal Content
-// .dcf--modal-content {
-// }
+.dcf-c-modal__content {
+  width: 90%;
+  height: auto;
+}
 
 
 // !Modal Controls
-// .dcf--close-modal {
-// }
+.dcf-c-close-modal {
+  @include absolute;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  @include b0;
+  @include bg-transparent;
+}

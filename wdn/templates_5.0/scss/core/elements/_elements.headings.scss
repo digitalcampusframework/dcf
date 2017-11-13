@@ -24,19 +24,9 @@ h6 {
 }
 
 
-h1 { font-size: 2.5rem; }  // line-height ~50px
-h2 { font-size: 2rem; }    // line-height ~40px
-h3 { font-size: 1.75rem; } // line-height ~35px
-h4 { font-size: 1.5rem; }  // line-height ~30px
-h5 { font-size: 1.25rem; } // line-height ~25px
-h6 { font-size: 1rem; }    // line-height ~20px
-
-
-h1 > small,
-h2 > small,
-h3 > small,
-h4 > small,
-h5 > small,
-h6 > small {
-  font-weight: normal;
-}
+h1 { font-size: #{ms(12)}em }
+h2 { font-size: #{ms(10)}em }
+h3 { font-size: #{ms(8)}em }
+h4 { font-size: #{ms(6)}em }
+h5 { font-size: #{ms(4)}em }
+h6 { font-size: #{ms(2)}em }

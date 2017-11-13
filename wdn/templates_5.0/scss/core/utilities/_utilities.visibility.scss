@@ -4,31 +4,19 @@
 
 
 // !Invisible
-.dcf--invisible { @include invisible(!important); }
+.dcf-u-invisible { @include invisible(!important); }
 
 
 // !Visible
-.dcf--visible { @include visible(!important); }
+.dcf-u-visible { @include visible(!important); }
 
 
 // !Screen Reader Only
-.dcf--sr-only {
-  @include absolute;
-  height: 1px; // allow VoiceOver to see the text
-  width: 1px;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  word-wrap: normal; // ???
-}
+.dcf-u-sr-only { @include sr-only(!important); }
 
 
 // !Screen Reader Only, Show On Focus
-.dcf--sr-only.dcf--sr-only-focusable:active,
-.dcf--sr-only.dcf--sr-only-focusable:focus {
-  @include static;
-  height: auto;
-  width: auto;
-  clip: auto;
-  overflow: visible;
+.dcf-u-sr-only.dcf-u-show-on-focus:active,
+.dcf-u-sr-only.dcf-u-show-on-focus:focus {
+  @include show-on-focus(!important);
 }

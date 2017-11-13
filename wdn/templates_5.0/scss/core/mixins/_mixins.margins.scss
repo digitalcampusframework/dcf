@@ -4,50 +4,50 @@
 
 
 // !All Sides
-@mixin m0($imp:null) { margin: $spacing-0 $imp; }
-@mixin m1($imp:null) { margin: $spacing-1 $imp; }
-@mixin m2($imp:null) { margin: $spacing-2 $imp; }
-@mixin m3($imp:null) { margin: $spacing-3 $imp; }
-@mixin m4($imp:null) { margin: $spacing-4 $imp; }
-@mixin m5($imp:null) { margin: $spacing-5 $imp; }
-@mixin m6($imp:null) { margin: $spacing-6 $imp; }
+@mixin m0($imp:null) { margin: $length0 $imp; }
+@mixin m1($imp:null) { margin: $length1 $imp; }
+@mixin m2($imp:null) { margin: $length2 $imp; }
+@mixin m3($imp:null) { margin: $length3 $imp; }
+@mixin m4($imp:null) { margin: $length4 $imp; }
+@mixin m5($imp:null) { margin: $length5 $imp; }
+@mixin m6($imp:null) { margin: $length6 $imp; }
 
 
 // !Top
-@mixin mt0($imp:null) { margin-top: $spacing-0 $imp; }
-@mixin mt1($imp:null) { margin-top: $spacing-1 $imp; }
-@mixin mt2($imp:null) { margin-top: $spacing-2 $imp; }
-@mixin mt3($imp:null) { margin-top: $spacing-3 $imp; }
-@mixin mt4($imp:null) { margin-top: $spacing-4 $imp; }
-@mixin mt5($imp:null) { margin-top: $spacing-5 $imp; }
-@mixin mt6($imp:null) { margin-top: $spacing-6 $imp; }
+@mixin mt0($imp:null) { margin-top: $length0 $imp; }
+@mixin mt1($imp:null) { margin-top: $length1 $imp; }
+@mixin mt2($imp:null) { margin-top: $length2 $imp; }
+@mixin mt3($imp:null) { margin-top: $length3 $imp; }
+@mixin mt4($imp:null) { margin-top: $length4 $imp; }
+@mixin mt5($imp:null) { margin-top: $length5 $imp; }
+@mixin mt6($imp:null) { margin-top: $length6 $imp; }
 
 
 // !Right
-@mixin mr0($imp:null) { margin-right: $spacing-0 $imp; }
-@mixin mr1($imp:null) { margin-right: $spacing-1 $imp; }
-@mixin mr2($imp:null) { margin-right: $spacing-2 $imp; }
-@mixin mr3($imp:null) { margin-right: $spacing-3 $imp; }
-@mixin mr4($imp:null) { margin-right: $spacing-4 $imp; }
-@mixin mr5($imp:null) { margin-right: $spacing-5 $imp; }
-@mixin mr6($imp:null) { margin-right: $spacing-6 $imp; }
+@mixin mr0($imp:null) { margin-right: $length0 $imp; }
+@mixin mr1($imp:null) { margin-right: $length1 $imp; }
+@mixin mr2($imp:null) { margin-right: $length2 $imp; }
+@mixin mr3($imp:null) { margin-right: $length3 $imp; }
+@mixin mr4($imp:null) { margin-right: $length4 $imp; }
+@mixin mr5($imp:null) { margin-right: $length5 $imp; }
+@mixin mr6($imp:null) { margin-right: $length6 $imp; }
 
 
 // !Bottom
-@mixin mb0($imp:null) { margin-bottom: $spacing-0 $imp; }
-@mixin mb1($imp:null) { margin-bottom: $spacing-1 $imp; }
-@mixin mb2($imp:null) { margin-bottom: $spacing-2 $imp; }
-@mixin mb3($imp:null) { margin-bottom: $spacing-3 $imp; }
-@mixin mb4($imp:null) { margin-bottom: $spacing-4 $imp; }
-@mixin mb5($imp:null) { margin-bottom: $spacing-5 $imp; }
-@mixin mb6($imp:null) { margin-bottom: $spacing-6 $imp; }
+@mixin mb0($imp:null) { margin-bottom: $length0 $imp; }
+@mixin mb1($imp:null) { margin-bottom: $length1 $imp; }
+@mixin mb2($imp:null) { margin-bottom: $length2 $imp; }
+@mixin mb3($imp:null) { margin-bottom: $length3 $imp; }
+@mixin mb4($imp:null) { margin-bottom: $length4 $imp; }
+@mixin mb5($imp:null) { margin-bottom: $length5 $imp; }
+@mixin mb6($imp:null) { margin-bottom: $length6 $imp; }
 
 
 // !Left
-@mixin ml0($imp:null) { margin-left: $spacing-0 $imp; }
-@mixin ml1($imp:null) { margin-left: $spacing-1 $imp; }
-@mixin ml2($imp:null) { margin-left: $spacing-2 $imp; }
-@mixin ml3($imp:null) { margin-left: $spacing-3 $imp; }
-@mixin ml4($imp:null) { margin-left: $spacing-4 $imp; }
-@mixin ml5($imp:null) { margin-left: $spacing-5 $imp; }
-@mixin ml6($imp:null) { margin-left: $spacing-6 $imp; }
+@mixin ml0($imp:null) { margin-left: $length0 $imp; }
+@mixin ml1($imp:null) { margin-left: $length1 $imp; }
+@mixin ml2($imp:null) { margin-left: $length2 $imp; }
+@mixin ml3($imp:null) { margin-left: $length3 $imp; }
+@mixin ml4($imp:null) { margin-left: $length4 $imp; }
+@mixin ml5($imp:null) { margin-left: $length5 $imp; }
+@mixin ml6($imp:null) { margin-left: $length6 $imp; }

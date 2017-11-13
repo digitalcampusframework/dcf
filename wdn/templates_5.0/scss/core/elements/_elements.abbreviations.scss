@@ -11,8 +11,8 @@ abbr {
 
 // !Abbreviation Title
 abbr[title] {
-  position: relative;
-  text-decoration: none;
+  @include relative;
+  @include txt-decor-none;
 
   &::after {
     content: '';

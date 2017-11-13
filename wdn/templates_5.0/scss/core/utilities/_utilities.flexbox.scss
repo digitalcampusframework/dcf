@@ -7,60 +7,13 @@
 
 
 // !Flexbox Rows and Columns
-.dcf--f-col { @include f-col(!important); }
-.dcf--f-col-rev { @include f-col-rev(!important); }
-.dcf--f-row { @include f-row(!important); }
-.dcf--f-row-rev { @include f-row-rev(!important); }
+.dcf-u-flex-col { @include flex-col(!important); }
+.dcf-u-flex-colrev { @include flex-colrev(!important); }
+.dcf-u-flex-row { @include flex-row(!important); }
+.dcf-u-flex-rowrev { @include flex-rowrev(!important); }
 
 
 // !Flexbox Wrap
-.dcf--f-wrap { @include f-wrap(!important); }
-.dcf--f-wrap-rev { @include f-wrap-rev(!important); }
-.dcf--f-nowrap { @include f-nowrap(!important); }
-
-
-// !Align Items
-.dcf--f-ai-start { @include f-ai-start(!important); }
-.dcf--f-ai-end { @include f-ai-end(!important); }
-.dcf--f-ai-center { @include f-ai-center(!important); }
-.dcf--f-ai-baseline { @include f-ai-baseline(!important); }
-.dcf--f-ai-stretch { @include f-ai-stretch(!important); }
-
-
-// !Align Content
-.dcf--f-ac-start { @include f-ac-start(!important); }
-.dcf--f-ac-end { @include f-ac-end(!important); }
-.dcf--f-ac-center { @include f-ac-center(!important); }
-.dcf--f-ac-stretch { @include f-ac-stretch(!important); }
-.dcf--f-ac-around { @include f-ac-around(!important); }
-.dcf--f-ac-between { @include f-ac-between(!important); }
-
-
-// !Align Self
-.dcf--f-as-auto { @include f-as-auto(!important); }
-.dcf--f-as-start { @include f-as-start(!important); }
-.dcf--f-as-end { @include f-as-end(!important); }
-.dcf--f-as-center { @include f-as-center(!important); }
-.dcf--f-as-baseline { @include f-as-baseline(!important); }
-.dcf--f-as-stretch { @include f-as-stretch(!important); }
-
-
-// !Justify Content
-.dcf--f-jc-start { @include f-jc-start(!important); }
-.dcf--f-jc-end { @include f-jc-end(!important); }
-.dcf--f-jc-center { @include f-jc-center(!important); }
-.dcf--f-jc-around { @include f-jc-around(!important); }
-.dcf--f-jc-between { @include f-jc-between(!important); }
-.dcf--f-jc-evenly { @include f-jc-evenly(!important); }
-
-
-// !Order
-.dcf--f-o1 { @include f-o1(!important); }
-.dcf--f-o2 { @include f-o2(!important); }
-.dcf--f-o3 { @include f-o3(!important); }
-.dcf--f-o4 { @include f-o4(!important); }
-.dcf--f-o5 { @include f-o5(!important); }
-.dcf--f-o6 { @include f-o6(!important); }
-.dcf--f-o7 { @include f-o7(!important); }
-.dcf--f-o8 { @include f-o8(!important); }
-.dcf--f-o9 { @include f-o9(!important); }
+.dcf-u-flex-wrap { @include flex-wrap(!important); }
+.dcf-u-flex-wraprev { @include flex-wraprev(!important); }
+.dcf-u-flex-nowrap { @include flex-nowrap(!important); }

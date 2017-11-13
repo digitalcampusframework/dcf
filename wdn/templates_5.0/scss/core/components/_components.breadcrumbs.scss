@@ -3,14 +3,14 @@
 ///////////////////////////
 
 
-.dcf--breadcrumbs ul {
-  @include d-flex;
+.dcf-c-breadcrumbs ul {
+  @include flex;
   @include pl0;
   list-style: none;
   @include sm3;
 }
 
 
-.dcf--breadcrumbs li {
+.dcf-c-breadcrumbs li {
   @include mr2;
 }

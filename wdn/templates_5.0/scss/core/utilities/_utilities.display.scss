@@ -4,40 +4,44 @@
 
 
 // !None
-.dcf--d-none { @include d-none(!important); }
+.dcf-u-none { @include none(!important); }
 
 
 // !Block
-.dcf--d-block { @include d-block(!important); }
+.dcf-u-block { @include block(!important); }
 
 
 // !Inline
-.dcf--d-inline { @include d-inline(!important); }
+.dcf-u-inline { @include inline(!important); }
 
 
 // !Inline-Block
-.dcf--d-inline-block { @include d-inline-block(!important); }
+.dcf-u-inlineblock { @include inlineblock(!important); }
 
 
 // !Flex
-.dcf--d-flex { @include d-flex(!important); }
+.dcf-u-flex { @include flex(!important); }
 
 
 // !Inline-Flex
-.dcf--d-inline-flex { @include d-inline-flex(!important); }
+.dcf-u-inlineflex { @include inlineflex(!important); }
 
 
 // !Grid
-.dcf--d-grid { @include d-grid(!important); }
+.dcf-u-grid { @include grid(!important); }
 
 
 // !Inline-Grid
-.dcf--d-inline-grid { @include d-inline-grid(!important); }
+.dcf-u-inlinegrid { @include inlinegrid(!important); }
 
 
 // !Subgrid
-.dcf--d-subgrid { @include d-subgrid(!important); }
+.dcf-u-subgrid { @include subgrid(!important); }
 
 
 // !Table
-.dcf--d-table { @include d-table(!important); }
+.dcf-u-table { @include table(!important); }
+
+
+// !Table Cell
+.dcf-u-tablecell { @include tablecell(!important); }

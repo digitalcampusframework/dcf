@@ -4,7 +4,7 @@
 
 
 // !Serif
-@mixin serif-font {
+@mixin font-serif {
   font-family: 'Mercury SSm A', 'Mercury SSm B', Georgia, serif;
   font-weight: 400;
   font-style: normal;
@@ -12,7 +12,7 @@
 
 
 // !Sans Serif
-@mixin sans-serif-font {
+@mixin font-sans {
   font-family: 'Gotham SSm A', 'Gotham SSm B', Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -20,7 +20,7 @@
 
 
 // !Display
-@mixin display-font {
+@mixin font-display {
   font-family: 'Tungsten A', 'Tungsten B', 'Arial Narrow', Arial, sans-serif;
   font-weight: 600;
   font-style: normal;

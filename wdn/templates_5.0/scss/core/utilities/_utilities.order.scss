@@ -1,0 +1,14 @@
+////////////////////
+// !UTILITIES: ORDER
+////////////////////
+
+
+.dcf-u-1st { @include order-1st(!important); }
+.dcf-u-2nd { @include order-2nd(!important); }
+.dcf-u-3rd { @include order-3rd(!important); }
+.dcf-u-4th { @include order-4th(!important); }
+.dcf-u-5th { @include order-5th(!important); }
+.dcf-u-6th { @include order-6th(!important); }
+.dcf-u-7th { @include order-7th(!important); }
+.dcf-u-8th { @include order-8th(!important); }
+.dcf-u-9th { @include order-9th(!important); }

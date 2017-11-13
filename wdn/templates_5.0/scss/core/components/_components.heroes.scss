@@ -3,29 +3,29 @@
 //////////////////////
 
 
-.dcf--hero {
+.dcf-c-hero {
 
 }
 
-.dcf--hero-fg {
+.dcf-c-hero__fg {
 
 }
 
-.dcf--hero-bg {
+.dcf-c-hero__bg {
 
 }
 
-.dcf--hero-video {
+.dcf-c-hero__video {
 
 }
 
-.dcf--hero-img {
+.dcf-c-hero__img {
 
 }
 
-.dcf--hero video,
-.dcf--hero img {
-  @include d-block;
+.dcf-c-hero video,
+.dcf-c-hero img {
+  @include block;
   @include w100;
 
   @supports (object-fit: cover) {
@@ -37,24 +37,28 @@
 
 @include mq(md) {
 
-  .dcf--hero {
+  .dcf-c-hero {
     @include relative;
     height: 75vh;
     min-height: 32em;
   }
 
-  .dcf--hero-layer {
+  .dcf-c-hero__layer {
     @include absolute;
     @include h100;
     @include w100;
   }
 
-  .dcf--hero-fg {
+  .dcf-c-hero__fg {
+    @include flex;
+    @include flex-col;
+    @include ai-flexstart;
+    @include jc-flexend;
     z-index: 2;
   }
 
-  .dcf--hero-bg {
-    overflow: hidden;
+  .dcf-c-hero__bg {
+    @include overflow-hidden;
     z-index: 1;
   }
 

@@ -3,16 +3,16 @@
 ////////////////////////////
 
 
-.dcf--aspect-ratio { @include aspect-ratio; }
+.dcf-u-aspect-ratio { @include aspect-ratio; }
 
 
 // !16×9
-.dcf--16x9:before { @include ratio-16x9; }
+.dcf-u-16x9:before { @include ratio-16x9; }
 
 
 // !4×3
-.dcf--4x3:before { @include ratio-4x3; }
+.dcf-u-4x3:before { @include ratio-4x3; }
 
 
 // !1×1
-.dcf--1x1:before { @include ratio-1x1; }
+.dcf-u-1x1:before { @include ratio-1x1; }

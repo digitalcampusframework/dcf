@@ -40,7 +40,7 @@ pre {
 
 
 pre code {
-  @include d-block;
+  @include block;
   @include p0;
   white-space: pre;
   overflow-x: scroll;
