@@ -4,8 +4,8 @@
 
 
 // !Default (Roundrect) Badges
-.dcf--badge {
-  @include d-inline-block;
+.dcf-c-badge {
+  @include inlineblock;
 //   @include ml1;
   padding-top: .25rem;
   @include pr2;
@@ -14,19 +14,19 @@
   @include sm4;
   @include lh3;
   color: #fff;
-  @include text-center;
-  @include nowrap;
-  @include text-top;
+  @include txt-center;
+  @include txt-top;
+  @include txt-nowrap;
   border-radius: $roundrect;
 }
 
-.dcf--badge-default {
+.dcf-c-badge--default {
   background-color: #666;
 }
 
 
 // !Pill Badges
-.dcf--badge-pill {
+.dcf-c-badge--pill {
   @include pr4;
   @include pl4;
   border-radius: $pill;

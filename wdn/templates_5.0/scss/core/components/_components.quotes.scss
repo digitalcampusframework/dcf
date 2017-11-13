@@ -3,7 +3,7 @@
 //////////////////////
 
 
-.dcf--blockquote {
+.dcf-c-blockquote {
   @include relative;
 //   max-width: 36rem;
   @include ml0;
@@ -12,31 +12,31 @@
 }
 
 
-.dcf--blockquote::before {
+.dcf-c-blockquote::before {
   content: open-quote;
   @include absolute;
-  font-size: 10em;
+  font-size: #{ms(32)}em;
   @include lh3;
 }
 
 
-.dcf--blockquote p {
-  padding-top: 3.5em;
-  @include pt6;
+.dcf-c-blockquote p {
+  padding-top: #{ms(16)}em;
   font-size: 1.5rem;
+  @include h4;
 }
 
 
-.dcf--blockquote p::after {
+.dcf-c-blockquote p::after {
   content: close-quote;
 }
 
 
 // !Attribution
-.dcf--attribution {
+.dcf-c-attribution {
   @include mt4;
 }
 
-.dcf--attribution:before {
+.dcf-c-attribution:before {
   content: '— '; // em dash (&mdash;) followed by a thin space (&thinsp;)
 }

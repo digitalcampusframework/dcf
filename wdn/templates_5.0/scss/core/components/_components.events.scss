@@ -4,7 +4,7 @@
 
 
 // !Caption
-.dcf--calendar-caption {
+.dcf-c-calendar__caption {
   caption-side: top;
   font-size: 1em;
   background-color: $color-body;
@@ -12,78 +12,78 @@
 
 
 // !Calendar Cells
-.dcf--calendar-cell {
+.dcf-c-calendar__cell {
   width: 14.28%;
 }
 
 
 // !Calendar Weekdays
-.dcf--calendar-weekday {
+.dcf-c-calendar__weekday {
   color: $color-light-text;
   background-color: mix($color-body-bg, $color-body, 92%);
 }
 
 
 // !Calendar Date
-a.dcf--calendar-date {
+a.dcf-c-calendar__date {
   outline: 2px solid transparent;
   transition: all $hover-off;
 }
 
 
-a.dcf--calendar-date:hover {
+a.dcf-c-calendar__date:hover {
   outline: 2px solid $color-link-hover;
   transition: all $hover-on;
 }
 
 
-a.dcf--calendar-date:active {
+a.dcf-c-calendar__date:active {
   outline: 2px solid $color-link-active;
 }
 
 
-a.dcf--calendar-date:focus {
+a.dcf-c-calendar__date:focus {
   outline: 2px solid $color-link-hover;
 }
 
 
 // !Calendar Date, Today
-a.dcf--calendar-date-today {
+a.dcf-c-calendar__date--today {
   background-color: $color-body;
 }
 
 
 // !Calendar Date, Active
-a.dcf--calendar-date-active {
+a.dcf-c-calendar__date--active {
   background-color: $color-link;
   transition: all $hover-off;
 }
 
 
-a.dcf--calendar-date-active:hover {
+a.dcf-c-calendar__date--active:hover {
   background-color: $color-link-hover;
   transition: all $hover-on;
 }
 
 
-a.dcf--calendar-date-active:focus {
+a.dcf-c-calendar__date--active:focus {
   background-color: $color-link-hover;
   transition: all $hover-on;
 }
 
 
 // !Calendar Date, Not Current Month
-.dcf--calendar-not-current-month {
+.dcf-c-calendar__not-current-month {
   background-color: mix($color-body-bg, $color-body, 96%);
 }
 
 
 // !Event Listing
-.dcf--event-info {
+.dcf-c-event__info {
   flex: 1 0 1px;
 }
 
 
-.dcf--event-date-time {
+.dcf-c-event__date-time {
   flex: 0 1 4em;
 }

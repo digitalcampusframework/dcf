@@ -8,8 +8,8 @@
 
 
 // !Local Footer
-.dcf--footer-local {
-  @include d-grid;
+.dcf-c-footer__local {
+  @include grid;
   grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   grid-gap: 1em;
   @include pt6;
@@ -20,8 +20,8 @@
 
 
 // !Global Footer
-.dcf--footer-global {
-  @include d-grid;
+.dcf-c-footer__global {
+  @include grid;
   grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   grid-gap: 1em;
   @include pt6;

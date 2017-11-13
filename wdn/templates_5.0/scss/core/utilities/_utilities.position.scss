@@ -4,20 +4,20 @@
 
 
 // !Static
-.dcf--static { @include static(!important); }
+.dcf-u-static { @include static(!important); }
 
 
 // !Relative
-.dcf--relative { @include relative(!important); }
+.dcf-u-relative { @include relative(!important); }
 
 
 // !Absolute
-.dcf--absolute { @include absolute(!important); }
+.dcf-u-absolute { @include absolute(!important); }
 
 
 // !Fixed
-.dcf--fixed { @include fixed(!important); }
+.dcf-u-fixed { @include fixed(!important); }
 
 
 // !Sticky
-.dcf--sticky { @include sticky(!important); }
+.dcf-u-sticky { @include sticky(!important); }

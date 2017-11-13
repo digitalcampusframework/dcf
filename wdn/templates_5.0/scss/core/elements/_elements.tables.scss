@@ -13,7 +13,7 @@ table {
 // !Caption
 caption {
   @include pt3;
-  @include text-left;
+  @include txt-left;
   caption-side: bottom;
   @include sm2;
   color: $color-light-text;
@@ -22,5 +22,5 @@ caption {
 
 // !Table Header
 th {
-  @include text-left;
+  @include txt-left;
 }

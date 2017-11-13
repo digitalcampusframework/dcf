@@ -4,4 +4,8 @@
 
 
 // !Transparent
-.dcf--bg-transparent { @include bg-transparent(!important); }
+.dcf-u-bg-transparent { @include bg-transparent(!important); }
+
+
+// !White
+.dcf-u-bg-white { @include bg-white(!important); }

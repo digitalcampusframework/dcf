@@ -14,6 +14,7 @@ $color-brand-beta: #fefdfa;
 $scarlet: $color-brand-alpha;
 $cream: $color-brand-beta;
 
+$color-test: scale-color($scarlet, $lightness: 16%);
 
 // !UI COLORS
 // Assign colors to elements
@@ -43,7 +44,8 @@ $color-link-active: scale-color($color-link, $lightness: -30%, $saturation: 100%
 
 
 // !Buttons
-$color-button: #686868;
+// $color-button: #686868;
+$color-button: $color-brand-alpha;
 
 
 // !Borders

@@ -4,58 +4,86 @@
 
 
 // !Larger Size
-.dcf--lg5 { @include lg5(!important); }
-.dcf--lg4 { @include lg4(!important); }
-.dcf--lg3 { @include lg3(!important); }
-.dcf--lg2 { @include lg2(!important); }
-.dcf--lg1 { @include lg1(!important); }
+.dcf-u-lg5 { @include lg5(!important); }
+.dcf-u-lg4 { @include lg4(!important); }
+.dcf-u-lg3 { @include lg3(!important); }
+.dcf-u-lg2 { @include lg2(!important); }
+.dcf-u-lg1 { @include lg1(!important); }
+
+
+// !Heading Sizes
+.dcf-u-h1 { @include h1(!important); }
+.dcf-u-h2 { @include h2(!important); }
+.dcf-u-h3 { @include h3(!important); }
+.dcf-u-h4 { @include h4(!important); }
+.dcf-u-h5 { @include h5(!important); }
+.dcf-u-h6 { @include h6(!important); }
+
+
+// !Display Headings
+.dcf-u-display1 { @include display1(!important); }
+.dcf-u-display2 { @include display2(!important); }
+.dcf-u-display3 { @include display3(!important); }
+.dcf-u-display4 { @include display4(!important); }
 
 
 // !Smaller Size
-.dcf--sm1 { @include sm1(!important); }
-.dcf--sm2 { @include sm2(!important); }
-.dcf--sm3 { @include sm3(!important); }
-.dcf--sm4 { @include sm4(!important); }
+.dcf-u-sm1 { @include sm1(!important); }
+.dcf-u-sm2 { @include sm2(!important); }
+.dcf-u-sm3 { @include sm3(!important); }
+.dcf-u-sm4 { @include sm4(!important); }
 
 
 // !Line Height
-.dcf--lh1 { @include lh1(!important); }
-.dcf--lh2 { @include lh2(!important); }
-.dcf--lh3 { @include lh3(!important); }
+.dcf-u-lh1 { @include lh1(!important); }
+.dcf-u-lh2 { @include lh2(!important); }
+.dcf-u-lh3 { @include lh3(!important); }
 
 
 // !Vertical Text Alignment
-.dcf--baseline { @include baseline(!important); }
-.dcf--top { @include top(!important); }
-.dcf--middle { @include middle(!important); }
-.dcf--bottom { @include bottom(!important); }
-.dcf--text-top { @include text-top(!important); }
-.dcf--text-bottom { @include text-bottom(!important); }
+.dcf-u-txt-baseline { @include txt-baseline(!important); }
+.dcf-u-txt-top { @include txt-top(!important); }
+.dcf-u-txt-middle { @include txt-middle(!important); }
+.dcf-u-txt-bottom { @include txt-bottom(!important); }
+.dcf-u-txt-texttop { @include txt-texttop(!important); }
+.dcf-u-txt-textbottom { @include txt-textbottom(!important); }
 
 
 // !Horizontal Text Alignment
-.dcf--text-center { @include text-center(!important); }
-.dcf--text-left { @include text-left(!important); }
-.dcf--text-right { @include text-right(!important); }
-
-
-// !Text Transform
-.dcf--capitalize { @include capitalize(!important); }
-.dcf--lowercase { @include lowercase(!important); }
-.dcf--uppercase { @include uppercase(!important); }
-
-
-// !Font Weights and Styles
-.dcf--regular { @include regular(!important); }
-.dcf--bold { @include bold(!important); }
-.dcf--roman { @include roman(!important); }
-.dcf--italic { @include italic(!important); }
-
-
-// !Letter Spacing
-.dcf--ls1 { @include ls1(!important); }
-.dcf--ls2 { @include ls2(!important); }
+.dcf-u-txt-center { @include txt-center(!important); }
+.dcf-u-txt-left { @include txt-left(!important); }
+.dcf-u-txt-right { @include txt-right(!important); }
 
 
 // !Text Wrapping
-.dcf--nowrap { @include nowrap(!important); }
+.dcf-u-txt-nowrap { @include txt-nowrap(!important); }
+
+
+// Text Decoration
+.dcf-u-txt-decor-none { @include txt-decor-none(!important); }
+
+
+// !Text Transform
+.dcf-u-capitalize { @include capitalize(!important); }
+.dcf-u-lowercase { @include lowercase(!important); }
+.dcf-u-uppercase { @include uppercase(!important); }
+
+
+// !Font Weights
+.dcf-u-regular { @include regular(!important); }
+.dcf-u-bold { @include bold(!important); }
+
+
+// !Font Styles
+.dcf-u-roman { @include roman(!important); }
+.dcf-u-italic { @include italic(!important); }
+
+
+// !Letter Spacing
+.dcf-u-ls0 { @include ls0(!important); }
+.dcf-u-ls1 { @include ls1(!important); }
+.dcf-u-ls2 { @include ls2(!important); }
+
+
+// !Outline Text
+// .dcf-u-txt-outline { @include txt-outline(!important); }

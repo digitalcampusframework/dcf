@@ -3,17 +3,9 @@
 ////////////////////////////
 
 
-// !Height (0–100%)
-@mixin h0($imp:null) { height: 0 $imp; }
-@mixin h25($imp:null) { height: 25% $imp; }
-@mixin h50($imp:null) { height: 50% $imp; }
-@mixin h75($imp:null) { height: 75% $imp; }
+// !Height
 @mixin h100($imp:null) { height: 100% $imp; }
 
 
-// !Width (0–100%)
-@mixin w0($imp:null) { width: 0 $imp; }
-@mixin w25($imp:null) { width: 25% $imp; }
-@mixin w50($imp:null) { width: 50% $imp; }
-@mixin w75($imp:null) { width: 75% $imp; }
+// !Width
 @mixin w100($imp:null) { width: 100% $imp; }

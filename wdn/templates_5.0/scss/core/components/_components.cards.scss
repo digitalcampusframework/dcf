@@ -4,43 +4,31 @@
 
 
 // !Individual Card
-.dcf--card {
+.dcf-c-card {
   @include sm1;
-//   border: 1px solid $border-color;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+  @include bg-white;
+//   border: 1px solid $color-border;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.25);
 }
 
 
 // !Card Image
-.dcf--card img {
-  @include d-block;
+.dcf-c-card img {
+  @include block;
   @include w100;
 }
 
 
 // !Card Block
-.dcf--card-block {
+.dcf-c-card__block {
   @include pt5;
-  @include pr5;
+  @include pr6;
 //   padding-right: 5%;
   @include pb5;
-  @include pl5;
+  @include pl6;
 //   padding-left: 5%;
 }
 
-.dcf--card-block p:last-child {
+.dcf-c-card-block p:last-child {
   @include mb0;
-}
-
-
-// !Deck of Cards
-.dcf--card-deck {
-  @extend .dcf--list-unstyled;
-
-  @supports (display: grid) {
-    @include d-grid;
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-    grid-gap: 1em;
-  }
-
 }

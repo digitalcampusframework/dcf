@@ -4,10 +4,9 @@
 
 
 // !Skip Navigation
-.dcf--skip-nav {
-//   @include absolute;
-  top: $spacing-2;
-  left: $spacing-2;
+.dcf-c-skipnav {
+  top: $length2;
+  left: $length2;
 }
 
 
@@ -15,31 +14,31 @@
 
 
 // !Menu Toggle
-// .dcf--icon-menu-top {
+// .dcf-c-icon-menu-top {
 //   transition: transform .4s ease-out;
 // }
 //
-// .dcf--icon-menu-middle {
+// .dcf-c-icon-menu-middle {
 //   opacity: 1;
 //   transition: opacity .4s ease-out;
 // }
 //
-// .dcf--icon-menu-bottom {
+// .dcf-c-icon-menu-bottom {
 //   transition: transform .4s ease-out;
 // }
 //
 //
-// .dcf--menu-toggle.dcf--is-pressed .dcf--icon-menu-top {
+// .dcf-c-menu-toggle.dcf-c-is-pressed .dcf-c-icon-menu-top {
 //   transform: rotate(45deg);
 //   transition: transform .2s ease-out;
 // }
 //
-// .dcf--menu-toggle.dcf--is-pressed .dcf--icon-menu-middle {
+// .dcf-c-menu-toggle.dcf-c-is-pressed .dcf-c-icon-menu-middle {
 //   opacity: 0;
 //   transition: opacity .2s ease-out;
 // }
 //
-// .dcf--menu-toggle.dcf--is-pressed .dcf--icon-menu-bottom {
+// .dcf-c-menu-toggle.dcf-c-is-pressed .dcf-c-icon-menu-bottom {
 //   transform: rotate(-45deg);
 //   transition: transform .2s ease-out;
 // }
@@ -48,56 +47,56 @@
 
 
 // !Primary Navigation
-.dcf--nav-primary ul {
+.dcf-c-nav__primary ul {
   @include mb0;
   @include pl0;
   list-style: none;
 }
 
 
-.dcf--nav-primary > ul {
+.dcf-c-nav__primary > ul {
 //   @include d-flex;
 //   @include f-col;
   @include sm2;
 
   @supports (display: grid) {
-    @include d-grid;
+    @include grid;
     grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
     grid-gap: 1em 5vw;
   }
 
 }
 
-// .dcf--nav-primary > ul >  li {
+// .dcf-c-nav-primary > ul >  li {
 //   @include mb0;
 // }
 //
-// .dcf--nav-primary li:last-child {
+// .dcf-c-nav-primary li:last-child {
 //   @include mb0;
 // }
 
-.dcf--nav-primary ul ul {
+.dcf-c-nav__primary ul ul {
   @include sm1;
   @include pt4;
 }
 
-// .dcf--nav-primary a {
+// .dcf-c-nav-primary a {
 //   @include pr4;
 // }
 
 @include mq(md) {
 
-  .dcf--menu-toggle {
-    @include d-none;
+  .dcf-c-nav-toggle {
+    @include none;
   }
 
-  .dcf--nav-primary > ul {
-    @include d-flex;
-    @include f-row;
-    @include f-jc-between;
+  .dcf-c-nav__primary > ul {
+    @include flex;
+    @include flex-row;
+    @include jc-between;
   }
 
-  .dcf--nav-primary > ul > li:not(:last-child) {
+  .dcf-c-nav__primary > ul > li:not(:last-child) {
     margin-right: 2vw;
   }
 
@@ -106,11 +105,11 @@
 
 // !Secondary Navigation
 
-.dcf--nav-secondary li {
-  @include d-inline;
+.dcf-c-nav__secondary li {
+  @include inline;
 }
 
-.dcf--nav-secondary li:not(:last-child) {
+.dcf-c-nav__secondary li:not(:last-child) {
   margin-right: 2vw;
 }
 
@@ -121,15 +120,15 @@
 
 @include mq(md, max, width) {
 
-  .dcf--mobile-nav-toggle {
+  .dcf-c-mobile-nav-toggle {
     @include fixed;
-    @include w25;
+    width: 25%;
     bottom: 0;
     height: 4em;
     z-index: 2;
   }
 
-  .dcf--menu-toggle {
+  .dcf-c-nav-toggle {
     left: 0;
   }
 
@@ -141,21 +140,21 @@
 
 @include mq(md, min, width) {
 
-  .dcf--menu-toggle {
-    @include d-none;
+  .dcf-c-nav-toggle {
+    @include none;
   }
 
-  .dcf--nav-primary {
+  .dcf-c-nav__primary {
     grid-area: nav1;
     @include relative;
   }
 
-  .dcf--nav-primary ul ul {
+  .dcf-c-nav__primary ul ul {
     @include absolute;
     @include sr-only;
   }
 
-  .dcf--nav-secondary {
+  .dcf-c-nav__secondary {
 //     @include absolute;
 //     top: calc(1em + 3px);
 //     right: 5vw;

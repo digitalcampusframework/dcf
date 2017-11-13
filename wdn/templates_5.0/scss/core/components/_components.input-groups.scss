@@ -3,33 +3,33 @@
 ////////////////////////////
 
 
-.dcf--input-group {
-  @include d-inline-flex;
-  @include f-ai-center;
+.dcf-c-input-group {
+  @include inlineflex;
+  @include ai-center;
   @include w100;
 }
 
 
 // !Input Group Input Field
-.dcf--input-group .dcf--input-textual {
+.dcf-c-input-group .dcf-c-input-textual {
   flex: 1 1 auto;
-  @include w0;
+  width: 0;
   @include mt0;
   @include rounded-left;
 }
 
-.dcf--input-group .dcf--input-textual:not(:last-child) {
+.dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
   border-radius: $roundrect 0 0 $roundrect;
 }
 
-.dcf--input-group-addon + .dcf--input-textual {
+.dcf-c-input-group-addon + .dcf-c-input-textual {
   border-radius: 0 $roundrect $roundrect 0;
 }
 
 
 // !Input Group Button
-.dcf--input-group .dcf--btn {
-  @include f-as-stretch;
+.dcf-c-input-group .dcf-c-btn {
+  @include as-stretch;
   margin-left: -1px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -37,20 +37,22 @@
 
 
 // !Input Group Add-on
-.dcf--input-group-addon {
-//   padding-top: .6em;
+.dcf-c-input-group-addon {
+//   padding-top: #{ms(1)}em;
   @include pt2;
   @include pr3;
 //   padding-bottom: .4em;
   @include pb2;
   @include pl3;
+  @include as-stretch;
+  font-size: 1em;
   color: $color-light-text;
   border-style: solid;
   border-color: $color-border;
   background-color: #eee;
 }
 
-.dcf--input-group-addon:not(:last-child) {
+.dcf-c-input-group-addon:not(:last-child) {
   border-top-width: 1px;
   border-right-width: 0;
   border-bottom-width: 1px;
@@ -58,7 +60,7 @@
   @include rounded-left;
 }
 
-.dcf--input-group-addon:last-child {
+.dcf-c-input-group-addon:last-child {
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;

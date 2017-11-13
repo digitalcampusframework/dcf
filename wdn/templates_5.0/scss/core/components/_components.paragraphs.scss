@@ -4,13 +4,13 @@
 
 
 // !Lead Paragraphs
-.dcf--lead {
-  font-size: 1.25rem;
+.dcf-c-lead {
+  font-size: #{ms(3)}em;
 }
 
 
 // !Drop Caps
-.dcf--drop-cap:first-letter {
+.dcf-c-dropcap:first-letter {
   @include float-left;
   // apply custom styling in _theme-typography
 }

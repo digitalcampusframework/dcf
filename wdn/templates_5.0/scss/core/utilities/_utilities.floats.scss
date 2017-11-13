@@ -3,29 +3,21 @@
 /////////////////////
 
 
-// !Float None
-.dcf--float-none { @include float-none(!important); }
-
-
 // !Float Right
-.dcf--float-right { @include float-right(!important); }
+.dcf-u-float-right { @include float-right(!important); }
 
 
 // !Float Left
-.dcf--float-left { @include float-left(!important); }
-
-
-// !Clear None
-.dcf--clear-none { @include clear-none(!important); }
+.dcf-u-float-left { @include float-left(!important); }
 
 
 // !Clear Right
-.dcf--clear-right { @include clear-right(!important); }
+.dcf-u-clear-right { @include clear-right(!important); }
 
 
 // !Clear Left
-.dcf--clear-left { @include clear-left(!important); }
+.dcf-u-clear-left { @include clear-left(!important); }
 
 
 // !Clear Both
-.dcf--clear-both { @include clear-both(!important); }
+.dcf-u-clear-both { @include clear-both(!important); }

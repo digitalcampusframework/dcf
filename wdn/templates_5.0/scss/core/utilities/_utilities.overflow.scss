@@ -4,48 +4,48 @@
 
 
 // !Visible
-.dcf--overflow-visible { @include overflow-visible(!important); }
+.dcf-u-overflow-visible { @include overflow-visible(!important); }
 
 
 // !Hidden
-.dcf--overflow-hidden { @include overflow-hidden(!important); }
+.dcf-u-overflow-hidden { @include overflow-hidden(!important); }
 
 
 // !Scroll
-.dcf--overflow-scroll { @include overflow-scroll(!important); }
+.dcf-u-overflow-scroll { @include overflow-scroll(!important); }
 
 
 // !Auto
-.dcf--overflow-auto { @include overflow-auto(!important); }
+.dcf-u-overflow-auto { @include overflow-auto(!important); }
 
 
 // !Overflow-X: Visible
-.dcf--overflow-x-visible { @include overflow-x-visible(!important); }
+.dcf-u-overflow-x-visible { @include overflow-x-visible(!important); }
 
 
 // !Overflow-X: Hidden
-.dcf--overflow-x-hidden { @include overflow-x-hidden(!important); }
+.dcf-u-overflow-x-hidden { @include overflow-x-hidden(!important); }
 
 
 // !Overflow-X: Scroll
-.dcf--overflow-x-scroll { @include overflow-x-scroll(!important); }
+.dcf-u-overflow-x-scroll { @include overflow-x-scroll(!important); }
 
 
 // !Overflow-X: Auto
-.dcf--overflow-x-auto { @include overflow-x-auto(!important); }
+.dcf-u-overflow-x-auto { @include overflow-x-auto(!important); }
 
 
 // !Overflow-Y: Visible
-.dcf--overflow-y-visible { @include overflow-y-visible(!important); }
+.dcf-u-overflow-y-visible { @include overflow-y-visible(!important); }
 
 
 // !Overflow-Y: Hidden
-.dcf--overflow-y-hidden { @include overflow-y-hidden(!important); }
+.dcf-u-overflow-y-hidden { @include overflow-y-hidden(!important); }
 
 
 // !Overflow-Y: Scroll
-.dcf--overflow-y-scroll { @include overflow-y-scroll(!important); }
+.dcf-u-overflow-y-scroll { @include overflow-y-scroll(!important); }
 
 
 // !Overflow-Y: Auto
-.dcf--overflow-y-auto { @include overflow-y-auto(!important); }
+.dcf-u-overflow-y-auto { @include overflow-y-auto(!important); }

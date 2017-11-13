@@ -4,17 +4,17 @@
 
 
 // !Unstyled List
-.dcf--list-unstyled {
+.dcf-c-list-unstyled {
   list-style: none;
   @include pl0;
 }
 
 
 // !Inline List
-.dcf--list-inline-item {
-  @include d-inline-block;
+.dcf-c-list-inline-item {
+  @include inlineblock;
 }
 
-.dcf--list-inline-item:not(:last-child) {
+.dcf-c-list-inline-item:not(:last-child) {
   @include mr2;
 }

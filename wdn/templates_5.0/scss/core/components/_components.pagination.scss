@@ -3,13 +3,13 @@
 //////////////////////////
 
 
-.dcf--pagination {
-  @include d-flex;
+.dcf-c-pagination {
+  @include flex;
   @include mt5;
-  @extend .dcf--list-unstyled; // !!!!
+  @extend .dcf-c-list-unstyled; // !!!!
 }
 
-// .dcf--page-link {
+// .dcf-c-page-link {
 //   @include d-block;
 //   margin-left: -1px;
 // //   @include pt2;
@@ -25,58 +25,58 @@
 // //   transition: color 1s ease-out, border-color 1s ease-out;
 // }
 
-// a.dcf--page-link {
+// a.dcf-c-page-link {
 //   @include b1;
 //   border-color: $color-border;
 //   transition: color 500ms ease-out, border-color 500ms ease-out;
 // }
 //
-// a.dcf--page-link:hover {
+// a.dcf-c-page-link:hover {
 //   border-color: currentcolor;
 //   transition: color 250ms ease-out, border-color 250ms ease-out;
 // }
 
-// .dcf--page-link:hover {
+// .dcf-c-page-link:hover {
 //   margin-right: 0;
 //   z-index: 1;
 //   border-color: currentcolor;
 //   transition: color .25s ease-out, border-color .25s ease-out;
 // }
 
-// .dcf--page-item:hover + .dcf--page-item .dcf--page-link {
+// .dcf-c-page-item:hover + .dcf-c-page-item .dcf-c-page-link {
 //   border-left-color: transparent;
 // }
 
-// .dcf--page-item:first-child .dcf--page-link {
+// .dcf-c-page-item:first-child .dcf-c-page-link {
 //   @include ml0;
 //   @include rounded-left;
 // }
 //
-// .dcf--page-item:last-child .dcf--page-link {
+// .dcf-c-page-item:last-child .dcf-c-page-link {
 //   @include rounded-right;
 // }
 
 
-.dcf--page-item .dcf--btn:focus {
+.dcf-c-pagination__item .dcf-c-btn:focus {
   z-index: 1;
 }
 
 
-.dcf--page-item:first-child > .dcf--btn {
+.dcf-c-pagination__item:first-child > .dcf-c-btn {
   @include sharp-right;
 }
 
 
-.dcf--page-item:last-child > .dcf--btn {
+.dcf-c-pagination__item:last-child > .dcf-c-btn {
   @include sharp-left;
 }
 
 
-.dcf--page-item:not(:first-child):not(:last-child) > .dcf--btn {
+.dcf-c-pagination__item:not(:first-child):not(:last-child) > .dcf-c-btn {
   @include sharp;
 }
 
 
-.dcf--page-item + .dcf--page-item .dcf--btn {
+.dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
   margin-left: -1px;
 }

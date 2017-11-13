@@ -8,7 +8,7 @@
 
 @include mq(md, max, width) {
 
-  .dcf--idm-toggle {
+  .dcf-c-idm__toggle {
     left: 75%;
   }
 
@@ -18,7 +18,7 @@
 
 @include mq(md, min, width) {
 
-  .dcf--idm {
+  .dcf-c-idm {
 
     @supports (display: grid) {
       grid-area: idm;

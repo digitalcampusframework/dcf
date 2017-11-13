@@ -4,7 +4,7 @@
 
 
 html {
-  @include serif-font;
+  @include font-serif;
 }
 
 
@@ -14,83 +14,83 @@ h3,
 h4,
 h5,
 h6 {
-  @include sans-serif-font;
+  @include font-sans;
   @include bold;
   letter-spacing: -.03em;
 }
 
 
-.dcf--subhead {
+.dcf-c-subhead {
 //   color: $light-text;
-  @include sans-serif-font;
+  @include font-sans;
 }
 
 
-.dcf--article-3 {
+.dcf-c-article-3 {
 //   color: $light-text;
-  @include sans-serif-font;
+  @include font-sans;
 }
 
 
-.dcf--article-aside {
-  @include sans-serif-font;
+.dcf-c-article-aside {
+  @include font-sans;
 }
 
 
 figcaption {
-  @include sans-serif-font;
+  @include font-sans;
 }
 
 
 table {
-  @include sans-serif-font;
+  @include font-sans;
 }
 
 
-.dcf--input-textual {
-  @include sans-serif-font;
+.dcf-c-input-textual {
+  @include font-sans;
 }
 
 
-.dcf--input-select select {
-  @include sans-serif-font;
+.dcf-c-input-select select {
+  @include font-sans;
 }
 
 
-.dcf--btn {
-  @include sans-serif-font;
+.dcf-c-btn {
+  @include font-sans;
 }
 
 
-.dcf--badge {
-  @include sans-serif-font;
+.dcf-c-badge {
+  @include font-sans;
 }
 
 
-.dcf--pagination {
-  @include sans-serif-font;
+.dcf-c-pagination {
+  @include font-sans;
 }
 
 
-// .dcf--header {
-//   @include sans-serif-font;
+// .dcf-c-header {
+//   @include font-sans;
 // }
 
 
-.dcf--footer-local {
-  @include sans-serif-font;
+.dcf-c-footer__local {
+  @include font-sans;
 }
 
 
-.dcf--article-meta {
-  @include sans-serif-font;
+.dcf-c-article__meta {
+  @include font-sans;
 }
 
-.unl--nav-primary ul {
-  @include sans-serif-font;
+.unl-t-nav__primary ul {
+  @include font-sans;
 }
 
-.unl--nav-primary > ul > li > a {
+.unl-t-nav__primary > ul > li > a {
   @include bold;
   @include uppercase;
   @include ls1;
@@ -98,10 +98,10 @@ table {
 
 
 
-.unl .dcf--drop-cap:first-letter {
-  margin-top: 0.75rem; // first, adjust margin-top for Firefox
-  padding-right: 0.5rem;
-  padding-left: .25rem;
-  font-size: 5em;
-  line-height: .69; // then, adjust line-height for Chrome and Safari
+.unl .dcf-c-dropcap:first-letter {
+  margin-top: #{ms(-4)}rem; // first, adjust margin-top for Firefox
+  padding-right: #{ms(-8)}rem;
+  padding-left: #{ms(-20)}rem;
+  font-size: #{ms(22)}em;
+  line-height: .65; // then, adjust line-height for Chrome and Safari
 }

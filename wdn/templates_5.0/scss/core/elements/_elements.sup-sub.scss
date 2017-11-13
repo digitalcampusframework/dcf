@@ -7,7 +7,7 @@
 sup,
 sub {
   @include relative;
-  @include baseline;
+  @include txt-baseline;
   @include sm3;
 }
 

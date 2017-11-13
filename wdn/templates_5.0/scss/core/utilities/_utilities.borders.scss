@@ -4,44 +4,43 @@
 
 
 // All Sides
-.dcf--b1 {
+.dcf-u-b1 {
   @include b1(!important);
   border-color: $color-border;
 }
 
 
 // !Top
-.dcf--bt {
+.dcf-u-bt {
   @include bt(!important);
   border-color: $color-border;
 }
 
 
 // !Right
-.dcf--br {
+.dcf-u-br {
   @include br(!important);
   border-color: $color-border;
 }
 
 
 // !Bottom
-.dcf--bb {
+.dcf-u-bb {
   @include bb(!important);
   border-color: $color-border;
 }
 
 
 // !Left
-.dcf--bl {
+.dcf-u-bl {
   @include bl(!important);
   border-color: $color-border;
 }
 
 
 // !No Border
-.dcf--b0 {
+.dcf-u-b0 {
   @include b0(!important);
-  border-color: $color-border;
 }
 
 
@@ -49,24 +48,24 @@
 
 
 // !Circle
-.dcf--circle { @include circle(!important); }
+.dcf-u-circle { @include circle(!important); }
 
 
 // !Rounded, All Sides
-.dcf--rounded { @include rounded(!important); }
+.dcf-u-rounded { @include rounded(!important); }
 
 
 // !Rounded Top (Top Right, Top Left)
-.dcf--rounded-top { @include rounded-top(!important); }
+.dcf-u-rounded-top { @include rounded-top(!important); }
 
 
 // !Rounded Right (Top Right, Bottom Right)
-.dcf--rounded-right { @include rounded-right(!important); }
+.dcf-u-rounded-right { @include rounded-right(!important); }
 
 
 // !Rounded Bottom (Bottom Right, Bottom Left)
-.dcf--rounded-bottom { @include rounded-bottom(!important); }
+.dcf-u-rounded-bottom { @include rounded-bottom(!important); }
 
 
 // !Rounded Left (Bottom Left, Top Left)
-.dcf--rounded-left { @include rounded-left(!important); }
+.dcf-u-rounded-left { @include rounded-left(!important); }
