@@ -1,0 +1,45 @@
+//////////////////////
+// !COMPONENTS: MODALS
+//////////////////////
+
+
+// !Modal Overlay
+.dcf-c-modal__overlay {
+  @include flex;
+  @include ai-center;
+  @include jc-center;
+  @include fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  @include h100;
+  @include w100;
+  @include invisible;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.6s;
+
+  &.dcf-is-open {
+    @include visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+
+// !Modal Content
+.dcf-c-modal__content {
+  width: 90%;
+  height: auto;
+  max-height: 100%;
+}
+
+
+// !Modal Controls
+.dcf-c-close-modal {
+  @include absolute;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  @include b0;
+  @include bg-transparent;
+}

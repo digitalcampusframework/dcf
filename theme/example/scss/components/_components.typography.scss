@@ -1,0 +1,34 @@
+/////////////////////
+// !THEME: TYPOGRAPHY
+/////////////////////
+
+
+html {
+  @include font-system;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include bold;
+}
+
+
+.ex-t-nav__primary > ul > li > a {
+  @include bold;
+  @include uppercase;
+  @include ls1;
+}
+
+
+.unl .dcf-c-dropcap:first-letter {
+  margin-top: #{ms(-4)}rem; // first, adjust margin-top for Firefox
+  padding-right: #{ms(-8)}rem;
+  padding-left: #{ms(-20)}rem;
+  font-size: #{ms(22)}em;
+  line-height: .65; // then, adjust line-height for Chrome and Safari
+}

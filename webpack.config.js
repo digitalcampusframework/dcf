@@ -6,12 +6,12 @@ const webpack = require('webpack');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = {
-  context: path.resolve(__dirname, './wdn/templates_5.0'),
+  context: path.resolve(__dirname, './theme/example'),
   entry: {
     main: './js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './wdn/templates_5.0/js'),
+    path: path.resolve(__dirname, './theme/example/js'),
     filename: 'debug.js'
   },
   watch: true,
