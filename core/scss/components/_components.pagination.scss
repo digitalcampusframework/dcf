@@ -6,7 +6,8 @@
 .dcf-c-pagination {
   @include flex;
   @include mt5;
-  @extend .dcf-c-list-unstyled; // !!!!
+  @include pl0;
+  list-style: none;
 }
 
 // .dcf-c-page-link {
