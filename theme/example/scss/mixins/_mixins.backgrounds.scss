@@ -1,0 +1,14 @@
+///////////////////////
+// !MIXINS: BACKGROUNDS
+///////////////////////
+
+
+// !Brand: Alpha
+@mixin bg-brand-alpha($imp:null) {
+  background-color: $color-brand-alpha $imp;
+}
+
+// !Brand: Beta
+@mixin bg-brand-beta($imp:null) {
+  background-color: $color-brand-beta $imp;
+}

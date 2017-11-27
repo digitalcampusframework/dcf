@@ -1,0 +1,14 @@
+///////////////////////
+// !MIXINS: BACKGROUNDS
+///////////////////////
+
+
+// !Scarlet
+@mixin bg-scarlet($imp:null) {
+  background: linear-gradient(135deg, lighten($scarlet,2%) 0%, darken($scarlet,2%) 100%) $imp;
+}
+
+// !Cream
+@mixin bg-cream($imp:null) {
+  background: linear-gradient(135deg, darken($cream,2%) 0%, darken($cream,3%) 100%) $imp;
+}
