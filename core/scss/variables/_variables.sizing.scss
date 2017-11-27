@@ -17,6 +17,11 @@ $min_font_size: ms(0);
 $max_font_size: ms(4);
 
 
+// !Linear Inetrpolation
+$min_lerp_width: ms(48); // 31.475em
+$max_lerp_width: ms(68); // 132.501em
+
+
 // !Spacing
 $length0: 0;
 $length1: #{ms(-12)}em;
