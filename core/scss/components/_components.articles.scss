@@ -45,6 +45,10 @@
 
 @include mq(md) {
 
+  .dcf-c-article__share div[role="heading"] {
+    @include mb5;
+  }
+
   @supports (display: grid) {
 
     .dcf-c-article {
@@ -76,5 +80,6 @@
     .dcf-c-article__footer {
       grid-area: footer;
     }
+
   }
 }
