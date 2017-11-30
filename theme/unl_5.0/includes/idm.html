@@ -1,5 +1,6 @@
 <nav class="dcf-u-g-as-center dcf-u-g-js-end dcf-u-pt4 dcf-c-idm" id="idm" role="navigation" aria-labelledby="idm-username">
 
+  <!-- Login -->
   <a class="dcf-c-idm__login dcf-c-mobile-nav-toggle dcf-c-idm__toggle unl-u-font-sans" id="idm-username" href="https://login.unl.edu/cas/login">
     <span class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-jc-center dcf-u-h100">
       <span class="dcf-u-flex dcf-u-ai-center dcf-u-jc-center dcf-u-circle" style="height: 2em; width: 2em; background-color: #d00000;">
@@ -9,6 +10,7 @@
     </span>
   </a>
 
+  <!-- Notification Center toggle (logged in) -->
   <div class="dcf-u-none" id="idm-notice-container">
     <button class="dcf-u-p0 dcf-u-b0 dcf-u-bg-transparent dcf-c-mobile-nav-toggle dcf-c-idm__toggle unl-u-font-sans" id="idm-toggle" aria-haspopup="true" aria-pressed="false" aria-controls="idm-options">
       <span class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-jc-center dcf-u-h100">
@@ -27,6 +29,21 @@
         <li><a id="idm-logout" href="https://login.unl.edu/cas/logout?url=http%3A//www.unl.edu/">Logout</a></li>
       </ul>
     </nav>
+  </div>
+
+  <!-- Modal, Notification Center -->
+  <div class="dcf-c-modal__overlay dcf-u-overlay-light dcf-u-sr-only" role="dialog" aria-hidden="true" aria-label="modal">
+    <div class="dcf-c-modal__content dcf-u-flex dcf-u-ai-flexend dcf-u-h100" role="document" tabindex="-1">
+      <div class="dcf-u-overflow-y-scroll">
+        <div class="dcf-c-search-results dcf-u-pb6 dcf-u-sm3 unl-u-font-sans">
+
+
+
+
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </nav>

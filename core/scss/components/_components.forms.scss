@@ -143,7 +143,7 @@
 	.dcf-c-input-select select {
 		padding-right: 3em; /* Match-01 */
 		/* inside @supports so that iOS <= 8 display the native arrow */
-		background: none; /* Match-04 */
+		@include bg-none; /* Match-04 */
 		/* inside @supports so that Android <= 4.3 display the native arrow */
 		border: 1px solid transparent; /* Match-05 */
 
@@ -165,7 +165,7 @@
 /* Set the background fallback to solid #fff so Firefox renders the <option> list readably. */
 .dcf-c-input-select {
 	border: 1px solid $color-border;
-	border-radius: $roundrect;
+	@include rounded;
 // 	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 // 	box-shadow: 2px 2px 0 0 rgba(0,0,0,.1);
   transition: border-color $hover-off;
@@ -178,7 +178,7 @@
 	color: $color-body;
 // 	line-height: 1.5;
 	@include lh1;
-	border-radius: $roundrect;
+	@include rounded;
 }
 
 /* Hover style */
@@ -222,13 +222,13 @@
 	}
 
 	.dcf-c-input-select select:focus::-ms-value {
-		background: transparent;
+		@include bg-transparent;
 		color: #222; /* Match-02*/
 	}
 
 	.dcf-c-input-select select {
 		padding-right: 3em; /* Match-01 */
-		background: none; /* Match-04 */
+    @include bg-none; /* Match-04 */
 		border: 1px solid transparent; /* Match-05 */
 	}
 

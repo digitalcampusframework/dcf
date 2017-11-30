@@ -7,14 +7,17 @@
 
 // Define brand colors
 $color-brand-alpha: #d00000;
-$color-brand-beta: #fefdfa;
+$color-brand-beta: #f5f1e7;
+$color-brand-gamma: #c7c8ca;
+$color-brand-delta: #fefdfa;
 
 
 // Assign names to brand colors
 $scarlet: $color-brand-alpha;
 $cream: $color-brand-beta;
+$gray: $color-brand-gamma;
+$lighter-cream: $color-brand-delta;
 
-$color-test: scale-color($scarlet, $lightness: 16%);
 
 // !UI COLORS
 // Assign colors to elements
@@ -54,6 +57,20 @@ $color-border-hover: darken($color-border,10%);
 
 
 // $border-color: scale-color($scarlet, $saturation: -100%);
+
+
+
+// !Marks (Highlights) Background Color
+$color-mark: #ff0;
+
+
+// Badges
+$color-badge: $gray;
+
+
+// !Footer
+$color-footer-local: $gray;
+$color-footer-global: darken($gray,5%);
 
 
 // !Define contextual colors

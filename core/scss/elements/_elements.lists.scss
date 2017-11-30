@@ -27,7 +27,7 @@ ul {
 li,
 dt,
 dd {
-  max-width: 36em;
+  @include measure;
   @include mt0;
 }
 

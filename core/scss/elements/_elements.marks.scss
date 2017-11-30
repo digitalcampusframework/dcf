@@ -9,5 +9,5 @@ mark {
   @include pr1;
   padding-bottom: .125em;
   @include pl1;
-  background-color: #ff0;
+  background-color: $color-mark;
 }

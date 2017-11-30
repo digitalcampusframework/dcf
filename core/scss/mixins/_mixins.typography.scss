@@ -12,32 +12,36 @@
 
 
 // !Heading Sizes
-@mixin h1($imp:null) { font-size: #{ms(12)}em }
-@mixin h2($imp:null) { font-size: #{ms(10)}em }
-@mixin h3($imp:null) { font-size: #{ms(8)}em }
-@mixin h4($imp:null) { font-size: #{ms(6)}em }
-@mixin h5($imp:null) { font-size: #{ms(4)}em }
-@mixin h6($imp:null) { font-size: #{ms(2)}em }
+@mixin h1($imp:null) { font-size: #{ms(6)}em }
+@mixin h2($imp:null) { font-size: #{ms(5)}em }
+@mixin h3($imp:null) { font-size: #{ms(4)}em }
+@mixin h4($imp:null) { font-size: #{ms(3)}em }
+@mixin h5($imp:null) { font-size: #{ms(2)}em }
+@mixin h6($imp:null) { font-size: #{ms(1)}em }
 
 
 // !Display Headings
-@mixin display1($imp:null) { font-size: #{ms(16)}em; }
-@mixin display2($imp:null) { font-size: #{ms(18)}em; }
-@mixin display3($imp:null) { font-size: #{ms(20)}em; }
-@mixin display4($imp:null) { font-size: #{ms(22)}em; }
+@mixin display1($imp:null) { font-size: #{ms(7)}em; }
+@mixin display2($imp:null) { font-size: #{ms(8)}em; }
+@mixin display3($imp:null) { font-size: #{ms(9)}em; }
+@mixin display4($imp:null) { font-size: #{ms(10)}em; }
 
 
 // !Smaller Size
-@mixin sm1($imp:null) { font-size: #{ms(-2)}em $imp; }
-@mixin sm2($imp:null) { font-size: #{ms(-4)}em $imp; }
-@mixin sm3($imp:null) { font-size: #{ms(-6)}em $imp; }
-@mixin sm4($imp:null) { font-size: #{ms(-8)}em $imp; }
+@mixin sm1($imp:null) { font-size: #{ms(-1)}em $imp; }
+@mixin sm2($imp:null) { font-size: #{ms(-2)}em $imp; }
+@mixin sm3($imp:null) { font-size: #{ms(-3)}em $imp; }
+@mixin sm4($imp:null) { font-size: #{ms(-4)}em $imp; }
 
 
 // !Line Height
-@mixin lh1($imp:null) { line-height: ms(5) $imp; }
-@mixin lh2($imp:null) { line-height: ms(3) $imp; }
-@mixin lh3($imp:null) { line-height: ms(0) $imp; }
+@mixin lh1($imp:null) { line-height: 1 $imp; }
+@mixin lh2($imp:null) { line-height: 1.25 $imp; }
+@mixin lh3($imp:null) { line-height: 1.5 $imp; }
+
+
+// !Measure (Line Length)
+@mixin measure($imp:null) { max-width: #{ms(25)}rem $imp; }
 
 
 // !Vertical Text Alignment

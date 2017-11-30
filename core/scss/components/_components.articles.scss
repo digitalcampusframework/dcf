@@ -22,31 +22,56 @@
   + ol,
   + ul {
     @include mt1;
-    text-indent: 1.5em;
   }
 
 }
 
 
+.dcf-c-article p,
+.dcf-c-article dl,
+.dcf-c-article ol,
+.dcf-c-article ul,
+.dcf-c-article blockquote {
+
+  + p {
+    text-indent: #{ms(4)}em;
+  }
+
+}
+
+
+.dcf-c-article__body dl,
+.dcf-c-article__body ol,
+.dcf-c-article__body ul {
+  @include pl6;
+}
+
+
 .dcf-c-author-img img {
   @include block;
-  width: #{ms(16)}em;
+  width: #{ms(8)}em;
 }
 
 
 @include mq(md, max, width) {
 
   .dcf-c-article__share li {
-    @include inline;
+    @include inlineflex;
     @include mr4;
+    @include mb0;
   }
+
 }
 
 
-@include mq(md) {
+@include mq(md, min, width) {
 
   .dcf-c-article__share div[role="heading"] {
     @include mb5;
+  }
+
+  .dcf-c-article__share li {
+    @include mb4;
   }
 
   @supports (display: grid) {
@@ -54,7 +79,7 @@
     .dcf-c-article {
       @include grid;
       grid-gap: 0 5vw;
-      grid-template-columns: #{ms(16)}em 1fr;
+      grid-template-columns: #{ms(8)}em 1fr;
       grid-template-areas:
         "share header"
         "share body"
@@ -73,7 +98,11 @@
       grid-area: share;
 
       .dcf-u-sticky {
-        top: #{ms(4)}em;
+        top: #{ms(2)}em;
+      }
+
+      div[role="heading"] {
+        @include mb6;
       }
     }
 
@@ -82,4 +111,5 @@
     }
 
   }
+
 }

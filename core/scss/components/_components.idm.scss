@@ -3,9 +3,6 @@
 /////////////////////////////////////////
 
 
-
-
-
 @include mq(md, max, width) {
 
   .dcf-c-idm__toggle {
@@ -13,7 +10,6 @@
   }
 
 }
-
 
 
 @include mq(md, min, width) {

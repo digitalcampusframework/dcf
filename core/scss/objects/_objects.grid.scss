@@ -8,7 +8,29 @@
 
   @supports (display: grid) {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(38)}em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
     grid-gap: 1em;
   }
+
+}
+
+
+.dcf-o-grid-odd {
+
+  @supports (display: grid) {
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+    grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
+  }
+
+}
+
+.dcf-o-grid-even {
+
+  @supports (display: grid) {
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+    grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
+  }
+
 }

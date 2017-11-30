@@ -3,25 +3,25 @@
 //////////////////////
 
 
-.dcf-c-hero {
-
-}
-
-.dcf-c-hero__fg {
-
-}
-
-.dcf-c-hero__bg {
-
-}
-
-.dcf-c-hero__video {
-
-}
-
-.dcf-c-hero__img {
-
-}
+// .dcf-c-hero {
+//
+// }
+//
+// .dcf-c-hero__fg {
+//
+// }
+//
+// .dcf-c-hero__bg {
+//
+// }
+//
+// .dcf-c-hero__video {
+//
+// }
+//
+// .dcf-c-hero__img {
+//
+// }
 
 .dcf-c-hero video,
 .dcf-c-hero img {
@@ -40,7 +40,7 @@
   .dcf-c-hero {
     @include relative;
     height: 75vh;
-    min-height: 32em;
+    min-height: #{ms(24)}em; // 31.475em
   }
 
   .dcf-c-hero__layer {

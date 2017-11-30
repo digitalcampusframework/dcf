@@ -4,11 +4,12 @@
 
 
 .dcf-c-icon {
-  height: 1em;
-  width: 1em;
+  height: #{ms(0)}em;
+  width: #{ms(0)}em;
 }
 
 .dcf-c-icon--inline {
+  @include relative;
   bottom: -.125em;
-  margin-right: .5em;
+  margin-right: #{ms(-4)}rem;
 }

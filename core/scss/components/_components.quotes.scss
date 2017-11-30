@@ -5,7 +5,6 @@
 
 .dcf-c-blockquote {
   @include relative;
-//   max-width: 36rem;
   @include ml0;
   @include pt4;
   @include pb4;
@@ -15,15 +14,14 @@
 .dcf-c-blockquote::before {
   content: open-quote;
   @include absolute;
-  font-size: #{ms(32)}em;
-  @include lh3;
+  font-size: #{ms(16)}em;
+  @include lh1;
 }
 
 
 .dcf-c-blockquote p {
-  padding-top: #{ms(16)}em;
-  font-size: 1.5rem;
-  @include h4;
+  padding-top: #{ms(9)}em;
+  font-size: #{ms(2)}em;
 }
 
 

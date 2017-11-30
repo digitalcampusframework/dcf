@@ -5,7 +5,7 @@
 
 // !Search Results
 .dcf-c-search-results-wrapper {
-  height: calc(100% - #{ms(32)}em);
+  height: calc(100% - #{ms(16)}em);
 }
 
 .dcf-c-search-results {
@@ -18,12 +18,12 @@
 //   }
 }
 
-.dcf-c-search-results__people {
+.dcf-c-search-results__directory {
 
   @supports (display: grid) {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(40)}em, 1fr));
-    grid-gap: #{ms(16)}em 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-gap: #{ms(8)}em 5vw;
   }
 }
 
@@ -49,17 +49,18 @@
 // }
 
 
-@include mq(sm, min, width) {
+// @include mq(sm, min, width) {
+//
+//   @supports (display: grid) {
+//
+//     .dcf-c-search-results__people {
+//       @include grid;
+//       grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+//       grid-gap: #{ms(16)}em 5vw;
+//     }
+//   }
+// }
 
-  @supports (display: grid) {
-
-    .dcf-c-search-results__people {
-      @include grid;
-      grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-      grid-gap: #{ms(16)}em 5vw;
-    }
-  }
-}
 
 @include mq(md, min, width) {
 
@@ -71,22 +72,26 @@
 
     .dcf-c-search-results {
       @include grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-areas:
-        "pages people places";
-      grid-gap: #{ms(16)}em 5vw;
+        "web directory";
+      grid-gap: #{ms(8)}em 5vw;
     }
 
-    .dcf-c-search-results__pages {
-      grid-area: pages;
+//     .dcf-c-search-results {
+//       @include grid;
+//       grid-template-columns: 2fr 1fr 1fr;
+//       grid-template-areas:
+//         "pages people places";
+//       grid-gap: #{ms(8)}em 5vw;
+//     }
+
+    .dcf-c-search-results__web {
+      grid-area: web;
     }
 
-    .dcf-c-search-results__people {
-      grid-area: people;
-    }
-
-    .dcf-c-search-results__places {
-      grid-area: places;
+    .dcf-c-search-results__directory {
+      grid-area: directory;
     }
   }
 }

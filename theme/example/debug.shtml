@@ -192,7 +192,7 @@
         <h2 class="dcf-u-mt6">Article</h2>
         <article class="dcf-c-article dcf-u-mt5">
           <header class="dcf-c-article__header dcf-u-mb5">
-            <div class="dcf-c-hgroup dcf-u-mb4">
+            <div class="dcf-u-flex dcf-u-flex-col dcf-u-mb4">
               <h1 class="dcf-u-2nd">Pellentesque ornare sem lacinia quam venenatis vestibulum</h1>
               <h2 class="dcf-c-subhead dcf-u-3rd">Elit Dapibus Adipiscing Lorem Justo</h2>
               <h2 class="dcf-c-subhead dcf-u-1st">Cursus Sem</h2>
@@ -341,18 +341,18 @@
         <h2 class="dcf-u-mt6">Headings</h2>
 
         <h1>h1. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">2.37em</small></h1>
-        <h2>h2. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">2.053em</small></h2>
-        <h3>h3. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.777em</small></h3>
-        <h4>h4. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.54em</small></h4>
-        <h5>h5. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.333em</small></h5>
-        <h6>h6. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.155em</small></h6>
+        <h2>h2. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">2.22em</small></h2>
+        <h3>h3. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.77em</small></h3>
+        <h4>h4. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.66em</small></h4>
+        <h5>h5. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.33em</small></h5>
+        <h6>h6. Heading <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">1.25em</small></h6>
 
         <h3 class="dcf-u-mt5 dcf-u-regular">Display Headings</h3>
 
-        <h1 class="dcf-u-display1">Display 1 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">3.16em</small></h1>
-        <h2 class="dcf-u-display2">Display 2 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">3.649em</small></h2>
-        <h3 class="dcf-u-display3">Display 3 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">4.214em</small></h3>
-        <h4 class="dcf-u-display4">Display 4 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">4.866em</small></h4>
+        <h1 class="dcf-u-display1">Display 1 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">2.96em</small></h1>
+        <h2 class="dcf-u-display2">Display 2 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">3.16em</small></h2>
+        <h3 class="dcf-u-display3">Display 3 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">3.95em</small></h3>
+        <h4 class="dcf-u-display4">Display 4 <small class="dcf-u-regular dcf-u-sm2 dcf-u-pl1">4.21em</small></h4>
 
         <h2 class="dcf-u-mt6">Badges</h2>
 
@@ -599,30 +599,36 @@
           <button class="dcf-c-btn dcf-c-btn--secondary" type="button">Button 3</button>
         </div>
 
-        <h2 class="dcf-u-mt6">Input Group</h2>
+        <h2 class="dcf-u-mt6">Input Groups</h2>
 
         <h3 class="dcf-u-mt5 dcf-u-regular">With Add-on Before Input</h3>
-        <form class="dcf-c-input-group" id="input-group-addon-example" action="" method="get">
+        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-addon-example" action="" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Username</label>
-          <span class="dcf-c-input-group-addon">@</span>
-          <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+          <div class="dcf-c-input-group">
+            <span class="dcf-c-input-group-addon">@</span>
+            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+          </div>
         </form>
 
         <h3 class="dcf-u-mt5 dcf-u-regular">With Add-on After Input</h3>
-        <form class="dcf-c-input-group" id="input-group-addon-example" action="" method="get">
+        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-addon-example" action="" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Email</label>
-          <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
-          <span class="dcf-c-input-group-addon">@example.com</span>
+          <div class="dcf-c-input-group">
+            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+            <span class="dcf-c-input-group-addon">@example.com</span>
+          </div>
         </form>
 
         <h3 class="dcf-u-mt5 dcf-u-regular">With Button</h3>
-        <form class="dcf-c-input-group" id="input-group-button-example" action="" method="get">
+        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-button-example" action="" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Label</label>
-          <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
-          <button class="dcf-c-btn dcf-c-btn--primary" type="submit">
-<!--               <svg class="dcf-c-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="8.5" cy="8.5" r="8"/><path stroke-linecap="round" d="M14.156 14.156L23.5 23.5"/></g><g><path fill="none" d="M0 0h24v24H0z"/></g></svg> -->
-            Submit
-          </button>
+          <div class="dcf-c-input-group">
+            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+            <button class="dcf-c-btn dcf-c-btn--primary" type="submit">
+  <!--               <svg class="dcf-c-search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="8.5" cy="8.5" r="8"/><path stroke-linecap="round" d="M14.156 14.156L23.5 23.5"/></g><g><path fill="none" d="M0 0h24v24H0z"/></g></svg> -->
+              Submit
+            </button>
+          </div>
         </form>
 
         <h2 class="dcf-u-mt6">Images</h2>

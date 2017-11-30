@@ -45,11 +45,10 @@
   @include pb2;
   @include pl3;
   @include as-stretch;
-  font-size: 1em;
   color: $color-light-text;
   border-style: solid;
   border-color: $color-border;
-  background-color: #eee;
+  background-color: #eee; // convert to variable
 }
 
 .dcf-c-input-group-addon:not(:last-child) {

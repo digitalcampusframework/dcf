@@ -3,10 +3,17 @@
 ///////////////////////
 
 
+// !None
+@mixin bg-none($imp:null) {
+  background: none $imp;
+}
+
+
 // !Transparent
 @mixin bg-transparent($imp:null) {
   background-color: transparent $imp;
 }
+
 
 // !White
 @mixin bg-white($imp:null) {

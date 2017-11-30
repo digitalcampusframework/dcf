@@ -26,7 +26,7 @@
 }
 
 .dcf-c-btn {
-  border-radius: $roundrect;
+  @include rounded;
 }
 
 a.dcf-c-btn {

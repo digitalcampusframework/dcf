@@ -6,12 +6,11 @@ const webpack = require('webpack');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = {
-  context: path.resolve(__dirname, './theme/example'),
   entry: {
-    main: './js/index.js'
+    main: './theme/unl_5.0/js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './theme/example/js'),
+    path: path.resolve(__dirname, './theme/unl_5.0/js'),
     filename: 'debug.js'
   },
   watch: true,
@@ -50,11 +49,11 @@ var baseConfig = {
 //         syntax: 'scss'
 //       }
 //     }),
-    new extractTextPlugin({
-      filename: '../css/core.css',
-      disable: false,
-      allChunks: true
-    })
+//     new extractTextPlugin({
+//       filename: '../css/all.css',
+//       disable: false,
+//       allChunks: true
+//     })
   ]
 };
 
