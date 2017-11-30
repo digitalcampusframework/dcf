@@ -13,6 +13,7 @@
 
 // !Theme Variables
 @import 'variables/variables.colors';
+@import 'variables/variables.angles';
 
 
 // !Core Mixins
@@ -109,9 +110,11 @@
 @import '../../../core/scss/components/components.tables';
 
 // !Theme Components
-@import 'components/components.typography';
+@import 'components/components.footer';
+@import 'components/components.header';
 @import 'components/components.layout';
 @import 'components/components.search';
+@import 'components/components.typography';
 
 
 // !Core Utilities
