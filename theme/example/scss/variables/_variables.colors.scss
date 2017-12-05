@@ -55,6 +55,22 @@ $color-border-hover: darken($color-border,10%);
 // $border-color: scale-color($scarlet, $saturation: -100%);
 
 
+// !Marks (Highlights) Background Color
+$color-mark: #ff0;
+
+
+// Badges
+$color-badge: #999;
+
+
+// !Footer
+$color-footer-local: $color-body;
+$color-footer-local-bg: #eee;
+$color-footer-global: $color-body;
+$color-footer-global-bg: #ddd;
+
+
+
 // !Define contextual colors
 $color-active: rgba(0,0,0,.1);
 $color-info: rgba(0,102,255,.1);
