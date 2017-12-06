@@ -23,3 +23,18 @@
   }
 
 }
+
+
+// !Notification Center / Dashboard
+.dcf-c-dashboard {
+
+  @supports (display: grid) {
+    @include grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "one two";
+    grid-gap: #{ms(8)}em 5vw;
+  }
+
+
+}

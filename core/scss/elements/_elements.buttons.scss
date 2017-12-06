@@ -16,10 +16,10 @@ input[type="submit"] {
 //   padding-bottom: .4em;
   @include pb2;
   @include pl4;
-  font-size: 1em;
+  font-size: #{ms(0)}em;
+  @include lh3;
 //   font-family: inherit;
 //   -webkit-appearance: none;
 //   -webkit-transition: none;
-  @include lh1;
   @include txt-center;
 }

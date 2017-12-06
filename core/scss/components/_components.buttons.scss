@@ -7,18 +7,17 @@
 .dcf-c-btn {
   cursor: pointer;
   @include inlineblock;
-//   padding-top: #{ms(-3)}em;
-//   padding-bottom: #{ms(-5)}em;
-  @include pt2;
-  @include pr4;
-//   padding-bottom: .4em;
-  @include pb2;
-  @include pl4;
-  font-size: 1em;
+
+//   @include pt3;
+//   @include pr4;
+//   @include pb3;
+//   @include pl4;
+//   font-size: #{ms(-2)}em;
+
 //   font-family: inherit;
 //   -webkit-appearance: none;
 //   -webkit-transition: none;
-  @include lh1;
+//   @include lh1;
   @include txt-center;
 //   @include uppercase;
 //   @include ls2;
@@ -74,13 +73,6 @@ a.dcf-c-btn {
   border: 1px solid currentcolor;
   background-color: #fff;
   transition: border $hover-off, background-color $hover-off;
-
-  &:link,
-  &:visited,
-  &:hover,
-  &:active {
-    color: #333;
-  }
 
 //   &:link {
 //   }

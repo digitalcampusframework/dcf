@@ -10,8 +10,10 @@
 // !Local Footer
 .dcf-c-footer__local {
   @include pt6;
-  @include pb6;
-  background-color: $color-footer-local;
+  @include pt6;
+  @include sm2;
+  color: $color-footer-local;
+  background-color: $color-footer-local-bg;
 
   @supports (display: grid) {
 
@@ -27,7 +29,8 @@
 // !Global Footer
 .dcf-c-footer__global {
   @include pt6;
-  background-color: $color-footer-global;
+  color: $color-footer-global;
+  background-color: $color-footer-global-bg;
 
   @supports (display: grid) {
 
