@@ -7,10 +7,10 @@ var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = {
   entry: {
-    main: './theme/unl_5.0/js/index.js'
+    main: './theme/example/js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './theme/unl_5.0/js'),
+    path: path.resolve(__dirname, './theme/example/js'),
     filename: 'debug.js'
   },
   watch: true,
@@ -20,26 +20,26 @@ var baseConfig = {
   },
   module: {
     rules: [
-//       {
-//         test: /\.scss$/,
-//         use: extractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: ['css-loader','postcss-loader','sass-loader']
-//         })
-//       },
-
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 2 }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: extractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader','postcss-loader','sass-loader']
+        })
       },
+
+//       {
+//         test: /\.scss$/,
+//         use: [
+//           'style-loader',
+//           {
+//             loader: 'css-loader',
+//             options: { importLoaders: 2 }
+//           },
+//           'postcss-loader',
+//           'sass-loader'
+//         ]
+//       },
 
     ]
   },
@@ -49,11 +49,11 @@ var baseConfig = {
 //         syntax: 'scss'
 //       }
 //     }),
-//     new extractTextPlugin({
-//       filename: '../css/all.css',
-//       disable: false,
-//       allChunks: true
-//     })
+    new extractTextPlugin({
+      filename: '../css/all.css',
+      disable: false,
+      allChunks: true
+    })
   ]
 };
 
