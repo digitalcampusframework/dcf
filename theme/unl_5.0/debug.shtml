@@ -4,8 +4,8 @@
 <!--#include virtual="/dcf/theme/unl_5.0/includes/meta.html" -->
 <title>Debugging Out | Framework Testing Page</title>
 <!--#include virtual="/dcf/theme/unl_5.0/includes/css.html" -->
-<!--#include virtual="/dcf/theme/unl_5.0/includes/js-head-debug.html" -->
-<!--#include virtual="/dcf/theme/unl_5.0/includes/favicon-local.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/js-head.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/favicon.html" -->
 </head>
 <body class="debug unl" data-version="5.0">
   <!--#include virtual="/dcf/theme/unl_5.0/includes/skip-nav.html" -->
@@ -36,7 +36,7 @@
         <!--#include virtual="/dcf/theme/unl_5.0/includes/logo.html" -->
 
         <div class="dcf-u-flex dcf-u-flex-col dcf-u-jc-center">
-          <div class="dcf-u-uppercase dcf-u-h3 dcf-u-lh1 dcf-u-ls2 dcf-u-regular unl-u-font-display" id="wdn_site_affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="https://arts.unl.edu/" style="color: #383837;">Hixson-Lied College of Fine &amp; Performing&nbsp;Arts</a><!-- InstanceEndEditable --></div>
+          <div class="dcf-u-uppercase dcf-u-h3 dcf-u-lh1 dcf-u-ls2 dcf-u-regular" id="wdn_site_affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="https://arts.unl.edu/" style="color: #383837;">Hixson-Lied College of Fine &amp; Performing&nbsp;Arts</a><!-- InstanceEndEditable --></div>
           <div class="dcf-u-sm2 dcf-u-italic" id="wdn_site_title"><!-- InstanceBeginEditable name="titlegraphic" --><a href="https://arts.unl.edu/music" style="color: #383837;"><!-- Glenn Korff School of Music --></a><!--<abbr title="Hixson-Lied College of Fine &amp; Performing Arts">HLCFPA</abbr>--><!-- InstanceEndEditable --></div>
         </div>
       </div>
@@ -57,7 +57,7 @@
     </nav>
 
 
-  <button class="dcf-u-p0 dcf-u-b0 dcf-u-bg-transparent dcf-c-mobile-nav-toggle dcf-c-nav-toggle unl-u-font-sans" id="dcf-menu-toggle" aria-pressed="false" aria-controls="navigation" aria-haspopup="true">
+  <button class="dcf-u-p0 dcf-u-b0 dcf-u-bg-transparent dcf-c-mobile-nav-toggle dcf-c-nav-toggle" id="dcf-menu-toggle" aria-pressed="false" aria-controls="navigation" aria-haspopup="true">
     <span class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-jc-center dcf-u-h100">
       <span class="dcf-u-flex dcf-u-ai-center dcf-u-jc-center dcf-u-circle" style="height: 2em; width: 2em; background-color: #d00000;">
         <svg class="dcf-c-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 48 48"><g class="dcf-c-icon--menu-top"><path fill="#fff" d="M46,9H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-c-icon--menu-bottom"><path fill="#fff" d="M46,35H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-c-icon--menu-middle"><path fill="#fff" d="M46,22H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g></svg>
@@ -69,7 +69,7 @@
 <!--     <div class="" id="navigation"> -->
       <nav class="dcf-u-pt5 dcf-c-nav__primary unl-t-nav__primary" role="navigation" aria-label="primary navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
-        <!--#include virtual="/dcf/theme/unl_5.0/sharedcode/navigation.html" -->
+        <!--#include virtual="/dcf/theme/unl_5.0/sharedcode/nav-primary.html" -->
         <!-- InstanceEndEditable -->
       </nav>
       <nav class="dcf-u-flex dcf-u-ai-center dcf-u-mt1 dcf-u-sm2 dcf-c-nav__secondary unl-t-nav__secondary" role="navigation" aria-label="secondary navigation">
@@ -253,7 +253,7 @@
                 <svg style="width:2.37em; height:2.37em;" class="dcf-u-mb1" role="img" aria-labelledby="title-icon-globe-2 desc-icon-globe-2" height="16" width="16" viewBox="0 0 24 24"><title id="title-icon-globe-2">globe icon</title><desc id="desc-icon-globe-2">illustration of a globe</desc><path d="M21.14 4.236c-.47 1.332-1.426 3.465-2.916 4.211a.503.503 0 0 1-.345.037c-1.057-.263-2.127.127-2.674.439.23.309.487.846.733 1.774.213.075.628-.038.837-.144a.499.499 0 0 1 .578.094c1.213 1.213-.359 2.847-1.299 3.825-.166.172-.378.392-.496.536.04.037.087.079.124.11.228.199.541.471.557.902.01.287-.12.567-.386.834a5.155 5.155 0 0 1-1.367.981C14.343 19.535 13.09 20.5 11 20.5c-.976 0-2-2.493-2-3 0-.368.16-.69.303-.974.096-.193.197-.394.197-.526-.023-.171-.43-.721-.854-1.146A.502.502 0 0 1 8.5 14.5c0-.429-.077-.72-.229-.863-.252-.237-.849-.203-1.478-.167-.259.014-.526.03-.793.03-1.582 0-2-1.635-2-2.5 0-.16.033-3.917 2.901-4.49 1.308-.262 2.19-.185 2.703.236.181.148.29.322.346.484.526.389 1.47.168 2.309-.026.277-.065.546-.127.795-.165.093-.845.096-1.663.009-2.018-.613.257-1.222.255-1.698-.009-.493-.274-.8-.795-.862-1.467C10.369 2.107 13.144.989 15.05.393A12 12 0 0 0 12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c6.616 0 12-5.383 12-12 0-2.958-1.079-5.668-2.86-7.764z"/></svg>
                 <h3 class="dcf-u-h4 dcf-u-regular">Malesuada Pellentesque</h3>
                 <p>Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</p>
-                <a class="" href="#">Call to Action</a>
+                <a class="dcf-c-btn dcf-c-btn--primary" href="#">Call to Action</a>
               </div>
               <div class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-txt-center">
                 <svg style="width:2.37em; height:2.37em;" class="dcf-u-mb1" role="img" aria-labelledby="title-icon-science-atom-1 desc-icon-science-atom-1" height="16" width="16" viewBox="0 0 24 24"><title id="title-icon-science-atom-1">science atom icon</title><desc id="desc-icon-science-atom-1">illustration of an atom</desc><path d="M14.656 16.235c.073-.44.133-.892.183-1.35-.189.137-.374.274-.571.41a26.362 26.362 0 0 1-4.588 2.538c.084.334.17.662.268.968a27.042 27.042 0 0 0 4.708-2.566zM5.019 18.999c-.709 0-1.646-.133-2.081-.766-.549-.798-.193-2.243.974-3.967.556-.821 1.27-1.658 2.097-2.484.003-.48.022-.955.047-1.428-1.199 1.101-2.219 2.239-2.972 3.352-1.431 2.113-1.775 3.922-.97 5.094.539.785 1.544 1.199 2.905 1.199.63 0 1.331-.092 2.081-.26-.1-.309-.185-.637-.273-.966-.651.143-1.263.226-1.808.226zM4.481 10.493c-1.59-2.051-2.156-3.837-1.544-4.728C3.372 5.133 4.308 5 5.017 5c1.33 0 3.026.455 4.838 1.242.352-.218.705-.426 1.057-.624C8.723 4.59 6.637 4.001 5.018 4.001c-1.36 0-2.365.414-2.904 1.198-.944 1.374-.223 3.626 1.674 6.027.22-.245.453-.489.693-.733zM18.166 10.561a28.053 28.053 0 0 0-3.332-2.68c-.253-.175-.51-.333-.765-.496-.351.162-.702.317-1.057.505.42.257.839.529 1.255.816a27.038 27.038 0 0 1 3.22 2.59c.24-.247.465-.49.679-.735z"/><path d="M7.552 6.456c-.339 1.593-.533 3.402-.547 5.338l.192.182c.258.243.543.474.816.71C8.009 12.459 8 12.233 8 12c0-1.941.191-3.702.508-5.223a14.922 14.922 0 0 0-.956-.321zM5.835 13.439a28.157 28.157 0 0 0 3.332 2.681c.255.175.513.335.771.5.35-.162.698-.322 1.052-.509-.421-.258-.84-.53-1.256-.815a26.815 26.815 0 0 1-3.223-2.594c-.239.247-.461.492-.676.737zM19.518 13.506c1.592 2.051 2.158 3.837 1.546 4.727-.435.633-1.372.766-2.081.766-1.33 0-3.025-.455-4.838-1.242-.355.22-.712.419-1.068.619 2.194 1.033 4.285 1.623 5.906 1.623 1.361 0 2.366-.414 2.905-1.199.944-1.372.224-3.623-1.672-6.023-.22.242-.459.485-.698.729zM12 23c-1.375 0-2.859-2.393-3.57-6.183a29.027 29.027 0 0 1-1.155-.857C7.942 20.684 9.777 24 12 24c1.422 0 2.686-1.359 3.588-3.573a19.38 19.38 0 0 1-.955-.317C13.879 21.935 12.915 23 12 23zM14.049 5.201a27.065 27.065 0 0 0-4.701 2.563c-.056.328-.105.663-.147 1.001-.01.116-.022.231-.035.345.188-.135.374-.272.567-.405a26.379 26.379 0 0 1 4.589-2.54 15.858 15.858 0 0 0-.273-.964z"/><circle cx="12" cy="12" r="2.5"/><path d="M18.983 5.001c.709 0 1.646.133 2.08.765.776 1.13-.363 3.7-3.068 6.427v.021c-.001.154-.011.305-.014.457l.012.001c-.003.14-.015.274-.024.411-.006.186-.007.374-.017.557 3.506-3.225 5.192-6.611 3.936-8.439-.539-.784-1.544-1.198-2.904-1.198-.632 0-1.335.092-2.088.262.101.311.194.631.282.963.649-.144 1.26-.227 1.805-.227zM16.447 17.552c.34-1.596.534-3.408.548-5.346l-.194-.184c-.258-.242-.541-.474-.814-.708.004.227.013.454.013.686 0 1.945-.192 3.709-.51 5.231.327.122.646.226.957.321zM12 1.001c1.374 0 2.858 2.391 3.569 6.181.142.099.273.205.411.307l.011-.016c.253.183.489.375.733.563C16.057 3.315 14.221.001 12 .001c-1.424 0-2.689 1.363-3.592 3.581.315.095.633.196.957.313.754-1.828 1.719-2.894 2.635-2.894z"/></svg>
@@ -283,7 +283,7 @@
 <!--         <div id="wdn_calendarDisplay" class="wdn-calendar" style="display: block;"> div is already block level-->
         <div>
           <h2 class="dcf-u-h3 dcf-u-mt5">Upcoming Events</h2>
-          <ul class="dcf-c-list-unstyled">
+          <ul class="dcf-c-list-unstyled unl-u-font-sans">
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info">
                 <a href="//events.unl.edu/2017/09/25/120871/" itemprop="url">
@@ -357,7 +357,7 @@
         </div>
 
         <!-- Events Calendar -->
-        <table class="dcf-u-mb5 dcf-u-sm2 dcf-c-calendar" data-datetime="2017-09-01T00:00:00-05:00">
+        <table class="dcf-u-mb5 dcf-u-sm2 unl-u-font-sans dcf-c-calendar" data-datetime="2017-09-01T00:00:00-05:00">
           <caption class="dcf-c-calendar__caption dcf-u-pt0 dcf-u-pb0">
             <div class="dcf-u-flex dcf-u-flex-row dcf-u-jc-around">
               <div class="dcf-u-lg2 dcf-u-2nd">
@@ -478,7 +478,7 @@
         <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <nav aria-label="Pagination example">
           <ul class="dcf-c-pagination">
-            <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#prev"><span aria-hidden="true">«</span> Previous</a></li>
+            <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#previous"><span aria-hidden="true">«</span> Previous</a></li>
             <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page1">1</a></li>
             <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page2">2</a></li>
             <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page3">3</a></li>
@@ -510,11 +510,11 @@
               <h2 class="dcf-c-subhead dcf-u-3rd">Elit Dapibus Adipiscing Lorem Justo</h2>
               <h2 class="dcf-c-subhead dcf-u-1st">Cursus Sem</h2>
             </div>
-            <div class="dcf-c-author dcf-u-flex dcf-u-ai-center unl-u-font-sans">
+            <div class="dcf-c-author dcf-u-flex dcf-u-ai-center">
               <div class="dcf-u-2nd"><span class="dcf-u-sm1">by </span>
                 <address class="dcf-u-inline dcf-c-byline">
                   <a class="dcf-c-person-name dcf-u-sm1" href="#janedoe">Jane Doe</a><span class="dcf-u-sr-only">,</span>
-                  <div class="dcf-c-person-title dcf-u-sm3">University Communication</div>
+<!--                   <div class="dcf-c-person-title dcf-u-sm3">University Communication</div> -->
                 </address>
                 <time class="dcf-u-block dcf-u-sm3" datetime="2018-12-02 11:11:03-0400">December 2, 2018</time>
               </div>
@@ -557,9 +557,9 @@
             	</ul>
             </div>
           </aside>
-          <footer class="dcf-o-grid dcf-c-article__footer">
+          <footer class="dcf-o-grid dcf-c-article__footer unl-u-font-sans ">
             <div class="dcf-u-sm2 dcf-u-bt dcf-u-pt4">
-              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls1 unl-u-font-sans" role="heading">
+              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls2" role="heading">
                 News Release Contacts
               </div>
               <ul class="dcf-c-list-unstyled">
@@ -580,7 +580,7 @@
             	</ul>
             </div>
             <div class="dcf-u-sm2 dcf-u-bt dcf-u-pt4">
-              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls1 unl-u-font-sans" role="heading">
+              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls2" role="heading">
                 Tags
               </div>
               <ul class="dcf-c-list-unstyled">
@@ -591,7 +591,7 @@
             	</ul>
             </div>
             <div class="dcf-u-sm2 dcf-u-bt dcf-u-pt4">
-              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls1 unl-u-font-sans" role="heading">
+              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls2" role="heading">
                 Related Links
               </div>
               <ul class="dcf-c-list-unstyled">
@@ -600,7 +600,7 @@
             	</ul>
             </div>
             <div class="dcf-u-sm2 dcf-u-bt dcf-u-pt4">
-              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls1 unl-u-font-sans" role="heading">
+              <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls2" role="heading">
                 High-Resolution Photos
               </div>
               <ul class="dcf-c-list-unstyled">

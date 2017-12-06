@@ -69,8 +69,16 @@ $color-badge: $gray;
 
 
 // !Footer
-$color-footer-local: $gray;
-$color-footer-global: darken($gray,5%);
+// $color-footer-local: #fff;
+// $color-footer-local-bg: $color-light-text;
+// $color-footer-global: #fff;
+// $color-footer-global-bg: $color-body;
+$color-footer-local: $color-body;
+$color-footer-local-bg: #eee;
+$color-footer-global: $color-body;
+$color-footer-global-bg: #ddd;
+
+
 
 
 // !Define contextual colors

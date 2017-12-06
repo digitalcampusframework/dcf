@@ -51,6 +51,9 @@
 @import '../../../core/scss/generic/generic.box-sizing';
 @import '../../../core/scss/generic/generic.font-size';
 
+// !Theme Generic
+@import 'generic/generic.html';
+
 
 // !Core Elements
 @import '../../../core/scss/elements/elements.abbreviations';
@@ -110,10 +113,17 @@
 @import '../../../core/scss/components/components.tables';
 
 // !Theme Components
+@import 'components/components.buttons';
+@import 'components/components.figures';
 @import 'components/components.footer';
+@import 'components/components.forms';
 @import 'components/components.header';
+@import 'components/components.headings';
+@import 'components/components.input-groups';
 @import 'components/components.layout';
+@import 'components/components.navigation';
 @import 'components/components.search';
+@import 'components/components.tables';
 @import 'components/components.typography';
 
 

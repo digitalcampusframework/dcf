@@ -1,0 +1,10 @@
+///////////////
+// !THEME: HTML
+///////////////
+
+
+html {
+  @include font-serif;
+  @include roman;
+  font-weight: 400;
+}
