@@ -1,0 +1,12 @@
+///////////////////////
+// !COMPONENTS: BUTTONS
+///////////////////////
+
+
+.example .dcf-c-btn {
+  @include pt2;
+  @include pr4;
+  @include pb2;
+  @include pl4;
+  @include bold;
+}
