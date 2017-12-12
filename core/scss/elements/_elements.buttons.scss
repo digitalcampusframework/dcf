@@ -9,11 +9,8 @@ input[type="button"],
 input[type="submit"] {
   cursor: pointer;
   @include inlineblock;
-//   @include middle;
-//   padding-top: .6em;
   @include pt2;
   @include pr4;
-//   padding-bottom: .4em;
   @include pb2;
   @include pl4;
   font-size: #{ms(0)}em;
