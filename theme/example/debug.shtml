@@ -593,7 +593,7 @@
         <a class="dcf-c-btn dcf-c-btn--secondary dcf-u-disabled" href="#" role="button" aria-disabled="true">Secondary Link</a>
 
         <h2 class="dcf-u-mt6">Button Group</h2>
-        <div class="dcf-c-btn-group">
+        <div class="dcf-c-btn-group" role="group" aria-label="button group example">
           <button class="dcf-c-btn dcf-c-btn--secondary" type="button">Button 1</button>
           <button class="dcf-c-btn dcf-c-btn--secondary" type="button">Button 2</button>
           <button class="dcf-c-btn dcf-c-btn--secondary" type="button">Button 3</button>

@@ -24,6 +24,9 @@
   :root {
     font-size: 1.33333em; } }
 
+html {
+  font-family: 'system'; }
+
 abbr {
   letter-spacing: .05em; }
 
@@ -581,52 +584,13 @@ input[type="submit"]:disabled,
 
 .dcf-c-calendar__caption {
   caption-side: top;
-  font-size: 1em;
-  background-color: #444; }
+  font-size: 1em; }
 
 .dcf-c-calendar__cell {
   width: 14.28%; }
 
 .dcf-c-calendar__weekday {
-  color: #666;
-  background-color: #f0f0f0; }
-
-a.dcf-c-calendar__date {
-  outline: 2px solid transparent;
-  -webkit-transition: all 400ms ease-out;
-  transition: all 400ms ease-out; }
-
-a.dcf-c-calendar__date:hover {
-  outline: 2px solid #2900a3;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out; }
-
-a.dcf-c-calendar__date:active {
-  outline: 2px solid #24008f; }
-
-a.dcf-c-calendar__date:focus {
-  outline: 2px solid #2900a3; }
-
-a.dcf-c-calendar__date--today {
-  background-color: #444; }
-
-a.dcf-c-calendar__date--active {
-  background-color: #30c;
-  -webkit-transition: all 400ms ease-out;
-  transition: all 400ms ease-out; }
-
-a.dcf-c-calendar__date--active:hover {
-  background-color: #2900a3;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out; }
-
-a.dcf-c-calendar__date--active:focus {
-  background-color: #2900a3;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out; }
-
-.dcf-c-calendar__not-current-month {
-  background-color: #f8f8f8; }
+  color: #666; }
 
 .dcf-c-event__info {
   -webkit-box-flex: 1;
@@ -1296,28 +1260,23 @@ legend,
 .dcf-c-table--compact tbody tr:first-child td {
   padding-top: 0.75em; }
 
-html {
-  font-family: 'system'; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.example .dcf-c-btn {
+  padding-top: 0.5625em;
+  padding-right: 1em;
+  padding-bottom: 0.5625em;
+  padding-left: 1em;
   font-weight: bold; }
 
-.ex-t-nav__primary > ul > li > a {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.01em; }
-
-.unl .dcf-c-dropcap:first-letter {
+.example .dcf-c-dropcap:first-letter {
   margin-top: 0.5625rem;
-  padding-right: 0.31641rem;
+  padding-right: 0.5625rem;
   padding-left: 0.05631rem;
-  font-size: 23.67697em;
-  line-height: .65; }
+  font-size: 5.26749em;
+  line-height: .68; }
+
+.example .dcf-c-subhead {
+  font-weight: normal;
+  letter-spacing: 0.1em; }
 
 .dcf-u-ratio {
   display: block;

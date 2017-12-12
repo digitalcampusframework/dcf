@@ -51,7 +51,7 @@
 @import '../../../core/scss/generic/generic.font-size';
 
 // !Theme Generic
-@import 'generic/generic.html';
+@import 'generic/generic.base';
 
 
 // !Core Elements
@@ -115,7 +115,6 @@
 @import 'components/components.buttons';
 @import 'components/components.paragraphs';
 @import 'components/components.headings';
-@import 'components/components.typography';
 
 
 // !Core Utilities
