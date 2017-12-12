@@ -16,13 +16,8 @@ q::after { content: close-quote; }
 
 // !Blockquote
 blockquote {
-  max-width: 36rem;
+  @include measure;
   @include mt0;
   @include mr0;
   @include mb4;
 }
-
-
-// cite {
-//   font-style: normal;
-// }

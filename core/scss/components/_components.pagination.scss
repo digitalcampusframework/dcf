@@ -6,7 +6,8 @@
 .dcf-c-pagination {
   @include flex;
   @include mt5;
-  @extend .dcf-c-list-unstyled; // !!!!
+  @include pl0;
+  list-style: none;
 }
 
 // .dcf-c-page-link {
@@ -55,6 +56,11 @@
 // .dcf-c-page-item:last-child .dcf-c-page-link {
 //   @include rounded-right;
 // }
+
+
+.dcf-c-pagination__item {
+  @include mb0;
+}
 
 
 .dcf-c-pagination__item .dcf-c-btn:focus {

@@ -20,14 +20,14 @@ ul {
 
 ol,
 ul {
-  padding-left: 1.5em;
+  @include pl6;
 }
 
 
 li,
 dt,
 dd {
-  max-width: 36em;
+  @include measure;
   @include mt0;
 }
 

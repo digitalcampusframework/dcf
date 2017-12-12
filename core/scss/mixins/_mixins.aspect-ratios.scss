@@ -3,27 +3,40 @@
 /////////////////////////
 
 
-@mixin aspect-ratio {
-	position: relative;
-	display: block;
-	height: 0;
-	padding: 0;
-	overflow: hidden;
+// !Maintain aspect ratio
+@mixin ratio {
+  @include block;
+  @include relative;
+//   @include w100;
+//   @include p0;
+//   @include overflow-hidden;
+// 	height: 0;
 
 	&::before {
   	content: '';
-  	display: block;
+    @include block;
+  	@include w100;
 	}
 }
 
 
 // !16×9
-@mixin ratio-16x9 { padding-top: 56.25%; }
+@mixin ratio--16x9 { padding-top: 56.25%; }
 
 
 // !4×3
-@mixin ratio-4x3 { padding-top: 75%; }
+@mixin ratio--4x3 { padding-top: 75%; }
 
 
 // !1×1
-@mixin ratio-1x1 { padding-top: 100%; }
+@mixin ratio--1x1 { padding-top: 100%; }
+
+
+// Child
+@mixin ratio__child {
+  @include absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

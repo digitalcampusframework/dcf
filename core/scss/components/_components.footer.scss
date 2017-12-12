@@ -9,22 +9,53 @@
 
 // !Local Footer
 .dcf-c-footer__local {
-  @include grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  grid-gap: 1em;
   @include pt6;
-  @include pb6;
+  @include pt6;
   @include sm2;
-  background-color: #ddd;
+  color: $color-footer-local;
+  background-color: $color-footer-local-bg;
+
+  @supports (display: grid) {
+
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-gap: #{ms(0)}em;
+
+  }
+
 }
 
 
 // !Global Footer
 .dcf-c-footer__global {
-  @include grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  grid-gap: 1em;
   @include pt6;
-  @include pb6;
-  background-color: #ccc;
+  color: $color-footer-global;
+  background-color: $color-footer-global-bg;
+
+  @supports (display: grid) {
+
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-gap: #{ms(0)}em;
+
+  }
+
+}
+
+
+@include mq(md, max, width) {
+
+  .dcf-c-footer__global {
+    padding-bottom: #{ms(12)}em;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .dcf-c-footer__global {
+    @include pb6;
+  }
+
 }

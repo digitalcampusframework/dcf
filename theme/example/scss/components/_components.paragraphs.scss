@@ -1,0 +1,12 @@
+//////////////////////////
+// !COMPONENTS: PARAGRAPHS
+//////////////////////////
+
+
+.example .dcf-c-dropcap:first-letter {
+  margin-top: #{ms(-4)}rem; // first, adjust margin-top for Firefox
+  padding-right: #{ms(-4)}rem;
+  padding-left: #{ms(-20)}rem;
+  font-size: #{ms(11)}em;
+  line-height: .68; // then, adjust line-height for Chrome and Safari
+}

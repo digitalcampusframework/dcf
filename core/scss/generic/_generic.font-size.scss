@@ -6,7 +6,7 @@
 // !:root
 :root {
   font-size: #{$min_font_size}em;
-  @include lh1;
+  @include lh3;
 }
 
 @media screen and (min-width: #{$min_lerp_width}em) {

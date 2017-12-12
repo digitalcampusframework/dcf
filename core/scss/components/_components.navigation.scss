@@ -61,7 +61,7 @@
 
   @supports (display: grid) {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
     grid-gap: 1em 5vw;
   }
 

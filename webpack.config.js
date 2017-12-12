@@ -6,12 +6,11 @@ const webpack = require('webpack');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = {
-  context: path.resolve(__dirname, './theme/example'),
   entry: {
-    main: './js/index.js'
+    main: './theme/unl_5.0/js/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './theme/example/js'),
+    path: path.resolve(__dirname, './theme/unl_5.0/js'),
     filename: 'debug.js'
   },
   watch: true,
@@ -21,26 +20,26 @@ var baseConfig = {
   },
   module: {
     rules: [
-//       {
-//         test: /\.scss$/,
-//         use: extractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: ['css-loader','postcss-loader','sass-loader']
-//         })
-//       },
-
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 2 }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: extractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader','postcss-loader','sass-loader']
+        })
       },
+
+//       {
+//         test: /\.scss$/,
+//         use: [
+//           'style-loader',
+//           {
+//             loader: 'css-loader',
+//             options: { importLoaders: 2 }
+//           },
+//           'postcss-loader',
+//           'sass-loader'
+//         ]
+//       },
 
     ]
   },
@@ -51,7 +50,7 @@ var baseConfig = {
 //       }
 //     }),
     new extractTextPlugin({
-      filename: '../css/core.css',
+      filename: '../css/all.css',
       disable: false,
       allChunks: true
     })

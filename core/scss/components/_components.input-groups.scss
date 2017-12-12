@@ -4,8 +4,7 @@
 
 
 .dcf-c-input-group {
-  @include inlineflex;
-  @include ai-center;
+  @include flex;
   @include w100;
 }
 
@@ -13,8 +12,9 @@
 // !Input Group Input Field
 .dcf-c-input-group .dcf-c-input-textual {
   flex: 1 1 auto;
-  width: 0;
+  width: 1%;
   @include mt0;
+  @include mb0;
   @include rounded-left;
 }
 
@@ -29,7 +29,10 @@
 
 // !Input Group Button
 .dcf-c-input-group .dcf-c-btn {
-  @include as-stretch;
+  @include flex;
+  @include ai-center;
+  @include mt0;
+  @include mb0;
   margin-left: -1px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -38,18 +41,18 @@
 
 // !Input Group Add-on
 .dcf-c-input-group-addon {
-//   padding-top: #{ms(1)}em;
+  @include flex;
+  @include ai-center;
   @include pt2;
   @include pr3;
-//   padding-bottom: .4em;
   @include pb2;
   @include pl3;
-  @include as-stretch;
-  font-size: 1em;
+  @include txt-nowrap;
+  @include txt-center;
   color: $color-light-text;
   border-style: solid;
   border-color: $color-border;
-  background-color: #eee;
+  background-color: #eee; // convert to variable
 }
 
 .dcf-c-input-group-addon:not(:last-child) {

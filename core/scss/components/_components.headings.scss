@@ -11,7 +11,7 @@
 .dcf-c-h5,
 .dcf-c-h6 {
   @include mt0;
-  margin-bottom: 1rem;
+  margin-bottom: #{ms(0)}rem;
   @include lh2;
 
   // ?
@@ -25,18 +25,10 @@
 }
 
 
-// !Heading Groups
-.dcf-c-hgroup {
-  @include flex;
-  @include flex-col;
-}
-
-
 // !Subheads
 .dcf-c-subhead {
   @include block;
   @include mb4;
   @include uppercase;
-  @include ls1;
-  font-size: #{ms(-4)}rem;
+  font-size: #{ms(-2)}rem;
 }
