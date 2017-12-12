@@ -7,7 +7,7 @@
 .dcf-c-calendar__caption {
   caption-side: top;
   font-size: 1em;
-  background-color: $color-body;
+//   background-color: $color-body;
 }
 
 
@@ -20,7 +20,7 @@
 // !Calendar Weekdays
 .dcf-c-calendar__weekday {
   color: $color-light-text;
-  background-color: mix($color-body-bg, $color-body, 92%);
+//   background-color: mix($color-body-bg, $color-body, 92%);
 }
 
 
@@ -79,11 +79,44 @@ a.dcf-c-calendar__date--active:focus {
 
 
 // !Event Listing
+// .dcf-c-events-grid {
+//
+//   @supports (display: grid) {
+//     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+//     grid-gap: 1em;
+//
+//     @include mq(md, min, width) {
+//       grid-template-columns: 1fr 1fr;
+//       grid-template-areas:
+//         "web directory";
+//       grid-gap: #{ms(8)}em 5vw;
+//     }
+//
+//
+//   }
+// }
+
+// .dcf-c-upcoming-events .dcf-c-list-unstyled {
+//
+//   @include mq(sm, min, width) {
+//     columns: 2;
+//     column-gap: #ms(0)em;
+//   }
+// }
+//
+// .dcf-c-upcoming-events .dcf-c-list-unstyled li {
+//
+//   @include mq(sm, min, width) {
+//     column-break-inside: avoid;
+//   }
+// }
+
+
 .dcf-c-event__info {
   flex: 1 0 1px;
 }
 
 
 .dcf-c-event__date-time {
-  flex: 0 1 4em;
+  flex: 0 1 #{ms(10)}em;
 }

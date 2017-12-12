@@ -3,13 +3,24 @@
 /////////////////////
 
 
-.dcf-c-icon {
+
+a .dcf-c-icon,
+button .dcf-c-icon {
+  fill: currentcolor;
+}
+
+.dcf-c-icon--inline {
   height: #{ms(0)}em;
   width: #{ms(0)}em;
 }
 
-.dcf-c-icon--inline {
+.dcf-c-icon--x {
   @include relative;
-  bottom: -.125em;
-  margin-right: #{ms(-4)}rem;
+  top: #{ms(-14)}em;
+}
+
+.dcf-c-icon--hang {
+  @include absolute;
+  top: #{ms(-10)}em;
+  left: 0;
 }

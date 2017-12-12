@@ -58,6 +58,11 @@
 // }
 
 
+.dcf-c-pagination__item {
+  @include mb0;
+}
+
+
 .dcf-c-pagination__item .dcf-c-btn:focus {
   z-index: 1;
 }
