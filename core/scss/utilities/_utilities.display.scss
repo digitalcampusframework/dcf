@@ -19,6 +19,14 @@
 .dcf-u-inlineblock { @include inlineblock(!important); }
 
 
+// !Table
+.dcf-u-table { @include table(!important); }
+
+
+// !Table Cell
+.dcf-u-tablecell { @include tablecell(!important); }
+
+
 // !Flex
 .dcf-u-flex { @include flex(!important); }
 
@@ -37,11 +45,3 @@
 
 // !Subgrid
 .dcf-u-subgrid { @include subgrid(!important); }
-
-
-// !Table
-.dcf-u-table { @include table(!important); }
-
-
-// !Table Cell
-.dcf-u-tablecell { @include tablecell(!important); }
