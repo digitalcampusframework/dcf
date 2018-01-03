@@ -62,6 +62,10 @@
 // Text Decoration
 .dcf-u-txt-decor-none { @include txt-decor-none(!important); }
 
+.dcf-u-txt-decor-hover { @include txt-decor-hover-off(!important); }
+
+.dcf-u-txt-decor-hover:hover { @include txt-decor-hover-on(!important); }
+
 
 // !Text Transform
 .dcf-u-capitalize { @include capitalize(!important); }

@@ -3,34 +3,57 @@
 /////////////////
 
 
-// !Proportional
+
 .dcf-o-grid {
-
-  @supports (display: grid) {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-    grid-gap: 1em;
-  }
-
 }
 
-
 .dcf-o-grid-odd {
-
-  @supports (display: grid) {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-    grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
-  }
-
 }
 
 .dcf-o-grid-even {
+}
 
-  @supports (display: grid) {
+
+@supports (display: grid) {
+
+  .dcf-o-grid {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-    grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
+//     grid-gap: 1em;
   }
+
+
+  .dcf-o-grid-odd {
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+//     grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
+  }
+
+
+  .dcf-o-grid-even {
+    @include grid;
+//     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+//     grid-gap: #{ms(8)}em 5vw; // 2.37em, 5vw
+
+    @include mq(sm, min, width) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(xl, min, width) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+
+  // !Grid Gap (Columns)
+  .dcf-o-colgap-sm { grid-column-gap: #{ms(0)}em; } // 1em
+  .dcf-o-colgap-md { grid-column-gap: #{ms(4)}em; } // 1.77em
+  .dcf-o-colgap-lg { grid-column-gap: #{ms(8)}em; } // 3.16em
+
+
+  // !Grid Gap (Rows)
+  .dcf-o-rowgap-sm { grid-row-gap: #{ms(0)}em; } // 1em
+  .dcf-o-rowgap-md { grid-row-gap: #{ms(4)}em; } // 1.77em
+  .dcf-o-rowgap-lg { grid-row-gap: #{ms(8)}em; } // 3.16em
 
 }
