@@ -317,32 +317,41 @@ th {
   text-align: left; }
 
 .dcf-o-wrapper {
-  padding-right: 5vw;
-  padding-left: 5vw; }
+  padding-right: 5%;
+  padding-left: 5%; }
 
 @supports (display: grid) {
   .dcf-o-grid {
-    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr));
-    grid-gap: 1em; }
+    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr)); }
     @supports (display: grid) {
       .dcf-o-grid {
-        display: grid; } } }
-
-@supports (display: grid) {
+        display: grid; } }
   .dcf-o-grid-odd {
-    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr));
-    grid-gap: 3.16049em 1.77778em; }
+    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr)); }
     @supports (display: grid) {
       .dcf-o-grid-odd {
-        display: grid; } } }
-
-@supports (display: grid) {
-  .dcf-o-grid-even {
-    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr));
-    grid-gap: 3.16049em 1.77778em; }
-    @supports (display: grid) {
-      .dcf-o-grid-even {
-        display: grid; } } }
+        display: grid; } }
+  @supports (display: grid) {
+    .dcf-o-grid-even {
+      display: grid; } }
+  @media only screen and (min-width: 41.95625em) {
+    .dcf-o-grid-even {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (min-width: 99.375em) {
+    .dcf-o-grid-even {
+      grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-colgap-sm {
+    grid-column-gap: 1em; }
+  .dcf-o-colgap-md {
+    grid-column-gap: 1.77778em; }
+  .dcf-o-colgap-lg {
+    grid-column-gap: 3.16049em; }
+  .dcf-o-rowgap-sm {
+    grid-row-gap: 1em; }
+  .dcf-o-rowgap-md {
+    grid-row-gap: 1.77778em; }
+  .dcf-o-rowgap-lg {
+    grid-row-gap: 3.16049em; } }
 
 .dcf-o-full-width {
   position: relative;
@@ -576,6 +585,7 @@ input[type="submit"]:disabled,
   opacity: 0.7; }
 
 .dcf-c-card {
+  margin-bottom: 0;
   font-size: 0.9375em;
   background-color: #fff;
   -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
@@ -1398,7 +1408,7 @@ button .dcf-c-icon {
 .unl .dcf-c-btn {
   padding-top: 1em;
   padding-right: 1.33333em;
-  padding-bottom: 0.9375em;
+  padding-bottom: 1em;
   padding-left: 1.33333em;
   font-size: 0.75em;
   font-family: "Gotham SSm A", "Gotham SSm B", Verdana, sans-serif;
@@ -2472,7 +2482,7 @@ a.dcf-u-inverse:active {
   background-color: transparent !important;
   background-position: 50% 50% !important;
   background-repeat: repeat !important;
-  background-size: 4.96px 8px !important; }
+  background-size: 5px 8px !important; }
 
 .unl-u-font-serif {
   font-family: "Mercury SSm A", "Mercury SSm B", Georgia, serif !important; }

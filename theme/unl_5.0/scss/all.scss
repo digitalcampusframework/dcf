@@ -41,6 +41,7 @@
 // !Theme Mixins
 @import 'mixins/mixins.backgrounds';
 @import 'mixins/mixins.fonts';
+@import 'mixins/mixins.typography';
 
 
 // !Core Functions
@@ -151,3 +152,4 @@
 // !Theme Utilities
 @import 'utilities/utilities.backgrounds';
 @import 'utilities/utilities.fonts';
+@import 'utilities/utilities.typography';
