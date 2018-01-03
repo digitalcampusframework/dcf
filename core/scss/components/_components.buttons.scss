@@ -40,22 +40,22 @@ a.dcf-c-btn {
 
 .dcf-c-btn--primary:visited {
   color: #fff;
-  border-color: darken($color-button,10%);
-  background-color: darken($color-button,10%);
+  border-color: $color-button-visited;
+  background-color: $color-button-visited;
 }
 
 .dcf-c-btn--primary:hover {
   color: #fff;
-  border-color: darken($color-button,10%);
-  background-color: darken($color-button,10%);
+  border-color: $color-button-hover;
+  background-color: $color-button-hover;
   transition: border $hover-on, background-color $hover-on;
 }
 
 .dcf-c-btn--primary:active,
 .dcf-c-btn--primary.dcf-c-active {
   color: #fff;
-  border-color: darken($color-button,20%);
-  background-color: darken($color-button,20%);
+  border-color: $color-button-active;
+  background-color: $color-button-active;
 }
 
 
@@ -68,12 +68,12 @@ a.dcf-c-btn {
 }
 
 .dcf-c-btn--secondary:visited {
-  color: darken($color-button, 10%);
+  color: $color-button-visited;
   border-color: currentcolor;
 }
 
 .dcf-c-btn--secondary:hover {
-  color: darken($color-button, 10%);
+  color: $color-button-hover;
   border-color: currentcolor;
 	background-color: lighten($color-button,55%);
   transition: border $hover-on, background-color $hover-on;
@@ -81,7 +81,7 @@ a.dcf-c-btn {
 
 .dcf-c-btn--secondary:active,
 .dcf-c-btn--secondary.dcf-c-active {
-  color: darken($color-button, 20%);
+  color: $color-button-active;
   border-color: currentcolor;
 }
 
