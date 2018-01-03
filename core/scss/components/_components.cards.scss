@@ -5,6 +5,7 @@
 
 // !Individual Card
 .dcf-c-card {
+  @include mb0;
   @include sm1;
   @include bg-white;
 //   border: 1px solid $color-border;
