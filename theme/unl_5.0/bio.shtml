@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<!--#include virtual="/dcf/theme/unl_5.0/includes/meta.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/global/meta.html" -->
 <title>Debugging Out | Framework Testing Page</title>
-<!--#include virtual="/dcf/theme/unl_5.0/includes/css.html" -->
-<!--#include virtual="/dcf/theme/unl_5.0/includes/js-head.html" -->
-<!--#include virtual="/dcf/theme/unl_5.0/includes/favicon.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/global/css.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/global/js-head.html" -->
+<!--#include virtual="/dcf/theme/unl_5.0/includes/global/favicon.html" -->
 </head>
 <body class="debug unl" data-version="5.0">
-  <!--#include virtual="/dcf/theme/unl_5.0/includes/skip-nav.html" -->
+  <!--#include virtual="/dcf/theme/unl_5.0/includes/global/skip-nav.html" -->
 
 <!--
   <div class="dcf-c-alert dcf-o-wrapper dcf-u-pt4 dcf-u-pb4 dcf-u-sm2">
@@ -30,10 +30,10 @@
 <!--     <header class="" id="header" role="banner"> -->
 
 
-      <!--#include virtual="/dcf/theme/unl_5.0/includes/institution.html" -->
+      <!--#include virtual="/dcf/theme/unl_5.0/includes/global/institution.html" -->
 
       <div class="dcf-u-flex dcf-u-ai-center dcf-u-pt4 dcf-c-logo" style="overflow: hidden;">
-        <!--#include virtual="/dcf/theme/unl_5.0/includes/logo.html" -->
+        <!--#include virtual="/dcf/theme/unl_5.0/includes/global/logo.html" -->
 
         <div class="dcf-u-flex dcf-u-flex-col dcf-u-jc-center">
           <div class="dcf-u-uppercase dcf-u-h3 dcf-u-lh1 dcf-u-ls2 dcf-u-regular" id="wdn_site_affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="https://arts.unl.edu/" style="color: #383837;">Hixson-Lied College of Fine &amp; Performing&nbsp;Arts</a><!-- InstanceEndEditable --></div>
@@ -69,16 +69,16 @@
 <!--     <div class="" id="navigation"> -->
       <nav class="dcf-u-pt5 dcf-c-nav__primary unl-t-nav__primary" role="navigation" aria-label="primary navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
-        <!--#include virtual="/dcf/theme/unl_5.0/sharedcode/nav-primary.html" -->
+        <!--#include virtual="/dcf/theme/unl_5.0/includes/local/nav-primary.html" -->
         <!-- InstanceEndEditable -->
       </nav>
       <nav class="dcf-u-flex dcf-u-ai-center dcf-u-mt1 dcf-u-sm2 dcf-c-nav__secondary unl-t-nav__secondary" role="navigation" aria-label="secondary navigation">
-      	<!--#include virtual="/dcf/theme/unl_5.0/includes/nav-secondary.html" -->
+      	<!--#include virtual="/dcf/theme/unl_5.0/includes/global/nav-secondary.html" -->
       </nav>
 <!--     </div> -->
 
-    <!--#include virtual="/dcf/theme/unl_5.0/includes/idm.html" -->
-    <!--#include virtual="/dcf/theme/unl_5.0/includes/search.html" -->
+    <!--#include virtual="/dcf/theme/unl_5.0/includes/global/idm.html" -->
+    <!--#include virtual="/dcf/theme/unl_5.0/includes/global/search.html" -->
   </div>
 
   <main class="dcf-o-main" id="main" role="main" tabindex="-1">
@@ -364,17 +364,17 @@
   <footer class="dcf-c-footer" id="footer" role="contentinfo">
     <div class="dcf-o-wrapper dcf-c-footer__local dcf-u-sm2" id="footer-local">
       <!-- InstanceBeginEditable name="contactinfo" -->
-      <!--#include virtual="/dcf/theme/unl_5.0/sharedcode/footer-local.html" -->
+      <!--#include virtual="/dcf/theme/unl_5.0/includes/local/footer-local.html" -->
       <!-- InstanceEndEditable -->
 
       <!-- InstanceBeginEditable name="leftcollinks" --><!-- leftcollinks necessary? -->
       <!-- InstanceEndEditable -->
     </div>
     <div class="dcf-o-wrapper dcf-c-footer__global" id="global-footer">
-      <!--#include virtual="/dcf/theme/unl_5.0/includes/footer-global.html" -->
+      <!--#include virtual="/dcf/theme/unl_5.0/includes/global/footer-global.html" -->
     </div>
   </footer>
-  <!--#include virtual="/dcf/theme/unl_5.0/includes/noscript.html" -->
-  <!--#include virtual="/dcf/theme/unl_5.0/includes/js-body.html" -->
+  <!--#include virtual="/dcf/theme/unl_5.0/includes/global/noscript.html" -->
+  <!--#include virtual="/dcf/theme/unl_5.0/includes/global/js-body.html" -->
 </body>
 <!-- InstanceEnd --></html>

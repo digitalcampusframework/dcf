@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<!--#include virtual="/dcf/theme/example/includes/meta.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/meta.html" -->
 <title>Debugging Out | Framework Testing Page</title>
-<!--#include virtual="/dcf/theme/example/includes/css.html" -->
-<!--#include virtual="/dcf/theme/example/includes/js-head.html" -->
-<!--#include virtual="/dcf/theme/example/includes/favicon.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/css.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/js-head.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/favicon.html" -->
 </head>
 <body class="debug example" data-version="1.0">
-  <!--#include virtual="/dcf/theme/example/includes/skip-nav.html" -->
+  <!--#include virtual="/dcf/theme/example/includes/global/skip-nav.html" -->
 
 <!--
   <div class="dcf-c-alert dcf-o-wrapper dcf-u-pt4 dcf-u-pb4 dcf-u-sm2">
@@ -29,10 +29,10 @@
 
 <!--     <header class="" id="header" role="banner"> -->
 
-      <!--#include virtual="/dcf/theme/example/includes/institution.html" -->
+      <!--#include virtual="/dcf/theme/example/includes/global/institution.html" -->
 
       <div class="dcf-u-flex dcf-u-ai-center dcf-u-pt4 dcf-c-logo" style="overflow: hidden;">
-        <!--#include virtual="/dcf/theme/example/includes/logo.html" -->
+        <!--#include virtual="/dcf/theme/example/includes/global/logo.html" -->
 
         <div class="dcf-u-flex dcf-u-flex-col dcf-u-jc-center">
           <div class="dcf-u-uppercase dcf-u-h3 dcf-u-lh3 dcf-u-ls2 dcf-u-regular" id="dcf-site-affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --></div>
@@ -68,16 +68,16 @@
 <!--     <div class="" id="navigation"> -->
       <nav class="dcf-u-pt5 dcf-c-nav__primary" role="navigation" aria-label="primary navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
-        <!--#include virtual="/dcf/theme/example/sharedcode/nav-primary.html" -->
+        <!--#include virtual="/dcf/theme/example/includes/local/nav-primary.html" -->
         <!-- InstanceEndEditable -->
       </nav>
       <nav class="dcf-u-flex dcf-u-ai-center dcf-u-mt1 dcf-u-sm2 dcf-c-nav__secondary" role="navigation" aria-label="secondary navigation">
-      	<!--#include virtual="/dcf/theme/example/includes/nav-secondary.html" -->
+      	<!--#include virtual="/dcf/theme/example/includes/global/nav-secondary.html" -->
       </nav>
 <!--     </div> -->
 
-    <!--#include virtual="/dcf/theme/example/includes/idm.html" -->
-    <!--#include virtual="/dcf/theme/example/includes/search.html" -->
+    <!--#include virtual="/dcf/theme/example/includes/global/idm.html" -->
+    <!--#include virtual="/dcf/theme/example/includes/global/search.html" -->
   </div>
 
   <main class="dcf-o-main" id="main" role="main" tabindex="-1">
@@ -825,17 +825,17 @@
   <footer class="dcf-c-footer" id="footer" role="contentinfo">
     <div class="dcf-o-wrapper dcf-c-footer__local" id="footer-local">
       <!-- InstanceBeginEditable name="contactinfo" -->
-      <!--#include virtual="/dcf/theme/example/sharedcode/footer-local.html" -->
+      <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
       <!-- InstanceEndEditable -->
 
       <!-- InstanceBeginEditable name="leftcollinks" --><!-- leftcollinks necessary? -->
       <!-- InstanceEndEditable -->
     </div>
     <div class="dcf-o-wrapper dcf-c-footer__global" id="global-footer">
-      <!--#include virtual="/dcf/theme/example/includes/footer-global.html" -->
+      <!--#include virtual="/dcf/theme/example/includes/global/footer-global.html" -->
     </div>
   </footer>
-  <!--#include virtual="/dcf/theme/example/includes/noscript.html" -->
-  <!--#include virtual="/dcf/theme/example/includes/js-body.html" -->
+  <!--#include virtual="/dcf/theme/example/includes/global/noscript.html" -->
+  <!--#include virtual="/dcf/theme/example/includes/global/js-body.html" -->
 </body>
 <!-- InstanceEnd --></html>
