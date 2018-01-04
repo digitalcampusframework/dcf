@@ -33,3 +33,8 @@ Run the following command to build the production files:
 ```
 npm run dev -- --env.theme your_theme_name
 ```
+
+## Adding JS Files to your Theme
+
+Webpack has entry points for head and body js. After writing your JS (or during), add a require statement for it in the
+appropriate `/theme/theme_name/js/loaders/` file. 
