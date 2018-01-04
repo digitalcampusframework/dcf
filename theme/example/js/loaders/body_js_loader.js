@@ -1,3 +1,4 @@
-//example: const ______ = require(relative filepath from this file)
-const theme_root = '../../../';
-const requireJS = require(theme_root + '../core/js/vendor/require.js');
+const dcf_core = require('../../../../core/js/core.js');
+
+// example: const ______ = require(relative filepath from this file)
+const example_js = require('../src/example.js');

@@ -5,8 +5,21 @@ const webpack = require('webpack');
 // var styleLintPlugin = require('stylelint-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
+var core_js_config = {
+    entry: './core/js/loaders/core_js_loader.js',
+    output: {
+        path: path.resolve(__dirname, './core/js'),
+        filename: 'core.js'
+    },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout : 300,
+        poll             : 1000
+    }
+}
+
 // config for compiling head and body JS
-var js_config = function(env) {
+var theme_js_config = function(env) {
     var theme = 'example';
     if (env && env.theme) {
         theme = env.theme;
@@ -68,4 +81,4 @@ var js_config = function(env) {
     }
 };
 
-module.exports = [js_config];
+module.exports = [core_js_config, theme_js_config];
