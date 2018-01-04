@@ -15,7 +15,7 @@ var js_config = function(env) {
     return {
         entry: {
             body: './theme/' + theme + '/js/loaders/body_js_loader.js',
-            head: './theme/' + theme + '/js/loaders/body_js_loader.js'
+            head: './theme/' + theme + '/js/loaders/head_js_loader.js'
         },
         output: {
             path: path.resolve(__dirname, './theme/' + theme + '/js'),
