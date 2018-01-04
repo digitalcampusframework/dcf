@@ -2065,6 +2065,14 @@ a.dcf-u-inverse:active {
 .dcf-u-ml9 {
   margin-left: 4.21399em !important; }
 
+@supports (object-fit: contain) {
+  .dcf-u-objfit-contain {
+    object-fit: contain !important; } }
+
+@supports (object-fit: cover) {
+  .dcf-u-objfit-cover {
+    object-fit: cover !important; } }
+
 .dcf-u-1st {
   -webkit-box-ordinal-group: 2 !important;
           order: 1 !important; }
