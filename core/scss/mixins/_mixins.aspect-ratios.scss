@@ -12,11 +12,14 @@
 //   @include overflow-hidden;
 // 	height: 0;
 
-	&::before {
-  	content: '';
-    @include block;
-  	@include w100;
-	}
+  &::before {
+    content: '';
+    @include inlineblock;
+    @include relative;
+//   	@include w100;
+    height: 0;
+    width: 1px;
+  }
 }
 
 
@@ -39,4 +42,6 @@
   right: 0;
   bottom: 0;
   left: 0;
+  @include h100;
+  @include w100;
 }

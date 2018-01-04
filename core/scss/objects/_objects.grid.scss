@@ -19,21 +19,18 @@
   .dcf-o-grid {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-//     grid-gap: 1em;
   }
 
 
   .dcf-o-grid-odd {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-//     grid-gap: #{ms(8)}em #{ms(4)}em; // 2.37em, 1.777em
   }
 
 
   .dcf-o-grid-even {
     @include grid;
-//     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-//     grid-gap: #{ms(8)}em 5vw; // 2.37em, 5vw
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
 
     @include mq(sm, min, width) {
       grid-template-columns: repeat(2, 1fr);
@@ -49,6 +46,7 @@
   .dcf-o-colgap-sm { grid-column-gap: #{ms(0)}em; } // 1em
   .dcf-o-colgap-md { grid-column-gap: #{ms(4)}em; } // 1.77em
   .dcf-o-colgap-lg { grid-column-gap: #{ms(8)}em; } // 3.16em
+  .dcf-o-colgap-vw { grid-column-gap: 5vw; }
 
 
   // !Grid Gap (Rows)

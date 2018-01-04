@@ -1,0 +1,11 @@
+/////////////////////////
+// !UTILITIES: OBJECT-FIT
+/////////////////////////
+
+
+// !Contain
+.dcf-u-objfit-contain { @include objfit-contain(!important); }
+
+
+// !Cover
+.dcf-u-objfit-cover { @include objfit-cover(!important); }
