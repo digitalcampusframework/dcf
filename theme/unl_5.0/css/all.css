@@ -129,7 +129,7 @@ figure {
 form,
 input,
 textarea {
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1.5; }
 
 fieldset {
@@ -331,21 +331,25 @@ th {
     @supports (display: grid) {
       .dcf-o-grid-odd {
         display: grid; } }
-  @supports (display: grid) {
-    .dcf-o-grid-even {
-      display: grid; } }
-  @media only screen and (min-width: 41.95625em) {
-    .dcf-o-grid-even {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media only screen and (min-width: 99.375em) {
-    .dcf-o-grid-even {
-      grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid-even {
+    grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr)); }
+    @supports (display: grid) {
+      .dcf-o-grid-even {
+        display: grid; } }
+    @media only screen and (min-width: 41.95625em) {
+      .dcf-o-grid-even {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (min-width: 99.375em) {
+      .dcf-o-grid-even {
+        grid-template-columns: repeat(4, 1fr); } }
   .dcf-o-colgap-sm {
     grid-column-gap: 1em; }
   .dcf-o-colgap-md {
     grid-column-gap: 1.77778em; }
   .dcf-o-colgap-lg {
     grid-column-gap: 3.16049em; }
+  .dcf-o-colgap-vw {
+    grid-column-gap: 5vw; }
   .dcf-o-rowgap-sm {
     grid-row-gap: 1em; }
   .dcf-o-rowgap-md {
@@ -1583,8 +1587,10 @@ button .dcf-c-icon {
   position: relative; }
   .dcf-u-ratio::before {
     content: '';
-    display: block;
-    width: 100%; }
+    display: inline-block;
+    position: relative;
+    height: 0;
+    width: 1px; }
 
 .dcf-u-ratio--16x9:before {
   padding-top: 56.25%; }
@@ -1600,7 +1606,9 @@ button .dcf-c-icon {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  height: 100%;
+  width: 100%; }
 
 .dcf-u-bg-none {
   background: none !important; }
