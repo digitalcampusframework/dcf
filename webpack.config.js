@@ -2,26 +2,37 @@
 const path = require('path');
 const webpack = require('webpack');
 
-
-
 // var styleLintPlugin = require('stylelint-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
-var baseConfig = function(env) {
+var core_js_config = {
+    entry: './core/js/loaders/core_js_loader.js',
+    output: {
+        path: path.resolve(__dirname, './core/js'),
+        filename: 'core.js'
+    },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout : 300,
+        poll             : 1000
+    }
+}
 
+// config for compiling head and body JS
+var theme_js_config = function(env) {
     var theme = 'example';
-
-    if (env.theme) {
+    if (env && env.theme) {
         theme = env.theme;
     }
 
     return {
-        entry        : {
-            main : './theme/' + theme + '/js/index.js'
+        entry: {
+            body: './theme/' + theme + '/js/loaders/body_js_loader.js',
+            head: './theme/' + theme + '/js/loaders/head_js_loader.js'
         },
-        output       : {
-            path     : path.resolve(__dirname, './theme/unl_5.0/js'),
-            filename : 'debug.js'
+        output: {
+            path: path.resolve(__dirname, './theme/' + theme + '/js'),
+            filename: '[name].js'
         },
         watch        : true,
         watchOptions : {
@@ -37,28 +48,30 @@ var baseConfig = function(env) {
                         use      : ['css-loader', 'postcss-loader', 'sass-loader']
                     })
                 },
-
-//       {
-//         test: /\.scss$/,
-//         use: [
-//           'style-loader',
-//           {
-//             loader: 'css-loader',
-//             options: { importLoaders: 2 }
-//           },
-//           'postcss-loader',
-//           'sass-loader'
-//         ]
-//       },
-
+                /*
+                {
+                    test: /\.scss$/,
+                    use: [
+                        'style-loader',
+                        {
+                            loader: 'css-loader',
+                            options: { importLoaders: 2 }
+                        },
+                        'postcss-loader',
+                        'sass-loader'
+                    ]
+                },
+                */
             ]
         },
         plugins      : [
-//     new styleLintPlugin({
-//       options: {
-//         syntax: 'scss'
-//       }
-//     }),
+            /*
+            new styleLintPlugin({
+                options: {
+                    syntax: 'scss'
+                }
+            }),
+            */
             new extractTextPlugin({
                 filename  : '../css/all.css',
                 disable   : false,
@@ -67,4 +80,5 @@ var baseConfig = function(env) {
         ]
     }
 };
-module.exports = baseConfig;
+
+module.exports = [core_js_config, theme_js_config];
