@@ -260,10 +260,9 @@
 
 
         <!-- Events Listing -->
-        <div style="padding-top: 5.61em; padding-bottom: 5.61em;" class="dcf-c-events">
+        <div style="padding-top: 5.61em; padding-bottom: 5.61em;" class="dcf-c-events dcf-o-colgap-vw dcf-o-rowgap-lg">
           <h2 class="dcf-c-events__heading">Upcoming Events</h2>
-          <ul class="dcf-c-list-unstyled dcf-c-events__listing">
-
+          <ul class="dcf-c-list-unstyled dcf-c-events__listing dcf-o-colgap-vw dcf-o-rowgap-md">
 
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
@@ -281,7 +280,6 @@
               </time>
             </li>
 
-
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
                 <a class="dcf-u-inlineblock dcf-u-lh2 dcf-u-lg1 dcf-u-txt-decor-none" href="//events.unl.edu/2017/09/25/123410/" itemprop="url">
@@ -297,7 +295,6 @@
                 <span class="dcf-u-sm3 dcf-u-uppercase dcf-u-bold dcf-u-ls2 unl-u-font-sans">Sep</span> <span class="dcf-u-lg4 dcf-u-bold">25</span> <span class="dcf-u-sm3 dcf-u-pt2 unl-u-font-sans">8:30 am</span>
               </time>
             </li>
-
 
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
@@ -315,7 +312,6 @@
               </time>
             </li>
 
-
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
                 <a class="dcf-u-inlineblock dcf-u-lh2 dcf-u-lg1 dcf-u-txt-decor-none" href="//events.unl.edu/2017/09/25/123212/" itemprop="url">
@@ -329,7 +325,6 @@
                 <span class="dcf-u-sm3 dcf-u-uppercase dcf-u-bold dcf-u-ls2 unl-u-font-sans">Sep</span> <span class="dcf-u-lg4 dcf-u-bold">25</span> <span class="dcf-u-sm3 dcf-u-pt2 unl-u-font-sans">12:00 pm</span>
               </time>
             </li>
-
 
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
@@ -345,7 +340,6 @@
               </time>
             </li>
 
-
             <li class="dcf-c-event dcf-u-flex dcf-u-flex-row dcf-u-ai-center" itemtype="http://schema.org/Event">
               <div class="dcf-u-2nd dcf-c-event__info unl-u-font-sans">
                 <a class="dcf-u-inlineblock dcf-u-lh2 dcf-u-lg1 dcf-u-txt-decor-none" href="//events.unl.edu/2017/09/25/123710/" itemprop="url">
@@ -359,7 +353,6 @@
                 <span class="dcf-u-sm3 dcf-u-uppercase dcf-u-bold dcf-u-ls2 unl-u-font-sans">Sep</span> <span class="dcf-u-lg4 dcf-u-bold">25</span> <span class="dcf-u-sm3 dcf-u-pt2 unl-u-font-sans">2:00 pm</span>
               </time>
             </li>
-
 
           </ul>
 

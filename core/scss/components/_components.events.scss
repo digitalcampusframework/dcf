@@ -79,17 +79,36 @@ a.dcf-c-calendar__date--active:focus {
 
 
 .dcf-c-events {
+}
 
-  @supports (display: grid) {
+.dcf-c-events__heading {
+}
+
+.dcf-c-events__more {
+}
+
+.dcf-c-events__subscribe {
+}
+
+.dcf-c-events__listing {
+}
+
+.dcf-c-event {
+}
+
+
+
+@supports (display: grid) {
+
+  .dcf-c-events {
 
     @include mq(sm, min, width) {
       @include grid;
       grid-template-columns: 1fr auto;
       grid-template-areas:
-        "heading ."
+        "heading heading"
         "listing listing"
         "subscribe more";
-      grid-gap: #{ms(8)}em 5vw; // 3.16em, 5vw
     }
 
 //     @include mq(md, min, width) {
@@ -101,56 +120,34 @@ a.dcf-c-calendar__date--active:focus {
 //         "more listing";
 //     }
 
-    @include mq(md, min, width) {
+    @include mq(lg, min, width) {
       grid-template-columns: 1fr auto auto;
       grid-template-areas:
         "heading subscribe more"
         "listing listing listing";
     }
-
   }
 
-}
-
-.dcf-c-events__heading {
-
-  @supports (display: grid) {
+  .dcf-c-events__heading {
     grid-area: heading;
     @include mb0;
   }
 
-}
-
-.dcf-c-events__more {
-
-  @supports (display: grid) {
+  .dcf-c-events__more {
     grid-area: more;
   }
 
-}
-
-.dcf-c-events__subscribe {
-
-  @supports (display: grid) {
+  .dcf-c-events__subscribe {
     grid-area: subscribe;
   }
 
-}
-
-.dcf-c-events__listing {
-
-  @supports (display: grid) {
+  .dcf-c-events__listing {
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-    grid-gap: #{ms(4)}em 5vw; // 1.77em, 5vw
     grid-area: listing;
   }
 
-}
-
-.dcf-c-event {
-
-  @supports (display: grid) {
+  .dcf-c-event {
     @include mb0;
   }
 
