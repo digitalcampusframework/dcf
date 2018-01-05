@@ -113,9 +113,11 @@
 @import '../../../core/scss/components/components.tables';
 
 // !Theme Components
+@import 'components/components.button-groups';
 @import 'components/components.buttons';
-@import 'components/components.paragraphs';
 @import 'components/components.headings';
+@import 'components/components.pagination';
+@import 'components/components.paragraphs';
 
 
 // !Core Utilities
