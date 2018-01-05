@@ -51,7 +51,7 @@
 }
 
 
-@include mq(md, max, width) {
+@include mq(sm, max, width) {
 
   .dcf-c-article__share li {
     @include inlineflex;
@@ -62,7 +62,7 @@
 }
 
 
-@include mq(md, min, width) {
+@include mq(sm, min, width) {
 
   .dcf-c-article__share div[role="heading"] {
     @include mb5;
@@ -72,11 +72,15 @@
     @include mb4;
   }
 
-  @supports (display: grid) {
+}
+
+
+@supports (display: grid) {
+
+  @include mq(sm, min, width) {
 
     .dcf-c-article {
       @include grid;
-      grid-gap: 0 5vw;
       grid-template-columns: #{ms(8)}em 1fr;
       grid-template-areas:
         "share header"
