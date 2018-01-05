@@ -29,6 +29,7 @@
 @import '../../../core/scss/mixins/mixins.grid';
 @import '../../../core/scss/mixins/mixins.height-width';
 @import '../../../core/scss/mixins/mixins.margins';
+@import '../../../core/scss/mixins/mixins.object-fit';
 @import '../../../core/scss/mixins/mixins.order';
 @import '../../../core/scss/mixins/mixins.overflow';
 @import '../../../core/scss/mixins/mixins.overlays';
@@ -112,9 +113,11 @@
 @import '../../../core/scss/components/components.tables';
 
 // !Theme Components
+@import 'components/components.button-groups';
 @import 'components/components.buttons';
-@import 'components/components.paragraphs';
 @import 'components/components.headings';
+@import 'components/components.pagination';
+@import 'components/components.paragraphs';
 
 
 // !Core Utilities
@@ -130,6 +133,7 @@
 @import '../../../core/scss/utilities/utilities.grid';
 @import '../../../core/scss/utilities/utilities.height-width';
 @import '../../../core/scss/utilities/utilities.margins';
+@import '../../../core/scss/utilities/utilities.object-fit';
 @import '../../../core/scss/utilities/utilities.order';
 @import '../../../core/scss/utilities/utilities.overflow';
 @import '../../../core/scss/utilities/utilities.overlays';

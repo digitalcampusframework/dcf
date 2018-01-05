@@ -26,8 +26,3 @@
 .dcf-c-btn-group > .dcf-c-btn:last-child {
   @include sharp-left;
 }
-
-
-.dcf-c-btn-group .dcf-c-btn + .dcf-c-btn {
-  margin-left: -1px;
-}

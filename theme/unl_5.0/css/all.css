@@ -663,39 +663,27 @@ a.dcf-c-calendar__date--active:focus {
   @media only screen and (min-width: 41.95625em) {
     .dcf-c-events {
       grid-template-columns: 1fr auto;
-      grid-template-areas: "heading ." "listing listing" "subscribe more";
-      grid-gap: 3.16049em 5vw; }
+      grid-template-areas: "heading heading" "listing listing" "subscribe more"; }
       @supports (display: grid) {
         .dcf-c-events {
           display: grid; } } }
-  @media only screen and (min-width: 55.925em) {
+  @media only screen and (min-width: 74.55em) {
     .dcf-c-events {
       grid-template-columns: 1fr auto auto;
-      grid-template-areas: "heading subscribe more" "listing listing listing"; } } }
-
-@supports (display: grid) {
+      grid-template-areas: "heading subscribe more" "listing listing listing"; } }
   .dcf-c-events__heading {
     grid-area: heading;
-    margin-bottom: 0; } }
-
-@supports (display: grid) {
+    margin-bottom: 0; }
   .dcf-c-events__more {
-    grid-area: more; } }
-
-@supports (display: grid) {
+    grid-area: more; }
   .dcf-c-events__subscribe {
-    grid-area: subscribe; } }
-
-@supports (display: grid) {
+    grid-area: subscribe; }
   .dcf-c-events__listing {
     grid-template-columns: repeat(auto-fit, minmax(17.75773em, 1fr));
-    grid-gap: 1.77778em 5vw;
     grid-area: listing; }
     @supports (display: grid) {
       .dcf-c-events__listing {
-        display: grid; } } }
-
-@supports (display: grid) {
+        display: grid; } }
   .dcf-c-event {
     margin-bottom: 0; } }
 
@@ -2064,6 +2052,14 @@ a.dcf-u-inverse:active {
 
 .dcf-u-ml9 {
   margin-left: 4.21399em !important; }
+
+@supports (object-fit: contain) {
+  .dcf-u-objfit-contain {
+    object-fit: contain !important; } }
+
+@supports (object-fit: cover) {
+  .dcf-u-objfit-cover {
+    object-fit: cover !important; } }
 
 .dcf-u-1st {
   -webkit-box-ordinal-group: 2 !important;

@@ -81,8 +81,3 @@
 .dcf-c-pagination__item:not(:first-child):not(:last-child) > .dcf-c-btn {
   @include sharp;
 }
-
-
-.dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
-  margin-left: -1px;
-}
