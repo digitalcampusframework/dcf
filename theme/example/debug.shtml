@@ -27,7 +27,7 @@
 
   <div class="dcf-o-wrapper dcf-u-pt2 dcf-u-pb4 dcf-c-header">
 
-<!--     <header class="" id="header" role="banner"> -->
+<!--     <header class="" id="dcf-header" role="banner"> -->
 
       <!--#include virtual="/dcf/theme/example/includes/global/institution.html" -->
 
@@ -42,7 +42,7 @@
 
 <!--     </header> -->
 
-    <nav class="dcf-c-breadcrumbs" id="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <nav class="dcf-c-breadcrumbs" id="dcf-breadcrumbs" role="navigation" aria-label="breadcrumbs">
         <!-- InstanceBeginEditable name="breadcrumbs" -->
 <!--
         <ul>
@@ -65,7 +65,7 @@
     </span>
   </button>
 
-<!--     <div class="" id="navigation"> -->
+<!--     <div class="" id="dcf-navigation"> -->
       <nav class="dcf-u-pt5 dcf-c-nav__primary" role="navigation" aria-label="primary navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
         <!--#include virtual="/dcf/theme/example/includes/local/nav-primary.html" -->
@@ -80,9 +80,9 @@
     <!--#include virtual="/dcf/theme/example/includes/global/search.html" -->
   </div>
 
-  <main class="dcf-o-main" id="main" role="main" tabindex="-1">
+  <main class="dcf-o-main" id="dcf-main" role="main" tabindex="-1">
 
-    <div class="dcf-o-wrapper dcf-u-pt5" id="pagetitle">
+    <div class="dcf-o-wrapper dcf-u-pt5" id="dcf-page-title">
       <!-- InstanceBeginEditable name="pagetitle" -->
       <h1>Debug Page</h1>
       <!-- InstanceEndEditable -->
@@ -822,7 +822,7 @@
     </div>
   <!-- InstanceEndEditable -->
   </main>
-  <footer class="dcf-c-footer" id="footer" role="contentinfo">
+  <footer class="dcf-c-footer" id="dcf-footer" role="contentinfo">
     <!-- InstanceBeginEditable name="contactinfo" -->
     <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
     <!-- InstanceEndEditable -->
