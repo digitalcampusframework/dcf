@@ -45,7 +45,12 @@ var theme_js_config = function(env) {
                     test : /\.scss$/,
                     use  : extractTextPlugin.extract({
                         fallback : 'style-loader',
-                        use      : ['css-loader', 'postcss-loader', 'sass-loader']
+                        use      : ['css-loader', 'postcss-loader', {
+                            'loader': 'sass-loader',
+                            options: {
+                                includePaths: [__dirname+'/node_modules/modularscale-sass/stylesheets']
+                            }
+                        }]
                     })
                 },
                 /*
