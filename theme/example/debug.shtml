@@ -826,10 +826,6 @@
     <!-- InstanceBeginEditable name="contactinfo" -->
     <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
     <!-- InstanceEndEditable -->
-
-    <!-- InstanceBeginEditable name="leftcollinks" --><!-- leftcollinks necessary? -->
-    <!-- InstanceEndEditable -->
-
     <!--#include virtual="/dcf/theme/example/includes/global/footer-global.html" -->
   </footer>
   <!--#include virtual="/dcf/theme/example/includes/global/noscript.html" -->
