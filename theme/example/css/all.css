@@ -699,14 +699,6 @@ a.dcf-c-calendar__date--active:focus {
   font-size: 0.75em;
   color: #666; }
 
-.dcf-c-footer__local {
-  color: #444;
-  background-color: #eee; }
-
-.dcf-c-footer__global {
-  color: #444;
-  background-color: #ddd; }
-
 @supports (display: grid) {
   .dcf-c-footer__local {
     grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
@@ -1396,6 +1388,14 @@ button .dcf-c-icon {
   padding-bottom: 0.5625em;
   padding-left: 1em;
   font-weight: bold; }
+
+.example .dcf-c-footer__local {
+  color: #444;
+  background-color: #eee; }
+
+.example .dcf-c-footer__global {
+  color: #444;
+  background-color: #ddd; }
 
 .example .dcf-c-subhead {
   font-weight: normal;
