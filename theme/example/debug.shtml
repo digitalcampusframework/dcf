@@ -823,17 +823,14 @@
   <!-- InstanceEndEditable -->
   </main>
   <footer class="dcf-c-footer" id="footer" role="contentinfo">
-    <div class="dcf-o-wrapper dcf-c-footer__local" id="footer-local">
-      <!-- InstanceBeginEditable name="contactinfo" -->
-      <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
-      <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="contactinfo" -->
+    <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
+    <!-- InstanceEndEditable -->
 
-      <!-- InstanceBeginEditable name="leftcollinks" --><!-- leftcollinks necessary? -->
-      <!-- InstanceEndEditable -->
-    </div>
-    <div class="dcf-o-wrapper dcf-c-footer__global" id="global-footer">
-      <!--#include virtual="/dcf/theme/example/includes/global/footer-global.html" -->
-    </div>
+    <!-- InstanceBeginEditable name="leftcollinks" --><!-- leftcollinks necessary? -->
+    <!-- InstanceEndEditable -->
+
+    <!--#include virtual="/dcf/theme/example/includes/global/footer-global.html" -->
   </footer>
   <!--#include virtual="/dcf/theme/example/includes/global/noscript.html" -->
   <!--#include virtual="/dcf/theme/example/includes/global/js-body.html" -->
