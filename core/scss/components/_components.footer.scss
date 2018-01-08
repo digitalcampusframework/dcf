@@ -6,37 +6,33 @@
 // !Footer - both Local and Global
 
 
-
 // !Local Footer
 .dcf-c-footer__local {
-  @include pt6;
-  @include pt6;
-  @include sm2;
   color: $color-footer-local;
   background-color: $color-footer-local-bg;
-
-  @supports (display: grid) {
-
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
-    grid-gap: #{ms(0)}em;
-
-  }
-
 }
 
 
 // !Global Footer
 .dcf-c-footer__global {
-  @include pt6;
   color: $color-footer-global;
   background-color: $color-footer-global-bg;
+}
 
-  @supports (display: grid) {
+
+@supports (display: grid) {
+
+  .dcf-c-footer__local {
 
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
-    grid-gap: #{ms(0)}em;
+
+  }
+
+  .dcf-c-footer__global {
+
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
 
   }
 

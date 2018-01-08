@@ -21,6 +21,5 @@ button .dcf-c-icon {
 
 .dcf-c-icon--hang {
   @include absolute;
-  top: #{ms(-10)}em;
   left: 0;
 }
