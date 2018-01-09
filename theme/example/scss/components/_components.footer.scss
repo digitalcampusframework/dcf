@@ -3,6 +3,37 @@
 ///////////////////////////////
 
 
+// !Common Footer Styles
+
+// !Local Footer
+// .example .dcf-c-footer__local {
+// }
+
+
+// !Global Footer
+// .example .dcf-c-footer__global {
+// }
+
+
+@supports (display: grid) {
+
+  .example .dcf-c-footer__local {
+
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+
+  }
+
+  .example .dcf-c-footer__global {
+
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+
+  }
+
+}
+
+
 // !Local Footer
 .example .dcf-c-footer__local {
   color: $color-footer-local;
@@ -14,4 +45,22 @@
 .example .dcf-c-footer__global {
   color: $color-footer-global;
   background-color: $color-footer-global-bg;
+}
+
+
+@include mq(md, max, width) {
+
+  .example .dcf-c-footer__global {
+    padding-bottom: #{ms(12)}em;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-c-footer__global {
+    @include pb6;
+  }
+
 }

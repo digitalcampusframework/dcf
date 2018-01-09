@@ -699,26 +699,6 @@ a.dcf-c-calendar__date--active:focus {
   font-size: 0.75em;
   color: #666; }
 
-@supports (display: grid) {
-  .dcf-c-footer__local {
-    grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
-    @supports (display: grid) {
-      .dcf-c-footer__local {
-        display: grid; } }
-  .dcf-c-footer__global {
-    grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
-    @supports (display: grid) {
-      .dcf-c-footer__global {
-        display: grid; } } }
-
-@media only screen and (max-width: 55.925em) {
-  .dcf-c-footer__global {
-    padding-bottom: 5.61866em; } }
-
-@media only screen and (min-width: 55.925em) {
-  .dcf-c-footer__global {
-    padding-bottom: 1.77778em; } }
-
 .dcf-c-form-group {
   margin-bottom: 1em; }
 
@@ -1389,6 +1369,18 @@ button .dcf-c-icon {
   padding-left: 1em;
   font-weight: bold; }
 
+@supports (display: grid) {
+  .example .dcf-c-footer__local {
+    grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
+    @supports (display: grid) {
+      .example .dcf-c-footer__local {
+        display: grid; } }
+  .example .dcf-c-footer__global {
+    grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
+    @supports (display: grid) {
+      .example .dcf-c-footer__global {
+        display: grid; } } }
+
 .example .dcf-c-footer__local {
   color: #444;
   background-color: #eee; }
@@ -1396,6 +1388,14 @@ button .dcf-c-icon {
 .example .dcf-c-footer__global {
   color: #444;
   background-color: #ddd; }
+
+@media only screen and (max-width: 55.925em) {
+  .example .dcf-c-footer__global {
+    padding-bottom: 5.61866em; } }
+
+@media only screen and (min-width: 55.925em) {
+  .example .dcf-c-footer__global {
+    padding-bottom: 1.77778em; } }
 
 .example .dcf-c-subhead {
   font-weight: normal;
