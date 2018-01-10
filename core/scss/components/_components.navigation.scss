@@ -5,8 +5,8 @@
 
 // !Skip Navigation
 .dcf-c-skipnav {
-  top: $length2;
-  left: $length2;
+  top: #{ms(-4)}em; // .56em
+  left: #{ms(-4)}em; // .56em
 }
 
 

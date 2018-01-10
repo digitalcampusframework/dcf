@@ -5,7 +5,7 @@
 
 // !Search Results
 .dcf-c-search-results-wrapper {
-  height: calc(100% - #{ms(16)}em);
+  height: calc(100% - #{ms(16)}em); // 100% - 9.97em
 }
 
 .dcf-c-search-results {
@@ -22,7 +22,7 @@
 
   @supports (display: grid) {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
     grid-gap: #{ms(8)}em 5vw;
   }
 }

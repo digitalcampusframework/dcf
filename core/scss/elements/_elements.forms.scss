@@ -6,7 +6,7 @@
 form,
 input,
 textarea {
-  font-size: 1em;
+  font-size: #{ms(0)}em; // 1em
   @include lh3;
 }
 
@@ -25,7 +25,6 @@ legend {
 
 label {
   @include inlineblock;
-//   @include mb1;
 }
 
 

@@ -14,11 +14,11 @@ sub {
 
 // !Superscript
 sup {
-  top: -#{ms(-4)}em;
+  top: -#{ms(-4)}em; // -.56em
 }
 
 
 // !Subscript
 sub {
-  top: #{ms(-10)}em;
+  top: #{ms(-10)}em; // .24em
 }

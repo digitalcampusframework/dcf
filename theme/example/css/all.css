@@ -92,10 +92,10 @@ pre {
 
 code,
 kbd {
-  padding-top: .125rem;
-  padding-right: .25rem;
-  padding-bottom: .125rem;
-  padding-left: .25rem;
+  padding-top: 0.13348rem;
+  padding-right: 0.2373rem;
+  padding-bottom: 0.13348rem;
+  padding-left: 0.2373rem;
   font-size: 0.9375em; }
 
 code,
@@ -271,6 +271,13 @@ dd + dt {
 
 main:focus {
   outline: none; }
+
+mark {
+  padding-top: 0.13348em;
+  padding-right: 0.42188em;
+  padding-bottom: 0.13348em;
+  padding-left: 0.42188em;
+  background-color: #ff0; }
 
 p {
   max-width: 36rem;
