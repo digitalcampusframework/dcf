@@ -5,12 +5,12 @@
 
 // !Lead Paragraphs
 .dcf-c-lead {
-  font-size: #{ms(1)}em;
+  font-size: #{ms(1)}em; // 1.25em
 }
 
 
 // !Drop Caps
 .dcf-c-dropcap:first-letter {
   @include float-left;
-  // apply custom styling in _theme-typography
+  // apply custom styling in theme _components.paragraphs
 }

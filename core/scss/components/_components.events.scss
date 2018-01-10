@@ -139,7 +139,7 @@ a.dcf-c-calendar__date--active:focus {
 
   .dcf-c-events__listing {
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr)); // 17.71em
     grid-area: listing;
   }
 
@@ -192,5 +192,5 @@ a.dcf-c-calendar__date--active:focus {
 
 
 .dcf-c-event__date-time {
-  flex: 0 1 #{ms(10)}em;
+  flex: 0 1 #{ms(10)}em; // 4.21em
 }

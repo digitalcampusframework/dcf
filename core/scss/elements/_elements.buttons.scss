@@ -13,7 +13,7 @@ input[type="submit"] {
   @include pr4;
   @include pb2;
   @include pl4;
-  font-size: #{ms(0)}em;
+  font-size: #{ms(0)}em; // 1em
   @include lh3;
 //   font-family: inherit;
 //   -webkit-appearance: none;

@@ -7,7 +7,6 @@
 @import 'modularscale';
 
 $modularscale: (
-//   base: 1 1.075 1.155 1.241,
   base: 1 1.25,
   ratio: $fourth,
 );
@@ -25,12 +24,13 @@ $max_lerp_width: ms(36); // 176.581em ~ 2825.28px
 
 // !Spacing
 $length0: 0;
-$length1: #{ms(-6)}em; // .42em
-$length2: #{ms(-4)}em; // .56em
-$length3: #{ms(-2)}em; // .75em
-$length4: #{ms(0)}em;  // 1em
-$length5: #{ms(2)}em;  // 1.33em
-$length6: #{ms(4)}em;  // 1.77em
-$length7: #{ms(6)}em;  // 2.37em
-$length8: #{ms(8)}em;  // 3.16em
+$length1: #{ms(-6)}em;  // .42em
+$length2: #{ms(-4)}em;  // .56em
+$length3: #{ms(-2)}em;  // .75em
+$length4: #{ms(0)}em;   // 1em
+$length5: #{ms(2)}em;   // 1.33em
+$length6: #{ms(4)}em;   // 1.77em
+$length7: #{ms(6)}em;   // 2.37em
+$length8: #{ms(8)}em;   // 3.16em
 $length9: #{ms(10)}em;  // 4.21em
+$length10: #{ms(12)}em; // 5.61em

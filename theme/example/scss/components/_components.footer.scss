@@ -20,14 +20,14 @@
   .example .dcf-c-footer__local {
 
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
 
   }
 
   .example .dcf-c-footer__global {
 
     @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
 
   }
 
@@ -51,7 +51,7 @@
 @include mq(md, max, width) {
 
   .example .dcf-c-footer__global {
-    padding-bottom: #{ms(12)}em;
+    padding-bottom: #{ms(12)}em; // 5.61em
   }
 
 }

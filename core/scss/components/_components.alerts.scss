@@ -5,7 +5,6 @@
 
 .dcf-c-alert {
   @include grid;
-//   grid-gap: 1em;
   grid-template-areas:
     "header footer"
     "msg footer";

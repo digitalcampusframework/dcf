@@ -14,6 +14,7 @@
 @mixin m7($imp:null) { margin: $length7 $imp; }
 @mixin m8($imp:null) { margin: $length8 $imp; }
 @mixin m9($imp:null) { margin: $length9 $imp; }
+@mixin m10($imp:null) { margin: $length10 $imp; }
 
 
 // !Top
@@ -27,6 +28,7 @@
 @mixin mt7($imp:null) { margin-top: $length7 $imp; }
 @mixin mt8($imp:null) { margin-top: $length8 $imp; }
 @mixin mt9($imp:null) { margin-top: $length9 $imp; }
+@mixin mt10($imp:null) { margin-top: $length10 $imp; }
 
 
 // !Right
@@ -40,6 +42,7 @@
 @mixin mr7($imp:null) { margin-right: $length7 $imp; }
 @mixin mr8($imp:null) { margin-right: $length8 $imp; }
 @mixin mr9($imp:null) { margin-right: $length9 $imp; }
+@mixin mr10($imp:null) { margin-right: $length10 $imp; }
 
 
 // !Bottom
@@ -53,6 +56,7 @@
 @mixin mb7($imp:null) { margin-bottom: $length7 $imp; }
 @mixin mb8($imp:null) { margin-bottom: $length8 $imp; }
 @mixin mb9($imp:null) { margin-bottom: $length9 $imp; }
+@mixin mb10($imp:null) { margin-bottom: $length10 $imp; }
 
 
 // !Left
@@ -66,3 +70,4 @@
 @mixin ml7($imp:null) { margin-left: $length7 $imp; }
 @mixin ml8($imp:null) { margin-left: $length8 $imp; }
 @mixin ml9($imp:null) { margin-left: $length9 $imp; }
+@mixin ml10($imp:null) { margin-left: $length10 $imp; }

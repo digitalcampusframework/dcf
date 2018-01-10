@@ -10,7 +10,7 @@ h4,
 h5,
 h6 {
   @include mt0;
-  margin-bottom: 1rem;
+  margin-bottom: #{ms(0)}rem; // 1rem
   @include lh2;
   color: $color-heading;
 
@@ -24,9 +24,9 @@ h6 {
 }
 
 
-h1 { font-size: #{ms(6)}em }
-h2 { font-size: #{ms(5)}em }
-h3 { font-size: #{ms(4)}em }
-h4 { font-size: #{ms(3)}em }
-h5 { font-size: #{ms(2)}em }
-h6 { font-size: #{ms(1)}em }
+h1 { font-size: #{ms(6)}em } // 2.37em
+h2 { font-size: #{ms(5)}em } // 2.22em
+h3 { font-size: #{ms(4)}em } // 1.77em
+h4 { font-size: #{ms(3)}em } // 1.66em
+h5 { font-size: #{ms(2)}em } // 1.33em
+h6 { font-size: #{ms(1)}em } // 1.25em

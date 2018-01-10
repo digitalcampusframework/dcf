@@ -11,10 +11,8 @@
 .dcf-c-input-textual {
   @include block;
   @include mt1;
-//   padding-top: .6em;
   @include pt2;
   @include pr3;
-//   padding-bottom: .4em;
   @include pb2;
   @include pl3;
   border: 1px solid $color-border;
@@ -95,10 +93,8 @@
 	@include w100;
 	@include m0;
 	outline: none;
-//   padding-top: .6em;
   @include pt2;
   @include pr4;
-//   padding-bottom: .4em;
   @include pb2;
   @include pl3;
 

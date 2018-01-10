@@ -3,21 +3,23 @@
 /////////////////////////////
 
 
-
 a .dcf-c-icon,
 button .dcf-c-icon {
   fill: currentcolor;
 }
 
+
 .dcf-c-icon--inline {
-  height: #{ms(0)}em;
-  width: #{ms(0)}em;
+  height: #{ms(0)}em; // 1em
+  width: #{ms(0)}em; // 1em
 }
+
 
 .dcf-c-icon--x {
   @include relative;
-  top: #{ms(-14)}em;
+  top: #{ms(-14)}em; // .13em
 }
+
 
 .dcf-c-icon--hang {
   @include absolute;

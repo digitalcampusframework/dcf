@@ -34,7 +34,7 @@
 .dcf-c-article blockquote {
 
   + p {
-    text-indent: #{ms(4)}em;
+    text-indent: #{ms(4)}em; // 1.77em
   }
 
 }
@@ -47,7 +47,7 @@
 
 .dcf-c-author-img img {
   @include block;
-  width: #{ms(8)}em;
+  width: #{ms(8)}em; // 3.16em
 }
 
 
@@ -81,7 +81,7 @@
 
     .dcf-c-article {
       @include grid;
-      grid-template-columns: #{ms(8)}em 1fr;
+      grid-template-columns: #{ms(8)}em 1fr; // 3.16em
       grid-template-areas:
         "share header"
         "share body"
@@ -100,7 +100,7 @@
       grid-area: share;
 
       .dcf-u-sticky {
-        top: #{ms(2)}em;
+        top: #{ms(2)}em; // 1.33em
       }
 
       div[role="heading"] {

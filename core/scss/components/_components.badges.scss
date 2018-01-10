@@ -6,8 +6,8 @@
 // !Default (Roundrect) Badges
 .dcf-c-badge {
   @include inlineblock;
-  padding-top: #{ms(-10)}rem; // .238rem
-  padding-bottom: #{ms(-10)}rem; // .238rem
+  padding-top: #{ms(-10)}rem; // .24rem
+  padding-bottom: #{ms(-10)}rem; // .24rem
   @include sm4;
   @include lh3;
   color: #fff;

@@ -14,6 +14,7 @@
 @mixin p7($imp:null) { padding: $length7 $imp; }
 @mixin p8($imp:null) { padding: $length8 $imp; }
 @mixin p9($imp:null) { padding: $length9 $imp; }
+@mixin p10($imp:null) { padding: $length10 $imp; }
 
 
 // !Top
@@ -27,6 +28,7 @@
 @mixin pt7($imp:null) { padding-top: $length7 $imp; }
 @mixin pt8($imp:null) { padding-top: $length8 $imp; }
 @mixin pt9($imp:null) { padding-top: $length9 $imp; }
+@mixin pt10($imp:null) { padding-top: $length10 $imp; }
 
 
 // !Right
@@ -40,6 +42,7 @@
 @mixin pr7($imp:null) { padding-right: $length7 $imp; }
 @mixin pr8($imp:null) { padding-right: $length8 $imp; }
 @mixin pr9($imp:null) { padding-right: $length9 $imp; }
+@mixin pr10($imp:null) { padding-right: $length10 $imp; }
 
 
 // !Bottom
@@ -53,6 +56,7 @@
 @mixin pb7($imp:null) { padding-bottom: $length7 $imp; }
 @mixin pb8($imp:null) { padding-bottom: $length8 $imp; }
 @mixin pb9($imp:null) { padding-bottom: $length9 $imp; }
+@mixin pb10($imp:null) { padding-bottom: $length10 $imp; }
 
 
 // !Left
@@ -66,3 +70,4 @@
 @mixin pl7($imp:null) { padding-left: $length7 $imp; }
 @mixin pl8($imp:null) { padding-left: $length8 $imp; }
 @mixin pl9($imp:null) { padding-left: $length9 $imp; }
+@mixin pl10($imp:null) { padding-left: $length10 $imp; }
