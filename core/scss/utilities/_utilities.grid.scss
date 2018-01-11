@@ -5,3 +5,15 @@
 
 // Grid display rules (.dcf--d-grid and .dcf--d-inline-grid) located in _utilities.display
 
+
+// !Grid Column Gap
+.dcf-u-colgap-sm { @include colgap-sm(!important); } // 1em
+.dcf-u-colgap-md { @include colgap-md(!important); } // 1.77em
+.dcf-u-colgap-lg { @include colgap-lg(!important); } // 3.16em
+.dcf-u-colgap-vw { @include colgap-vw(!important); }
+
+
+// !Grid Row Gap
+.dcf-u-rowgap-sm { @include rowgap-sm(!important); } // 1em
+.dcf-u-rowgap-md { @include rowgap-md(!important); } // 1.77em
+.dcf-u-rowgap-lg { @include rowgap-lg(!important); } // 3.16em

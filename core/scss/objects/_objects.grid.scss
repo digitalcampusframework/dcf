@@ -41,17 +41,4 @@
     }
   }
 
-
-  // !Grid Gap (Columns)
-  .dcf-o-colgap-sm { grid-column-gap: #{ms(0)}em; } // 1em
-  .dcf-o-colgap-md { grid-column-gap: #{ms(4)}em; } // 1.77em
-  .dcf-o-colgap-lg { grid-column-gap: #{ms(8)}em; } // 3.16em
-  .dcf-o-colgap-vw { grid-column-gap: 5vw; }
-
-
-  // !Grid Gap (Rows)
-  .dcf-o-rowgap-sm { grid-row-gap: #{ms(0)}em; } // 1em
-  .dcf-o-rowgap-md { grid-row-gap: #{ms(4)}em; } // 1.77em
-  .dcf-o-rowgap-lg { grid-row-gap: #{ms(8)}em; } // 3.16em
-
 }
