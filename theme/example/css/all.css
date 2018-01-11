@@ -1719,6 +1719,13 @@ a.dcf-u-inverse:active {
 .dcf-u-flex-nowrap {
   flex-wrap: nowrap !important; }
 
+.dcf-u-flex-grow1 {
+  -webkit-box-flex: 1 !important;
+          flex-grow: 1 !important; }
+
+.dcf-u-flex-shrink0 {
+  flex-shrink: 0 !important; }
+
 .dcf-u-float-right {
   float: right !important; }
 
@@ -2204,21 +2211,6 @@ a.dcf-u-inverse:active {
   position: -webkit-sticky !important;
   position: sticky !important; }
 
-.dcf-u-lg5 {
-  font-size: 2em !important; }
-
-.dcf-u-lg4 {
-  font-size: 1.5em !important; }
-
-.dcf-u-lg3 {
-  font-size: 1.375em !important; }
-
-.dcf-u-lg2 {
-  font-size: 1.25em !important; }
-
-.dcf-u-lg1 {
-  font-size: 1.125em !important; }
-
 .dcf-u-h1 {
   font-size: 2.37037em; }
 
@@ -2248,6 +2240,21 @@ a.dcf-u-inverse:active {
 
 .dcf-u-display4 {
   font-size: 4.21399em; }
+
+.dcf-u-lg5 {
+  font-size: 2.22222em !important; }
+
+.dcf-u-lg4 {
+  font-size: 1.77778em !important; }
+
+.dcf-u-lg3 {
+  font-size: 1.66667em !important; }
+
+.dcf-u-lg2 {
+  font-size: 1.33333em !important; }
+
+.dcf-u-lg1 {
+  font-size: 1.25em !important; }
 
 .dcf-u-sm1 {
   font-size: 0.9375em !important; }

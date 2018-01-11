@@ -3,14 +3,6 @@
 /////////////////////////////////
 
 
-// !Larger Size
-.dcf-u-lg5 { @include lg5(!important); }
-.dcf-u-lg4 { @include lg4(!important); }
-.dcf-u-lg3 { @include lg3(!important); }
-.dcf-u-lg2 { @include lg2(!important); }
-.dcf-u-lg1 { @include lg1(!important); }
-
-
 // !Heading Sizes
 .dcf-u-h1 { @include h1(!important); }
 .dcf-u-h2 { @include h2(!important); }
@@ -25,6 +17,14 @@
 .dcf-u-display2 { @include display2(!important); }
 .dcf-u-display3 { @include display3(!important); }
 .dcf-u-display4 { @include display4(!important); }
+
+
+// !Larger Size
+.dcf-u-lg5 { @include lg5(!important); }
+.dcf-u-lg4 { @include lg4(!important); }
+.dcf-u-lg3 { @include lg3(!important); }
+.dcf-u-lg2 { @include lg2(!important); }
+.dcf-u-lg1 { @include lg1(!important); }
 
 
 // !Smaller Size

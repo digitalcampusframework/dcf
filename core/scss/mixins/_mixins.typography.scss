@@ -4,20 +4,20 @@
 
 
 // !Larger Size
-@mixin lg5($imp:null) { font-size: 2em $imp; }
-@mixin lg4($imp:null) { font-size: 1.5em $imp; }
-@mixin lg3($imp:null) { font-size: 1.375em $imp; }
-@mixin lg2($imp:null) { font-size: 1.25em $imp; }
-@mixin lg1($imp:null) { font-size: 1.125em $imp; }
+@mixin lg5($imp:null) { font-size: #{ms(5)}em $imp; }
+@mixin lg4($imp:null) { font-size: #{ms(4)}em $imp; }
+@mixin lg3($imp:null) { font-size: #{ms(3)}em $imp; }
+@mixin lg2($imp:null) { font-size: #{ms(2)}em $imp; }
+@mixin lg1($imp:null) { font-size: #{ms(1)}em $imp; }
 
 
 // !Heading Sizes
-@mixin h1($imp:null) { font-size: #{ms(6)}em }
-@mixin h2($imp:null) { font-size: #{ms(5)}em }
-@mixin h3($imp:null) { font-size: #{ms(4)}em }
-@mixin h4($imp:null) { font-size: #{ms(3)}em }
-@mixin h5($imp:null) { font-size: #{ms(2)}em }
-@mixin h6($imp:null) { font-size: #{ms(1)}em }
+@mixin h1($imp:null) { font-size: #{ms(6)}em; }
+@mixin h2($imp:null) { font-size: #{ms(5)}em; }
+@mixin h3($imp:null) { font-size: #{ms(4)}em; }
+@mixin h4($imp:null) { font-size: #{ms(3)}em; }
+@mixin h5($imp:null) { font-size: #{ms(2)}em; }
+@mixin h6($imp:null) { font-size: #{ms(1)}em; }
 
 
 // !Display Headings

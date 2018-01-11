@@ -6,14 +6,22 @@
 // Flexbox display rules (.dcf--d-flex and .dcf--d-inline-flex) located in _utilities.display
 
 
-// !Flexbox Rows and Columns
+// !Flex-direction (Columns and Rows)
 .dcf-u-flex-col { @include flex-col(!important); }
 .dcf-u-flex-colrev { @include flex-colrev(!important); }
 .dcf-u-flex-row { @include flex-row(!important); }
 .dcf-u-flex-rowrev { @include flex-rowrev(!important); }
 
 
-// !Flexbox Wrap
+// !Flex-wrap
 .dcf-u-flex-wrap { @include flex-wrap(!important); }
 .dcf-u-flex-wraprev { @include flex-wraprev(!important); }
 .dcf-u-flex-nowrap { @include flex-nowrap(!important); }
+
+
+// !Flex-grow
+.dcf-u-flex-grow1 { @include flex-grow1(!important); }
+
+
+// !Flex-shrink
+.dcf-u-flex-shrink0 { @include flex-shrink0(!important); }
