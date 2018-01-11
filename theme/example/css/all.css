@@ -1719,6 +1719,13 @@ a.dcf-u-inverse:active {
 .dcf-u-flex-nowrap {
   flex-wrap: nowrap !important; }
 
+.dcf-u-flex-grow1 {
+  -webkit-box-flex: 1 !important;
+          flex-grow: 1 !important; }
+
+.dcf-u-flex-shrink0 {
+  flex-shrink: 0 !important; }
+
 .dcf-u-float-right {
   float: right !important; }
 
