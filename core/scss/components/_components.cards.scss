@@ -6,10 +6,6 @@
 // !Individual Card
 .dcf-c-card {
   @include mb0;
-  @include sm1;
-  @include bg-white;
-//   border: 1px solid $color-border;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,.25);
 }
 
 
@@ -24,10 +20,8 @@
 .dcf-c-card__block {
   @include pt5;
   @include pr6;
-//   padding-right: 5%;
   @include pb5;
   @include pl6;
-//   padding-left: 5%;
 }
 
 .dcf-c-card-block p:last-child {
