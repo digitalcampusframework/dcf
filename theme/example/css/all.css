@@ -329,8 +329,8 @@ th {
   text-align: left; }
 
 .dcf-o-wrapper {
-  padding-right: 5%;
-  padding-left: 5%; }
+  padding-right: 5.6%;
+  padding-left: 5.6%; }
 
 @supports (display: grid) {
   .dcf-o-grid {
@@ -351,9 +351,51 @@ th {
     @media only screen and (min-width: 41.95625em) {
       .dcf-o-grid-even {
         grid-template-columns: repeat(2, 1fr); } }
-    @media only screen and (min-width: 99.375em) {
+    @media only screen and (min-width: 74.55em) {
       .dcf-o-grid-even {
-        grid-template-columns: repeat(4, 1fr); } } }
+        grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid-halves {
+    grid-template-columns: repeat(2, 1fr); }
+  @media only screen and (min-width: 41.95625em) {
+    .dcf-o-grid-halves\@sm {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (min-width: 55.925em) {
+    .dcf-o-grid-halves\@md {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (min-width: 74.55em) {
+    .dcf-o-grid-halves\@lg {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (min-width: 99.375em) {
+    .dcf-o-grid-halves\@xl {
+      grid-template-columns: repeat(2, 1fr); } }
+  .dcf-o-grid-thirds {
+    grid-template-columns: repeat(3, 1fr); }
+  @media only screen and (min-width: 41.95625em) {
+    .dcf-o-grid-thirds\@sm {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (min-width: 55.925em) {
+    .dcf-o-grid-thirds\@md {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (min-width: 74.55em) {
+    .dcf-o-grid-thirds\@lg {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (min-width: 99.375em) {
+    .dcf-o-grid-thirds\@xl {
+      grid-template-columns: repeat(3, 1fr); } }
+  .dcf-o-grid-fourths {
+    grid-template-columns: repeat(4, 1fr); }
+  @media only screen and (min-width: 41.95625em) {
+    .dcf-o-grid-fourths\@sm {
+      grid-template-columns: repeat(4, 1fr); } }
+  @media only screen and (min-width: 55.925em) {
+    .dcf-o-grid-fourths\@md {
+      grid-template-columns: repeat(4, 1fr); } }
+  @media only screen and (min-width: 74.55em) {
+    .dcf-o-grid-fourths\@lg {
+      grid-template-columns: repeat(4, 1fr); } }
+  @media only screen and (min-width: 99.375em) {
+    .dcf-o-grid-fourths\@xl {
+      grid-template-columns: repeat(4, 1fr); } } }
 
 .dcf-o-full-width {
   position: relative;
@@ -476,15 +518,23 @@ th {
   padding-left: 1em;
   border-radius: 1em; }
 
-.dcf-c-breadcrumbs ul {
+.dcf-c-breadcrumbs li {
   display: -webkit-box;
   display: flex;
-  padding-left: 0;
-  list-style: none;
-  font-size: 0.70313em; }
+  -webkit-box-align: center;
+          align-items: center; }
 
-.dcf-c-breadcrumbs li {
-  margin-right: 0.5625em; }
+.dcf-c-breadcrumbs li:not(:last-child) {
+  margin-right: 0.75em; }
+
+.dcf-c-breadcrumbs li:not(:last-child)::after {
+  content: '';
+  width: 0;
+  height: 0;
+  margin-left: 0.75em;
+  border-top: 0.31641em solid transparent;
+  border-bottom: 0.31641em solid transparent;
+  border-left: 0.31641em solid currentcolor; }
 
 .dcf-c-btn-group {
   display: -webkit-inline-box;
@@ -1753,7 +1803,7 @@ a.dcf-u-inverse:active {
   grid-column-gap: 3.16049em !important; }
 
 .dcf-u-colgap-vw {
-  grid-column-gap: 5vw !important; }
+  grid-column-gap: 3.16vw !important; }
 
 .dcf-u-rowgap-sm {
   grid-row-gap: 1em !important; }
