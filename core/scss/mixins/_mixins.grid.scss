@@ -10,7 +10,7 @@
 @mixin colgap-sm($imp:null) { grid-column-gap: $length4 $imp; } // 1em
 @mixin colgap-md($imp:null) { grid-column-gap: $length6 $imp; } // 1.77em
 @mixin colgap-lg($imp:null) { grid-column-gap: $length8 $imp; } // 3.16em
-@mixin colgap-vw($imp:null) { grid-column-gap: 5vw $imp; }
+@mixin colgap-vw($imp:null) { grid-column-gap: 3.16vw $imp; }
 
 
 // !Grid Row Gap
