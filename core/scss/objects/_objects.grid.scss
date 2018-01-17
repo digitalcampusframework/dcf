@@ -36,9 +36,42 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include mq(xl, min, width) {
+    @include mq(lg, min, width) {
       grid-template-columns: repeat(4, 1fr);
     }
   }
+
+
+  // !Halves
+  .dcf-o-grid-halves {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dcf-o-grid-halves\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(2, 1fr); } }
+  .dcf-o-grid-halves\@md { @include mq(md, min, width) { grid-template-columns: repeat(2, 1fr); } }
+  .dcf-o-grid-halves\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(2, 1fr); } }
+  .dcf-o-grid-halves\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(2, 1fr); } }
+
+
+  // !Thirds
+  .dcf-o-grid-thirds {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dcf-o-grid-thirds\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(3, 1fr); } }
+  .dcf-o-grid-thirds\@md { @include mq(md, min, width) { grid-template-columns: repeat(3, 1fr); } }
+  .dcf-o-grid-thirds\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(3, 1fr); } }
+  .dcf-o-grid-thirds\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(3, 1fr); } }
+
+
+  // !Fourths
+  .dcf-o-grid-fourths {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dcf-o-grid-fourths\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid-fourths\@md { @include mq(md, min, width) { grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid-fourths\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid-fourths\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(4, 1fr); } }
 
 }
