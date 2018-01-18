@@ -1266,30 +1266,6 @@ button .dcf-c-icon {
   .dcf-c-nav__secondary {
     grid-area: nav2; } }
 
-.dcf-c-pagination {
-  display: -webkit-box;
-  display: flex;
-  margin-top: 1.33333em;
-  padding-left: 0;
-  list-style: none; }
-
-.dcf-c-pagination__item {
-  margin-bottom: 0; }
-
-.dcf-c-pagination__item .dcf-c-btn:focus {
-  z-index: 1; }
-
-.dcf-c-pagination__item:first-child > .dcf-c-btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0; }
-
-.dcf-c-pagination__item:last-child > .dcf-c-btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0; }
-
-.dcf-c-pagination__item:not(:first-child):not(:last-child) > .dcf-c-btn {
-  border-radius: 0; }
-
 .dcf-c-lead {
   font-size: 1.25em; }
 

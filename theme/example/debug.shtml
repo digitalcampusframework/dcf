@@ -166,13 +166,13 @@
 
     <h2 class="dcf-u-mt6">Pagination</h2>
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    <nav aria-label="Pagination example">
-      <ul class="dcf-c-pagination">
-        <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#prev"><span aria-hidden="true">«</span> Previous</a></li>
-        <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page1">1</a></li>
-        <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page2">2</a></li>
-        <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#page3">3</a></li>
-        <li class="dcf-c-pagination__item"><a class="dcf-c-btn dcf-c-btn--secondary" href="#next">Next <span aria-hidden="true">»</span></a></li>
+    <nav aria-label="pagination">
+      <ul class="dcf-c-list-unstyled dcf-u-mt5">
+        <li class="dcf-c-list-inline-item"><a href="#previous">Previous</a></li>
+        <li class="dcf-c-list-inline-item"><a href="#page1">1</a></li>
+        <li class="dcf-c-list-inline-item"><a href="#page2">2</a></li>
+        <li class="dcf-c-list-inline-item"><a href="#page3">3</a></li>
+        <li class="dcf-c-list-inline-item"><a href="#next">Next</a></li>
       </ul>
     </nav>
 
