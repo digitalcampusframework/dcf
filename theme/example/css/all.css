@@ -405,6 +405,22 @@ th {
   margin-left: -50vw;
   margin-right: -50vw; }
 
+.dcf-o-media {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: start;
+          align-items: flex-start; }
+
+.dcf-o-media__body {
+  -webkit-box-flex: 1;
+          flex: 1; }
+
+.dcf-o-media__object.dcf-u-1st {
+  margin-right: 1.33333em; }
+
+.dcf-o-media__object.dcf-u-2nd {
+  margin-left: 1.33333em; }
+
 .dcf-c-alert {
   grid-template-areas: "header footer" "msg footer"; }
   @supports (display: grid) {

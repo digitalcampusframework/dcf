@@ -1,0 +1,26 @@
+//////////////////////////
+// !CORE / OBJECTS / MEDIA
+//////////////////////////
+
+
+.dcf-o-media {
+  @include flex;
+  @include ai-flexstart;
+}
+
+
+.dcf-o-media__body {
+  flex: 1;
+}
+
+
+// Media object (usually an image) on left
+.dcf-o-media__object.dcf-u-1st {
+  @include mr5;
+}
+
+
+// Media object (usually an image) on right
+.dcf-o-media__object.dcf-u-2nd {
+  @include ml5;
+}
