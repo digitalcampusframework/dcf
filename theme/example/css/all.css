@@ -540,18 +540,6 @@ th {
   -webkit-box-align: center;
           align-items: center; }
 
-.dcf-c-breadcrumbs li:not(:last-child) {
-  margin-right: 0.75em; }
-
-.dcf-c-breadcrumbs li:not(:last-child)::after {
-  content: '';
-  width: 0;
-  height: 0;
-  margin-left: 0.75em;
-  border-top: 0.31641em solid transparent;
-  border-bottom: 0.31641em solid transparent;
-  border-left: 0.31641em solid currentcolor; }
-
 .dcf-c-btn-group {
   display: -webkit-inline-box;
   display: inline-flex; }
@@ -575,72 +563,10 @@ th {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  white-space: nowrap;
-  border-radius: 2px; }
+  white-space: nowrap; }
 
 a.dcf-c-btn {
   text-decoration: none; }
-
-.dcf-c-btn--primary,
-.dcf-c-btn--primary:link {
-  color: #fff;
-  border: 1px solid #30c;
-  background-color: #30c;
-  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
-  transition: border 400ms ease-out, background-color 400ms ease-out; }
-
-.dcf-c-btn--primary:visited {
-  color: #fff;
-  border-color: #260099;
-  background-color: #260099; }
-
-.dcf-c-btn--primary:hover {
-  color: #fff;
-  border-color: #260099;
-  background-color: #260099;
-  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
-  transition: border 200ms ease-out, background-color 200ms ease-out; }
-
-.dcf-c-btn--primary:active,
-.dcf-c-btn--primary.dcf-c-active {
-  color: #fff;
-  border-color: #260099;
-  background-color: #260099; }
-
-.dcf-c-btn--secondary,
-.dcf-c-btn--secondary:link {
-  color: #30c;
-  border: 1px solid currentcolor;
-  background-color: #fff;
-  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
-  transition: border 400ms ease-out, background-color 400ms ease-out; }
-
-.dcf-c-btn--secondary:visited {
-  color: #260099;
-  border-color: currentcolor; }
-
-.dcf-c-btn--secondary:hover {
-  color: #260099;
-  border-color: currentcolor;
-  background-color: #ece6ff;
-  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
-  transition: border 200ms ease-out, background-color 200ms ease-out; }
-
-.dcf-c-btn--secondary:active,
-.dcf-c-btn--secondary.dcf-c-active {
-  color: #260099;
-  border-color: currentcolor; }
-
-.dcf-c-btn--inverse {
-  color: #fff;
-  border: 1px solid currentcolor;
-  background-color: rgba(0, 0, 0, 0.1);
-  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
-  transition: border 400ms ease-out, background-color 400ms ease-out; }
-  .dcf-c-btn--inverse:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
-    transition: border 200ms ease-out, background-color 200ms ease-out; }
 
 button:disabled,
 input[type="button"]:disabled,
@@ -754,182 +680,15 @@ a.dcf-c-calendar__date--active:focus {
   font-size: 0.75em;
   color: #666; }
 
-.dcf-c-form-group {
-  margin-bottom: 1em; }
-
 .dcf-c-input-textual {
   display: block;
-  margin-top: 0.42188em;
-  padding-top: 0.5625em;
-  padding-right: 0.75em;
-  padding-bottom: 0.5625em;
-  padding-left: 0.75em;
-  border: 1px solid #d0d0d0;
-  border-radius: 2px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0);
-          box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0);
-  -webkit-transition: border-color 400ms ease-out, -webkit-box-shadow 400ms ease-out;
-  transition: border-color 400ms ease-out, -webkit-box-shadow 400ms ease-out;
-  transition: border-color 400ms ease-out, box-shadow 400ms ease-out;
-  transition: border-color 400ms ease-out, box-shadow 400ms ease-out, -webkit-box-shadow 400ms ease-out; }
-
-.dcf-c-input-textual:hover {
-  border-color: #b7b7b7;
-  -webkit-box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0.5);
-          box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0.5);
-  -webkit-transition: border-color 200ms ease-out, -webkit-box-shadow 200ms ease-out;
-  transition: border-color 200ms ease-out, -webkit-box-shadow 200ms ease-out;
-  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
-  transition: border-color 200ms ease-out, box-shadow 200ms ease-out, -webkit-box-shadow 200ms ease-out; }
-
-.dcf-c-input-textual:focus {
-  outline: none;
-  border-color: #30c; }
-
-.dcf-c-input-control {
-  margin-right: 0.42188em; }
+  font-family: inherit; }
 
 .dcf-c-input-file {
-  display: block;
-  margin-top: 0.5625em;
-  margin-bottom: 0.5625em; }
-
-.dcf-c-input-required {
-  padding-left: 0.5625em;
-  font-style: italic;
-  font-size: 0.75em; }
-
-.dcf-c-form-help {
-  margin-top: 0.42188em;
-  font-size: 0.75em;
-  color: #666; }
-
-/* Container used for styling the custom select, the buttom class below adds the
- * bg gradient, corners, etc. */
-.dcf-c-input-select {
-  display: table;
-  position: relative;
-  margin-top: 0.42188em; }
-
-/* This is the native select, we're making everything but the text invisible so
- * we can see the button styles in the wrapper */
-.dcf-c-input-select select {
-  width: 100%;
-  margin: 0;
-  outline: none;
-  padding-top: 0.5625em;
-  padding-right: 1em;
-  padding-bottom: 0.5625em;
-  padding-left: 0.75em;
-  /* Prefixed box-sizing rules necessary for older browsers */
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* Font size must be 16px to prevent iOS page zoom on focus */
-  font-size: 1rem; }
-
-/* Custom arrow sits on top of the select - could be an image, SVG, icon font,
- * etc. or the arrow could just baked into the bg image on the select. */
-.dcf-c-input-select::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  z-index: 2;
-  /* These hacks make the select behind the arrow clickable in some browsers */
-  pointer-events: none;
-  display: none; }
-
-/* Firefox <= 34 has a false positive on @supports( -moz-appearance: none )
- * @supports ( mask-type: alpha ) is Firefox 35+
- */
-@supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) or ((-moz-appearance: none) and (mask-type: alpha)) {
-  /* Show custom arrow */
-  .dcf-c-input-select::after {
-    display: block;
-    height: 0;
-    width: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 8px solid #444;
-    margin-top: -4px; }
-  /* Remove select styling */
-  .dcf-c-input-select select {
-    padding-right: 3em;
-    /* Match-01 */
-    /* inside @supports so that iOS <= 8 display the native arrow */
-    background: none;
-    /* Match-04 */
-    /* inside @supports so that Android <= 4.3 display the native arrow */
-    border: 1px solid transparent;
-    /* Match-05 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; }
-  .dcf-c-input-select select:focus {
-    border-color: #aaa;
-    /* Match-03 */ } }
-
-/* These are the "theme" styles for our button applied via separate button class, style as you like */
-/* Set the background fallback to solid #fff so Firefox renders the <option> list readably. */
-.dcf-c-input-select {
-  border: 1px solid #d0d0d0;
-  border-radius: 2px;
-  -webkit-transition: border-color 400ms ease-out;
-  transition: border-color 400ms ease-out; }
-
-.dcf-c-input-select select {
-  /* General select styles: change as needed */
-  color: #444;
-  line-height: 1.5;
-  border-radius: 2px; }
-
-/* Hover style */
-.dcf-c-input-select:hover {
-  border-color: #b7b7b7;
-  -webkit-transition: border-color 200ms ease-out;
-  transition: border-color 200ms ease-out; }
-
-/* Focus style */
-.dcf-c-input-select select:focus {
-  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-  box-shadow: 0 0 0 3px -moz-mac-focusring;
-  color: #222;
-  /* Match-02 */ }
-
-@supports (box-shadow: none) {
-  .dcf-c-input-select select:focus {
-    outline: none; } }
-
-/* Set options to normal weight */
-.dcf-c-input-select option {
-  font-weight: normal; }
-
-/* IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance. Targeting media query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5 - looking for better ways to achieve this targeting */
-/* The second rule removes the odd blue bg color behind the text in the select button in IE 10/11 and sets the text color to match the focus style's - fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .dcf-c-input-select select::-ms-expand {
-    display: none; }
-  .dcf-c-input-select select:focus {
-    border-color: #aaa;
-    /* Match-03 */ }
-  .dcf-c-input-select select:focus::-ms-value {
-    background-color: transparent;
-    color: #222;
-    /* Match-02*/ }
-  .dcf-c-input-select select {
-    padding-right: 3em;
-    /* Match-01 */
-    background: none;
-    /* Match-04 */
-    border: 1px solid transparent;
-    /* Match-05 */ }
-  .dcf-c-input-select::after {
-    display: block; } }
+  display: block; }
 
 .dcf-c-header a {
   text-decoration: none; }
@@ -1110,15 +869,7 @@ button .dcf-c-icon {
           flex: 1 1 auto;
   width: 1%;
   margin-top: 0;
-  margin-bottom: 0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px; }
-
-.dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
-  border-radius: 2px 0 0 2px; }
-
-.dcf-c-input-group-addon + .dcf-c-input-textual {
-  border-radius: 0 2px 2px 0; }
+  margin-bottom: 0; }
 
 .dcf-c-input-group .dcf-c-btn {
   display: -webkit-box;
@@ -1126,42 +877,15 @@ button .dcf-c-icon {
   -webkit-box-align: center;
           align-items: center;
   margin-top: 0;
-  margin-bottom: 0;
-  margin-left: -1px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0; }
+  margin-bottom: 0; }
 
 .dcf-c-input-group-addon {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
           align-items: center;
-  padding-top: 0.5625em;
-  padding-right: 0.75em;
-  padding-bottom: 0.5625em;
-  padding-left: 0.75em;
   white-space: nowrap;
-  text-align: center;
-  color: #666;
-  border-style: solid;
-  border-color: #d0d0d0;
-  background-color: #eee; }
-
-.dcf-c-input-group-addon:not(:last-child) {
-  border-top-width: 1px;
-  border-right-width: 0;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px; }
-
-.dcf-c-input-group-addon:last-child {
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 0;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px; }
+  text-align: center; }
 
 .dcf-c-list-unstyled {
   list-style: none;
@@ -1390,15 +1114,101 @@ button .dcf-c-icon {
 .dcf-c-table--compact tbody tr:first-child td {
   padding-top: 0.75em; }
 
+.example .dcf-c-breadcrumbs li:not(:last-child) {
+  margin-right: 0.75em; }
+
+.example .dcf-c-breadcrumbs li:not(:last-child)::after {
+  content: '';
+  width: 0;
+  height: 0;
+  margin-left: 0.75em;
+  border-top: 0.31641em solid transparent;
+  border-bottom: 0.31641em solid transparent;
+  border-left: 0.31641em solid #666; }
+
 .example .dcf-c-btn-group .dcf-c-btn + .dcf-c-btn {
   margin-left: -1px; }
+
+.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
+
+.example .dcf-c-btn-group > .dcf-c-btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.example .dcf-c-btn-group > .dcf-c-btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .example .dcf-c-btn {
   padding-top: 0.5625em;
   padding-right: 1em;
   padding-bottom: 0.5625em;
   padding-left: 1em;
-  font-weight: bold; }
+  font-weight: bold;
+  border-radius: 2px; }
+
+.example .dcf-c-btn--primary,
+.example .dcf-c-btn--primary:link {
+  color: #fff;
+  border: 1px solid #30c;
+  background-color: #30c;
+  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
+  transition: border 400ms ease-out, background-color 400ms ease-out; }
+
+.example .dcf-c-btn--primary:visited {
+  color: #fff;
+  border-color: #260099;
+  background-color: #260099; }
+
+.example .dcf-c-btn--primary:hover {
+  color: #fff;
+  border-color: #260099;
+  background-color: #260099;
+  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
+  transition: border 200ms ease-out, background-color 200ms ease-out; }
+
+.example .dcf-c-btn--primary:active,
+.example .dcf-c-btn--primary.dcf-c-active {
+  color: #fff;
+  border-color: #260099;
+  background-color: #260099; }
+
+.example .dcf-c-btn--secondary,
+.example .dcf-c-btn--secondary:link {
+  color: #30c;
+  border: 1px solid currentcolor;
+  background-color: #fff;
+  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
+  transition: border 400ms ease-out, background-color 400ms ease-out; }
+
+.example .dcf-c-btn--secondary:visited {
+  color: #260099;
+  border-color: currentcolor; }
+
+.example .dcf-c-btn--secondary:hover {
+  color: #260099;
+  border-color: currentcolor;
+  background-color: #ece6ff;
+  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
+  transition: border 200ms ease-out, background-color 200ms ease-out; }
+
+.example .dcf-c-btn--secondary:active,
+.example .dcf-c-btn--secondary.dcf-c-active {
+  color: #260099;
+  border-color: currentcolor; }
+
+.example .dcf-c-btn--inverse {
+  color: #fff;
+  border: 1px solid currentcolor;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
+  transition: border 400ms ease-out, background-color 400ms ease-out; }
+
+.example .dcf-c-btn--inverse:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
+  transition: border 200ms ease-out, background-color 200ms ease-out; }
 
 .example .dcf-c-card {
   font-size: 0.9375em;
@@ -1434,12 +1244,227 @@ button .dcf-c-icon {
   .example .dcf-c-footer__global {
     padding-bottom: 1.77778em; } }
 
+.example .dcf-c-form-group {
+  margin-bottom: 1em; }
+
+.example .dcf-c-input-textual {
+  padding-top: 0.5625em;
+  padding-right: 0.75em;
+  padding-bottom: 0.5625em;
+  padding-left: 0.75em;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0);
+          box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0);
+  -webkit-transition: border-color 400ms ease-out, -webkit-box-shadow 400ms ease-out;
+  transition: border-color 400ms ease-out, -webkit-box-shadow 400ms ease-out;
+  transition: border-color 400ms ease-out, box-shadow 400ms ease-out;
+  transition: border-color 400ms ease-out, box-shadow 400ms ease-out, -webkit-box-shadow 400ms ease-out; }
+
+.example .dcf-c-input-textual:hover {
+  border-color: #b7b7b7;
+  -webkit-box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0.5);
+          box-shadow: inset 0 1px 2px rgba(208, 208, 208, 0.5);
+  -webkit-transition: border-color 200ms ease-out, -webkit-box-shadow 200ms ease-out;
+  transition: border-color 200ms ease-out, -webkit-box-shadow 200ms ease-out;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out, -webkit-box-shadow 200ms ease-out; }
+
+.example .dcf-c-input-textual:focus {
+  outline: none;
+  border-color: #30c; }
+
+.example .dcf-c-label + .dcf-c-input-textual {
+  margin-top: 0.42188em; }
+
+.example .dcf-c-input-control {
+  margin-right: 0.42188em; }
+
+.example .dcf-c-input-file {
+  margin-top: 0.5625em;
+  margin-bottom: 0.5625em; }
+
+.example .dcf-c-input-required {
+  padding-left: 0.5625em;
+  font-style: italic;
+  font-size: 0.75em; }
+
+.example .dcf-c-form-help {
+  margin-top: 0.42188em;
+  font-size: 0.75em;
+  color: #666; }
+
+/* Container used for styling the custom select, the buttom class below adds the
+ * bg gradient, corners, etc. */
+.example .dcf-c-input-select {
+  display: table;
+  position: relative;
+  margin-top: 0.42188em; }
+
+/* This is the native select, we're making everything but the text invisible so
+ * we can see the button styles in the wrapper */
+.example .dcf-c-input-select select {
+  width: 100%;
+  margin: 0;
+  outline: none;
+  padding-top: 0.5625em;
+  padding-right: 1em;
+  padding-bottom: 0.5625em;
+  padding-left: 0.75em;
+  /* Prefixed box-sizing rules necessary for older browsers */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Font size must be 16px to prevent iOS page zoom on focus */
+  font-size: 1rem; }
+
+/* Custom arrow sits on top of the select - could be an image, SVG, icon font,
+ * etc. or the arrow could just baked into the bg image on the select. */
+.example .dcf-c-input-select::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  z-index: 2;
+  /* These hacks make the select behind the arrow clickable in some browsers */
+  pointer-events: none;
+  display: none; }
+
+/* Firefox <= 34 has a false positive on @supports( -moz-appearance: none )
+ * @supports ( mask-type: alpha ) is Firefox 35+
+ */
+@supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) or ((-moz-appearance: none) and (mask-type: alpha)) {
+  /* Show custom arrow */
+  .example .dcf-c-input-select::after {
+    display: block;
+    height: 0;
+    width: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #444;
+    margin-top: -4px; }
+  /* Remove select styling */
+  .example .dcf-c-input-select select {
+    padding-right: 3em;
+    /* Match-01 */
+    /* inside @supports so that iOS <= 8 display the native arrow */
+    background: none;
+    /* Match-04 */
+    /* inside @supports so that Android <= 4.3 display the native arrow */
+    border: 1px solid transparent;
+    /* Match-05 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  .example .dcf-c-input-select select:focus {
+    border-color: #aaa;
+    /* Match-03 */ } }
+
+/* These are the "theme" styles for our button applied via separate button class, style as you like */
+/* Set the background fallback to solid #fff so Firefox renders the <option> list readably. */
+.example .dcf-c-input-select {
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  -webkit-transition: border-color 400ms ease-out;
+  transition: border-color 400ms ease-out; }
+
+.example .dcf-c-input-select select {
+  /* General select styles: change as needed */
+  color: #444;
+  line-height: 1.5;
+  border-radius: 2px; }
+
+/* Hover style */
+.example .dcf-c-input-select:hover {
+  border-color: #b7b7b7;
+  -webkit-transition: border-color 200ms ease-out;
+  transition: border-color 200ms ease-out; }
+
+/* Focus style */
+.example .dcf-c-input-select select:focus {
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  /* Match-02 */ }
+
+@supports (box-shadow: none) {
+  .example .dcf-c-input-select select:focus {
+    outline: none; } }
+
+/* Set options to normal weight */
+.example .dcf-c-input-select option {
+  font-weight: normal; }
+
+/* IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance. Targeting media query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5 - looking for better ways to achieve this targeting */
+/* The second rule removes the odd blue bg color behind the text in the select button in IE 10/11 and sets the text color to match the focus style's - fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .example .dcf-c-input-select select::-ms-expand {
+    display: none; }
+  .example .dcf-c-input-select select:focus {
+    border-color: #aaa;
+    /* Match-03 */ }
+  .example .dcf-c-input-select select:focus::-ms-value {
+    background-color: transparent;
+    color: #222;
+    /* Match-02*/ }
+  .example .dcf-c-input-select select {
+    padding-right: 3em;
+    /* Match-01 */
+    background: none;
+    /* Match-04 */
+    border: 1px solid transparent;
+    /* Match-05 */ }
+  .example .dcf-c-input-select::after {
+    display: block; } }
+
 .example .dcf-c-subhead {
   font-weight: normal;
   letter-spacing: 0.1em; }
 
 .example .dcf-c-icon--hang {
   top: 0.17798rem; }
+
+.example .dcf-c-input-group .dcf-c-input-textual {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px; }
+
+.example .dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
+  border-radius: 2px 0 0 2px; }
+
+.example .dcf-c-input-group-addon + .dcf-c-input-textual {
+  border-radius: 0 2px 2px 0; }
+
+.example .dcf-c-input-group .dcf-c-btn {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.example .dcf-c-input-group-addon {
+  padding-top: 0.5625em;
+  padding-right: 0.75em;
+  padding-bottom: 0.5625em;
+  padding-left: 0.75em;
+  color: #666;
+  border-style: solid;
+  border-color: #d0d0d0;
+  background-color: #eee; }
+
+.example .dcf-c-input-group-addon:not(:last-child) {
+  border-top-width: 1px;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px; }
+
+.example .dcf-c-input-group-addon:last-child {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; }
 
 .example .dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
   margin-left: -1px; }
