@@ -1,0 +1,57 @@
+/////////////////////////////////////
+// !THEME / COMPONENTS / INPUT GROUPS
+/////////////////////////////////////
+
+
+// !Input Group Input Field
+.example .dcf-c-input-group .dcf-c-input-textual {
+  @include rounded-left;
+}
+
+
+.example .dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
+  border-radius: $roundrect 0 0 $roundrect;
+}
+
+
+.example .dcf-c-input-group-addon + .dcf-c-input-textual {
+  border-radius: 0 $roundrect $roundrect 0;
+}
+
+
+// !Input Group Button
+.example .dcf-c-input-group .dcf-c-btn {
+  margin-left: -1px;
+  @include sharp-left;
+}
+
+
+// !Input Group Add-on
+.example .dcf-c-input-group-addon {
+  @include pt2;
+  @include pr3;
+  @include pb2;
+  @include pl3;
+  color: $color-light-text;
+  border-style: solid;
+  border-color: $color-border;
+  background-color: #eee; // convert to variable
+}
+
+
+.example .dcf-c-input-group-addon:not(:last-child) {
+  border-top-width: 1px;
+  border-right-width: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  @include rounded-left;
+}
+
+
+.example .dcf-c-input-group-addon:last-child {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0;
+  @include rounded-right;
+}

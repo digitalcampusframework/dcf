@@ -7,17 +7,3 @@
   @include flex;
   @include ai-center;
 }
-
-.dcf-c-breadcrumbs li:not(:last-child) {
-  @include mr3;
-}
-
-.dcf-c-breadcrumbs li:not(:last-child)::after {
-  content: '';
-  width: 0;
-  height: 0;
-  @include ml3;
-  border-top: #{ms(-8)}em solid transparent; // .32em
-  border-bottom: #{ms(-8)}em solid transparent; // .32em
-  border-left: #{ms(-8)}em solid currentcolor; // .32em
-}
