@@ -1513,6 +1513,33 @@ button .dcf-c-icon {
 .dcf-u-bg-white {
   background-color: #fff !important; }
 
+.dcf-u-bg-overlay-dark {
+  background-color: rgba(0, 0, 0, 0.96) !important; }
+  @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+    .dcf-u-bg-overlay-dark {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      -webkit-backdrop-filter: blur(6px) grayscale(10%) !important;
+              backdrop-filter: blur(6px) grayscale(10%) !important; } }
+
+.dcf-u-bg-overlay-light,
+.dcf-u-bg-overlay-light::-webkit-backdrop {
+  background-color: rgba(255, 255, 255, 0.98) !important; }
+
+.dcf-u-bg-overlay-light,
+.dcf-u-bg-overlay-light::backdrop {
+  background-color: rgba(255, 255, 255, 0.98) !important; }
+  @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+    .dcf-u-bg-overlay-light,
+    .dcf-u-bg-overlay-light::-webkit-backdrop {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      -webkit-backdrop-filter: blur(6px) grayscale(33%) !important;
+              backdrop-filter: blur(6px) grayscale(33%) !important; }
+    .dcf-u-bg-overlay-light,
+    .dcf-u-bg-overlay-light::backdrop {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      -webkit-backdrop-filter: blur(6px) grayscale(33%) !important;
+              backdrop-filter: blur(6px) grayscale(33%) !important; } }
+
 .dcf-u-b1 {
   border-style: solid !important;
   border-width: 1px !important;
@@ -2081,23 +2108,6 @@ a.dcf-u-inverse:active {
 
 .dcf-u-overflow-y-auto {
   overflow-y: auto !important; }
-
-.dcf-u-overlay-dark {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.96); }
-  @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
-    .dcf-u-overlay-dark {
-      background-color: rgba(0, 0, 0, 0.94);
-      -webkit-backdrop-filter: blur(6px);
-              backdrop-filter: blur(6px); } }
-
-.dcf-u-overlay-light {
-  background-color: rgba(255, 255, 255, 0.98); }
-  @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
-    .dcf-u-overlay-light {
-      background-color: rgba(255, 255, 255, 0.96);
-      -webkit-backdrop-filter: blur(6px);
-              backdrop-filter: blur(6px); } }
 
 .dcf-u-p0 {
   padding: 0 !important; }

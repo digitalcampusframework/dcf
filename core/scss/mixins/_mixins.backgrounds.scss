@@ -19,3 +19,25 @@
 @mixin bg-white($imp:null) {
   background-color: #fff $imp;
 }
+
+
+// !Overlay: Dark
+@mixin bg-overlay-dark($imp:null) {
+  background-color: rgba(0,0,0,.96) $imp;
+
+  @supports (backdrop-filter: blur(6px)) {
+    background-color: rgba(0,0,0,.8) $imp;
+    backdrop-filter: blur(6px) grayscale(10%) $imp;
+  }
+}
+
+
+// !Overlay: Light
+@mixin bg-overlay-light($imp:null) {
+  background-color: rgba(255,255,255,.98) $imp;
+
+  @supports (backdrop-filter: blur(6px)) {
+    background-color: rgba(255,255,255,.95) $imp;
+    backdrop-filter: blur(6px) grayscale(33%) $imp;
+  }
+}
