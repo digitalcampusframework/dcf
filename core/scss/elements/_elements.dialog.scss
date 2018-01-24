@@ -1,0 +1,16 @@
+// dialog element resets
+dialog {
+  border: none !important;
+  transform-origin: center;
+  //force padding 0 otherwise click close will not work accurately
+  padding: 0;
+  background-color: transparent;
+  // restrict width when browser doesn't support fit-content
+  width: 80vw;
+
+  &::backdrop { @include bg-overlay-dark }
+
+  // should there be a default animation?
+  &[open] { animation: appear 300ms forwards ease-out; }
+}
+

@@ -1,0 +1,30 @@
+.dcf-o-dialog {
+  background-color: #fff;
+  //prevent margin collapse
+  border: 1px solid transparent;
+  @include ml2;
+  @include mr2;
+
+  .dcf-o-dialog__header {
+    @include font-sans;
+  }
+
+  .dcf-o-dialog__body {
+  }
+
+  .dcf-o-dialog__footer {
+  }
+
+  .dcf-o-dialog__close {
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: $length2;
+    padding: 0 0.7em;
+
+    &:before {
+      content: '\00D7';
+      @include lg4;
+    }
+  }
+}
