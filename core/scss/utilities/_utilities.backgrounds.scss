@@ -13,3 +13,12 @@
 
 // !White
 .dcf-u-bg-white { @include bg-white(!important); }
+
+
+// !Overlay: Dark
+.dcf-u-bg-overlay-dark { @include bg-overlay-dark(!important); }
+
+
+// !Overlay: Light
+.dcf-u-bg-overlay-light,
+.dcf-u-bg-overlay-light::backdrop { @include bg-overlay-light(!important); }
