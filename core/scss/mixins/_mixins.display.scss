@@ -52,12 +52,3 @@
   }
 
 }
-
-// !Subgrid
-@mixin subgrid($imp:null) {
-
-  @supports (display: subgrid) {
-    display: subgrid $imp;
-  }
-
-}

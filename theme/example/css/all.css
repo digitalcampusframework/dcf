@@ -1782,10 +1782,6 @@ a.dcf-u-inverse:active {
   .dcf-u-inlinegrid {
     display: inline-grid !important; } }
 
-@supports (display: subgrid) {
-  .dcf-u-subgrid {
-    display: subgrid !important; } }
-
 .dcf-u-flex-col {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
