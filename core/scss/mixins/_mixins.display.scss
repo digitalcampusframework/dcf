@@ -36,19 +36,8 @@
 
 
 // !Grid
-@mixin grid($imp:null) {
+@mixin grid($imp:null) { display: grid $imp; }
 
-  @supports (display: grid) {
-    display: grid $imp;
-  }
-
-}
 
 // !Inline-Grid
-@mixin inlinegrid($imp:null) {
-
-  @supports (display: inline-grid) {
-    display: inline-grid $imp;
-  }
-
-}
+@mixin inlinegrid($imp:null) { display: inline-grid $imp; }

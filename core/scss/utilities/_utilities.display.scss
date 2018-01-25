@@ -36,8 +36,20 @@
 
 
 // !Grid
-.dcf-u-grid { @include grid(!important); }
+.dcf-u-grid {
+
+  @supports (display: grid) {
+    @include grid(!important);
+  }
+
+}
 
 
 // !Inline-Grid
-.dcf-u-inlinegrid { @include inlinegrid(!important); }
+.dcf-u-inlinegrid {
+
+  @supports (display: inline-grid) {
+    @include inlinegrid(!important);
+  }
+
+}
