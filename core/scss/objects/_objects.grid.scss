@@ -3,75 +3,675 @@
 /////////////////////////
 
 
+// !Grid Fallback Styles
+// Flexbox styles for browsers that don't support CSS Grid
 
-.dcf-o-grid {
+.dcf-o-grid,
+.dcf-o-grid-halves,
+.dcf-o-grid-halves\@sm,
+.dcf-o-grid-halves\@md,
+.dcf-o-grid-halves\@lg,
+.dcf-o-grid-halves\@xl,
+.dcf-o-grid-thirds,
+.dcf-o-grid-thirds\@sm,
+.dcf-o-grid-thirds\@md,
+.dcf-o-grid-thirds\@lg,
+.dcf-o-grid-thirds\@xl,
+.dcf-o-grid-fourths,
+.dcf-o-grid-fourths\@sm,
+.dcf-o-grid-fourths\@md,
+.dcf-o-grid-fourths\@lg,
+.dcf-o-grid-fourths\@xl,
+.dcf-o-grid-fifths\@md,
+.dcf-o-grid-fifths\@lg,
+.dcf-o-grid-fifths\@xl,
+.dcf-o-grid-sixths\@md,
+.dcf-o-grid-sixths\@lg,
+.dcf-o-grid-sixths\@xl {
+  @include flex;
+  @include flex-wrap;
 }
 
-.dcf-o-grid-odd {
+.dcf-o-grid-halves > * {
+  flex-basis: 50%;
 }
 
-.dcf-o-grid-even {
+.dcf-o-grid-thirds > * {
+  flex-basis: 33.33%;
 }
 
+.dcf-o-grid-fourths > * {
+  flex-basis: 25%;
+}
+
+.dcf-o-grid__col-half-start {
+  flex-basis: 50%;
+}
+
+.dcf-o-grid__col-half-end {
+  flex-basis: 50%;
+}
+
+.dcf-o-grid__col-onethird-start {
+  flex-basis: 33.33%;
+}
+
+.dcf-o-grid__col-onethird-end {
+  flex-basis: 33.33%;
+}
+
+.dcf-o-grid__col-twothirds-start {
+  flex-basis: 66.66%;
+}
+
+.dcf-o-grid__col-twothirds-end {
+  flex-basis: 66.66%;
+}
+
+.dcf-o-grid__col-onefourth-start {
+  flex-basis: 25%;
+}
+
+.dcf-o-grid__col-onefourth-end {
+  flex-basis: 25%;
+}
+
+.dcf-o-grid__col-threefourths-start {
+  flex-basis: 75%;
+}
+
+.dcf-o-grid__col-threefourths-end {
+  flex-basis: 75%;
+}
+
+
+@include mq(sm, min, width) {
+
+  .dcf-o-grid-halves\@sm > * {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid-thirds\@sm > * {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid-fourths\@sm > * {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-half-start\@sm {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-half-end\@sm {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-onethird-start\@sm {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-onethird-end\@sm {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-twothirds-start\@sm {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-twothirds-end\@sm {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-onefourth-start\@sm {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-onefourth-end\@sm {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-threefourths-start\@sm {
+    flex-basis: 75%;
+  }
+
+  .dcf-o-grid__col-threefourths-end\@sm {
+    flex-basis: 75%;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .dcf-o-grid-halves\@md > * {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid-thirds\@md > * {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid-fourths\@md > * {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid-fifths\@md > * {
+    flex-basis: 20%;
+  }
+
+  .dcf-o-grid-sixths\@md > * {
+    flex-basis: 16.66%;
+  }
+
+  .dcf-o-grid__col-half-start\@md {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-half-end\@md {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-onethird-start\@md {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-onethird-end\@md {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-twothirds-start\@md {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-twothirds-end\@md {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-onefourth-start\@md {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-onefourth-end\@md {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-threefourths-start\@md {
+    flex-basis: 75%;
+  }
+
+  .dcf-o-grid__col-threefourths-end\@md {
+    flex-basis: 75%;
+  }
+
+}
+
+
+@include mq(lg, min, width) {
+
+  .dcf-o-grid-halves\@lg > * {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid-thirds\@lg > * {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid-fourths\@lg > * {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid-fifths\@lg > * {
+    flex-basis: 20%;
+  }
+
+  .dcf-o-grid-sixths\@lg > * {
+    flex-basis: 16.66%;
+  }
+
+  .dcf-o-grid__col-half-start\@lg {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-half-end\@lg {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-onethird-start\@lg {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-onethird-end\@lg {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-twothirds-start\@lg {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-twothirds-end\@lg {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-onefourth-start\@lg {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-onefourth-end\@lg {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-threefourths-start\@lg {
+    flex-basis: 75%;
+  }
+
+  .dcf-o-grid__col-threefourths-end\@lg {
+    flex-basis: 75%;
+  }
+
+}
+
+
+@include mq(xl, min, width) {
+
+  .dcf-o-grid-halves\@xl > * {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid-thirds\@xl > * {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid-fourths\@xl > * {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid-fifths\@xl > * {
+    flex-basis: 20%;
+  }
+
+  .dcf-o-grid-sixths\@xl > * {
+    flex-basis: 16.66%;
+  }
+
+  .dcf-o-grid__col-half-start\@xl {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-half-end\@xl {
+    flex-basis: 50%;
+  }
+
+  .dcf-o-grid__col-onethird-start\@xl {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-onethird-end\@xl {
+    flex-basis: 33.33%;
+  }
+
+  .dcf-o-grid__col-twothirds-start\@xl {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-twothirds-end\@xl {
+    flex-basis: 66.66%;
+  }
+
+  .dcf-o-grid__col-onefourth-start\@xl {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-onefourth-end\@xl {
+    flex-basis: 25%;
+  }
+
+  .dcf-o-grid__col-threefourths-start\@xl {
+    flex-basis: 75%;
+  }
+
+  .dcf-o-grid__col-threefourths-end\@xl {
+    flex-basis: 75%;
+  }
+
+}
+
+
+// !CSS Grid
 
 @supports (display: grid) {
 
+  .dcf-o-grid,
+  .dcf-o-grid-halves,
+  .dcf-o-grid-halves\@sm,
+  .dcf-o-grid-halves\@md,
+  .dcf-o-grid-halves\@lg,
+  .dcf-o-grid-halves\@xl,
+  .dcf-o-grid-thirds,
+  .dcf-o-grid-thirds\@sm,
+  .dcf-o-grid-thirds\@md,
+  .dcf-o-grid-thirds\@lg,
+  .dcf-o-grid-thirds\@xl,
+  .dcf-o-grid-fourths,
+  .dcf-o-grid-fourths\@sm,
+  .dcf-o-grid-fourths\@md,
+  .dcf-o-grid-fourths\@lg,
+  .dcf-o-grid-fourths\@xl,
+  .dcf-o-grid-fifths\@md,
+  .dcf-o-grid-fifths\@lg,
+  .dcf-o-grid-fifths\@xl,
+  .dcf-o-grid-sixths\@md,
+  .dcf-o-grid-sixths\@lg,
+  .dcf-o-grid-sixths\@xl {
+    @include grid;
+  }
+
   .dcf-o-grid {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
+    grid-template-columns: repeat(12, 1fr);
   }
 
-
-  .dcf-o-grid-odd {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-  }
-
-
-  .dcf-o-grid-even {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
-
-    @include mq(sm, min, width) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include mq(lg, min, width) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-
-  // !Halves
   .dcf-o-grid-halves {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dcf-o-grid-halves\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(2, 1fr); } }
-  .dcf-o-grid-halves\@md { @include mq(md, min, width) { grid-template-columns: repeat(2, 1fr); } }
-  .dcf-o-grid-halves\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(2, 1fr); } }
-  .dcf-o-grid-halves\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(2, 1fr); } }
-
-
-  // !Thirds
   .dcf-o-grid-thirds {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .dcf-o-grid-thirds\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(3, 1fr); } }
-  .dcf-o-grid-thirds\@md { @include mq(md, min, width) { grid-template-columns: repeat(3, 1fr); } }
-  .dcf-o-grid-thirds\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(3, 1fr); } }
-  .dcf-o-grid-thirds\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(3, 1fr); } }
-
-
-  // !Fourths
   .dcf-o-grid-fourths {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .dcf-o-grid-fourths\@sm { @include mq(sm, min, width) { grid-template-columns: repeat(4, 1fr); } }
-  .dcf-o-grid-fourths\@md { @include mq(md, min, width) { grid-template-columns: repeat(4, 1fr); } }
-  .dcf-o-grid-fourths\@lg { @include mq(lg, min, width) { grid-template-columns: repeat(4, 1fr); } }
-  .dcf-o-grid-fourths\@xl { @include mq(xl, min, width) { grid-template-columns: repeat(4, 1fr); } }
+  .dcf-o-grid__col-half-start {
+    grid-column: 1 / span 6;
+  }
+
+  .dcf-o-grid__col-half-end {
+    grid-column: span 6 / -1;
+  }
+
+  .dcf-o-grid__col-onethird-start {
+    grid-column: 1 / span 4;
+  }
+
+  .dcf-o-grid__col-onethird-end {
+    grid-column: span 4 / -1;
+  }
+
+  .dcf-o-grid__col-twothirds-start {
+    grid-column: 1 / span 8;
+  }
+
+  .dcf-o-grid__col-twothirds-end {
+    grid-column: span 8 / -1;
+  }
+
+  .dcf-o-grid__col-onefourth-start {
+    grid-column: 1 / span 3;
+  }
+
+  .dcf-o-grid__col-onefourth-end {
+    grid-column: span 3 / -1;
+  }
+
+  .dcf-o-grid__col-threefourths-start {
+    grid-column: 1 / span 9;
+  }
+
+  .dcf-o-grid__col-threefourths-end {
+    grid-column: span 9 / -1;
+  }
+
+
+  @include mq(sm, min, width) {
+
+    .dcf-o-grid-halves\@sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dcf-o-grid-thirds\@sm {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dcf-o-grid-fourths\@sm {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcf-o-grid__col-half-start\@sm {
+      grid-column: 1 / span 6;
+    }
+
+    .dcf-o-grid__col-half-end\@sm {
+      grid-column: span 6 / -1;
+    }
+
+    .dcf-o-grid__col-onethird-start\@sm {
+      grid-column: 1 / span 4;
+    }
+
+    .dcf-o-grid__col-onethird-end\@sm {
+      grid-column: span 4 / -1;
+    }
+
+    .dcf-o-grid__col-twothirds-start\@sm {
+      grid-column: 1 / span 8;
+    }
+
+    .dcf-o-grid__col-twothirds-end\@sm {
+      grid-column: span 8 / -1;
+    }
+
+    .dcf-o-grid__col-onefourth-start\@sm {
+      grid-column: 1 / span 3;
+    }
+
+    .dcf-o-grid__col-onefourth-end\@sm {
+      grid-column: span 3 / -1;
+    }
+
+    .dcf-o-grid__col-threefourths-start\@sm {
+      grid-column: 1 / span 9;
+    }
+
+    .dcf-o-grid__col-threefourths-end\@sm {
+      grid-column: span 9 / -1;
+    }
+
+  }
+
+
+  @include mq(md, min, width) {
+
+    .dcf-o-grid-halves\@md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dcf-o-grid-thirds\@md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dcf-o-grid-fourths\@md {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcf-o-grid-fifths\@md {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dcf-o-grid-sixths\@md {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .dcf-o-grid__col-half-start\@md {
+      grid-column: 1 / span 6;
+    }
+
+    .dcf-o-grid__col-half-end\@md {
+      grid-column: span 6 / -1;
+    }
+
+    .dcf-o-grid__col-onethird-start\@md {
+      grid-column: 1 / span 4;
+    }
+
+    .dcf-o-grid__col-onethird-end\@md {
+      grid-column: span 4 / -1;
+    }
+
+    .dcf-o-grid__col-twothirds-start\@md {
+      grid-column: 1 / span 8;
+    }
+
+    .dcf-o-grid__col-twothirds-end\@md {
+      grid-column: span 8 / -1;
+    }
+
+    .dcf-o-grid__col-onefourth-start\@md {
+      grid-column: 1 / span 3;
+    }
+
+    .dcf-o-grid__col-onefourth-end\@md {
+      grid-column: span 3 / -1;
+    }
+
+    .dcf-o-grid__col-threefourths-start\@md {
+      grid-column: 1 / span 9;
+    }
+
+    .dcf-o-grid__col-threefourths-end\@md {
+      grid-column: span 9 / -1;
+    }
+
+  }
+
+
+  @include mq(lg, min, width) {
+
+    .dcf-o-grid-halves\@lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dcf-o-grid-thirds\@lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dcf-o-grid-fourths\@lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcf-o-grid-fifths\@lg {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dcf-o-grid-sixths\@lg {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .dcf-o-grid__col-half-start\@lg {
+      grid-column: 1 / span 6;
+    }
+
+    .dcf-o-grid__col-half-end\@lg {
+      grid-column: span 6 / -1;
+    }
+
+    .dcf-o-grid__col-onethird-start\@lg {
+      grid-column: 1 / span 4;
+    }
+
+    .dcf-o-grid__col-onethird-end\@lg {
+      grid-column: span 4 / -1;
+    }
+
+    .dcf-o-grid__col-twothirds-start\@lg {
+      grid-column: 1 / span 8;
+    }
+
+    .dcf-o-grid__col-twothirds-end\@lg {
+      grid-column: span 8 / -1;
+    }
+
+    .dcf-o-grid__col-onefourth-start\@lg {
+      grid-column: 1 / span 3;
+    }
+
+    .dcf-o-grid__col-onefourth-end\@lg {
+      grid-column: span 3 / -1;
+    }
+
+    .dcf-o-grid__col-threefourths-start\@lg {
+      grid-column: 1 / span 9;
+    }
+
+    .dcf-o-grid__col-threefourths-end\@lg {
+      grid-column: span 9 / -1;
+    }
+
+  }
+
+
+  @include mq(xl, min, width) {
+
+    .dcf-o-grid-halves\@xl {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dcf-o-grid-thirds\@xl {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dcf-o-grid-fourths\@xl {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcf-o-grid-fifths\@xl {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dcf-o-grid-sixths\@xl {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .dcf-o-grid__col-half-start\@xl {
+      grid-column: 1 / span 6;
+    }
+
+    .dcf-o-grid__col-half-end\@xl {
+      grid-column: span 6 / -1;
+    }
+
+    .dcf-o-grid__col-onethird-start\@xl {
+      grid-column: 1 / span 4;
+    }
+
+    .dcf-o-grid__col-onethird-end\@xl {
+      grid-column: span 4 / -1;
+    }
+
+    .dcf-o-grid__col-twothirds-start\@xl {
+      grid-column: 1 / span 8;
+    }
+
+    .dcf-o-grid__col-twothirds-end\@xl {
+      grid-column: span 8 / -1;
+    }
+
+    .dcf-o-grid__col-onefourth-start\@xl {
+      grid-column: 1 / span 3;
+    }
+
+    .dcf-o-grid__col-onefourth-end\@xl {
+      grid-column: span 3 / -1;
+    }
+
+    .dcf-o-grid__col-threefourths-start\@xl {
+      grid-column: 1 / span 9;
+    }
+
+    .dcf-o-grid__col-threefourths-end\@xl {
+      grid-column: span 9 / -1;
+    }
+
+  }
 
 }

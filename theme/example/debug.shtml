@@ -126,14 +126,7 @@
 
     <h2 class="dcf-u-mt6">Cards</h2>
 
-    <ul class="dcf-o-grid-even dcf-c-list-unstyled dcf-u-colgap-sm dcf-u-rowgap-sm dcf-u-mb0">
-      <li class="dcf-c-card">
-        <img src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
-        <div class="dcf-c-card__block">
-          <h3 class="dcf-u-h4">Card #1</h3>
-          <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-      </li>
+    <ul class="dcf-o-grid-halves@sm dcf-o-grid-fourths@lg dcf-c-list-unstyled dcf-u-colgap-sm dcf-u-rowgap-sm dcf-u-mb0">
       <li class="dcf-c-card">
         <img src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
         <div class="dcf-c-card__block">
@@ -241,7 +234,7 @@
         	</ul>
         </div>
       </aside>
-      <footer class="dcf-o-grid dcf-c-article__footer dcf-u-colgap-md dcf-u-rowgap-md">
+      <footer class="dcf-o-grid-halves@sm dcf-o-grid-fourths@md dcf-c-article__footer dcf-u-colgap-vw dcf-u-rowgap-md">
         <div class="dcf-u-sm2 dcf-u-bt dcf-u-pt4">
           <div class="dcf-u-mb4 dcf-u-bold dcf-u-uppercase dcf-u-ls1" role="heading">
             News Release Contacts
