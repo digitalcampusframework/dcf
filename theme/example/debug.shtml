@@ -167,13 +167,13 @@
     <p>Grid-related object classes can be appended with the framework's responsive suffixes (<code>@sm</code>, <code>@md</code>, <code>@lg</code> and <code>@xl</code>) to apply styles at the respective breakpoints.</p>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-half-start</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-50%-l</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
-        <div class="dcf-o-grid__col-half-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-half-start</code></div>
+        <div class="dcf-o-grid__col-50%-l dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-50%-l</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
@@ -196,14 +196,14 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-half-end</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-50%-r</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
-        <div class="dcf-o-grid__col-half-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-half-end</code></div>
+        <div class="dcf-o-grid__col-50%-r dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-50%-r</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
@@ -225,13 +225,13 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-onethird-start</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-33%-l</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
-        <div class="dcf-o-grid__col-onethird-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onethird-start</code></div>
+        <div class="dcf-o-grid__col-33%-l dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-33%-l</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
@@ -254,14 +254,14 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-onethird-end</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-33%-r</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
-        <div class="dcf-o-grid__col-onethird-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onethird-end</code></div>
+        <div class="dcf-o-grid__col-33%-r dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-33%-r</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
@@ -283,13 +283,13 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-twothirds-start</code></dt>
-      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-67%-l</code></dt>
+      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
-        <div class="dcf-o-grid__col-twothirds-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-twothirds-start</code></div>
+        <div class="dcf-o-grid__col-67%-l dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-67%-l</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
@@ -312,14 +312,14 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-twothirds-end</code></dt>
-      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-67%-r</code></dt>
+      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
-        <div class="dcf-o-grid__col-twothirds-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-twothirds-end</code></div>
+        <div class="dcf-o-grid__col-67%-r dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-67%-r</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
@@ -341,13 +341,13 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-onefourth-start</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-25%-l</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
-        <div class="dcf-o-grid__col-onefourth-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onefourth-start</code></div>
+        <div class="dcf-o-grid__col-25%-l dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-25%-l</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
@@ -370,14 +370,14 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-onefourth-end</code></dt>
-      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-25%-r</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
-        <div class="dcf-o-grid__col-onefourth-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onefourth-end</code></div>
+        <div class="dcf-o-grid__col-25%-r dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-25%-r</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
@@ -399,13 +399,13 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-threefourths-start</code></dt>
-      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-75%-l</code></dt>
+      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
-        <div class="dcf-o-grid__col-threefourths-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-threefourths-start</code></div>
+        <div class="dcf-o-grid__col-75%-l dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-75%-l</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
@@ -428,14 +428,14 @@
     </figure>
 
     <dl class="dcf-u-mt8">
-      <dt><code>.dcf-o-grid__col-threefourths-end</code></dt>
-      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+      <dt><code>.dcf-o-grid__col-75%-r</code></dt>
+      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
     </dl>
 
     <figure>
       <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
-        <div class="dcf-o-grid__col-threefourths-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-threefourths-end</code></div>
+        <div class="dcf-o-grid__col-75%-r dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-75%-r</code></div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
         <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
