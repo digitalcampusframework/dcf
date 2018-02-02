@@ -87,6 +87,519 @@
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
+
+    <ul class="dcf-u-mt6">
+      <li><a href="#example-objects">Objects</a></li>
+      <li><a href="#example-elements">Elements</a></li>
+      <li><a href="#example-components">Components</a></li>
+      <li><a href="#example-utilities">Utilities</a></li>
+    </ul>
+
+    <h2 class="dcf-u-mt10" id="example-objects">Objects</h2>
+
+    <h3 class="dcf-u-mt6" id="example-object-wrapper">Wrapper</h3>
+    <dl>
+      <dt><code>.dcf-o-wrapper</code></dt>
+      <dd>The wrapper object applies left and right padding to the page to provide adequate whitespace.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-u-mb2 dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">
+        <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-wrapper</code>
+      </div>
+      <figcaption class="dcf-c-figcaption">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
+    </figure>
+
+    <h3 class="dcf-u-mt6" id="example-object-full-width">Full-Width</h3>
+    <dl>
+      <dt><code>.dcf-o-full-width</code></dt>
+      <dd>The full-width object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-full-width dcf-u-mb2 dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">
+        <div class="dcf-u-mb4">
+          <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-full-width</code>
+        </div>
+        <div class="dcf-o-wrapper">
+          <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1">
+            <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-wrapper</code>
+          </div>
+        </div>
+      </div>
+      <figcaption class="dcf-c-figcaption">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the full-width object to reapply the page padding.</figcaption>
+    </figure>
+
+    <h3 class="dcf-u-mt6" id="example-object-full-width">Grid</h3>
+
+    <dl>
+      <dt><code>.dcf-o-grid</code></dt>
+      <dd>The grid object lays out child elements in a grid of twelve columns. Why twelve? Twelve is divisible by two, three, four and six, making it ideal for dividing a grid into halves, thirds, fourths and sixths.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-mb2">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+      <figcaption class="dcf-c-figcaption">The <code>.dcf-o-grid</code> will take any number of child elements and place each in one of the available twelve columns. Additional classes to define column widths and column- and row-gap help to make the grid more useful.</figcaption>
+    </figure>
+
+    <p class="dcf-u-mt8">For the rest of the grid examples, we will apply column- and row-gap classes which are documented in <a href="#example-utilities">Utilities</a>.</p>
+
+    <p>Grid-related object classes can be appended with the framework's responsive suffixes (<code>@sm</code>, <code>@md</code>, <code>@lg</code> and <code>@xl</code>) to apply styles at the respective breakpoints.</p>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-half-start</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-o-grid__col-half-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-half-start</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-half-end</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-o-grid__col-half-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-half-end</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-onethird-start</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-o-grid__col-onethird-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onethird-start</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-onethird-end</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-o-grid__col-onethird-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onethird-end</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-twothirds-start</code></dt>
+      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-o-grid__col-twothirds-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-twothirds-start</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-twothirds-end</code></dt>
+      <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-o-grid__col-twothirds-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-twothirds-end</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-onefourth-start</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-o-grid__col-onefourth-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onefourth-start</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-onefourth-end</code></dt>
+      <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-o-grid__col-onefourth-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-onefourth-end</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-threefourths-start</code></dt>
+      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it at the <em>start</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-o-grid__col-threefourths-start dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-threefourths-start</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid__col-threefourths-end</code></dt>
+      <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it at the <em>end</em> of the grid's tracks.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-o-grid__col-threefourths-end dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center"><code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-grid__col-threefourths-end</code></div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#13</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#14</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#15</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#16</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#17</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#18</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">&hellip;</div>
+      </div>
+    </figure>
+
+    <p class="dcf-u-mt8">Grids of equal-width columns can more easily be created using the following grid objects instead of applying classes to each and every grid column in the twelve-column grid.</p>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid-halves</code></dt>
+      <dd>The grid-halves object lays out child elements in a grid of two equal-width columns.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid-halves dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid-thirds</code></dt>
+      <dd>The grid-thirds object lays out child elements in a grid of three equal-width columns.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid-thirds dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid-fourths</code></dt>
+      <dd>The grid-fourths object lays out child elements in a grid of four equal-width columns.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid-fourths dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+      </div>
+    </figure>
+
+    <p class="dcf-u-mt8">Grids of five and six equal-width columns start at the <code>@md</code> breakpoint because there is not enough horizontal space to reasonably accommodate most content in such narrow columns for widths below the <code>@md</code> breakpoint.</p>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid-fifths@md</code></dt>
+      <dd>The grid-fifths object lays out child elements in a grid of five equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid-fifths@md dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+      </div>
+    </figure>
+
+    <dl class="dcf-u-mt8">
+      <dt><code>.dcf-o-grid-sixths@md</code></dt>
+      <dd>The grid-sixths object lays out child elements in a grid of six equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-grid-sixths@md dcf-u-colgap-sm dcf-u-rowgap-sm">
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#1</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#2</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#3</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#4</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#5</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#6</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#7</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#8</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#9</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#10</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#11</div>
+        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">#12</div>
+      </div>
+    </figure>
+
+    <h3 class="dcf-u-mt6" id="example-object-full-width">Media</h3>
+
+    <dl>
+      <dt><code>.dcf-o-media</code></dt>
+      <dd>The media object consists of a single piece of media (e.g., photo, icon, video) located next to a block of text (<code>.dcf-o-media__body</code>). The media object prevents the text from wrapping around the media.</dd>
+    </dl>
+
+    <figure>
+      <div class="dcf-o-media">
+        <div class="dcf-u-mr4">
+          <img src="http://via.placeholder.com/100x100" alt="placeholder image">
+        </div>
+        <div class="dcf-o-media__body">
+          <p>Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+        </div>
+      </div>
+    </figure>
+
+    <h2 class="dcf-u-mt6" id="example-elements">Elements</h2>
+
+    <h2 class="dcf-u-mt6" id="example-components">Components</h2>
+
+    <h2 class="dcf-u-mt6" id="example-utilities">Utilities</h2>
+
+
+
+
+
+
+
     <h2 class="dcf-u-mt6 dcf-u-sr-only">Hero Content</h2>
 
     <div class="dcf-c-hero dcf-o-full-width">
