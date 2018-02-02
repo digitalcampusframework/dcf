@@ -712,12 +712,6 @@ th {
   -webkit-box-flex: 1;
           flex: 1; }
 
-.dcf-o-media__object.dcf-u-1st {
-  margin-right: 1.33333em; }
-
-.dcf-o-media__object.dcf-u-2nd {
-  margin-left: 1.33333em; }
-
 .dcf-c-alert {
   display: grid;
   grid-template-areas: "header footer" "msg footer"; }
