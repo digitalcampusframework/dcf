@@ -67,6 +67,9 @@ a:hover {
 a:active {
   color: #260099; }
 
+blockquote {
+  max-width: 39.46161rem; }
+
 body {
   margin: 0;
   color: #444;
@@ -292,12 +295,6 @@ q::before {
 
 q::after {
   content: close-quote; }
-
-blockquote {
-  max-width: 39.46161rem;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 1em; }
 
 small {
   font-size: 1rem; }
@@ -821,6 +818,31 @@ th {
   padding-left: 1em;
   border-radius: 1em; }
 
+.dcf-c-blockquote {
+  position: relative;
+  margin-right: 0;
+  margin-bottom: 2.37037em;
+  margin-left: 0; }
+
+.dcf-c-blockquote::before {
+  content: open-quote;
+  position: absolute;
+  font-size: 9.98872em;
+  line-height: 1; }
+
+.dcf-c-blockquote p {
+  padding-top: 3.95062em;
+  font-size: 1.33333em; }
+
+.dcf-c-blockquote p::after {
+  content: close-quote; }
+
+.dcf-c-attribution {
+  margin-top: 1em; }
+
+.dcf-c-attribution::before {
+  content: '\2014\2009'; }
+
 .dcf-c-breadcrumbs li {
   display: -webkit-box;
   display: flex;
@@ -1288,31 +1310,6 @@ button .dcf-c-icon {
 
 .dcf-c-dropcap:first-letter {
   float: left; }
-
-.dcf-c-blockquote {
-  position: relative;
-  margin-left: 0;
-  padding-top: 1em;
-  padding-bottom: 1em; }
-
-.dcf-c-blockquote::before {
-  content: open-quote;
-  position: absolute;
-  font-size: 9.98872em;
-  line-height: 1; }
-
-.dcf-c-blockquote p {
-  padding-top: 3.95062em;
-  font-size: 1.33333em; }
-
-.dcf-c-blockquote p::after {
-  content: close-quote; }
-
-.dcf-c-attribution {
-  margin-top: 1em; }
-
-.dcf-c-attribution:before {
-  content: '\2014\2009'; }
 
 .dcf-c-search-results-wrapper {
   height: calc(100% - 9.98872em); }

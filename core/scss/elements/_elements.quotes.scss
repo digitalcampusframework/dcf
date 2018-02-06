@@ -12,12 +12,3 @@ body:lang(en) {
 // !Inline Quotes
 q::before { content: open-quote; }
 q::after { content: close-quote; }
-
-
-// !Blockquote
-blockquote {
-  @include measure;
-  @include mt0;
-  @include mr0;
-  @include mb4;
-}
