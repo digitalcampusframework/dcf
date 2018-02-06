@@ -1,13 +1,13 @@
-//////////////////////////////
-// !CORE / COMPONENTS / QUOTES
-//////////////////////////////
+///////////////////////////////////
+// !CORE / COMPONENTS / BLOCKQUOTES
+///////////////////////////////////
 
 
 .dcf-c-blockquote {
   @include relative;
+  @include mr0;
+  @include mb7;
   @include ml0;
-  @include pt4;
-  @include pb4;
 }
 
 
@@ -35,6 +35,7 @@
   @include mt4;
 }
 
-.dcf-c-attribution:before {
+
+.dcf-c-attribution::before {
   content: '— '; // em dash (&mdash;) followed by a thin space (&thinsp;)
 }
