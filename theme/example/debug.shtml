@@ -103,7 +103,7 @@
         <li><a href="#example-elements-abbreviations">Abbreviations</a></li>
         <li><a href="#example-elements-addresses">Addresses</a></li>
         <li><a href="#example-elements-anchors">Anchors</a></li>
-  <!--       <li><a href="#example-elements-blockquotes">Blockquotes</a></li> -->
+        <li><a href="#example-elements-blockquotes">Blockquotes</a></li>
   <!--       <li><a href="#example-elements-body">Body</a></li> -->
         <li><a href="#example-elements-buttons">Buttons</a></li>
         <li><a href="#example-elements-code">Code</a></li>
@@ -159,13 +159,12 @@
         <p>This is an <a href="#">anchor link</a>. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
       </figure>
 
-  <!--
       <h3 class="dcf-u-mt8" id="example-elements-blockquotes">Blockquotes</h3>
-      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      <p>The <code>&lt;blockquote&gt;</code> element mostly retains browser default styling, but like <a href="#example-elements-paragraphs">paragraphs</a> and <a href="#example-elements-lists">list items</a>, its measure is restricted to prevent unnecessarily long lines, aiding readability.</p>
       <figure>
         <blockquote>Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</blockquote>
       </figure>
-  -->
+
 
   <!--
       <h3 class="dcf-u-mt8" id="example-elements-body">Body</h3>
@@ -357,7 +356,7 @@
         <p>Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
       </figure>
 
-      <h3 class="dcf-u-mt8" id="example-elements-main">Quotes</h3>
+      <h3 class="dcf-u-mt8" id="example-elements-quotes">Quotes</h3>
       <p><q>Smart</q> or <q>curly</q> quotes are applied to inline quotes (<code>&lt;q&gt;</code>)—no need to add your own.</p>
 
       <h3 class="dcf-u-mt8" id="example-elements-small">Small</h3>
@@ -1143,6 +1142,7 @@
       </figure>
 
       <h3 class="dcf-u-mt8" id="example-components-blockquotes">Blockquotes</h3>
+      <p>Like <a href="#example-elements-quotes">inline quotes</a> (<code>&lt;q&gt;</code>), the <code>.dcf-c-blockquote</code> automatically adds quotation marks—no need to add your own.</p>
       <figure>
         <blockquote class="dcf-c-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
