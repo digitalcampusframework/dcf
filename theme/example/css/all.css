@@ -1416,7 +1416,8 @@ button .dcf-c-icon {
   padding-bottom: 0.5625em;
   padding-left: 1em;
   font-weight: bold;
-  border-radius: 2px; }
+  border-radius: 2px;
+  font-family: 'system'; }
 
 .example .dcf-c-btn--primary,
 .example .dcf-c-btn--primary:link {
@@ -1637,7 +1638,8 @@ button .dcf-c-icon {
   /* General select styles: change as needed */
   color: #444;
   line-height: 1.5;
-  border-radius: 2px; }
+  border-radius: 2px;
+  font-family: 'system'; }
 
 /* Hover style */
 .example .dcf-c-input-select:hover {

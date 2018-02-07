@@ -170,6 +170,7 @@
 // 	line-height: 1.5;
 	@include lh3;
 	@include rounded;
+  @include font-system;
 }
 
 /* Hover style */
