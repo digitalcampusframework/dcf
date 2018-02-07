@@ -1165,9 +1165,9 @@ button .dcf-c-icon {
   display: flex;
   width: 100%; }
 
-.dcf-c-input-group .dcf-c-input-textual {
+.dcf-c-input-group .dcf-c-input-text {
   -webkit-box-flex: 1;
-          flex: 1 1 auto;
+          flex-grow: 1;
   width: 1%;
   margin-top: 0;
   margin-bottom: 0; }
@@ -1180,7 +1180,7 @@ button .dcf-c-icon {
   margin-top: 0;
   margin-bottom: 0; }
 
-.dcf-c-input-group-addon {
+.dcf-c-input-group__addon {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;

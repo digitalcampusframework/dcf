@@ -10,8 +10,8 @@
 
 
 // !Input Group Input Field
-.dcf-c-input-group .dcf-c-input-textual {
-  flex: 1 1 auto;
+.dcf-c-input-group .dcf-c-input-text {
+  @include flex-grow1;
   width: 1%;
   @include mt0;
   @include mb0;
@@ -28,7 +28,7 @@
 
 
 // !Input Group Add-on
-.dcf-c-input-group-addon {
+.dcf-c-input-group__addon {
   @include flex;
   @include ai-center;
   @include txt-nowrap;
