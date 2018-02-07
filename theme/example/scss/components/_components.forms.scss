@@ -8,8 +8,8 @@
 }
 
 
-// !Input: Textual
-.example .dcf-c-input-textual {
+// !Input: Text
+.example .dcf-c-input-text {
   @include pt2;
   @include pr3;
   @include pb2;
@@ -21,20 +21,20 @@
 }
 
 
-.example .dcf-c-input-textual:hover {
+.example .dcf-c-input-text:hover {
   border-color: $color-border-hover;
   box-shadow: inset 0 1px 2px fade-out($color-border,.5);
   transition: border-color $hover-on, box-shadow $hover-on;
 }
 
 
-.example .dcf-c-input-textual:focus {
+.example .dcf-c-input-text:focus {
   outline: none;
   border-color: $color-button;
 }
 
 
-.example .dcf-c-label + .dcf-c-input-textual {
+.example .dcf-c-label + .dcf-c-input-text {
   @include mt1;
 }
 

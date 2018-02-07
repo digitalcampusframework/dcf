@@ -4,17 +4,17 @@
 
 
 // !Input Group Input Field
-.example .dcf-c-input-group .dcf-c-input-textual {
+.example .dcf-c-input-group .dcf-c-input-text {
   @include rounded-left;
 }
 
 
-.example .dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
+.example .dcf-c-input-group .dcf-c-input-text:not(:last-child) {
   border-radius: $roundrect 0 0 $roundrect;
 }
 
 
-.example .dcf-c-input-group__addon + .dcf-c-input-textual {
+.example .dcf-c-input-group__addon + .dcf-c-input-text {
   border-radius: 0 $roundrect $roundrect 0;
 }
 
