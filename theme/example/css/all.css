@@ -1700,7 +1700,7 @@ button .dcf-c-icon {
 .example .dcf-c-input-group .dcf-c-input-textual:not(:last-child) {
   border-radius: 2px 0 0 2px; }
 
-.example .dcf-c-input-group-addon + .dcf-c-input-textual {
+.example .dcf-c-input-group__addon + .dcf-c-input-textual {
   border-radius: 0 2px 2px 0; }
 
 .example .dcf-c-input-group .dcf-c-btn {
@@ -1708,7 +1708,7 @@ button .dcf-c-icon {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
-.example .dcf-c-input-group-addon {
+.example .dcf-c-input-group__addon {
   padding-top: 0.5625em;
   padding-right: 0.75em;
   padding-bottom: 0.5625em;
@@ -1718,7 +1718,7 @@ button .dcf-c-icon {
   border-color: #d0d0d0;
   background-color: #eee; }
 
-.example .dcf-c-input-group-addon:not(:last-child) {
+.example .dcf-c-input-group__addon:not(:last-child) {
   border-top-width: 1px;
   border-right-width: 0;
   border-bottom-width: 1px;
@@ -1726,7 +1726,7 @@ button .dcf-c-icon {
   border-bottom-left-radius: 2px;
   border-top-left-radius: 2px; }
 
-.example .dcf-c-input-group-addon:last-child {
+.example .dcf-c-input-group__addon:last-child {
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
