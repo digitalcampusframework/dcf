@@ -1367,7 +1367,7 @@
         <dd>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</dd>
         <dt><code>.dcf-c-input-required</code></dt>
         <dd>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.</dd>
-        <dt><code>.dcf-c-input-textual</code></dt>
+        <dt><code>.dcf-c-input-text</code></dt>
         <dd>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna.</dd>
         <dt><code>.dcf-c-input-select</code></dt>
         <dd>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</dd>
@@ -1382,15 +1382,15 @@
             <legend>Sample Form Content</legend>
             <div class="dcf-c-form-group">
               <label class="dcf-c-label" for="example-components-form-name">Name <small class="dcf-c-input-required">Required</small></label>
-              <input class="dcf-c-input-textual" id="example-components-form-name" type="text" required>
+              <input class="dcf-c-input-text" id="example-components-form-name" type="text" required>
             </div>
             <div class="dcf-c-form-group">
               <label class="dcf-c-label" for="example-components-form-email">Email <small class="dcf-c-input-required">Required</small></label>
-              <input class="dcf-c-input-textual" id="example-components-form-email" type="email" required>
+              <input class="dcf-c-input-text" id="example-components-form-email" type="email" required>
             </div>
             <div class="dcf-c-form-group">
               <label class="dcf-c-label" for="example-components-form-password">Password</label>
-              <input class="dcf-c-input-textual" id="example-components-form-password" type="password" aria-describedby="example-components-form-pwd-help">
+              <input class="dcf-c-input-text" id="example-components-form-password" type="password" aria-describedby="example-components-form-pwd-help">
               <p class="dcf-c-form-help" id="example-components-form-pwd-help">Make sure it’s a good one!</p>
             </div>
             <div class="dcf-c-form-group">
@@ -1449,11 +1449,11 @@
             </fieldset>
             <div class="dcf-c-form-group">
               <label class="dcf-c-label" for="example-components-form-comments">Comments</label>
-              <textarea class="dcf-c-input-textual" id="example-components-form-comments" cols="60" rows="5"></textarea>
+              <textarea class="dcf-c-input-text" id="example-components-form-comments" cols="60" rows="5"></textarea>
             </div>
             <div class="dcf-c-form-group">
               <label class="dcf-c-label" for="example-components-form-datetime">Date/time</label>
-              <input class="dcf-c-input-textual" id="example-components-form-datetime" type="datetime-local">
+              <input class="dcf-c-input-text" id="example-components-form-datetime" type="datetime-local">
             </div>
     <!--
             <div class="dcf-c-form-group">
@@ -1585,22 +1585,22 @@
         <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-addon-example" action="" method="get">
-          <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Username</label>
+        <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-before" action="" method="get">
+          <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-before-input">Username</label>
           <div class="dcf-c-input-group">
-            <span class="dcf-c-input-group-addon">@</span>
-            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+            <span class="dcf-c-input-group__addon">@</span>
+            <input class="dcf-c-input-text" id="example-input-group-addon-before-input" name="q" type="search" accesskey="f" required>
           </div>
         </form>
         <figcaption class="dcf-c-figcaption dcf-u-mt4">This example shows an input group with an add-on <em>before</em> the input.</figcaption>
       </figure>
 
       <figure class="dcf-u-mt6">
-        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-addon-example" action="" method="get">
-          <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Email</label>
+        <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-after" action="" method="get">
+          <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-after-input">Email</label>
           <div class="dcf-c-input-group">
-            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
-            <span class="dcf-c-input-group-addon">@example.com</span>
+            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" accesskey="f" required>
+            <span class="dcf-c-input-group__addon">@example.com</span>
           </div>
         </form>
         <figcaption class="dcf-c-figcaption dcf-u-mt4">This example shows an input group with an add-on <em>after</em> the input.</figcaption>
@@ -1608,10 +1608,10 @@
 
       <h4 class="dcf-u-mt6" id="example-components-input-groups-buttons"><span class="dcf-u-sr-only">Input Groups </span>With Buttons</h4>
       <figure class="dcf-u-mt6">
-        <form class="dcf-u-flex dcf-u-ai-center" id="input-group-button-example" action="" method="get">
-          <label class="dcf-c-label dcf-u-mr4" for="input-group-example-input">Label</label>
+        <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-button" action="" method="get">
+          <label class="dcf-c-label dcf-u-mr4" for="example-input-group-button-input">Label</label>
           <div class="dcf-c-input-group">
-            <input class="dcf-c-input-textual dcf-c-search-input" id="input-group-example-input" name="q" type="search" accesskey="f" required>
+            <input class="dcf-c-input-text" id="example-input-group-button-input" name="q" type="search" accesskey="f" required>
             <button class="dcf-c-btn dcf-c-btn--primary" type="submit">
     <!--               <svg class="dcf-c-search-icon" focusable="false" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="8.5" cy="8.5" r="8"/><path stroke-linecap="round" d="M14.156 14.156L23.5 23.5"/></g><g><path fill="none" d="M0 0h24v24H0z"/></g></svg> -->
               Submit
