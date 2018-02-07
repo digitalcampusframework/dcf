@@ -1396,7 +1396,10 @@ button .dcf-c-icon {
   border-bottom: 0.31641em solid transparent;
   border-left: 0.31641em solid #666; }
 
-.example .dcf-c-btn-group .dcf-c-btn + .dcf-c-btn {
+.example .dcf-c-btn-group .dcf-c-btn--primary + .dcf-c-btn--primary {
+  margin-left: 1px; }
+
+.example .dcf-c-btn-group .dcf-c-btn--secondary + .dcf-c-btn--secondary {
   margin-left: -1px; }
 
 .example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
