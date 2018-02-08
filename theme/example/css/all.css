@@ -985,7 +985,7 @@ a.dcf-c-calendar__date--active:focus {
   font-size: 0.75em;
   color: #666; }
 
-.dcf-c-input-textual {
+.dcf-c-input-text {
   display: block;
   -webkit-appearance: none;
      -moz-appearance: none;
