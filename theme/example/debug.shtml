@@ -1476,7 +1476,7 @@
 
       <h3 class="dcf-u-mt8" id="example-components-headings">Headings</h3>
 
-      <h4 class="dcf-u-mt6" id="example-components-display-headings">Display Headings</h3>
+      <h4 class="dcf-u-mt6" id="example-components-display-headings">Display Headings</h4>
       <p>Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
       <dl>
         <dt><code>.dcf-c-display1</code></dt>
@@ -1496,7 +1496,7 @@
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements)</p>
 
-      <h4 class="dcf-u-mt6" id="example-components-subheads">Subheads</h3>
+      <h4 class="dcf-u-mt6" id="example-components-subheads">Subheads</h4>
       <dl>
         <dt><code>.dcf-c-subhead</code></dt>
         <dd>Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</dd>
@@ -1509,7 +1509,6 @@
         </div>
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
-
 
       <h3 class="dcf-u-mt8" id="example-components-heroes">Heroes</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla.</p>
@@ -1575,7 +1574,7 @@
       <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
   -->
 
-      <h3 class="dcf-u-mt8" id="example-components-input-groups">Input Groups</h2>
+      <h3 class="dcf-u-mt8" id="example-components-input-groups">Input Groups</h3>
       <dl>
         <dt><code>.dcf-c-input-group</code></dt>
         <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
@@ -2399,7 +2398,7 @@
           </dl>
         </div>
         <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-text-align">Horizontal Text Alignment</h3>
+          <h4 class="dcf-u-mt6" id="example-utilities-text-align">Horizontal Text Alignment</h4>
           <dl>
             <dt><code>.dcf-u-txt-center</code></dt><dd>text-align: center</dd>
             <dt><code>.dcf-u-txt-left</code></dt><dd>text-align: left</dd>
