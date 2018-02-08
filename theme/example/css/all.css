@@ -798,8 +798,8 @@ th {
 
 .dcf-c-badge {
   display: inline-block;
-  padding-top: 0.2373rem;
-  padding-bottom: 0.2373rem;
+  padding-top: 0.07508rem;
+  padding-bottom: 0.07508rem;
   font-size: 0.5625em;
   line-height: 1.5;
   color: #fff;
@@ -809,13 +809,13 @@ th {
   background-color: #999; }
 
 .dcf-c-badge--default {
-  padding-right: 0.5625em;
-  padding-left: 0.5625em;
+  padding-right: 0.42188em;
+  padding-left: 0.42188em;
   border-radius: 2px; }
 
 .dcf-c-badge--pill {
-  padding-right: 1em;
-  padding-left: 1em;
+  padding-right: 0.5625em;
+  padding-left: 0.5625em;
   border-radius: 1em; }
 
 .dcf-c-blockquote {
