@@ -1622,9 +1622,9 @@
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components)</p>
 
-      <h3 class="dcf-u-mt8" id="example-elements-lists">Lists</h3>
+      <h3 class="dcf-u-mt8" id="example-components-lists">Lists</h3>
 
-      <h4 class="dcf-u-mt6" id="example-elements-inline-lists">Inline Lists</h4>
+      <h4 class="dcf-u-mt6" id="example-components-inline-lists">Inline Lists</h4>
       <p>Inline lists are also used to create <a href="#example-components-pagination">pagination</a>.</p>
       <dl>
         <dt><code>.dcf-c-list-unstyled</code></dt>
@@ -1642,7 +1642,7 @@
         </ul>
       </figure>
 
-      <h4 class="dcf-u-mt6" id="example-elements-unstyled-lists">Unstyled Lists</h4>
+      <h4 class="dcf-u-mt6" id="example-components-unstyled-lists">Unstyled Lists</h4>
       <dl>
         <dt><code>.dcf-c-list-unstyled</code></dt>
         <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
