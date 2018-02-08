@@ -1516,13 +1516,13 @@
         <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
         <dt><code>.dcf-c-hero__layer</code></dt>
         <dd>Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
-        <dt><code>.dcf-c-hero__layer--fg</code></dt>
+        <dt><code>.dcf-c-hero__fg</code></dt>
         <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.</dd>
-        <dt><code>.dcf-c-hero__layer--bg</code></dt>
+        <dt><code>.dcf-c-hero__bg</code></dt>
         <dd>Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.</dd>
-        <dt><code>.dcf-c-hero-video</code></dt>
+        <dt><code>.dcf-c-hero__video</code></dt>
         <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</dd>
-        <dt><code>.dcf-c-hero-img</code></dt>
+        <dt><code>.dcf-c-hero__img</code></dt>
         <dd>Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.</dd>
       </dl>
       <figure class="dcf-u-mt6">
