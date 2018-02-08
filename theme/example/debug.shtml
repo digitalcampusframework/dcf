@@ -451,7 +451,7 @@
         <dd>The wrapper object applies left and right padding to the page to provide adequate whitespace.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">
+        <div class="dcf-u-pt2 dcf-u-pb2 dcf-u-b1 dcf-u-txt-center">
           <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-wrapper</code>
         </div>
         <figcaption class="dcf-c-figcaption dcf-u-mt4">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
@@ -464,12 +464,12 @@
         <dd>The full-width object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <div class="dcf-o-full-width dcf-u-pt1 dcf-u-pb1 dcf-u-b1 dcf-u-txt-center">
-          <div class="dcf-u-mb4">
+        <div class="dcf-o-full-width dcf-u-pt2 dcf-u-pb2 dcf-u-b1 dcf-u-txt-center">
+          <div class="dcf-u-mb3">
             <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-full-width</code>
           </div>
           <div class="dcf-o-wrapper">
-            <div class="dcf-u-pt1 dcf-u-pb1 dcf-u-b1">
+            <div class="dcf-u-pt2 dcf-u-pb2 dcf-u-b1">
               <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-wrapper</code>
             </div>
           </div>
