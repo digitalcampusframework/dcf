@@ -364,6 +364,9 @@ th {
 .dcf-o-grid-fourths > * {
   flex-basis: 25%; }
 
+[class*='dcf-o-grid__col'] {
+  flex-basis: 100%; }
+
 .dcf-o-grid__col-50\%-l {
   flex-basis: 50%; }
 
@@ -550,6 +553,8 @@ th {
     grid-template-columns: repeat(3, 1fr); }
   .dcf-o-grid-fourths {
     grid-template-columns: repeat(4, 1fr); }
+  [class*='dcf-o-grid__col'] {
+    grid-column: 1 / span 12; }
   .dcf-o-grid__col-50\%-l {
     grid-column: 1 / span 6; }
   .dcf-o-grid__col-50\%-r {
