@@ -1153,19 +1153,19 @@
         <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
       </dl>
 
-      <h4 class="dcf-u-mt6" id="example-components-standard-badges">Standard Badges</h4>
+      <h4 class="dcf-u-mt6" id="example-components-standard-badges">Roundrect Badges</h4>
       <dl>
-        <dt><code>.dcf-c-badge--standard</code></dt>
+        <dt><code>.dcf-c-badge--roundrect</code></dt>
         <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <h1>h1. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h1>
-        <h2>h2. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h2>
-        <h3>h3. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h3>
-        <h4>h4. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h4>
-        <h5>h5. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h5>
-        <h6>h6. Heading with standard badge <small class="dcf-c-badge dcf-c-badge--default">New</small></h6>
-        <p>Paragraph with standard badge <span class="dcf-c-badge dcf-c-badge--default">New</span></p>
+        <h1>h1. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h1>
+        <h2>h2. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h2>
+        <h3>h3. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h3>
+        <h4>h4. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h4>
+        <h5>h5. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h5>
+        <h6>h6. Heading with roundrect badge <small class="dcf-c-badge dcf-c-badge--roundrect">New</small></h6>
+        <p>Paragraph with roundrect badge <span class="dcf-c-badge dcf-c-badge--roundrect">New</span></p>
       </figure>
 
       <h4 class="dcf-u-mt6" id="example-components-pill-badges">Pill Badges</h4>
