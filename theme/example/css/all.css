@@ -1701,15 +1701,13 @@ button .dcf-c-icon {
 .example .dcf-c-icon--hang {
   top: 0.17798rem; }
 
-.example .dcf-c-input-group .dcf-c-input-text {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px; }
+.example .dcf-c-input-group .dcf-c-input-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
 
 .example .dcf-c-input-group .dcf-c-input-text:not(:last-child) {
-  border-radius: 2px 0 0 2px; }
-
-.example .dcf-c-input-group__addon + .dcf-c-input-text {
-  border-radius: 0 2px 2px 0; }
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
 
 .example .dcf-c-input-group .dcf-c-btn {
   margin-left: -1px;
@@ -1722,22 +1720,15 @@ button .dcf-c-icon {
   padding-bottom: 0.5625em;
   padding-left: 0.75em;
   color: #666;
-  border-style: solid;
-  border-color: #d0d0d0;
-  background-color: #eee; }
+  border: 1px solid #d0d0d0;
+  background-color: #f6f6f6; }
 
-.example .dcf-c-input-group__addon:not(:last-child) {
-  border-top-width: 1px;
+.example .dcf-c-input-group__addon:first-child {
   border-right-width: 0;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
   border-bottom-left-radius: 2px;
   border-top-left-radius: 2px; }
 
 .example .dcf-c-input-group__addon:last-child {
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
   border-left-width: 0;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px; }

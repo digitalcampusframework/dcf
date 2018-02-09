@@ -3,19 +3,14 @@
 /////////////////////////////////////
 
 
-// !Input Group Input Field
-.example .dcf-c-input-group .dcf-c-input-text {
-  @include rounded-left;
+// !Input Group Text Input
+.example .dcf-c-input-group .dcf-c-input-text:not(:first-child) {
+  @include sharp-left;
 }
 
 
 .example .dcf-c-input-group .dcf-c-input-text:not(:last-child) {
-  border-radius: $roundrect 0 0 $roundrect;
-}
-
-
-.example .dcf-c-input-group__addon + .dcf-c-input-text {
-  border-radius: 0 $roundrect $roundrect 0;
+  @include sharp-right;
 }
 
 
@@ -33,25 +28,18 @@
   @include pb2;
   @include pl3;
   color: $color-light-text;
-  border-style: solid;
-  border-color: $color-border;
-  background-color: #eee; // convert to variable
+  border: 1px solid $color-border;
+  background-color: lighten($color-border, 15%);
 }
 
 
-.example .dcf-c-input-group__addon:not(:last-child) {
-  border-top-width: 1px;
+.example .dcf-c-input-group__addon:first-child {
   border-right-width: 0;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
   @include rounded-left;
 }
 
 
 .example .dcf-c-input-group__addon:last-child {
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
   border-left-width: 0;
   @include rounded-right;
 }
