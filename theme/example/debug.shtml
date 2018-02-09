@@ -82,11 +82,13 @@
 
     <div class="dcf-u-pt5" id="dcf-page-title">
       <!-- InstanceBeginEditable name="pagetitle" -->
-      <h1>Debug Page</h1>
+      <h1>Documentation</h1>
       <!-- InstanceEndEditable -->
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
+    <p class="dcf-u-mt6"><a href="#example-elements">Element</a> styles are applied directly to an element, while <a href="#example-objects">object</a>, <a href="#example-components">component</a> and <a href="#example-utilities">utility</a> styles are applied by adding classes to the elements in the markup. These classes are prefixed with the <code>dcf-</code> namespace to avoid code collisions with third-party or custom styles. Please prefix your own custom styles with a namespace unique to your organization.</p>
+    <p>In addition to the <code>dcf-</code> prefix, <abbr title="Digital Campus Framework">DCF</abbr> classes are also namespaced according to the <em>type</em> of class—object (<code>o-</code>), component (<code>c-</code>) or utility (<code>u-</code>). This helps to signal the purpose of a class to developers.</p>
 
     <ul class="dcf-u-mt6">
       <li><a href="#example-elements">Elements</a></li>
@@ -366,14 +368,14 @@
         <p>Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
         <p>Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p>
+<!--       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p> -->
 
       <h3 class="dcf-u-mt8" id="example-elements-quotes">Quotes</h3>
       <p><q>Smart</q> or <q>curly</q> quotes are applied to inline quotes (<code>&lt;q&gt;</code>)—no need to add your own.</p>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
 
       <h3 class="dcf-u-mt8" id="example-elements-small">Small</h3>
-      <p>The <code>&lt;small&gt;</code> tag is intended for <em>inline</em> text meant to be treated as <small>fine print</small>. Use the <code>.dcf-u-sm2</code> class to <span class="dcf-u-sm2">reduce the font-size</span>.</p>
+      <p>The <code>&lt;small&gt;</code> element is intended for <em>inline</em> text meant to be treated as <small>fine print</small>. Use the <code>.dcf-u-sm2</code> class to <span class="dcf-u-sm2">reduce its font-size</span>.</p>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-utilities-font-size-smaller">Font Size: Smaller</a> (Utilities)</p>
 
       <h3 class="dcf-u-mt8" id="example-elements-sub-sup">Subscripts &amp; Superscripts</h3>
@@ -436,6 +438,7 @@
     <!-- !Objects -->
     <div class="dcf-u-pt10 dcf-u-mb10" id="example-objects">
       <h2>Objects</h2>
+      <p>Objects are namespaced with the <code>o-</code> notation.</p>
       <ul class="dcf-u-mt6">
         <li><a href="#example-objects-wrapper">Wrapper</a></li>
         <li><a href="#example-objects-full-width">Full-Width</a></li>
@@ -907,6 +910,8 @@
       <dl>
         <dt><code>.dcf-o-media</code></dt>
         <dd>The media object consists of a single piece of media (e.g., photo, icon, video) located next to a block of text (<code>.dcf-o-media__body</code>). The media object prevents the text from wrapping around the media.</dd>
+        <dt><code>.dcf-o-media__body</code></dt>
+        <dd>The media body is the block of text in the media object.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <div class="dcf-o-media">
@@ -957,6 +962,7 @@
     <!-- !Components -->
     <div class="dcf-u-pt10 dcf-u-mb10" id="example-components">
       <h2>Components</h2>
+      <p>Components are namespaced with the <code>c-</code> notation.</p>
       <ul class="dcf-u-mt6">
   <!--       <li><a href="#example-components-alerts">Alerts</a></li> -->
         <li><a href="#example-components-articles">Articles</a></li>
@@ -996,7 +1002,7 @@
         <li><a href="#example-components-input-groups">Input Groups</a>
           <ul>
             <li><a href="#example-components-input-groups-addons"><span class="dcf-u-sr-only">Input Groups </span>With Add-ons</a></li>
-            <li><a href="#example-components-input-groups-buttons"><span class="dcf-u-sr-only">Input Groups </span>With Buttons</a></li>
+            <li><a href="#example-components-input-groups-buttons"><span class="dcf-u-sr-only">Input Groups </span>With A Button</a></li>
           </ul>
         </li>
         <li><a href="#example-elements-lists">Lists</a>
@@ -1009,11 +1015,11 @@
   <!--       <li><a href="#example-components-modals">Modals</a></li> -->
   <!--       <li><a href="#example-components-modals">Navigation</a></li> -->
         <li><a href="#example-components-pagination">Pagination</a></li>
-        <li><a href="#example-components-paragraphs">Paragraphs</a>
+<!--         <li><a href="#example-components-paragraphs">Paragraphs</a>
           <ul>
             <li><a href="#example-components-display-lead-paragraphs">Lead Paragraphs</a></li>
           </ul>
-        </li>
+        </li>-->
         <li><a href="#example-components-tables">Tables</a>
           <ul>
             <li><a href="#example-components-standard-tables">Standard Tables</a></li>
@@ -1147,7 +1153,7 @@
           </footer>
         </article>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-components-headings">Headings</a> (Components), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components) <!-- , <a href="#example-components-paragraphs">Paragraphs</a> (Components) --></p>
 
       <h3 class="dcf-u-mt8" id="example-components-badges">Badges</h3>
       <dl>
@@ -1190,7 +1196,7 @@
         <dt><code>.dcf-c-blockquote</code></dt>
         <dd>Like <a href="#example-elements-quotes">inline quotes</a> (<code>&lt;q&gt;</code>), the blockquote component automatically adds quotation marks—no need to add your own.</dd>
         <dt><code>.dcf-c-attribution</code></dt>
-        <dd>Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</dd>
+        <dd>To attribute the source of a quote, put the attribution in a <code>&lt;footer&gt;</code> element with the <code>dcf-c-attribution</code> class. It will automatically prepend an em dash (<code>&amp;mdash;</code>) followed by a thin space (<code>&amp;thinsp;</code>). If the attribution source comes from a creative work, it should be cited using the <code>&lt;cite&gt;</code> element and italicized with the <code>&lt;i&gt;</code> element to visually offset the title of the work from the rest of the attribution.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <blockquote class="dcf-c-blockquote">
@@ -1260,7 +1266,7 @@
       </figure>
 
       <h4 class="dcf-u-mt6" id="example-components-button-sizes">Button Sizes</h4>
-      <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <p>Buttons can be resized as needed by using the font size utilities to make buttons <a href="#example-utilities-font-size-larger">larger</a> or <a href="#example-utilities-font-size-smaller">smaller</a>.</p>
       <figure class="dcf-u-mt6">
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-mb4" type="button">Default Button</button>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-sm1 dcf-u-mb4" type="button">Small Button</button>
@@ -1270,7 +1276,7 @@
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-mb4" type="button">Default Button</button>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h6 dcf-u-mb4" type="button">Large Button</button>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h5 dcf-u-mb4" type="button">Larger Button</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h4 dcf-u-mb4" type="button">Even Larger Button</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h4 dcf-u-mb4" type="button">Are you sure you need a button this big?</button>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-block dcf-u-w100" type="button">Block Level Button</button>
       </figure>
 
@@ -1342,19 +1348,19 @@
       <h3 class="dcf-u-mt8" id="example-components-figures">Figures</h3>
       <dl>
         <dt><code>.dcf-c-figcaption</code></dt>
-        <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        <dd>Figures do not require any additional classes, but <code>.dcf-c-figcaption</code> provides consistent styles for the <code>&lt;figcaption&gt;</code>. It reduces the font-size and lightens the text to help distinguish it from body copy. Use utility classes to add <a href="#example-utilities-margins">margins</a> or <a href="#example-utilities-padding">padding</a> as needed by the content in your <code>&lt;figure&gt;</code>.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/400x225" alt="A placeholder image with a 16:9 aspect ratio"> </a>
-        <figcaption class="dcf-c-figcaption">A <code>&lt;figure&gt;</code> with one image and a <code>&lt;figcaption&gt;</code>. Maecenas faucibus mollis interdum.</figcaption>
+        <figcaption class="dcf-c-figcaption">A <code>&lt;figure&gt;</code> with one image and a <code>&lt;figcaption&gt;</code>.</figcaption>
       </figure>
       <figure class="dcf-u-mt6">
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
-        <figcaption class="dcf-c-figcaption">A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>. Maecenas faucibus mollis interdum. <small class="dcf-u-sm2 dcf-u-pl1">Illustrations by Jane Doe</small></figcaption>
+        <figcaption class="dcf-c-figcaption">A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>. Use the <code>&lt;small&gt;</code> element along with <a href="#example-utilities-display">display</a>, <a href="#example-utilities-padding">padding</a> and <a href="#example-utilities-font-size-smaller">font-size</a> utilities to credit the source(s) of figure content, like so: <small class="dcf-u-block dcf-u-sm2 dcf-u-pt1">Illustrations by Jane Doe</small></figcaption>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-figures">Figures</a> (Elements), <a href="#example-elements-images">Images</a> (Elements), <a href="#example-utilities-font-size-smaller">Font Size: Smaller</a> (Utilities)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-figures">Figures</a> (Elements), <a href="#example-elements-images">Images</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-margins">Margins</a> (Utilities), <a href="#example-utilities-padding">Padding</a> (Utilities), <a href="#example-utilities-font-size-smaller">Font Size: Smaller</a> (Utilities)</p>
 
   <!--
       <h3 class="dcf-u-mt8" id="example-components-footer">Footer</h3>
@@ -1577,14 +1583,20 @@
       <h3 class="dcf-u-mt8" id="example-components-input-groups">Input Groups</h3>
       <dl>
         <dt><code>.dcf-c-input-group</code></dt>
-        <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        <dd>An input group prepends or appends text or a button to a text input. The form label <strong>must</strong> be placed outside of the input group. It can be vertically aligned with the input group by adding <code>.dcf-u-flex</code> and <code>.dcf-u-ai-center</code> to the input group's parent element.</dd>
+        <dt><code>.dcf-c-input-group__prepend</code></dt>
+        <dd>Prepend text or a button to a text input.</dd>
+        <dt><code>.dcf-c-input-group__append</code></dt>
+        <dd>Append text or a button to a text input.</dd>
       </dl>
 
       <h4 class="dcf-u-mt6" id="example-components-input-groups-addons"><span class="dcf-u-sr-only">Input Groups </span>With Add-ons</h4>
+<!--
       <dl>
         <dt><code>.dcf-c-input-group__addon</code></dt>
-        <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        <dd>An add-on provides additional context for a text input in a form.</dd>
       </dl>
+-->
       <figure class="dcf-u-mt6">
         <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-before" action="#" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-before-input">Username</label>
@@ -1607,7 +1619,8 @@
         <figcaption class="dcf-c-figcaption dcf-u-mt4">This example shows an input group with an add-on <em>after</em> the input.</figcaption>
       </figure>
 
-      <h4 class="dcf-u-mt6" id="example-components-input-groups-buttons"><span class="dcf-u-sr-only">Input Groups </span>With Buttons</h4>
+      <h4 class="dcf-u-mt6" id="example-components-input-groups-button"><span class="dcf-u-sr-only">Input Groups </span>With A Button</h4>
+      <p>If a form consists of a single field and button, consider using an input group for a more compact layout.</p>
       <figure class="dcf-u-mt6">
         <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-button" action="#" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-button-input">Label</label>
@@ -1620,12 +1633,12 @@
           </div>
         </form>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components), <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-box-alignment">Display</a> (Utilities)</p>
 
       <h3 class="dcf-u-mt8" id="example-components-lists">Lists</h3>
 
       <h4 class="dcf-u-mt6" id="example-components-inline-lists">Inline Lists</h4>
-      <p>Inline lists are also used to create <a href="#example-components-pagination">pagination</a>.</p>
+      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.</p>
       <dl>
         <dt><code>.dcf-c-list-unstyled</code></dt>
         <dd>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</dd>
@@ -1641,22 +1654,34 @@
           <li class="dcf-c-list-inline-item">Cras justo</li>
         </ul>
       </figure>
+      <p>Inline lists are also used to create pagination.</p>
+      <figure class="dcf-u-mt6">
+        <nav aria-label="pagination">
+          <ul class="dcf-c-list-unstyled dcf-u-mt5">
+            <li class="dcf-c-list-inline-item"><a href="#previous">Previous</a></li>
+            <li class="dcf-c-list-inline-item"><a href="#page1">1</a></li>
+            <li class="dcf-c-list-inline-item"><a href="#page2">2</a></li>
+            <li class="dcf-c-list-inline-item"><a href="#page3">3</a></li>
+            <li class="dcf-c-list-inline-item"><a href="#next">Next</a></li>
+          </ul>
+        </nav>
+      </figure>
 
       <h4 class="dcf-u-mt6" id="example-components-unstyled-lists">Unstyled Lists</h4>
       <dl>
         <dt><code>.dcf-c-list-unstyled</code></dt>
-        <dd>Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <ul class="dcf-c-list-unstyled">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</li>
           <li>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
           <li>Maecenas faucibus mollis interdum.</li>
           <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
         </ul>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-components-pagination">Pagination</a> (Components)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
 
   <!--
       <h3 class="dcf-u-mt8" id="example-components-marks">Marks</h3>
@@ -1688,21 +1713,9 @@
   -->
 
       <h3 class="dcf-u-mt8" id="example-components-pagination">Pagination</h3>
-      <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-      <figure class="dcf-u-mt6">
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <nav aria-label="pagination">
-          <ul class="dcf-c-list-unstyled dcf-u-mt5">
-            <li class="dcf-c-list-inline-item"><a href="#previous">Previous</a></li>
-            <li class="dcf-c-list-inline-item"><a href="#page1">1</a></li>
-            <li class="dcf-c-list-inline-item"><a href="#page2">2</a></li>
-            <li class="dcf-c-list-inline-item"><a href="#page3">3</a></li>
-            <li class="dcf-c-list-inline-item"><a href="#next">Next</a></li>
-          </ul>
-        </nav>
-      </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-components-lists">Lists</a> (Components)</p>
+      <p>See <a href="example-components-inline-lists">Inline Lists</a></p>
 
+<!--
       <h3 class="dcf-u-mt8" id="example-components-paragraphs">Paragraphs</h3>
 
       <h4 class="dcf-u-mt6" id="example-components-lead-paragraphs">Lead Paragraphs</h4>
@@ -1716,6 +1729,7 @@
         <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.</p>
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
+-->
 
   <!--
       <h3 class="dcf-u-mt8" id="example-components-search">Search</h3>
@@ -1820,6 +1834,7 @@
     <!-- !Utilities -->
     <div class="dcf-u-pt10 dcf-u-mb10" id="example-utilities">
       <h2>Utilities</h2>
+      <p>Utilities are namespaced with the <code>u-</code> notation.</p>
       <ul class="dcf-u-mt6">
         <li><a href="#example-utilities-aspect-ratios">Aspect Ratios</a></li>
         <li><a href="#example-utilities-backgrounds">Backgrounds</a></li>
