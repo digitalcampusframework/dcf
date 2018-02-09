@@ -704,6 +704,16 @@ th {
   margin-left: -50vw;
   margin-right: -50vw; }
 
+.dcf-o-list-unstyled {
+  list-style: none;
+  padding-left: 0; }
+
+.dcf-o-list-inline-item {
+  display: inline-block; }
+
+.dcf-o-list-inline-item:not(:last-child) {
+  margin-right: 0.5625em; }
+
 .dcf-o-media {
   display: -webkit-box;
   display: flex;
@@ -1192,16 +1202,6 @@ button .dcf-c-icon {
           align-items: center;
   white-space: nowrap;
   text-align: center; }
-
-.dcf-c-list-unstyled {
-  list-style: none;
-  padding-left: 0; }
-
-.dcf-c-list-inline-item {
-  display: inline-block; }
-
-.dcf-c-list-inline-item:not(:last-child) {
-  margin-right: 0.5625em; }
 
 .dcf-c-modal__overlay {
   display: -webkit-box;
