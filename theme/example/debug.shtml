@@ -909,7 +909,7 @@
       <h3 class="dcf-u-mt8" id="example-objects-media">Media</h3>
       <dl>
         <dt><code>.dcf-o-media</code></dt>
-        <dd>The media object consists of a single piece of media (e.g., photo, icon, video) located next to a block of text (<code>.dcf-o-media__body</code>). The media object prevents the text from wrapping around the media.</dd>
+        <dd>The media object consists of a single piece of media (e.g., photo, icon, video) located next to a block of text. The media object prevents the text from wrapping around the media.</dd>
         <dt><code>.dcf-o-media__body</code></dt>
         <dd>The media body is the block of text in the media object.</dd>
       </dl>
@@ -1214,7 +1214,7 @@
       <h3 class="dcf-u-mt8" id="example-components-button-groups">Button Groups</h3>
       <dl>
         <dt><code>.dcf-c-btn-group</code></dt>
-        <dd>Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+        <dd>Group two or more buttons together.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <div class="dcf-c-btn-group" role="group" aria-label="button group example 1">
@@ -1505,7 +1505,7 @@
       <h4 class="dcf-u-mt6" id="example-components-subheads">Subheads</h4>
       <dl>
         <dt><code>.dcf-c-subhead</code></dt>
-        <dd>Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</dd>
+        <dd>A subhead is smaller and slightly lighter in appearance than a heading. Change the order of headings and subheads by wrapping them in a <code>&lt;div class="dcf-u-flex dcf-u-flex-col"&gt;&lt;/div&gt;</code> and adding <a href="#example-utilities-order">order classes</a> (<code>.dcf-u-1st</code>, <code>.dcf-u-2nd</code>, et al.) to the headings and subheads.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <div class="dcf-u-flex dcf-u-flex-col dcf-u-mb4">
@@ -1584,19 +1584,13 @@
       <dl>
         <dt><code>.dcf-c-input-group</code></dt>
         <dd>An input group prepends or appends text or a button to a text input. The form label <strong>must</strong> be placed outside of the input group. It can be vertically aligned with the input group by adding <code>.dcf-u-flex</code> and <code>.dcf-u-ai-center</code> to the input group's parent element.</dd>
-        <dt><code>.dcf-c-input-group__prepend</code></dt>
-        <dd>Prepend text or a button to a text input.</dd>
-        <dt><code>.dcf-c-input-group__append</code></dt>
-        <dd>Append text or a button to a text input.</dd>
       </dl>
 
       <h4 class="dcf-u-mt6" id="example-components-input-groups-addons"><span class="dcf-u-sr-only">Input Groups </span>With Add-ons</h4>
-<!--
       <dl>
         <dt><code>.dcf-c-input-group__addon</code></dt>
         <dd>An add-on provides additional context for a text input in a form.</dd>
       </dl>
--->
       <figure class="dcf-u-mt6">
         <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-before" action="#" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-before-input">Username</label>
