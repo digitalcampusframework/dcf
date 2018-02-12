@@ -68,7 +68,7 @@ a:active {
   color: #260099; }
 
 blockquote {
-  max-width: 39.46161rem; }
+  max-width: 35.51545rem; }
 
 body {
   margin: 0;
@@ -99,7 +99,7 @@ kbd {
   padding-right: 0.2373rem;
   padding-bottom: 0.13348rem;
   padding-left: 0.2373rem;
-  font-size: 0.9375em; }
+  font-size: 0.84375em; }
 
 code,
 pre {
@@ -165,7 +165,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 1rem;
-  line-height: 1.25;
+  line-height: 1.125;
   color: #222; }
   p + h1,
   ol + h1,
@@ -212,19 +212,19 @@ h1 {
   font-size: 2.37037em; }
 
 h2 {
-  font-size: 2.22222em; }
+  font-size: 2.0em; }
 
 h3 {
   font-size: 1.77778em; }
 
 h4 {
-  font-size: 1.66667em; }
+  font-size: 1.5em; }
 
 h5 {
   font-size: 1.33333em; }
 
 h6 {
-  font-size: 1.25em; }
+  font-size: 1.125em; }
 
 img {
   max-width: 100%;
@@ -253,7 +253,7 @@ ul {
 li,
 dt,
 dd {
-  max-width: 39.46161rem;
+  max-width: 35.51545rem;
   margin-top: 0; }
 
 li {
@@ -303,7 +303,7 @@ sup,
 sub {
   position: relative;
   vertical-align: baseline;
-  font-size: 0.70313em; }
+  font-size: 0.63281em; }
 
 sup {
   top: -0.5625em; }
@@ -846,7 +846,7 @@ th {
   line-height: 1; }
 
 .dcf-c-blockquote p {
-  padding-top: 3.95062em;
+  padding-top: 3.55556em;
   font-size: 1.33333em; }
 
 .dcf-c-blockquote p::after {
@@ -1056,7 +1056,7 @@ legend,
 .dcf-c-h6 {
   margin-top: 0;
   margin-bottom: 1rem;
-  line-height: 1.25; }
+  line-height: 1.125; }
   p + .dcf-c-h1,
   ol + .dcf-c-h1,
   ul + .dcf-c-h1,
@@ -1259,7 +1259,7 @@ button .dcf-c-icon {
       grid-gap: 1em 5vw; } }
 
 .dcf-c-nav__primary ul ul {
-  font-size: 0.9375em;
+  font-size: 0.84375em;
   padding-top: 1em; }
 
 @media only screen and (min-width: 55.925em) {
@@ -1311,7 +1311,7 @@ button .dcf-c-icon {
     grid-area: nav2; } }
 
 .dcf-c-lead {
-  font-size: 1.25em; }
+  font-size: 1.125em; }
 
 .dcf-c-dropcap:first-letter {
   float: left; }
@@ -1347,7 +1347,7 @@ button .dcf-c-icon {
       grid-area: directory; } } }
 
 .dcf-c-table {
-  font-size: 0.9375em; }
+  font-size: 0.84375em; }
 
 .dcf-c-table thead,
 .dcf-c-table tbody {
@@ -1490,7 +1490,7 @@ button .dcf-c-icon {
   transition: border 200ms ease-out, background-color 200ms ease-out; }
 
 .example .dcf-c-card {
-  font-size: 0.9375em;
+  font-size: 0.84375em;
   background-color: #fff;
   -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25); }
@@ -1737,11 +1737,11 @@ button .dcf-c-icon {
   margin-left: -1px; }
 
 .example .dcf-c-dropcap:first-letter {
-  margin-top: 0.5625rem;
+  margin-top: 0.84375rem;
   padding-right: 0.5625rem;
   padding-left: 0.05631rem;
-  font-size: 5.26749em;
-  line-height: .68; }
+  font-size: 4.74074em;
+  line-height: 0.63281; }
 
 .dcf-u-ratio {
   display: block;
@@ -2557,55 +2557,55 @@ a.dcf-u-inverse:active {
   font-size: 2.37037em; }
 
 .dcf-u-h2 {
-  font-size: 2.22222em; }
+  font-size: 2.0em; }
 
 .dcf-u-h3 {
   font-size: 1.77778em; }
 
 .dcf-u-h4 {
-  font-size: 1.66667em; }
+  font-size: 1.5em; }
 
 .dcf-u-h5 {
   font-size: 1.33333em; }
 
 .dcf-u-h6 {
-  font-size: 1.25em; }
+  font-size: 1.125em; }
 
 .dcf-u-display1 {
-  font-size: 2.96296em; }
+  font-size: 2.66667em; }
 
 .dcf-u-display2 {
   font-size: 3.16049em; }
 
 .dcf-u-display3 {
-  font-size: 3.95062em; }
+  font-size: 3.55556em; }
 
 .dcf-u-display4 {
   font-size: 4.21399em; }
 
 .dcf-u-lg5 {
-  font-size: 2.22222em !important; }
+  font-size: 2.0em !important; }
 
 .dcf-u-lg4 {
   font-size: 1.77778em !important; }
 
 .dcf-u-lg3 {
-  font-size: 1.66667em !important; }
+  font-size: 1.5em !important; }
 
 .dcf-u-lg2 {
   font-size: 1.33333em !important; }
 
 .dcf-u-lg1 {
-  font-size: 1.25em !important; }
+  font-size: 1.125em !important; }
 
 .dcf-u-sm1 {
-  font-size: 0.9375em !important; }
+  font-size: 0.84375em !important; }
 
 .dcf-u-sm2 {
   font-size: 0.75em !important; }
 
 .dcf-u-sm3 {
-  font-size: 0.70313em !important; }
+  font-size: 0.63281em !important; }
 
 .dcf-u-sm4 {
   font-size: 0.5625em !important; }
@@ -2614,7 +2614,7 @@ a.dcf-u-inverse:active {
   line-height: 1 !important; }
 
 .dcf-u-lh2 {
-  line-height: 1.25 !important; }
+  line-height: 1.125 !important; }
 
 .dcf-u-lh3 {
   line-height: 1.5 !important; }
