@@ -4,9 +4,9 @@
 
 
 .example .dcf-c-dropcap:first-letter {
-  margin-top: #{ms(-4)}rem; // .56rem -- first, adjust margin-top for Firefox
+  margin-top: #{ms(-1)}rem; // .84rem -- first, adjust margin-top for Firefox
   padding-right: #{ms(-4)}rem; // .56rem
   padding-left: #{ms(-20)}rem; // .06rem
-  font-size: #{ms(11)}em; // 5.26em
-  line-height: .68; // then, adjust line-height for Chrome and Safari
+  font-size: #{ms(11)}em; // 4.74em
+  line-height: #{ms(-3)}; // .63 -- then, adjust line-height for Chrome and Safari
 }

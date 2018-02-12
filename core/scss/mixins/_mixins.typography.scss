@@ -35,9 +35,9 @@
 
 
 // !Line Height
-@mixin lh1($imp:null) { line-height: 1 $imp; }
-@mixin lh2($imp:null) { line-height: 1.25 $imp; }
-@mixin lh3($imp:null) { line-height: 1.5 $imp; }
+@mixin lh1($imp:null) { line-height: #{ms(0)} $imp; }
+@mixin lh2($imp:null) { line-height: #{ms(1)} $imp; }
+@mixin lh3($imp:null) { line-height: #{ms(3)} $imp; }
 
 
 // !Measure (Line Length)
