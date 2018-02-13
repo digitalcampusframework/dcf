@@ -517,23 +517,8 @@
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components)</p>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- !Objects -->
-    <div class="dcf-u-pt10 dcf-u-mb10" id="example-objects">
+    <section class="dcf-u-pt10 dcf-u-mb10" id="example-objects">
       <h2>Objects</h2>
       <p>Objects are namespaced with the <code>o-</code> notation.</p>
       <ul class="dcf-u-mt6">
@@ -1093,25 +1078,10 @@
         </div>
       </figure>
   -->
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </section>
 
     <!-- !Components -->
-    <div class="dcf-u-pt10 dcf-u-mb10" id="example-components">
+    <section class="dcf-u-pt10 dcf-u-mb10" id="example-components">
       <h2>Components</h2>
       <p>Components are namespaced with the <code>c-</code> notation.</p>
       <ul class="dcf-u-mt6">
@@ -1920,16 +1890,8 @@
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements)</p>
     </div>
 
-
-
-
-
-
-
-
-
     <!-- !Utilities -->
-    <div class="dcf-u-pt10 dcf-u-mb10" id="example-utilities">
+    <section class="dcf-u-pt10 dcf-u-mb10" id="example-utilities">
       <h2>Utilities</h2>
       <p>Utilities are namespaced with the <code>u-</code> notation.</p>
       <ul class="dcf-u-mt6">
@@ -2554,8 +2516,7 @@
         <dt><code>.dcf-u-sr-only.dcf-u-show-on-focus:focus</code></dt><dd>visible for screen readers only when focused</dd>
       </dl>
 
-    </div>
-
+    </section>
   <!-- InstanceEndEditable -->
   </main>
   <footer class="dcf-c-footer" id="dcf-footer" role="contentinfo">
