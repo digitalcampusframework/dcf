@@ -96,11 +96,3 @@
 @mixin ls0($imp:null) { letter-spacing: 0 $imp; }
 @mixin ls1($imp:null) { letter-spacing: .01em $imp; }
 @mixin ls2($imp:null) { letter-spacing: .1em $imp; }
-
-
-// !Outline Text
-// @mixin txt-outline($imp:null) {
-//   -webkit-text-stroke: 2px currentcolor;
-//   text-stroke: 2px currentcolor;
-//   color: transparent;
-// }
