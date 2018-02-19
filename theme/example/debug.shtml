@@ -1962,6 +1962,7 @@
           </ul>
         </li>
         <li><a href="#example-utilities-position">Position</a></li>
+        <li><a href="#example-utilities-svg"><abbr title="Scalable Vector Graphics">SVG</abbr></a></li>
         <li><a href="#example-utilities-typography">Typography</a>
           <ul>
             <li><a href="#example-utilities-font-size-larger">Font Size: Larger</a></li>
@@ -2449,6 +2450,12 @@
         <dt><code>.dcf-u-absolute</code></dt><dd>position: absolute</dd>
         <dt><code>.dcf-u-fixed</code></dt><dd>position: fixed</dd>
         <dt><code>.dcf-u-sticky</code></dt><dd>position: sticky</dd>
+      </dl>
+
+      <h3 class="dcf-u-mt8" id="example-utilities-svg"><abbr title="Scalable Vector Graphics">SVG</abbr></h3>
+      <dl>
+        <dt><code>.dcf-u-fill-current</code></dt><dd>fill: currentColor</dd>
+        <dt><code>.dcf-u-stroke-current</code></dt><dd>stroke: currentColor</dd>
       </dl>
 
       <h3 class="dcf-u-mt8" id="example-utilities-typography">Typography</h3>

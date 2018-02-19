@@ -2598,6 +2598,12 @@ a.dcf-u-inverse:active {
   position: -webkit-sticky !important;
   position: sticky !important; }
 
+.dcf-u-fill-current {
+  fill: currentColor !important; }
+
+.dcf-u-stroke-current {
+  stroke: currentColor !important; }
+
 .dcf-u-h1 {
   font-size: 2.37037em; }
 

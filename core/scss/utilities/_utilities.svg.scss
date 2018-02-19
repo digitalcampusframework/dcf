@@ -1,0 +1,7 @@
+//////////////////////////
+// !CORE / UTILITIES / SVG
+//////////////////////////
+
+
+.dcf-u-fill-current { @include fill-current(!important); }
+.dcf-u-stroke-current { @include stroke-current(!important); }
