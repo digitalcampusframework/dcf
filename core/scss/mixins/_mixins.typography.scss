@@ -79,6 +79,7 @@
 @mixin capitalize($imp:null) { text-transform: capitalize $imp; }
 @mixin lowercase($imp:null) { text-transform: lowercase $imp; }
 @mixin uppercase($imp:null) { text-transform: uppercase $imp; }
+@mixin case-reset($imp:null) { text-transform: none $imp; }
 
 
 // !Font Weights

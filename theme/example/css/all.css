@@ -2718,6 +2718,9 @@ a.dcf-u-inverse:active {
 .dcf-u-uppercase {
   text-transform: uppercase !important; }
 
+.dcf-u-case-reset {
+  text-transform: none !important; }
+
 .dcf-u-regular {
   font-weight: normal !important; }
 

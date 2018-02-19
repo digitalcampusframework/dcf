@@ -71,6 +71,7 @@
 .dcf-u-capitalize { @include capitalize(!important); }
 .dcf-u-lowercase { @include lowercase(!important); }
 .dcf-u-uppercase { @include uppercase(!important); }
+.dcf-u-case-reset { @include case-reset(!important); }
 
 
 // !Font Weights

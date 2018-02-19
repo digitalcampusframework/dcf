@@ -2513,6 +2513,7 @@
             <dt><code>.dcf-u-capitalize</code></dt><dd>text-transform: capitalize</dd>
             <dt><code>.dcf-u-lowercase</code></dt><dd>text-transform: lowercase</dd>
             <dt><code>.dcf-u-uppercase</code></dt><dd>text-transform: uppercase</dd>
+            <dt><code>.dcf-u-case-reset</code></dt><dd>text-transform: none</dd>
           </dl>
         </div>
         <div>
