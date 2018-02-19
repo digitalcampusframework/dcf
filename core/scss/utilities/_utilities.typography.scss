@@ -57,6 +57,7 @@
 
 // !Text Wrapping
 .dcf-u-txt-nowrap { @include txt-nowrap(!important); }
+.dcf-u-truncate { @include truncate(!important); }
 
 
 // Text Decoration

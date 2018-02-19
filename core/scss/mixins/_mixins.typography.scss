@@ -62,6 +62,12 @@
 // !Text Wrapping
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
 
+@mixin truncate($imp:null) {
+  overflow: hidden $imp;
+  text-overflow: ellipsis $imp;
+  white-space: nowrap $imp;
+}
+
 
 // Text Decoration
 @mixin txt-decor-none($imp:null) { text-decoration: none $imp; }

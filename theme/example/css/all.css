@@ -2700,6 +2700,11 @@ a.dcf-u-inverse:active {
 .dcf-u-txt-nowrap {
   white-space: nowrap !important; }
 
+.dcf-u-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important; }
+
 .dcf-u-txt-decor-none {
   text-decoration: none !important; }
 

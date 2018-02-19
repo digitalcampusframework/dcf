@@ -2545,6 +2545,7 @@
           <h4 class="dcf-u-mt6" id="example-utilities-text-wrap">Text Wrap</h4>
           <dl>
             <dt><code>.dcf-u-txt-nowrap</code></dt><dd>white-space: nowrap</dd>
+            <dt><code>.dcf-u-truncate</code></dt><dd>truncate text with an ellipsis as needed</dd>
           </dl>
         </div>
         <div>
