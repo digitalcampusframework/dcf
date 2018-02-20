@@ -2502,9 +2502,9 @@
         <div>
           <h4 class="dcf-u-mt6" id="example-utilities-letter-spacing">Letter Spacing</h4>
           <dl>
+            <dt><code>.dcf-u-ls0</code></dt><dd>no letter-spacing</dd>
             <dt><code>.dcf-u-ls1</code></dt><dd>incrementally increase letter-spacing</dd>
             <dt><code>.dcf-u-ls2</code></dt><dd>incrementally increase letter-spacing</dd>
-            <dt><code>.dcf-u-ls3</code></dt><dd>incrementally increase letter-spacing</dd>
           </dl>
         </div>
         <div>
@@ -2513,6 +2513,7 @@
             <dt><code>.dcf-u-capitalize</code></dt><dd>text-transform: capitalize</dd>
             <dt><code>.dcf-u-lowercase</code></dt><dd>text-transform: lowercase</dd>
             <dt><code>.dcf-u-uppercase</code></dt><dd>text-transform: uppercase</dd>
+            <dt><code>.dcf-u-case-reset</code></dt><dd>text-transform: none</dd>
           </dl>
         </div>
         <div>
@@ -2544,6 +2545,7 @@
           <h4 class="dcf-u-mt6" id="example-utilities-text-wrap">Text Wrap</h4>
           <dl>
             <dt><code>.dcf-u-txt-nowrap</code></dt><dd>white-space: nowrap</dd>
+            <dt><code>.dcf-u-truncate</code></dt><dd>truncate text with an ellipsis as needed</dd>
           </dl>
         </div>
         <div>
