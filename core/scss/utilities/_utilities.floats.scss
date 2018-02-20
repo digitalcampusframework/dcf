@@ -21,3 +21,7 @@
 
 // !Clear Both
 .dcf-u-clear-both { @include clear-both(!important); }
+
+
+// !Clearfix
+.dcf-u-clearfix { @include clearfix(!important); }

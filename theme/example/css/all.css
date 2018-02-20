@@ -2145,6 +2145,11 @@ a.dcf-u-inverse:active {
 .dcf-u-clear-both {
   clear: both !important; }
 
+.dcf-u-clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important; }
+
 .dcf-u-colgap-sm {
   grid-column-gap: 1em !important; }
 
