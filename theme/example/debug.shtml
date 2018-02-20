@@ -1922,8 +1922,9 @@
         <li><a href="#example-utilities-display">Display</a></li>
         <li><a href="#example-utilities-flexbox">Flexbox</a>
           <ul>
-            <li><a href="#example-utilities-flex-direction">Flex Direction</a></li>
-            <li><a href="#example-utilities-flex-wrap">Flex Wrap</a></li>
+            <li><a href="#example-utilities-flex-direction">Direction</a></li>
+            <li><a href="#example-utilities-flex-wrap">Wrap</a></li>
+            <li><a href="#example-utilities-flex-grow-shrink">Grow &amp; Shrink</a></li>
           </ul>
         </li>
         <li><a href="#example-utilities-floats">Floats</a></li>
@@ -2167,9 +2168,9 @@
       </dl>
 
       <h3 class="dcf-u-mt8" id="example-utilities-flexbox">Flexbox</h3>
-      <div class="dcf-o-grid-halves@sm dcf-u-colgap-vw">
+      <div class="dcf-o-grid-halves@sm dcf-o-grid-thirds@md dcf-u-colgap-vw">
         <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-flex-direction">Flex Direction</h4>
+          <h4 class="dcf-u-mt6" id="example-utilities-flex-direction">Direction</h4>
           <dl>
             <dt><code>.dcf-u-flex-col</code></dt><dd>flex-direction: column</dd>
             <dt><code>.dcf-u-flex-colrev</code></dt><dd>flex-direction: column-reverse</dd>
@@ -2178,11 +2179,22 @@
           </dl>
         </div>
         <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-flex-wrap">Flex Wrap</h4>
+          <h4 class="dcf-u-mt6" id="example-utilities-flex-wrap">Wrap</h4>
           <dl>
             <dt><code>.dcf-u-flex-wrap</code></dt><dd>flex-wrap: wrap</dd>
             <dt><code>.dcf-u-flex-wraprev</code></dt><dd>flex-wrap: wrap-reverse</dd>
             <dt><code>.dcf-u-flex-nowrap</code></dt><dd>flex-wrap: nowrap</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-u-mt6" id="example-utilities-flex-grow-shrink">Grow &amp; Shrink</h4>
+          <dl>
+            <dt><code>.dcf-u-flex-none</code></dt><dd>flex: none</dd>
+            <dt><code>.dcf-u-flex-initial</code></dt><dd>flex: initial</dd>
+            <dt><code>.dcf-u-flex-auto</code></dt><dd>flex: auto</dd>
+            <dt><code>.dcf-u-flex-1</code></dt><dd>flex: 1</dd>
+            <dt><code>.dcf-u-flex-grow-1</code></dt><dd>flex-grow: 1</dd>
+            <dt><code>.dcf-u-flex-shrink-0</code></dt><dd>flex-shrink: 0</dd>
           </dl>
         </div>
       </div>

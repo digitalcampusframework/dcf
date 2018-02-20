@@ -3,25 +3,26 @@
 //////////////////////////////
 
 
-// Flexbox display rules (.dcf--d-flex and .dcf--d-inline-flex) located in _utilities.display
+// Flexbox display rules (.dcf-u-flex and .dcf-u-inlineflex) located in _utilities.display
 
 
-// !Flex-direction (Columns and Rows)
+// !Direction (Columns and Rows)
 .dcf-u-flex-col { @include flex-col(!important); }
 .dcf-u-flex-colrev { @include flex-colrev(!important); }
 .dcf-u-flex-row { @include flex-row(!important); }
 .dcf-u-flex-rowrev { @include flex-rowrev(!important); }
 
 
-// !Flex-wrap
+// !Wrap
 .dcf-u-flex-wrap { @include flex-wrap(!important); }
 .dcf-u-flex-wraprev { @include flex-wraprev(!important); }
 .dcf-u-flex-nowrap { @include flex-nowrap(!important); }
 
 
-// !Flex-grow
-.dcf-u-flex-grow1 { @include flex-grow1(!important); }
-
-
-// !Flex-shrink
-.dcf-u-flex-shrink0 { @include flex-shrink0(!important); }
+// !Grow & Shrink
+.dcf-u-flex-none { @include flex-none(!important); }
+.dcf-u-flex-initial { @include flex-initial(!important); }
+.dcf-u-flex-auto { @include flex-auto(!important); }
+.dcf-u-flex-1 { @include flex-1(!important); }
+.dcf-u-flex-grow-1 { @include flex-grow-1(!important); }
+.dcf-u-flex-shrink-0 { @include flex-shrink-0(!important); }
