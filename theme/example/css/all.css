@@ -2152,14 +2152,8 @@ a.dcf-u-inverse:active {
 .dcf-u-float-left {
   float: left !important; }
 
-.dcf-u-clear-right {
-  clear: right !important; }
-
-.dcf-u-clear-left {
-  clear: left !important; }
-
-.dcf-u-clear-both {
-  clear: both !important; }
+.dcf-u-float-none {
+  float: none !important; }
 
 .dcf-u-clearfix::after {
   content: "" !important;
