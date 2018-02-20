@@ -2203,12 +2203,6 @@
       <dl>
         <dt><code>.dcf-u-float-right</code></dt><dd>float: right</dd>
         <dt><code>.dcf-u-float-left</code></dt><dd>float: left</dd>
-      </dl>
-
-      <dl>
-        <dt><code>.dcf-u-clear-right</code></dt><dd>clear: right</dd>
-        <dt><code>.dcf-u-clear-left</code></dt><dd>clear: left</dd>
-        <dt><code>.dcf-u-clear-both</code></dt><dd>clear: both</dd>
         <dt><code>.dcf-u-clearfix</code></dt><dd>force an element to self-clear its children</dd>
       </dl>
 

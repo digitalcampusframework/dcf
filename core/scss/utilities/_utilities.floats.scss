@@ -11,16 +11,8 @@
 .dcf-u-float-left { @include float-left(!important); }
 
 
-// !Clear Right
-.dcf-u-clear-right { @include clear-right(!important); }
-
-
-// !Clear Left
-.dcf-u-clear-left { @include clear-left(!important); }
-
-
-// !Clear Both
-.dcf-u-clear-both { @include clear-both(!important); }
+// !Float Left
+.dcf-u-float-none { @include float-none(!important); }
 
 
 // !Clearfix
