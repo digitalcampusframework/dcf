@@ -2152,9 +2152,6 @@ a.dcf-u-inverse:active {
 .dcf-u-float-left {
   float: left !important; }
 
-.dcf-u-float-none {
-  float: none !important; }
-
 .dcf-u-clearfix::after {
   content: "" !important;
   display: table !important;
