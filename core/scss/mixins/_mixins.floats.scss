@@ -21,3 +21,15 @@
 
 // !Clear Both
 @mixin clear-both($imp:null) { clear: both $imp; }
+
+
+// !Clearfix
+@mixin clearfix($imp:null) {
+
+  &::after {
+    content: '' $imp;
+    display: table $imp;
+    clear: both $imp;
+  }
+
+}
