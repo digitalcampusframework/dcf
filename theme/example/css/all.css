@@ -2399,35 +2399,17 @@ a.dcf-u-inverse:active {
 .dcf-u-overflow-hidden {
   overflow: hidden !important; }
 
-.dcf-u-overflow-scroll {
-  overflow: scroll !important; }
-
 .dcf-u-overflow-auto {
   overflow: auto !important; }
 
-.dcf-u-overflow-x-visible {
-  overflow-x: visible !important; }
-
-.dcf-u-overflow-x-hidden {
-  overflow-x: hidden !important; }
+.dcf-u-overflow-scroll {
+  overflow: scroll !important; }
 
 .dcf-u-overflow-x-scroll {
   overflow-x: scroll !important; }
 
-.dcf-u-overflow-x-auto {
-  overflow-x: auto !important; }
-
-.dcf-u-overflow-y-visible {
-  overflow-y: visible !important; }
-
-.dcf-u-overflow-y-hidden {
-  overflow-y: hidden !important; }
-
 .dcf-u-overflow-y-scroll {
   overflow-y: scroll !important; }
-
-.dcf-u-overflow-y-auto {
-  overflow-y: auto !important; }
 
 .dcf-u-p0 {
   padding: 0 !important; }

@@ -1946,13 +1946,7 @@
         </li>
         <li><a href="#example-utilities-object-fit">Object-Fit</a></li>
         <li><a href="#example-utilities-order">Order (for Flexbox and Grid)</a></li>
-        <li><a href="#example-utilities-overflow">Overflow</a>
-          <ul>
-            <li><a href="#example-utilities-overflow-x-y">Overflow (-X and -Y)</a></li>
-            <li><a href="#example-utilities-overflow-x">Overflow-X</a></li>
-            <li><a href="#example-utilities-overflow-y">Overflow-Y</a></li>
-          </ul>
-        </li>
+        <li><a href="#example-utilities-overflow">Overflow</a></li>
         <li><a href="#example-utilities-padding">Padding</a>
           <ul>
             <li><a href="#example-utilities-padding-all">Padding (All Sides)</a></li>
@@ -2337,35 +2331,14 @@
       </dl>
 
       <h3 class="dcf-u-mt8" id="example-utilities-overflow">Overflow</h3>
-      <div class="dcf-o-grid-halves@sm dcf-o-grid-thirds@md dcf-u-colgap-vw">
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-overflow-x-y">Overflow (-X and -Y)</h4>
-          <dl>
-            <dt><code>.dcf-u-overflow-visible</code></dt><dd>overflow: visible</dd>
-            <dt><code>.dcf-u-overflow-hidden</code></dt><dd>overflow: hidden</dd>
-            <dt><code>.dcf-u-overflow-scroll</code></dt><dd>overflow: scroll</dd>
-            <dt><code>.dcf-u-overflow-auto</code></dt><dd>overflow: auto</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-overflow-x">Overflow-X</h4>
-          <dl>
-            <dt><code>.dcf-u-overflow-x-visible</code></dt><dd>overflow-x: visible</dd>
-            <dt><code>.dcf-u-overflow-x-hidden</code></dt><dd>overflow-x: hidden</dd>
-            <dt><code>.dcf-u-overflow-x-scroll</code></dt><dd>overflow-x: scroll</dd>
-            <dt><code>.dcf-u-overflow-x-auto</code></dt><dd>overflow-x: auto</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-overflow-y">Overflow-Y</h4>
-          <dl>
-            <dt><code>.dcf-u-overflow-y-visible</code></dt><dd>overflow-y: visible</dd>
-            <dt><code>.dcf-u-overflow-y-hidden</code></dt><dd>overflow-y: hidden</dd>
-            <dt><code>.dcf-u-overflow-y-scroll</code></dt><dd>overflow-y: scroll</dd>
-            <dt><code>.dcf-u-overflow-y-auto</code></dt><dd>overflow-y: auto</dd>
-          </dl>
-        </div>
-      </div>
+      <dl>
+        <dt><code>.dcf-u-overflow-visible</code></dt><dd>overflow: visible</dd>
+        <dt><code>.dcf-u-overflow-hidden</code></dt><dd>overflow: hidden</dd>
+        <dt><code>.dcf-u-overflow-auto</code></dt><dd>overflow: auto</dd>
+        <dt><code>.dcf-u-overflow-scroll</code></dt><dd>overflow: scroll</dd>
+        <dt><code>.dcf-u-overflow-x-scroll</code></dt><dd>overflow-x: scroll</dd>
+        <dt><code>.dcf-u-overflow-y-scroll</code></dt><dd>overflow-y: scroll</dd>
+      </dl>
 
       <h3 class="dcf-u-mt8" id="example-utilities-padding">Padding</h3>
       <div class="dcf-o-grid-halves@sm dcf-o-grid-thirds@md dcf-u-colgap-vw">
