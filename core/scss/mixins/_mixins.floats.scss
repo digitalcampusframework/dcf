@@ -11,10 +11,6 @@
 @mixin float-left($imp:null) { float: left $imp; }
 
 
-// !Float Left
-@mixin float-none($imp:null) { float: none $imp; }
-
-
 // !Clearfix
 @mixin clearfix($imp:null) {
 
