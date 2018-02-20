@@ -2123,11 +2123,27 @@ a.dcf-u-inverse:active {
 .dcf-u-flex-nowrap {
   flex-wrap: nowrap !important; }
 
-.dcf-u-flex-grow1 {
+.dcf-u-flex-none {
+  -webkit-box-flex: 0 !important;
+          flex: none !important; }
+
+.dcf-u-flex-initial {
+  -webkit-box-flex: initial !important;
+          flex: initial !important; }
+
+.dcf-u-flex-auto {
+  -webkit-box-flex: 1 !important;
+          flex: auto !important; }
+
+.dcf-u-flex-1 {
+  -webkit-box-flex: 1 !important;
+          flex: 1 !important; }
+
+.dcf-u-flex-grow-1 {
   -webkit-box-flex: 1 !important;
           flex-grow: 1 !important; }
 
-.dcf-u-flex-shrink0 {
+.dcf-u-flex-shrink-0 {
   flex-shrink: 0 !important; }
 
 .dcf-u-float-right {
