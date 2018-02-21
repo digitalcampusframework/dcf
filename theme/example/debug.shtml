@@ -1705,7 +1705,7 @@
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-before-input">Username</label>
           <div class="dcf-c-input-group">
             <span class="dcf-c-input-group__addon">@</span>
-            <input class="dcf-c-input-text" id="example-input-group-addon-before-input" name="q" type="search" accesskey="f" required>
+            <input class="dcf-c-input-text" id="example-input-group-addon-before-input" name="q" type="search" required>
           </div>
         </form>
         <figcaption class="dcf-c-figcaption dcf-u-mt4">This example shows an input group with an add-on <em>before</em> the input.</figcaption>
@@ -1715,7 +1715,7 @@
         <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-after" action="#" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-after-input">Email</label>
           <div class="dcf-c-input-group">
-            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" accesskey="f" required>
+            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" required>
             <span class="dcf-c-input-group__addon">@example.com</span>
           </div>
         </form>
@@ -1727,7 +1727,7 @@
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-after-input">Amount</label>
           <div class="dcf-c-input-group">
             <span class="dcf-c-input-group__addon">$</span>
-            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" accesskey="f" required>
+            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" required>
             <span class="dcf-c-input-group__addon">.00</span>
           </div>
         </form>
@@ -1740,7 +1740,7 @@
         <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-button" action="#" method="get">
           <label class="dcf-c-label dcf-u-mr4" for="example-input-group-button-input">Label</label>
           <div class="dcf-c-input-group">
-            <input class="dcf-c-input-text" id="example-input-group-button-input" name="q" type="search" accesskey="f" required>
+            <input class="dcf-c-input-text" id="example-input-group-button-input" name="q" type="search" required>
             <button class="dcf-c-btn dcf-c-btn--primary" type="submit">
     <!--               <svg class="dcf-c-search-icon" focusable="false" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="8.5" cy="8.5" r="8"/><path stroke-linecap="round" d="M14.156 14.156L23.5 23.5"/></g><g><path fill="none" d="M0 0h24v24H0z"/></g></svg> -->
               Submit
