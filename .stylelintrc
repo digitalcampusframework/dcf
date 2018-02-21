@@ -3,13 +3,6 @@
     "stylelint-no-unsupported-browser-features"
   ],
   "rules": {
-    "at-rule-empty-line-before": ["always", {
-      except: [
-        "blockless-after-same-name-blockless",
-        "first-nested"
-      ],
-      ignore: ["after-comment"]
-    } ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": true,
