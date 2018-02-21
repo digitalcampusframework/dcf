@@ -1723,11 +1723,11 @@
       </figure>
 
       <figure class="dcf-u-mt6">
-        <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-after" action="#" method="get">
-          <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-after-input">Amount</label>
+        <form class="dcf-u-flex dcf-u-ai-center" id="example-input-group-addon-both" action="#" method="get">
+          <label class="dcf-c-label dcf-u-mr4" for="example-input-group-addon-both-input">Amount</label>
           <div class="dcf-c-input-group">
             <span class="dcf-c-input-group__addon">$</span>
-            <input class="dcf-c-input-text" id="example-input-group-addon-after-input" name="q" type="search" required>
+            <input class="dcf-c-input-text" id="example-input-group-addon-both-input" name="q" type="search" required>
             <span class="dcf-c-input-group__addon">.00</span>
           </div>
         </form>
