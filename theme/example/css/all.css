@@ -1459,18 +1459,18 @@ button .dcf-c-icon {
 .example .dcf-c-btn--secondary,
 .example .dcf-c-btn--secondary:link {
   color: #30c;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: #fff;
   -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
   transition: border 400ms ease-out, background-color 400ms ease-out; }
 
 .example .dcf-c-btn--secondary:visited {
   color: #260099;
-  border-color: currentcolor; }
+  border-color: currentColor; }
 
 .example .dcf-c-btn--secondary:hover {
   color: #260099;
-  border-color: currentcolor;
+  border-color: currentColor;
   background-color: #ece6ff;
   -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
   transition: border 200ms ease-out, background-color 200ms ease-out; }
@@ -1478,11 +1478,11 @@ button .dcf-c-icon {
 .example .dcf-c-btn--secondary:active,
 .example .dcf-c-btn--secondary.dcf-c-active {
   color: #260099;
-  border-color: currentcolor; }
+  border-color: currentColor; }
 
 .example .dcf-c-btn--inverse {
   color: #fff;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: rgba(0, 0, 0, 0.1);
   -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
   transition: border 400ms ease-out, background-color 400ms ease-out; }

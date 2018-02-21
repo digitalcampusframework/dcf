@@ -50,19 +50,19 @@
 .example .dcf-c-btn--secondary,
 .example .dcf-c-btn--secondary:link {
   color: $color-button;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: #fff;
   transition: border $hover-off, background-color $hover-off;
 }
 
 .example .dcf-c-btn--secondary:visited {
   color: $color-button-visited;
-  border-color: currentcolor;
+  border-color: currentColor;
 }
 
 .example .dcf-c-btn--secondary:hover {
   color: $color-button-hover;
-  border-color: currentcolor;
+  border-color: currentColor;
 	background-color: lighten($color-button,55%);
   transition: border $hover-on, background-color $hover-on;
 }
@@ -70,14 +70,14 @@
 .example .dcf-c-btn--secondary:active,
 .example .dcf-c-btn--secondary.dcf-c-active {
   color: $color-button-active;
-  border-color: currentcolor;
+  border-color: currentColor;
 }
 
 
 // !Inverse Button
 .example .dcf-c-btn--inverse {
   color: #fff;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: rgba(0,0,0,.1);
   transition: border $hover-off, background-color $hover-off;
 }
