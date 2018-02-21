@@ -704,12 +704,15 @@ th {
   margin-left: -50vw;
   margin-right: -50vw; }
 
-.dcf-o-list-unstyled {
+.dcf-o-list-bare {
   list-style: none;
   padding-left: 0; }
 
 .dcf-o-list-inline-item {
   display: inline-block; }
+
+.dcf-o-list-inline-item::before {
+  content: "\200B"; }
 
 .dcf-o-list-inline-item:not(:last-child) {
   margin-right: 0.5625em; }
