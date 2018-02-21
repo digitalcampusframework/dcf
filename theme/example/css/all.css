@@ -25,7 +25,7 @@
     font-size: 1.33333em; } }
 
 html {
-  font-family: 'system'; }
+  font-family: system; }
 
 abbr {
   letter-spacing: .05em; }
@@ -1428,7 +1428,7 @@ button .dcf-c-icon {
   padding-left: 1em;
   font-weight: bold;
   border-radius: 2px;
-  font-family: 'system'; }
+  font-family: system; }
 
 .example .dcf-c-btn--primary,
 .example .dcf-c-btn--primary:link {
@@ -1650,7 +1650,7 @@ button .dcf-c-icon {
   color: #444;
   line-height: 1.5;
   border-radius: 2px;
-  font-family: 'system'; }
+  font-family: system; }
 
 /* Hover style */
 .example .dcf-c-input-select:hover {
@@ -2774,4 +2774,4 @@ a.dcf-u-inverse:active {
   background-color: #c00 !important; }
 
 .example-u-font-system {
-  font-family: 'system'; }
+  font-family: system; }
