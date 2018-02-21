@@ -1739,7 +1739,7 @@ button .dcf-c-icon {
 .example .dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
   margin-left: -1px; }
 
-.example .dcf-c-dropcap:first-letter {
+.example .dcf-c-dropcap::first-letter {
   margin-top: 0.84375rem;
   padding-right: 0.5625rem;
   padding-left: 0.05631rem;
@@ -1756,13 +1756,13 @@ button .dcf-c-icon {
     height: 0;
     width: 1px; }
 
-.dcf-u-ratio--16x9:before {
+.dcf-u-ratio--16x9::before {
   padding-top: 56.25%; }
 
-.dcf-u-ratio--4x3:before {
+.dcf-u-ratio--4x3::before {
   padding-top: 75%; }
 
-.dcf-u-ratio--1x1:before {
+.dcf-u-ratio--1x1::before {
   padding-top: 100%; }
 
 .dcf-u-ratio__child {

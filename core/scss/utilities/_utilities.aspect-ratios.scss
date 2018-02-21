@@ -8,15 +8,15 @@
 
 
 // !16×9
-.dcf-u-ratio--16x9:before { @include ratio--16x9; }
+.dcf-u-ratio--16x9::before { @include ratio--16x9; }
 
 
 // !4×3
-.dcf-u-ratio--4x3:before { @include ratio--4x3; }
+.dcf-u-ratio--4x3::before { @include ratio--4x3; }
 
 
 // !1×1
-.dcf-u-ratio--1x1:before { @include ratio--1x1; }
+.dcf-u-ratio--1x1::before { @include ratio--1x1; }
 
 
 // !Child
