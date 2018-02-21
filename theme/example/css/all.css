@@ -1686,7 +1686,7 @@ button .dcf-c-icon {
   .example .dcf-c-input-select select:focus::-ms-value {
     background-color: transparent;
     color: #222;
-    /* Match-02*/ }
+    /* Match-02 */ }
   .example .dcf-c-input-select select {
     padding-right: 3em;
     /* Match-01 */
