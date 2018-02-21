@@ -82,10 +82,7 @@
     .dcf-c-article {
       @include grid;
       grid-template-columns: #{ms(8)}em 1fr; // 3.16em
-      grid-template-areas:
-        "share header"
-        "share body"
-        "footer footer";
+      grid-template-areas: "share header" "share body" "footer footer";
     }
 
     .dcf-c-article__header {
@@ -106,6 +103,7 @@
       div[role="heading"] {
         @include mb6;
       }
+
     }
 
     .dcf-c-article__footer {
