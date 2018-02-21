@@ -5,18 +5,19 @@
 
 .dcf-c-alert {
   @include grid;
-  grid-template-areas:
-    "header footer"
-    "msg footer";
+  grid-template-areas: "header footer" "msg footer";
 }
+
 
 .dcf-c-alert__header {
   grid-area: header;
 }
 
+
 .dcf-c-alert__msg {
   grid-area: msg;
 }
+
 
 .dcf-c-alert__footer {
   grid-area: footer;
