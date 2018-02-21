@@ -3,7 +3,7 @@
 //////////////////////////
 
 
-// !Unstyled List
+// !Bare List
 .dcf-o-list-bare {
   list-style: none;
   @include pl0;
@@ -14,6 +14,12 @@
 .dcf-o-list-inline-item {
   @include inlineblock;
 }
+
+
+.dcf-o-list-inline-item::before {
+  content: "\200B"; // add zero-width space
+}
+
 
 .dcf-o-list-inline-item:not(:last-child) {
   @include mr2;
