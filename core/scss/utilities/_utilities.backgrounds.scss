@@ -8,7 +8,9 @@
 .dcf-u-bg-white { @include bg-white(!important); }
 .dcf-u-bg-overlay-dark { @include bg-overlay-dark(!important); }
 .dcf-u-bg-overlay-light,
-.dcf-u-bg-overlay-light::backdrop { @include bg-overlay-light(!important); }
+.dcf-u-bg-overlay-light::backdrop {
+  @include bg-overlay-light(!important);
+}
 
 
 // !Position

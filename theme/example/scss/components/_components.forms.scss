@@ -142,9 +142,11 @@
 		-moz-appearance: none;
 		appearance: none;
 	}
+
 	.example .dcf-c-input-select select:focus {
 		border-color: #aaa; /* Match-03 */
 	}
+
 }
 
 
@@ -191,6 +193,7 @@
 	.example .dcf-c-input-select select:focus {
 		outline: none;
 	}
+
 }
 
 /* Set options to normal weight */
@@ -227,4 +230,5 @@
 	.example .dcf-c-input-select::after {
 		@include block;
 	}
+
 }
