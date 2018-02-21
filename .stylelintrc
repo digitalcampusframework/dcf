@@ -20,10 +20,6 @@
     "color-hex-length": "short",
     "color-named": "never",
     "color-no-invalid-hex": true,
-    "comment-empty-line-before": ["always", {
-      except: ["first-nested"],
-      ignore: ["stylelint-commands"]
-    } ],
     "comment-no-empty": true,
     "comment-whitespace-inside": "always",
     "custom-property-empty-line-before": "never",
