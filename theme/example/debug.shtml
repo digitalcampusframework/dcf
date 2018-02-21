@@ -53,12 +53,12 @@
   </button>
 
 <!--     <div class="" id="dcf-navigation"> -->
-      <nav class="dcf-u-pt5 dcf-c-nav__primary" role="navigation" aria-label="primary navigation">
+      <nav class="dcf-u-pt5 dcf-c-nav__primary" id="dcf-primary-navigation" role="navigation" aria-label="primary navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
         <!--#include virtual="/dcf/theme/example/includes/local/nav-primary.html" -->
         <!-- InstanceEndEditable -->
       </nav>
-      <nav class="dcf-u-flex dcf-u-ai-center dcf-u-mt1 dcf-u-sm2 dcf-c-nav__secondary" role="navigation" aria-label="secondary navigation">
+      <nav class="dcf-u-flex dcf-u-ai-center dcf-u-mt1 dcf-u-sm2 dcf-c-nav__secondary" id="dcf-secondary-navigation" role="navigation" aria-label="secondary navigation">
       	<!--#include virtual="/dcf/theme/example/includes/global/nav-secondary.html" -->
       </nav>
 <!--     </div> -->
