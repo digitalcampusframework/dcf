@@ -154,6 +154,24 @@ textarea {
   width: 100%;
   resize: vertical; }
 
+h1 {
+  font-size: 2.37037em; }
+
+h2 {
+  font-size: 2.0em; }
+
+h3 {
+  font-size: 1.77778em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1.33333em; }
+
+h6 {
+  font-size: 1.125em; }
+
 h1,
 h2,
 h3,
@@ -205,27 +223,13 @@ h6 {
   h6 {
     margin-top: 1.33333em; }
 
-h1 {
-  font-size: 2.37037em; }
-
-h2 {
-  font-size: 2.0em; }
-
-h3 {
-  font-size: 1.77778em; }
-
-h4 {
-  font-size: 1.5em; }
-
-h5 {
-  font-size: 1.33333em; }
-
-h6 {
-  font-size: 1.125em; }
-
 img {
   max-width: 100%;
   height: auto; }
+
+ol,
+ul {
+  padding-left: 1.77778em; }
 
 dl,
 ol,
@@ -242,10 +246,6 @@ ul {
   ul ol,
   ul ul {
     margin-top: 0.5625em; }
-
-ol,
-ul {
-  padding-left: 1.77778em; }
 
 li,
 dt,
@@ -737,7 +737,9 @@ th {
 .dcf-c-alert__footer {
   grid-area: footer; }
 
-.dcf-c-article__body p:not(.dcf-c-lead),
+.dcf-c-article__body dl {
+  padding-left: 1.77778em; }
+
 .dcf-c-article__body dl,
 .dcf-c-article__body ol,
 .dcf-c-article__body ul {
@@ -772,8 +774,8 @@ th {
 .dcf-c-article blockquote + p {
   text-indent: 1.77778em; }
 
-.dcf-c-article__body dl {
-  padding-left: 1.77778em; }
+.dcf-c-article__body p:not(.dcf-c-lead) {
+  margin-bottom: 0; }
 
 .dcf-c-author-img img {
   display: block;
@@ -871,9 +873,6 @@ th {
 .dcf-c-btn-group .dcf-c-btn:focus {
   z-index: 1; }
 
-.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
-  border-radius: 0; }
-
 .dcf-c-btn-group > .dcf-c-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
@@ -881,6 +880,9 @@ th {
 .dcf-c-btn-group > .dcf-c-btn:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
+
+.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
 
 .dcf-c-btn {
   cursor: pointer;
@@ -1355,10 +1357,6 @@ button .dcf-c-icon {
   border-bottom-width: 1px;
   border-color: #d0d0d0; }
 
-.dcf-c-table th:not(:last-child),
-.dcf-c-table td:not(:last-child) {
-  padding-right: 1.33333em; }
-
 .dcf-c-table thead th,
 .dcf-c-table thead td {
   padding-bottom: 0.75em;
@@ -1369,14 +1367,6 @@ button .dcf-c-icon {
   padding-bottom: 1em;
   vertical-align: top; }
 
-.dcf-c-table tbody tr:first-child th,
-.dcf-c-table tbody tr:first-child td {
-  padding-top: 1em; }
-
-.dcf-c-table--compact th:not(:last-child),
-.dcf-c-table--compact td:not(:last-child) {
-  padding-right: 1em; }
-
 .dcf-c-table--compact thead th,
 .dcf-c-table--compact thead td {
   padding-bottom: 0.5625em; }
@@ -1385,9 +1375,21 @@ button .dcf-c-icon {
 .dcf-c-table--compact tbody td {
   padding-bottom: 0.75em; }
 
+.dcf-c-table--compact th:not(:last-child),
+.dcf-c-table--compact td:not(:last-child) {
+  padding-right: 1em; }
+
+.dcf-c-table th:not(:last-child),
+.dcf-c-table td:not(:last-child) {
+  padding-right: 1.33333em; }
+
 .dcf-c-table--compact tbody tr:first-child th,
 .dcf-c-table--compact tbody tr:first-child td {
   padding-top: 0.75em; }
+
+.dcf-c-table tbody tr:first-child th,
+.dcf-c-table tbody tr:first-child td {
+  padding-top: 1em; }
 
 .example .dcf-c-breadcrumbs li:not(:last-child) {
   margin-right: 0.75em; }
@@ -1407,9 +1409,6 @@ button .dcf-c-icon {
 .example .dcf-c-btn-group .dcf-c-btn--secondary + .dcf-c-btn--secondary {
   margin-left: -1px; }
 
-.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
-  border-radius: 0; }
-
 .example .dcf-c-btn-group > .dcf-c-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
@@ -1417,6 +1416,9 @@ button .dcf-c-icon {
 .example .dcf-c-btn-group > .dcf-c-btn:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
+
+.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
 
 .example .dcf-c-btn {
   padding-top: 0.5625em;
@@ -1641,6 +1643,10 @@ button .dcf-c-icon {
   font-weight: normal; }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .example .dcf-c-input-select select {
+    padding-right: 3em;
+    background: none;
+    border: 1px solid transparent; }
   .example .dcf-c-input-select select::-ms-expand {
     display: none; }
   .example .dcf-c-input-select select:focus {
@@ -1648,10 +1654,6 @@ button .dcf-c-icon {
   .example .dcf-c-input-select select:focus::-ms-value {
     background-color: transparent;
     color: #222; }
-  .example .dcf-c-input-select select {
-    padding-right: 3em;
-    background: none;
-    border: 1px solid transparent; }
   .example .dcf-c-input-select::after {
     display: block; } }
 

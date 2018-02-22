@@ -193,6 +193,12 @@
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
+	.example .dcf-c-input-select select {
+		padding-right: 3em; // Match-01
+    @include bg-none; // Match-04
+		border: 1px solid transparent; // Match-05
+	}
+
 	.example .dcf-c-input-select select::-ms-expand {
 		@include none;
 	}
@@ -204,12 +210,6 @@
 	.example .dcf-c-input-select select:focus::-ms-value {
 		@include bg-transparent;
 		color: #222; // Match-02
-	}
-
-	.example .dcf-c-input-select select {
-		padding-right: 3em; // Match-01
-    @include bg-none; // Match-04
-		border: 1px solid transparent; // Match-05
 	}
 
 	.example .dcf-c-input-select::after {
