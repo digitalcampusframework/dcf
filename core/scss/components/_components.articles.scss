@@ -24,15 +24,6 @@
     @include mt1;
   }
 
-}
-
-
-.dcf-c-article p,
-.dcf-c-article dl,
-.dcf-c-article ol,
-.dcf-c-article ul,
-.dcf-c-article blockquote {
-
   + p {
     text-indent: #{ms(4)}em; // 1.77em
   }
