@@ -1348,48 +1348,52 @@ button .dcf-c-icon {
     .dcf-c-search-results__directory {
       grid-area: directory; } } }
 
-.dcf-c-table {
-  font-size: 0.84375em; }
-
 .dcf-c-table thead,
 .dcf-c-table tbody {
+  font-size: 0.84375em;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #d0d0d0; }
 
 .dcf-c-table thead th,
 .dcf-c-table thead td {
-  padding-bottom: 0.75em;
   vertical-align: bottom; }
 
 .dcf-c-table tbody th,
 .dcf-c-table tbody td {
-  padding-bottom: 1em;
   vertical-align: top; }
+
+.dcf-c-table--standard thead th,
+.dcf-c-table--standard thead td {
+  padding-bottom: 0.75em; }
 
 .dcf-c-table--compact thead th,
 .dcf-c-table--compact thead td {
   padding-bottom: 0.5625em; }
 
+.dcf-c-table--standard tbody th,
+.dcf-c-table--standard tbody td {
+  padding-bottom: 1em; }
+
 .dcf-c-table--compact tbody th,
 .dcf-c-table--compact tbody td {
   padding-bottom: 0.75em; }
+
+.dcf-c-table--standard th:not(:last-child),
+.dcf-c-table--standard td:not(:last-child) {
+  padding-right: 1.33333em; }
 
 .dcf-c-table--compact th:not(:last-child),
 .dcf-c-table--compact td:not(:last-child) {
   padding-right: 1em; }
 
-.dcf-c-table th:not(:last-child),
-.dcf-c-table td:not(:last-child) {
-  padding-right: 1.33333em; }
+.dcf-c-table--standard tbody tr:first-child th,
+.dcf-c-table--standard tbody tr:first-child td {
+  padding-top: 1em; }
 
 .dcf-c-table--compact tbody tr:first-child th,
 .dcf-c-table--compact tbody tr:first-child td {
   padding-top: 0.75em; }
-
-.dcf-c-table tbody tr:first-child th,
-.dcf-c-table tbody tr:first-child td {
-  padding-top: 1em; }
 
 .example .dcf-c-breadcrumbs li:not(:last-child) {
   margin-right: 0.75em; }
