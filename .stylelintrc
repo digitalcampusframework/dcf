@@ -79,6 +79,7 @@
     "number-max-precision": 3,
     "number-no-trailing-zeros": true,
     "plugin/no-unsupported-browser-features": [true, {
+      "ignore": ["background-img-opts", "calc", "css-appearance", "css-featurequeries", "css-filters", "css-hyphens", "css-resize", "css-sticky", "css3-cursors", "css3-tabsize", "flexbox", "fontface", "font-unicode-range", "multicolumn", "object-fit", "outline", "viewport-units", "word-break"],
       "severity": ["warning"]
     } ],
     "property-case": "lower",
