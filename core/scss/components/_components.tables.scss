@@ -3,57 +3,37 @@
 //////////////////////////////
 
 
-.dcf-c-table {
+// .dcf-c-table {
 //   display: block; // !responsive by default?
 //   @include w100;
 //   max-width: 100%;
 //   overflow-x: auto; // !responsive by default?
-  @include sm1;
-}
+// }
 
 
 .dcf-c-table thead,
 .dcf-c-table tbody {
+  @include sm1;
   @include bb;
   border-color: $color-border;
 }
 
 
-// .dcf-c-table thead {
-//   @include uppercase;
-// }
-
-// .dcf-c-table th,
-// .dcf-c-table td {
-//   border-top: 1px solid $color-border;
-// }
-
-
-// .dcf-c-table thead th {
-//   border-bottom: 2px solid #ddd;
-// }
-
-
-// .dcf-c-table thead th,
-// .dcf-c-table thead td {
-// //   padding-top: 1.25em;
-//   @include pb4;
-// //   @include pl4;
-// }
-
-
 .dcf-c-table thead th,
 .dcf-c-table thead td {
-  @include pb3;
   @include txt-bottom;
 }
 
 
 .dcf-c-table tbody th,
 .dcf-c-table tbody td {
-//   @include pt4;
-  @include pb4;
   @include txt-top;
+}
+
+
+.dcf-c-table--standard thead th,
+.dcf-c-table--standard thead td {
+  @include pb3;
 }
 
 
@@ -63,9 +43,21 @@
 }
 
 
+.dcf-c-table--standard tbody th,
+.dcf-c-table--standard tbody td {
+  @include pb4;
+}
+
+
 .dcf-c-table--compact tbody th,
 .dcf-c-table--compact tbody td {
   @include pb3;
+}
+
+
+.dcf-c-table--standard th:not(:last-child),
+.dcf-c-table--standard td:not(:last-child) {
+  @include pr5;
 }
 
 
@@ -75,10 +67,9 @@
 }
 
 
-//
-.dcf-c-table th:not(:last-child),
-.dcf-c-table td:not(:last-child) {
-  @include pr5;
+.dcf-c-table--standard tbody tr:first-child th,
+.dcf-c-table--standard tbody tr:first-child td {
+  @include pt4;
 }
 
 
@@ -88,25 +79,13 @@
 }
 
 
-// .dcf-c-table--compact tbody th,
-// .dcf-c-table--compact tbody td {
-//   @include pb2;
-// }
-
-
-.dcf-c-table tbody tr:first-child th,
-.dcf-c-table tbody tr:first-child td {
-  @include pt4;
-}
-
-
-// !Striped Table
+// !Striped Table?
 // .dcf-c-table-striped tbody tr:nth-of-type(odd) {
 //   background-color: rgba(0,0,0,.05);
 // }
 
 
-// !Bordered Table
+// !Bordered Table?
 // .dcf-c-table-bordered,
 // .dcf-c-table-bordered th,
 // .dcf-c-table-bordered td {
@@ -114,13 +93,13 @@
 // }
 
 
-// !Hoverable Rows
+// !Hoverable Rows?
 // .dcf-c-table-hover tbody tr:hover {
 //   background-color: $color-active;
 // }
 
 
-// !Contextual Colors
+// !Contextual Colors?
 // .dcf-c-table-active {
 //   background-color: $color-active;
 // }
