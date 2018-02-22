@@ -1219,14 +1219,14 @@ button .dcf-c-icon {
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease-out, visibility 0s linear 0.6s;
-  transition: opacity 0.5s ease-out, visibility 0s linear 0.6s; }
+  -webkit-transition: opacity .5s ease-out, visibility 0s linear .6s;
+  transition: opacity .5s ease-out, visibility 0s linear .6s; }
   .dcf-c-modal__overlay.dcf-is-open {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
-    -webkit-transition: opacity 0.2s ease-out;
-    transition: opacity 0.2s ease-out; }
+    -webkit-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out; }
 
 .dcf-c-modal__content {
   width: 90%;
