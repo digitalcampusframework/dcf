@@ -95,10 +95,7 @@ pre {
 
 code,
 kbd {
-  padding-top: 0.13348rem;
-  padding-right: 0.2373rem;
-  padding-bottom: 0.13348rem;
-  padding-left: 0.2373rem;
+  padding: 0.13348rem 0.2373rem;
   font-size: 0.84375em; }
 
 code,

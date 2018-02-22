@@ -12,10 +12,7 @@ pre {
 
 code,
 kbd {
-  padding-top: #{ms(-14)}rem; // .13em
-  padding-right: #{ms(-10)}rem; // .24em
-  padding-bottom: #{ms(-14)}rem; // .13em
-  padding-left: #{ms(-10)}rem; // .24em
+  padding: #{ms(-14)}rem #{ms(-10)}rem; // .13rem .24rem
   @include sm1;
 }
 
