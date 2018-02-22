@@ -2,7 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-// var styleLintPlugin = require('stylelint-webpack-plugin');
+var styleLintPlugin = require('stylelint-webpack-plugin');
 var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var core_js_config = {
@@ -70,13 +70,11 @@ var theme_js_config = function(env) {
             ]
         },
         plugins      : [
-            /*
             new styleLintPlugin({
                 options: {
                     syntax: 'scss'
                 }
             }),
-            */
             new extractTextPlugin({
                 filename  : '../css/all.css',
                 disable   : false,

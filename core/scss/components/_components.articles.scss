@@ -3,7 +3,11 @@
 ////////////////////////////////
 
 
-.dcf-c-article__body p:not(.dcf-c-lead),
+.dcf-c-article__body dl {
+  @include pl6;
+}
+
+
 .dcf-c-article__body dl,
 .dcf-c-article__body ol,
 .dcf-c-article__body ul {
@@ -24,15 +28,6 @@
     @include mt1;
   }
 
-}
-
-
-.dcf-c-article p,
-.dcf-c-article dl,
-.dcf-c-article ol,
-.dcf-c-article ul,
-.dcf-c-article blockquote {
-
   + p {
     text-indent: #{ms(4)}em; // 1.77em
   }
@@ -40,8 +35,8 @@
 }
 
 
-.dcf-c-article__body dl {
-  @include pl6;
+.dcf-c-article__body p:not(.dcf-c-lead) {
+  @include mb0;
 }
 
 
@@ -82,10 +77,7 @@
     .dcf-c-article {
       @include grid;
       grid-template-columns: #{ms(8)}em 1fr; // 3.16em
-      grid-template-areas:
-        "share header"
-        "share body"
-        "footer footer";
+      grid-template-areas: "share header" "share body" "footer footer";
     }
 
     .dcf-c-article__header {
@@ -106,6 +98,7 @@
       div[role="heading"] {
         @include mb6;
       }
+
     }
 
     .dcf-c-article__footer {

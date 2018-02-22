@@ -78,23 +78,23 @@ a.dcf-c-calendar__date--active:focus {
 }
 
 
-.dcf-c-events {
-}
-
-.dcf-c-events__heading {
-}
-
-.dcf-c-events__more {
-}
-
-.dcf-c-events__subscribe {
-}
-
-.dcf-c-events__listing {
-}
-
-.dcf-c-event {
-}
+// .dcf-c-events {
+// }
+//
+// .dcf-c-events__heading {
+// }
+//
+// .dcf-c-events__more {
+// }
+//
+// .dcf-c-events__subscribe {
+// }
+//
+// .dcf-c-events__listing {
+// }
+//
+// .dcf-c-event {
+// }
 
 
 
@@ -103,10 +103,7 @@ a.dcf-c-calendar__date--active:focus {
   .dcf-c-events {
     @include grid;
     grid-template-columns: auto;
-    grid-template-areas:
-      "heading"
-      "listing"
-      "more";
+    grid-template-areas: "heading" "listing" "more";
 
 //     @include mq(sm, min, width) {
 //     }
@@ -122,10 +119,9 @@ a.dcf-c-calendar__date--active:focus {
 
     @include mq(lg, min, width) {
       grid-template-columns: 1fr auto;
-      grid-template-areas:
-        "heading more"
-        "listing listing";
+      grid-template-areas: "heading more" "listing listing";
     }
+
   }
 
   .dcf-c-events__heading {

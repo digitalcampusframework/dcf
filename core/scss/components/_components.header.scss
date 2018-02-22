@@ -26,7 +26,7 @@
 
 @include mq(md, max, width) {
 
-  .dcf-c-header:after {
+  .dcf-c-header::after {
     content: '';
     @include fixed;
     height: 4em;
@@ -51,10 +51,7 @@
       @include grid;
       grid-template-columns: 1fr auto auto;
       grid-column-gap: 2em;
-      grid-template-areas:
-        "first nav2 nav2"
-        "logo search idm"
-        "nav1 nav1 nav1";
+      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
     }
 
     .dcf-c-institution-title {

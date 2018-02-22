@@ -3,6 +3,14 @@
 //////////////////////////////
 
 
+h1 { font-size: #{ms(6)}em; } // 2.37em
+h2 { font-size: #{ms(5)}em; } // 2em
+h3 { font-size: #{ms(4)}em; } // 1.77em
+h4 { font-size: #{ms(3)}em; } // 1.5em
+h5 { font-size: #{ms(2)}em; } // 1.33em
+h6 { font-size: #{ms(1)}em; } // 1.125em
+
+
 h1,
 h2,
 h3,
@@ -21,12 +29,5 @@ h6 {
   dl + & {
     @include mt5;
   }
+
 }
-
-
-h1 { font-size: #{ms(6)}em } // 2.37em
-h2 { font-size: #{ms(5)}em } // 2.22em
-h3 { font-size: #{ms(4)}em } // 1.77em
-h4 { font-size: #{ms(3)}em } // 1.66em
-h5 { font-size: #{ms(2)}em } // 1.33em
-h6 { font-size: #{ms(1)}em } // 1.25em

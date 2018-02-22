@@ -3,7 +3,7 @@
 ///////////////////////////////////
 
 
-.example .dcf-c-dropcap:first-letter {
+.example .dcf-c-dropcap::first-letter {
   margin-top: #{ms(-1)}rem; // .84rem -- first, adjust margin-top for Firefox
   padding-right: #{ms(-4)}rem; // .56rem
   padding-left: #{ms(-20)}rem; // .06rem

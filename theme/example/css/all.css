@@ -25,7 +25,7 @@
     font-size: 1.33333em; } }
 
 html {
-  font-family: 'system'; }
+  font-family: system; }
 
 abbr {
   letter-spacing: .05em; }
@@ -95,10 +95,7 @@ pre {
 
 code,
 kbd {
-  padding-top: 0.13348rem;
-  padding-right: 0.2373rem;
-  padding-bottom: 0.13348rem;
-  padding-left: 0.2373rem;
+  padding: 0.13348rem 0.2373rem;
   font-size: 0.84375em; }
 
 code,
@@ -157,6 +154,24 @@ textarea {
   width: 100%;
   resize: vertical; }
 
+h1 {
+  font-size: 2.37037em; }
+
+h2 {
+  font-size: 2.0em; }
+
+h3 {
+  font-size: 1.77778em; }
+
+h4 {
+  font-size: 1.5em; }
+
+h5 {
+  font-size: 1.33333em; }
+
+h6 {
+  font-size: 1.125em; }
+
 h1,
 h2,
 h3,
@@ -208,27 +223,13 @@ h6 {
   h6 {
     margin-top: 1.33333em; }
 
-h1 {
-  font-size: 2.37037em; }
-
-h2 {
-  font-size: 2.0em; }
-
-h3 {
-  font-size: 1.77778em; }
-
-h4 {
-  font-size: 1.5em; }
-
-h5 {
-  font-size: 1.33333em; }
-
-h6 {
-  font-size: 1.125em; }
-
 img {
   max-width: 100%;
   height: auto; }
+
+ol,
+ul {
+  padding-left: 1.77778em; }
 
 dl,
 ol,
@@ -245,10 +246,6 @@ ul {
   ul ol,
   ul ul {
     margin-top: 0.5625em; }
-
-ol,
-ul {
-  padding-left: 1.77778em; }
 
 li,
 dt,
@@ -740,7 +737,9 @@ th {
 .dcf-c-alert__footer {
   grid-area: footer; }
 
-.dcf-c-article__body p:not(.dcf-c-lead),
+.dcf-c-article__body dl {
+  padding-left: 1.77778em; }
+
 .dcf-c-article__body dl,
 .dcf-c-article__body ol,
 .dcf-c-article__body ul {
@@ -775,8 +774,8 @@ th {
 .dcf-c-article blockquote + p {
   text-indent: 1.77778em; }
 
-.dcf-c-article__body dl {
-  padding-left: 1.77778em; }
+.dcf-c-article__body p:not(.dcf-c-lead) {
+  margin-bottom: 0; }
 
 .dcf-c-author-img img {
   display: block;
@@ -874,9 +873,6 @@ th {
 .dcf-c-btn-group .dcf-c-btn:focus {
   z-index: 1; }
 
-.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
-  border-radius: 0; }
-
 .dcf-c-btn-group > .dcf-c-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
@@ -884,6 +880,9 @@ th {
 .dcf-c-btn-group > .dcf-c-btn:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
+
+.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
 
 .dcf-c-btn {
   cursor: pointer;
@@ -1026,7 +1025,7 @@ a.dcf-c-calendar__date--active:focus {
   color: #260099; }
 
 @media only screen and (max-width: 55.925em) {
-  .dcf-c-header:after {
+  .dcf-c-header::after {
     content: '';
     position: fixed;
     height: 4em;
@@ -1148,7 +1147,7 @@ legend,
 
 a .dcf-c-icon,
 button .dcf-c-icon {
-  fill: currentcolor; }
+  fill: currentColor; }
 
 .dcf-c-icon--inline {
   height: 1em;
@@ -1222,14 +1221,14 @@ button .dcf-c-icon {
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease-out, visibility 0s linear 0.6s;
-  transition: opacity 0.5s ease-out, visibility 0s linear 0.6s; }
+  -webkit-transition: opacity .5s ease-out, visibility 0s linear .6s;
+  transition: opacity .5s ease-out, visibility 0s linear .6s; }
   .dcf-c-modal__overlay.dcf-is-open {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
-    -webkit-transition: opacity 0.2s ease-out;
-    transition: opacity 0.2s ease-out; }
+    -webkit-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out; }
 
 .dcf-c-modal__content {
   width: 90%;
@@ -1316,7 +1315,7 @@ button .dcf-c-icon {
 .dcf-c-lead {
   font-size: 1.125em; }
 
-.dcf-c-dropcap:first-letter {
+.dcf-c-dropcap::first-letter {
   float: left; }
 
 .dcf-c-search-results-wrapper {
@@ -1358,10 +1357,6 @@ button .dcf-c-icon {
   border-bottom-width: 1px;
   border-color: #d0d0d0; }
 
-.dcf-c-table th:not(:last-child),
-.dcf-c-table td:not(:last-child) {
-  padding-right: 1.33333em; }
-
 .dcf-c-table thead th,
 .dcf-c-table thead td {
   padding-bottom: 0.75em;
@@ -1372,14 +1367,6 @@ button .dcf-c-icon {
   padding-bottom: 1em;
   vertical-align: top; }
 
-.dcf-c-table tbody tr:first-child th,
-.dcf-c-table tbody tr:first-child td {
-  padding-top: 1em; }
-
-.dcf-c-table--compact th:not(:last-child),
-.dcf-c-table--compact td:not(:last-child) {
-  padding-right: 1em; }
-
 .dcf-c-table--compact thead th,
 .dcf-c-table--compact thead td {
   padding-bottom: 0.5625em; }
@@ -1388,9 +1375,21 @@ button .dcf-c-icon {
 .dcf-c-table--compact tbody td {
   padding-bottom: 0.75em; }
 
+.dcf-c-table--compact th:not(:last-child),
+.dcf-c-table--compact td:not(:last-child) {
+  padding-right: 1em; }
+
+.dcf-c-table th:not(:last-child),
+.dcf-c-table td:not(:last-child) {
+  padding-right: 1.33333em; }
+
 .dcf-c-table--compact tbody tr:first-child th,
 .dcf-c-table--compact tbody tr:first-child td {
   padding-top: 0.75em; }
+
+.dcf-c-table tbody tr:first-child th,
+.dcf-c-table tbody tr:first-child td {
+  padding-top: 1em; }
 
 .example .dcf-c-breadcrumbs li:not(:last-child) {
   margin-right: 0.75em; }
@@ -1410,9 +1409,6 @@ button .dcf-c-icon {
 .example .dcf-c-btn-group .dcf-c-btn--secondary + .dcf-c-btn--secondary {
   margin-left: -1px; }
 
-.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
-  border-radius: 0; }
-
 .example .dcf-c-btn-group > .dcf-c-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
@@ -1421,6 +1417,9 @@ button .dcf-c-icon {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
+.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
+
 .example .dcf-c-btn {
   padding-top: 0.5625em;
   padding-right: 1em;
@@ -1428,7 +1427,7 @@ button .dcf-c-icon {
   padding-left: 1em;
   font-weight: bold;
   border-radius: 2px;
-  font-family: 'system'; }
+  font-family: system; }
 
 .example .dcf-c-btn--primary,
 .example .dcf-c-btn--primary:link {
@@ -1459,18 +1458,18 @@ button .dcf-c-icon {
 .example .dcf-c-btn--secondary,
 .example .dcf-c-btn--secondary:link {
   color: #30c;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: #fff;
   -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
   transition: border 400ms ease-out, background-color 400ms ease-out; }
 
 .example .dcf-c-btn--secondary:visited {
   color: #260099;
-  border-color: currentcolor; }
+  border-color: currentColor; }
 
 .example .dcf-c-btn--secondary:hover {
   color: #260099;
-  border-color: currentcolor;
+  border-color: currentColor;
   background-color: #ece6ff;
   -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
   transition: border 200ms ease-out, background-color 200ms ease-out; }
@@ -1478,11 +1477,11 @@ button .dcf-c-icon {
 .example .dcf-c-btn--secondary:active,
 .example .dcf-c-btn--secondary.dcf-c-active {
   color: #260099;
-  border-color: currentcolor; }
+  border-color: currentColor; }
 
 .example .dcf-c-btn--inverse {
   color: #fff;
-  border: 1px solid currentcolor;
+  border: 1px solid currentColor;
   background-color: rgba(0, 0, 0, 0.1);
   -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
   transition: border 400ms ease-out, background-color 400ms ease-out; }
@@ -1572,15 +1571,15 @@ button .dcf-c-icon {
   font-size: 0.75em;
   color: #666; }
 
-/* Container used for styling the custom select, the buttom class below adds the
- * bg gradient, corners, etc. */
 .example .dcf-c-input-select {
   display: table;
   position: relative;
-  margin-top: 0.42188em; }
+  margin-top: 0.42188em;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  -webkit-transition: border-color 400ms ease-out;
+  transition: border-color 400ms ease-out; }
 
-/* This is the native select, we're making everything but the text invisible so
- * we can see the button styles in the wrapper */
 .example .dcf-c-input-select select {
   width: 100%;
   margin: 0;
@@ -1589,29 +1588,24 @@ button .dcf-c-icon {
   padding-right: 1em;
   padding-bottom: 0.5625em;
   padding-left: 0.75em;
-  /* Prefixed box-sizing rules necessary for older browsers */
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* Font size must be 16px to prevent iOS page zoom on focus */
-  font-size: 1rem; }
+          box-sizing: border-box;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  border-radius: 2px;
+  font-family: system; }
 
-/* Custom arrow sits on top of the select - could be an image, SVG, icon font,
- * etc. or the arrow could just baked into the bg image on the select. */
 .example .dcf-c-input-select::after {
   content: " ";
   position: absolute;
   top: 50%;
   right: 1em;
   z-index: 2;
-  /* These hacks make the select behind the arrow clickable in some browsers */
   pointer-events: none;
   display: none; }
 
-/* Firefox <= 34 has a false positive on @supports( -moz-appearance: none )
- * @supports ( mask-type: alpha ) is Firefox 35+
- */
 @supports ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) or ((-moz-appearance: none) and (mask-type: alpha)) {
-  /* Show custom arrow */
   .example .dcf-c-input-select::after {
     display: block;
     height: 0;
@@ -1620,80 +1614,46 @@ button .dcf-c-icon {
     border-right: 4px solid transparent;
     border-top: 8px solid #444;
     margin-top: -4px; }
-  /* Remove select styling */
   .example .dcf-c-input-select select {
     padding-right: 3em;
-    /* Match-01 */
-    /* inside @supports so that iOS <= 8 display the native arrow */
     background: none;
-    /* Match-04 */
-    /* inside @supports so that Android <= 4.3 display the native arrow */
     border: 1px solid transparent;
-    /* Match-05 */
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; }
+       -moz-appearance: none;
+            appearance: none; }
   .example .dcf-c-input-select select:focus {
-    border-color: #aaa;
-    /* Match-03 */ } }
+    border-color: #aaa; } }
 
-/* These are the "theme" styles for our button applied via separate button class, style as you like */
-/* Set the background fallback to solid #fff so Firefox renders the <option> list readably. */
-.example .dcf-c-input-select {
-  border: 1px solid #d0d0d0;
-  border-radius: 2px;
-  -webkit-transition: border-color 400ms ease-out;
-  transition: border-color 400ms ease-out; }
-
-.example .dcf-c-input-select select {
-  /* General select styles: change as needed */
-  color: #444;
-  line-height: 1.5;
-  border-radius: 2px;
-  font-family: 'system'; }
-
-/* Hover style */
 .example .dcf-c-input-select:hover {
   border-color: #b7b7b7;
   -webkit-transition: border-color 200ms ease-out;
   transition: border-color 200ms ease-out; }
 
-/* Focus style */
 .example .dcf-c-input-select select:focus {
-  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
   -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
           box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
-  color: #222;
-  /* Match-02 */ }
+  color: #222; }
 
 @supports (box-shadow: none) {
   .example .dcf-c-input-select select:focus {
     outline: none; } }
 
-/* Set options to normal weight */
 .example .dcf-c-input-select option {
   font-weight: normal; }
 
-/* IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance. Targeting media query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5 - looking for better ways to achieve this targeting */
-/* The second rule removes the odd blue bg color behind the text in the select button in IE 10/11 and sets the text color to match the focus style's - fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .example .dcf-c-input-select select {
+    padding-right: 3em;
+    background: none;
+    border: 1px solid transparent; }
   .example .dcf-c-input-select select::-ms-expand {
     display: none; }
   .example .dcf-c-input-select select:focus {
-    border-color: #aaa;
-    /* Match-03 */ }
+    border-color: #aaa; }
   .example .dcf-c-input-select select:focus::-ms-value {
     background-color: transparent;
-    color: #222;
-    /* Match-02*/ }
-  .example .dcf-c-input-select select {
-    padding-right: 3em;
-    /* Match-01 */
-    background: none;
-    /* Match-04 */
-    border: 1px solid transparent;
-    /* Match-05 */ }
+    color: #222; }
   .example .dcf-c-input-select::after {
     display: block; } }
 
@@ -1739,7 +1699,7 @@ button .dcf-c-icon {
 .example .dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
   margin-left: -1px; }
 
-.example .dcf-c-dropcap:first-letter {
+.example .dcf-c-dropcap::first-letter {
   margin-top: 0.84375rem;
   padding-right: 0.5625rem;
   padding-left: 0.05631rem;
@@ -1756,13 +1716,13 @@ button .dcf-c-icon {
     height: 0;
     width: 1px; }
 
-.dcf-u-ratio--16x9:before {
+.dcf-u-ratio--16x9::before {
   padding-top: 56.25%; }
 
-.dcf-u-ratio--4x3:before {
+.dcf-u-ratio--4x3::before {
   padding-top: 75%; }
 
-.dcf-u-ratio--1x1:before {
+.dcf-u-ratio--1x1::before {
   padding-top: 100%; }
 
 .dcf-u-ratio__child {
@@ -2774,4 +2734,4 @@ a.dcf-u-inverse:active {
   background-color: #c00 !important; }
 
 .example-u-font-system {
-  font-family: 'system'; }
+  font-family: system; }

@@ -3,6 +3,12 @@
 ///////////////////////////
 
 
+ol,
+ul {
+  @include pl6;
+}
+
+
 dl,
 ol,
 ul {
@@ -15,12 +21,6 @@ ul {
     @include mt2; // pt2 instead?
   }
 
-}
-
-
-ol,
-ul {
-  @include pl6;
 }
 
 

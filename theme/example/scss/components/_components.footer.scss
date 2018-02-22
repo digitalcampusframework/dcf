@@ -18,17 +18,13 @@
 @supports (display: grid) {
 
   .example .dcf-c-footer__local {
-
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
-
   }
 
   .example .dcf-c-footer__global {
-
     @include grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
-
   }
 
 }

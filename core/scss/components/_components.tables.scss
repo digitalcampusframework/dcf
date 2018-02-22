@@ -11,11 +11,13 @@
   @include sm1;
 }
 
+
 .dcf-c-table thead,
 .dcf-c-table tbody {
   @include bb;
   border-color: $color-border;
 }
+
 
 // .dcf-c-table thead {
 //   @include uppercase;
@@ -32,11 +34,6 @@
 // }
 
 
-.dcf-c-table th:not(:last-child),
-.dcf-c-table td:not(:last-child) {
-  @include pr5;
-}
-
 // .dcf-c-table thead th,
 // .dcf-c-table thead td {
 // //   padding-top: 1.25em;
@@ -51,6 +48,7 @@
   @include txt-bottom;
 }
 
+
 .dcf-c-table tbody th,
 .dcf-c-table tbody td {
 //   @include pt4;
@@ -58,27 +56,31 @@
   @include txt-top;
 }
 
-.dcf-c-table tbody tr:first-child th,
-.dcf-c-table tbody tr:first-child td {
-  @include pt4;
-}
-
-
-// !Compact Table
-.dcf-c-table--compact th:not(:last-child),
-.dcf-c-table--compact td:not(:last-child) {
-  @include pr4;
-}
 
 .dcf-c-table--compact thead th,
 .dcf-c-table--compact thead td {
   @include pb2;
 }
 
+
 .dcf-c-table--compact tbody th,
 .dcf-c-table--compact tbody td {
   @include pb3;
 }
+
+
+.dcf-c-table--compact th:not(:last-child),
+.dcf-c-table--compact td:not(:last-child) {
+  @include pr4;
+}
+
+
+//
+.dcf-c-table th:not(:last-child),
+.dcf-c-table td:not(:last-child) {
+  @include pr5;
+}
+
 
 .dcf-c-table--compact tbody tr:first-child th,
 .dcf-c-table--compact tbody tr:first-child td {
@@ -91,6 +93,11 @@
 //   @include pb2;
 // }
 
+
+.dcf-c-table tbody tr:first-child th,
+.dcf-c-table tbody tr:first-child td {
+  @include pt4;
+}
 
 
 // !Striped Table
