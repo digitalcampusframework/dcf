@@ -1023,7 +1023,7 @@ a.dcf-c-calendar__date--active:focus {
   color: #260099; }
 
 @media only screen and (max-width: 55.925em) {
-  .dcf-c-header:after {
+  .dcf-c-header::after {
     content: '';
     position: fixed;
     height: 4em;
@@ -1313,7 +1313,7 @@ button .dcf-c-icon {
 .dcf-c-lead {
   font-size: 1.125em; }
 
-.dcf-c-dropcap:first-letter {
+.dcf-c-dropcap::first-letter {
   float: left; }
 
 .dcf-c-search-results-wrapper {
