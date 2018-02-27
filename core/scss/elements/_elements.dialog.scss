@@ -3,21 +3,6 @@
 ////////////////////////////
 
 
-@keyframes appear {
-
-  0% {
-    opacity: 0;
-    transform: scale(.9);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
-
-
 dialog {
   width: 80vw; // restrict width when browser doesn't support fit-content
   padding: 0; // force padding 0 otherwise click close will not work accurately
