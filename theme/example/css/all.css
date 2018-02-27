@@ -148,6 +148,30 @@ kbd kbd {
   padding: 0;
   font-size: 100%; }
 
+dialog {
+  width: 80vw;
+  padding: 0;
+  border: none !important;
+  background-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center; }
+  dialog::-webkit-backdrop {
+    background-color: rgba(0, 0, 0, 0.96); }
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.96); }
+    @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+      dialog::-webkit-backdrop {
+        background-color: rgba(0, 0, 0, 0.8);
+        -webkit-backdrop-filter: blur(6px) grayscale(10%);
+                backdrop-filter: blur(6px) grayscale(10%); }
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.8);
+        -webkit-backdrop-filter: blur(6px) grayscale(10%);
+                backdrop-filter: blur(6px) grayscale(10%); } }
+  dialog[open] {
+    -webkit-animation: appear 300ms forwards ease-out;
+            animation: appear 300ms forwards ease-out; }
+
 figure {
   margin: 0; }
 
