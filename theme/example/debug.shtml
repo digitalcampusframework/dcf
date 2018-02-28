@@ -87,6 +87,7 @@
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
+    <p class="dcf-c-lead">This documentation, like the framework itself, is a work in progress. Expect additions, edits and even some subtractions as the framework continues to evolve in the coming months.</p>
     <p class="dcf-u-mt6"><a href="#example-elements">Element</a> styles are applied directly to an element, while <a href="#example-objects">object</a>, <a href="#example-components">component</a> and <a href="#example-utilities">utility</a> styles are applied by adding classes to the elements in the markup. These classes are prefixed with the <code>dcf-</code> namespace to avoid code collisions with third-party or custom styles. Please prefix your own custom styles with a namespace unique to your organization.</p>
     <p>In addition to the <code>dcf-</code> prefix, <abbr title="Digital Campus Framework">DCF</abbr> classes are also namespaced according to the <em>type</em> of class—object (<code>o-</code>), component (<code>c-</code>) or utility (<code>u-</code>). This helps to signal the purpose of a class to developers.</p>
 
