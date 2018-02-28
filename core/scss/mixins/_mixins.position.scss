@@ -20,4 +20,10 @@
 
 
 // !Sticky
-@mixin sticky($imp:null) { position: sticky $imp; }
+@mixin sticky($imp:null) {
+
+  @supports (position: sticky) {
+    position: sticky $imp;
+  }
+
+}

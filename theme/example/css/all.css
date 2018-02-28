@@ -2631,9 +2631,10 @@ a.dcf-u-inverse:active {
 .dcf-u-fixed {
   position: fixed !important; }
 
-.dcf-u-sticky {
-  position: -webkit-sticky !important;
-  position: sticky !important; }
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .dcf-u-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important; } }
 
 .dcf-u-fill-current {
   fill: currentColor !important; }
