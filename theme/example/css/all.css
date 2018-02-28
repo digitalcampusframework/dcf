@@ -44,6 +44,26 @@
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
+@-webkit-keyframes fade-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
 html {
   font-family: system; }
 
@@ -1753,6 +1773,18 @@ button .dcf-c-icon {
   padding-left: 0.05631rem;
   font-size: 4.74074em;
   line-height: 0.63281; }
+
+.dcf-js-dialog .backdrop {
+  background-color: rgba(0, 0, 0, 0.96); }
+  @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+    .dcf-js-dialog .backdrop {
+      background-color: rgba(0, 0, 0, 0.8);
+      -webkit-backdrop-filter: blur(6px) grayscale(10%);
+              backdrop-filter: blur(6px) grayscale(10%); } }
+
+.dcf-js-fade-up {
+  -webkit-animation: fade-up 2s forwards ease-out;
+          animation: fade-up 2s forwards ease-out; }
 
 .dcf-u-ratio {
   display: block;
