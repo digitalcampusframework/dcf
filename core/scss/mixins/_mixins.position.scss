@@ -27,3 +27,19 @@
   }
 
 }
+
+
+// !Pin To Top
+@mixin pin-t($imp:null) { top: 0 $imp; }
+
+
+// !Pin To Right
+@mixin pin-r($imp:null) { right: 0 $imp; }
+
+
+// !Pin To Bottom
+@mixin pin-b($imp:null) { bottom: 0 $imp; }
+
+
+// !Pin To Left
+@mixin pin-l($imp:null) { left: 0 $imp; }

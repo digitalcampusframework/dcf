@@ -21,3 +21,19 @@
 
 // !Sticky
 .dcf-u-sticky { @include sticky(!important); }
+
+
+// !Pin To Top
+.dcf-u-pin-t { @include pin-t(!important); }
+
+
+// !Pin To Right
+.dcf-u-pin-r { @include pin-r(!important); }
+
+
+// !Pin To Bottom
+.dcf-u-pin-b { @include pin-b(!important); }
+
+
+// !Pin To Left
+.dcf-u-pin-l { @include pin-l(!important); }
