@@ -2631,9 +2631,22 @@ a.dcf-u-inverse:active {
 .dcf-u-fixed {
   position: fixed !important; }
 
-.dcf-u-sticky {
-  position: -webkit-sticky !important;
-  position: sticky !important; }
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .dcf-u-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important; } }
+
+.dcf-u-pin-t {
+  top: 0 !important; }
+
+.dcf-u-pin-r {
+  right: 0 !important; }
+
+.dcf-u-pin-b {
+  bottom: 0 !important; }
+
+.dcf-u-pin-l {
+  left: 0 !important; }
 
 .dcf-u-fill-current {
   fill: currentColor !important; }
