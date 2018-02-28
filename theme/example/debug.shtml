@@ -283,11 +283,11 @@
           <fieldset>
             <legend>Sample Form Content</legend>
             <div>
-              <label for="example-elements-form-name">Name <small class="dcf-c-input-required">Required</small></label>
+              <label for="example-elements-form-name">Name</label>
               <input id="example-elements-form-name" type="text" required>
             </div>
             <div>
-              <label for="example-elements-form-email">Email <small class="dcf-c-input-required">Required</small></label>
+              <label for="example-elements-form-email">Email</label>
               <input id="example-elements-form-email" type="email" required>
             </div>
             <div>
@@ -1488,7 +1488,7 @@
         <dd>Wrap groups of form elements (such as a label and input pair) to visually offset them from other form elements.</dd>
         <dt><code>.dcf-c-label</code></dt>
         <dd>Add to <code>&lt;label&gt;</code> elements.</dd>
-        <dt><code>.dcf-c-input-required</code></dt>
+        <dt><code>.dcf-c-required</code></dt>
         <dd>Indicate that an adjacent form input is required to submit the form.</dd>
         <dt><code>.dcf-c-input-text</code></dt>
         <dd>Add to text-based inputs—either an <code>&lt;input&gt;</code> with a type attribute that supports text input, or a <code>&lt;textarea&gt;</code>.</dd>
@@ -1504,16 +1504,16 @@
           <fieldset>
             <legend>Sample Form Content</legend>
             <div class="dcf-c-form-group">
-              <label class="dcf-c-label" for="example-components-form-name">Name <small class="dcf-c-input-required">Required</small></label>
+              <label class="dcf-c-label" for="example-components-form-name">Name <small class="dcf-c-required">Required</small></label>
               <input class="dcf-c-input-text" id="example-components-form-name" type="text" required>
             </div>
             <div class="dcf-c-form-group">
-              <label class="dcf-c-label" for="example-components-form-email">Email <small class="dcf-c-input-required">Required</small></label>
+              <label class="dcf-c-label" for="example-components-form-email">Email <small class="dcf-c-required">Required</small></label>
               <input class="dcf-c-input-text" id="example-components-form-email" type="email" required>
             </div>
             <div class="dcf-c-form-group">
-              <label class="dcf-c-label" for="example-components-form-password">Password</label>
-              <input class="dcf-c-input-text" id="example-components-form-password" type="password" aria-describedby="example-components-form-pwd-help">
+              <label class="dcf-c-label" for="example-components-form-password">Password <small class="dcf-c-required">Required</small></label>
+              <input class="dcf-c-input-text" id="example-components-form-password" type="password" required aria-describedby="example-components-form-pwd-help">
               <p class="dcf-c-form-help" id="example-components-form-pwd-help">Make sure it’s a good one!</p>
             </div>
             <div class="dcf-c-form-group">
