@@ -87,6 +87,7 @@
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
+    <p class="dcf-c-lead">This documentation, like the framework itself, is a work in progress. Expect additions, edits and even some subtractions as the framework continues to evolve in the coming months.</p>
     <p class="dcf-u-mt6"><a href="#example-elements">Element</a> styles are applied directly to an element, while <a href="#example-objects">object</a>, <a href="#example-components">component</a> and <a href="#example-utilities">utility</a> styles are applied by adding classes to the elements in the markup. These classes are prefixed with the <code>dcf-</code> namespace to avoid code collisions with third-party or custom styles. Please prefix your own custom styles with a namespace unique to your organization.</p>
     <p>In addition to the <code>dcf-</code> prefix, <abbr title="Digital Campus Framework">DCF</abbr> classes are also namespaced according to the <em>type</em> of class—object (<code>o-</code>), component (<code>c-</code>) or utility (<code>u-</code>). This helps to signal the purpose of a class to developers.</p>
 
@@ -996,24 +997,38 @@
 
       <h3 class="dcf-u-mt8" id="example-objects-lists">Lists</h3>
 
-      <h4 class="dcf-u-mt6" id="example-objects-inline-lists">Inline Lists</h4>
-      <p>Change the display of list items to inline-block.</p>
+      <h4 class="dcf-u-mt6" id="example-objects-bare-lists">Bare Lists</h4>
       <dl>
         <dt><code>.dcf-o-list-bare</code></dt>
-        <dd>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</dd>
-        <dt><code>.dcf-o-list-inline-item</code></dt>
-        <dd>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</dd>
+        <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
       </dl>
       <figure class="dcf-u-mt6">
         <ul class="dcf-o-list-bare">
-          <li class="dcf-o-list-inline-item">Integer posuere</li>
-          <li class="dcf-o-list-inline-item">Etiam porta</li>
-          <li class="dcf-o-list-inline-item">Pellentesque ornare</li>
-          <li class="dcf-o-list-inline-item">Maecenas faucibus</li>
-          <li class="dcf-o-list-inline-item">Cras justo</li>
+          <li>Bare list item #1</li>
+          <li>Bare list item #2</li>
+          <li>Bare list item #3</li>
+          <li>Bare list item #4</li>
+          <li>Bare list item #5</li>
         </ul>
       </figure>
-      <p>Inline lists are also used to create pagination.</p>
+
+      <h4 class="dcf-u-mt6" id="example-objects-inline-lists">Inline Lists</h4>
+      <dl>
+        <dt><code>.dcf-o-list-bare</code></dt>
+        <dd>Remove left padding and list styles for the inline list.</dd>
+        <dt><code>.dcf-o-list-inline-item</code></dt>
+        <dd>Change the display of list items to inline-block and add right margin to all but the last list item.</dd>
+      </dl>
+      <figure class="dcf-u-mt6">
+        <ul class="dcf-o-list-bare">
+          <li class="dcf-o-list-inline-item">Inline list item #1</li>
+          <li class="dcf-o-list-inline-item">Inline list item #2</li>
+          <li class="dcf-o-list-inline-item">Inline list item #3</li>
+          <li class="dcf-o-list-inline-item">Inline list item #4</li>
+          <li class="dcf-o-list-inline-item">Inline list item #5</li>
+        </ul>
+      </figure>
+      <p>Inline lists are also used to create pagination:</p>
       <figure class="dcf-u-mt6">
         <nav aria-label="pagination">
           <ul class="dcf-o-list-bare dcf-u-mt5">
@@ -1024,21 +1039,6 @@
             <li class="dcf-o-list-inline-item"><a href="#next">Next</a></li>
           </ul>
         </nav>
-      </figure>
-
-      <h4 class="dcf-u-mt6" id="example-objects-bare-lists">Bare Lists</h4>
-      <dl>
-        <dt><code>.dcf-o-list-bare</code></dt>
-        <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
-      </dl>
-      <figure class="dcf-u-mt6">
-        <ul class="dcf-o-list-bare">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</li>
-          <li>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</li>
-          <li>Maecenas faucibus mollis interdum.</li>
-          <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
-        </ul>
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
 
