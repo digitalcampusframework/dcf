@@ -52,11 +52,12 @@
 }
 
 
-// !Input: Required
-.example .dcf-c-input-required {
+// !Required
+.example .dcf-c-required {
   @include pl2;
   @include italic;
   @include sm2;
+  color: #d00;
 }
 
 

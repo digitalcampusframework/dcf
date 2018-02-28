@@ -1629,10 +1629,11 @@ button .dcf-c-icon {
   margin-top: 0.5625em;
   margin-bottom: 0.5625em; }
 
-.example .dcf-c-input-required {
+.example .dcf-c-required {
   padding-left: 0.5625em;
   font-style: italic;
-  font-size: 0.75em; }
+  font-size: 0.75em;
+  color: #d00; }
 
 .example .dcf-c-form-help {
   margin-top: 0.42188em;
