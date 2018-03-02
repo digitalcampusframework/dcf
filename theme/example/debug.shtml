@@ -480,6 +480,12 @@
       <h3 class="dcf-u-mt8" id="example-elements-tables">Tables</h3>
       <dl>
         <dt><code>&lt;table&gt;</code></dt>
+        <dt><code>&lt;caption&gt;</code></dt>
+        <dt><code>&lt;thead&gt;</code></dt>
+        <dt><code>&lt;tbody&gt;</code></dt>
+        <dt><code>&lt;tr&gt;</code></dt>
+        <dt><code>&lt;th&gt;</code></dt>
+        <dt><code>&lt;td&gt;</code></dt>
         <dd>Table borders are collapsed and the background is made transparent.</dd>
       </dl>
       <figure class="dcf-u-mt6 dcf-u-overflow-x-scroll">
@@ -1135,12 +1141,7 @@
             <li><a href="#example-components-display-lead-paragraphs">Lead Paragraphs</a></li>
           </ul>
         </li>-->
-        <li><a href="#example-components-tables">Tables</a>
-          <ul>
-            <li><a href="#example-components-standard-tables">Standard Tables</a></li>
-            <li><a href="#example-components-compact-tables">Compact Tables</a></li>
-          </ul>
-        </li>
+        <li><a href="#example-components-tables">Tables</a></li>
       </ul>
 
 
@@ -1807,17 +1808,11 @@
       <p>Tables in the framework are optimized for readability by reducing unnecessary ornamentation and placing an emphasis on the content itself. Richard Rutter's article <a href="https://alistapart.com/article/web-typography-tables">"Web Typography: Designing Tables to be Read, Not Looked At"</a> (excerpted from his book, <a href="http://book.webtypography.net/"><i>Web Typography</i></a>) is an excellent resource on the subject.</p>
       <dl>
         <dt><code>.dcf-c-table</code></dt>
-        <dd>The table font-size is slightly smaller than the body copy.</dd>
-      </dl>
-
-      <h4 class="dcf-u-mt6" id="example-components-standard-tables">Standard Tables</h4>
-      <dl>
-        <dt><code>.dcf-c-table--standard</code></dt>
-        <dd>The standard table is a general purpose table with comfortable padding inside table cells.</dd>
+        <dd>The table font-size is slightly smaller than the body copy. Padding and borders are also added.</dd>
       </dl>
       <figure class="dcf-u-mt6 dcf-u-mb6 dcf-u-overflow-x-scroll">
-        <table class="dcf-c-table dcf-c-table--standard">
-          <caption>This is the caption for the standard table.</caption>
+        <table class="dcf-c-table">
+          <caption>This is the caption for a table. Utility classes are used to right-align numbers in this table.</caption>
           <thead>
             <tr>
               <th>Table heading</th>
@@ -1827,6 +1822,12 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>Table cell</td>
+              <td class="dcf-u-txt-right">49</td>
+              <td>Cras mattis consectetur purus sit amet fermentum</td>
+              <td>Nullam Sollicitudin Mattis</td>
+            </tr>
             <tr>
               <td>Table cell</td>
               <td class="dcf-u-txt-right">16</td>
@@ -1849,45 +1850,47 @@
         </table>
       </figure>
 
-      <h4 class="dcf-u-mt6" id="example-components-compact-tables">Compact Tables</h4>
-      <dl>
-        <dt><code>.dcf-c-table--compact</code></dt>
-        <dd>The compact table reduces the padding inside table cells.</dd>
-      </dl>
+      <p>Horizontal borders can be added as needed with utility classes:</p>
       <figure class="dcf-u-mt6 dcf-u-mb6 dcf-u-overflow-x-scroll">
-        <table class="dcf-c-table dcf-c-table--compact">
-          <caption>This is the caption for the compact table.</caption>
+        <table class="dcf-c-table">
+          <caption>This is the caption for a table with border utilities added as needed.</caption>
           <thead>
             <tr>
               <th>Table heading</th>
-              <th>Table heading</th>
+              <th class="dcf-u-txt-right">Table heading</th>
               <th>Table heading</th>
               <th>Table heading</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Table cell</td>
-              <td>Vulputate</td>
-              <td>Egestas</td>
-              <td>Aenean</td>
+              <th>Table heading</th>
+              <td class="dcf-u-txt-right">49</td>
+              <td>Cras mattis consectetur purus sit amet fermentum</td>
+              <td>Nullam Sollicitudin Mattis</td>
             </tr>
             <tr>
-              <td>Table cell</td>
-              <td>Mollis</td>
-              <td>Bibendum</td>
-              <td>Justo</td>
+              <td></td>
+              <td class="dcf-u-txt-right dcf-u-bt">16</td>
+              <td class="dcf-u-bt">Nullam quis risus eget urna mollis ornare vel eu leo</td>
+              <td class="dcf-u-bt">Ornare Porta Vulputate</td>
             </tr>
             <tr>
-              <td>Table cell</td>
-              <td>Adipiscing</td>
-              <td>Tristique</td>
-              <td>Lorem</td>
+              <th class="dcf-u-bt">Table heading</th>
+              <td class="dcf-u-txt-right dcf-u-bt">387</td>
+              <td class="dcf-u-bt">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
+              <td class="dcf-u-bt">Inceptos Ullamcorper Etiam</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="dcf-u-txt-right dcf-u-bt">9</td>
+              <td class="dcf-u-bt">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
+              <td class="dcf-u-bt">Bibendum Sit Lorem</td>
             </tr>
           </tbody>
         </table>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-borders">Borders</a> (Utilities), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->
