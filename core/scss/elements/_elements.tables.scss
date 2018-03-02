@@ -12,7 +12,7 @@ table {
 
 // !Caption
 caption {
-  @include pt3;
+  padding-top: #{ms(-4)}rem;
   @include txt-left;
   caption-side: bottom;
   @include sm2;

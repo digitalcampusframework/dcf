@@ -377,7 +377,7 @@ table {
   background-color: transparent; }
 
 caption {
-  padding-top: 0.75em;
+  padding-top: 0.5625rem;
   text-align: left;
   caption-side: bottom;
   font-size: 0.75em;
@@ -1421,43 +1421,18 @@ button .dcf-c-icon {
 
 .dcf-c-table thead th,
 .dcf-c-table thead td {
+  padding-bottom: 0.5625rem;
   vertical-align: bottom; }
 
 .dcf-c-table tbody th,
 .dcf-c-table tbody td {
+  padding-top: 0.5625rem;
+  padding-bottom: 0.5625rem;
   vertical-align: top; }
 
-.dcf-c-table--standard thead th,
-.dcf-c-table--standard thead td {
-  padding-bottom: 0.75em; }
-
-.dcf-c-table--compact thead th,
-.dcf-c-table--compact thead td {
-  padding-bottom: 0.5625em; }
-
-.dcf-c-table--standard tbody th,
-.dcf-c-table--standard tbody td {
-  padding-bottom: 1em; }
-
-.dcf-c-table--compact tbody th,
-.dcf-c-table--compact tbody td {
-  padding-bottom: 0.75em; }
-
-.dcf-c-table--standard th:not(:last-child),
-.dcf-c-table--standard td:not(:last-child) {
-  padding-right: 1.33333em; }
-
-.dcf-c-table--compact th:not(:last-child),
-.dcf-c-table--compact td:not(:last-child) {
-  padding-right: 1em; }
-
-.dcf-c-table--standard tbody tr:first-child th,
-.dcf-c-table--standard tbody tr:first-child td {
-  padding-top: 1em; }
-
-.dcf-c-table--compact tbody tr:first-child th,
-.dcf-c-table--compact tbody tr:first-child td {
-  padding-top: 0.75em; }
+.dcf-c-table th:not(:last-child),
+.dcf-c-table td:not(:last-child) {
+  padding-right: 1.33333rem; }
 
 .example .dcf-c-breadcrumbs li:not(:last-child) {
   margin-right: 0.75em; }
