@@ -1740,6 +1740,11 @@ button .dcf-c-icon {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px; }
 
+.example .dcf-c-nav__primary > ul > li > a {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.01em; }
+
 .example .dcf-c-pagination__item + .dcf-c-pagination__item .dcf-c-btn {
   margin-left: -1px; }
 
