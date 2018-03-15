@@ -757,7 +757,7 @@ th {
     .dcf-o-grid__col-75\%-r\@xl {
       grid-column: span 9 / -1; } } }
 
-.dcf-o-full-width {
+.dcf-o-stretch {
   position: relative;
   left: 50%;
   right: 50%;

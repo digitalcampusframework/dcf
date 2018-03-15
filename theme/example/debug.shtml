@@ -559,13 +559,13 @@
 
       <h3 class="dcf-u-mt8" id="example-objects-full-width">Full-Width</h3>
       <dl>
-        <dt><code>.dcf-o-full-width</code></dt>
-        <dd>The full-width object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
+        <dt><code>.dcf-o-stretch</code></dt>
+        <dd>The stretch object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <div class="dcf-o-full-width dcf-u-pt2 dcf-u-pb2 dcf-u-b1 dcf-u-txt-center">
+        <div class="dcf-o-stretch dcf-u-pt2 dcf-u-pb2 dcf-u-b1 dcf-u-txt-center">
           <div class="dcf-u-mb3">
-            <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-full-width</code>
+            <code class="dcf-u-txt-middle dcf-u-bold">.dcf-o-stretch</code>
           </div>
           <div class="dcf-o-wrapper">
             <div class="dcf-u-pt2 dcf-u-pb2 dcf-u-b1">
@@ -1624,7 +1624,7 @@
         <dd>Hero styles are still in development.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <div class="dcf-c-hero dcf-o-full-width">
+        <div class="dcf-c-hero dcf-o-stretch">
           <div class="dcf-o-wrapper dcf-c-hero__layer dcf-c-hero__fg">
             <header class="dcf-c-hgroup">
               <h1 class="">All-time Enrollment Record</h1>
