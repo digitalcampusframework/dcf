@@ -4,7 +4,7 @@
 
 
 body {
-  @include m0;
   color: $color-body;
   background-color: $color-body-bg;
+  margin: 0;
 }

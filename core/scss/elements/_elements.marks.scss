@@ -5,9 +5,9 @@
 
 // Marked (highlighted) text
 mark {
-  padding-top: #{ms(-14)}em; // .13em
-  @include pr1;
+  background-color: $color-mark;
   padding-bottom: #{ms(-14)}em; // .13em
   @include pl1;
-  background-color: $color-mark;
+  @include pr1;
+  padding-top: #{ms(-14)}em; // .13em
 }

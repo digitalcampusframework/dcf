@@ -12,8 +12,8 @@ ul {
 dl,
 ol,
 ul {
-  @include mt0;
   @include mb4;
+  margin-top: 0;
 
   dl,
   ol,
@@ -27,8 +27,8 @@ ul {
 li,
 dt,
 dd {
+  margin-top: 0;
   @include measure;
-  @include mt0;
 }
 
 
@@ -52,7 +52,7 @@ dd {
 
 
 dt {
-  @include bold;
+  font-weight: bold;
 }
 
 

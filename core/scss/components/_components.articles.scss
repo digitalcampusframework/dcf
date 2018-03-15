@@ -11,7 +11,7 @@
 .dcf-c-article__body dl,
 .dcf-c-article__body ol,
 .dcf-c-article__body ul {
-  @include mb0;
+  margin-bottom: 0;
 }
 
 
@@ -36,12 +36,12 @@
 
 
 .dcf-c-article__body p:not(.dcf-c-lead) {
-  @include mb0;
+  margin-bottom: 0;
 }
 
 
 .dcf-c-author-img img {
-  @include block;
+  display: block;
   width: #{ms(8)}em; // 3.16em
 }
 
@@ -49,9 +49,9 @@
 @include mq(sm, max, width) {
 
   .dcf-c-article__share li {
-    @include inlineflex;
+    display: inline-flex;
+    margin-bottom: 0;
     @include mr4;
-    @include mb0;
   }
 
 }
@@ -75,7 +75,7 @@
   @include mq(sm, min, width) {
 
     .dcf-c-article {
-      @include grid;
+      display: grid;
       grid-template-columns: #{ms(8)}em 1fr; // 3.16em
       grid-template-areas: "share header" "share body" "footer footer";
     }

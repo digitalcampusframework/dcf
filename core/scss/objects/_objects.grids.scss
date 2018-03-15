@@ -28,8 +28,8 @@
 .dcf-o-grid-sixths\@md,
 .dcf-o-grid-sixths\@lg,
 .dcf-o-grid-sixths\@xl {
-  @include flex;
-  @include flex-wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .dcf-o-grid-halves > * {
@@ -367,7 +367,7 @@
   .dcf-o-grid-sixths\@md,
   .dcf-o-grid-sixths\@lg,
   .dcf-o-grid-sixths\@xl {
-    @include grid;
+    display: grid;
   }
 
   .dcf-o-grid {

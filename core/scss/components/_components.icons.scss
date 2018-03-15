@@ -16,12 +16,12 @@ button .dcf-c-icon {
 
 
 .dcf-c-icon--x {
-  @include relative;
+  position: relative;
   top: #{ms(-14)}em; // .13em
 }
 
 
 .dcf-c-icon--hang {
-  @include absolute;
   left: 0;
+  position: absolute;
 }

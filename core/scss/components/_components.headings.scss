@@ -10,8 +10,8 @@
 .dcf-c-h4,
 .dcf-c-h5,
 .dcf-c-h6 {
-  @include mt0;
   margin-bottom: #{ms(0)}rem; // 1rem
+  margin-top: 0;
   @include lh2;
 
   // ?
@@ -27,8 +27,8 @@
 
 // !Subheads
 .dcf-c-subhead {
-  @include block;
-  @include mb4;
-  @include uppercase;
+  display: block;
   font-size: #{ms(-2)}rem; // .75rem
+  @include mb4;
+  text-transform: uppercase;
 }

@@ -10,6 +10,6 @@
 
 // !Figcaption
 .dcf-c-figcaption {
-  @include txt-sm;
   color: $color-light-text;
+  @include txt-sm;
 }

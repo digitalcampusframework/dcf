@@ -6,17 +6,16 @@
 // !Button
 .dcf-c-btn {
   cursor: pointer;
-  @include inlineblock;
+  display: inline-block;
 //   font-family: inherit;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 //   -webkit-appearance: none;
-//   -webkit-transition: none;
-  @include txt-middle;
-  @include txt-center;
-  @include txt-nowrap;
 }
 
 a.dcf-c-btn {
-  @include txt-decor-none;
+  text-decoration: none;
 }
 
 
@@ -29,6 +28,7 @@ a.dcf-c-btn {
 // .dcf-c-btn.dcf-c-active {
 // //   @extend .dcf-c-active;
 // }
+
 
 // !Disabled
 button:disabled,

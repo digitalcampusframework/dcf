@@ -4,6 +4,6 @@
 
 
 .dcf-c-breadcrumbs li {
-  @include flex;
-  @include ai-center;
+  align-items: center;
+  display: flex;
 }

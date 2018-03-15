@@ -10,13 +10,13 @@
 
 // !Input: Text
 .example .dcf-c-input-text {
-  @include pt2;
-  @include pr3;
-  @include pb2;
-  @include pl3;
   border: 1px solid $color-border;
   border-radius: $roundrect;
   box-shadow: inset 0 1px 2px fade-out($color-border,1);
+  @include pb2;
+  @include pl3;
+  @include pr3;
+  @include pt2;
   transition: border-color $hover-off, box-shadow $hover-off;
 }
 
@@ -29,8 +29,8 @@
 
 
 .example .dcf-c-input-text:focus {
-  outline: none;
   border-color: $color-button;
+  outline: none;
 }
 
 
@@ -47,25 +47,25 @@
 
 // !Input: File
 .example .dcf-c-input-file {
-  @include mt2;
   @include mb2;
+  @include mt2;
 }
 
 
 // !Required
 .example .dcf-c-required {
-  @include pl2;
-  @include italic;
-  @include txt-sm;
   color: #d00;
+  @include txt-sm;
+  font-style: italic;
+  @include pl2;
 }
 
 
 // !Form Help
 .example .dcf-c-form-help {
-  @include mt1;
-  @include txt-sm;
   color: $color-light-text;
+  @include txt-sm;
+  @include mt1;
 }
 
 
@@ -76,8 +76,8 @@
 // Container used for styling the custom select, the buttom class below adds the
 // bg gradient, corners, etc.
 .example .dcf-c-input-select {
-  @include table;
-  @include relative;
+  display: table;
+  position: relative;
   @include mt1;
 
   // These are the "theme" styles for our button applied via separate button class, style as you like
@@ -92,40 +92,36 @@
 // This is the native select, we're making everything but the text invisible so
 // we can see the button styles in the wrapper
 .example .dcf-c-input-select select {
-  width: 100%;
-	@include m0;
+	@include rounded;
+  box-sizing: border-box;
+	color: $color-body;
+  @include font-system;
+	font-size: 1rem; // Font size must be 16px to prevent iOS page zoom on focus
+	@include lh3;
+	margin: 0;
 	outline: none;
-  @include pt2;
-  @include pr4;
   @include pb2;
   @include pl3;
-  box-sizing: border-box;
-
-  // Font size must be 16px to prevent iOS page zoom on focus
-	font-size: 1rem;
-
+  @include pr4;
+  @include pt2;
+  width: 100%;
 	// General select styles: change as needed
 // 	font-family: sans-serif;
 // 	font-weight: 700;
-	color: $color-body;
 // 	line-height: 1.5;
-	@include lh3;
-	@include rounded;
-  @include font-system;
 }
 
 
 // Custom arrow sits on top of the select - could be an image, SVG, icon font,
 // etc. or the arrow could just baked into the bg image on the select.
 .example .dcf-c-input-select::after {
-	content: " ";
-	@include absolute;
-	top: 50%;
+	content: ' ';
+  display: none; // These hacks make the select behind the arrow clickable in some browsers
+	pointer-events: none; // These hacks make the select behind the arrow clickable in some browsers
+	position: absolute;
 	right: 1em;
+	top: 50%;
 	z-index: 2;
-	// These hacks make the select behind the arrow clickable in some browsers
-	pointer-events: none;
-	@include none;
 }
 
 // Firefox <= 34 has a false positive on @supports( -moz-appearance: none )
@@ -134,23 +130,23 @@
 
 	// Show custom arrow
 	.example .dcf-c-input-select::after {
-		@include block;
-    height: 0;
-    width: 0;
   	border-left: 4px solid transparent;
   	border-right: 4px solid transparent;
   	border-top: 8px solid $color-body;
+		display: block;
+    height: 0;
   	margin-top: -4px;
+    width: 0;
 	}
 
 	// Remove select styling
 	.example .dcf-c-input-select select {
-		padding-right: 3em; // Match-01
+    appearance: none;
 		// inside @supports so that iOS <= 8 display the native arrow
-		@include bg-none; // Match-04
+    background: none; // Match-04
 		// inside @supports so that Android <= 4.3 display the native arrow
 		border: 1px solid transparent; // Match-05
-    appearance: none;
+		padding-right: 3em; // Match-01
 	}
 
 	.example .dcf-c-input-select select:focus {
@@ -183,7 +179,7 @@
 
 // Set options to normal weight
 .example .dcf-c-input-select option {
-	@include regular;
+	font-weight: normal;
 }
 
 
@@ -195,13 +191,13 @@
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
 	.example .dcf-c-input-select select {
-		padding-right: 3em; // Match-01
-    @include bg-none; // Match-04
+    background: none; // Match-04
 		border: 1px solid transparent; // Match-05
+		padding-right: 3em; // Match-01
 	}
 
 	.example .dcf-c-input-select select::-ms-expand {
-		@include none;
+		display: none;
 	}
 
 	.example .dcf-c-input-select select:focus {
@@ -209,12 +205,12 @@
 	}
 
 	.example .dcf-c-input-select select:focus::-ms-value {
-		@include bg-transparent;
+		background-color: transparent;
 		color: #222; // Match-02
 	}
 
 	.example .dcf-c-input-select::after {
-		@include block;
+		display: block;
 	}
 
 }

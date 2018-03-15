@@ -8,15 +8,15 @@ button,
 input[type="button"],
 input[type="submit"] {
   cursor: pointer;
-  @include inlineblock;
-  @include pt2;
-  @include pr4;
-  @include pb2;
-  @include pl4;
+  display: inline-block;
+//   font-family: inherit;
   font-size: #{ms(0)}em; // 1em
   @include lh3;
-//   font-family: inherit;
+  @include pb2;
+  @include pl4;
+  @include pr4;
+  @include pt2;
+  text-align: center;
 //   -webkit-appearance: none;
 //   -webkit-transition: none;
-  @include txt-center;
 }

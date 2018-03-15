@@ -101,9 +101,9 @@ a.dcf-c-calendar__date--active:focus {
 @supports (display: grid) {
 
   .dcf-c-events {
-    @include grid;
-    grid-template-columns: auto;
+    display: grid;
     grid-template-areas: "heading" "listing" "more";
+    grid-template-columns: auto;
 
 //     @include mq(sm, min, width) {
 //     }
@@ -118,15 +118,15 @@ a.dcf-c-calendar__date--active:focus {
 //     }
 
     @include mq(lg, min, width) {
-      grid-template-columns: 1fr auto;
       grid-template-areas: "heading more" "listing listing";
+      grid-template-columns: 1fr auto;
     }
 
   }
 
   .dcf-c-events__heading {
     grid-area: heading;
-    @include mb0;
+    margin-bottom: 0;
   }
 
   .dcf-c-events__more {
@@ -134,13 +134,13 @@ a.dcf-c-calendar__date--active:focus {
   }
 
   .dcf-c-events__listing {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr)); // 17.71em
+    display: grid;
     grid-area: listing;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr)); // 17.71em
   }
 
   .dcf-c-event {
-    @include mb0;
+    margin-bottom: 0;
   }
 
 }

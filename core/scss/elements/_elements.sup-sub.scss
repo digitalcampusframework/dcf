@@ -6,9 +6,9 @@
 // !Superscript & Subscript
 sup,
 sub {
-  @include relative;
-  @include txt-baseline;
   font-size: -#{ms(-3)}em; // -.63em
+  position: relative;
+  vertical-align: baseline;
 }
 
 

@@ -60,22 +60,22 @@
 
 // !Rounded Top (Top Right, Top Left)
 @mixin rounded-top($imp:null) {
-  border-top-right-radius: $roundrect $imp;
   border-top-left-radius: $roundrect $imp;
+  border-top-right-radius: $roundrect $imp;
 }
 
 
 // !Rounded Right (Top Right, Bottom Right)
 @mixin rounded-right($imp:null) {
-  border-top-right-radius: $roundrect $imp;
   border-bottom-right-radius: $roundrect $imp;
+  border-top-right-radius: $roundrect $imp;
 }
 
 
 // !Rounded Bottom (Bottom Right, Bottom Left)
 @mixin rounded-bottom($imp:null) {
-  border-bottom-right-radius: $roundrect $imp;
   border-bottom-left-radius: $roundrect $imp;
+  border-bottom-right-radius: $roundrect $imp;
 }
 
 
@@ -94,13 +94,13 @@
 
 // !Sharp Right (Top Right, Bottom Right)
 @mixin sharp-right {
-  border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 
 // !Sharp Left (Bottom Left, Top Left)
 @mixin sharp-left {
-  border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }

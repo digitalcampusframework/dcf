@@ -20,18 +20,17 @@
 //   }
 
   .dcf-o-dialog__close {
-    @include absolute;
-    top: 0;
-    right: $length2;
-    @include pt0;
-    @include pr3;
-    @include pb0;
+    border: 0;
+    padding-bottom: 0;
     @include pl3;
-    @include b0;
+    @include pr3;
+    padding-top: 0;
+    position: absolute;
+    right: $length2;
+    top: 0;
 
     &::before {
       content: '\00D7';
-      @include lg4;
     }
 
   }

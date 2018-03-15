@@ -5,8 +5,8 @@
 
 // !Skip Navigation
 .dcf-c-skipnav {
-  top: #{ms(-4)}em; // .56em
   left: #{ms(-4)}em; // .56em
+  top: #{ms(-4)}em; // .56em
 }
 
 
@@ -48,9 +48,9 @@
 
 // !Primary Navigation
 .dcf-c-nav__primary ul {
-  @include mb0;
-  @include pl0;
   list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 
@@ -60,9 +60,9 @@
   @include txt-sm;
 
   @supports (display: grid) {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+    display: grid;
     grid-gap: 1em 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
   }
 
 }
@@ -87,13 +87,13 @@
 @include mq(md) {
 
   .dcf-c-nav-toggle {
-    @include none;
+    display: none;
   }
 
   .dcf-c-nav__primary > ul {
-    @include flex;
-    @include flex-row;
-    @include jc-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .dcf-c-nav__primary > ul > li:not(:last-child) {
@@ -106,7 +106,7 @@
 // !Secondary Navigation
 
 .dcf-c-nav__secondary li {
-  @include inline;
+  display: inline;
 }
 
 .dcf-c-nav__secondary li:not(:last-child) {
@@ -114,17 +114,13 @@
 }
 
 
-
-
-
-
 @include mq(md, max, width) {
 
   .dcf-c-mobile-nav-toggle {
-    @include fixed;
-    width: 25%;
     bottom: 0;
     height: 4em;
+    position: fixed;
+    width: 25%;
     z-index: 2;
   }
 
@@ -135,22 +131,19 @@
 }
 
 
-
-
-
 @include mq(md, min, width) {
 
   .dcf-c-nav-toggle {
-    @include none;
+    display: none;
   }
 
   .dcf-c-nav__primary {
     grid-area: nav1;
-    @include relative;
+    position: relative;
   }
 
   .dcf-c-nav__primary ul ul {
-    @include absolute;
+    position: absolute;
     @include sr-only;
   }
 

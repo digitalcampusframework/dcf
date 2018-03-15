@@ -5,9 +5,9 @@
 
 // Marked (highlighted) text
 .dcf-c-mark {
-  padding-top: .125em;
-  @include pr1;
+  background-color: #ff0;
   padding-bottom: .125em;
   @include pl1;
-  background-color: #ff0;
+  @include pr1;
+  padding-top: .125em;
 }
