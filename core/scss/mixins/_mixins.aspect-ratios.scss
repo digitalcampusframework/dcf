@@ -5,8 +5,8 @@
 
 // !Maintain aspect ratio
 @mixin ratio {
-  @include block;
-  @include relative;
+  display: block;
+  position: relative;
 //   @include w100;
 //   @include p0;
 //   @include overflow-hidden;
@@ -14,10 +14,10 @@
 
   &::before {
     content: '';
-    @include inlineblock;
-    @include relative;
-//   	@include w100;
+    display: inline-block;
     height: 0;
+    position: relative;
+//   	@include w100;
     width: 1px;
   }
 
@@ -38,11 +38,11 @@
 
 // Child
 @mixin ratio__child {
-  @include absolute;
-  top: 0;
-  right: 0;
   bottom: 0;
-  left: 0;
   height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
 }

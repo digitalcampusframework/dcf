@@ -4,8 +4,8 @@
 
 
 .dcf-o-media {
-  @include flex;
-  @include ai-flexstart;
+  align-items: flex-start;
+  display: flex;
 }
 
 

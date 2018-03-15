@@ -11,18 +11,18 @@ abbr {
 
 // !Abbreviation Title
 abbr[title] {
-  @include relative;
-  @include txt-decor-none;
+  position: relative;
+  text-decoration: none;
 
   &::after {
-    content: '';
-    @include absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
     border-bottom: 1px dotted currentColor;
+    content: '';
+    height: 100%;
+    left: 0;
     opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
 }

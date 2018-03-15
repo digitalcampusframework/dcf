@@ -6,36 +6,36 @@
 form,
 input,
 textarea {
-  font-size: #{ms(0)}em; // 1em
+  @include txt-base;
   @include lh3;
 }
 
 
 fieldset {
-  @include m0;
-  @include p0;
-  @include b0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
 legend {
-  @extend .dcf-c-h5;  // ?
+  @include txt-h6;
 }
 
 
 label {
-  @include inlineblock;
+  display: inline-block;
 }
 
 
 select {
-  @include block;
+  display: block;
   @include mb4;
 }
 
 
 textarea {
-  @include block;
-  width: 100%;
+  display: block;
   resize: vertical;
+  width: 100%;
 }

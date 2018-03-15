@@ -5,22 +5,22 @@
 
 // !Table
 table {
-  border-collapse: collapse;
   background-color: transparent;
+  border-collapse: collapse;
 }
 
 
 // !Caption
 caption {
-  padding-top: #{ms(-4)}rem;
-  @include txt-left;
   caption-side: bottom;
-  @include txt-sm;
   color: $color-light-text;
+  @include txt-sm;
+  padding-top: #{ms(-4)}rem;
+  text-align: left;
 }
 
 
 // !Table Header
 th {
-  @include txt-left;
+  text-align: left;
 }

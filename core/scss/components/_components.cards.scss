@@ -5,25 +5,26 @@
 
 // !Individual Card
 .dcf-c-card {
-  @include mb0;
+  margin-bottom: 0;
 }
 
 
 // !Card Image
 .dcf-c-card img {
-  @include block;
+  display: block;
   width: 100%;
 }
 
 
 // !Card Block
 .dcf-c-card__block {
-  @include pt5;
-  @include pr6;
   @include pb5;
   @include pl6;
+  @include pt5;
+  @include pr6;
 }
 
+
 .dcf-c-card-block p:last-child {
-  @include mb0;
+  margin-bottom: 0;
 }

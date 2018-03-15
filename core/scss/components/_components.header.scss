@@ -8,7 +8,7 @@
 // }
 
 .dcf-c-header a {
-  @include txt-decor-none;
+  text-decoration: none;
 }
 
 .dcf-c-header button {
@@ -27,20 +27,18 @@
 @include mq(md, max, width) {
 
   .dcf-c-header::after {
-    content: '';
-    @include fixed;
-    height: 4em;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    box-shadow: 0 0 4px 0 fade-out($color-body, .75);
     @include bg-white;
+    bottom: 0;
+    box-shadow: 0 0 4px 0 fade-out($color-body, .75);
+    content: '';
+    display: fixed;
+    height: 4em;
+    left: 0;
+    width: 100%;
+    z-index: 1;
   }
 
 }
-
-
 
 
 @include mq(md, min, width) {
@@ -48,10 +46,10 @@
   @supports (display: grid) {
 
     .dcf-c-header {
-      @include grid;
+      display: grid;
+      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
       grid-template-columns: 1fr auto auto;
       grid-column-gap: 2em;
-      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
     }
 
     .dcf-c-institution-title {

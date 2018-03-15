@@ -21,9 +21,9 @@
 .dcf-c-search-results__directory {
 
   @supports (display: grid) {
-    @include grid;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
+    display: grid;
     grid-gap: #{ms(8)}em 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
   }
 
 }
@@ -72,10 +72,10 @@
     }
 
     .dcf-c-search-results {
-      @include grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "web directory";
+      display: grid;
       grid-gap: #{ms(8)}em 5vw;
+      grid-template-areas: "web directory";
+      grid-template-columns: 1fr 1fr;
     }
 
 //     .dcf-c-search-results {

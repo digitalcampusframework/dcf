@@ -5,6 +5,6 @@
 
 @mixin disabled($imp:null) {
   cursor: not-allowed $imp;
-  pointer-events: none $imp;
   opacity: .7 $imp;
+  pointer-events: none $imp;
 }

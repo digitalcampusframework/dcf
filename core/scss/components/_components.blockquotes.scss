@@ -4,24 +4,24 @@
 
 
 .dcf-c-blockquote {
-  @include relative;
-  @include mr0;
   @include mb7;
-  @include ml0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
 }
 
 
 .dcf-c-blockquote::before {
   content: open-quote;
-  @include absolute;
   font-size: #{ms(16)}em; // 9.97em
   @include lh1;
+  position: absolute;
 }
 
 
 .dcf-c-blockquote p {
-  padding-top: #{ms(9)}em; // 3.56em
   font-size: #{ms(2)}em; // 1.33em
+  padding-top: #{ms(9)}em; // 3.56em
 }
 
 

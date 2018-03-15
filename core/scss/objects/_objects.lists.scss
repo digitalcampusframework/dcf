@@ -6,13 +6,13 @@
 // !Bare List
 .dcf-o-list-bare {
   list-style: none;
-  @include pl0;
+  padding-left: 0;
 }
 
 
 // !Inline List
 .dcf-o-list-inline-item {
-  @include inlineblock;
+  display: inline-block;
 }
 
 

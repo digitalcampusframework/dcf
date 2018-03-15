@@ -15,9 +15,9 @@
 @mixin clearfix($imp:null) {
 
   &::after {
+    clear: both $imp;
     content: '' $imp;
     display: table $imp;
-    clear: both $imp;
   }
 
 }

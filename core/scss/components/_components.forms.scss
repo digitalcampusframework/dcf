@@ -4,12 +4,12 @@
 
 
 .dcf-c-input-text {
-  @include block;
   appearance: none;
+  display: block;
   font-family: inherit;
 }
 
 
 .dcf-c-input-file {
-  @include block;
+  display: block;
 }

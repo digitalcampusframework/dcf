@@ -4,33 +4,33 @@
 
 
 .dcf-c-input-group {
-  @include flex;
+  display: flex;
   width: 100%;
 }
 
 
 // !Input Group Input Field
 .dcf-c-input-group .dcf-c-input-text {
-  @include flex-grow1;
+  flex-grow: 1;
+  margin-bottom: 0;
+  margin-top: 0;
   width: 1%;
-  @include mt0;
-  @include mb0;
 }
 
 
 // !Input Group Button
 .dcf-c-input-group .dcf-c-btn {
-  @include flex;
-  @include ai-center;
-  @include mt0;
-  @include mb0;
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 
 // !Input Group Add-on
 .dcf-c-input-group__addon {
-  @include flex;
-  @include ai-center;
-  @include txt-nowrap;
-  @include txt-center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  white-space: nowrap;
 }
