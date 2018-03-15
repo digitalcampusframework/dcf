@@ -19,8 +19,8 @@ abbr[title] {
     @include absolute;
     top: 0;
     left: 0;
-    @include h100;
-    @include w100;
+    height: 100%;
+    width: 100%;
     border-bottom: 1px dotted currentColor;
     opacity: .5;
   }

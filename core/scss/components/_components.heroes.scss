@@ -26,10 +26,10 @@
 .dcf-c-hero video,
 .dcf-c-hero img {
   @include block;
-  @include w100;
+  width: 100%;
 
   @supports (object-fit: cover) {
-    @include h100;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -45,8 +45,8 @@
 
   .dcf-c-hero__layer {
     @include absolute;
-    @include h100;
-    @include w100;
+    height: 100%;
+    width: 100%;
   }
 
   .dcf-c-hero__fg {
