@@ -531,7 +531,7 @@
       <p>Objects are namespaced with the <code>o-</code> notation.</p>
       <ul class="dcf-u-mt6">
         <li><a href="#example-objects-wrapper">Wrapper</a></li>
-        <li><a href="#example-objects-full-width">Full-Width</a></li>
+        <li><a href="#example-objects-stretch">Stretch</a></li>
         <li><a href="#example-objects-grids">Grids</a></li>
         <li><a href="#example-objects-lists">Lists</a>
           <ul>
@@ -555,9 +555,9 @@
         </div>
         <figcaption class="dcf-c-figcaption dcf-u-mt4">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
       </figure>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-objects-full-width">Full-Width</a> (Objects)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-objects-stretch">Stretch</a> (Objects)</p>
 
-      <h3 class="dcf-u-mt8" id="example-objects-full-width">Full-Width</h3>
+      <h3 class="dcf-u-mt8" id="example-objects-stretch">Stretch</h3>
       <dl>
         <dt><code>.dcf-o-stretch</code></dt>
         <dd>The stretch object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
@@ -573,7 +573,7 @@
             </div>
           </div>
         </div>
-        <figcaption class="dcf-c-figcaption dcf-u-mt4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the full-width object to reapply the page padding.</figcaption>
+        <figcaption class="dcf-c-figcaption dcf-u-mt4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the stretch object to reapply the page padding.</figcaption>
       </figure>
       <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-objects-wrapper">Wrapper</a> (Objects)</p>
 
