@@ -24,5 +24,5 @@
 @mixin flex-initial($imp:null) { flex: initial $imp; }
 @mixin flex-auto($imp:null) { flex: auto $imp; }
 @mixin flex-1($imp:null) { flex: 1 $imp; }
-@mixin flex-grow-1($imp:null) { flex-grow: 1 $imp; }
-@mixin flex-shrink-0($imp:null) { flex-shrink: 0 $imp; }
+@mixin flex-grow1($imp:null) { flex-grow: 1 $imp; }
+@mixin flex-shrink0($imp:null) { flex-shrink: 0 $imp; }

@@ -56,7 +56,7 @@
 .example .dcf-c-required {
   @include pl2;
   @include italic;
-  @include sm2;
+  @include txt-sm;
   color: #d00;
 }
 
@@ -64,7 +64,7 @@
 // !Form Help
 .example .dcf-c-form-help {
   @include mt1;
-  @include sm2;
+  @include txt-sm;
   color: $color-light-text;
 }
 
@@ -92,7 +92,7 @@
 // This is the native select, we're making everything but the text invisible so
 // we can see the button styles in the wrapper
 .example .dcf-c-input-select select {
-	@include w100;
+  width: 100%;
 	@include m0;
 	outline: none;
   @include pt2;

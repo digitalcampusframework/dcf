@@ -5,13 +5,13 @@
 
 .dcf-c-input-group {
   @include flex;
-  @include w100;
+  width: 100%;
 }
 
 
 // !Input Group Input Field
 .dcf-c-input-group .dcf-c-input-text {
-  @include flex-grow-1;
+  @include flex-grow1;
   width: 1%;
   @include mt0;
   @include mb0;

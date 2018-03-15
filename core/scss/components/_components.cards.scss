@@ -12,7 +12,7 @@
 // !Card Image
 .dcf-c-card img {
   @include block;
-  @include w100;
+  width: 100%;
 }
 
 

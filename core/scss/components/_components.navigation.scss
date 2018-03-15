@@ -57,7 +57,7 @@
 .dcf-c-nav__primary > ul {
 //   @include d-flex;
 //   @include f-col;
-  @include sm2;
+  @include txt-sm;
 
   @supports (display: grid) {
     @include grid;
@@ -76,7 +76,7 @@
 // }
 
 .dcf-c-nav__primary ul ul {
-  @include sm1;
+  @include txt-sm;
   @include pt4;
 }
 

@@ -8,7 +8,7 @@
   @include inlineblock;
   padding-top: #{ms(-18)}rem; // .08rem
   padding-bottom: #{ms(-18)}rem; // .08rem
-  @include sm4;
+  font-size: -#{ms(-4)}em; // -.56em
   @include lh3;
   color: #fff;
   @include txt-center;

@@ -8,7 +8,7 @@ sup,
 sub {
   @include relative;
   @include txt-baseline;
-  @include sm3;
+  font-size: -#{ms(-3)}em; // -.63em
 }
 
 

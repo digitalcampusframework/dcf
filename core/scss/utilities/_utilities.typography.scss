@@ -3,41 +3,23 @@
 /////////////////////////////////
 
 
-// !Heading Sizes
-.dcf-u-h1 { @include h1(!important); }
-.dcf-u-h2 { @include h2(!important); }
-.dcf-u-h3 { @include h3(!important); }
-.dcf-u-h4 { @include h4(!important); }
-.dcf-u-h5 { @include h5(!important); }
-.dcf-u-h6 { @include h6(!important); }
+// !Font-Size
+.dcf-u-txt-sm { @include txt-sm(!important); }
+.dcf-u-txt-md { @include txt-md(!important); }
+.dcf-u-txt-base { @include txt-base(!important); }
+.dcf-u-txt-h6 { @include txt-h6(!important); }
+.dcf-u-txt-h5 { @include txt-h5(!important); }
+.dcf-u-txt-h4 { @include txt-h4(!important); }
+.dcf-u-txt-h3 { @include txt-h3(!important); }
+.dcf-u-txt-h2 { @include txt-h2(!important); }
+.dcf-u-txt-h1 { @include txt-h1(!important); }
+.dcf-u-txt-lg { @include txt-lg(!important); }
 
 
-// !Display Headings
-.dcf-u-display1 { @include display1(!important); }
-.dcf-u-display2 { @include display2(!important); }
-.dcf-u-display3 { @include display3(!important); }
-.dcf-u-display4 { @include display4(!important); }
-
-
-// !Larger Size
-.dcf-u-lg5 { @include lg5(!important); }
-.dcf-u-lg4 { @include lg4(!important); }
-.dcf-u-lg3 { @include lg3(!important); }
-.dcf-u-lg2 { @include lg2(!important); }
-.dcf-u-lg1 { @include lg1(!important); }
-
-
-// !Smaller Size
-.dcf-u-sm1 { @include sm1(!important); }
-.dcf-u-sm2 { @include sm2(!important); }
-.dcf-u-sm3 { @include sm3(!important); }
-.dcf-u-sm4 { @include sm4(!important); }
-
-
-// !Line Height
-.dcf-u-lh1 { @include lh1(!important); }
-.dcf-u-lh2 { @include lh2(!important); }
-.dcf-u-lh3 { @include lh3(!important); }
+// !Horizontal Text Alignment
+.dcf-u-txt-center { @include txt-center(!important); }
+.dcf-u-txt-left { @include txt-left(!important); }
+.dcf-u-txt-right { @include txt-right(!important); }
 
 
 // !Vertical Text Alignment
@@ -49,23 +31,37 @@
 .dcf-u-txt-textbottom { @include txt-textbottom(!important); }
 
 
-// !Horizontal Text Alignment
-.dcf-u-txt-center { @include txt-center(!important); }
-.dcf-u-txt-left { @include txt-left(!important); }
-.dcf-u-txt-right { @include txt-right(!important); }
+// Text Decoration
+.dcf-u-txt-decor-none { @include txt-decor-none(!important); }
+.dcf-u-txt-decor-hover { @include txt-decor-hover-off(!important); }
+.dcf-u-txt-decor-hover:hover { @include txt-decor-hover-on(!important); }
 
 
-// !Text Wrapping
+// !Text Wrap
 .dcf-u-txt-nowrap { @include txt-nowrap(!important); }
 .dcf-u-truncate { @include truncate(!important); }
 
 
-// Text Decoration
-.dcf-u-txt-decor-none { @include txt-decor-none(!important); }
+// !Font Style
+.dcf-u-roman { @include roman(!important); }
+.dcf-u-italic { @include italic(!important); }
 
-.dcf-u-txt-decor-hover { @include txt-decor-hover-off(!important); }
 
-.dcf-u-txt-decor-hover:hover { @include txt-decor-hover-on(!important); }
+// !Font Weight
+.dcf-u-regular { @include regular(!important); }
+.dcf-u-bold { @include bold(!important); }
+
+
+// !Letter Spacing
+.dcf-u-ls0 { @include ls0(!important); }
+.dcf-u-ls1 { @include ls1(!important); }
+.dcf-u-ls2 { @include ls2(!important); }
+
+
+// !Line Height
+.dcf-u-lh1 { @include lh1(!important); }
+.dcf-u-lh2 { @include lh2(!important); }
+.dcf-u-lh3 { @include lh3(!important); }
 
 
 // !Text Transform
@@ -73,19 +69,3 @@
 .dcf-u-lowercase { @include lowercase(!important); }
 .dcf-u-uppercase { @include uppercase(!important); }
 .dcf-u-case-reset { @include case-reset(!important); }
-
-
-// !Font Weights
-.dcf-u-regular { @include regular(!important); }
-.dcf-u-bold { @include bold(!important); }
-
-
-// !Font Styles
-.dcf-u-roman { @include roman(!important); }
-.dcf-u-italic { @include italic(!important); }
-
-
-// !Letter Spacing
-.dcf-u-ls0 { @include ls0(!important); }
-.dcf-u-ls1 { @include ls1(!important); }
-.dcf-u-ls2 { @include ls2(!important); }

@@ -15,7 +15,7 @@ caption {
   padding-top: #{ms(-4)}rem;
   @include txt-left;
   caption-side: bottom;
-  @include sm2;
+  @include txt-sm;
   color: $color-light-text;
 }
 
