@@ -1883,9 +1883,6 @@
         <li><a href="#example-utilities-backgrounds">Backgrounds</a>
           <ul>
             <li><a href="#example-utilities-backgrounds-color">Color</a></li>
-            <li><a href="#example-utilities-backgrounds-position">Position</a></li>
-            <li><a href="#example-utilities-backgrounds-repeat">Repeat</a></li>
-            <li><a href="#example-utilities-backgrounds-size">Size</a></li>
             <li><a href="#example-utilities-backgrounds-none">None</a></li>
           </ul>
         </li>
@@ -1991,36 +1988,6 @@
             <dt><code>.dcf-u-bg-white</code></dt><dd>white background</dd>
             <dt><code>.dcf-u-bg-overlay-dark</code></dt><dd>dark, slightly transparent background</dd>
             <dt><code>.dcf-u-bg-overlay-light</code></dt><dd>light, slightly transparent background</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-backgrounds-position">Position</h4>
-          <dl>
-            <dt><code>.dcf-u-bg-center</code></dt><dd>background-position: center</dd>
-            <dt><code>.dcf-u-bg-top</code></dt><dd>background-position: top</dd>
-            <dt><code>.dcf-u-bg-right</code></dt><dd>background-position: right</dd>
-            <dt><code>.dcf-u-bg-righttop</code></dt><dd>background-position: right top</dd>
-            <dt><code>.dcf-u-bg-rightbottom</code></dt><dd>background-position: right bottom</dd>
-            <dt><code>.dcf-u-bg-bottom</code></dt><dd>background-position: bottom</dd>
-            <dt><code>.dcf-u-bg-left</code></dt><dd>background-position: left</dd>
-            <dt><code>.dcf-u-bg-lefttop</code></dt><dd>background-position: left top</dd>
-            <dt><code>.dcf-u-bg-leftbottom</code></dt><dd>background-position: left bottom</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-backgrounds-repeat">Repeat</h4>
-          <dl>
-            <dt><code>.dcf-u-bg-no-repeat</code></dt><dd>background-repeat: no-repeat</dd>
-            <dt><code>.dcf-u-bg-repeat</code></dt><dd>background-repeat: repeat</dd>
-            <dt><code>.dcf-u-bg-repeat-x</code></dt><dd>background-repeat: repeat-x</dd>
-            <dt><code>.dcf-u-bg-repeat-y</code></dt><dd>background-repeat: repeat-y</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-u-mt6" id="example-utilities-backgrounds-size">Size</h4>
-          <dl>
-            <dt><code>.dcf-u-bg-contain</code></dt><dd>background-size: contain</dd>
-            <dt><code>.dcf-u-bg-cover</code></dt><dd>background-size: cover</dd>
           </dl>
         </div>
         <div>
