@@ -1107,6 +1107,7 @@
           <ul>
             <li><a href="#example-components-primary-buttons">Primary Buttons</a></li>
             <li><a href="#example-components-secondary-buttons">Secondary Buttons</a></li>
+            <li><a href="#example-components-tertiary-buttons">Tertiary Buttons</a></li>
             <li><a href="#example-components-button-sizes">Button Sizes</a></li>
             <li><a href="#example-components-button-state-active">Button State: Active</a></li>
             <li><a href="#example-components-button-state-disabled">Button State: Disabled</a></li>
@@ -1371,11 +1372,24 @@
         <dd>Visually de-emphasize buttons by using the secondary modifier.</dd>
       </dl>
       <figure class="dcf-u-mt6">
-        <a class="dcf-c-btn dcf-c-btn--secondary" href="#" role="button">Secondary Button</a>
-        <button class="dcf-c-btn dcf-c-btn--secondary" type="submit">Secondary Button</button>
+        <a class="dcf-c-btn dcf-c-btn--secondary" href="#" role="button">Link</a>
+        <button class="dcf-c-btn dcf-c-btn--secondary" type="submit">Button</button>
         <input class="dcf-c-btn dcf-c-btn--secondary" type="button" value="Input">
         <input class="dcf-c-btn dcf-c-btn--secondary" type="submit" value="Submit">
       </figure>
+
+      <h4 class="dcf-u-mt6" id="example-components-tertiary-buttons">Tertiary Buttons</h4>
+      <dl>
+        <dt><code>.dcf-c-btn--tertiary</code></dt>
+        <dd>Visually de-emphasize buttons by using the tertiary modifier.</dd>
+      </dl>
+      <figure class="dcf-u-mt6">
+        <a class="dcf-c-btn dcf-c-btn--tertiary" href="#" role="button">Link</a>
+        <button class="dcf-c-btn dcf-c-btn--tertiary" type="submit">Button</button>
+        <input class="dcf-c-btn dcf-c-btn--tertiary" type="button" value="Input">
+        <input class="dcf-c-btn dcf-c-btn--tertiary" type="submit" value="Submit">
+      </figure>
+
 
       <h4 class="dcf-u-mt6" id="example-components-button-sizes">Button Sizes</h4>
       <p>Buttons can be resized as needed by using the font-size utilities to make buttons <a href="#example-utilities-font-size">larger or smaller</a>.</p>
