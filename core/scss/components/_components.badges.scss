@@ -8,7 +8,7 @@
   background-color: $color-badge;
   color: #fff;
   display: inline-block;
-  font-size: -#{ms(-4)}em; // -.56em
+  font-size: #{ms(-4)}em; // .56em
   @include lh3;
   padding-bottom: #{ms(-18)}rem; // .08rem
   padding-top: #{ms(-18)}rem; // .08rem
