@@ -17,6 +17,9 @@
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.10",
     "csso": "^2.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -50,5 +53,8 @@
     "BlackBerry >= 4.0",
     "iOS >= 10",
     "> 1% in my stats"
-  ]
+  ],
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
 }

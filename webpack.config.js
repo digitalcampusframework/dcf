@@ -7,8 +7,8 @@ var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var core_js_config = {
   entry: {
-    body: './core/js/loaders/core_body_js_loader.js',
-    head: './core/js/loaders/core_head_js_loader.js'
+    head: ['babel-polyfill', './core/js/loaders/core_head_js_loader.js'],
+    body: './core/js/loaders/core_body_js_loader.js'
   },
   output: {
     path: path.resolve(__dirname, './core/js'),
@@ -30,8 +30,8 @@ var theme_js_config = function(env) {
 
   return {
     entry: {
-      body: './theme/' + theme + '/js/loaders/theme_body_js_loader.js',
-      head: './theme/' + theme + '/js/loaders/theme_head_js_loader.js'
+      head: './theme/' + theme + '/js/loaders/theme_head_js_loader.js',
+      body: './theme/' + theme + '/js/loaders/theme_body_js_loader.js'
     },
     output: {
       path: path.resolve(__dirname, './theme/' + theme + '/js'),
@@ -55,6 +55,11 @@ var theme_js_config = function(env) {
               }
             }]
           })
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
         },
         /*
         {
