@@ -44,8 +44,8 @@
 
 
   <button class="dcf-u-p0 dcf-u-b0 dcf-u-bg-transparent dcf-c-mobile-nav-toggle dcf-c-nav-toggle" id="dcf-menu-toggle" aria-pressed="false" aria-controls="dcf-primary-navigation dcf-secondary-navigation" aria-haspopup="true">
-    <span class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-jc-center dcf-u-h100">
-      <span class="dcf-u-flex dcf-u-ai-center dcf-u-jc-center dcf-u-circle" style="height: 2em; width: 2em; background-color: #30c;">
+    <span class="dcf-u-flex dcf-u-flex-col dcf-u-ai-center dcf-u-jc-center dcf-u-height100%">
+      <span class="dcf-u-flex dcf-u-ai-center dcf-u-jc-center dcf-u-circle dcf-u-height6 dcf-u-width6" style="background-color: #30c;">
         <svg class="dcf-c-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 48 48"><g class="dcf-c-icon--menu-top"><path fill="#fff" d="M46,9H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-c-icon--menu-bottom"><path fill="#fff" d="M46,35H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-c-icon--menu-middle"><path fill="#fff" d="M46,22H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g></svg>
       </span>
     	<span class="dcf-u-sr-only">Show </span><span class="dcf-u-txt-sm">Menu</span>
@@ -468,7 +468,7 @@
         <dt><code>&lt;small&gt;</code></dt>
         <dd>The small element is intended for <em>inline</em> text meant to be treated as <small>fine print</small>. It does not change the font-size. Add a <a href="#example-utilities-font-size">font-size utility class</a> (like <code>.dcf-u-txt-sm</code>) to the small element to <span class="dcf-u-txt-sm">reduce its font-size</span>.</dd>
       </dl>
-      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-utilities-font-size">Font Size: Smaller</a> (Utilities)</p>
+      <p class="dcf-u-mt6 dcf-u-pl4 dcf-u-bl"><b>Related:</b> <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-u-mt8" id="example-elements-sub-sup">Subscripts &amp; Superscripts</h3>
       <dl>
@@ -1381,14 +1381,14 @@
       <p>Buttons can be resized as needed by using the font-size utilities to make buttons <a href="#example-utilities-font-size">larger or smaller</a>.</p>
       <figure class="dcf-u-mt6">
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-mb4" type="button">Default Button</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-sm dcf-u-mb4" type="button">Small Button</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-md dcf-u-mb4" type="button">Small Button</button>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-sm dcf-u-mb4" type="button">Smaller Button</button>
         <br>
         <button class="dcf-c-btn dcf-c-btn--primary dcf-u-mb4" type="button">Default Button</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h6 dcf-u-mb4" type="button">Large Button</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h5 dcf-u-mb4" type="button">Larger Button</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-h4 dcf-u-mb4" type="button">Really?!</button>
-        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-block dcf-u-w100" type="button">Block Level Button</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-h6 dcf-u-mb4" type="button">Large Button</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-h5 dcf-u-mb4" type="button">Larger Button</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-txt-h4 dcf-u-mb4" type="button">Really?!</button>
+        <button class="dcf-c-btn dcf-c-btn--primary dcf-u-block dcf-u-width100%" type="button">Block Level Button</button>
       </figure>
 
       <h4 class="dcf-u-mt6" id="example-components-button-state-active">Button State: Active</h4>
