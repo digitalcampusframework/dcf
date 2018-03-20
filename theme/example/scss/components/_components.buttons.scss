@@ -52,7 +52,7 @@
   background-color: #fff;
   border: 1px solid currentColor;
   color: $color-button;
-  transition: border $hover-off, background-color $hover-off;
+  transition: all $hover-off;
 }
 
 .example .dcf-c-btn--secondary:visited {
@@ -61,15 +61,41 @@
 }
 
 .example .dcf-c-btn--secondary:hover {
-	background-color: lighten($color-button,55%);
+  background-color: lighten($color-button,55%);
   border-color: currentColor;
   color: $color-button-hover;
-  transition: border $hover-on, background-color $hover-on;
+  transition: all $hover-on;
 }
 
 .example .dcf-c-btn--secondary:active,
 .example .dcf-c-btn--secondary.dcf-c-active {
   border-color: currentColor;
+  color: $color-button-active;
+}
+
+
+// !Tertiary Button
+.example .dcf-c-btn--tertiary,
+.example .dcf-c-btn--tertiary:link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $color-button;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  transition: color $hover-off;
+}
+
+.example .dcf-c-btn--tertiary:visited {
+  color: $color-button-visited;
+}
+
+.example .dcf-c-btn--tertiary:hover {
+  color: $color-button-hover;
+  transition: color $hover-on;
+}
+
+.example .dcf-c-btn--tertiary:active,
+.example .dcf-c-btn--tertiary.dcf-c-active {
   color: $color-button-active;
 }
 

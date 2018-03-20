@@ -958,7 +958,8 @@ th {
   vertical-align: middle;
   white-space: nowrap; }
 
-a.dcf-c-btn {
+a.dcf-c-btn--primary,
+a.dcf-c-btn--secondary {
   text-decoration: none; }
 
 button:disabled,
@@ -1500,8 +1501,8 @@ button .dcf-c-icon {
   background-color: #fff;
   border: 1px solid currentColor;
   color: #30c;
-  -webkit-transition: border 400ms ease-out, background-color 400ms ease-out;
-  transition: border 400ms ease-out, background-color 400ms ease-out; }
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out; }
 
 .example .dcf-c-btn--secondary:visited {
   border-color: currentColor;
@@ -1511,12 +1512,35 @@ button .dcf-c-icon {
   background-color: #ece6ff;
   border-color: currentColor;
   color: #260099;
-  -webkit-transition: border 200ms ease-out, background-color 200ms ease-out;
-  transition: border 200ms ease-out, background-color 200ms ease-out; }
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out; }
 
 .example .dcf-c-btn--secondary:active,
 .example .dcf-c-btn--secondary.dcf-c-active {
   border-color: currentColor;
+  color: #260099; }
+
+.example .dcf-c-btn--tertiary,
+.example .dcf-c-btn--tertiary:link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #30c;
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip: ink;
+  -webkit-transition: color 400ms ease-out;
+  transition: color 400ms ease-out; }
+
+.example .dcf-c-btn--tertiary:visited {
+  color: #260099; }
+
+.example .dcf-c-btn--tertiary:hover {
+  color: #260099;
+  -webkit-transition: color 200ms ease-out;
+  transition: color 200ms ease-out; }
+
+.example .dcf-c-btn--tertiary:active,
+.example .dcf-c-btn--tertiary.dcf-c-active {
   color: #260099; }
 
 .example .dcf-c-btn--inverse {
@@ -1824,51 +1848,6 @@ button .dcf-c-icon {
       background-color: rgba(255, 255, 255, 0.95) !important;
       -webkit-backdrop-filter: blur(6px) grayscale(33%) !important;
               backdrop-filter: blur(6px) grayscale(33%) !important; } }
-
-.dcf-u-bg-center {
-  background-position: center !important; }
-
-.dcf-u-bg-top {
-  background-position: top !important; }
-
-.dcf-u-bg-right {
-  background-position: right !important; }
-
-.dcf-u-bg-righttop {
-  background-position: right top !important; }
-
-.dcf-u-bg-rightbottom {
-  background-position: right bottom !important; }
-
-.dcf-u-bg-bottom {
-  background-position: bottom !important; }
-
-.dcf-u-bg-left {
-  background-position: left !important; }
-
-.dcf-u-bg-lefttop {
-  background-position: left top !important; }
-
-.dcf-u-bg-leftbottom {
-  background-position: left bottom !important; }
-
-.dcf-u-bg-no-repeat {
-  background-repeat: no-repeat !important; }
-
-.dcf-u-bg-repeat {
-  background-repeat: repeat !important; }
-
-.dcf-u-bg-repeat-x {
-  background-repeat: repeat-x !important; }
-
-.dcf-u-bg-repeat-y {
-  background-repeat: repeat-y !important; }
-
-.dcf-u-bg-contain {
-  background-size: contain !important; }
-
-.dcf-u-bg-cover {
-  background-size: cover !important; }
 
 .dcf-u-bg-none {
   background: none !important; }
