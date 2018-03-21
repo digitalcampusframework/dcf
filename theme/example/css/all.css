@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/* Define the "system" font family */
-@font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma"); }
-
 *,
 *::before,
 *::after {
@@ -63,9 +56,6 @@
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0); } }
-
-html {
-  font-family: system; }
 
 abbr {
   letter-spacing: .05em; }
@@ -1463,8 +1453,6 @@ button .dcf-c-icon {
 
 .example .dcf-c-btn {
   border-radius: 2px;
-  font-family: system;
-  font-weight: bold;
   padding-bottom: 0.5625em;
   padding-left: 1em;
   padding-right: 1em;
@@ -1650,7 +1638,7 @@ button .dcf-c-icon {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #444;
-  font-family: system;
+  font-family: inherit;
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
@@ -1723,7 +1711,6 @@ button .dcf-c-icon {
     display: block; } }
 
 .example .dcf-c-subhead {
-  font-weight: normal;
   letter-spacing: 0.1em; }
 
 .example .dcf-c-icon--hang {
@@ -2845,6 +2832,3 @@ a.dcf-u-inverse:active {
 
 .example-u-bg-brand-beta {
   background-color: #c00 !important; }
-
-.example-u-font-system {
-  font-family: system; }
