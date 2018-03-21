@@ -3,6 +3,7 @@
 <head>
 <!--#include virtual="/dcf/theme/example/includes/global/meta.html" -->
 <title>Debugging Out | Framework Testing Page</title>
+<!--#include virtual="/dcf/theme/example/includes/global/fonts.html" -->
 <!--#include virtual="/dcf/theme/example/includes/global/css.html" -->
 <!--#include virtual="/dcf/theme/example/includes/global/js-head.html" -->
 <!--#include virtual="/dcf/theme/example/includes/global/favicon.html" -->

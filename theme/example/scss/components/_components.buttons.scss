@@ -5,8 +5,6 @@
 
 .example .dcf-c-btn {
   @include rounded;
-  @include font-system;
-  font-weight: bold;
   @include pb2;
   @include pl4;
   @include pr4;

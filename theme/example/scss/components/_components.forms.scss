@@ -95,7 +95,7 @@
 	@include rounded;
   box-sizing: border-box;
 	color: $color-body;
-  @include font-system;
+  font-family: inherit;
 	font-size: 1rem; // Font size must be 16px to prevent iOS page zoom on focus
 	@include lh3;
 	margin: 0;
