@@ -1776,14 +1776,11 @@ button .dcf-c-icon {
           animation: fade-up 2s forwards ease-out; }
 
 .dcf-u-ratio {
-  display: block;
   position: relative; }
   .dcf-u-ratio::before {
     content: '';
-    display: inline-block;
-    height: 0;
-    position: relative;
-    width: 1px; }
+    display: block;
+    width: 100%; }
 
 .dcf-u-ratio--16x9::before {
   padding-top: 56.25%; }
@@ -1796,12 +1793,10 @@ button .dcf-c-icon {
 
 .dcf-u-ratio__child {
   bottom: 0;
-  height: 100%;
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
-  width: 100%; }
+  top: 0; }
 
 .dcf-u-bg-transparent {
   background-color: transparent !important; }
