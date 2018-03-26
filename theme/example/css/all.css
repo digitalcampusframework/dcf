@@ -1776,14 +1776,11 @@ button .dcf-c-icon {
           animation: fade-up 2s forwards ease-out; }
 
 .dcf-u-ratio {
-  display: block;
   position: relative; }
   .dcf-u-ratio::before {
     content: '';
-    display: inline-block;
-    height: 0;
-    position: relative;
-    width: 1px; }
+    display: block;
+    width: 100%; }
 
 .dcf-u-ratio--16x9::before {
   padding-top: 56.25%; }
@@ -1796,12 +1793,10 @@ button .dcf-c-icon {
 
 .dcf-u-ratio__child {
   bottom: 0;
-  height: 100%;
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
-  width: 100%; }
+  top: 0; }
 
 .dcf-u-bg-transparent {
   background-color: transparent !important; }
@@ -2426,13 +2421,36 @@ a.dcf-u-inverse:active {
 .dcf-u-ml10 {
   margin-left: 5.61866em !important; }
 
-@supports (object-fit: contain) {
-  .dcf-u-objfit-contain {
-    object-fit: contain !important; } }
-
 @supports (object-fit: cover) {
-  .dcf-u-objfit-cover {
-    object-fit: cover !important; } }
+  .dcf-js-objfit-check::before {
+    content: 'objectfit';
+    display: none; } }
+
+.dcf-u-objfit-contain {
+  height: 100%;
+  width: 100%; }
+  @supports (object-fit: contain) {
+    .dcf-u-objfit-contain {
+      object-fit: contain !important; } }
+
+.dcf-u-objfit-contain-fallback {
+  background-position: 50% 50% !important;
+  background-size: contain !important; }
+  .dcf-u-objfit-contain-fallback .dcf-u-objfit-contain {
+    opacity: 0 !important; }
+
+.dcf-u-objfit-cover {
+  height: 100%;
+  width: 100%; }
+  @supports (object-fit: cover) {
+    .dcf-u-objfit-cover {
+      object-fit: cover !important; } }
+
+.dcf-u-objfit-cover-fallback {
+  background-position: 50% 50% !important;
+  background-size: cover !important; }
+  .dcf-u-objfit-cover-fallback .dcf-u-objfit-cover {
+    opacity: 0 !important; }
 
 .dcf-u-1st {
   -webkit-box-ordinal-group: 2 !important;
