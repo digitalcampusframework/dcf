@@ -3,9 +3,15 @@
 /////////////////////////////////
 
 
+// !Object-Fit Check
+.dcf-js-objfit-check::before { @include objfit-check(!important); }
+
+
 // !Contain
 .dcf-u-objfit-contain { @include objfit-contain(!important); }
+.dcf-u-objfit-contain-fallback { @include objfit-contain-fallback(!important); }
 
 
 // !Cover
 .dcf-u-objfit-cover { @include objfit-cover(!important); }
+.dcf-u-objfit-cover-fallback { @include objfit-cover-fallback(!important); }

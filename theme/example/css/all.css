@@ -2421,13 +2421,36 @@ a.dcf-u-inverse:active {
 .dcf-u-ml10 {
   margin-left: 5.61866em !important; }
 
-@supports (object-fit: contain) {
-  .dcf-u-objfit-contain {
-    object-fit: contain !important; } }
-
 @supports (object-fit: cover) {
-  .dcf-u-objfit-cover {
-    object-fit: cover !important; } }
+  .dcf-js-objfit-check::before {
+    content: 'objectfit';
+    display: none; } }
+
+.dcf-u-objfit-contain {
+  height: 100%;
+  width: 100%; }
+  @supports (object-fit: contain) {
+    .dcf-u-objfit-contain {
+      object-fit: contain !important; } }
+
+.dcf-u-objfit-contain-fallback {
+  background-position: 50% 50% !important;
+  background-size: contain !important; }
+  .dcf-u-objfit-contain-fallback .dcf-u-objfit-contain {
+    opacity: 0 !important; }
+
+.dcf-u-objfit-cover {
+  height: 100%;
+  width: 100%; }
+  @supports (object-fit: cover) {
+    .dcf-u-objfit-cover {
+      object-fit: cover !important; } }
+
+.dcf-u-objfit-cover-fallback {
+  background-position: 50% 50% !important;
+  background-size: cover !important; }
+  .dcf-u-objfit-cover-fallback .dcf-u-objfit-cover {
+    opacity: 0 !important; }
 
 .dcf-u-1st {
   -webkit-box-ordinal-group: 2 !important;

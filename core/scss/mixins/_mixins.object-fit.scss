@@ -3,8 +3,21 @@
 //////////////////////////////
 
 
+// !Object-Fit Check
+@mixin objfit-check($imp:null) {
+
+  @supports (object-fit: cover) {
+    content: 'objectfit';
+    display: none;
+  }
+
+}
+
+
 // !Contain
 @mixin objfit-contain($imp:null) {
+  height: 100%;
+  width: 100%;
 
   @supports (object-fit: contain) {
     object-fit: contain $imp;
@@ -13,11 +26,35 @@
 }
 
 
+@mixin objfit-contain-fallback($imp:null) {
+  background-position: 50% 50% $imp;
+  background-size: contain $imp;
+
+  .dcf-u-objfit-contain {
+    opacity: 0 $imp;
+  }
+
+}
+
+
 // !Cover
 @mixin objfit-cover($imp:null) {
+  height: 100%;
+  width: 100%;
 
   @supports (object-fit: cover) {
     object-fit: cover $imp;
+  }
+
+}
+
+
+@mixin objfit-cover-fallback($imp:null) {
+  background-position: 50% 50% $imp;
+  background-size: cover $imp;
+
+  .dcf-u-objfit-cover {
+    opacity: 0 $imp;
   }
 
 }
