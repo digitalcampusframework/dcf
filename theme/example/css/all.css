@@ -765,9 +765,6 @@ th {
 .dcf-o-list-inline-item {
   display: inline-block; }
 
-.dcf-o-list-inline-item::before {
-  content: "\200B"; }
-
 .dcf-o-list-inline-item:not(:last-child) {
   margin-right: 0.5625em; }
 

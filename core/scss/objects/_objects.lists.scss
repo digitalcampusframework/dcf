@@ -9,17 +9,15 @@
   padding-left: 0;
 }
 
+// .dcf-o-list-bare li::before {
+//   content: "\200B"; // add zero-width space
+// }
+
 
 // !Inline List
 .dcf-o-list-inline-item {
   display: inline-block;
 }
-
-
-.dcf-o-list-inline-item::before {
-  content: "\200B"; // add zero-width space
-}
-
 
 .dcf-o-list-inline-item:not(:last-child) {
   @include mr2;
