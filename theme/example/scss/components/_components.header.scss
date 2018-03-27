@@ -1,0 +1,44 @@
+///////////////////////////////
+// !THEME / COMPONENTS / HEADER
+///////////////////////////////
+
+
+@include mq(md, max, width) {
+
+  .example .dcf-c-header::after {
+    @include bg-white;
+    bottom: 0;
+    box-shadow: 0 0 4px 0 fade-out($color-body, .75);
+    content: '';
+    height: 4em;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  @supports (display: grid) {
+
+    .example .dcf-c-header {
+      display: grid;
+      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
+      grid-template-columns: 1fr auto auto;
+      grid-column-gap: 2em;
+    }
+
+    .example .dcf-c-institution-title {
+      grid-area: first;
+    }
+
+    .example .dcf-c-logo {
+      grid-area: logo;
+    }
+
+  }
+
+}
