@@ -103,7 +103,8 @@ blockquote {
 body {
   color: #444;
   background-color: #fff;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 button,
 input[type="button"],
@@ -326,8 +327,8 @@ dd {
 dd + dt {
   margin-top: 1em; }
 
-main:focus {
-  outline: none; }
+main {
+  display: block; }
 
 mark {
   background-color: #ff0;
@@ -1086,9 +1087,9 @@ a.dcf-c-calendar__date--active:focus {
     -webkit-box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
             box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
     content: '';
-    display: fixed;
     height: 4em;
     left: 0;
+    position: fixed;
     width: 100%;
     z-index: 1; } }
 

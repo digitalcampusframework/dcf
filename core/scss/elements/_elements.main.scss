@@ -4,9 +4,5 @@
 
 
 main {
-
-  &:focus {
-    outline: none; // !temp
-  }
-
+  display: block; // This fixes the display in Internet Explorer
 }
