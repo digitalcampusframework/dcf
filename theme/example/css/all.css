@@ -326,8 +326,10 @@ dd {
 dd + dt {
   margin-top: 1em; }
 
-main:focus {
-  outline: none; }
+main {
+  display: block; }
+  main:focus {
+    outline: none; }
 
 mark {
   background-color: #ff0;
