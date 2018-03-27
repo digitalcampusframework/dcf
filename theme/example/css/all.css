@@ -328,8 +328,6 @@ dd + dt {
 
 main {
   display: block; }
-  main:focus {
-    outline: none; }
 
 mark {
   background-color: #ff0;
