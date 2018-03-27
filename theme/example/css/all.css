@@ -1080,31 +1080,6 @@ a.dcf-c-calendar__date--active:focus {
 .dcf-c-header button:active {
   color: #260099; }
 
-@media only screen and (max-width: 55.925em) {
-  .dcf-c-header::after {
-    background-color: #fff;
-    bottom: 0;
-    -webkit-box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
-            box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
-    content: '';
-    height: 4em;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1; } }
-
-@media only screen and (min-width: 55.925em) {
-  @supports (display: grid) {
-    .dcf-c-header {
-      display: grid;
-      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
-      grid-template-columns: 1fr auto auto;
-      grid-column-gap: 2em; }
-    .dcf-c-institution-title {
-      grid-area: first; }
-    .dcf-c-logo {
-      grid-area: logo; } } }
-
 .dcf-c-h1,
 .dcf-c-h2,
 .dcf-c-h3,
@@ -1707,6 +1682,31 @@ button .dcf-c-icon {
     color: #222; }
   .example .dcf-c-input-select::after {
     display: block; } }
+
+@media only screen and (max-width: 55.925em) {
+  .example .dcf-c-header::after {
+    background-color: #fff;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
+            box-shadow: 0 0 4px 0 rgba(68, 68, 68, 0.25);
+    content: '';
+    height: 4em;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1; } }
+
+@media only screen and (min-width: 55.925em) {
+  @supports (display: grid) {
+    .example .dcf-c-header {
+      display: grid;
+      grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
+      grid-template-columns: 1fr auto auto;
+      grid-column-gap: 2em; }
+    .example .dcf-c-institution-title {
+      grid-area: first; }
+    .example .dcf-c-logo {
+      grid-area: logo; } } }
 
 .example .dcf-c-subhead {
   letter-spacing: 0.1em; }
