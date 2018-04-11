@@ -3,14 +3,14 @@
 ////////////////////////////////
 
 
-.dcf-article__body dl {
+.dcf-article-body dl {
   @include pl6;
 }
 
 
-.dcf-article__body dl,
-.dcf-article__body ol,
-.dcf-article__body ul {
+.dcf-article-body dl,
+.dcf-article-body ol,
+.dcf-article-body ul {
   margin-bottom: 0;
 }
 
@@ -35,7 +35,7 @@
 }
 
 
-.dcf-article__body p:not(.dcf-lead) {
+.dcf-article-body p:not(.dcf-lead) {
   margin-bottom: 0;
 }
 
@@ -48,7 +48,7 @@
 
 @include mq(sm, max, width) {
 
-  .dcf-article__share li {
+  .dcf-article-share li {
     display: inline-flex;
     margin-bottom: 0;
     @include mr4;
@@ -59,11 +59,11 @@
 
 @include mq(sm, min, width) {
 
-  .dcf-article__share div[role="heading"] {
+  .dcf-article-share div[role="heading"] {
     @include mb5;
   }
 
-  .dcf-article__share li {
+  .dcf-article-share li {
     @include mb4;
   }
 
@@ -80,15 +80,15 @@
       grid-template-areas: "share header" "share body" "footer footer";
     }
 
-    .dcf-article__header {
+    .dcf-article-header {
       grid-area: header;
     }
 
-    .dcf-article__body {
+    .dcf-article-body {
       grid-area: body;
     }
 
-    .dcf-article__share {
+    .dcf-article-share {
       grid-area: share;
 
       .dcf-u-sticky {
@@ -101,7 +101,7 @@
 
     }
 
-    .dcf-article__footer {
+    .dcf-article-footer {
       grid-area: footer;
     }
 

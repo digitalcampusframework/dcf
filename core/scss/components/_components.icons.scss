@@ -9,19 +9,19 @@ button .dcf-icon {
 }
 
 
-.dcf-icon--inline {
+.dcf-icon-inline {
   height: #{ms(0)}em; // 1em
   width: #{ms(0)}em; // 1em
 }
 
 
-.dcf-icon--x {
+.dcf-icon-x {
   position: relative;
   top: #{ms(-14)}em; // .13em
 }
 
 
-.dcf-icon--hang {
+.dcf-icon-hang {
   left: 0;
   position: absolute;
 }

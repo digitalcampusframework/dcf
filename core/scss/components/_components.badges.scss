@@ -17,7 +17,7 @@
   white-space: nowrap;
 }
 
-.dcf-badge--roundrect {
+.dcf-badge-roundrect {
   @include rounded;
   @include pl1;
   @include pr1;
@@ -25,7 +25,7 @@
 
 
 // !Pill Badges
-.dcf-badge--pill {
+.dcf-badge-pill {
   border-radius: $pill;
   @include pl2;
   @include pr2;

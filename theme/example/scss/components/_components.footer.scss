@@ -6,23 +6,23 @@
 // !Common Footer Styles
 
 // !Local Footer
-// .example .dcf-footer__local {
+// .example .dcf-footer-local {
 // }
 
 
 // !Global Footer
-// .example .dcf-footer__global {
+// .example .dcf-footer-global {
 // }
 
 
 @supports (display: grid) {
 
-  .example .dcf-footer__local {
+  .example .dcf-footer-local {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
   }
 
-  .example .dcf-footer__global {
+  .example .dcf-footer-global {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
   }
@@ -31,14 +31,14 @@
 
 
 // !Local Footer
-.example .dcf-footer__local {
+.example .dcf-footer-local {
   background-color: $color-footer-local-bg;
   color: $color-footer-local;
 }
 
 
 // !Global Footer
-.example .dcf-footer__global {
+.example .dcf-footer-global {
   background-color: $color-footer-global-bg;
   color: $color-footer-global;
 }
@@ -46,7 +46,7 @@
 
 @include mq(md, max, width) {
 
-  .example .dcf-footer__global {
+  .example .dcf-footer-global {
     padding-bottom: #{ms(12)}em; // 5.61em
   }
 
@@ -55,7 +55,7 @@
 
 @include mq(md, min, width) {
 
-  .example .dcf-footer__global {
+  .example .dcf-footer-global {
     @include pb6;
   }
 

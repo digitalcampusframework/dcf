@@ -18,7 +18,7 @@
 //   }
 }
 
-.dcf-search-results__directory {
+.dcf-search-results-directory {
 
   @supports (display: grid) {
     display: grid;
@@ -31,7 +31,7 @@
 
 @include mq(md, max, width) {
 
-  .dcf-search__toggle {
+  .dcf-search-toggle {
     left: 50%;
   }
 
@@ -54,7 +54,7 @@
 //
 //   @supports (display: grid) {
 //
-//     .dcf-search-results__people {
+//     .dcf-search-results-people {
 //       @include grid;
 //       grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
 //       grid-gap: #{ms(16)}em 5vw;
@@ -86,11 +86,11 @@
 //       grid-gap: #{ms(8)}em 5vw;
 //     }
 
-    .dcf-search-results__web {
+    .dcf-search-results-web {
       grid-area: web;
     }
 
-    .dcf-search-results__directory {
+    .dcf-search-results-directory {
       grid-area: directory;
     }
 

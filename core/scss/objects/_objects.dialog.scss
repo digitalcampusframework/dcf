@@ -9,17 +9,17 @@
   @include ml2;
   @include mr2;
 
-//   .dcf-o-dialog__header {
+//   .dcf-o-dialog-header {
 //     @include font-sans; // add at the theme level
 //   }
 
-//   .dcf-o-dialog__body {
+//   .dcf-o-dialog-body {
 //   }
 
-//   .dcf-o-dialog__footer {
+//   .dcf-o-dialog-footer {
 //   }
 
-  .dcf-dialog__close {
+  .dcf-dialog-close {
     border: 0;
     padding-bottom: 0;
     @include pl3;

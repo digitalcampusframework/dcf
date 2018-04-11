@@ -22,7 +22,7 @@
 
 
 // !Input Group Add-on
-.example .dcf-input-group__addon {
+.example .dcf-input-group-addon {
   background-color: lighten($color-border, 15%);
   border: 1px solid $color-border;
   color: $color-light-text;
@@ -33,13 +33,13 @@
 }
 
 
-.example .dcf-input-group__addon:first-child {
+.example .dcf-input-group-addon:first-child {
   @include rounded-left;
   border-right-width: 0;
 }
 
 
-.example .dcf-input-group__addon:last-child {
+.example .dcf-input-group-addon:last-child {
   @include rounded-right;
   border-left-width: 0;
 }
