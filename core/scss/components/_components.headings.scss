@@ -19,7 +19,7 @@
   ol + &,
   ul + &,
   dl + & {
-    @include mt5;
+    @include mt-5;
   }
 
 }
@@ -29,6 +29,6 @@
 .dcf-subhead {
   display: block;
   font-size: #{ms(-2)}rem; // .75rem
-  @include mb4;
+  @include mb-4;
   text-transform: uppercase;
 }

@@ -4,7 +4,7 @@
 
 
 .example .dcf-form-group {
-  @include mb4;
+  @include mb-4;
 }
 
 
@@ -13,10 +13,10 @@
   border: 1px solid $color-border;
   border-radius: $roundrect;
   box-shadow: inset 0 1px 2px fade-out($color-border,1);
-  @include pb2;
-  @include pl3;
-  @include pr3;
-  @include pt2;
+  @include pb-2;
+  @include pl-3;
+  @include pr-3;
+  @include pt-2;
   transition: border-color $hover-off, box-shadow $hover-off;
 }
 
@@ -35,20 +35,20 @@
 
 
 .example .dcf-label + .dcf-input-text {
-  @include mt1;
+  @include mt-1;
 }
 
 
 // !Input: Control
 .example .dcf-input-control {
-  @include mr1;
+  @include mr-1;
 }
 
 
 // !Input: File
 .example .dcf-input-file {
-  @include mb2;
-  @include mt2;
+  @include mb-2;
+  @include mt-2;
 }
 
 
@@ -57,7 +57,7 @@
   color: #d00;
   @include txt-sm;
   font-style: italic;
-  @include pl2;
+  @include pl-2;
 }
 
 
@@ -65,7 +65,7 @@
 .example .dcf-form-help {
   color: $color-light-text;
   @include txt-sm;
-  @include mt1;
+  @include mt-1;
 }
 
 
@@ -78,7 +78,7 @@
 .example .dcf-input-select {
   display: table;
   position: relative;
-  @include mt1;
+  @include mt-1;
 
   // These are the "theme" styles for our button applied via separate button class, style as you like
   // Set the background fallback to solid #fff so Firefox renders the <option> list readably.
@@ -100,10 +100,10 @@
 	@include lh3;
 	margin: 0;
 	outline: none;
-  @include pb2;
-  @include pl3;
-  @include pr4;
-  @include pt2;
+  @include pb-2;
+  @include pl-3;
+  @include pr-4;
+  @include pt-2;
   width: 100%;
 	// General select styles: change as needed
 // 	font-family: sans-serif;

@@ -19,14 +19,14 @@
 
 .dcf-badge-roundrect {
   @include rounded;
-  @include pl1;
-  @include pr1;
+  @include pl-1;
+  @include pr-1;
 }
 
 
 // !Pill Badges
 .dcf-badge-pill {
   border-radius: $pill;
-  @include pl2;
-  @include pr2;
+  @include pl-2;
+  @include pr-2;
 }

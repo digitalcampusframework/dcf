@@ -26,10 +26,10 @@
   background-color: lighten($color-border, 15%);
   border: 1px solid $color-border;
   color: $color-light-text;
-  @include pb2;
-  @include pl3;
-  @include pr3;
-  @include pt2;
+  @include pb-2;
+  @include pl-3;
+  @include pr-3;
+  @include pt-2;
 }
 
 

@@ -5,10 +5,10 @@
 
 .example .dcf-btn {
   @include rounded;
-  @include pb2;
-  @include pl4;
-  @include pr4;
-  @include pt2;
+  @include pb-2;
+  @include pl-4;
+  @include pr-4;
+  @include pt-2;
 }
 
 

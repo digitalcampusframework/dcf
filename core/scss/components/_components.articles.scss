@@ -4,7 +4,7 @@
 
 
 .dcf-article-body dl {
-  @include pl6;
+  @include pl-6;
 }
 
 
@@ -25,7 +25,7 @@
   + dl,
   + ol,
   + ul {
-    @include mt1;
+    @include mt-1;
   }
 
   + p {
@@ -51,7 +51,7 @@
   .dcf-article-share li {
     display: inline-flex;
     margin-bottom: 0;
-    @include mr4;
+    @include mr-4;
   }
 
 }
@@ -60,11 +60,11 @@
 @include mq(sm, min, width) {
 
   .dcf-article-share div[role="heading"] {
-    @include mb5;
+    @include mb-5;
   }
 
   .dcf-article-share li {
-    @include mb4;
+    @include mb-4;
   }
 
 }
@@ -96,7 +96,7 @@
       }
 
       div[role="heading"] {
-        @include mb6;
+        @include mb-6;
       }
 
     }

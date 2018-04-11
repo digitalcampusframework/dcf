@@ -12,10 +12,10 @@ input[type="submit"] {
 //   font-family: inherit;
   font-size: #{ms(0)}em; // 1em
   @include lh3;
-  @include pb2;
-  @include pl4;
-  @include pr4;
-  @include pt2;
+  @include pb-2;
+  @include pl-4;
+  @include pr-4;
+  @include pt-2;
   text-align: center;
 //   -webkit-appearance: none;
 //   -webkit-transition: none;

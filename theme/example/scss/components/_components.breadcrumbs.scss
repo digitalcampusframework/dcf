@@ -4,7 +4,7 @@
 
 
 .example .dcf-breadcrumbs li:not(:last-child) {
-  @include mr3;
+  @include mr-3;
 }
 
 
@@ -13,7 +13,7 @@
   border-left: #{ms(-8)}em solid $color-breadcrumb; // .32em
   border-top: #{ms(-8)}em solid transparent; // .32em
   content: '';
-  @include ml3;
+  @include ml-3;
   height: 0;
   width: 0;
 }

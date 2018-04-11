@@ -26,7 +26,7 @@ h6 {
   ol + &,
   ul + &,
   dl + & {
-    @include mt5;
+    @include mt-5;
   }
 
 }

@@ -5,20 +5,20 @@
 
 ol,
 ul {
-  @include pl6;
+  @include pl-6;
 }
 
 
 dl,
 ol,
 ul {
-  @include mb4;
+  @include mb-4;
   margin-top: 0;
 
   dl,
   ol,
   ul {
-    @include mt2; // pt2 instead?
+    @include mt-2; // pt2 instead?
   }
 
 }
@@ -33,7 +33,7 @@ dd {
 
 
 li {
-  @include mb2;
+  @include mb-2;
 }
 
 // !Description List
@@ -47,7 +47,7 @@ li {
 
 dt,
 dd {
-  @include mb1;
+  @include mb-1;
 }
 
 
@@ -57,12 +57,12 @@ dt {
 
 
 dd {
-  @include ml0;
+  @include ml-0;
 }
 
 
 dd + dt {
-  @include mt4;
+  @include mt-4;
 }
 
 
