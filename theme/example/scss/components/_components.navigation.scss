@@ -5,6 +5,6 @@
 
 .example .dcf-nav-primary > ul > li > a {
   font-weight: bold;
-  @include ls1;
+  @include ls-1;
   text-transform: uppercase;
 }

@@ -53,9 +53,9 @@
 
 
 // !Letter Spacing
-.dcf-u-ls0 { @include ls0(!important); }
-.dcf-u-ls1 { @include ls1(!important); }
-.dcf-u-ls2 { @include ls2(!important); }
+.dcf-u-ls-0 { @include ls-0(!important); }
+.dcf-u-ls-1 { @include ls-1(!important); }
+.dcf-u-ls-2 { @include ls-2(!important); }
 
 
 // !Line Height

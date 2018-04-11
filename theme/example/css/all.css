@@ -2832,13 +2832,13 @@ a.dcf-inverse:active {
 .dcf-u-bold {
   font-weight: bold !important; }
 
-.dcf-u-ls0 {
+.dcf-u-ls-0 {
   letter-spacing: 0 !important; }
 
-.dcf-u-ls1 {
+.dcf-u-ls-1 {
   letter-spacing: 0.01em !important; }
 
-.dcf-u-ls2 {
+.dcf-u-ls-2 {
   letter-spacing: 0.1em !important; }
 
 .dcf-u-lh-1 {
