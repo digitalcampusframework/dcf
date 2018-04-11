@@ -3,8 +3,14 @@
 ///////////////////////////
 
 
+// !No Border
+@mixin b-0($imp:null) {
+  border: 0 $imp;
+}
+
+
 // All Sides
-@mixin b1($imp:null) {
+@mixin b-1($imp:null) {
   border-style: solid $imp;
   border-width: 1px $imp;
 }
@@ -35,12 +41,6 @@
 @mixin bl($imp:null) {
   border-left-style: solid $imp;
   border-left-width: 1px $imp;
-}
-
-
-// !No Border
-@mixin b0($imp:null) {
-  border: 0 $imp;
 }
 
 

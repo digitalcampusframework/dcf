@@ -1874,7 +1874,10 @@ button .dcf-icon {
 .dcf-bg-none {
   background: none !important; }
 
-.dcf-b1 {
+.dcf-b-0 {
+  border: 0 !important; }
+
+.dcf-b-1 {
   border-style: solid !important;
   border-width: 1px !important;
   border-color: #d0d0d0; }
@@ -1898,9 +1901,6 @@ button .dcf-icon {
   border-left-style: solid !important;
   border-left-width: 1px !important;
   border-color: #d0d0d0; }
-
-.dcf-b0 {
-  border: 0 !important; }
 
 .dcf-circle {
   border-radius: 50% !important; }
