@@ -59,9 +59,10 @@
 
 
 // !Line Height
-.dcf-u-lh1 { @include lh1(!important); }
-.dcf-u-lh2 { @include lh2(!important); }
-.dcf-u-lh3 { @include lh3(!important); }
+.dcf-u-lh-1 { @include lh-1(!important); }
+.dcf-u-lh-2 { @include lh-2(!important); }
+.dcf-u-lh-3 { @include lh-3(!important); }
+.dcf-u-lh-4 { @include lh-4(!important); }
 
 
 // !Text Transform

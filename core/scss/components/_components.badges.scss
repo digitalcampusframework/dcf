@@ -9,7 +9,7 @@
   color: #fff;
   display: inline-block;
   font-size: #{ms(-4)}em; // .56em
-  @include lh3;
+  @include lh-4;
   padding-bottom: #{ms(-18)}rem; // .08rem
   padding-top: #{ms(-18)}rem; // .08rem
   text-align: center;

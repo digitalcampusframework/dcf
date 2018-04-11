@@ -97,7 +97,7 @@
 	color: $color-body;
   font-family: inherit;
 	font-size: 1rem; // Font size must be 16px to prevent iOS page zoom on focus
-	@include lh3;
+	@include lh-4;
 	margin: 0;
 	outline: none;
   @include pb-2;

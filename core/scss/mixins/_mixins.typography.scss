@@ -70,9 +70,10 @@
 
 
 // !Line Height
-@mixin lh1($imp:null) { line-height: #{ms(0)} $imp; }
-@mixin lh2($imp:null) { line-height: #{ms(1)} $imp; }
-@mixin lh3($imp:null) { line-height: #{ms(3)} $imp; }
+@mixin lh-1($imp:null) { line-height: #{ms(0)} $imp; }
+@mixin lh-2($imp:null) { line-height: #{ms(1)} $imp; }
+@mixin lh-3($imp:null) { line-height: #{ms(2)} $imp; }
+@mixin lh-4($imp:null) { line-height: #{ms(3)} $imp; }
 
 
 // !Text Transform

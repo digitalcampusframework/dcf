@@ -11,7 +11,7 @@ input[type="submit"] {
   display: inline-block;
 //   font-family: inherit;
   font-size: #{ms(0)}em; // 1em
-  @include lh3;
+  @include lh-4;
   @include pb-2;
   @include pl-4;
   @include pr-4;

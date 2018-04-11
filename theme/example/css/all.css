@@ -2841,13 +2841,16 @@ a.dcf-inverse:active {
 .dcf-u-ls2 {
   letter-spacing: 0.1em !important; }
 
-.dcf-u-lh1 {
+.dcf-u-lh-1 {
   line-height: 1 !important; }
 
-.dcf-u-lh2 {
+.dcf-u-lh-2 {
   line-height: 1.125 !important; }
 
-.dcf-u-lh3 {
+.dcf-u-lh-3 {
+  line-height: 1.33333 !important; }
+
+.dcf-u-lh-4 {
   line-height: 1.5 !important; }
 
 .dcf-u-capitalize {

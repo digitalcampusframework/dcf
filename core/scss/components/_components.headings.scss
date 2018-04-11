@@ -12,7 +12,7 @@
 .dcf-h6 {
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
-  @include lh2;
+  @include lh-2;
 
   // ?
   p + &,

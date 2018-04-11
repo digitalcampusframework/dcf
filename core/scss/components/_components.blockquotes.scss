@@ -14,7 +14,7 @@
 .dcf-blockquote::before {
   content: open-quote;
   font-size: #{ms(16)}em; // 9.97em
-  @include lh1;
+  @include lh-1;
   position: absolute;
 }
 

@@ -18,7 +18,7 @@ h4,
 h5,
 h6 {
   color: $color-heading;
-  @include lh2;
+  @include lh-2;
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
 
