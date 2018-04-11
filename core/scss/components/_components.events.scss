@@ -4,7 +4,7 @@
 
 
 // !Caption
-.dcf-c-calendar__caption {
+.dcf-calendar__caption {
   caption-side: top;
   font-size: 1em;
 //   background-color: $color-body;
@@ -12,95 +12,95 @@
 
 
 // !Calendar Cells
-.dcf-c-calendar__cell {
+.dcf-calendar__cell {
   width: 14.28%;
 }
 
 
 // !Calendar Weekdays
-.dcf-c-calendar__weekday {
+.dcf-calendar__weekday {
   color: $color-light-text;
 //   background-color: mix($color-body-bg, $color-body, 92%);
 }
 
 
 // !Calendar Date
-a.dcf-c-calendar__date {
+a.dcf-calendar__date {
   outline: 2px solid transparent;
   transition: all $hover-off;
 }
 
 
-a.dcf-c-calendar__date:hover {
+a.dcf-calendar__date:hover {
   outline: 2px solid $color-link-hover;
   transition: all $hover-on;
 }
 
 
-a.dcf-c-calendar__date:active {
+a.dcf-calendar__date:active {
   outline: 2px solid $color-link-active;
 }
 
 
-a.dcf-c-calendar__date:focus {
+a.dcf-calendar__date:focus {
   outline: 2px solid $color-link-hover;
 }
 
 
 // !Calendar Date, Today
-a.dcf-c-calendar__date--today {
+a.dcf-calendar__date--today {
   background-color: $color-body;
 }
 
 
 // !Calendar Date, Active
-a.dcf-c-calendar__date--active {
+a.dcf-calendar__date--active {
   background-color: $color-link;
   transition: all $hover-off;
 }
 
 
-a.dcf-c-calendar__date--active:hover {
+a.dcf-calendar__date--active:hover {
   background-color: $color-link-hover;
   transition: all $hover-on;
 }
 
 
-a.dcf-c-calendar__date--active:focus {
+a.dcf-calendar__date--active:focus {
   background-color: $color-link-hover;
   transition: all $hover-on;
 }
 
 
 // !Calendar Date, Not Current Month
-.dcf-c-calendar__not-current-month {
+.dcf-calendar__not-current-month {
   background-color: mix($color-body-bg, $color-body, 96%);
 }
 
 
-// .dcf-c-events {
+// .dcf-events {
 // }
 //
-// .dcf-c-events__heading {
+// .dcf-events__heading {
 // }
 //
-// .dcf-c-events__more {
+// .dcf-events__more {
 // }
 //
-// .dcf-c-events__subscribe {
+// .dcf-events__subscribe {
 // }
 //
-// .dcf-c-events__listing {
+// .dcf-events__listing {
 // }
 //
-// .dcf-c-event {
+// .dcf-event {
 // }
 
 
 
 @supports (display: grid) {
 
-  .dcf-c-events {
+  .dcf-events {
     display: grid;
     grid-template-areas: "heading" "listing" "more";
     grid-template-columns: auto;
@@ -124,22 +124,22 @@ a.dcf-c-calendar__date--active:focus {
 
   }
 
-  .dcf-c-events__heading {
+  .dcf-events__heading {
     grid-area: heading;
     margin-bottom: 0;
   }
 
-  .dcf-c-events__more {
+  .dcf-events__more {
     grid-area: more;
   }
 
-  .dcf-c-events__listing {
+  .dcf-events__listing {
     display: grid;
     grid-area: listing;
     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr)); // 17.71em
   }
 
-  .dcf-c-event {
+  .dcf-event {
     margin-bottom: 0;
   }
 
@@ -149,7 +149,7 @@ a.dcf-c-calendar__date--active:focus {
 
 
 // !Event Listing
-// .dcf-c-events-grid {
+// .dcf-events-grid {
 //
 //   @supports (display: grid) {
 //     grid-template-columns: repeat(auto-fit, minmax(#{ms(20)}em, 1fr));
@@ -166,7 +166,7 @@ a.dcf-c-calendar__date--active:focus {
 //   }
 // }
 
-// .dcf-c-upcoming-events .dcf-c-list-unstyled {
+// .dcf-upcoming-events .dcf-list-unstyled {
 //
 //   @include mq(sm, min, width) {
 //     columns: 2;
@@ -174,7 +174,7 @@ a.dcf-c-calendar__date--active:focus {
 //   }
 // }
 //
-// .dcf-c-upcoming-events .dcf-c-list-unstyled li {
+// .dcf-upcoming-events .dcf-list-unstyled li {
 //
 //   @include mq(sm, min, width) {
 //     column-break-inside: avoid;
@@ -182,11 +182,11 @@ a.dcf-c-calendar__date--active:focus {
 // }
 
 
-.dcf-c-event__info {
+.dcf-event__info {
   flex: 1 0 1px;
 }
 
 
-.dcf-c-event__date-time {
+.dcf-event__date-time {
   flex: 0 1 #{ms(10)}em; // 4.21em
 }

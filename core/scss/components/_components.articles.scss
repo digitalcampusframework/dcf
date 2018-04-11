@@ -3,23 +3,23 @@
 ////////////////////////////////
 
 
-.dcf-c-article__body dl {
+.dcf-article__body dl {
   @include pl6;
 }
 
 
-.dcf-c-article__body dl,
-.dcf-c-article__body ol,
-.dcf-c-article__body ul {
+.dcf-article__body dl,
+.dcf-article__body ol,
+.dcf-article__body ul {
   margin-bottom: 0;
 }
 
 
-.dcf-c-article p,
-.dcf-c-article dl,
-.dcf-c-article ol,
-.dcf-c-article ul,
-.dcf-c-article blockquote {
+.dcf-article p,
+.dcf-article dl,
+.dcf-article ol,
+.dcf-article ul,
+.dcf-article blockquote {
 
   + p,
   + dl,
@@ -35,12 +35,12 @@
 }
 
 
-.dcf-c-article__body p:not(.dcf-c-lead) {
+.dcf-article__body p:not(.dcf-lead) {
   margin-bottom: 0;
 }
 
 
-.dcf-c-author-img img {
+.dcf-author-img img {
   display: block;
   width: #{ms(8)}em; // 3.16em
 }
@@ -48,7 +48,7 @@
 
 @include mq(sm, max, width) {
 
-  .dcf-c-article__share li {
+  .dcf-article__share li {
     display: inline-flex;
     margin-bottom: 0;
     @include mr4;
@@ -59,11 +59,11 @@
 
 @include mq(sm, min, width) {
 
-  .dcf-c-article__share div[role="heading"] {
+  .dcf-article__share div[role="heading"] {
     @include mb5;
   }
 
-  .dcf-c-article__share li {
+  .dcf-article__share li {
     @include mb4;
   }
 
@@ -74,21 +74,21 @@
 
   @include mq(sm, min, width) {
 
-    .dcf-c-article {
+    .dcf-article {
       display: grid;
       grid-template-columns: #{ms(8)}em 1fr; // 3.16em
       grid-template-areas: "share header" "share body" "footer footer";
     }
 
-    .dcf-c-article__header {
+    .dcf-article__header {
       grid-area: header;
     }
 
-    .dcf-c-article__body {
+    .dcf-article__body {
       grid-area: body;
     }
 
-    .dcf-c-article__share {
+    .dcf-article__share {
       grid-area: share;
 
       .dcf-u-sticky {
@@ -101,7 +101,7 @@
 
     }
 
-    .dcf-c-article__footer {
+    .dcf-article__footer {
       grid-area: footer;
     }
 

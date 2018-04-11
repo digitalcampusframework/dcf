@@ -3,26 +3,26 @@
 /////////////////////////////////////
 
 
-.dcf-c-btn-group {
+.dcf-btn-group {
   display: inline-flex;
 }
 
 
-.dcf-c-btn-group .dcf-c-btn:focus {
+.dcf-btn-group .dcf-btn:focus {
   z-index: 1;
 }
 
 
-.dcf-c-btn-group > .dcf-c-btn:first-child {
+.dcf-btn-group > .dcf-btn:first-child {
   @include sharp-right;
 }
 
 
-.dcf-c-btn-group > .dcf-c-btn:last-child {
+.dcf-btn-group > .dcf-btn:last-child {
   @include sharp-left;
 }
 
 
-.dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+.dcf-btn-group > .dcf-btn:not(:first-child):not(:last-child) {
   @include sharp;
 }

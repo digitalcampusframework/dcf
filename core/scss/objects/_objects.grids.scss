@@ -6,140 +6,140 @@
 // !Grid Fallback Styles
 // Flexbox styles for browsers that don't support CSS Grid
 
-.dcf-o-grid,
-.dcf-o-grid-halves,
-.dcf-o-grid-halves\@sm,
-.dcf-o-grid-halves\@md,
-.dcf-o-grid-halves\@lg,
-.dcf-o-grid-halves\@xl,
-.dcf-o-grid-thirds,
-.dcf-o-grid-thirds\@sm,
-.dcf-o-grid-thirds\@md,
-.dcf-o-grid-thirds\@lg,
-.dcf-o-grid-thirds\@xl,
-.dcf-o-grid-fourths,
-.dcf-o-grid-fourths\@sm,
-.dcf-o-grid-fourths\@md,
-.dcf-o-grid-fourths\@lg,
-.dcf-o-grid-fourths\@xl,
-.dcf-o-grid-fifths\@md,
-.dcf-o-grid-fifths\@lg,
-.dcf-o-grid-fifths\@xl,
-.dcf-o-grid-sixths\@md,
-.dcf-o-grid-sixths\@lg,
-.dcf-o-grid-sixths\@xl {
+.dcf-grid,
+.dcf-grid-halves,
+.dcf-grid-halves\@sm,
+.dcf-grid-halves\@md,
+.dcf-grid-halves\@lg,
+.dcf-grid-halves\@xl,
+.dcf-grid-thirds,
+.dcf-grid-thirds\@sm,
+.dcf-grid-thirds\@md,
+.dcf-grid-thirds\@lg,
+.dcf-grid-thirds\@xl,
+.dcf-grid-fourths,
+.dcf-grid-fourths\@sm,
+.dcf-grid-fourths\@md,
+.dcf-grid-fourths\@lg,
+.dcf-grid-fourths\@xl,
+.dcf-grid-fifths\@md,
+.dcf-grid-fifths\@lg,
+.dcf-grid-fifths\@xl,
+.dcf-grid-sixths\@md,
+.dcf-grid-sixths\@lg,
+.dcf-grid-sixths\@xl {
   display: flex;
   flex-wrap: wrap;
 }
 
-.dcf-o-grid-halves > * {
+.dcf-grid-halves > * {
   flex-basis: 50%;
 }
 
-.dcf-o-grid-thirds > * {
+.dcf-grid-thirds > * {
   flex-basis: 33%;
 }
 
-.dcf-o-grid-fourths > * {
+.dcf-grid-fourths > * {
   flex-basis: 25%;
 }
 
-[class*='dcf-o-grid__col'] {
+[class*='dcf-grid__col'] {
   flex-basis: 100%;
 }
 
-.dcf-o-grid__col-50\%-l {
+.dcf-grid__col-50\%-l {
   flex-basis: 50%;
 }
 
-.dcf-o-grid__col-50\%-r {
+.dcf-grid__col-50\%-r {
   flex-basis: 50%;
 }
 
-.dcf-o-grid__col-33\%-l {
+.dcf-grid__col-33\%-l {
   flex-basis: 33%;
 }
 
-.dcf-o-grid__col-33\%-r {
+.dcf-grid__col-33\%-r {
   flex-basis: 33%;
 }
 
-.dcf-o-grid__col-67\%-l {
+.dcf-grid__col-67\%-l {
   flex-basis: 67%;
 }
 
-.dcf-o-grid__col-67\%-r {
+.dcf-grid__col-67\%-r {
   flex-basis: 67%;
 }
 
-.dcf-o-grid__col-25\%-l {
+.dcf-grid__col-25\%-l {
   flex-basis: 25%;
 }
 
-.dcf-o-grid__col-25\%-r {
+.dcf-grid__col-25\%-r {
   flex-basis: 25%;
 }
 
-.dcf-o-grid__col-75\%-l {
+.dcf-grid__col-75\%-l {
   flex-basis: 75%;
 }
 
-.dcf-o-grid__col-75\%-r {
+.dcf-grid__col-75\%-r {
   flex-basis: 75%;
 }
 
 
 @include mq(sm, min, width) {
 
-  .dcf-o-grid-halves\@sm > * {
+  .dcf-grid-halves\@sm > * {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid-thirds\@sm > * {
+  .dcf-grid-thirds\@sm > * {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid-fourths\@sm > * {
+  .dcf-grid-fourths\@sm > * {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-50\%-l\@sm {
+  .dcf-grid__col-50\%-l\@sm {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-50\%-r\@sm {
+  .dcf-grid__col-50\%-r\@sm {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-33\%-l\@sm {
+  .dcf-grid__col-33\%-l\@sm {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-33\%-r\@sm {
+  .dcf-grid__col-33\%-r\@sm {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-67\%-l\@sm {
+  .dcf-grid__col-67\%-l\@sm {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-67\%-r\@sm {
+  .dcf-grid__col-67\%-r\@sm {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-25\%-l\@sm {
+  .dcf-grid__col-25\%-l\@sm {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-25\%-r\@sm {
+  .dcf-grid__col-25\%-r\@sm {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-75\%-l\@sm {
+  .dcf-grid__col-75\%-l\@sm {
     flex-basis: 75%;
   }
 
-  .dcf-o-grid__col-75\%-r\@sm {
+  .dcf-grid__col-75\%-r\@sm {
     flex-basis: 75%;
   }
 
@@ -148,63 +148,63 @@
 
 @include mq(md, min, width) {
 
-  .dcf-o-grid-halves\@md > * {
+  .dcf-grid-halves\@md > * {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid-thirds\@md > * {
+  .dcf-grid-thirds\@md > * {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid-fourths\@md > * {
+  .dcf-grid-fourths\@md > * {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid-fifths\@md > * {
+  .dcf-grid-fifths\@md > * {
     flex-basis: 20%;
   }
 
-  .dcf-o-grid-sixths\@md > * {
+  .dcf-grid-sixths\@md > * {
     flex-basis: 16.66%;
   }
 
-  .dcf-o-grid__col-50\%-l\@md {
+  .dcf-grid__col-50\%-l\@md {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-50\%-r\@md {
+  .dcf-grid__col-50\%-r\@md {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-33\%-l\@md {
+  .dcf-grid__col-33\%-l\@md {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-33\%-r\@md {
+  .dcf-grid__col-33\%-r\@md {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-67\%-l\@md {
+  .dcf-grid__col-67\%-l\@md {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-67\%-r\@md {
+  .dcf-grid__col-67\%-r\@md {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-25\%-l\@md {
+  .dcf-grid__col-25\%-l\@md {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-25\%-r\@md {
+  .dcf-grid__col-25\%-r\@md {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-75\%-l\@md {
+  .dcf-grid__col-75\%-l\@md {
     flex-basis: 75%;
   }
 
-  .dcf-o-grid__col-75\%-r\@md {
+  .dcf-grid__col-75\%-r\@md {
     flex-basis: 75%;
   }
 
@@ -213,63 +213,63 @@
 
 @include mq(lg, min, width) {
 
-  .dcf-o-grid-halves\@lg > * {
+  .dcf-grid-halves\@lg > * {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid-thirds\@lg > * {
+  .dcf-grid-thirds\@lg > * {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid-fourths\@lg > * {
+  .dcf-grid-fourths\@lg > * {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid-fifths\@lg > * {
+  .dcf-grid-fifths\@lg > * {
     flex-basis: 20%;
   }
 
-  .dcf-o-grid-sixths\@lg > * {
+  .dcf-grid-sixths\@lg > * {
     flex-basis: 16.66%;
   }
 
-  .dcf-o-grid__col-50\%-l\@lg {
+  .dcf-grid__col-50\%-l\@lg {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-50\%-r\@lg {
+  .dcf-grid__col-50\%-r\@lg {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-33\%-l\@lg {
+  .dcf-grid__col-33\%-l\@lg {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-33\%-r\@lg {
+  .dcf-grid__col-33\%-r\@lg {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-67\%-l\@lg {
+  .dcf-grid__col-67\%-l\@lg {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-67\%-r\@lg {
+  .dcf-grid__col-67\%-r\@lg {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-25\%-l\@lg {
+  .dcf-grid__col-25\%-l\@lg {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-25\%-r\@lg {
+  .dcf-grid__col-25\%-r\@lg {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-75\%-l\@lg {
+  .dcf-grid__col-75\%-l\@lg {
     flex-basis: 75%;
   }
 
-  .dcf-o-grid__col-75\%-r\@lg {
+  .dcf-grid__col-75\%-r\@lg {
     flex-basis: 75%;
   }
 
@@ -278,63 +278,63 @@
 
 @include mq(xl, min, width) {
 
-  .dcf-o-grid-halves\@xl > * {
+  .dcf-grid-halves\@xl > * {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid-thirds\@xl > * {
+  .dcf-grid-thirds\@xl > * {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid-fourths\@xl > * {
+  .dcf-grid-fourths\@xl > * {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid-fifths\@xl > * {
+  .dcf-grid-fifths\@xl > * {
     flex-basis: 20%;
   }
 
-  .dcf-o-grid-sixths\@xl > * {
+  .dcf-grid-sixths\@xl > * {
     flex-basis: 16.66%;
   }
 
-  .dcf-o-grid__col-50\%-l\@xl {
+  .dcf-grid__col-50\%-l\@xl {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-50\%-r\@xl {
+  .dcf-grid__col-50\%-r\@xl {
     flex-basis: 50%;
   }
 
-  .dcf-o-grid__col-33\%-l\@xl {
+  .dcf-grid__col-33\%-l\@xl {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-33\%-r\@xl {
+  .dcf-grid__col-33\%-r\@xl {
     flex-basis: 33%;
   }
 
-  .dcf-o-grid__col-67\%-l\@xl {
+  .dcf-grid__col-67\%-l\@xl {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-67\%-r\@xl {
+  .dcf-grid__col-67\%-r\@xl {
     flex-basis: 67%;
   }
 
-  .dcf-o-grid__col-25\%-l\@xl {
+  .dcf-grid__col-25\%-l\@xl {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-25\%-r\@xl {
+  .dcf-grid__col-25\%-r\@xl {
     flex-basis: 25%;
   }
 
-  .dcf-o-grid__col-75\%-l\@xl {
+  .dcf-grid__col-75\%-l\@xl {
     flex-basis: 75%;
   }
 
-  .dcf-o-grid__col-75\%-r\@xl {
+  .dcf-grid__col-75\%-r\@xl {
     flex-basis: 75%;
   }
 
@@ -345,143 +345,143 @@
 
 @supports (display: grid) {
 
-  .dcf-o-grid,
-  .dcf-o-grid-halves,
-  .dcf-o-grid-halves\@sm,
-  .dcf-o-grid-halves\@md,
-  .dcf-o-grid-halves\@lg,
-  .dcf-o-grid-halves\@xl,
-  .dcf-o-grid-thirds,
-  .dcf-o-grid-thirds\@sm,
-  .dcf-o-grid-thirds\@md,
-  .dcf-o-grid-thirds\@lg,
-  .dcf-o-grid-thirds\@xl,
-  .dcf-o-grid-fourths,
-  .dcf-o-grid-fourths\@sm,
-  .dcf-o-grid-fourths\@md,
-  .dcf-o-grid-fourths\@lg,
-  .dcf-o-grid-fourths\@xl,
-  .dcf-o-grid-fifths\@md,
-  .dcf-o-grid-fifths\@lg,
-  .dcf-o-grid-fifths\@xl,
-  .dcf-o-grid-sixths\@md,
-  .dcf-o-grid-sixths\@lg,
-  .dcf-o-grid-sixths\@xl {
+  .dcf-grid,
+  .dcf-grid-halves,
+  .dcf-grid-halves\@sm,
+  .dcf-grid-halves\@md,
+  .dcf-grid-halves\@lg,
+  .dcf-grid-halves\@xl,
+  .dcf-grid-thirds,
+  .dcf-grid-thirds\@sm,
+  .dcf-grid-thirds\@md,
+  .dcf-grid-thirds\@lg,
+  .dcf-grid-thirds\@xl,
+  .dcf-grid-fourths,
+  .dcf-grid-fourths\@sm,
+  .dcf-grid-fourths\@md,
+  .dcf-grid-fourths\@lg,
+  .dcf-grid-fourths\@xl,
+  .dcf-grid-fifths\@md,
+  .dcf-grid-fifths\@lg,
+  .dcf-grid-fifths\@xl,
+  .dcf-grid-sixths\@md,
+  .dcf-grid-sixths\@lg,
+  .dcf-grid-sixths\@xl {
     display: grid;
   }
 
-  .dcf-o-grid {
+  .dcf-grid {
     grid-template-columns: repeat(12, 1fr);
   }
 
-  .dcf-o-grid-halves {
+  .dcf-grid-halves {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dcf-o-grid-thirds {
+  .dcf-grid-thirds {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .dcf-o-grid-fourths {
+  .dcf-grid-fourths {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  [class*='dcf-o-grid__col'] {
+  [class*='dcf-grid__col'] {
     grid-column: 1 / span 12;
   }
 
-  .dcf-o-grid__col-50\%-l {
+  .dcf-grid__col-50\%-l {
     grid-column: 1 / span 6;
   }
 
-  .dcf-o-grid__col-50\%-r {
+  .dcf-grid__col-50\%-r {
     grid-column: span 6 / -1;
   }
 
-  .dcf-o-grid__col-33\%-l {
+  .dcf-grid__col-33\%-l {
     grid-column: 1 / span 4;
   }
 
-  .dcf-o-grid__col-33\%-r {
+  .dcf-grid__col-33\%-r {
     grid-column: span 4 / -1;
   }
 
-  .dcf-o-grid__col-67\%-l {
+  .dcf-grid__col-67\%-l {
     grid-column: 1 / span 8;
   }
 
-  .dcf-o-grid__col-67\%-r {
+  .dcf-grid__col-67\%-r {
     grid-column: span 8 / -1;
   }
 
-  .dcf-o-grid__col-25\%-l {
+  .dcf-grid__col-25\%-l {
     grid-column: 1 / span 3;
   }
 
-  .dcf-o-grid__col-25\%-r {
+  .dcf-grid__col-25\%-r {
     grid-column: span 3 / -1;
   }
 
-  .dcf-o-grid__col-75\%-l {
+  .dcf-grid__col-75\%-l {
     grid-column: 1 / span 9;
   }
 
-  .dcf-o-grid__col-75\%-r {
+  .dcf-grid__col-75\%-r {
     grid-column: span 9 / -1;
   }
 
 
   @include mq(sm, min, width) {
 
-    .dcf-o-grid-halves\@sm {
+    .dcf-grid-halves\@sm {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .dcf-o-grid-thirds\@sm {
+    .dcf-grid-thirds\@sm {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .dcf-o-grid-fourths\@sm {
+    .dcf-grid-fourths\@sm {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .dcf-o-grid__col-50\%-l\@sm {
+    .dcf-grid__col-50\%-l\@sm {
       grid-column: 1 / span 6;
     }
 
-    .dcf-o-grid__col-50\%-r\@sm {
+    .dcf-grid__col-50\%-r\@sm {
       grid-column: span 6 / -1;
     }
 
-    .dcf-o-grid__col-33\%-l\@sm {
+    .dcf-grid__col-33\%-l\@sm {
       grid-column: 1 / span 4;
     }
 
-    .dcf-o-grid__col-33\%-r\@sm {
+    .dcf-grid__col-33\%-r\@sm {
       grid-column: span 4 / -1;
     }
 
-    .dcf-o-grid__col-67\%-l\@sm {
+    .dcf-grid__col-67\%-l\@sm {
       grid-column: 1 / span 8;
     }
 
-    .dcf-o-grid__col-67\%-r\@sm {
+    .dcf-grid__col-67\%-r\@sm {
       grid-column: span 8 / -1;
     }
 
-    .dcf-o-grid__col-25\%-l\@sm {
+    .dcf-grid__col-25\%-l\@sm {
       grid-column: 1 / span 3;
     }
 
-    .dcf-o-grid__col-25\%-r\@sm {
+    .dcf-grid__col-25\%-r\@sm {
       grid-column: span 3 / -1;
     }
 
-    .dcf-o-grid__col-75\%-l\@sm {
+    .dcf-grid__col-75\%-l\@sm {
       grid-column: 1 / span 9;
     }
 
-    .dcf-o-grid__col-75\%-r\@sm {
+    .dcf-grid__col-75\%-r\@sm {
       grid-column: span 9 / -1;
     }
 
@@ -490,63 +490,63 @@
 
   @include mq(md, min, width) {
 
-    .dcf-o-grid-halves\@md {
+    .dcf-grid-halves\@md {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .dcf-o-grid-thirds\@md {
+    .dcf-grid-thirds\@md {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .dcf-o-grid-fourths\@md {
+    .dcf-grid-fourths\@md {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .dcf-o-grid-fifths\@md {
+    .dcf-grid-fifths\@md {
       grid-template-columns: repeat(5, 1fr);
     }
 
-    .dcf-o-grid-sixths\@md {
+    .dcf-grid-sixths\@md {
       grid-template-columns: repeat(6, 1fr);
     }
 
-    .dcf-o-grid__col-50\%-l\@md {
+    .dcf-grid__col-50\%-l\@md {
       grid-column: 1 / span 6;
     }
 
-    .dcf-o-grid__col-50\%-r\@md {
+    .dcf-grid__col-50\%-r\@md {
       grid-column: span 6 / -1;
     }
 
-    .dcf-o-grid__col-33\%-l\@md {
+    .dcf-grid__col-33\%-l\@md {
       grid-column: 1 / span 4;
     }
 
-    .dcf-o-grid__col-33\%-r\@md {
+    .dcf-grid__col-33\%-r\@md {
       grid-column: span 4 / -1;
     }
 
-    .dcf-o-grid__col-67\%-l\@md {
+    .dcf-grid__col-67\%-l\@md {
       grid-column: 1 / span 8;
     }
 
-    .dcf-o-grid__col-67\%-r\@md {
+    .dcf-grid__col-67\%-r\@md {
       grid-column: span 8 / -1;
     }
 
-    .dcf-o-grid__col-25\%-l\@md {
+    .dcf-grid__col-25\%-l\@md {
       grid-column: 1 / span 3;
     }
 
-    .dcf-o-grid__col-25\%-r\@md {
+    .dcf-grid__col-25\%-r\@md {
       grid-column: span 3 / -1;
     }
 
-    .dcf-o-grid__col-75\%-l\@md {
+    .dcf-grid__col-75\%-l\@md {
       grid-column: 1 / span 9;
     }
 
-    .dcf-o-grid__col-75\%-r\@md {
+    .dcf-grid__col-75\%-r\@md {
       grid-column: span 9 / -1;
     }
 
@@ -555,63 +555,63 @@
 
   @include mq(lg, min, width) {
 
-    .dcf-o-grid-halves\@lg {
+    .dcf-grid-halves\@lg {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .dcf-o-grid-thirds\@lg {
+    .dcf-grid-thirds\@lg {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .dcf-o-grid-fourths\@lg {
+    .dcf-grid-fourths\@lg {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .dcf-o-grid-fifths\@lg {
+    .dcf-grid-fifths\@lg {
       grid-template-columns: repeat(5, 1fr);
     }
 
-    .dcf-o-grid-sixths\@lg {
+    .dcf-grid-sixths\@lg {
       grid-template-columns: repeat(6, 1fr);
     }
 
-    .dcf-o-grid__col-50\%-l\@lg {
+    .dcf-grid__col-50\%-l\@lg {
       grid-column: 1 / span 6;
     }
 
-    .dcf-o-grid__col-50\%-r\@lg {
+    .dcf-grid__col-50\%-r\@lg {
       grid-column: span 6 / -1;
     }
 
-    .dcf-o-grid__col-33\%-l\@lg {
+    .dcf-grid__col-33\%-l\@lg {
       grid-column: 1 / span 4;
     }
 
-    .dcf-o-grid__col-33\%-r\@lg {
+    .dcf-grid__col-33\%-r\@lg {
       grid-column: span 4 / -1;
     }
 
-    .dcf-o-grid__col-67\%-l\@lg {
+    .dcf-grid__col-67\%-l\@lg {
       grid-column: 1 / span 8;
     }
 
-    .dcf-o-grid__col-67\%-r\@lg {
+    .dcf-grid__col-67\%-r\@lg {
       grid-column: span 8 / -1;
     }
 
-    .dcf-o-grid__col-25\%-l\@lg {
+    .dcf-grid__col-25\%-l\@lg {
       grid-column: 1 / span 3;
     }
 
-    .dcf-o-grid__col-25\%-r\@lg {
+    .dcf-grid__col-25\%-r\@lg {
       grid-column: span 3 / -1;
     }
 
-    .dcf-o-grid__col-75\%-l\@lg {
+    .dcf-grid__col-75\%-l\@lg {
       grid-column: 1 / span 9;
     }
 
-    .dcf-o-grid__col-75\%-r\@lg {
+    .dcf-grid__col-75\%-r\@lg {
       grid-column: span 9 / -1;
     }
 
@@ -620,63 +620,63 @@
 
   @include mq(xl, min, width) {
 
-    .dcf-o-grid-halves\@xl {
+    .dcf-grid-halves\@xl {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .dcf-o-grid-thirds\@xl {
+    .dcf-grid-thirds\@xl {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .dcf-o-grid-fourths\@xl {
+    .dcf-grid-fourths\@xl {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .dcf-o-grid-fifths\@xl {
+    .dcf-grid-fifths\@xl {
       grid-template-columns: repeat(5, 1fr);
     }
 
-    .dcf-o-grid-sixths\@xl {
+    .dcf-grid-sixths\@xl {
       grid-template-columns: repeat(6, 1fr);
     }
 
-    .dcf-o-grid__col-50\%-l\@xl {
+    .dcf-grid__col-50\%-l\@xl {
       grid-column: 1 / span 6;
     }
 
-    .dcf-o-grid__col-50\%-r\@xl {
+    .dcf-grid__col-50\%-r\@xl {
       grid-column: span 6 / -1;
     }
 
-    .dcf-o-grid__col-33\%-l\@xl {
+    .dcf-grid__col-33\%-l\@xl {
       grid-column: 1 / span 4;
     }
 
-    .dcf-o-grid__col-33\%-r\@xl {
+    .dcf-grid__col-33\%-r\@xl {
       grid-column: span 4 / -1;
     }
 
-    .dcf-o-grid__col-67\%-l\@xl {
+    .dcf-grid__col-67\%-l\@xl {
       grid-column: 1 / span 8;
     }
 
-    .dcf-o-grid__col-67\%-r\@xl {
+    .dcf-grid__col-67\%-r\@xl {
       grid-column: span 8 / -1;
     }
 
-    .dcf-o-grid__col-25\%-l\@xl {
+    .dcf-grid__col-25\%-l\@xl {
       grid-column: 1 / span 3;
     }
 
-    .dcf-o-grid__col-25\%-r\@xl {
+    .dcf-grid__col-25\%-r\@xl {
       grid-column: span 3 / -1;
     }
 
-    .dcf-o-grid__col-75\%-l\@xl {
+    .dcf-grid__col-75\%-l\@xl {
       grid-column: 1 / span 9;
     }
 
-    .dcf-o-grid__col-75\%-r\@xl {
+    .dcf-grid__col-75\%-r\@xl {
       grid-column: span 9 / -1;
     }
 

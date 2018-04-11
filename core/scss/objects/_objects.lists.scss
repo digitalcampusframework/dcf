@@ -4,21 +4,21 @@
 
 
 // !Bare List
-.dcf-o-list-bare {
+.dcf-list-bare {
   list-style: none;
   padding-left: 0;
 }
 
-// .dcf-o-list-bare li::before {
+// .dcf-list-bare li::before {
 //   content: "\200B"; // add zero-width space
 // }
 
 
 // !Inline List
-.dcf-o-list-inline-item {
+.dcf-list-inline-item {
   display: inline-block;
 }
 
-.dcf-o-list-inline-item:not(:last-child) {
+.dcf-list-inline-item:not(:last-child) {
   @include mr2;
 }

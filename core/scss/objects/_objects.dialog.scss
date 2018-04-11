@@ -3,7 +3,7 @@
 ///////////////////////////
 
 
-.dcf-o-dialog {
+.dcf-dialog {
   background-color: #fff;
   border: 1px solid transparent; // prevent margin collapse
   @include ml2;
@@ -19,7 +19,7 @@
 //   .dcf-o-dialog__footer {
 //   }
 
-  .dcf-o-dialog__close {
+  .dcf-dialog__close {
     border: 0;
     padding-bottom: 0;
     @include pl3;

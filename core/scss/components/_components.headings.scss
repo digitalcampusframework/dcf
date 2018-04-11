@@ -4,12 +4,12 @@
 
 
 // !Headings
-.dcf-c-h1,
-.dcf-c-h2,
-.dcf-c-h3,
-.dcf-c-h4,
-.dcf-c-h5,
-.dcf-c-h6 {
+.dcf-h1,
+.dcf-h2,
+.dcf-h3,
+.dcf-h4,
+.dcf-h5,
+.dcf-h6 {
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
   @include lh2;
@@ -26,7 +26,7 @@
 
 
 // !Subheads
-.dcf-c-subhead {
+.dcf-subhead {
   display: block;
   font-size: #{ms(-2)}rem; // .75rem
   @include mb4;

@@ -3,28 +3,28 @@
 //////////////////////////////
 
 
-// .dcf-c-hero {
+// .dcf-hero {
 //
 // }
 //
-// .dcf-c-hero__fg {
+// .dcf-hero__fg {
 //
 // }
 //
-// .dcf-c-hero__bg {
+// .dcf-hero__bg {
 //
 // }
 //
-// .dcf-c-hero__video {
+// .dcf-hero__video {
 //
 // }
 //
-// .dcf-c-hero__img {
+// .dcf-hero__img {
 //
 // }
 
-.dcf-c-hero video,
-.dcf-c-hero img {
+.dcf-hero video,
+.dcf-hero img {
   display: block;
   width: 100%;
 
@@ -37,19 +37,19 @@
 
 @include mq(md) {
 
-  .dcf-c-hero {
+  .dcf-hero {
     height: 75vh;
     min-height: #{ms(24)}em; // 31.475em
     position: relative;
   }
 
-  .dcf-c-hero__layer {
+  .dcf-hero__layer {
     height: 100%;
     position: absolute;
     width: 100%;
   }
 
-  .dcf-c-hero__fg {
+  .dcf-hero__fg {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@
     z-index: 2;
   }
 
-  .dcf-c-hero__bg {
+  .dcf-hero__bg {
     overflow: hidden;
     z-index: 1;
   }

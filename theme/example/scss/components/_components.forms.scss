@@ -3,13 +3,13 @@
 //////////////////////////////
 
 
-.example .dcf-c-form-group {
+.example .dcf-form-group {
   @include mb4;
 }
 
 
 // !Input: Text
-.example .dcf-c-input-text {
+.example .dcf-input-text {
   border: 1px solid $color-border;
   border-radius: $roundrect;
   box-shadow: inset 0 1px 2px fade-out($color-border,1);
@@ -21,39 +21,39 @@
 }
 
 
-.example .dcf-c-input-text:hover {
+.example .dcf-input-text:hover {
   border-color: $color-border-hover;
   box-shadow: inset 0 1px 2px fade-out($color-border,.5);
   transition: border-color $hover-on, box-shadow $hover-on;
 }
 
 
-.example .dcf-c-input-text:focus {
+.example .dcf-input-text:focus {
   border-color: $color-button;
   outline: none;
 }
 
 
-.example .dcf-c-label + .dcf-c-input-text {
+.example .dcf-label + .dcf-input-text {
   @include mt1;
 }
 
 
 // !Input: Control
-.example .dcf-c-input-control {
+.example .dcf-input-control {
   @include mr1;
 }
 
 
 // !Input: File
-.example .dcf-c-input-file {
+.example .dcf-input-file {
   @include mb2;
   @include mt2;
 }
 
 
 // !Required
-.example .dcf-c-required {
+.example .dcf-required {
   color: #d00;
   @include txt-sm;
   font-style: italic;
@@ -62,7 +62,7 @@
 
 
 // !Form Help
-.example .dcf-c-form-help {
+.example .dcf-form-help {
   color: $color-light-text;
   @include txt-sm;
   @include mt1;
@@ -75,7 +75,7 @@
 
 // Container used for styling the custom select, the buttom class below adds the
 // bg gradient, corners, etc.
-.example .dcf-c-input-select {
+.example .dcf-input-select {
   display: table;
   position: relative;
   @include mt1;
@@ -91,7 +91,7 @@
 
 // This is the native select, we're making everything but the text invisible so
 // we can see the button styles in the wrapper
-.example .dcf-c-input-select select {
+.example .dcf-input-select select {
 	@include rounded;
   box-sizing: border-box;
 	color: $color-body;
@@ -114,7 +114,7 @@
 
 // Custom arrow sits on top of the select - could be an image, SVG, icon font,
 // etc. or the arrow could just baked into the bg image on the select.
-.example .dcf-c-input-select::after {
+.example .dcf-input-select::after {
 	content: ' ';
   display: none; // These hacks make the select behind the arrow clickable in some browsers
 	pointer-events: none; // These hacks make the select behind the arrow clickable in some browsers
@@ -129,7 +129,7 @@
 @supports (-webkit-appearance: none) or (appearance: none) or ((-moz-appearance: none) and (mask-type: alpha)) {
 
 	// Show custom arrow
-	.example .dcf-c-input-select::after {
+	.example .dcf-input-select::after {
   	border-left: 4px solid transparent;
   	border-right: 4px solid transparent;
   	border-top: 8px solid $color-body;
@@ -140,7 +140,7 @@
 	}
 
 	// Remove select styling
-	.example .dcf-c-input-select select {
+	.example .dcf-input-select select {
     appearance: none;
 		// inside @supports so that iOS <= 8 display the native arrow
     background: none; // Match-04
@@ -149,20 +149,20 @@
 		padding-right: 3em; // Match-01
 	}
 
-	.example .dcf-c-input-select select:focus {
+	.example .dcf-input-select select:focus {
 		border-color: #aaa; // Match-03
 	}
 
 }
 
 // Hover style
-.example .dcf-c-input-select:hover {
+.example .dcf-input-select:hover {
 	border-color: $color-border-hover;
   transition: border-color $hover-on;
 }
 
 // Focus style
-.example .dcf-c-input-select select:focus {
+.example .dcf-input-select select:focus {
 	// It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow
 	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
 	box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -171,14 +171,14 @@
 
 @supports ( box-shadow: none ) {
 
-	.example .dcf-c-input-select select:focus {
+	.example .dcf-input-select select:focus {
 		outline: none;
 	}
 
 }
 
 // Set options to normal weight
-.example .dcf-c-input-select option {
+.example .dcf-input-select option {
 	font-weight: normal;
 }
 
@@ -190,26 +190,26 @@
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
-	.example .dcf-c-input-select select {
+	.example .dcf-input-select select {
     background: none; // Match-04
 		border: 1px solid transparent; // Match-05
 		padding-right: 3em; // Match-01
 	}
 
-	.example .dcf-c-input-select select::-ms-expand {
+	.example .dcf-input-select select::-ms-expand {
 		display: none;
 	}
 
-	.example .dcf-c-input-select select:focus {
+	.example .dcf-input-select select:focus {
 		border-color: #aaa; // Match-03
 	}
 
-	.example .dcf-c-input-select select:focus::-ms-value {
+	.example .dcf-input-select select:focus::-ms-value {
 		background-color: transparent;
 		color: #222; // Match-02
 	}
 
-	.example .dcf-c-input-select::after {
+	.example .dcf-input-select::after {
 		display: block;
 	}
 

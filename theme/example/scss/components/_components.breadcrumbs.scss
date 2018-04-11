@@ -3,12 +3,12 @@
 ////////////////////////////////////
 
 
-.example .dcf-c-breadcrumbs li:not(:last-child) {
+.example .dcf-breadcrumbs li:not(:last-child) {
   @include mr3;
 }
 
 
-.example .dcf-c-breadcrumbs li:not(:last-child)::after {
+.example .dcf-breadcrumbs li:not(:last-child)::after {
   border-bottom: #{ms(-8)}em solid transparent; // .32em
   border-left: #{ms(-8)}em solid $color-breadcrumb; // .32em
   border-top: #{ms(-8)}em solid transparent; // .32em

@@ -4,39 +4,39 @@
 
 
 // !None
-.dcf-u-none { @include none(!important); }
+.dcf-none { @include none(!important); }
 
 
 // !Block
-.dcf-u-block { @include block(!important); }
+.dcf-block { @include block(!important); }
 
 
 // !Inline
-.dcf-u-inline { @include inline(!important); }
+.dcf-inline { @include inline(!important); }
 
 
 // !Inline-Block
-.dcf-u-inlineblock { @include inlineblock(!important); }
+.dcf-inlineblock { @include inlineblock(!important); }
 
 
 // !Table
-.dcf-u-table { @include table(!important); }
+.dcf-table { @include table(!important); }
 
 
 // !Table Cell
-.dcf-u-tablecell { @include tablecell(!important); }
+.dcf-tablecell { @include tablecell(!important); }
 
 
 // !Flex
-.dcf-u-flex { @include flex(!important); }
+.dcf-flex { @include flex(!important); }
 
 
 // !Inline-Flex
-.dcf-u-inlineflex { @include inlineflex(!important); }
+.dcf-inlineflex { @include inlineflex(!important); }
 
 
 // !Grid
-.dcf-u-grid {
+.dcf-grid {
 
   @supports (display: grid) {
     @include grid(!important);
@@ -46,7 +46,7 @@
 
 
 // !Inline-Grid
-.dcf-u-inlinegrid {
+.dcf-inlinegrid {
 
   @supports (display: inline-grid) {
     @include inlinegrid(!important);

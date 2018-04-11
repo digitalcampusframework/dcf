@@ -4,7 +4,7 @@
 
 
 // !Default (Roundrect) Badges
-.dcf-c-badge {
+.dcf-badge {
   background-color: $color-badge;
   color: #fff;
   display: inline-block;
@@ -17,7 +17,7 @@
   white-space: nowrap;
 }
 
-.dcf-c-badge--roundrect {
+.dcf-badge--roundrect {
   @include rounded;
   @include pl1;
   @include pr1;
@@ -25,7 +25,7 @@
 
 
 // !Pill Badges
-.dcf-c-badge--pill {
+.dcf-badge--pill {
   border-radius: $pill;
   @include pl2;
   @include pr2;

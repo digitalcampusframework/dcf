@@ -4,13 +4,13 @@
 
 
 // !Lead Paragraphs
-.dcf-c-lead {
+.dcf-lead {
   @include txt-h6;
 }
 
 
 // !Drop Caps
-.dcf-c-dropcap::first-letter {
+.dcf-dropcap::first-letter {
   float: left;
   // apply custom styling in theme _components.paragraphs
 }

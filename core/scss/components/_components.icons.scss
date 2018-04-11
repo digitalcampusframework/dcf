@@ -3,25 +3,25 @@
 /////////////////////////////
 
 
-a .dcf-c-icon,
-button .dcf-c-icon {
+a .dcf-icon,
+button .dcf-icon {
   fill: currentColor;
 }
 
 
-.dcf-c-icon--inline {
+.dcf-icon--inline {
   height: #{ms(0)}em; // 1em
   width: #{ms(0)}em; // 1em
 }
 
 
-.dcf-c-icon--x {
+.dcf-icon--x {
   position: relative;
   top: #{ms(-14)}em; // .13em
 }
 
 
-.dcf-c-icon--hang {
+.dcf-icon--hang {
   left: 0;
   position: absolute;
 }
