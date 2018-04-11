@@ -1751,9 +1751,6 @@ button .dcf-icon {
   letter-spacing: 0.01em;
   text-transform: uppercase; }
 
-.example .dcf-pagination-item + .dcf-pagination-item .dcf-btn {
-  margin-left: -1px; }
-
 .example .dcf-dropcap::first-letter {
   font-size: 4.74074em;
   line-height: 0.63281;
