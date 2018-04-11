@@ -1711,7 +1711,7 @@ button .dcf-icon {
 .example .dcf-subhead {
   letter-spacing: 0.1em; }
 
-.example .dcf-icon--hang {
+.example .dcf-icon-hang {
   top: 0.17798rem; }
 
 .example .dcf-input-group .dcf-input-text:not(:first-child) {
