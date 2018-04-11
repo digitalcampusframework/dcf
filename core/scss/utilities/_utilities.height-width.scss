@@ -4,52 +4,52 @@
 
 
 // !Height
-.dcf-height0 { @include height0(!important); }
-.dcf-height1 { @include height1(!important); }
-.dcf-height2 { @include height2(!important); }
-.dcf-height3 { @include height3(!important); }
-.dcf-height4 { @include height4(!important); }
-.dcf-height5 { @include height5(!important); }
-.dcf-height6 { @include height6(!important); }
-.dcf-height7 { @include height7(!important); }
-.dcf-height8 { @include height8(!important); }
-.dcf-height9 { @include height9(!important); }
-.dcf-height10 { @include height10(!important); }
-.dcf-height100\% { @include height100pc(!important); } // .dcf-height100%
-.dcf-height100vh { @include height100vh(!important); }
+.dcf-h-0 { @include h-0(!important); }
+.dcf-h-1 { @include h-1(!important); }
+.dcf-h-2 { @include h-2(!important); }
+.dcf-h-3 { @include h-3(!important); }
+.dcf-h-4 { @include h-4(!important); }
+.dcf-h-5 { @include h-5(!important); }
+.dcf-h-6 { @include h-6(!important); }
+.dcf-h-7 { @include h-7(!important); }
+.dcf-h-8 { @include h-8(!important); }
+.dcf-h-9 { @include h-9(!important); }
+.dcf-h-10 { @include h-10(!important); }
+.dcf-h-100\% { @include h-100pc(!important); } // .dcf-h-100%
+.dcf-h-100vh { @include h-100vh(!important); }
 
 
 // !Min-Height
-.dcf-height-min0 { @include height-min0(!important); }
-// .dcf-height-min100\% { @include min-h100pc(!important); } // .dcf-height-min100%
+.dcf-h-min-0 { @include h-min-0(!important); }
+// .dcf-h-min-100\% { @include h-min-100pc(!important); } // .dcf-h-min-100%
 
 
 // !Max-Height
-.dcf-height-max100\% { @include height-max100pc(!important); } // .dcf-height-max100%
-.dcf-height-max100vh { @include height-max100vh(!important); }
+.dcf-h-max-100\% { @include h-max-100pc(!important); } // .dcf-h-max-100%
+.dcf-h-max-100vh { @include h-max-100vh(!important); }
 
 
 // !Width
-.dcf-width0 { @include width0(!important); }
-.dcf-width1 { @include width1(!important); }
-.dcf-width2 { @include width2(!important); }
-.dcf-width3 { @include width3(!important); }
-.dcf-width4 { @include width4(!important); }
-.dcf-width5 { @include width5(!important); }
-.dcf-width6 { @include width6(!important); }
-.dcf-width7 { @include width7(!important); }
-.dcf-width8 { @include width8(!important); }
-.dcf-width9 { @include width9(!important); }
-.dcf-width10 { @include width10(!important); }
-.dcf-width100\% { @include width100pc(!important); } // .dcf-width100%
-.dcf-width100vw { @include width100vw(!important); }
+.dcf-w-0 { @include w-0(!important); }
+.dcf-w-1 { @include w-1(!important); }
+.dcf-w-2 { @include w-2(!important); }
+.dcf-w-3 { @include w-3(!important); }
+.dcf-w-4 { @include w-4(!important); }
+.dcf-w-5 { @include w-5(!important); }
+.dcf-w-6 { @include w-6(!important); }
+.dcf-w-7 { @include w-7(!important); }
+.dcf-w-8 { @include w-8(!important); }
+.dcf-w-9 { @include w-9(!important); }
+.dcf-w-10 { @include w-10(!important); }
+.dcf-w-100\% { @include w-100pc(!important); } // .dcf-w-100%
+.dcf-w-100vw { @include w-100vw(!important); }
 
 
 // !Min-Width
-.dcf-width-min0 { @include width-min0(!important); }
-// .dcf-width-min100\% { @include min-width-100pc(!important); } // .dcf-width-min100%
+.dcf-w-min-0 { @include w-min-0(!important); }
+// .dcf-w-min-100\% { @include w-min-100pc(!important); } // .dcf-w-min-100%
 
 
 // !Max-Width
-.dcf-width-max100\% { @include width-max100pc(!important); } // .dcf-width-max100%
-.dcf-width-max100vw { @include width-max100vw(!important); }
+.dcf-w-max-100\% { @include w-max-100pc(!important); } // .dcf-w-max-100%
+.dcf-w-max-100vw { @include w-max-100vw(!important); }
