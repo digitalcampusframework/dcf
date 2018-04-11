@@ -1829,6 +1829,51 @@ button .dcf-c-icon {
       -webkit-backdrop-filter: blur(6px) grayscale(33%) !important;
               backdrop-filter: blur(6px) grayscale(33%) !important; } }
 
+.dcf-u-bg-center {
+  background-position: center !important; }
+
+.dcf-u-bg-top {
+  background-position: top !important; }
+
+.dcf-u-bg-right {
+  background-position: right !important; }
+
+.dcf-u-bg-righttop {
+  background-position: right top !important; }
+
+.dcf-u-bg-rightbottom {
+  background-position: right bottom !important; }
+
+.dcf-u-bg-bottom {
+  background-position: bottom !important; }
+
+.dcf-u-bg-left {
+  background-position: left !important; }
+
+.dcf-u-bg-lefttop {
+  background-position: left top !important; }
+
+.dcf-u-bg-leftbottom {
+  background-position: left bottom !important; }
+
+.dcf-u-bg-no-repeat {
+  background-repeat: no-repeat !important; }
+
+.dcf-u-bg-repeat {
+  background-repeat: repeat !important; }
+
+.dcf-u-bg-repeat-x {
+  background-repeat: repeat-x !important; }
+
+.dcf-u-bg-repeat-y {
+  background-repeat: repeat-y !important; }
+
+.dcf-u-bg-contain {
+  background-size: contain !important; }
+
+.dcf-u-bg-cover {
+  background-size: cover !important; }
+
 .dcf-u-bg-none {
   background: none !important; }
 
