@@ -4,40 +4,40 @@
 
 
 // !None
-@mixin none($imp:null) { display: none $imp; }
+@mixin d-none($imp:null) { display: none $imp; }
 
 
 // !Block
-@mixin block($imp:null) { display: block $imp; }
+@mixin d-block($imp:null) { display: block $imp; }
 
 
 // !Inline
-@mixin inline($imp:null) { display: inline $imp; }
+@mixin d-inline($imp:null) { display: inline $imp; }
 
 
 // !Inline-Block
-@mixin inlineblock($imp:null) { display: inline-block $imp; }
+@mixin d-inline-block($imp:null) { display: inline-block $imp; }
 
 
 // !Table
-@mixin table($imp:null) { display: table $imp; }
+@mixin d-table($imp:null) { display: table $imp; }
 
 
 // !Table Cell
-@mixin tablecell($imp:null) { display: table-cell $imp; }
+@mixin d-table-cell($imp:null) { display: table-cell $imp; }
 
 
 // !Flex
-@mixin flex($imp:null) { display: flex $imp; }
+@mixin d-flex($imp:null) { display: flex $imp; }
 
 
 // !Inline-Flex
-@mixin inlineflex($imp:null) { display: inline-flex $imp; }
+@mixin d-inline-flex($imp:null) { display: inline-flex $imp; }
 
 
 // !Grid
-@mixin grid($imp:null) { display: grid $imp; }
+@mixin d-grid($imp:null) { display: grid $imp; }
 
 
 // !Inline-Grid
-@mixin inlinegrid($imp:null) { display: inline-grid $imp; }
+@mixin d-inline-grid($imp:null) { display: inline-grid $imp; }

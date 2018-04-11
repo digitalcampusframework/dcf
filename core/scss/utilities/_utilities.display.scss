@@ -4,52 +4,52 @@
 
 
 // !None
-.dcf-none { @include none(!important); }
+.dcf-d-none { @include d-none(!important); }
 
 
 // !Block
-.dcf-block { @include block(!important); }
+.dcf-d-block { @include d-block(!important); }
 
 
 // !Inline
-.dcf-inline { @include inline(!important); }
+.dcf-d-inline { @include d-inline(!important); }
 
 
 // !Inline-Block
-.dcf-inlineblock { @include inlineblock(!important); }
+.dcf-d-inline-block { @include d-inline-block(!important); }
 
 
 // !Table
-.dcf-table { @include table(!important); }
+.dcf-d-table { @include d-table(!important); }
 
 
 // !Table Cell
-.dcf-tablecell { @include tablecell(!important); }
+.dcf-d-table-cell { @include d-table-cell(!important); }
 
 
 // !Flex
-.dcf-flex { @include flex(!important); }
+.dcf-d-flex { @include d-flex(!important); }
 
 
 // !Inline-Flex
-.dcf-inlineflex { @include inlineflex(!important); }
+.dcf-d-inline-flex { @include d-inline-flex(!important); }
 
 
 // !Grid
-.dcf-grid {
+.dcf-d-grid {
 
   @supports (display: grid) {
-    @include grid(!important);
+    @include d-grid(!important);
   }
 
 }
 
 
 // !Inline-Grid
-.dcf-inlinegrid {
+.dcf-d-inline-grid {
 
   @supports (display: inline-grid) {
-    @include inlinegrid(!important);
+    @include d-inline-grid(!important);
   }
 
 }
