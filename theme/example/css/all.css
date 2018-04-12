@@ -1701,8 +1701,7 @@ button .dcf-icon {
     .example .dcf-header {
       display: grid;
       grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
-      grid-template-columns: 1fr auto auto;
-      grid-column-gap: 2em; }
+      grid-template-columns: 1fr auto auto; }
     .example .dcf-institution-title {
       grid-area: first; }
     .example .dcf-logo {
@@ -2746,123 +2745,123 @@ a.dcf-inverse:active {
 .dcf-stroke-current {
   stroke: currentColor !important; }
 
-.dcf-u-txt-sm {
+.dcf-txt-sm {
   font-size: 0.75em; }
 
-.dcf-u-txt-md {
+.dcf-txt-md {
   font-size: 0.84375em; }
 
-.dcf-u-txt-base {
+.dcf-txt-base {
   font-size: 1em; }
 
-.dcf-u-txt-h6 {
+.dcf-txt-h6 {
   font-size: 1.125em; }
 
-.dcf-u-txt-h5 {
+.dcf-txt-h5 {
   font-size: 1.33333em; }
 
-.dcf-u-txt-h4 {
+.dcf-txt-h4 {
   font-size: 1.5em; }
 
-.dcf-u-txt-h3 {
+.dcf-txt-h3 {
   font-size: 1.77778em; }
 
-.dcf-u-txt-h2 {
+.dcf-txt-h2 {
   font-size: 2.0em; }
 
-.dcf-u-txt-h1 {
+.dcf-txt-h1 {
   font-size: 2.37037em; }
 
-.dcf-u-txt-lg {
+.dcf-txt-lg {
   font-size: 3.16049em; }
 
-.dcf-u-txt-center {
+.dcf-txt-center {
   text-align: center !important; }
 
-.dcf-u-txt-left {
+.dcf-txt-left {
   text-align: left !important; }
 
-.dcf-u-txt-right {
+.dcf-txt-right {
   text-align: right !important; }
 
-.dcf-u-txt-baseline {
+.dcf-txt-baseline {
   vertical-align: baseline !important; }
 
-.dcf-u-txt-top {
+.dcf-txt-top {
   vertical-align: top !important; }
 
-.dcf-u-txt-middle {
+.dcf-txt-middle {
   vertical-align: middle !important; }
 
-.dcf-u-txt-bottom {
+.dcf-txt-bottom {
   vertical-align: bottom !important; }
 
-.dcf-u-txt-texttop {
+.dcf-txt-texttop {
   vertical-align: text-top !important; }
 
-.dcf-u-txt-textbottom {
+.dcf-txt-textbottom {
   vertical-align: text-bottom !important; }
 
-.dcf-u-txt-decor-none {
+.dcf-txt-decor-none {
   text-decoration: none !important; }
 
-.dcf-u-txt-decor-hover {
+.dcf-txt-decor-hover {
   text-decoration: none !important; }
 
-.dcf-u-txt-decor-hover:hover {
+.dcf-txt-decor-hover:hover {
   text-decoration: underline !important; }
 
-.dcf-u-txt-nowrap {
+.dcf-txt-nowrap {
   white-space: nowrap !important; }
 
-.dcf-u-truncate {
+.dcf-truncate {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important; }
 
-.dcf-u-roman {
+.dcf-roman {
   font-style: normal !important; }
 
-.dcf-u-italic {
+.dcf-italic {
   font-style: italic !important; }
 
-.dcf-u-regular {
+.dcf-regular {
   font-weight: normal !important; }
 
-.dcf-u-bold {
+.dcf-bold {
   font-weight: bold !important; }
 
-.dcf-u-ls-0 {
+.dcf-ls-0 {
   letter-spacing: 0 !important; }
 
-.dcf-u-ls-1 {
+.dcf-ls-1 {
   letter-spacing: 0.01em !important; }
 
-.dcf-u-ls-2 {
+.dcf-ls-2 {
   letter-spacing: 0.1em !important; }
 
-.dcf-u-lh-1 {
+.dcf-lh-1 {
   line-height: 1 !important; }
 
-.dcf-u-lh-2 {
+.dcf-lh-2 {
   line-height: 1.125 !important; }
 
-.dcf-u-lh-3 {
+.dcf-lh-3 {
   line-height: 1.33333 !important; }
 
-.dcf-u-lh-4 {
+.dcf-lh-4 {
   line-height: 1.5 !important; }
 
-.dcf-u-capitalize {
+.dcf-capitalize {
   text-transform: capitalize !important; }
 
-.dcf-u-lowercase {
+.dcf-lowercase {
   text-transform: lowercase !important; }
 
-.dcf-u-uppercase {
+.dcf-uppercase {
   text-transform: uppercase !important; }
 
-.dcf-u-case-reset {
+.dcf-case-reset {
   text-transform: none !important; }
 
 .dcf-invisible {
