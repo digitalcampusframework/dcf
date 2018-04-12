@@ -24,16 +24,16 @@
 
 
 // !Pin To Top
-.dcf-pin-t { @include pin-t(!important); }
+.dcf-pin-top { @include pin-top(!important); }
 
 
 // !Pin To Right
-.dcf-pin-r { @include pin-r(!important); }
+.dcf-pin-right { @include pin-right(!important); }
 
 
 // !Pin To Bottom
-.dcf-pin-b { @include pin-b(!important); }
+.dcf-pin-bottom { @include pin-bottom(!important); }
 
 
 // !Pin To Left
-.dcf-pin-l { @include pin-l(!important); }
+.dcf-pin-left { @include pin-left(!important); }

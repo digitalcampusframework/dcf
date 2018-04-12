@@ -2724,16 +2724,16 @@ a.dcf-inverse:active {
     position: -webkit-sticky !important;
     position: sticky !important; } }
 
-.dcf-pin-t {
+.dcf-pin-top {
   top: 0 !important; }
 
-.dcf-pin-r {
+.dcf-pin-right {
   right: 0 !important; }
 
-.dcf-pin-b {
+.dcf-pin-bottom {
   bottom: 0 !important; }
 
-.dcf-pin-l {
+.dcf-pin-left {
   left: 0 !important; }
 
 .dcf-fill-current {
