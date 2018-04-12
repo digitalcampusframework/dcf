@@ -2793,10 +2793,10 @@ a.dcf-inverse:active {
 .dcf-txt-bottom {
   vertical-align: bottom !important; }
 
-.dcf-txt-texttop {
+.dcf-txt-text-top {
   vertical-align: text-top !important; }
 
-.dcf-txt-textbottom {
+.dcf-txt-text-bottom {
   vertical-align: text-bottom !important; }
 
 .dcf-txt-decor-none {

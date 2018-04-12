@@ -27,8 +27,8 @@
 .dcf-txt-top { @include txt-top(!important); }
 .dcf-txt-middle { @include txt-middle(!important); }
 .dcf-txt-bottom { @include txt-bottom(!important); }
-.dcf-txt-texttop { @include txt-texttop(!important); }
-.dcf-txt-textbottom { @include txt-textbottom(!important); }
+.dcf-txt-text-top { @include txt-text-top(!important); }
+.dcf-txt-text-bottom { @include txt-text-bottom(!important); }
 
 
 // Text Decoration

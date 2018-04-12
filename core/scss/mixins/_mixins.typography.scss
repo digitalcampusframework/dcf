@@ -27,8 +27,8 @@
 @mixin txt-top($imp:null) { vertical-align: top $imp; }
 @mixin txt-middle($imp:null) { vertical-align: middle $imp; }
 @mixin txt-bottom($imp:null) { vertical-align: bottom $imp; }
-@mixin txt-texttop($imp:null) { vertical-align: text-top $imp; }
-@mixin txt-textbottom($imp:null) { vertical-align: text-bottom $imp; }
+@mixin txt-text-top($imp:null) { vertical-align: text-top $imp; }
+@mixin txt-text-bottom($imp:null) { vertical-align: text-bottom $imp; }
 
 
 // Text Decoration
