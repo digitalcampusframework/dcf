@@ -1524,10 +1524,8 @@ button .dcf-icon {
 
 @supports (display: grid) {
   .example .dcf-footer-local {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); }
   .example .dcf-footer-global {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); } }
 
 .example .dcf-footer-local {
@@ -1699,7 +1697,6 @@ button .dcf-icon {
 @media only screen and (min-width: 55.925em) {
   @supports (display: grid) {
     .example .dcf-header {
-      display: grid;
       grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
       grid-template-columns: 1fr auto auto; }
     .example .dcf-institution-title {

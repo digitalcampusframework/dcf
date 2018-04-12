@@ -25,10 +25,8 @@
   @supports (display: grid) {
 
     .example .dcf-header {
-      display: grid;
       grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
       grid-template-columns: 1fr auto auto;
-      grid-column-gap: 2em;
     }
 
     .example .dcf-institution-title {
