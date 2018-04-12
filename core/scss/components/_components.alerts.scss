@@ -3,22 +3,22 @@
 //////////////////////////////
 
 
-.dcf-c-alert {
+.dcf-alert {
   display: grid;
   grid-template-areas: "header footer" "msg footer";
 }
 
 
-.dcf-c-alert__header {
+.dcf-alert-header {
   grid-area: header;
 }
 
 
-.dcf-c-alert__msg {
+.dcf-alert-msg {
   grid-area: msg;
 }
 
 
-.dcf-c-alert__footer {
+.dcf-alert-footer {
   grid-area: footer;
 }

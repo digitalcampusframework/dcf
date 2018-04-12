@@ -4,24 +4,24 @@
 
 
 // !Visible
-.dcf-u-overflow-visible { @include overflow-visible(!important); }
+.dcf-overflow-visible { @include overflow-visible(!important); }
 
 
 // !Hidden
-.dcf-u-overflow-hidden { @include overflow-hidden(!important); }
+.dcf-overflow-hidden { @include overflow-hidden(!important); }
 
 
 // !Auto
-.dcf-u-overflow-auto { @include overflow-auto(!important); }
+.dcf-overflow-auto { @include overflow-auto(!important); }
 
 
 // !Scroll
-.dcf-u-overflow-scroll { @include overflow-scroll(!important); }
+.dcf-overflow-scroll { @include overflow-scroll(!important); }
 
 
 // !Overflow-X: Scroll
-.dcf-u-overflow-x-scroll { @include overflow-x-scroll(!important); }
+.dcf-overflow-x-scroll { @include overflow-x-scroll(!important); }
 
 
 // !Overflow-Y: Scroll
-.dcf-u-overflow-y-scroll { @include overflow-y-scroll(!important); }
+.dcf-overflow-y-scroll { @include overflow-y-scroll(!important); }

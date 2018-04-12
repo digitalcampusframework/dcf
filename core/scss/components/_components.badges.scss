@@ -4,12 +4,12 @@
 
 
 // !Default (Roundrect) Badges
-.dcf-c-badge {
+.dcf-badge {
   background-color: $color-badge;
   color: #fff;
   display: inline-block;
   font-size: #{ms(-4)}em; // .56em
-  @include lh3;
+  @include lh-4;
   padding-bottom: #{ms(-18)}rem; // .08rem
   padding-top: #{ms(-18)}rem; // .08rem
   text-align: center;
@@ -17,16 +17,16 @@
   white-space: nowrap;
 }
 
-.dcf-c-badge--roundrect {
+.dcf-badge-roundrect {
   @include rounded;
-  @include pl1;
-  @include pr1;
+  @include pl-1;
+  @include pr-1;
 }
 
 
 // !Pill Badges
-.dcf-c-badge--pill {
+.dcf-badge-pill {
   border-radius: $pill;
-  @include pl2;
-  @include pr2;
+  @include pl-2;
+  @include pr-2;
 }

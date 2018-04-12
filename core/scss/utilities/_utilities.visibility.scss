@@ -4,19 +4,19 @@
 
 
 // !Invisible
-.dcf-u-invisible { @include invisible(!important); }
+.dcf-invisible { @include invisible(!important); }
 
 
 // !Visible
-.dcf-u-visible { @include visible(!important); }
+.dcf-visible { @include visible(!important); }
 
 
 // !Screen Reader Only
-.dcf-u-sr-only { @include sr-only(!important); }
+.dcf-sr-only { @include sr-only(!important); }
 
 
 // !Screen Reader Only, Show On Focus
-.dcf-u-sr-only.dcf-u-show-on-focus:active,
-.dcf-u-sr-only.dcf-u-show-on-focus:focus {
+.dcf-sr-only.dcf-show-on-focus:active,
+.dcf-sr-only.dcf-show-on-focus:focus {
   @include show-on-focus(!important);
 }

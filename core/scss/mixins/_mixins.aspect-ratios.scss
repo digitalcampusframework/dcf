@@ -17,19 +17,19 @@
 
 
 // !16×9
-@mixin ratio--16x9 { padding-top: 56.25%; }
+@mixin ratio-16x9 { padding-top: 56.25%; }
 
 
 // !4×3
-@mixin ratio--4x3 { padding-top: 75%; }
+@mixin ratio-4x3 { padding-top: 75%; }
 
 
 // !1×1
-@mixin ratio--1x1 { padding-top: 100%; }
+@mixin ratio-1x1 { padding-top: 100%; }
 
 
 // Child
-@mixin ratio__child {
+@mixin ratio-child {
   bottom: 0;
   left: 0;
   position: absolute;

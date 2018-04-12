@@ -4,27 +4,27 @@
 
 
 // !Individual Card
-.dcf-c-card {
+.dcf-card {
   margin-bottom: 0;
 }
 
 
 // !Card Image
-.dcf-c-card img {
+.dcf-card img {
   display: block;
   width: 100%;
 }
 
 
 // !Card Block
-.dcf-c-card__block {
-  @include pb5;
-  @include pl6;
-  @include pt5;
-  @include pr6;
+.dcf-card-block {
+  @include pb-5;
+  @include pl-6;
+  @include pt-5;
+  @include pr-6;
 }
 
 
-.dcf-c-card-block p:last-child {
+.dcf-card-block p:last-child {
   margin-bottom: 0;
 }

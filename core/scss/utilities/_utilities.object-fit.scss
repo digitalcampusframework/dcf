@@ -4,14 +4,14 @@
 
 
 // !Object-Fit Check
-.dcf-js-objfit-check::before { @include objfit-check(!important); }
+.dcf-obj-fit-check::before { @include obj-fit-check(!important); }
 
 
 // !Contain
-.dcf-u-objfit-contain { @include objfit-contain(!important); }
-.dcf-u-objfit-contain-fallback { @include objfit-contain-fallback(!important); }
+.dcf-obj-fit-contain { @include obj-fit-contain(!important); }
+.dcf-obj-fit-contain-fallback { @include obj-fit-contain-fallback(!important); }
 
 
 // !Cover
-.dcf-u-objfit-cover { @include objfit-cover(!important); }
-.dcf-u-objfit-cover-fallback { @include objfit-cover-fallback(!important); }
+.dcf-obj-fit-cover { @include obj-fit-cover(!important); }
+.dcf-obj-fit-cover-fallback { @include obj-fit-cover-fallback(!important); }

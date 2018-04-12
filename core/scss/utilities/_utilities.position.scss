@@ -4,36 +4,36 @@
 
 
 // !Static
-.dcf-u-static { @include static(!important); }
+.dcf-static { @include static(!important); }
 
 
 // !Relative
-.dcf-u-relative { @include relative(!important); }
+.dcf-relative { @include relative(!important); }
 
 
 // !Absolute
-.dcf-u-absolute { @include absolute(!important); }
+.dcf-absolute { @include absolute(!important); }
 
 
 // !Fixed
-.dcf-u-fixed { @include fixed(!important); }
+.dcf-fixed { @include fixed(!important); }
 
 
 // !Sticky
-.dcf-u-sticky { @include sticky(!important); }
+.dcf-sticky { @include sticky(!important); }
 
 
 // !Pin To Top
-.dcf-u-pin-t { @include pin-t(!important); }
+.dcf-pin-top { @include pin-top(!important); }
 
 
 // !Pin To Right
-.dcf-u-pin-r { @include pin-r(!important); }
+.dcf-pin-right { @include pin-right(!important); }
 
 
 // !Pin To Bottom
-.dcf-u-pin-b { @include pin-b(!important); }
+.dcf-pin-bottom { @include pin-bottom(!important); }
 
 
 // !Pin To Left
-.dcf-u-pin-l { @include pin-l(!important); }
+.dcf-pin-left { @include pin-left(!important); }

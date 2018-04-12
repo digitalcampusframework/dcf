@@ -7,7 +7,7 @@ form,
 input,
 textarea {
   @include txt-base;
-  @include lh3;
+  @include lh-4;
 }
 
 
@@ -30,7 +30,7 @@ label {
 
 select {
   display: block;
-  @include mb4;
+  @include mb-4;
 }
 
 

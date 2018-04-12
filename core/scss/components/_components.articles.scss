@@ -3,29 +3,29 @@
 ////////////////////////////////
 
 
-.dcf-c-article__body dl {
-  @include pl6;
+.dcf-article-body dl {
+  @include pl-6;
 }
 
 
-.dcf-c-article__body dl,
-.dcf-c-article__body ol,
-.dcf-c-article__body ul {
+.dcf-article-body dl,
+.dcf-article-body ol,
+.dcf-article-body ul {
   margin-bottom: 0;
 }
 
 
-.dcf-c-article p,
-.dcf-c-article dl,
-.dcf-c-article ol,
-.dcf-c-article ul,
-.dcf-c-article blockquote {
+.dcf-article p,
+.dcf-article dl,
+.dcf-article ol,
+.dcf-article ul,
+.dcf-article blockquote {
 
   + p,
   + dl,
   + ol,
   + ul {
-    @include mt1;
+    @include mt-1;
   }
 
   + p {
@@ -35,12 +35,12 @@
 }
 
 
-.dcf-c-article__body p:not(.dcf-c-lead) {
+.dcf-article-body p:not(.dcf-lead) {
   margin-bottom: 0;
 }
 
 
-.dcf-c-author-img img {
+.dcf-author-img img {
   display: block;
   width: #{ms(8)}em; // 3.16em
 }
@@ -48,10 +48,10 @@
 
 @include mq(sm, max, width) {
 
-  .dcf-c-article__share li {
+  .dcf-article-share li {
     display: inline-flex;
     margin-bottom: 0;
-    @include mr4;
+    @include mr-4;
   }
 
 }
@@ -59,12 +59,12 @@
 
 @include mq(sm, min, width) {
 
-  .dcf-c-article__share div[role="heading"] {
-    @include mb5;
+  .dcf-article-share div[role="heading"] {
+    @include mb-5;
   }
 
-  .dcf-c-article__share li {
-    @include mb4;
+  .dcf-article-share li {
+    @include mb-4;
   }
 
 }
@@ -74,21 +74,21 @@
 
   @include mq(sm, min, width) {
 
-    .dcf-c-article {
+    .dcf-article {
       display: grid;
       grid-template-columns: #{ms(8)}em 1fr; // 3.16em
       grid-template-areas: "share header" "share body" "footer footer";
     }
 
-    .dcf-c-article__header {
+    .dcf-article-header {
       grid-area: header;
     }
 
-    .dcf-c-article__body {
+    .dcf-article-body {
       grid-area: body;
     }
 
-    .dcf-c-article__share {
+    .dcf-article-share {
       grid-area: share;
 
       .dcf-u-sticky {
@@ -96,12 +96,12 @@
       }
 
       div[role="heading"] {
-        @include mb6;
+        @include mb-6;
       }
 
     }
 
-    .dcf-c-article__footer {
+    .dcf-article-footer {
       grid-area: footer;
     }
 

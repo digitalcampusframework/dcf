@@ -3,25 +3,25 @@
 //////////////////////////////////////
 
 
-.example .dcf-c-btn-group .dcf-c-btn--primary + .dcf-c-btn--primary {
+.example .dcf-btn-group .dcf-btn-primary + .dcf-btn-primary {
   margin-left: 1px;
 }
 
-.example .dcf-c-btn-group .dcf-c-btn--secondary + .dcf-c-btn--secondary {
+.example .dcf-btn-group .dcf-btn-secondary + .dcf-btn-secondary {
   margin-left: -1px;
 }
 
 
-.example .dcf-c-btn-group > .dcf-c-btn:first-child {
+.example .dcf-btn-group > .dcf-btn:first-child {
   @include sharp-right;
 }
 
 
-.example .dcf-c-btn-group > .dcf-c-btn:last-child {
+.example .dcf-btn-group > .dcf-btn:last-child {
   @include sharp-left;
 }
 
 
-.example .dcf-c-btn-group > .dcf-c-btn:not(:first-child):not(:last-child) {
+.example .dcf-btn-group > .dcf-btn:not(:first-child):not(:last-child) {
   @include sharp;
 }

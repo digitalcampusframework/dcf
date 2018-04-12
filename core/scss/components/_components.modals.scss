@@ -4,7 +4,7 @@
 
 
 // !Modal Overlay
-.dcf-c-modal__overlay {
+.dcf-modal-overlay {
   align-items: center;
   display: flex;
   height: 100%;
@@ -30,7 +30,7 @@
 
 
 // !Modal Content
-.dcf-c-modal__content {
+.dcf-modal-content {
   height: auto;
   max-height: 100%;
   width: 90%;
@@ -38,9 +38,9 @@
 
 
 // !Modal Controls
-.dcf-c-close-modal {
+.dcf-close-modal {
   @include bg-transparent;
-  @include b0;
+  @include b-0;
   cursor: pointer;
   position: absolute;
   right: 1%;

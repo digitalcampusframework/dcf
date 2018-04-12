@@ -3,26 +3,26 @@
 //////////////////////////////
 
 
-// Flexbox display rules (.dcf-u-flex and .dcf-u-inlineflex) located in _utilities.display
+// Flexbox display rules (.dcf-flex and .dcf-inlineflex) located in _utilities.display
 
 
 // !Direction (Columns and Rows)
-.dcf-u-flex-col { @include flex-col(!important); }
-.dcf-u-flex-colrev { @include flex-colrev(!important); }
-.dcf-u-flex-row { @include flex-row(!important); }
-.dcf-u-flex-rowrev { @include flex-rowrev(!important); }
+.dcf-flex-col { @include flex-col(!important); }
+.dcf-flex-col-rev { @include flex-col-rev(!important); }
+.dcf-flex-row { @include flex-row(!important); }
+.dcf-flex-row-rev { @include flex-row-rev(!important); }
 
 
 // !Wrap
-.dcf-u-flex-wrap { @include flex-wrap(!important); }
-.dcf-u-flex-wraprev { @include flex-wraprev(!important); }
-.dcf-u-flex-nowrap { @include flex-nowrap(!important); }
+.dcf-flex-wrap { @include flex-wrap(!important); }
+.dcf-flex-wrap-rev { @include flex-wrap-rev(!important); }
+.dcf-flex-nowrap { @include flex-nowrap(!important); }
 
 
 // !Grow & Shrink
-.dcf-u-flex-none { @include flex-none(!important); }
-.dcf-u-flex-initial { @include flex-initial(!important); }
-.dcf-u-flex-auto { @include flex-auto(!important); }
-.dcf-u-flex-1 { @include flex-1(!important); }
-.dcf-u-flex-grow1 { @include flex-grow1(!important); }
-.dcf-u-flex-shrink0 { @include flex-shrink0(!important); }
+.dcf-flex-none { @include flex-none(!important); }
+.dcf-flex-initial { @include flex-initial(!important); }
+.dcf-flex-auto { @include flex-auto(!important); }
+.dcf-flex-1 { @include flex-1(!important); }
+.dcf-flex-grow-1 { @include flex-grow-1(!important); }
+.dcf-flex-shrink-0 { @include flex-shrink-0(!important); }

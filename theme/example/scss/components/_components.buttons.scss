@@ -3,41 +3,41 @@
 ////////////////////////////////
 
 
-.example .dcf-c-btn {
+.example .dcf-btn {
   @include rounded;
-  @include pb2;
-  @include pl4;
-  @include pr4;
-  @include pt2;
+  @include pb-2;
+  @include pl-4;
+  @include pr-4;
+  @include pt-2;
 }
 
 
 // !Button Hierarchy
 
 // !Primary Button
-.example .dcf-c-btn--primary,
-.example .dcf-c-btn--primary:link {
+.example .dcf-btn-primary,
+.example .dcf-btn-primary:link {
   background-color: $color-button;
   border: 1px solid $color-button;
   color: #fff;
   transition: border $hover-off, background-color $hover-off;
 }
 
-.example .dcf-c-btn--primary:visited {
+.example .dcf-btn-primary:visited {
   background-color: $color-button-visited;
   border-color: $color-button-visited;
   color: #fff;
 }
 
-.example .dcf-c-btn--primary:hover {
+.example .dcf-btn-primary:hover {
   background-color: $color-button-hover;
   border-color: $color-button-hover;
   color: #fff;
   transition: border $hover-on, background-color $hover-on;
 }
 
-.example .dcf-c-btn--primary:active,
-.example .dcf-c-btn--primary.dcf-c-active {
+.example .dcf-btn-primary:active,
+.example .dcf-btn-primary.dcf-active {
   background-color: $color-button-active;
   border-color: $color-button-active;
   color: #fff;
@@ -45,36 +45,36 @@
 
 
 // !Secondary Button
-.example .dcf-c-btn--secondary,
-.example .dcf-c-btn--secondary:link {
+.example .dcf-btn-secondary,
+.example .dcf-btn-secondary:link {
   background-color: #fff;
   border: 1px solid currentColor;
   color: $color-button;
   transition: all $hover-off;
 }
 
-.example .dcf-c-btn--secondary:visited {
+.example .dcf-btn-secondary:visited {
   border-color: currentColor;
   color: $color-button-visited;
 }
 
-.example .dcf-c-btn--secondary:hover {
+.example .dcf-btn-secondary:hover {
   background-color: lighten($color-button,55%);
   border-color: currentColor;
   color: $color-button-hover;
   transition: all $hover-on;
 }
 
-.example .dcf-c-btn--secondary:active,
-.example .dcf-c-btn--secondary.dcf-c-active {
+.example .dcf-btn-secondary:active,
+.example .dcf-btn-secondary.dcf-active {
   border-color: currentColor;
   color: $color-button-active;
 }
 
 
 // !Tertiary Button
-.example .dcf-c-btn--tertiary,
-.example .dcf-c-btn--tertiary:link {
+.example .dcf-btn-tertiary,
+.example .dcf-btn-tertiary:link {
   background-color: transparent;
   border: 1px solid transparent;
   color: $color-button;
@@ -83,30 +83,30 @@
   transition: color $hover-off;
 }
 
-.example .dcf-c-btn--tertiary:visited {
+.example .dcf-btn-tertiary:visited {
   color: $color-button-visited;
 }
 
-.example .dcf-c-btn--tertiary:hover {
+.example .dcf-btn-tertiary:hover {
   color: $color-button-hover;
   transition: color $hover-on;
 }
 
-.example .dcf-c-btn--tertiary:active,
-.example .dcf-c-btn--tertiary.dcf-c-active {
+.example .dcf-btn-tertiary:active,
+.example .dcf-btn-tertiary.dcf-active {
   color: $color-button-active;
 }
 
 
 // !Inverse Button
-.example .dcf-c-btn--inverse {
+.example .dcf-btn-inverse {
   background-color: rgba(0,0,0,.1);
   border: 1px solid currentColor;
   color: #fff;
   transition: border $hover-off, background-color $hover-off;
 }
 
-.example .dcf-c-btn--inverse:hover {
+.example .dcf-btn-inverse:hover {
   background-color: rgba(0,0,0,.2);
   transition: border $hover-on, background-color $hover-on;
 }

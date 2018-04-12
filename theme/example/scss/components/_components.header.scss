@@ -5,7 +5,7 @@
 
 @include mq(md, max, width) {
 
-  .example .dcf-c-header::after {
+  .example .dcf-header::after {
     @include bg-white;
     bottom: 0;
     box-shadow: 0 0 4px 0 fade-out($color-body, .75);
@@ -24,18 +24,16 @@
 
   @supports (display: grid) {
 
-    .example .dcf-c-header {
-      display: grid;
+    .example .dcf-header {
       grid-template-areas: "first nav2 nav2" "logo search idm" "nav1 nav1 nav1";
       grid-template-columns: 1fr auto auto;
-      grid-column-gap: 2em;
     }
 
-    .example .dcf-c-institution-title {
+    .example .dcf-institution-title {
       grid-area: first;
     }
 
-    .example .dcf-c-logo {
+    .example .dcf-logo {
       grid-area: logo;
     }
 

@@ -4,7 +4,7 @@
 
 
 // !Object-Fit Check
-@mixin objfit-check($imp:null) {
+@mixin obj-fit-check($imp:null) {
 
   @supports (object-fit: cover) {
     content: 'objectfit';
@@ -15,7 +15,7 @@
 
 
 // !Contain
-@mixin objfit-contain($imp:null) {
+@mixin obj-fit-contain($imp:null) {
   height: 100%;
   width: 100%;
 
@@ -26,11 +26,11 @@
 }
 
 
-@mixin objfit-contain-fallback($imp:null) {
+@mixin obj-fit-contain-fallback($imp:null) {
   background-position: 50% 50% $imp;
   background-size: contain $imp;
 
-  .dcf-u-objfit-contain {
+  .dcf-u-obj-fit-contain {
     opacity: 0 $imp;
   }
 
@@ -38,7 +38,7 @@
 
 
 // !Cover
-@mixin objfit-cover($imp:null) {
+@mixin obj-fit-cover($imp:null) {
   height: 100%;
   width: 100%;
 
@@ -49,11 +49,11 @@
 }
 
 
-@mixin objfit-cover-fallback($imp:null) {
+@mixin obj-fit-cover-fallback($imp:null) {
   background-position: 50% 50% $imp;
   background-size: cover $imp;
 
-  .dcf-u-objfit-cover {
+  .dcf-u-obj-fit-cover {
     opacity: 0 $imp;
   }
 

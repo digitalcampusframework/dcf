@@ -4,7 +4,7 @@
 
 
 // !Button
-.dcf-c-btn {
+.dcf-btn {
   cursor: pointer;
   display: inline-block;
 //   font-family: inherit;
@@ -14,20 +14,20 @@
 //   -webkit-appearance: none;
 }
 
-a.dcf-c-btn--primary,
-a.dcf-c-btn--secondary {
+a.dcf-btn-primary,
+a.dcf-btn-secondary {
   text-decoration: none;
 }
 
 
 // !Active
-// .dcf-c-active {
+// .dcf-active {
 //
 // }
 
-// button.dcf-c-active,
-// .dcf-c-btn.dcf-c-active {
-// //   @extend .dcf-c-active;
+// button.dcf-active,
+// .dcf-btn.dcf-active {
+// //   @extend .dcf-active;
 // }
 
 
@@ -35,6 +35,6 @@ a.dcf-c-btn--secondary {
 button:disabled,
 input[type="button"]:disabled,
 input[type="submit"]:disabled,
-.dcf-c-btn:disabled {
+.dcf-btn:disabled {
   @include disabled;
 }

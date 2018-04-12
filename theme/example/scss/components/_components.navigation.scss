@@ -3,8 +3,8 @@
 ///////////////////////////////////
 
 
-.example .dcf-c-nav__primary > ul > li > a {
+.example .dcf-nav-local > ul > li > a {
   font-weight: bold;
-  @include ls1;
+  @include ls-1;
   text-transform: uppercase;
 }

@@ -1,7 +1,7 @@
 // https://github.com/deanhume/lazy-observer-load/blob/master/lazy-load.js
 
 // Get all of the images that are marked up to lazy load
-const images = document.querySelectorAll('.dcf-js-lazy-img');
+const images = document.querySelectorAll('.dcf-lazy-img');
 const config = {
   // If the image gets within 50px in the Y axis, start the download.
 //   rootMargin: '0px 0px 50px 0px',
@@ -23,7 +23,7 @@ if (!('IntersectionObserver' in window)) {
   // foreach() is not supported in IE
   for (let i = 0; i < images.length; i++) {
     let image = images[i];
-    if (image.classList.contains('dcf-js-lazy-img--handled')) {
+    if (image.classList.contains('dcf-lazy-img-handled')) {
       continue;
     }
 
@@ -111,7 +111,7 @@ function onIntersection(entries) {
  */
 function applyImage(img, src) {
   // Prevent this from being lazy loaded a second time.
-  img.classList.add('dcf-js-lazy-img--handled');
+  img.classList.add('dcf-lazy-img-handled');
   img.src = src;
-  img.classList.add('dcf-js-fade-up');
+  img.classList.add('dcf-fade-up');
 }
