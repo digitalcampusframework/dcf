@@ -2179,25 +2179,25 @@ a.dcf-inverse:active {
   content: "" !important;
   display: table !important; }
 
-.dcf-colgap-sm {
+.dcf-col-gap-sm {
   grid-column-gap: 1em !important; }
 
-.dcf-colgap-md {
+.dcf-col-gap-md {
   grid-column-gap: 1.77778em !important; }
 
-.dcf-colgap-lg {
+.dcf-col-gap-lg {
   grid-column-gap: 3.16049em !important; }
 
-.dcf-colgap-vw {
+.dcf-col-gap-vw {
   grid-column-gap: 3.16vw !important; }
 
-.dcf-rowgap-sm {
+.dcf-row-gap-sm {
   grid-row-gap: 1em !important; }
 
-.dcf-rowgap-md {
+.dcf-row-gap-md {
   grid-row-gap: 1.77778em !important; }
 
-.dcf-rowgap-lg {
+.dcf-row-gap-lg {
   grid-row-gap: 3.16049em !important; }
 
 .dcf-h-0 {

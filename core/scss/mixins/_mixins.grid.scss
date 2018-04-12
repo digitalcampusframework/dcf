@@ -7,13 +7,13 @@
 
 
 // !Grid Column Gap
-@mixin colgap-sm($imp:null) { grid-column-gap: $length4 $imp; } // 1em
-@mixin colgap-md($imp:null) { grid-column-gap: $length6 $imp; } // 1.77em
-@mixin colgap-lg($imp:null) { grid-column-gap: $length8 $imp; } // 3.16em
-@mixin colgap-vw($imp:null) { grid-column-gap: 3.16vw $imp; }
+@mixin col-gap-sm($imp:null) { grid-column-gap: $length4 $imp; } // 1em
+@mixin col-gap-md($imp:null) { grid-column-gap: $length6 $imp; } // 1.77em
+@mixin col-gap-lg($imp:null) { grid-column-gap: $length8 $imp; } // 3.16em
+@mixin col-gap-vw($imp:null) { grid-column-gap: 3.16vw $imp; }
 
 
 // !Grid Row Gap
-@mixin rowgap-sm($imp:null) { grid-row-gap: $length4 $imp; } // 1em
-@mixin rowgap-md($imp:null) { grid-row-gap: $length6 $imp; } // 1.77em
-@mixin rowgap-lg($imp:null) { grid-row-gap: $length8 $imp; } // 3.16em
+@mixin row-gap-sm($imp:null) { grid-row-gap: $length4 $imp; } // 1em
+@mixin row-gap-md($imp:null) { grid-row-gap: $length6 $imp; } // 1.77em
+@mixin row-gap-lg($imp:null) { grid-row-gap: $length8 $imp; } // 3.16em
