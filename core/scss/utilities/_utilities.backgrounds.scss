@@ -18,12 +18,12 @@
 .dcf-bg-center { @include bg-center(!important); }
 .dcf-bg-top { @include bg-top(!important); }
 .dcf-bg-right { @include bg-right(!important); }
-.dcf-bg-righttop { @include bg-righttop(!important); }
-.dcf-bg-rightbottom { @include bg-rightbottom(!important); }
+.dcf-bg-right-top { @include bg-right-top(!important); }
+.dcf-bg-right-bottom { @include bg-right-bottom(!important); }
 .dcf-bg-bottom { @include bg-bottom(!important); }
 .dcf-bg-left { @include bg-left(!important); }
-.dcf-bg-lefttop { @include bg-lefttop(!important); }
-.dcf-bg-leftbottom { @include bg-leftbottom(!important); }
+.dcf-bg-left-top { @include bg-left-top(!important); }
+.dcf-bg-left-bottom { @include bg-left-bottom(!important); }
 
 
 // !Repeat
