@@ -2121,7 +2121,7 @@ a.dcf-inverse:active {
   -webkit-box-direction: normal !important;
           flex-direction: column !important; }
 
-.dcf-flex-colrev {
+.dcf-flex-col-rev {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: reverse !important;
           flex-direction: column-reverse !important; }
@@ -2131,7 +2131,7 @@ a.dcf-inverse:active {
   -webkit-box-direction: normal !important;
           flex-direction: row !important; }
 
-.dcf-flex-rowrev {
+.dcf-flex-row-rev {
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: reverse !important;
           flex-direction: row-reverse !important; }
@@ -2139,7 +2139,7 @@ a.dcf-inverse:active {
 .dcf-flex-wrap {
   flex-wrap: wrap !important; }
 
-.dcf-flex-wraprev {
+.dcf-flex-wrap-rev {
   flex-wrap: wrap-reverse !important; }
 
 .dcf-flex-nowrap {
@@ -2161,11 +2161,11 @@ a.dcf-inverse:active {
   -webkit-box-flex: 1 !important;
           flex: 1 !important; }
 
-.dcf-flex-grow1 {
+.dcf-flex-grow-1 {
   -webkit-box-flex: 1 !important;
           flex-grow: 1 !important; }
 
-.dcf-flex-shrink0 {
+.dcf-flex-shrink-0 {
   flex-shrink: 0 !important; }
 
 .dcf-float-right {
