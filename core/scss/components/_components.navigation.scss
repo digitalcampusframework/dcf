@@ -39,15 +39,15 @@
 
 
 
-// !Primary Navigation
-.dcf-nav-primary ul {
+// !Local Navigation
+.dcf-nav-local ul {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
 }
 
 
-.dcf-nav-primary > ul {
+.dcf-nav-local > ul {
 //   @include d-flex;
 //   @include f-col;
   @include txt-sm;
@@ -60,20 +60,20 @@
 
 }
 
-// .dcf-nav-primary > ul >  li {
+// .dcf-nav-local > ul >  li {
 //   @include mb0;
 // }
 //
-// .dcf-nav-primary li:last-child {
+// .dcf-nav-local li:last-child {
 //   @include mb0;
 // }
 
-.dcf-nav-primary ul ul {
+.dcf-nav-local ul ul {
   @include txt-sm;
   @include pt-4;
 }
 
-// .dcf-nav-primary a {
+// .dcf-nav-local a {
 //   @include pr4;
 // }
 
@@ -83,26 +83,26 @@
     display: none;
   }
 
-  .dcf-nav-primary > ul {
+  .dcf-nav-local > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .dcf-nav-primary > ul > li:not(:last-child) {
+  .dcf-nav-local > ul > li:not(:last-child) {
     margin-right: 2vw;
   }
 
 }
 
 
-// !Secondary Navigation
+// !Global Navigation
 
-.dcf-nav-secondary li {
+.dcf-nav-global li {
   display: inline;
 }
 
-.dcf-nav-secondary li:not(:last-child) {
+.dcf-nav-global li:not(:last-child) {
   margin-right: 2vw;
 }
 
@@ -130,17 +130,17 @@
     display: none;
   }
 
-  .dcf-nav-primary {
+  .dcf-nav-local {
     grid-area: nav1;
     position: relative;
   }
 
-  .dcf-nav-primary ul ul {
+  .dcf-nav-local ul ul {
     position: absolute;
     @include sr-only;
   }
 
-  .dcf-nav-secondary {
+  .dcf-nav-global {
 //     @include absolute;
 //     top: calc(1em + 3px);
 //     right: 5vw;

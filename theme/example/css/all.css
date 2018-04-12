@@ -1268,27 +1268,27 @@ button .dcf-icon {
   right: 1%;
   top: 1%; }
 
-.dcf-nav-primary ul {
+.dcf-nav-local ul {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0; }
 
-.dcf-nav-primary > ul {
+.dcf-nav-local > ul {
   font-size: 0.75em; }
   @supports (display: grid) {
-    .dcf-nav-primary > ul {
+    .dcf-nav-local > ul {
       display: grid;
       grid-gap: 1em 5vw;
       grid-template-columns: repeat(auto-fit, minmax(13.31829em, 1fr)); } }
 
-.dcf-nav-primary ul ul {
+.dcf-nav-local ul ul {
   font-size: 0.75em;
   padding-top: 1em; }
 
 @media only screen and (min-width: 55.925em) {
   .dcf-nav-toggle {
     display: none; }
-  .dcf-nav-primary > ul {
+  .dcf-nav-local > ul {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -1296,13 +1296,13 @@ button .dcf-icon {
             flex-direction: row;
     -webkit-box-pack: justify;
             justify-content: space-between; }
-  .dcf-nav-primary > ul > li:not(:last-child) {
+  .dcf-nav-local > ul > li:not(:last-child) {
     margin-right: 2vw; } }
 
-.dcf-nav-secondary li {
+.dcf-nav-global li {
   display: inline; }
 
-.dcf-nav-secondary li:not(:last-child) {
+.dcf-nav-global li:not(:last-child) {
   margin-right: 2vw; }
 
 @media only screen and (max-width: 55.925em) {
@@ -1318,10 +1318,10 @@ button .dcf-icon {
 @media only screen and (min-width: 55.925em) {
   .dcf-nav-toggle {
     display: none; }
-  .dcf-nav-primary {
+  .dcf-nav-local {
     grid-area: nav1;
     position: relative; }
-  .dcf-nav-primary ul ul {
+  .dcf-nav-local ul ul {
     position: absolute;
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -1330,7 +1330,7 @@ button .dcf-icon {
     position: absolute;
     width: 1px;
     word-wrap: normal; }
-  .dcf-nav-secondary {
+  .dcf-nav-global {
     grid-area: nav2; } }
 
 .dcf-lead {
@@ -1738,7 +1738,7 @@ button .dcf-icon {
   border-top-right-radius: 2px;
   border-left-width: 0; }
 
-.example .dcf-nav-primary > ul > li > a {
+.example .dcf-nav-local > ul > li > a {
   font-weight: bold;
   letter-spacing: 0.01em;
   text-transform: uppercase; }
