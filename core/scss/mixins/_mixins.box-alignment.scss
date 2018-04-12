@@ -4,8 +4,8 @@
 
 
 // !Align Items
-@mixin ai-flexstart($imp:null) { align-items: flex-start $imp; }
-@mixin ai-flexend($imp:null) { align-items: flex-end $imp; }
+@mixin ai-flex-start($imp:null) { align-items: flex-start $imp; }
+@mixin ai-flex-end($imp:null) { align-items: flex-end $imp; }
 @mixin ai-center($imp:null) { align-items: center $imp; }
 @mixin ai-baseline($imp:null) { align-items: baseline $imp; }
 @mixin ai-stretch($imp:null) { align-items: stretch $imp; }
@@ -14,8 +14,8 @@
 
 
 // !Align Content
-@mixin ac-flexstart($imp:null) { align-content: flex-start $imp; }
-@mixin ac-flexend($imp:null) { align-content: flex-end $imp; }
+@mixin ac-flex-start($imp:null) { align-content: flex-start $imp; }
+@mixin ac-flex-end($imp:null) { align-content: flex-end $imp; }
 @mixin ac-center($imp:null) { align-content: center $imp; }
 @mixin ac-stretch($imp:null) { align-content: stretch $imp; }
 @mixin ac-around($imp:null) { align-content: space-around $imp; }
@@ -27,8 +27,8 @@
 
 // !Align Self
 @mixin as-auto($imp:null) { align-self: auto $imp; }
-@mixin as-flexstart($imp:null) { align-self: flex-start $imp; }
-@mixin as-flexend($imp:null) { align-self: flex-end $imp; }
+@mixin as-flex-start($imp:null) { align-self: flex-start $imp; }
+@mixin as-flex-end($imp:null) { align-self: flex-end $imp; }
 @mixin as-center($imp:null) { align-self: center $imp; }
 @mixin as-baseline($imp:null) { align-self: baseline $imp; }
 @mixin as-stretch($imp:null) { align-self: stretch $imp; }
@@ -44,8 +44,8 @@
 
 
 // !Justify Content
-@mixin jc-flexstart($imp:null) { justify-content: flex-start $imp; }
-@mixin jc-flexend($imp:null) { justify-content: flex-end $imp; }
+@mixin jc-flex-start($imp:null) { justify-content: flex-start $imp; }
+@mixin jc-flex-end($imp:null) { justify-content: flex-end $imp; }
 @mixin jc-center($imp:null) { justify-content: center $imp; }
 @mixin jc-around($imp:null) { justify-content: space-around $imp; }
 @mixin jc-between($imp:null) { justify-content: space-between $imp; }

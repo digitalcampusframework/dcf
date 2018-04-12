@@ -4,8 +4,8 @@
 
 
 // !Align Items
-.dcf-ai-flexstart { @include ai-flexstart(!important); }
-.dcf-ai-flexend { @include ai-flexend(!important); }
+.dcf-ai-flex-start { @include ai-flex-start(!important); }
+.dcf-ai-flex-end { @include ai-flex-end(!important); }
 .dcf-ai-center { @include ai-center(!important); }
 .dcf-ai-baseline { @include ai-baseline(!important); }
 .dcf-ai-stretch { @include ai-stretch(!important); }
@@ -14,8 +14,8 @@
 
 
 // !Align Content
-.dcf-ac-flexstart { @include ac-flexstart(!important); }
-.dcf-ac-flexend { @include ac-flexend(!important); }
+.dcf-ac-flex-start { @include ac-flex-start(!important); }
+.dcf-ac-flex-end { @include ac-flex-end(!important); }
 .dcf-ac-center { @include ac-center(!important); }
 .dcf-ac-stretch { @include ac-stretch(!important); }
 .dcf-ac-around { @include ac-around(!important); }
@@ -27,8 +27,8 @@
 
 // !Align Self
 .dcf-as-auto { @include as-auto(!important); }
-.dcf-as-flexstart { @include as-flexstart(!important); }
-.dcf-as-flexend { @include as-flexend(!important); }
+.dcf-as-flex-start { @include as-flex-start(!important); }
+.dcf-as-flex-end { @include as-flex-end(!important); }
 .dcf-as-center { @include as-center(!important); }
 .dcf-as-baseline { @include as-baseline(!important); }
 .dcf-as-stretch { @include as-stretch(!important); }
@@ -44,8 +44,8 @@
 
 
 // !Justify Content
-.dcf-jc-flexstart { @include jc-flexstart(!important); }
-.dcf-jc-flexend { @include jc-flexend(!important); }
+.dcf-jc-flex-start { @include jc-flex-start(!important); }
+.dcf-jc-flex-end { @include jc-flex-end(!important); }
 .dcf-jc-center { @include jc-center(!important); }
 .dcf-jc-around { @include jc-around(!important); }
 .dcf-jc-between { @include jc-between(!important); }

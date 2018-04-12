@@ -1924,11 +1924,11 @@ button .dcf-icon {
   border-bottom-left-radius: 2px !important;
   border-top-left-radius: 2px !important; }
 
-.dcf-ai-flexstart {
+.dcf-ai-flex-start {
   -webkit-box-align: start !important;
           align-items: flex-start !important; }
 
-.dcf-ai-flexend {
+.dcf-ai-flex-end {
   -webkit-box-align: end !important;
           align-items: flex-end !important; }
 
@@ -1952,10 +1952,10 @@ button .dcf-icon {
   -webkit-box-align: end !important;
           align-items: end !important; }
 
-.dcf-ac-flexstart {
+.dcf-ac-flex-start {
   align-content: flex-start !important; }
 
-.dcf-ac-flexend {
+.dcf-ac-flex-end {
   align-content: flex-end !important; }
 
 .dcf-ac-center {
@@ -1982,10 +1982,10 @@ button .dcf-icon {
 .dcf-as-auto {
   align-self: auto !important; }
 
-.dcf-as-flexstart {
+.dcf-as-flex-start {
   align-self: flex-start !important; }
 
-.dcf-as-flexend {
+.dcf-as-flex-end {
   align-self: flex-end !important; }
 
 .dcf-as-center {
@@ -2015,11 +2015,11 @@ button .dcf-icon {
 .dcf-ji-stretch {
   justify-items: stretch !important; }
 
-.dcf-jc-flexstart {
+.dcf-jc-flex-start {
   -webkit-box-pack: start !important;
           justify-content: flex-start !important; }
 
-.dcf-jc-flexend {
+.dcf-jc-flex-end {
   -webkit-box-pack: end !important;
           justify-content: flex-end !important; }
 
