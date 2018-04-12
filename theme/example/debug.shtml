@@ -2010,12 +2010,12 @@
             <dt><code>.dcf-bg-center</code></dt><dd>background-position: center</dd>
             <dt><code>.dcf-bg-top</code></dt><dd>background-position: top</dd>
             <dt><code>.dcf-bg-right</code></dt><dd>background-position: right</dd>
-            <dt><code>.dcf-bg-righttop</code></dt><dd>background-position: right top</dd>
-            <dt><code>.dcf-bg-rightbottom</code></dt><dd>background-position: right bottom</dd>
+            <dt><code>.dcf-bg-right-top</code></dt><dd>background-position: right top</dd>
+            <dt><code>.dcf-bg-right-bottom</code></dt><dd>background-position: right bottom</dd>
             <dt><code>.dcf-bg-bottom</code></dt><dd>background-position: bottom</dd>
             <dt><code>.dcf-bg-left</code></dt><dd>background-position: left</dd>
-            <dt><code>.dcf-bg-lefttop</code></dt><dd>background-position: left top</dd>
-            <dt><code>.dcf-bg-leftbottom</code></dt><dd>background-position: left bottom</dd>
+            <dt><code>.dcf-bg-left-top</code></dt><dd>background-position: left top</dd>
+            <dt><code>.dcf-bg-left-bottom</code></dt><dd>background-position: left bottom</dd>
           </dl>
         </div>
         <div>

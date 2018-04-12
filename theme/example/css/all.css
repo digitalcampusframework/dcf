@@ -1827,10 +1827,10 @@ button .dcf-icon {
 .dcf-bg-right {
   background-position: right !important; }
 
-.dcf-bg-righttop {
+.dcf-bg-right-top {
   background-position: right top !important; }
 
-.dcf-bg-rightbottom {
+.dcf-bg-right-bottom {
   background-position: right bottom !important; }
 
 .dcf-bg-bottom {
@@ -1839,10 +1839,10 @@ button .dcf-icon {
 .dcf-bg-left {
   background-position: left !important; }
 
-.dcf-bg-lefttop {
+.dcf-bg-left-top {
   background-position: left top !important; }
 
-.dcf-bg-leftbottom {
+.dcf-bg-left-bottom {
   background-position: left bottom !important; }
 
 .dcf-bg-no-repeat {

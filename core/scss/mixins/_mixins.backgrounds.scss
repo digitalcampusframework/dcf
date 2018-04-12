@@ -30,12 +30,12 @@
 @mixin bg-center($imp:null) { background-position: center $imp; }
 @mixin bg-top($imp:null) { background-position: top $imp; }
 @mixin bg-right($imp:null) { background-position: right $imp; }
-@mixin bg-righttop($imp:null) { background-position: right top $imp; }
-@mixin bg-rightbottom($imp:null) { background-position: right bottom $imp; }
+@mixin bg-right-top($imp:null) { background-position: right top $imp; }
+@mixin bg-right-bottom($imp:null) { background-position: right bottom $imp; }
 @mixin bg-bottom($imp:null) { background-position: bottom $imp; }
 @mixin bg-left($imp:null) { background-position: left $imp; }
-@mixin bg-lefttop($imp:null) { background-position: left top $imp; }
-@mixin bg-leftbottom($imp:null) { background-position: left bottom $imp; }
+@mixin bg-left-top($imp:null) { background-position: left top $imp; }
+@mixin bg-left-bottom($imp:null) { background-position: left bottom $imp; }
 
 
 // !Repeat
