@@ -2,22 +2,11 @@
 // !CORE / MIXINS / OBJECT-FIT
 //////////////////////////////
 
-
-// !Object-Fit Check
-@mixin obj-fit-check($imp:null) {
-
-  @supports (object-fit: cover) {
-    content: 'objectfit';
-    display: none;
-  }
-
-}
-
-
 // !Contain
 @mixin obj-fit-contain($imp:null) {
   height: 100%;
   width: 100%;
+  font-family: 'object-fit: contain;';
 
   @supports (object-fit: contain) {
     object-fit: contain $imp;
@@ -25,36 +14,14 @@
 
 }
 
-
-@mixin obj-fit-contain-fallback($imp:null) {
-  background-position: 50% 50% $imp;
-  background-size: contain $imp;
-
-  .dcf-u-obj-fit-contain {
-    opacity: 0 $imp;
-  }
-
-}
-
-
 // !Cover
 @mixin obj-fit-cover($imp:null) {
   height: 100%;
   width: 100%;
+  font-family: 'object-fit: cover;';
 
   @supports (object-fit: cover) {
     object-fit: cover $imp;
-  }
-
-}
-
-
-@mixin obj-fit-cover-fallback($imp:null) {
-  background-position: 50% 50% $imp;
-  background-size: cover $imp;
-
-  .dcf-u-obj-fit-cover {
-    opacity: 0 $imp;
   }
 
 }

@@ -2,16 +2,8 @@
 // !CORE / UTILITIES / OBJECT-FIT
 /////////////////////////////////
 
-
-// !Object-Fit Check
-.dcf-obj-fit-check::before { @include obj-fit-check(!important); }
-
-
 // !Contain
 .dcf-obj-fit-contain { @include obj-fit-contain(!important); }
-.dcf-obj-fit-contain-fallback { @include obj-fit-contain-fallback(!important); }
-
 
 // !Cover
 .dcf-obj-fit-cover { @include obj-fit-cover(!important); }
-.dcf-obj-fit-cover-fallback { @include obj-fit-cover-fallback(!important); }
