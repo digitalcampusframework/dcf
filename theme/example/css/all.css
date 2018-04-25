@@ -2453,36 +2453,21 @@ a.dcf-inverse:active {
 .dcf-ml-10 {
   margin-left: 5.61866em !important; }
 
-@supports (object-fit: cover) {
-  .dcf-obj-fit-check::before {
-    content: 'objectfit';
-    display: none; } }
-
 .dcf-obj-fit-contain {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-family: 'object-fit: contain;'; }
   @supports (object-fit: contain) {
     .dcf-obj-fit-contain {
       object-fit: contain !important; } }
 
-.dcf-obj-fit-contain-fallback {
-  background-position: 50% 50% !important;
-  background-size: contain !important; }
-  .dcf-obj-fit-contain-fallback .dcf-u-obj-fit-contain {
-    opacity: 0 !important; }
-
 .dcf-obj-fit-cover {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-family: 'object-fit: cover;'; }
   @supports (object-fit: cover) {
     .dcf-obj-fit-cover {
       object-fit: cover !important; } }
-
-.dcf-obj-fit-cover-fallback {
-  background-position: 50% 50% !important;
-  background-size: cover !important; }
-  .dcf-obj-fit-cover-fallback .dcf-u-obj-fit-cover {
-    opacity: 0 !important; }
 
 .dcf-1st {
   -webkit-box-ordinal-group: 2 !important;

@@ -68,7 +68,7 @@
     <!--#include virtual="/dcf/theme/example/includes/global/search.html" -->
   </div>
 
-  <main class="dcf-wrapper dcf-obj-fit-check" id="dcf-main" role="main" tabindex="-1">
+  <main class="dcf-wrapper" id="dcf-main" role="main" tabindex="-1">
 
     <nav class="dcf-breadcrumbs dcf-mt-8" id="dcf-breadcrumbs" role="navigation" aria-label="breadcrumbs">
       <ol class="dcf-list-bare dcf-d-flex dcf-flex-wrap dcf-txt-sm dcf-mb-8">

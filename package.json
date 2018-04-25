@@ -55,6 +55,7 @@
     "> 1% in my stats"
   ],
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "object-fit-images": "^3.2.3"
   }
 }

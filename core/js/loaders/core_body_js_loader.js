@@ -1,6 +1,8 @@
 // object-fit
-const dcf_objectfit = require('../app/object-fit.js');
+const objectFitImages = require('object-fit-images');
 
+//Run it
+objectFitImages();
 
 // lazy load
 const dcf_lazyload = require('../app/lazy-load.js');
