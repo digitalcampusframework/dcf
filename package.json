@@ -29,7 +29,8 @@
     "tar-fs": "^1.16.2"
   },
   "dependencies": {
-    "object-fit-images": "^3.2.3"
+    "object-fit-images": "^3.2.3",
+    "picturefill": "^3.0.2"
   },
   "engines": {
     "node": "node >= 0.10.0"
