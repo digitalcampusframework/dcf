@@ -16,32 +16,23 @@
   },
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
+    "autoprefixer": "^7.2.6",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.10",
     "csso": "^2.1.1",
-    "extract-text-webpack-plugin": "^3.0.2",
     "modularscale-sass": "^3.0.5",
-    "node-sass": "^4.7.2",
-    "postcss-loader": "^2.1.1",
+    "node-sass": "^4.9.0",
     "postcss-normalize": "^4.0.0",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.19.1",
-    "stylelint": "^9.1.1",
+    "stylelint": "^9.2.0",
     "stylelint-no-unsupported-browser-features": "^1.0.1",
-    "stylelint-webpack-plugin": "^0.10.3",
     "sync-exec": "^0.6.2",
-    "tar-fs": "^1.11.1",
-    "webpack": "^3.8.1"
+    "tar-fs": "^1.16.2"
+  },
+  "dependencies": {
+    "object-fit-images": "^3.2.3"
   },
   "engines": {
     "node": "node >= 0.10.0"
-  },
-  "scripts": {
-    "dev": "webpack -d --watch",
-    "prod": "webpack -p"
   },
   "browserslist": [
     "last 1 Chrome version",
@@ -53,9 +44,5 @@
     "BlackBerry >= 4.0",
     "iOS >= 10",
     "> 1% in my stats"
-  ],
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "object-fit-images": "^3.2.3"
-  }
+  ]
 }
