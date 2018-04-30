@@ -103,7 +103,6 @@
     <!-- !General -->
     <section class="dcf-pt-10 dcf-mb-10" id="example-general">
       <h2>General</h2>
-      <p></p>
       <ul class="dcf-mt-6">
         <li><a href="#example-general-breakpoints">Breakpoints</a></li>
         <li><a href="#example-general-modular-scale">Modular Scale</a></li>
@@ -2395,10 +2394,10 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-justify-self">Justify Self</h4>
           <dl>
-            <dt><code>.dcf-center</code></dt><dd>justify-self: center</dd>
-            <dt><code>.dcf-stretch</code></dt><dd>justify-self: stretch</dd>
-            <dt><code>.dcf-start</code></dt><dd>justify-self: start</dd>
-            <dt><code>.dcf-end</code></dt><dd>justify-self: end</dd>
+            <dt><code>.dcf-js-center</code></dt><dd>justify-self: center</dd>
+            <dt><code>.dcf-js-stretch</code></dt><dd>justify-self: stretch</dd>
+            <dt><code>.dcf-js-start</code></dt><dd>justify-self: start</dd>
+            <dt><code>.dcf-js-end</code></dt><dd>justify-self: end</dd>
           </dl>
         </div>
       </div>
