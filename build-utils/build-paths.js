@@ -7,7 +7,7 @@ const scssPath = path.join(commonPaths.srcPath, 'scss');
 
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
-	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, `${dialogPolyfill}`],
+	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, `${dialogPolyfill}`], // better to use unminified vendor files since all files will be concatenated & minified
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	scssGlob: `${scssPath}/**/*.scss`,
 	scssDest: path.join(commonPaths.outputBuild, 'scss')

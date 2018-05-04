@@ -3,6 +3,5 @@
  */
 
 module.exports = {
-	vendorConcatJs: "vendor.concat.js",
 	vendorMinJs: "vendor.concat.min.js"
 }
