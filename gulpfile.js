@@ -74,10 +74,7 @@ gulp.task('vendorUglify', () => {
 			.pipe($.debug({title: 'Passed Through'})) // uncomment to see what files passed through
 			.pipe(
 					$.uglifyEs.default({
-						output: {
-							comments: $.uglifySaveLicense
-							// TODO: add mangle!!!!!!
-						}
+						output: { comments: $.uglifySaveLicense }
 					})
 							.on('error', (err) => {
 								$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
@@ -95,45 +92,48 @@ gulp.task('vendorUglify', () => {
 			.pipe(gulp.dest(distPaths.vendorJsDest));
 });
 
-gulp.task('vendorDistOld', () => {
-	$.fancyLog('----> //** Building Dist Vendor JS Files');
-
-	return gulp.src(distPaths.vendorJsGlob)
-			.pipe(customPlumber('Error Running vendorDist task'))
-			.pipe($.sourcemaps.init())
-			// .pipe($.debug({title: 'All Files'})) // uncomment to see src files
-			//if build concat file is newer then just uglify concat file, otherwise reconcat then uglify
-			.pipe($.newer({dest: path.join(distPaths.vendorJsDest, distNames.vendorMinJs)}))
-			// .pipe($.debug({title: 'Passed Through'})) // uncomment to see if files are processed if min file is newer than src files
-			.pipe($.concat(distNames.vendorMinJs))
-			.pipe(
-					$.uglifyEs.default({
-						output: {
-							comments: $.uglifySaveLicense
-							// TODO: add mangle!!!!!!
-						}
-					})
-						.on('error', (err) => {
-							$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
-							this.emit('end');
-						})
-			)
-			.pipe($.size({
-				showFiles: true,
-				gzip: true,
-				showTotal: true
-			}))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest(distPaths.vendorJsDest));
-});
 
 gulp.task('copySass', () => {
 	$.fancyLog('----> //** Copying SCSS files');
 
-	return gulp.src(buildPaths.scssGlob)
+	return gulp.src(distPaths.scssGlob)
+			.pipe($.debug({title: 'All Files'})) // uncomment to see src files
+			.pipe($.newer(distPaths.scssDest))
+			.pipe($.debug({title: 'Passed Through'})) // uncomment to see if files are processed if min file is newer than src files
 			.pipe(gulp.dest(distPaths.scssDest));
 });
 
+gulp.task('esLint', () => {
+	//take files from JS and mustard and lint them no dest
+	$.fancyLog('----> //** Linting JS files in App & Mustard 🌈');
+})
+
+gulp.task('eslint', () => {
+	$.fancyLog('-> Linting Javascript via eslint...');
+	return gulp.src(pkg.globs.babelJs)
+	// default: use local linting config
+			.pipe($.eslint({
+				// Load a specific ESLint config
+				configFile: '.eslintrc.json'
+			}))
+			// format ESLint results and print them to the console
+			.pipe($.eslint.format());
+});
+
+gulp.task('cached-lint', () => {
+	$.fancyLog('-> Linting Javascript via eslint...');
+	gulp.src([ `${pkg.paths.src.js }**/*.js`, `!${pkg.paths.src.js}/vendor/**/*.js` ])
+			.pipe($.cached('eslint'))
+			// Only uncached and changed files past this point
+			.pipe($.eslint())
+			.pipe($.eslint.format())
+			.pipe($.eslint.result((result) => {
+				if (result.warningCount > 0 || result.errorCount > 0) {
+					// If a file has errors/warnings remove uncache it
+					delete $.cached.caches.eslint[$.path.resolve(result.filePath)];
+				}
+			}));
+});
 
 /* ----------------- */
 /* MISC GULP TASKS
