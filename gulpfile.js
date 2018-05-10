@@ -22,16 +22,6 @@ const $ = require('gulp-load-plugins')({
   scope: [ 'devDependencies' ]
 });
 
-const banner = [
-  '/**',
-  ' * @project        <%= pkg.name %>',
-  ' * @author         <%= pkg.author %>',
-  ` * @copyright      Copyright (c) ${ $.moment().format('YYYY') }, <%= pkg.license %>`,
-  ' *',
-  ' */',
-  ''
-].join('\n');
-
 /**
  * ------------
  * GULP TASKS
@@ -146,7 +136,31 @@ gulp.task('vendorDist-watch', () => {
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted, recompiling ${buildNames.vendorMinJs} - [vendorDist-watch]`);
-				concat.base(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorConcat'); // if src files get deleted, force rebuild of dist file.
+				concat.base(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorConcat'); // if src files get deleted, force rebuild of dist file
+			});
+});
+
+/* ----------------- */
+/* MUSTARD JS TASKS
+/* ----------------- */
+gulp.task('mustardConcat:newer', () => {
+	// need to return the stream
+	return concat.newer(buildPaths.mustardJsGlob, buildPaths.mustardJsDest, buildNames.mustardJs, 'mustardConcat:newer',  path.join(buildPaths.mustardJsDest, buildNames.mustardJs));
+});
+
+gulp.task('mustardUglify', () => {
+	$.fancyLog('----> //** Building Dist Vendor JS Files');
+	return uglifyNewer(distPaths.mustardJsSrc, distPaths.mustardJsDest, 'mustardUglify', path.join(distPaths.mustardJsDest, distNames.vendorMinJs));
+});
+
+gulp.task('mustardDist', gulp.series('mustardConcat:newer', 'mustardUglify'));
+
+gulp.task('mustardDist-watch', () => {
+	gulp.watch(buildPaths.mustardJsGlob, gulp.series('mustardConcat:newer', 'mustardUglify'))
+			.on('unlink', (ePath, stats) => {
+// code to execute on delete
+				console.log(`${ePath} deleted, recompiling ${buildNames.mustardMinJs} - [mustardDist-watch]`);
+				concat.base(buildPaths.mustardJsGlob, buildPaths.mustardJsDest, buildNames.mustardJs, 'mustardConcat'); // if src files get deleted, force rebuild of dist file
 			});
 });
 
@@ -193,6 +207,7 @@ gulp.task('commonAppDist-watch', () => {
 });
 
 gulp.task('appDist-watch', gulp.parallel('lintBabel-watch', 'copyOptionalApp-watch', 'commonAppDist-watch'));
+
 /* ----------------- */
 /* MISC GULP TASKS
 /* ----------------- */
@@ -219,7 +234,7 @@ gulp.task('cleanBuildDist', (done) => {
  * COMPOSING GULP TASKS
  * ------------------------
  */
-
+// TODO bring all the composed and watch tasks here
 
 
 gulp.task('preWatch',
@@ -230,7 +245,7 @@ gulp.task('preWatch',
 							gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
 					gulp.series('copySass')
 		))));
-// TODO make cachedLint-watch and babel-watch a series task
+
 gulp.task('watching 👀', gulp.parallel('appDist-watch', 'copySass-watch', 'vendorDist-watch'));
 
 // Default task
@@ -238,3 +253,4 @@ gulp.task('default', gulp.series('preWatch', 'watching 👀'));
 
 
 // TODO delete cache of cached JS files processed with stylint
+// TODO clean out package.json of unused stuff

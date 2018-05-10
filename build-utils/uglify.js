@@ -1,6 +1,7 @@
-const path = require('path');
 const gulp = require('gulp');
+const pkg = require('../package.json'); // bring in properties specified in package.json
 const customPlumber = require('./custom-plumber');
+const banner = require('./banner');
 
 // load all plugins in "devDependencies" into the variable $
 const $ = require('gulp-load-plugins')({
@@ -39,6 +40,7 @@ function uglifyNewer (src, dest, taskName, newerDest) {
 				showFiles: true,
 				gzip: true,
 			}))
+			.pipe($.header(banner, { pkg: pkg })) // add banner to minified file
 			.pipe($.sourcemaps.write('./'))
 			.pipe(gulp.dest(dest));
 }

@@ -4,5 +4,6 @@
 
 module.exports = {
 	vendorJs: "vendor.concat.js",
+	mustardJs: "mustard.concat.js",
 	appJs: "common-app.concat.js"
 }
