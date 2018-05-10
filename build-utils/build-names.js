@@ -3,5 +3,6 @@
  */
 
 module.exports = {
-	vendorJs: "vendor.concat.js"
+	vendorJs: "vendor.concat.js",
+	appJs: "common-app.concat.js"
 }

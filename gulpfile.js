@@ -11,24 +11,16 @@ const buildPaths = require('./build-utils/build-paths');
 const buildNames = require('./build-utils/build-names');
 const distPaths = require('./build-utils/dist-paths');
 const distNames = require('./build-utils/dist-names');
+const cascadeDelete = require('./build-utils/cascade-delete');
+const concat = require('./build-utils/concat');
+const customPlumber = require('./build-utils/custom-plumber');
+const uglifyNewer = require('./build-utils/uglify');
 
 // load all plugins in "devDependencies" into the variable $
 const $ = require('gulp-load-plugins')({
   pattern: [ '*' ],
   scope: [ 'devDependencies' ]
 });
-
-// log error messages
-function customPlumber(errTitle) {
-  return $.plumber({
-    errorHandler: $.notify.onError({
-      // Customizing error title
-      title: errTitle || 'Error running Gulp',
-      message: 'Error: <%= error.message %>',
-      sound: 'Pop'
-    })
-  });
-}
 
 const banner = [
   '/**',
@@ -39,7 +31,6 @@ const banner = [
   ' */',
   ''
 ].join('\n');
-
 
 /**
  * ------------
@@ -70,15 +61,7 @@ gulp.task('copySass-watch', () => {
 	gulp.watch(distPaths.scssGlob, gulp.series('copySass:newer'))
 		.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				let fileName = path.basename(ePath);
-				let pathPieces = ePath.split(path.sep);
-				let childAppFolder = pathPieces[pathPieces.length - 2];
-				// console.log(`${path.join(distPaths.scssDest,childAppFolder, fileName)} path to be deleted`);
-				$.delete(path.join(distPaths.scssDest,childAppFolder, fileName), {force: true}, function(err, deleted) {
-					if (err) throw err;
-					// deleted files
-					console.log(deleted);
-				});
+				cascadeDelete(ePath, stats, distPaths.scssDest, true);
 			});
 });
 
@@ -91,75 +74,24 @@ gulp.task('copySass-watch', () => {
 /* ----------------- */
 /* VENDOR JS TASKS
 /* ----------------- */
-function vendorBuildFn() {
-	$.fancyLog('----> //** Concatenating Vendor JS Files <========');
-	return gulp.src(buildPaths.vendorJsGlob)
-			.pipe($.sourcemaps.init())
-			.pipe(customPlumber('Error Running vendorBuild task'))
-			.pipe($.concat(
-					{path: buildNames.vendorJs},
-					{newLine: '\n\n'}))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest(buildPaths.vendorJsDest));
-};
-
-gulp.task('vendorBuild', (done) => {
-	vendorBuildFn();
-	done();
-});
-
 gulp.task('vendorBuild:newer', () => {
-	$.fancyLog('----> //** Concatenating Vendor JS Files');
-	return gulp.src(buildPaths.vendorJsGlob)
-			.pipe($.sourcemaps.init())
-			.pipe(customPlumber('Error Running vendorBuild task'))
-			.pipe($.debug({title: 'All Files'})) // uncomment to see src files
-			.pipe($.newer({dest: path.join(buildPaths.vendorJsDest, buildNames.vendorJs)}))
-			.pipe($.debug({title: 'Passed Through'})) //uncomment to see what files passed through
-			.pipe($.concat(
-					{path: buildNames.vendorJs},
-					{newLine: '\n\n'}))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest(buildPaths.vendorJsDest));
+	// need to return the stream
+  return concat.newer(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorBuild:newer',  path.join(buildPaths.vendorJsDest, buildNames.vendorJs));
 });
 
 gulp.task('vendorUglify', () => {
 	$.fancyLog('----> //** Building Dist Vendor JS Files');
-
-	return gulp.src(distPaths.vendorJsSrc)
-			.pipe(customPlumber('Error Running vendorDist task'))
-			.pipe($.sourcemaps.init({loadMaps:true}))
-			// .pipe($.debug({title: 'All Files'})) // uncomment to see src files
-			.pipe($.newer({dest: path.join(distPaths.vendorJsDest, distNames.vendorMinJs)})) //if build concat file is newer than dist file, then uglify
-			// .pipe($.debug({title: 'Passed Through'})) // uncomment to see what files passed through
-			.pipe(
-					$.uglifyEs.default({
-						output: { comments: $.uglifySaveLicense }
-					})
-							.on('error', (err) => {
-								$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
-								this.emit('end');
-							})
-			)
-			.pipe($.if([ '*.js', '!*.min.js' ],
-					$.rename({ suffix: '.min' })
-			))
-			.pipe($.size({
-				showFiles: true,
-				gzip: true,
-			}))
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest(distPaths.vendorJsDest));
+	return uglifyNewer(distPaths.vendorJsSrc, distPaths.vendorJsDest, 'vendorUglify', path.join(distPaths.vendorJsDest, distNames.vendorMinJs));
 });
 
-gulp.task('vendorDist', gulp.series('vendorBuild', 'vendorUglify'));
+gulp.task('vendorDist', gulp.series('vendorBuild:newer', 'vendorUglify'));
 
 gulp.task('vendorDist-watch', () => {
 	gulp.watch(buildPaths.vendorJsGlob, gulp.series('vendorBuild:newer', 'vendorUglify'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted`)
-				vendorBuildFn(); // if files get deleted, rebuild dist file.
+				concat.base(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorBuild'); // if src files get deleted, force rebuild of dist file.
 			});
 });
 
@@ -170,6 +102,7 @@ gulp.task('cachedLint', () => {
 	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
 
 	return gulp.src(buildPaths.appJsGlob)
+			.pipe(customPlumber('Error Running esLint'))
 			.pipe($.cached('eslint')) // Only uncached and changed files past this point
 			.pipe($.eslint())
 			.pipe($.eslint.format())
@@ -177,8 +110,8 @@ gulp.task('cachedLint', () => {
 				if (result.warningCount > 0 || result.errorCount > 0) {
 					delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
 				}
-			}));
-			// .pipe($.eslint.failAfterError());
+			}))
+			.pipe($.eslint.failAfterError());
 });
 
 gulp.task('cachedLint-watch', () => {
@@ -208,7 +141,38 @@ gulp.task('babel', () => {
 });
 
 gulp.task('babel-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('babel'));
+	gulp.watch(buildPaths.appJsGlob, gulp.series('babel'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, buildPaths.appJsDest, true);
+			});
+});
+
+/* ----------------- */
+/* APP TASKS
+/* ----------------- */
+gulp.task('copyOptionalApp:newer', () => {
+	$.fancyLog('----> //** Copying Optional App files');
+
+	return gulp.src(distPaths.optionalAppGlob)
+			.pipe($.debug({title: 'All Files'})) // uncomment to see src files
+			.pipe($.newer({ dest:distPaths.optionalAppDest }))
+			.pipe($.debug({title: 'Passed Through'})) // uncomment to see passed through files
+			.pipe(gulp.dest(distPaths.optionalAppDest))
+
+});
+
+gulp.task('copyOptionalApp-watch', () => {
+	gulp.watch(distPaths.optionalAppGlob, gulp.series('copyOptionalApp:newer'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, distPaths.optionalAppDest, false);
+			});
+});
+
+
+gulp.task('commonAppConcat:newer', () => {
+	return concat.newer(buildPaths.commonAppGlob, buildPaths.commonAppDest, buildNames.appJs, 'commonAppConcat:newer', path.join(buildPaths.commonAppDest, buildNames.appJs));
 });
 
 /* ----------------- */
@@ -225,7 +189,7 @@ gulp.task('cleanBuildDist', (done) => {
 		if (err) throw err;
 		// deleted files
 		console.log(`${deleted} cleaned`);
-
+		done();
 	});
 });
 
