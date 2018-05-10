@@ -1,5 +1,6 @@
 const path = require('path');
 const commonPaths = require('./common-paths');
+const buildNames = require('./build-names');
 
 const dialogPolyfill = require.resolve('dialog-polyfill');
 const vendorJsSrcPath = path.join(commonPaths.srcPath, 'js', 'vendor');
@@ -12,6 +13,6 @@ module.exports = {
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	appJsGlob: `${appJsSrcPath}/**/*.js`,
 	appJsDest: path.join(commonPaths.outputBuild, 'js', 'app'),
-	commonAppGlob: `${commonAppPath}/**/*.js`,
+	commonAppGlob: [`${commonAppPath}/**/*.js`, `!${commonAppPath}/${buildNames.appJs}`],
 	commonAppDest: commonAppPath
 };

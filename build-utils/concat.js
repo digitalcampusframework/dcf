@@ -18,7 +18,7 @@ let concatObj = {};
  * @param {string} taskName: name of the task
  */
 function concatFn(src, dest, fileName, taskName) {
-	$.fancyLog('----> //** Concatenating Vendor JS Files <========');
+	$.fancyLog(`----> //** Concatenating ${taskName} JS Files <========`);
 	return gulp.src(src)
 			.pipe($.sourcemaps.init())
 			.pipe(customPlumber(`Error Running ${taskName} task`))
@@ -42,9 +42,9 @@ function concatNewerFn(src, dest, fileName, taskName, newerDest) {
 	return gulp.src(src)
 			.pipe($.sourcemaps.init())
 			.pipe(customPlumber(`Error Running ${taskName} task`))
-			.pipe($.debug({title: 'All Files'})) // uncomment to see src files
+			.pipe($.debug({title: `All Files - [${taskName}]`})) // uncomment to see src files
 			.pipe($.newer({dest: newerDest}))
-			.pipe($.debug({title: 'Passed Through'})) //uncomment to see what files passed through
+			.pipe($.debug({title: `Passed Through - [${taskName}]`})) //uncomment to see what files passed through
 			.pipe($.concat(
 					{path: fileName},
 					{newLine: '\n\n'}))
