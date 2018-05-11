@@ -11,6 +11,7 @@ module.exports = {
 	vendorJsDest: path.join(commonPaths.outputDist, 'js', 'vendor'),
 	mustardJsSrc: path.join(buildPaths.mustardJsDest, buildNames.mustardJs),
 	mustardJsDest: path.join(commonPaths.outputDist, 'js', 'mustard'),
+	scssPath: scssPath,
 	scssGlob: `${scssPath}/**/*.scss`,
 	scssDest: path.join(commonPaths.outputDist, 'scss'),
 	optionalAppGlob: `${optionalAppPath}/**/*.js`,

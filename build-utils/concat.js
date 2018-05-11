@@ -1,15 +1,7 @@
 const path = require('path');
 const gulp = require('gulp');
 const customPlumber = require('./custom-plumber');
-
-// load all plugins in "devDependencies" into the variable $
-const $ = require('gulp-load-plugins')({
-	pattern: [ '*' ],
-	scope: [ 'devDependencies' ]
-});
-let concatObj = {};
-
-
+const $ = require('./gulp-load-plugins');
 
 /**
  * @param {string} src: input glob string
@@ -52,7 +44,7 @@ function concatNewerFn(src, dest, fileName, taskName, newerDest) {
 			.pipe(gulp.dest(dest));
 }
 
-concatObj = {
+let concatObj = {
 	base: concatFn,
 	newer: concatNewerFn
 };

@@ -2,12 +2,7 @@ const gulp = require('gulp');
 const pkg = require('../package.json'); // bring in properties specified in package.json
 const customPlumber = require('./custom-plumber');
 const banner = require('./banner');
-
-// load all plugins in "devDependencies" into the variable $
-const $ = require('gulp-load-plugins')({
-	pattern: [ '*' ],
-	scope: [ 'devDependencies' ]
-});
+const $ = require('./gulp-load-plugins');
 
 /**
  * @param {string} src: input concat path string
@@ -30,7 +25,7 @@ function uglifyNewer (src, dest, taskName, newerDest) {
 					})
 							.on('error', (err) => {
 								$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
-								this.emit('end');
+								// this.emit('end');
 							})
 			)
 			.pipe($.if([ '*.js', '!*.min.js' ],

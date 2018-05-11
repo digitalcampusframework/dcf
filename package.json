@@ -39,10 +39,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylelint": "^7.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^1.0.1",
     "modularscale-sass": "^3.0.5",
-    "moment": "^2.22.1",
     "node-sass": "^4.9.0",
     "postcss-normalize": "^4.0.0",
     "stylelint": "^9.2.0",
@@ -69,83 +69,5 @@
     "BlackBerry >= 4.0",
     "iOS >= 10",
     "> 1% in my stats"
-  ],
-  "paths": {
-    "src": {
-      "base": "assets/src/",
-      "scss": "assets/src/scss/",
-      "vendorCss": "assets/src/vendorCss/",
-      "fonts": "assets/src/fonts/",
-      "json": "assets/src/json/",
-      "js": "assets/src/js/",
-      "appJs": "assets/src/js/app",
-      "mustardJs": "assets/src/js/mustard",
-      "vendorJs": "assets/src/js/vendor",
-      "img": "assets/src/img/",
-      "svg": "assets/src/svg/"
-    },
-    "build": {
-      "base": "assets/build/",
-      "css": "assets/build/css/",
-      "fonts": "assets/build/fonts/",
-      "js": "assets/build/js/",
-      "appJs": "assets/build/js/app",
-      "mustardJs": "assets/build/js/mustard",
-      "vendorJs": "assets/build/js/vendor",
-      "html": "assets/build/html/",
-      "img": "assets/build/img/"
-    },
-    "dist": {
-      "base": "assets/dist/",
-      "css": "assets/dist/css/",
-      "js": "assets/dist/js/",
-      "fonts": "assets/dist/fonts/",
-      "img": "assets/dist/img/",
-      "svg": "assets/dist/svg/"
-    }
-  },
-  "globs": {
-    "buildJs": [
-      "assets/src/js/**/*.js",
-      "!assets/src/js/vendor/**/*.js",
-      "!assets/src/js/mustard/**/*.js"
-    ],
-    "buildVendorCss": [
-      "assets/src/vendorCss/**/*.css",
-      "node_modules/dialog-polyfill/dialog-polyfill.css"
-    ],
-    "buildVendorJs": [
-      "assets/src/js/vendor/**/*.js",
-      "node_modules/dialog-polyfill/dialog-polyfill.js"
-    ],
-    "buildMustardJs": [
-      "node_modules/picturefill/dist/picturefill.js",
-      "node_modules/object-fit-images/dist/ofi.js",
-      "assets/src/js/mustard/**/*.js"
-    ],
-    "distJSOptional": [
-      "assets/build/js/app/optional/**/*.js"
-    ],
-    "distJSCommon": [
-      "assets/build/js/app/common/**/*.js"
-    ],
-    "distVendorJs": [
-      "assets/build/js/vendor/**/*.js"
-    ],
-    "distMustardJs": [
-      "assets/build/js/mustard/**/*.js"
-    ]
-  },
-  "outputNames": {
-    "build": {
-      "appCommon": "commonApp.concat.js",
-      "vendor": "vendor.concat.js",
-      "mustard": "mustard.concat.js"
-    },
-    "dist": {
-      "appCommon": "dcf.commonApp.min.js",
-      "vendor": "dcf.vendor.min.js",
-      "mustard": "dcf.mustard.min.js"
-    }
-  }
+  ]
 }
