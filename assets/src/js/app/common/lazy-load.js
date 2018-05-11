@@ -6,7 +6,7 @@ const config = {
   // If the image gets within 50px in the Y axis, start the download.
 //   rootMargin: '0px 0px 50px 0px',
   rootMargin: '0px',
-//   threshold: 0.01
+  //   threshold: 0.01
   threshold: 0.5
 };
 
@@ -54,7 +54,9 @@ function preloadImage(image) {
     return;
   }
 
-  return fetchImage(src).then(() => { applyImage(image, src); });
+  return fetchImage(src).then(() => {
+    applyImage(image, src);
+  });
 }
 
 /**

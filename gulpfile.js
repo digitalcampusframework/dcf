@@ -185,13 +185,19 @@ gulp.task('mustardDist-watch', () => {
 gulp.task('cachedEsLint', () => {
 	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
 
+	function isFixed(file) {
+		// Has ESLint fixed the file contents?
+		return file.eslint != null && file.eslint.fixed;
+	}
+
 	return gulp.src(buildPaths.appJsGlob)
 			.pipe(customPlumber('Error Running esLint'))
 			.pipe($.cached('eslint')) // Only uncached and changed files past this point
 			.pipe($.eslint({
-				// fix:true  <--- ask for opinion
+				fix:true
 			}))
 			.pipe($.eslint.format())
+			.pipe($.if(isFixed, gulp.dest(buildPaths.appJsPath)))
 			.pipe($.eslint.result((result) => {
 				if (result.warningCount > 0 || result.errorCount > 0) {
 					delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it

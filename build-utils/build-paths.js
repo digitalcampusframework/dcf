@@ -15,6 +15,7 @@ module.exports = {
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`], // better to use unminified vendor files since all files will be concatenated & minified
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
+	appJsPath: appJsSrcPath,
 	appJsGlob: `${appJsSrcPath}/**/*.js`,
 	appJsDest: path.join(commonPaths.outputBuild, 'js', 'app'),
 	commonAppGlob: [`${commonAppPath}/**/*.js`, `!${commonAppPath}/${buildNames.appJs}`],
