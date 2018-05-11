@@ -1,0 +1,10 @@
+///////////////////////////////
+// !CORE / GENERIC / BOX-SIZING
+///////////////////////////////
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

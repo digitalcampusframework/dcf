@@ -1,0 +1,14 @@
+/////////////////////////
+// !CORE / MIXINS / ORDER
+/////////////////////////
+
+
+@mixin order-1st($imp:null) { order: 1 $imp; }
+@mixin order-2nd($imp:null) { order: 2 $imp; }
+@mixin order-3rd($imp:null) { order: 3 $imp; }
+@mixin order-4th($imp:null) { order: 4 $imp; }
+@mixin order-5th($imp:null) { order: 5 $imp; }
+@mixin order-6th($imp:null) { order: 6 $imp; }
+@mixin order-7th($imp:null) { order: 7 $imp; }
+@mixin order-8th($imp:null) { order: 8 $imp; }
+@mixin order-9th($imp:null) { order: 9 $imp; }

@@ -1,0 +1,34 @@
+/////////////////////////////
+// !CORE / ELEMENTS / ANCHORS
+/////////////////////////////
+
+
+a {
+  text-decoration-skip: ink;
+}
+
+
+// !Link
+a:link {
+  color: $color-link;
+  transition: color $hover-off;
+}
+
+
+// !Visited
+a:visited {
+  color: $color-link-visited;
+}
+
+
+// !Hover
+a:hover {
+  color: $color-link-hover;
+  transition: color $hover-on;
+}
+
+
+// !Active
+a:active {
+  color: $color-link-active;
+}

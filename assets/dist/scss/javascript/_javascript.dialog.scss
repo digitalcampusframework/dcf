@@ -1,0 +1,9 @@
+//////////////////////////////
+// !CORE / JAVASCRIPT / DIALOG
+//////////////////////////////
+
+
+// Dialog polyfill styles
+.dcf-dialog .backdrop {
+  @include bg-overlay-dark;
+}

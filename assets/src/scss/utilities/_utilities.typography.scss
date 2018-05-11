@@ -1,0 +1,72 @@
+/////////////////////////////////
+// !CORE / UTILITIES / TYPOGRAPHY
+/////////////////////////////////
+
+
+// !Font-Size
+.dcf-txt-sm { @include txt-sm(!important); }
+.dcf-txt-md { @include txt-md(!important); }
+.dcf-txt-base { @include txt-base(!important); }
+.dcf-txt-h6 { @include txt-h6(!important); }
+.dcf-txt-h5 { @include txt-h5(!important); }
+.dcf-txt-h4 { @include txt-h4(!important); }
+.dcf-txt-h3 { @include txt-h3(!important); }
+.dcf-txt-h2 { @include txt-h2(!important); }
+.dcf-txt-h1 { @include txt-h1(!important); }
+.dcf-txt-lg { @include txt-lg(!important); }
+
+
+// !Horizontal Text Alignment
+.dcf-txt-center { @include txt-center(!important); }
+.dcf-txt-left { @include txt-left(!important); }
+.dcf-txt-right { @include txt-right(!important); }
+
+
+// !Vertical Text Alignment
+.dcf-txt-baseline { @include txt-baseline(!important); }
+.dcf-txt-top { @include txt-top(!important); }
+.dcf-txt-middle { @include txt-middle(!important); }
+.dcf-txt-bottom { @include txt-bottom(!important); }
+.dcf-txt-text-top { @include txt-text-top(!important); }
+.dcf-txt-text-bottom { @include txt-text-bottom(!important); }
+
+
+// Text Decoration
+.dcf-txt-decor-none { @include txt-decor-none(!important); }
+.dcf-txt-decor-hover { @include txt-decor-hover-off(!important); }
+.dcf-txt-decor-hover:hover { @include txt-decor-hover-on(!important); }
+
+
+// !Text Wrap
+.dcf-txt-nowrap { @include txt-nowrap(!important); }
+.dcf-truncate { @include truncate(!important); }
+
+
+// !Font Style
+.dcf-roman { @include roman(!important); }
+.dcf-italic { @include italic(!important); }
+
+
+// !Font Weight
+.dcf-regular { @include regular(!important); }
+.dcf-bold { @include bold(!important); }
+
+
+// !Letter Spacing
+.dcf-ls-0 { @include ls-0(!important); }
+.dcf-ls-1 { @include ls-1(!important); }
+.dcf-ls-2 { @include ls-2(!important); }
+
+
+// !Line Height
+.dcf-lh-1 { @include lh-1(!important); }
+.dcf-lh-2 { @include lh-2(!important); }
+.dcf-lh-3 { @include lh-3(!important); }
+.dcf-lh-4 { @include lh-4(!important); }
+
+
+// !Text Transform
+.dcf-capitalize { @include capitalize(!important); }
+.dcf-lowercase { @include lowercase(!important); }
+.dcf-uppercase { @include uppercase(!important); }
+.dcf-case-reset { @include case-reset(!important); }

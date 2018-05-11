@@ -1,0 +1,28 @@
+/////////////////////////////////////
+// !CORE / COMPONENTS / BUTTON GROUPS
+/////////////////////////////////////
+
+
+.dcf-btn-group {
+  display: inline-flex;
+}
+
+
+.dcf-btn-group .dcf-btn:focus {
+  z-index: 1;
+}
+
+
+.dcf-btn-group > .dcf-btn:first-child {
+  @include sharp-right;
+}
+
+
+.dcf-btn-group > .dcf-btn:last-child {
+  @include sharp-left;
+}
+
+
+.dcf-btn-group > .dcf-btn:not(:first-child):not(:last-child) {
+  @include sharp;
+}
