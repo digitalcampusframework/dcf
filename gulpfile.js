@@ -6,16 +6,21 @@
 const pkg = require('./package.json'); // bring in properties specified in package.json
 const gulp = require('gulp');
 const path = require('path');
+const fs = require('fs');
+const baseStylelint = require('stylelint');
+
 const commonPaths = require('./build-utils/common-paths');
 const buildPaths = require('./build-utils/build-paths');
 const buildNames = require('./build-utils/build-names');
 const distPaths = require('./build-utils/dist-paths');
 const distNames = require('./build-utils/dist-names');
+
+const $ = require('./build-utils/gulp-load-plugins');
 const cascadeDelete = require('./build-utils/cascade-delete');
 const concat = require('./build-utils/concat');
 const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
-const $ = require('./build-utils/gulp-load-plugins');
+const checkDirectory = require('./build-utils/check-directory');
 
 
 
@@ -53,25 +58,43 @@ const $ = require('./build-utils/gulp-load-plugins');
 
 		// .pipe($.newer({ dest: buildPaths.appJsDest }))
 
-gulp.task('styleLint:newer', () => {
-	return gulp.src(distPaths.scssGlob)
-			.pipe(customPlumber('Error Running esLint'))
-			// .pipe($.debug({title: 'All Files - [stylelint:newer]'})) // uncomment to see src files
-			.pipe($.newer({dest: distPaths.scssDest}))
-			.pipe($.debug({title: 'Passed Through - [stylelint:newer]'})) // uncomment to see src files
-			.pipe($.stylelint({
-				fix: true, //some errors can't be fixed automatically
-				failAfterError: false,
-				reportOutputDir: 'logs/style-lint',
-				reporters: [
-					{formatter: 'string', console: true},
-					{formatter: 'verbose', save: 'report.txt'},
-				],
-				debug: true
-			}))
-			.pipe(gulp.dest(distPaths.scssPath));
+gulp.task('stylelint:newer', (done) => {
+	$.pump([
+		gulp.src(distPaths.scssGlob),
+		customPlumber('Error Running esLint'),
+		// $.debug({title: 'All Files - [stylelint:newer]'}), // uncomment to see src files
+		$.newer({dest: distPaths.scssDest}),
+		$.debug({title: 'Passed Through - [stylelint:newer]'}), // uncomment to see files passed through
+		$.stylelint({
+			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
+			failAfterError: false,
+			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
+			reporters: [
+				{formatter: 'string', console: true},
+				{formatter: 'verbose', save: 'report.txt'},
+			],
+			debug: true
+		})
+	], done);
 });
 
+gulp.task('stylelintFix', (done) => {
+	$.pump([
+				gulp.src(distPaths.scssGlob),
+				$.newer({dest: distPaths.scssDest}),
+				$.debug({title: 'Passed Through - [stylelint:newer]'}),
+				$.postcss(
+						[
+							baseStylelint({ fix:true }),
+							$.postcssReporter({clearMessages: true})
+						],
+						{
+							syntax: $.postcssScss
+						}
+				),
+				gulp.dest(distPaths.scssPath)]
+			, done)
+});
 
 
 /* ----------------- */
@@ -106,11 +129,11 @@ gulp.task('copySass-watch', () => {
 });
 
 
-gulp.task('sassDist', gulp.series('styleLint:newer', 'copySass:newer'));
+gulp.task('sassDist', gulp.series('stylelint:newer', 'copySass:newer'));
 
 
 gulp.task('sassDist-watch', () => {
-	gulp.watch(distPaths.scssGlob, gulp.series('styleLint:newer', 'copySass:newer'))
+	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [sassDist-watch]`);
@@ -181,17 +204,33 @@ gulp.task('mustardDist-watch', () => {
 /* ----------------- */
 /* ESLINT TASKS
 /* ----------------- */
-// TODO is there a way for esLint to output results into a report file?
-gulp.task('cachedEsLint', () => {
+gulp.task('cachedEslint', () => {
 	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
 
 	return gulp.src(buildPaths.appJsGlob)
-			.pipe(customPlumber('Error Running esLint'))
+			.pipe(customPlumber('Error Running eslint'))
 			.pipe($.cached('eslint')) // Only uncached and changed files past this point
 			.pipe($.eslint({
 				fix:true
 			}))
-			.pipe($.eslint.format())
+			// .pipe($.eslint.format()) // fix: true overwrites src which triggers this task again in watch, too busy, check log file instead
+			// .pipe($.eslint.format('checkstyle', fs.createWriteStream('logs/eslint/checkstyle.xml'))) // TODO remove
+			.pipe($.eslint.format('html', (results) => {
+				checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
+					if(err) {
+						console.log("esLint Error:", err);
+					} else {
+						//Carry on, all good, directory exists / created.
+						fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
+							if (err) { return console.log(err) }
+							console.log('esLint log created');
+						});
+					}
+				});
+			}))
+			// .pipe($.eslint.format($.eslintHTMLReporter, function(results) {  // TODO remove and remove dependency
+			// 	fs.writeFileSync(path.join(commonPaths.logPath, 'eslint-results.html'), results);
+			// }))
 			.pipe($.eslintIfFixed(buildPaths.appJsPath))
 			.pipe($.eslint.result((result) => {
 				if (result.warningCount > 0 || result.errorCount > 0) {
@@ -202,8 +241,8 @@ gulp.task('cachedEsLint', () => {
 });
 
 
-gulp.task('cachedEsLint-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEsLint'))
+gulp.task('cachedEslint-watch', () => {
+	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEslint'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [cachedEsLint-watch]`);
@@ -231,11 +270,11 @@ gulp.task('babel:newer', () => {
 });
 
 
-gulp.task('lintBabel', gulp.series('cachedEsLint', 'babel:newer'));
+gulp.task('lintBabel', gulp.series('cachedEslint', 'babel:newer'));
 
 
 gulp.task('lintBabel-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEsLint', 'babel:newer'))
+	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEslint', 'babel:newer'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [lintBabel-watch]`);
@@ -295,6 +334,8 @@ gulp.task('commonAppDist-watch', () => {
 
 
 gulp.task('appDist-watch', gulp.parallel('lintBabel-watch', 'copyOptionalApp-watch', 'commonAppDist-watch'));
+
+
 
 /* ----------------- */
 /* MISC GULP TASKS
