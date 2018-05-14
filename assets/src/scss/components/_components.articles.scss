@@ -1,1 +1,110 @@
-[{"source":"/Library/WebServer/Documents/dcf/assets/src/scss/components/_components.articles.scss","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":14,"column":33,"rule":"CssSyntaxError","severity":"error","text":"Unknown word (CssSyntaxError)"}]}]
+////////////////////////////////
+// !CORE / COMPONENTS / ARTICLES
+////////////////////////////////
+
+
+.dcf-article-body dl {
+  @include pl-6;
+}
+
+
+.dcf-article-body dl,
+.dcf-article-body ol,
+.Dcf-article-body ul {
+                margin-bottom:0;ads
+}
+
+
+.dcf-article p,
+.dcf-article dl,
+.dcf-article ol,
+.dcf-article ul,
+.dcf-article blockquote {
+
+  + p,
+  + dl,
+  + ol,
+  + ul {
+    @include mt-1;
+  }
+
+  + p {
+    text-indent: #{ms(4)}em; // 1.77em
+  }
+
+}
+
+
+.dcf-article-body p:not(.dcf-lead) {
+  margin-bottom: 0;
+}
+
+
+.dcf-author-img img {
+  display: block;
+  width: #{ms(8)}em; // 3.16em
+}
+
+
+@include mq(sm, max, width) {
+
+  .dcf-article-share li {
+    display: inline-flex;
+    margin-bottom: 0;
+    @include mr-4;
+  }
+
+}
+
+
+@include mq(sm, min, width) {
+
+  .dcf-article-share div[role="heading"] {
+    @include mb-5;
+  }
+
+  .dcf-article-share li {
+    @include mb-4;
+  }
+
+}
+
+
+@supports (display: grid) {
+
+  @include mq(sm, min, width) {
+
+    .dcf-article {
+      display: grid;
+      grid-template-columns: #{ms(8)}em 1fr; // 3.16em
+      grid-template-areas: "share header" "share body" "footer footer";
+    }
+
+    .dcf-article-header {
+      grid-area: header;
+    }
+
+    .dcf-article-body {
+      grid-area: body;
+    }
+
+    .dcf-article-share {
+      grid-area: share;
+
+      .dcf-u-sticky {
+        top: #{ms(2)}em; // 1.33em
+      }
+
+      div[role="heading"] {
+        @include mb-6;
+      }
+
+    }
+
+    .dcf-article-footer {
+      grid-area: footer;
+    }
+
+  }
+
+}

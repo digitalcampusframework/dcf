@@ -22,7 +22,8 @@ const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
 
-
+// TODO update all pipe vinyl methods to use pump instead
+// TODO write documentation
 
 /**
  * ------------
@@ -33,35 +34,10 @@ const checkDirectory = require('./build-utils/check-directory');
 /* ----------------- */
 /* STYLE LINT TASKS
 /* ----------------- */
-// gulp.task('cachedStylelint', () => { // TODO awaiting feedback from repo creator on how to utilize gulp-stylelint with gulp-cache
-// 	return gulp.src(distPaths.scssGlob)
-// 			.pipe(customPlumber('Error Running esLint'))
-// 			.pipe($.cached('stylelint'))
-// 			.pipe($.stylelint({
-// 				failAfterError: true,
-// 				// fix: true, <--- ask for opinion
-// 				reportOutputDir: 'logs/style-lint',
-// 				reporters: [
-// 					{formatter: 'string', console: true},
-// 					{formatter: 'json', save: 'report.json'},
-// 				],
-// 				debug: true
-// 			}))
-// 			.pipe(console.log($.stylelint.results));
-//
-// 			// .on('error', (err) => {
-// 			// 	$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
-// 			// 	console.log(err);
-// 			// 	// delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
-// 			// });
-// });
-
-		// .pipe($.newer({ dest: buildPaths.appJsDest }))
-
 gulp.task('stylelint:newer', (done) => {
 	$.pump([
 		gulp.src(distPaths.scssGlob),
-		customPlumber('Error Running esLint'),
+		customPlumber('Error Running stylelint:newer'),
 		// $.debug({title: 'All Files - [stylelint:newer]'}), // uncomment to see src files
 		$.newer({dest: distPaths.scssDest}),
 		$.debug({title: 'Passed Through - [stylelint:newer]'}), // uncomment to see files passed through
@@ -79,15 +55,18 @@ gulp.task('stylelint:newer', (done) => {
 	], done);
 });
 
+
+//manually run this to autofix eslint issues in src files
 gulp.task('stylelintFix', (done) => {
 	$.pump([
 				gulp.src(distPaths.scssGlob),
+				customPlumber('Error Running stylelintFix'),
 				$.newer({dest: distPaths.scssDest}),
 				$.debug({title: 'Passed Through - [stylelint:newer]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
-							$.postcssReporter({clearMessages: true})
+							$.postcssReporter({clearMessages: true}),
 						],
 						{
 							syntax: $.postcssScss
@@ -96,6 +75,30 @@ gulp.task('stylelintFix', (done) => {
 				gulp.dest(distPaths.scssPath)]
 			, done)
 });
+
+
+// TODO figure out how to output correctly to report file
+gulp.task('stylelintFixTest', (done) => {
+	$.pump([
+				gulp.src(distPaths.scssGlob),
+				$.newer({dest: distPaths.scssDest}),
+				$.debug({title: 'Passed Through - [stylelintFixTest]'}),
+				$.postcss(
+						[
+							baseStylelint({ fix:true }),
+							// $.postcssReporter({clearMessages: true}),
+						],
+						{
+							syntax: $.postcssScss
+						}
+				)
+						.on('error', (error) => {
+							fs.writeFileSync(path.join(commonPaths.logPath, 'testlint', 'stylelint-results.js'), error.toString(), {encoding:'ascii'});
+						}),
+				gulp.dest(distPaths.scssPath)]
+			, done)
+});
+
 
 
 /* ----------------- */
@@ -212,10 +215,9 @@ gulp.task('cachedEslint', () => {
 			.pipe(customPlumber('Error Running eslint'))
 			.pipe($.cached('eslint')) // Only uncached and changed files past this point
 			.pipe($.eslint({
-				fix:true
+				fix: false
 			}))
-			// .pipe($.eslint.format()) // fix: true overwrites src which triggers this task again in watch, too busy, check log file instead
-			// .pipe($.eslint.format('checkstyle', fs.createWriteStream('logs/eslint/checkstyle.xml'))) // TODO remove
+			.pipe($.eslint.format())
 			.pipe($.eslint.format('html', (results) => {
 				checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
 					if(err) {
@@ -229,9 +231,39 @@ gulp.task('cachedEslint', () => {
 					}
 				});
 			}))
-			// .pipe($.eslint.format($.eslintHTMLReporter, function(results) {  // TODO remove and remove dependency
-			// 	fs.writeFileSync(path.join(commonPaths.logPath, 'eslint-results.html'), results);
-			// }))
+			.pipe($.eslint.result((result) => {
+				if (result.warningCount > 0 || result.errorCount > 0) {
+					delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
+				}
+			}))
+			.pipe($.eslint.failAfterError());
+});
+
+
+//manually run this to autofix eslint issues in src files
+gulp.task('eslintFix', () => {
+	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
+
+	return gulp.src(buildPaths.appJsGlob)
+			.pipe(customPlumber('Error Running eslint'))
+			.pipe($.cached('eslint')) // Only uncached and changed files past this point
+			.pipe($.eslint({
+				fix:true
+			}))
+			.pipe($.eslint.format())
+			.pipe($.eslint.format('html', (results) => {
+				checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
+					if(err) {
+						console.log("esLint Error:", err);
+					} else {
+						//Carry on, all good, directory exists / created.
+						fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
+							if (err) { return console.log(err) }
+							console.log('esLint log created');
+						});
+					}
+				});
+			}))
 			.pipe($.eslintIfFixed(buildPaths.appJsPath))
 			.pipe($.eslint.result((result) => {
 				if (result.warningCount > 0 || result.errorCount > 0) {
