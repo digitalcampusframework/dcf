@@ -74,7 +74,8 @@ gulp.task('stylelint:newer', (done) => {
 				{formatter: 'verbose', save: 'report.txt'},
 			],
 			debug: true
-		})
+		}),
+		gulp.dest(distPaths.scssPath)
 	], done);
 });
 
