@@ -3,18 +3,19 @@
  * SETTING UP GULP
  * ------------------
  */
+// Modules
 const pkg = require('./package.json'); // bring in properties specified in package.json
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
 const baseStylelint = require('stylelint');
-
+// Path and name variables
 const commonPaths = require('./build-utils/common-paths');
 const buildPaths = require('./build-utils/build-paths');
 const buildNames = require('./build-utils/build-names');
 const distPaths = require('./build-utils/dist-paths');
 const distNames = require('./build-utils/dist-names');
-
+// Custom functions
 const $ = require('./build-utils/gulp-load-plugins');
 const cascadeDelete = require('./build-utils/cascade-delete');
 const concat = require('./build-utils/concat');
@@ -42,7 +43,7 @@ gulp.task('stylelint:newer', (done) => {
 		$.newer({dest: distPaths.scssDest}),
 		$.debug({title: 'Passed Through - [stylelint:newer]'}), // uncomment to see files passed through
 		$.stylelint({
-			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
+			// fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
 			failAfterError: false,
 			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
 			reporters: [
@@ -51,7 +52,7 @@ gulp.task('stylelint:newer', (done) => {
 			],
 			debug: true
 		}),
-		gulp.dest(distPaths.scssPath)
+		// gulp.dest(distPaths.scssPath)
 	], done);
 });
 
@@ -118,7 +119,7 @@ gulp.task('copySass:newer', () => {
 	return gulp.src(distPaths.scssGlob)
 			// .pipe($.debug({title: 'All Files - [copySass:newer]'})) // uncomment to see src files
 			.pipe($.newer(distPaths.scssDest))
-			.pipe($.debug({title: 'Passed Through - [copySass:newer]'})) // uncomment to see if files are processed if min file is newer than src files
+			.pipe($.debug({title: 'Passed Through - [copySass:newer]'})) // uncomment to see what files are passed through
 			.pipe(gulp.dest(distPaths.scssDest));
 });
 
@@ -127,8 +128,7 @@ gulp.task('copySass-watch', () => {
 	gulp.watch(distPaths.scssGlob, gulp.series('copySass:newer'))
 		.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted - [copySass-watch]`);
-				cascadeDelete(ePath, stats, distPaths.scssDest, true);
+				cascadeDelete(ePath, stats, distPaths.scssDest, 'copySass-watch', true);
 			});
 });
 
@@ -140,12 +140,40 @@ gulp.task('sassDist-watch', () => {
 	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted - [sassDist-watch]`);
-				cascadeDelete(ePath, stats, distPaths.scssDest, true);
+				cascadeDelete(ePath, stats, distPaths.scssDest, 'sassDist-watch', true);
 			});
 });
 
 
+
+/* ----------------- */
+/* CSS TASKS
+/* ----------------- */
+gulp.task('copyCSS', (done) => {
+	$.pump([
+			gulp.src(distPaths.cssGlob),
+			customPlumber('Error Running copyCSS'),
+			gulp.dest(distPaths.cssDest)
+	], done);
+});
+
+
+gulp.task('copyCSS:newer', (done) => {
+	$.pump([
+		gulp.src(distPaths.cssGlob),
+		customPlumber('Error Running copyCSS'),
+		$.newer(distPaths.cssDest),
+		$.debug({title: 'Passed Through - [copySass:newer]'}), // uncomment to see what files are passed through
+		gulp.dest(distPaths.cssDest)
+	], done);
+});
+
+gulp.task('copyCSS-watch', () => {
+		gulp.watch(distPaths.cssGlob, gulp.series('copyCSS:newer'))
+				.on('unlink', (ePath, stats) => {
+					cascadeDelete(ePath, stats, distPaths.cssDest, 'copyCSS-watch', true);
+				});
+});
 
 /* ----------------- */
 /* VENDOR JS TASKS
@@ -157,7 +185,6 @@ gulp.task('vendorConcat:newer', () => {
 
 
 gulp.task('vendorUglify', () => {
-	$.fancyLog('----> //** Building Dist Vendor JS Files');
 	return uglifyNewer(distPaths.vendorJsSrc, distPaths.vendorJsDest, 'vendorUglify', path.join(distPaths.vendorJsDest, distNames.vendorMinJs));
 });
 
@@ -169,7 +196,7 @@ gulp.task('vendorDist-watch', () => {
 	gulp.watch(buildPaths.vendorJsGlob, gulp.series('vendorConcat:newer', 'vendorUglify'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted, recompiling ${buildNames.vendorMinJs} - [vendorDist-watch]`);
+				console.log(`${ePath} deleted, recompiling ${distNames.vendorMinJs} - [vendorDist-watch]`);
 				concat.base(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorConcat'); // if src files get deleted, force rebuild of dist file
 			});
 });
@@ -186,7 +213,6 @@ gulp.task('mustardConcat:newer', () => {
 
 
 gulp.task('mustardUglify', () => {
-	$.fancyLog('----> //** Building Dist Vendor JS Files');
 	return uglifyNewer(distPaths.mustardJsSrc, distPaths.mustardJsDest, 'mustardUglify', path.join(distPaths.mustardJsDest, distNames.vendorMinJs));
 });
 
@@ -312,7 +338,7 @@ gulp.task('lintBabel-watch', () => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [lintBabel-watch]`);
 				delete $.cached.caches.eslint[ePath]; // remove deleted files from cache
-				cascadeDelete(ePath, stats, buildPaths.appJsDest, true);
+				cascadeDelete(ePath, stats, buildPaths.appJsDest, 'lintBabel-watch', true);
 			});
 });
 
@@ -338,7 +364,7 @@ gulp.task('copyOptionalApp-watch', () => {
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [copyOptionalApp-watch]`);
-				cascadeDelete(ePath, stats, distPaths.optionalAppDest, false);
+				cascadeDelete(ePath, stats, distPaths.optionalAppDest, 'copyOptionalApp-watch', false);
 			});
 });
 
@@ -349,7 +375,6 @@ gulp.task('commonAppConcat:newer', () => {
 
 
 gulp.task('commonAppUglify', () => {
-	$.fancyLog('----> //** Building Dist common App JS Files');
 	return uglifyNewer(distPaths.commonAppSrc, distPaths.commonAppDest, 'commonAppUglify', path.join(distPaths.commonAppDest, distNames.commonAppMinJs));
 });
 
@@ -402,10 +427,11 @@ gulp.task('preWatch',
 					gulp.series('mustardDist'),
 					gulp.series('lintBabel',
 							gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
-					gulp.series('sassDist')
+					gulp.series('sassDist'),
+					gulp.series('copyCSS:newer')
 		))));
 
-gulp.task('watching 👀', gulp.parallel('sassDist-watch', 'vendorDist-watch', 'vendorDist-watch', 'appDist-watch'));
+gulp.task('watching 👀', gulp.parallel('sassDist-watch', 'copyCSS-watch', 'vendorDist-watch', 'mustardDist-watch', 'appDist-watch'));
 
 // Default task
 gulp.task('default', gulp.series('preWatch', 'watching 👀'));
