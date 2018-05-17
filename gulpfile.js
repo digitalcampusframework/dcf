@@ -238,69 +238,61 @@ gulp.task('mustardDist-watch', () => {
 /* ----------------- */
 /* ESLINT TASKS
 /* ----------------- */
-gulp.task('cachedEslint', () => {
+gulp.task('cachedEslint', (done) => {
 	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
 
-	return gulp.src(buildPaths.appJsGlob)
-			.pipe(customPlumber('Error Running eslint'))
-			.pipe($.cached('eslint')) // Only uncached and changed files past this point
-			.pipe($.eslint({
-				fix: false
-			}))
-			.pipe($.eslint.format())
-			.pipe($.eslint.format('html', (results) => {
-				checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
-					if(err) {
-						console.log("esLint Error:", err);
-					} else {
-						//Carry on, all good, directory exists / created.
-						fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
-							if (err) { return console.log(err) }
-							console.log('esLint log created');
-						});
-					}
-				});
-			}))
-			.pipe($.eslint.result((result) => {
-				if (result.warningCount > 0 || result.errorCount > 0) {
-					delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
+	$.pump([
+		gulp.src(buildPaths.appJsGlob),
+		customPlumber('Error Running eslint'),
+		$.cached('eslint'), // Only uncached and changed files past this point
+		$.eslint({fix: false}),
+		$.eslint.format(),
+		$.eslint.format('html', (results) => {
+			checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
+				if(err) {
+					console.log('esLint Error:', err);
+				} else {
+					//Carry on, all good, directory exists / created.
+					fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
+						if (err) { return console.log(err) }
+						$.fancyLog('🚨️ esLint log created  🚨️');
+					});
 				}
-			}))
-			.pipe($.eslint.failAfterError());
+			});
+		}),
+		$.eslint.result((result) => {
+			if (result.warningCount > 0 || result.errorCount > 0) {
+				delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
+			}
+		}),
+		$.eslint.failAfterError()
+	], done);
 });
 
 
 //manually run this to autofix eslint issues in src files
-gulp.task('eslintFix', () => {
-	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
-
-	return gulp.src(buildPaths.appJsGlob)
-			.pipe(customPlumber('Error Running eslint'))
-			.pipe($.cached('eslint')) // Only uncached and changed files past this point
-			.pipe($.eslint({
-				fix:true
-			}))
-			.pipe($.eslint.format())
-			.pipe($.eslint.format('html', (results) => {
-				checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
-					if(err) {
-						console.log("esLint Error:", err);
-					} else {
-						//Carry on, all good, directory exists / created.
-						fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
-							if (err) { return console.log(err) }
-							console.log('esLint log created');
-						});
-					}
-				});
-			}))
-			.pipe($.eslintIfFixed(buildPaths.appJsPath))
-			.pipe($.eslint.result((result) => {
-				if (result.warningCount > 0 || result.errorCount > 0) {
-					delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
+gulp.task('eslintFix', (done) => {
+	$.fancyLog('----> //** Lint and Fix JS files in App 🌈');
+	$.pump([
+		gulp.src(buildPaths.appJsGlob),
+		customPlumber('Error Running eslint'),
+		$.eslint({fix: true}),
+		$.eslint.format(),
+		$.eslint.format('html', (results) => {
+			checkDirectory(path.join(commonPaths.logPath, 'eslint'), (err) => {
+				if(err) {
+					console.log('esLint Error:', err);
+				} else {
+					//Carry on, all good, directory exists / created.
+					fs.writeFile(path.join(commonPaths.logPath, 'eslint', 'eslint-results.html'), results, (err) => {
+						if (err) { return console.log(err) }
+						$.fancyLog('🚨️ esLint log created  🚨️');
+					});
 				}
-			}))
-			.pipe($.eslint.failAfterError());
+			});
+		}),
+		$.eslint.failAfterError()
+	], done);
 });
 
 
