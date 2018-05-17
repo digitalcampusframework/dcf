@@ -36,6 +36,7 @@ const checkDirectory = require('./build-utils/check-directory');
 /* STYLE LINT TASKS
 /* ----------------- */
 gulp.task('stylelint:newer', (done) => {
+	$.fancyLog('----> //** Linting SCSS files');
 	$.pump([
 		gulp.src(distPaths.scssGlob),
 		customPlumber('Error Running stylelint:newer'),
@@ -59,6 +60,7 @@ gulp.task('stylelint:newer', (done) => {
 
 //manually run this to autofix eslint issues in src files
 gulp.task('stylelintFix', (done) => {
+	$.fancyLog('----> //** Linting SCSS files');
 	$.pump([
 				gulp.src(distPaths.scssGlob),
 				customPlumber('Error Running stylelintFix'),
@@ -105,22 +107,24 @@ gulp.task('stylelintFixTest', (done) => {
 /* ----------------- */
 /* SASS TASKS
 /* ----------------- */
-gulp.task('copySass', () => {
+gulp.task('copySass', (done) => {
 	$.fancyLog('----> //** Copying SCSS files');
-
-	return gulp.src(distPaths.scssGlob)
-			.pipe(gulp.dest(distPaths.scssDest));
+	$.pump([
+		gulp.src(distPaths.scssGlob),
+		gulp.dest(distPaths.scssDest)
+	], done);
 });
 
 
-gulp.task('copySass:newer', () => {
+gulp.task('copySass:newer', (done) => {
 	$.fancyLog('----> //** Copying SCSS files');
-
-	return gulp.src(distPaths.scssGlob)
-			// .pipe($.debug({title: 'All Files - [copySass:newer]'})) // uncomment to see src files
-			.pipe($.newer(distPaths.scssDest))
-			.pipe($.debug({title: 'Passed Through - [copySass:newer]'})) // uncomment to see what files are passed through
-			.pipe(gulp.dest(distPaths.scssDest));
+	$.pump([
+		gulp.src(distPaths.scssGlob),
+		// $.debug({title: 'All Files - [copySass:newer]'})), // uncomment to see src files
+		$.newer(distPaths.scssDest),
+		$.debug({title: 'Passed Through - [copySass:newer]'}),
+		gulp.dest(distPaths.scssDest)
+	], done);
 });
 
 
