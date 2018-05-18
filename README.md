@@ -85,17 +85,13 @@ Run `npm install` to install the required node modules.
 You are good to go!
 
 ## Running Gulp Tasks - Commands
-* `gulp` - the default gulp task. The one task to rule them all. Deletes `/build` and `/dist` and runs all the SCSS, JS, CSS related tasks once and enters watching mode
+* `gulp` - the default gulp task. The one task to rule them all. Deletes `/build` and `/dist` and runs all the SCSS, JS, CSS related tasks once and enters into watching mode
 * `gulp stylelintFix` - stylelint allows _some_ CSS/SCSS styling errors to be fixed automatically. It is not perfect but definitely helps. Run this task manually to have stylelint automatically fix some of the minor styling issues in your SCSS.
 * `gulp eslintFix` - eslint allows _some_ JS errors to be fixed automatically. It is not perfect but definitely helps. Does convert JS to ES6 version. Run this task manually to have eslint automatically fix some of the minor styling issues in your JS.
 
 ## Known issues
 * Some of the gulp tasks uses gulp-newer that compares against target files to see if a task needs to be performed (helps avoid performance issues when watching). On watching, when files are deleted from src folders, files such as vendor.concat.js in the build folder will be re-concatenated and then re-uglified (expected behavior). However if you add a file that is older than the gulp-newer targeted file, the associated task will not run. To overcome this, just do something (add a space and save) in that file so that it has a newer modified date than the gulp-newer targeted file.
-    * Example: gulp-newer observing file b.js in build folder but no b.js in src folder. During gulp is watching, file with the same filename b.js was just added in src folder but has an older modified date than what gulp-newer is looking at, then the associated gulp task will not run.   
+    * Example: gulp-newer observing file b.js in build folder but no b.js in src folder. While gulp is watching, file with the same filename b.js was just added in src folder but has an older modified date than what gulp-newer is looking at, then the associated gulp task will not run.   
 
 
-      
-
-The src `.scss` partials are linted and then copied to the `assets/dist/scss` folder.
-    
-DCF uses Gulp to build out its production files.  
+---
