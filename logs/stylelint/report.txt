@@ -7,10 +7,6 @@ assets/src/scss/components/_components.articles.scss
  14:31  ✖  Expected single space after ":"    declaration-colon-space-after
 
 116 sources checked
- /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.box-sizing.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.font-size.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.keyframes.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/generic/generic.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/_components.alerts.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/_components.articles copy.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/_components.articles.scss
@@ -38,6 +34,16 @@ assets/src/scss/components/_components.articles.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/_components.search.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/_components.tables.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/components/components.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.box-sizing.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.font-size.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/generic/_generic.keyframes.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/generic/generic.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/functions/_functions.media-queries.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/functions/_functions.z-index.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/functions/functions.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/javascript/_javascript.dialog.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/javascript/_javascript.states.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/javascript/javascript.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/_elements.abbreviations.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/_elements.addresses.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/_elements.anchors.scss
@@ -59,12 +65,6 @@ assets/src/scss/components/_components.articles.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/_elements.sup-sub.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/_elements.tables.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/elements/elements.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/functions/_functions.media-queries.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/functions/_functions.z-index.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/functions/functions.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/javascript/_javascript.dialog.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/javascript/_javascript.states.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/javascript/javascript.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/variables/_variables.borders.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/variables/_variables.breakpoints.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/variables/_variables.colors.scss
@@ -79,6 +79,27 @@ assets/src/scss/components/_components.articles.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/objects/_objects.stretch.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/objects/_objects.wrapper.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/objects/objects.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.aspect-ratios.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.backgrounds.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.borders.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.box-alignment.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.colors.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.disabled.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.display.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.flexbox.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.floats.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.grid.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.height-width.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.margins.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.object-fit.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.order.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.overflow.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.padding.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.position.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.svg.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.typography.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.visibility.scss
+ /Library/WebServer/Documents/dcf/assets/src/scss/utilities/utilities.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/_mixins.aspect-ratios.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/_mixins.backgrounds.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/_mixins.borders.scss
@@ -102,27 +123,6 @@ assets/src/scss/components/_components.articles.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/_mixins.visibility.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/_mixins.z-index.scss
  /Library/WebServer/Documents/dcf/assets/src/scss/mixins/mixins.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.aspect-ratios.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.backgrounds.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.borders.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.box-alignment.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.colors.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.disabled.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.display.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.flexbox.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.floats.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.grid.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.height-width.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.margins.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.object-fit.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.order.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.overflow.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.padding.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.position.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.svg.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.typography.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/_utilities.visibility.scss
- /Library/WebServer/Documents/dcf/assets/src/scss/utilities/utilities.scss
 
 3 problems found
  severity level "error": 3

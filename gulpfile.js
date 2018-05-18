@@ -310,18 +310,17 @@ gulp.task('cachedEslint-watch', () => {
 /* ----------------- */
 /* BABEL TASKS
 /* ----------------- */
-gulp.task('babel:newer', () => {
+gulp.task('babel:newer', (done) => {
 	$.fancyLog('-> Transpiling ES6 via Babel... 🍕');
 
-	return gulp.src(buildPaths.appJsGlob)
-			.pipe(customPlumber('Error Running Babel'))
-			.pipe($.debug({title: 'All Babel Files'})) // uncomment to see src files
-			.pipe($.newer({ dest: buildPaths.appJsDest }))
-			.pipe($.debug({title: 'Passed Through Babel Files'})) // uncomment to see src files
-			.pipe($.babel({
-				presets: [ 'env' ]
-			}))
-			.pipe(gulp.dest(buildPaths.appJsDest));
+	$.pump([
+		gulp.src(buildPaths.appJsGlob),
+		customPlumber('Error Running Babel'),
+		$.newer({ dest: buildPaths.appJsDest }),
+		$.debug({title: 'Passed Through Babel Files'}),
+		$.babel({presets: [ 'env' ]}),
+		gulp.dest(buildPaths.appJsDest)
+	], done);
 });
 
 
@@ -343,15 +342,16 @@ gulp.task('lintBabel-watch', () => {
 /* ----------------- */
 /* APP TASKS
 /* ----------------- */
-gulp.task('copyOptionalApp:newer', () => {
+gulp.task('copyOptionalApp:newer', (done) => {
 	$.fancyLog('----> //** Copying Optional App files');
 
-	return gulp.src(distPaths.optionalAppGlob)
-			.pipe($.debug({title: 'All Files - [copyOptionalApp:newer]'})) // uncomment to see src files
-			.pipe($.newer({ dest:distPaths.optionalAppDest }))
-			.pipe($.debug({title: 'Passed Through - [copyOptionalApp:newer]'})) // uncomment to see passed through files
-			.pipe(gulp.dest(distPaths.optionalAppDest))
-
+	$.pump([
+		gulp.src(distPaths.optionalAppGlob),
+		$.debug({title: 'All Files - [copyOptionalApp:newer]'}), // uncomment to see src files
+		$.newer({ dest:distPaths.optionalAppDest }),
+		$.debug({title: 'Passed Through - [copyOptionalApp:newer]'}), // uncomment to see passed through files
+		gulp.dest(distPaths.optionalAppDest)
+	], done);
 });
 
 
