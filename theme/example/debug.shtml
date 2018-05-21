@@ -2662,12 +2662,6 @@
         <dt><code>.dcf-1st</code></dt><dd>first</dd>
         <dt><code>.dcf-2nd</code></dt><dd>second</dd>
         <dt><code>.dcf-3rd</code></dt><dd>third</dd>
-        <dt><code>.dcf-4th</code></dt><dd>fourth</dd>
-        <dt><code>.dcf-5th</code></dt><dd>fifth</dd>
-        <dt><code>.dcf-6th</code></dt><dd>sixth</dd>
-        <dt><code>.dcf-7th</code></dt><dd>seventh</dd>
-        <dt><code>.dcf-8th</code></dt><dd>eighth</dd>
-        <dt><code>.dcf-9th</code></dt><dd>ninth</dd>
       </dl>
 
       <h3 class="dcf-mt-8" id="example-utilities-overflow">Overflow</h3>
