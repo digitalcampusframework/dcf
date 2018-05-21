@@ -2481,29 +2481,49 @@ a.dcf-inverse:active {
   -webkit-box-ordinal-group: 4 !important;
           order: 3 !important; }
 
-.dcf-4th {
-  -webkit-box-ordinal-group: 5 !important;
-          order: 4 !important; }
+@media only screen and (min-width: 41.95625em) {
+  .dcf-1st\@sm {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@sm {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@sm {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-5th {
-  -webkit-box-ordinal-group: 6 !important;
-          order: 5 !important; }
+@media only screen and (min-width: 55.925em) {
+  .dcf-1st\@md {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@md {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@md {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-6th {
-  -webkit-box-ordinal-group: 7 !important;
-          order: 6 !important; }
+@media only screen and (min-width: 74.55em) {
+  .dcf-1st\@lg {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@lg {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@lg {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-7th {
-  -webkit-box-ordinal-group: 8 !important;
-          order: 7 !important; }
-
-.dcf-8th {
-  -webkit-box-ordinal-group: 9 !important;
-          order: 8 !important; }
-
-.dcf-9th {
-  -webkit-box-ordinal-group: 10 !important;
-          order: 9 !important; }
+@media only screen and (min-width: 99.375em) {
+  .dcf-1st\@xl {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@xl {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@xl {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
 .dcf-overflow-visible {
   overflow: visible !important; }
