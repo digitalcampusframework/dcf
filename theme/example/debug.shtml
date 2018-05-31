@@ -870,12 +870,12 @@
       <p>Grid-related object classes can be appended with the framework's responsive suffixes (<code>@sm</code>, <code>@md</code>, <code>@lg</code> and <code>@xl</code>) to apply styles at the respective breakpoints.</p>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-50%-l</code></dt>
+        <dt><code>.dcf-col-50%-start</code></dt>
         <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-grid-col-50%-l dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-50%-l</code></div>
+          <div class="dcf-col-50%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-50%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
@@ -898,13 +898,13 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-50%-r</code></dt>
+        <dt><code>.dcf-col-50%-end</code></dt>
         <dd>Apply to a grid child element to define the column width as one-half of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">1</span></div>
-          <div class="dcf-grid-col-50%-r dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-50%-r</code></div>
+          <div class="dcf-col-50%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-50%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">5</span></div>
@@ -926,12 +926,12 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-33%-l</code></dt>
+        <dt><code>.dcf-col-33%-start</code></dt>
         <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-grid-col-33%-l dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-33%-l</code></div>
+          <div class="dcf-col-33%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-33%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
@@ -954,13 +954,13 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-33%-r</code></dt>
+        <dt><code>.dcf-col-33%-end</code></dt>
         <dd>Apply to a grid child element to define the column width as one-third of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">1</span></div>
-          <div class="dcf-grid-col-33%-r dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-33%-r</code></div>
+          <div class="dcf-col-33%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-33%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">5</span></div>
@@ -982,12 +982,12 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-67%-l</code></dt>
+        <dt><code>.dcf-col-67%-start</code></dt>
         <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-grid-col-67%-l dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-67%-l</code></div>
+          <div class="dcf-col-67%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-67%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
@@ -1010,13 +1010,13 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-67%-r</code></dt>
+        <dt><code>.dcf-col-67%-end</code></dt>
         <dd>Apply to a grid child element to define the column width as two-thirds of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">1</span></div>
-          <div class="dcf-grid-col-67%-r dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-67%-r</code></div>
+          <div class="dcf-col-67%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-67%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">5</span></div>
@@ -1038,12 +1038,12 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-25%-l</code></dt>
+        <dt><code>.dcf-col-25%-start</code></dt>
         <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-grid-col-25%-l dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-25%-l</code></div>
+          <div class="dcf-col-25%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-25%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
@@ -1066,13 +1066,13 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-25%-r</code></dt>
+        <dt><code>.dcf-col-25%-end</code></dt>
         <dd>Apply to a grid child element to define the column width as one-fourth of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">1</span></div>
-          <div class="dcf-grid-col-25%-r dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-25%-r</code></div>
+          <div class="dcf-col-25%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-25%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">5</span></div>
@@ -1094,12 +1094,12 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-75%-l</code></dt>
+        <dt><code>.dcf-col-75%-start</code></dt>
         <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-grid-col-75%-l dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-75%-l</code></div>
+          <div class="dcf-col-75%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-75%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
@@ -1122,13 +1122,13 @@
       </figure>
 
       <dl class="dcf-mt-8">
-        <dt><code>.dcf-grid-col-75%-r</code></dt>
+        <dt><code>.dcf-col-75%-end</code></dt>
         <dd>Apply to a grid child element to define the column width as three-fourths of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">1</span></div>
-          <div class="dcf-grid-col-75%-r dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-grid-col-75%-r</code></div>
+          <div class="dcf-col-75%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><code class="dcf-bold dcf-txt-sm">.dcf-col-75%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">3</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">4</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1"><span class="dcf-txt-sm">5</span></div>
