@@ -2535,13 +2535,16 @@ a.dcf-inverse:active {
   overflow: auto !important; }
 
 .dcf-overflow-scroll {
-  overflow: scroll !important; }
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-overflow-x-scroll {
-  overflow-x: scroll !important; }
+  overflow-x: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-overflow-y-scroll {
-  overflow-y: scroll !important; }
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-p-0 {
   padding: 0 !important; }
