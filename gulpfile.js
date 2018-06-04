@@ -8,7 +8,7 @@ const pkg = require('./package.json'); // bring in properties specified in packa
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
-const baseStylelint = require('stylelint');
+const baseStylelint = require('stylelint'); // require stylelint separately from gulp-stylelint due to conflicting names in gulp-load-plugins
 // Path and name variables
 const commonPaths = require('./build-utils/common-paths');
 const buildPaths = require('./build-utils/build-paths');
@@ -22,9 +22,6 @@ const concat = require('./build-utils/concat');
 const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
-
-// TODO update all pipe vinyl methods to use pump instead
-// TODO write documentation
 
 /**
  * ------------
@@ -65,7 +62,7 @@ gulp.task('stylelintFix', (done) => {
 				gulp.src(distPaths.scssGlob),
 				customPlumber('Error Running stylelintFix'),
 				$.newer({dest: distPaths.scssDest}),
-				$.debug({title: 'Passed Through - [stylelint:newer]'}),
+				$.debug({title: 'Passed Through - [stylelintFix]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
