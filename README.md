@@ -11,7 +11,7 @@ The core scripts and styles help create a more consistent user experience, incor
 
 ## Folder Structure 
 The DCF core uses Gulp as its build tool for task automation, supoorts SASS and ES6 JS syntax. DCF core also employs 'cutting the mustard' approach to using JS browser feature detection to request for fallbacks that most modern evergreen browsers have already taken care of. This is a more user friendly and performant approach to providing fallbacks only when it is needed. 
-// TODO talk about folder structure, decisions made about scss compilation, mustard and such 
+
 
 
 ### Directories and Files 
@@ -43,7 +43,6 @@ There will be no SCSS compilation `.scss` files in DCF Core. Sass file compilati
       
 #### CSS Files
 `/assets/src/css/vendor/**/*.css`
-
 DCF Core uses SASS. The CSS folder is mainly used for vendor associated CSS files 
 
 
