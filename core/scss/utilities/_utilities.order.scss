@@ -6,9 +6,31 @@
 .dcf-1st { @include order-1st(!important); }
 .dcf-2nd { @include order-2nd(!important); }
 .dcf-3rd { @include order-3rd(!important); }
-.dcf-4th { @include order-4th(!important); }
-.dcf-5th { @include order-5th(!important); }
-.dcf-6th { @include order-6th(!important); }
-.dcf-7th { @include order-7th(!important); }
-.dcf-8th { @include order-8th(!important); }
-.dcf-9th { @include order-9th(!important); }
+
+
+@include mq(sm, min, width) {
+  .dcf-1st\@sm { @include order-1st(!important); }
+  .dcf-2nd\@sm { @include order-2nd(!important); }
+  .dcf-3rd\@sm { @include order-3rd(!important); }
+}
+
+
+@include mq(md, min, width) {
+  .dcf-1st\@md { @include order-1st(!important); }
+  .dcf-2nd\@md { @include order-2nd(!important); }
+  .dcf-3rd\@md { @include order-3rd(!important); }
+}
+
+
+@include mq(lg, min, width) {
+  .dcf-1st\@lg { @include order-1st(!important); }
+  .dcf-2nd\@lg { @include order-2nd(!important); }
+  .dcf-3rd\@lg { @include order-3rd(!important); }
+}
+
+
+@include mq(xl, min, width) {
+  .dcf-1st\@xl { @include order-1st(!important); }
+  .dcf-2nd\@xl { @include order-2nd(!important); }
+  .dcf-3rd\@xl { @include order-3rd(!important); }
+}

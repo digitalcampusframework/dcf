@@ -422,34 +422,34 @@ th {
 [class*='dcf-grid-col'] {
   flex-basis: 100%; }
 
-.dcf-grid-col-50\%-l {
+.dcf-col-50\%-start {
   flex-basis: 50%; }
 
-.dcf-grid-col-50\%-r {
+.dcf-col-50\%-end {
   flex-basis: 50%; }
 
-.dcf-grid-col-33\%-l {
+.dcf-col-33\%-start {
   flex-basis: 33%; }
 
-.dcf-grid-col-33\%-r {
+.dcf-col-33\%-end {
   flex-basis: 33%; }
 
-.dcf-grid-col-67\%-l {
+.dcf-col-67\%-start {
   flex-basis: 67%; }
 
-.dcf-grid-col-67\%-r {
+.dcf-col-67\%-end {
   flex-basis: 67%; }
 
-.dcf-grid-col-25\%-l {
+.dcf-col-25\%-start {
   flex-basis: 25%; }
 
-.dcf-grid-col-25\%-r {
+.dcf-col-25\%-end {
   flex-basis: 25%; }
 
-.dcf-grid-col-75\%-l {
+.dcf-col-75\%-start {
   flex-basis: 75%; }
 
-.dcf-grid-col-75\%-r {
+.dcf-col-75\%-end {
   flex-basis: 75%; }
 
 @media only screen and (min-width: 41.95625em) {
@@ -459,25 +459,25 @@ th {
     flex-basis: 33%; }
   .dcf-grid-fourths\@sm > * {
     flex-basis: 25%; }
-  .dcf-grid-col-50\%-l\@sm {
+  .dcf-col-50\%-start\@sm {
     flex-basis: 50%; }
-  .dcf-grid-col-50\%-r\@sm {
+  .dcf-col-50\%-end\@sm {
     flex-basis: 50%; }
-  .dcf-grid-col-33\%-l\@sm {
+  .dcf-col-33\%-start\@sm {
     flex-basis: 33%; }
-  .dcf-grid-col-33\%-r\@sm {
+  .dcf-col-33\%-end\@sm {
     flex-basis: 33%; }
-  .dcf-grid-col-67\%-l\@sm {
+  .dcf-col-67\%-start\@sm {
     flex-basis: 67%; }
-  .dcf-grid-col-67\%-r\@sm {
+  .dcf-col-67\%-end\@sm {
     flex-basis: 67%; }
-  .dcf-grid-col-25\%-l\@sm {
+  .dcf-col-25\%-start\@sm {
     flex-basis: 25%; }
-  .dcf-grid-col-25\%-r\@sm {
+  .dcf-col-25\%-end\@sm {
     flex-basis: 25%; }
-  .dcf-grid-col-75\%-l\@sm {
+  .dcf-col-75\%-start\@sm {
     flex-basis: 75%; }
-  .dcf-grid-col-75\%-r\@sm {
+  .dcf-col-75\%-end\@sm {
     flex-basis: 75%; } }
 
 @media only screen and (min-width: 55.925em) {
@@ -491,25 +491,25 @@ th {
     flex-basis: 20%; }
   .dcf-grid-sixths\@md > * {
     flex-basis: 16.66%; }
-  .dcf-grid-col-50\%-l\@md {
+  .dcf-col-50\%-start\@md {
     flex-basis: 50%; }
-  .dcf-grid-col-50\%-r\@md {
+  .dcf-col-50\%-end\@md {
     flex-basis: 50%; }
-  .dcf-grid-col-33\%-l\@md {
+  .dcf-col-33\%-start\@md {
     flex-basis: 33%; }
-  .dcf-grid-col-33\%-r\@md {
+  .dcf-col-33\%-end\@md {
     flex-basis: 33%; }
-  .dcf-grid-col-67\%-l\@md {
+  .dcf-col-67\%-start\@md {
     flex-basis: 67%; }
-  .dcf-grid-col-67\%-r\@md {
+  .dcf-col-67\%-end\@md {
     flex-basis: 67%; }
-  .dcf-grid-col-25\%-l\@md {
+  .dcf-col-25\%-start\@md {
     flex-basis: 25%; }
-  .dcf-grid-col-25\%-r\@md {
+  .dcf-col-25\%-end\@md {
     flex-basis: 25%; }
-  .dcf-grid-col-75\%-l\@md {
+  .dcf-col-75\%-start\@md {
     flex-basis: 75%; }
-  .dcf-grid-col-75\%-r\@md {
+  .dcf-col-75\%-end\@md {
     flex-basis: 75%; } }
 
 @media only screen and (min-width: 74.55em) {
@@ -523,25 +523,25 @@ th {
     flex-basis: 20%; }
   .dcf-grid-sixths\@lg > * {
     flex-basis: 16.66%; }
-  .dcf-grid-col-50\%-l\@lg {
+  .dcf-col-50\%-start\@lg {
     flex-basis: 50%; }
-  .dcf-grid-col-50\%-r\@lg {
+  .dcf-col-50\%-end\@lg {
     flex-basis: 50%; }
-  .dcf-grid-col-33\%-l\@lg {
+  .dcf-col-33\%-start\@lg {
     flex-basis: 33%; }
-  .dcf-grid-col-33\%-r\@lg {
+  .dcf-col-33\%-end\@lg {
     flex-basis: 33%; }
-  .dcf-grid-col-67\%-l\@lg {
+  .dcf-col-67\%-start\@lg {
     flex-basis: 67%; }
-  .dcf-grid-col-67\%-r\@lg {
+  .dcf-col-67\%-end\@lg {
     flex-basis: 67%; }
-  .dcf-grid-col-25\%-l\@lg {
+  .dcf-col-25\%-start\@lg {
     flex-basis: 25%; }
-  .dcf-grid-col-25\%-r\@lg {
+  .dcf-col-25\%-end\@lg {
     flex-basis: 25%; }
-  .dcf-grid-col-75\%-l\@lg {
+  .dcf-col-75\%-start\@lg {
     flex-basis: 75%; }
-  .dcf-grid-col-75\%-r\@lg {
+  .dcf-col-75\%-end\@lg {
     flex-basis: 75%; } }
 
 @media only screen and (min-width: 99.375em) {
@@ -555,25 +555,25 @@ th {
     flex-basis: 20%; }
   .dcf-grid-sixths\@xl > * {
     flex-basis: 16.66%; }
-  .dcf-grid-col-50\%-l\@xl {
+  .dcf-col-50\%-start\@xl {
     flex-basis: 50%; }
-  .dcf-grid-col-50\%-r\@xl {
+  .dcf-col-50\%-end\@xl {
     flex-basis: 50%; }
-  .dcf-grid-col-33\%-l\@xl {
+  .dcf-col-33\%-start\@xl {
     flex-basis: 33%; }
-  .dcf-grid-col-33\%-r\@xl {
+  .dcf-col-33\%-end\@xl {
     flex-basis: 33%; }
-  .dcf-grid-col-67\%-l\@xl {
+  .dcf-col-67\%-start\@xl {
     flex-basis: 67%; }
-  .dcf-grid-col-67\%-r\@xl {
+  .dcf-col-67\%-end\@xl {
     flex-basis: 67%; }
-  .dcf-grid-col-25\%-l\@xl {
+  .dcf-col-25\%-start\@xl {
     flex-basis: 25%; }
-  .dcf-grid-col-25\%-r\@xl {
+  .dcf-col-25\%-end\@xl {
     flex-basis: 25%; }
-  .dcf-grid-col-75\%-l\@xl {
+  .dcf-col-75\%-start\@xl {
     flex-basis: 75%; }
-  .dcf-grid-col-75\%-r\@xl {
+  .dcf-col-75\%-end\@xl {
     flex-basis: 75%; } }
 
 @supports (display: grid) {
@@ -610,25 +610,25 @@ th {
     grid-template-columns: repeat(4, 1fr); }
   [class*='dcf-grid-col'] {
     grid-column: 1 / span 12; }
-  .dcf-grid-col-50\%-l {
+  .dcf-col-50\%-start {
     grid-column: 1 / span 6; }
-  .dcf-grid-col-50\%-r {
+  .dcf-col-50\%-end {
     grid-column: span 6 / -1; }
-  .dcf-grid-col-33\%-l {
+  .dcf-col-33\%-start {
     grid-column: 1 / span 4; }
-  .dcf-grid-col-33\%-r {
+  .dcf-col-33\%-end {
     grid-column: span 4 / -1; }
-  .dcf-grid-col-67\%-l {
+  .dcf-col-67\%-start {
     grid-column: 1 / span 8; }
-  .dcf-grid-col-67\%-r {
+  .dcf-col-67\%-end {
     grid-column: span 8 / -1; }
-  .dcf-grid-col-25\%-l {
+  .dcf-col-25\%-start {
     grid-column: 1 / span 3; }
-  .dcf-grid-col-25\%-r {
+  .dcf-col-25\%-end {
     grid-column: span 3 / -1; }
-  .dcf-grid-col-75\%-l {
+  .dcf-col-75\%-start {
     grid-column: 1 / span 9; }
-  .dcf-grid-col-75\%-r {
+  .dcf-col-75\%-end {
     grid-column: span 9 / -1; }
   @media only screen and (min-width: 41.95625em) {
     .dcf-grid-halves\@sm {
@@ -637,25 +637,25 @@ th {
       grid-template-columns: repeat(3, 1fr); }
     .dcf-grid-fourths\@sm {
       grid-template-columns: repeat(4, 1fr); }
-    .dcf-grid-col-50\%-l\@sm {
+    .dcf-col-50\%-start\@sm {
       grid-column: 1 / span 6; }
-    .dcf-grid-col-50\%-r\@sm {
+    .dcf-col-50\%-end\@sm {
       grid-column: span 6 / -1; }
-    .dcf-grid-col-33\%-l\@sm {
+    .dcf-col-33\%-start\@sm {
       grid-column: 1 / span 4; }
-    .dcf-grid-col-33\%-r\@sm {
+    .dcf-col-33\%-end\@sm {
       grid-column: span 4 / -1; }
-    .dcf-grid-col-67\%-l\@sm {
+    .dcf-col-67\%-start\@sm {
       grid-column: 1 / span 8; }
-    .dcf-grid-col-67\%-r\@sm {
+    .dcf-col-67\%-end\@sm {
       grid-column: span 8 / -1; }
-    .dcf-grid-col-25\%-l\@sm {
+    .dcf-col-25\%-start\@sm {
       grid-column: 1 / span 3; }
-    .dcf-grid-col-25\%-r\@sm {
+    .dcf-col-25\%-end\@sm {
       grid-column: span 3 / -1; }
-    .dcf-grid-col-75\%-l\@sm {
+    .dcf-col-75\%-start\@sm {
       grid-column: 1 / span 9; }
-    .dcf-grid-col-75\%-r\@sm {
+    .dcf-col-75\%-end\@sm {
       grid-column: span 9 / -1; } }
   @media only screen and (min-width: 55.925em) {
     .dcf-grid-halves\@md {
@@ -668,25 +668,25 @@ th {
       grid-template-columns: repeat(5, 1fr); }
     .dcf-grid-sixths\@md {
       grid-template-columns: repeat(6, 1fr); }
-    .dcf-grid-col-50\%-l\@md {
+    .dcf-col-50\%-start\@md {
       grid-column: 1 / span 6; }
-    .dcf-grid-col-50\%-r\@md {
+    .dcf-col-50\%-end\@md {
       grid-column: span 6 / -1; }
-    .dcf-grid-col-33\%-l\@md {
+    .dcf-col-33\%-start\@md {
       grid-column: 1 / span 4; }
-    .dcf-grid-col-33\%-r\@md {
+    .dcf-col-33\%-end\@md {
       grid-column: span 4 / -1; }
-    .dcf-grid-col-67\%-l\@md {
+    .dcf-col-67\%-start\@md {
       grid-column: 1 / span 8; }
-    .dcf-grid-col-67\%-r\@md {
+    .dcf-col-67\%-end\@md {
       grid-column: span 8 / -1; }
-    .dcf-grid-col-25\%-l\@md {
+    .dcf-col-25\%-start\@md {
       grid-column: 1 / span 3; }
-    .dcf-grid-col-25\%-r\@md {
+    .dcf-col-25\%-end\@md {
       grid-column: span 3 / -1; }
-    .dcf-grid-col-75\%-l\@md {
+    .dcf-col-75\%-start\@md {
       grid-column: 1 / span 9; }
-    .dcf-grid-col-75\%-r\@md {
+    .dcf-col-75\%-end\@md {
       grid-column: span 9 / -1; } }
   @media only screen and (min-width: 74.55em) {
     .dcf-grid-halves\@lg {
@@ -699,25 +699,25 @@ th {
       grid-template-columns: repeat(5, 1fr); }
     .dcf-grid-sixths\@lg {
       grid-template-columns: repeat(6, 1fr); }
-    .dcf-grid-col-50\%-l\@lg {
+    .dcf-col-50\%-start\@lg {
       grid-column: 1 / span 6; }
-    .dcf-grid-col-50\%-r\@lg {
+    .dcf-col-50\%-end\@lg {
       grid-column: span 6 / -1; }
-    .dcf-grid-col-33\%-l\@lg {
+    .dcf-col-33\%-start\@lg {
       grid-column: 1 / span 4; }
-    .dcf-grid-col-33\%-r\@lg {
+    .dcf-col-33\%-end\@lg {
       grid-column: span 4 / -1; }
-    .dcf-grid-col-67\%-l\@lg {
+    .dcf-col-67\%-start\@lg {
       grid-column: 1 / span 8; }
-    .dcf-grid-col-67\%-r\@lg {
+    .dcf-col-67\%-end\@lg {
       grid-column: span 8 / -1; }
-    .dcf-grid-col-25\%-l\@lg {
+    .dcf-col-25\%-start\@lg {
       grid-column: 1 / span 3; }
-    .dcf-grid-col-25\%-r\@lg {
+    .dcf-col-25\%-end\@lg {
       grid-column: span 3 / -1; }
-    .dcf-grid-col-75\%-l\@lg {
+    .dcf-col-75\%-start\@lg {
       grid-column: 1 / span 9; }
-    .dcf-grid-col-75\%-r\@lg {
+    .dcf-col-75\%-end\@lg {
       grid-column: span 9 / -1; } }
   @media only screen and (min-width: 99.375em) {
     .dcf-grid-halves\@xl {
@@ -730,25 +730,25 @@ th {
       grid-template-columns: repeat(5, 1fr); }
     .dcf-grid-sixths\@xl {
       grid-template-columns: repeat(6, 1fr); }
-    .dcf-grid-col-50\%-l\@xl {
+    .dcf-col-50\%-start\@xl {
       grid-column: 1 / span 6; }
-    .dcf-grid-col-50\%-r\@xl {
+    .dcf-col-50\%-end\@xl {
       grid-column: span 6 / -1; }
-    .dcf-grid-col-33\%-l\@xl {
+    .dcf-col-33\%-start\@xl {
       grid-column: 1 / span 4; }
-    .dcf-grid-col-33\%-r\@xl {
+    .dcf-col-33\%-end\@xl {
       grid-column: span 4 / -1; }
-    .dcf-grid-col-67\%-l\@xl {
+    .dcf-col-67\%-start\@xl {
       grid-column: 1 / span 8; }
-    .dcf-grid-col-67\%-r\@xl {
+    .dcf-col-67\%-end\@xl {
       grid-column: span 8 / -1; }
-    .dcf-grid-col-25\%-l\@xl {
+    .dcf-col-25\%-start\@xl {
       grid-column: 1 / span 3; }
-    .dcf-grid-col-25\%-r\@xl {
+    .dcf-col-25\%-end\@xl {
       grid-column: span 3 / -1; }
-    .dcf-grid-col-75\%-l\@xl {
+    .dcf-col-75\%-start\@xl {
       grid-column: 1 / span 9; }
-    .dcf-grid-col-75\%-r\@xl {
+    .dcf-col-75\%-end\@xl {
       grid-column: span 9 / -1; } } }
 
 .dcf-stretch {
@@ -2481,29 +2481,49 @@ a.dcf-inverse:active {
   -webkit-box-ordinal-group: 4 !important;
           order: 3 !important; }
 
-.dcf-4th {
-  -webkit-box-ordinal-group: 5 !important;
-          order: 4 !important; }
+@media only screen and (min-width: 41.95625em) {
+  .dcf-1st\@sm {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@sm {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@sm {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-5th {
-  -webkit-box-ordinal-group: 6 !important;
-          order: 5 !important; }
+@media only screen and (min-width: 55.925em) {
+  .dcf-1st\@md {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@md {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@md {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-6th {
-  -webkit-box-ordinal-group: 7 !important;
-          order: 6 !important; }
+@media only screen and (min-width: 74.55em) {
+  .dcf-1st\@lg {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@lg {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@lg {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
-.dcf-7th {
-  -webkit-box-ordinal-group: 8 !important;
-          order: 7 !important; }
-
-.dcf-8th {
-  -webkit-box-ordinal-group: 9 !important;
-          order: 8 !important; }
-
-.dcf-9th {
-  -webkit-box-ordinal-group: 10 !important;
-          order: 9 !important; }
+@media only screen and (min-width: 99.375em) {
+  .dcf-1st\@xl {
+    -webkit-box-ordinal-group: 2 !important;
+            order: 1 !important; }
+  .dcf-2nd\@xl {
+    -webkit-box-ordinal-group: 3 !important;
+            order: 2 !important; }
+  .dcf-3rd\@xl {
+    -webkit-box-ordinal-group: 4 !important;
+            order: 3 !important; } }
 
 .dcf-overflow-visible {
   overflow: visible !important; }
@@ -2515,13 +2535,16 @@ a.dcf-inverse:active {
   overflow: auto !important; }
 
 .dcf-overflow-scroll {
-  overflow: scroll !important; }
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-overflow-x-scroll {
-  overflow-x: scroll !important; }
+  overflow-x: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-overflow-y-scroll {
-  overflow-y: scroll !important; }
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch; }
 
 .dcf-p-0 {
   padding: 0 !important; }
