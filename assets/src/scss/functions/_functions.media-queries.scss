@@ -14,10 +14,10 @@
 // Derived from Bourbon by thoughtbot (http://bourbon.io)
 @function _mq-em($pxval, $base: $mq-em-base) {
   @if not unitless($pxval) {
-    $pxval: _mq-strip-units($pxval);
+      $pxval: _mq-strip-units($pxval);
   }
   @if not unitless($base) {
-    $base: _mq-strip-units($base);
+      $base: _mq-strip-units($base);
   }
   @return ($pxval / $base) * 1em;
 }
@@ -36,6 +36,6 @@
   }
   @else {
     @error "Invalid breakpoint key. \a"
-      + "It must be defined in the `$mq-breakpoints` map.";
+         + "It must be defined in the `$mq-breakpoints` map.";
   }
 }

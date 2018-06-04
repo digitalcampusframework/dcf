@@ -9,7 +9,7 @@ input[type="button"],
 input[type="submit"] {
   cursor: pointer;
   display: inline-block;
-  //   font-family: inherit;
+//   font-family: inherit;
   font-size: #{ms(0)}em; // 1em
   @include lh-4;
   @include pb-2;
@@ -17,6 +17,6 @@ input[type="submit"] {
   @include pr-4;
   @include pt-2;
   text-align: center;
-  //   -webkit-appearance: none;
-  //   -webkit-transition: none;
+//   -webkit-appearance: none;
+//   -webkit-transition: none;
 }

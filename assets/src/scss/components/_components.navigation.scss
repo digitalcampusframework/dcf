@@ -48,8 +48,8 @@
 
 
 .dcf-nav-local > ul {
-  //   @include d-flex;
-  //   @include f-col;
+//   @include d-flex;
+//   @include f-col;
   @include txt-sm;
 
   @supports (display: grid) {
@@ -141,9 +141,9 @@
   }
 
   .dcf-nav-global {
-    //     @include absolute;
-    //     top: calc(1em + 3px);
-    //     right: 5vw;
+//     @include absolute;
+//     top: calc(1em + 3px);
+//     right: 5vw;
     grid-area: nav2;
   }
 }

@@ -11,11 +11,11 @@
 .dcf-search-results {
   @include pr-6;
 
-  //   @supports (display: grid) {
-  //     @include grid;
-  //     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  //     grid-gap: #{ms(16)}em 5vw;
-  //   }
+//   @supports (display: grid) {
+//     @include grid;
+//     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+//     grid-gap: #{ms(16)}em 5vw;
+//   }
 }
 
 .dcf-search-results-directory {
@@ -78,13 +78,13 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    //     .dcf-search-results {
-    //       @include grid;
-    //       grid-template-columns: 2fr 1fr 1fr;
-    //       grid-template-areas:
-    //         "pages people places";
-    //       grid-gap: #{ms(8)}em 5vw;
-    //     }
+//     .dcf-search-results {
+//       @include grid;
+//       grid-template-columns: 2fr 1fr 1fr;
+//       grid-template-areas:
+//         "pages people places";
+//       grid-gap: #{ms(8)}em 5vw;
+//     }
 
     .dcf-search-results-web {
       grid-area: web;

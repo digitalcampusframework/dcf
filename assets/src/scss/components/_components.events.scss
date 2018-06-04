@@ -7,7 +7,7 @@
 .dcf-calendar-caption {
   caption-side: top;
   font-size: 1em;
-  //   background-color: $color-body;
+//   background-color: $color-body;
 }
 
 
@@ -20,7 +20,7 @@
 // !Calendar Weekdays
 .dcf-calendar-weekday {
   color: $color-light-text;
-  //   background-color: mix($color-body-bg, $color-body, 92%);
+//   background-color: mix($color-body-bg, $color-body, 92%);
 }
 
 
@@ -105,17 +105,17 @@ a.dcf-calendar-date-active:focus {
     grid-template-areas: "heading" "listing" "more";
     grid-template-columns: auto;
 
-    //     @include mq(sm, min, width) {
-    //     }
+//     @include mq(sm, min, width) {
+//     }
 
-    //     @include mq(md, min, width) {
-    //       grid-template-columns: 1fr auto;
-    //       grid-template-rows: auto;
-    //       grid-template-areas:
-    //         "heading listing"
-    //         "subscribe listing"
-    //         "more listing";
-    //     }
+//     @include mq(md, min, width) {
+//       grid-template-columns: 1fr auto;
+//       grid-template-rows: auto;
+//       grid-template-areas:
+//         "heading listing"
+//         "subscribe listing"
+//         "more listing";
+//     }
 
     @include mq(lg, min, width) {
       grid-template-areas: "heading more" "listing listing";
