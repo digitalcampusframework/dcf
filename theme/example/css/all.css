@@ -198,7 +198,7 @@ fieldset {
   padding: 0; }
 
 legend {
-  font-size: 1.125em; }
+  font-size: 1.33333em; }
 
 label {
   display: inline-block; }
@@ -213,22 +213,22 @@ textarea {
   width: 100%; }
 
 h1 {
-  font-size: 2.37037em; }
+  font-size: 2.66667em; }
 
 h2 {
-  font-size: 2.0em; }
+  font-size: 2.37037em; }
 
 h3 {
-  font-size: 1.77778em; }
+  font-size: 2.0em; }
 
 h4 {
-  font-size: 1.5em; }
+  font-size: 1.77778em; }
 
 h5 {
-  font-size: 1.33333em; }
+  font-size: 1.5em; }
 
 h6 {
-  font-size: 1.125em; }
+  font-size: 1.33333em; }
 
 h1,
 h2,
@@ -2746,35 +2746,56 @@ a.dcf-inverse:active {
 .dcf-stroke-current {
   stroke: currentColor !important; }
 
-.dcf-txt-sm {
+.dcf-txt-base {
+  font-size: 1rem; }
+
+.dcf-txt-xs {
   font-size: 0.75em; }
 
-.dcf-txt-md {
+.dcf-txt-sm {
   font-size: 0.84375em; }
 
-.dcf-txt-base {
+.dcf-txt-md {
   font-size: 1em; }
 
-.dcf-txt-h6 {
+.dcf-txt-lg {
   font-size: 1.125em; }
 
-.dcf-txt-h5 {
+.dcf-txt-h6 {
   font-size: 1.33333em; }
 
-.dcf-txt-h4 {
+.dcf-txt-h5 {
   font-size: 1.5em; }
 
-.dcf-txt-h3 {
+.dcf-txt-h4 {
   font-size: 1.77778em; }
 
-.dcf-txt-h2 {
+.dcf-txt-h3 {
   font-size: 2.0em; }
 
-.dcf-txt-h1 {
+.dcf-txt-h2 {
   font-size: 2.37037em; }
 
-.dcf-txt-lg {
+.dcf-txt-h1 {
+  font-size: 2.66667em; }
+
+.dcf-txt-xl {
   font-size: 3.16049em; }
+
+.dcf-txt-2xl {
+  font-size: 3.55556em; }
+
+.dcf-txt-3xl {
+  font-size: 4.21399em; }
+
+.dcf-txt-4xl {
+  font-size: 4.74074em; }
+
+.dcf-txt-5xl {
+  font-size: 5.61866em; }
+
+.dcf-txt-6xl {
+  font-size: 6.32099em; }
 
 .dcf-txt-center {
   text-align: center !important; }

@@ -7,7 +7,7 @@
 .dcf-table tbody {
   @include bb;
   border-color: $color-border;
-  @include txt-md;
+  @include txt-sm;
 }
 
 
