@@ -12,6 +12,7 @@
 // !Mixins
 @import '../../../core/scss/mixins/mixins';
 @import 'mixins/mixins.backgrounds';
+@import 'mixins/mixins.typography';
 
 
 // !Functions
@@ -53,3 +54,4 @@
 // !Utilities
 @import '../../../core/scss/utilities/utilities';
 @import 'utilities/utilities.backgrounds';
+@import 'utilities/utilities.typography';

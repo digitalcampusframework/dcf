@@ -36,7 +36,7 @@
         <!--#include virtual="/dcf/theme/example/includes/global/logo.html" -->
 
         <div class="dcf-d-flex dcf-flex-col dcf-jc-center">
-          <div class="dcf-uppercase dcf-txt-h3 dcf-lh-4 dcf-ls-2 dcf-regular" id="dcf-site-affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --></div>
+          <div class="dcf-uppercase dcf-txt-h3 dcf-lh-4 dcf-regular example-ls-2" id="dcf-site-affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --></div>
           <div class="dcf-txt-xs dcf-italic" id="dcf-site-title"><!-- InstanceBeginEditable name="titlegraphic" --><a href="#"><!-- Jane Doe Department of Accounting --></a><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --></div>
         </div>
       </div>
@@ -1470,7 +1470,7 @@
           </aside>
           <footer class="dcf-grid-halves@sm dcf-grid-fourths@md dcf-article-footer dcf-col-gap-vw dcf-row-gap-md">
             <div class="dcf-txt-xs dcf-bt dcf-pt-4">
-              <div class="dcf-mb-4 dcf-bold dcf-uppercase dcf-ls-1" role="heading">
+              <div class="dcf-mb-4 dcf-bold dcf-uppercase example-ls-1" role="heading">
                 News Release Contacts
               </div>
               <ul class="dcf-list-bare">
@@ -1491,7 +1491,7 @@
             	</ul>
             </div>
             <div class="dcf-txt-xs dcf-bt dcf-pt-4">
-              <div class="dcf-mb-4 dcf-bold dcf-uppercase dcf-ls-1" role="heading">
+              <div class="dcf-mb-4 dcf-bold dcf-uppercase example-ls-1" role="heading">
                 Tags
               </div>
               <ul class="dcf-list-bare">
@@ -1502,7 +1502,7 @@
             	</ul>
             </div>
             <div class="dcf-txt-xs dcf-bt dcf-pt-4">
-              <div class="dcf-mb-4 dcf-bold dcf-uppercase dcf-ls-1" role="heading">
+              <div class="dcf-mb-4 dcf-bold dcf-uppercase example-ls-1" role="heading">
                 Related Links
               </div>
               <ul class="dcf-list-bare">
@@ -1511,7 +1511,7 @@
             	</ul>
             </div>
             <div class="dcf-txt-xs dcf-bt dcf-pt-4">
-              <div class="dcf-mb-4 dcf-bold dcf-uppercase dcf-ls-1" role="heading">
+              <div class="dcf-mb-4 dcf-bold dcf-uppercase example-ls-1" role="heading">
                 High-Resolution Photos
               </div>
               <ul class="dcf-list-bare">
@@ -2234,7 +2234,6 @@
             <li><a href="#example-utilities-text-wrap">Text Wrap</a></li>
             <li><a href="#example-utilities-font-style">Font Style</a></li>
             <li><a href="#example-utilities-font-weight">Font Weight</a></li>
-            <li><a href="#example-utilities-letter-spacing">Letter Spacing</a></li>
             <li><a href="#example-utilities-line-height">Line Height</a></li>
             <li><a href="#example-utilities-text-transform">Text Transform</a></li>
           </ul>
@@ -2854,14 +2853,6 @@
           <dl>
             <dt><code>.dcf-regular</code></dt><dd>font-weight: regular</dd>
             <dt><code>.dcf-bold</code></dt><dd>font-weight: bold</dd>
-          </dl>
-        </div>
-        <div>
-          <h4 class="dcf-mt-6" id="example-utilities-letter-spacing">Letter Spacing</h4>
-          <dl>
-            <dt><code>.dcf-ls-0</code></dt><dd>no letter-spacing</dd>
-            <dt><code>.dcf-ls-1</code></dt><dd>incrementally increase letter-spacing</dd>
-            <dt><code>.dcf-ls-2</code></dt><dd>incrementally increase letter-spacing</dd>
           </dl>
         </div>
         <div>

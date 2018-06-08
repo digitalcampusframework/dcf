@@ -60,12 +60,6 @@
 .dcf-bold { @include bold(!important); }
 
 
-// !Letter Spacing
-.dcf-ls-0 { @include ls-0(!important); }
-.dcf-ls-1 { @include ls-1(!important); }
-.dcf-ls-2 { @include ls-2(!important); }
-
-
 // !Line Height
 .dcf-lh-1 { @include lh-1(!important); }
 .dcf-lh-2 { @include lh-2(!important); }

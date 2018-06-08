@@ -2853,15 +2853,6 @@ a.dcf-inverse:active {
 .dcf-bold {
   font-weight: bold !important; }
 
-.dcf-ls-0 {
-  letter-spacing: 0 !important; }
-
-.dcf-ls-1 {
-  letter-spacing: 0.01em !important; }
-
-.dcf-ls-2 {
-  letter-spacing: 0.1em !important; }
-
 .dcf-lh-1 {
   line-height: 1 !important; }
 
@@ -2914,3 +2905,12 @@ a.dcf-inverse:active {
 
 .example-bg-brand-beta {
   background-color: #c00 !important; }
+
+.example-ls-0 {
+  letter-spacing: 0 !important; }
+
+.example-ls-1 {
+  letter-spacing: 0.01em !important; }
+
+.example-ls-2 {
+  letter-spacing: 0.1em !important; }
