@@ -55,7 +55,7 @@
 // !Required
 .example .dcf-required {
   color: #d00;
-  @include txt-sm;
+  @include txt-xs;
   font-style: italic;
   @include pl-2;
 }
@@ -64,7 +64,7 @@
 // !Form Help
 .example .dcf-form-help {
   color: $color-light-text;
-  @include txt-sm;
+  @include txt-xs;
   @include mt-1;
 }
 
