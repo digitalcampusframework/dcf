@@ -37,8 +37,8 @@ There will be no SCSS compilation `.scss` files in DCF Core. Sass file compilati
     * `vendor`: Contains third-party vendor JS files that are required by DCF, since vendor files do not change frequently, outputting a separate vendor file helps with browser caching.
     * `mustard`: Contains third-party vendor JS polyfills that will be pulled in if browser doesn't cut the mustard
     * `app`: Custom written JS that includes common distributed and optional files. Supports ES6 syntax which will be transpiled by Babel during the build process.
-      *`common`: Custom written JS that is needed by DCF and will be packaged with and distributed with core
-      *`optional`: Optional custom written JS modules that can be required when additional functionality is wanted.
+    * `common`: Custom written JS that is needed by DCF and will be packaged with and distributed with core
+    * `optional`: Optional custom written JS modules that can be required when additional functionality is wanted.
       
       
 #### CSS Files

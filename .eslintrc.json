@@ -18,7 +18,7 @@
 
     ],
     "rules": {
-        // Possible Errors (overrides from recommended set)
+        "//": "Possible Errors (overrides from recommended set)",
         "no-extra-parens": "ERROR",
         "no-unexpected-multiline": "ERROR",
         // All JSDoc comments must be valid
