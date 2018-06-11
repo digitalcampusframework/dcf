@@ -3,3 +3,6 @@
 .idea/
 2
 4
+/assets/dist/**/*
+/assets/build/**/*
+
