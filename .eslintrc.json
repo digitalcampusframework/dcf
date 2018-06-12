@@ -18,10 +18,10 @@
 
     ],
     "rules": {
-        "//": "Possible Errors (overrides from recommended set)",
+        "////": "_____Possible Errors (overrides from recommended set)",
         "no-extra-parens": "ERROR",
         "no-unexpected-multiline": "ERROR",
-        // All JSDoc comments must be valid
+        "////": "_____All JSDoc comments must be valid",
         "valid-jsdoc": [ "ERROR", {
             "requireReturn": false,
             "requireReturnDescription": false,
@@ -31,9 +31,9 @@
             }
         }],
 
-        // Best Practices
 
-        // Allowed a getter without setter, but all setters require getters
+        "////": "_____BEST PRACTICES",
+        "////": "_____Allowed a getter without setter, but all setters require getters",
         "accessor-pairs": [ "ERROR", {
             "getWithoutSet": false,
             "setWithoutGet": true
@@ -42,7 +42,7 @@
         "consistent-return": "ERROR",
         "curly": "ERROR",
         "default-case": "WARN",
-        // the dot goes with the property when doing multiline
+        "////": "_____the dot goes with the property when doing multiline",
         "dot-location": [ "WARN", "property" ],
         "dot-notation": "WARN",
         "eqeqeq": [ "ERROR", "smart" ],
@@ -91,7 +91,7 @@
         "no-useless-call": "ERROR",
         "no-useless-concat": "ERROR",
         "no-void": "WARN",
-        // Produce "warn"ings when something is commented as TODO or FIXME
+        "////": "_____//Produce warnings when something is commented as TODO or FIXME",
         "no-warning-comments": [ "WARN", {
             "terms": [ "TODO", "FIXME" ],
             "location": "start"
@@ -99,42 +99,44 @@
         "no-with": "WARN",
         "radix": "WARN",
         "vars-on-top": "ERROR",
-        // Enforces the style of wrapped functions
+        "////": "_____//Enforces the style of wrapped functions",
         "wrap-iife": [ "ERROR", "outside" ],
         "yoda": "ERROR",
-
-        // Strict Mode - for ES6, never use strict.
+        "////": "_____Strict Mode - for ES6, never use strict.",
         "strict": [ "ERROR", "never" ],
 
-        // Variables
+
+        "////": "_____VARIABLES",
         "init-declarations": [ "ERROR", "always" ],
         "no-catch-shadow": "WARN",
         "no-delete-var": "ERROR",
         "no-label-var": "ERROR",
         "no-shadow-restricted-names": "ERROR",
         "no-shadow": "WARN",
-        // We require all vars to be initialized (see init-declarations)
-        // If we NEED a var to be initialized to undefined, it needs to be explicit
+        "////": "_____// We require all vars to be initialized (see init-declarations)",
+        "////": "_____// If we NEED a var to be initialized to undefined, it needs to be explicit",
         "no-undef-init": "OFF",
         "no-undef": "WARN",
         "no-undefined": "OFF",
         "no-unused-vars": "WARN",
-        // Disallow hoisting - let & const don't allow hoisting anyhow
+        "////": "_____//Disallow hoisting - let & const don't allow hoisting anyhow",
         "no-use-before-define": "ERROR",
 
-        // Node.js and CommonJS
+
+        "////": "_____Node.js AND CommonJS",
         "callback-return": [ "WARN", [ "callback", "next" ]],
         "global-require": "ERROR",
         "handle-callback-err": "WARN",
         "no-mixed-requires": "WARN",
         "no-new-require": "ERROR",
-        // Use path.concat instead
+        "////": "_____Use path.concat instead",
         "no-path-concat": "ERROR",
         "no-process-exit": "ERROR",
         "no-restricted-modules": "OFF",
         "no-sync": "WARN",
 
-        // ECMAScript 6 support
+
+        "////": "_____ECMAScript 6 SUPPORT",
         "arrow-body-style": [ "ERROR", "as-needed" ],
         "arrow-parens": [ "ERROR", "always" ],
         "arrow-spacing": [ "ERROR", { "before": true, "after": true }],
@@ -153,7 +155,8 @@
         "prefer-template": "WARN",
         "require-yield": "ERROR",
 
-        // Stylistic - everything here is a "warn"ing because of style.
+
+        "////": "_____STYLISTIC - everything here is a 'warn'ing because of style",
         "array-bracket-spacing": [ "WARN", "always" ],
         "block-spacing": [ "WARN", "always" ],
         "brace-style": [ "WARN", "1tbs", { "allowSingleLine": false } ],
