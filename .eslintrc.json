@@ -32,7 +32,7 @@
         }],
 
 
-        "////": "_____BEST PRACTICES",
+        "////": "_____BEST PRACTICES_____",
         "////": "_____Allowed a getter without setter, but all setters require getters",
         "accessor-pairs": [ "ERROR", {
             "getWithoutSet": false,
@@ -106,7 +106,7 @@
         "strict": [ "ERROR", "never" ],
 
 
-        "////": "_____VARIABLES",
+        "////": "_____VARIABLES_____",
         "init-declarations": [ "ERROR", "always" ],
         "no-catch-shadow": "WARN",
         "no-delete-var": "ERROR",
@@ -123,7 +123,7 @@
         "no-use-before-define": "ERROR",
 
 
-        "////": "_____Node.js AND CommonJS",
+        "////": "_____Node.js AND CommonJS_____",
         "callback-return": [ "WARN", [ "callback", "next" ]],
         "global-require": "ERROR",
         "handle-callback-err": "WARN",
@@ -136,7 +136,7 @@
         "no-sync": "WARN",
 
 
-        "////": "_____ECMAScript 6 SUPPORT",
+        "////": "_____ECMAScript 6 SUPPORT_____",
         "arrow-body-style": [ "ERROR", "as-needed" ],
         "arrow-parens": [ "ERROR", "always" ],
         "arrow-spacing": [ "ERROR", { "before": true, "after": true }],
@@ -156,7 +156,7 @@
         "require-yield": "ERROR",
 
 
-        "////": "_____STYLISTIC - everything here is a 'warn'ing because of style",
+        "////": "_____STYLISTIC - everything here is a 'warn'ing because of style_____",
         "array-bracket-spacing": [ "WARN", "always" ],
         "block-spacing": [ "WARN", "always" ],
         "brace-style": [ "WARN", "1tbs", { "allowSingleLine": false } ],
