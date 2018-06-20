@@ -1,0 +1,24 @@
+//////////////////////////////
+// !CORE / COMPONENTS / ALERTS
+//////////////////////////////
+
+
+.dcf-alert {
+  display: grid;
+  grid-template-areas: "header footer" "msg footer";
+}
+
+
+.dcf-alert-header {
+  grid-area: header;
+}
+
+
+.dcf-alert-msg {
+  grid-area: msg;
+}
+
+
+.dcf-alert-footer {
+  grid-area: footer;
+}

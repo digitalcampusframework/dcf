@@ -1,0 +1,30 @@
+/////////////////////////////
+// !CORE / COMPONENTS / CARDS
+/////////////////////////////
+
+
+// !Individual Card
+.dcf-card {
+  margin-bottom: 0;
+}
+
+
+// !Card Image
+.dcf-card img {
+  display: block;
+  width: 100%;
+}
+
+
+// !Card Block
+.dcf-card-block {
+  @include pb-5;
+  @include pl-6;
+  @include pt-5;
+  @include pr-6;
+}
+
+
+.dcf-card-block p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,34 @@
+////////////////////////////////
+// !CORE / COMPONENTS / HEADINGS
+////////////////////////////////
+
+
+// !Headings
+.dcf-h1,
+.dcf-h2,
+.dcf-h3,
+.dcf-h4,
+.dcf-h5,
+.dcf-h6 {
+  margin-bottom: #{ms(0)}rem; // 1rem
+  margin-top: 0;
+  @include lh-2;
+
+  // ?
+  p + &,
+  ol + &,
+  ul + &,
+  dl + & {
+    @include mt-5;
+  }
+
+}
+
+
+// !Subheads
+.dcf-subhead {
+  display: block;
+  font-size: #{ms(-2)}rem; // .75rem
+  @include mb-4;
+  text-transform: uppercase;
+}

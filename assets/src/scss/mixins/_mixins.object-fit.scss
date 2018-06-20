@@ -1,0 +1,27 @@
+//////////////////////////////
+// !CORE / MIXINS / OBJECT-FIT
+//////////////////////////////
+
+// !Contain
+@mixin obj-fit-contain($imp:null) {
+  height: 100%;
+  width: 100%;
+  font-family: 'object-fit: contain;';
+
+  @supports (object-fit: contain) {
+    object-fit: contain $imp;
+  }
+
+}
+
+// !Cover
+@mixin obj-fit-cover($imp:null) {
+  height: 100%;
+  width: 100%;
+  font-family: 'object-fit: cover;';
+
+  @supports (object-fit: cover) {
+    object-fit: cover $imp;
+  }
+
+}

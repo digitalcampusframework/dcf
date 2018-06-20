@@ -1,0 +1,28 @@
+///////////////////////////
+// !CORE / MIXINS / FLEXBOX
+///////////////////////////
+
+
+// Flexbox display rules (flex and inlineflex) located in _mixins.display
+
+
+// !Direction (Columns and Rows)
+@mixin flex-col($imp:null) { flex-direction: column $imp; }
+@mixin flex-col-rev($imp:null) { flex-direction: column-reverse $imp; }
+@mixin flex-row($imp:null) { flex-direction: row $imp; }
+@mixin flex-row-rev($imp:null) { flex-direction: row-reverse $imp; }
+
+
+// !Wrap
+@mixin flex-wrap($imp:null) { flex-wrap: wrap $imp; }
+@mixin flex-wrap-rev($imp:null) { flex-wrap: wrap-reverse $imp; }
+@mixin flex-nowrap($imp:null) { flex-wrap: nowrap $imp; }
+
+
+// !Grow & Shrink
+@mixin flex-none($imp:null) { flex: none $imp; }
+@mixin flex-initial($imp:null) { flex: initial $imp; }
+@mixin flex-auto($imp:null) { flex: auto $imp; }
+@mixin flex-1($imp:null) { flex: 1 $imp; }
+@mixin flex-grow-1($imp:null) { flex-grow: 1 $imp; }
+@mixin flex-shrink-0($imp:null) { flex-shrink: 0 $imp; }

@@ -1,0 +1,38 @@
+///////////////////////////
+// !CORE / OBJECTS / DIALOG
+///////////////////////////
+
+
+.dcf-dialog {
+  background-color: #fff;
+  border: 1px solid transparent; // prevent margin collapse
+  @include ml2;
+  @include mr2;
+
+//   .dcf-o-dialog-header {
+//     @include font-sans; // add at the theme level
+//   }
+
+//   .dcf-o-dialog-body {
+//   }
+
+//   .dcf-o-dialog-footer {
+//   }
+
+  .dcf-dialog-close {
+    border: 0;
+    padding-bottom: 0;
+    @include pl3;
+    @include pr3;
+    padding-top: 0;
+    position: absolute;
+    right: $length2;
+    top: 0;
+
+    &::before {
+      content: '\00D7';
+    }
+
+  }
+
+}

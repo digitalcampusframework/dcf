@@ -1,2 +1,11 @@
 .DS_Store
 /node_modules
+.idea/
+2
+4
+/assets/dist/**/*
+/assets/build/**/*
+/logs/**/*
+!logs/.gitkeep
+
+

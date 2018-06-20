@@ -3,6 +3,7 @@
     "stylelint-no-unsupported-browser-features"
   ],
   "rules": {
+    "indentation": 2,
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": true,

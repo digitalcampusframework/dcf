@@ -1,0 +1,33 @@
+//////////////////////////////
+// !CORE / MIXINS / VISIBILITY
+//////////////////////////////
+
+
+// !Invisible
+@mixin invisible($imp:null) { visibility: hidden $imp; }
+
+
+// !Visible
+@mixin visible($imp:null) { visibility: visible $imp; }
+
+
+// !Screen Reader Only
+@mixin sr-only($imp:null) {
+  border: 0 $imp;
+  clip: rect(1px, 1px, 1px, 1px) $imp;
+  height: 1px $imp; // allow VoiceOver to see the text
+  overflow: hidden $imp;
+  position: absolute $imp;
+  width: 1px $imp;
+  word-wrap: normal $imp;
+}
+
+
+// !Screen Reader Only, Show On Focus
+@mixin show-on-focus($imp:null) {
+  clip: auto $imp;
+  height: auto $imp;
+  overflow: visible $imp;
+  position: static $imp;
+  width: auto $imp;
+}

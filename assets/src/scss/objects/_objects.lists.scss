@@ -1,0 +1,24 @@
+//////////////////////////
+// !CORE / OBJECTS / LISTS
+//////////////////////////
+
+
+// !Bare List
+.dcf-list-bare {
+  list-style: none;
+  padding-left: 0;
+}
+
+// .dcf-list-bare li::before {
+//   content: "\200B"; // add zero-width space
+// }
+
+
+// !Inline List
+.dcf-list-inline-item {
+  display: inline-block;
+}
+
+.dcf-list-inline-item:not(:last-child) {
+  @include mr-2;
+}
