@@ -5,4 +5,5 @@
 4
 /assets/dist/**/*
 /assets/build/**/*
+/logs/**/*
 
