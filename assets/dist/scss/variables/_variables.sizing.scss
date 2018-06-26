@@ -22,15 +22,18 @@ $min_lerp_width: ms(24); // 31.475em ~ 503.68px
 $max_lerp_width: ms(36); // 176.581em ~ 2825.28px
 
 
-// !Spacing
-$length0: 0;
-$length1: #{ms(-6)}em;  // .42em
-$length2: #{ms(-4)}em;  // .56em
-$length3: #{ms(-2)}em;  // .75em
-$length4: #{ms(0)}em;   // 1em
-$length5: #{ms(2)}em;   // 1.33em
-$length6: #{ms(4)}em;   // 1.77em
-$length7: #{ms(6)}em;   // 2.37em
-$length8: #{ms(8)}em;   // 3.16em
-$length9: #{ms(10)}em;  // 4.21em
-$length10: #{ms(12)}em; // 5.61em
+// !Em-based Spacing
+$length-em-1: #{ms(-6)}em;  // .42em
+$length-em-2: #{ms(-4)}em;  // .56em
+$length-em-3: #{ms(-2)}em;  // .75em
+$length-em-4: #{ms(0)}em;   // 1em
+$length-em-5: #{ms(2)}em;   // 1.33em
+$length-em-6: #{ms(4)}em;   // 1.77em
+$length-em-7: #{ms(6)}em;   // 2.37em
+$length-em-8: #{ms(8)}em;   // 3.16em
+$length-em-9: #{ms(10)}em;  // 4.21em
+$length-em-10: #{ms(12)}em; // 5.61em
+
+// Viewport-width-based Spacing
+$length-vw-1: 3.16vw;
+$length-vw-2: 5.62vw;

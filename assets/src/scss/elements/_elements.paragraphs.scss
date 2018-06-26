@@ -7,18 +7,4 @@ p {
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
   @include measure;
-
-//   & + & {
-//     margin-top: 1.5em;
-//   }
-//
-//   article & + &,
-//   article dl + &,
-//   article ol + &,
-//   article ul + & {
-//     @include mt1;
-//     @include mb1;
-//     text-indent: 1.5em;
-//   }
-
 }
