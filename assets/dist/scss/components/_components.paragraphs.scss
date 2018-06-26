@@ -1,0 +1,16 @@
+//////////////////////////////////
+// !CORE / COMPONENTS / PARAGRAPHS
+//////////////////////////////////
+
+
+// !Lead Paragraphs
+.dcf-lead {
+  @include txt-h6;
+}
+
+
+// !Drop Caps
+.dcf-dropcap::first-letter {
+  float: left;
+  // apply custom styling in theme _components.paragraphs
+}

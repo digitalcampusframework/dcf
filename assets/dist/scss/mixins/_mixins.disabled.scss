@@ -1,0 +1,10 @@
+////////////////////////////
+// !CORE / MIXINS / DISABLED
+////////////////////////////
+
+
+@mixin disabled($imp:null) {
+  cursor: not-allowed $imp;
+  opacity: .7 $imp;
+  pointer-events: none $imp;
+}

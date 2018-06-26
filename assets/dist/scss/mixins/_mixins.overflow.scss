@@ -1,0 +1,42 @@
+////////////////////////////
+// !CORE / MIXINS / OVERFLOW
+////////////////////////////
+
+
+// !Visible
+@mixin overflow-visible($imp:null) {
+  overflow: visible $imp;
+}
+
+
+// !Hidden
+@mixin overflow-hidden($imp:null) {
+  overflow: hidden $imp;
+}
+
+
+// !Auto
+@mixin overflow-auto($imp:null) {
+  overflow: auto $imp;
+}
+
+
+// !Scroll
+@mixin overflow-scroll($imp:null) {
+  overflow: scroll $imp;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+// !Overflow-X: Scroll
+@mixin overflow-x-scroll($imp:null) {
+  overflow-x: scroll $imp;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+// !Overflow-Y: Scroll
+@mixin overflow-y-scroll($imp:null) {
+  overflow-y: scroll $imp;
+  -webkit-overflow-scrolling: touch;
+}

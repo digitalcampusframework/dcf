@@ -1,0 +1,33 @@
+/////////////////////////////
+// !CORE / UTILITIES / COLORS
+/////////////////////////////
+
+
+// !Inverse (light text for dark backgrounds)
+.dcf-inverse {
+  @include inverse(!important);
+}
+
+
+// !Inverse Link
+a.dcf-inverse:link {
+  @include inverse-link(!important);
+}
+
+
+// !Inverse Visited
+a.dcf-inverse:visited {
+  @include inverse-link(!important);
+}
+
+
+// !Inverse Hover
+a.dcf-inverse:hover {
+  @include inverse-link(!important);
+}
+
+
+// !Inverse Active
+a.dcf-inverse:active {
+  @include inverse-link(!important);
+}

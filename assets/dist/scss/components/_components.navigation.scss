@@ -1,0 +1,149 @@
+//////////////////////////////////
+// !CORE / COMPONENTS / NAVIGATION
+//////////////////////////////////
+
+
+// !Dropdown
+
+
+// !Menu Toggle
+// .dcf-icon-menu-top {
+//   transition: transform .4s ease-out;
+// }
+//
+// .dcf-icon-menu-middle {
+//   opacity: 1;
+//   transition: opacity .4s ease-out;
+// }
+//
+// .dcf-icon-menu-bottom {
+//   transition: transform .4s ease-out;
+// }
+//
+//
+// .dcf-menu-toggle.dcf-is-pressed .dcf-icon-menu-top {
+//   transform: rotate(45deg);
+//   transition: transform .2s ease-out;
+// }
+//
+// .dcf-menu-toggle.dcf-is-pressed .dcf-icon-menu-middle {
+//   opacity: 0;
+//   transition: opacity .2s ease-out;
+// }
+//
+// .dcf-menu-toggle.dcf-is-pressed .dcf-icon-menu-bottom {
+//   transform: rotate(-45deg);
+//   transition: transform .2s ease-out;
+// }
+
+
+
+
+// !Local Navigation
+.dcf-nav-local ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+
+.dcf-nav-local > ul {
+//   @include d-flex;
+//   @include f-col;
+  @include txt-sm;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 1em 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+  }
+
+}
+
+// .dcf-nav-local > ul >  li {
+//   @include mb0;
+// }
+//
+// .dcf-nav-local li:last-child {
+//   @include mb0;
+// }
+
+.dcf-nav-local ul ul {
+  @include txt-sm;
+  @include pt-4;
+}
+
+// .dcf-nav-local a {
+//   @include pr4;
+// }
+
+@include mq(md) {
+
+  .dcf-nav-toggle {
+    display: none;
+  }
+
+  .dcf-nav-local > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .dcf-nav-local > ul > li:not(:last-child) {
+    margin-right: 2vw;
+  }
+
+}
+
+
+// !Global Navigation
+
+.dcf-nav-global li {
+  display: inline;
+}
+
+.dcf-nav-global li:not(:last-child) {
+  margin-right: 2vw;
+}
+
+
+@include mq(md, max, width) {
+
+  .dcf-mobile-nav-toggle {
+    bottom: 0;
+    height: 4em;
+    position: fixed;
+    width: 25%;
+    z-index: 2;
+  }
+
+  .dcf-nav-toggle {
+    left: 0;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .dcf-nav-toggle {
+    display: none;
+  }
+
+  .dcf-nav-local {
+    grid-area: nav1;
+    position: relative;
+  }
+
+  .dcf-nav-local ul ul {
+    position: absolute;
+    @include sr-only;
+  }
+
+  .dcf-nav-global {
+//     @include absolute;
+//     top: calc(1em + 3px);
+//     right: 5vw;
+    grid-area: nav2;
+  }
+}

@@ -1,0 +1,15 @@
+///////////////////////////////
+// !CORE / COMPONENTS / FIGURES
+///////////////////////////////
+
+
+// !Figure
+// .dcf-figure {
+// }
+
+
+// !Figcaption
+.dcf-figcaption {
+  color: $color-light-text;
+  @include txt-sm;
+}

@@ -1,0 +1,36 @@
+////////////////////////////////////
+// !CORE / COMPONENTS / INPUT GROUPS
+////////////////////////////////////
+
+
+.dcf-input-group {
+  display: flex;
+  width: 100%;
+}
+
+
+// !Input Group Input Field
+.dcf-input-group .dcf-input-text {
+  flex-grow: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 1%;
+}
+
+
+// !Input Group Button
+.dcf-input-group .dcf-btn {
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+// !Input Group Add-on
+.dcf-input-group-addon {
+  align-items: center;
+  display: flex;
+  text-align: center;
+  white-space: nowrap;
+}

@@ -1,0 +1,13 @@
+///////////////////////////
+// !CORE / ELEMENTS / MARKS
+///////////////////////////
+
+
+// Marked (highlighted) text
+mark {
+  background-color: $color-mark;
+  padding-bottom: #{ms(-14)}em; // .13em
+  @include pl-1;
+  @include pr-1;
+  padding-top: #{ms(-14)}em; // .13em
+}
