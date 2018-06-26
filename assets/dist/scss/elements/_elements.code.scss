@@ -12,7 +12,7 @@ pre {
 
 code,
 kbd {
-  @include txt-md;
+  @include txt-sm;
   padding: #{ms(-14)}rem #{ms(-10)}rem; // .13rem .24rem
 }
 

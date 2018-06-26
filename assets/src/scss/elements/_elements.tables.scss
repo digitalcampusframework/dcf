@@ -14,7 +14,7 @@ table {
 caption {
   caption-side: bottom;
   color: $color-light-text;
-  @include txt-sm;
+  @include txt-xs;
   padding-top: #{ms(-4)}rem;
   text-align: left;
 }
