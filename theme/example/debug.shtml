@@ -2500,7 +2500,7 @@
 		        <dt><code>.dcf-h-7</code></dt><dd>height: 2.37em</dd>
 		        <dt><code>.dcf-h-8</code></dt><dd>height: 3.16em</dd>
 		        <dt><code>.dcf-h-9</code></dt><dd>height: 4.21em</dd>
-		        <dt><code>.dcf-h-10</code></dt><dd>height: 5.61em</dd>
+		        <dt><code>.dcf-h-10</code></dt><dd>height: 5.62em</dd>
 		        <dt><code>.dcf-h-100%</code></dt><dd>height: 100%</dd>
 		        <dt><code>.dcf-h-100vh</code></dt><dd>height: 100vw</dd>
 		      </dl>
@@ -2531,7 +2531,7 @@
 		        <dt><code>.dcf-w-7</code></dt><dd>width: 2.37em</dd>
 		        <dt><code>.dcf-w-8</code></dt><dd>width: 3.16em</dd>
 		        <dt><code>.dcf-w-9</code></dt><dd>width: 4.21em</dd>
-		        <dt><code>.dcf-w-10</code></dt><dd>width: 5.61em</dd>
+		        <dt><code>.dcf-w-10</code></dt><dd>width: 5.62em</dd>
 		        <dt><code>.dcf-w-100%</code></dt><dd>width: 100%</dd>
 		        <dt><code>.dcf-w-100vw</code></dt><dd>width: 100vw</dd>
 		      </dl>
@@ -2566,7 +2566,7 @@
             <dt><code>.dcf-m-7</code></dt><dd>margin (all sides): 2.37em</dd>
             <dt><code>.dcf-m-8</code></dt><dd>margin (all sides): 3.16em</dd>
             <dt><code>.dcf-m-9</code></dt><dd>margin (all sides): 4.21em</dd>
-            <dt><code>.dcf-m-10</code></dt><dd>margin (all sides): 5.61em</dd>
+            <dt><code>.dcf-m-10</code></dt><dd>margin (all sides): 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2582,7 +2582,7 @@
             <dt><code>.dcf-mt-7</code></dt><dd>margin-top: 2.37em</dd>
             <dt><code>.dcf-mt-8</code></dt><dd>margin-top: 3.16em</dd>
             <dt><code>.dcf-mt-9</code></dt><dd>margin-top: 4.21em</dd>
-            <dt><code>.dcf-mt-10</code></dt><dd>margin-top: 5.61em</dd>
+            <dt><code>.dcf-mt-10</code></dt><dd>margin-top: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2598,7 +2598,7 @@
             <dt><code>.dcf-mr-7</code></dt><dd>margin-right: 2.37em</dd>
             <dt><code>.dcf-mr-8</code></dt><dd>margin-right: 3.16em</dd>
             <dt><code>.dcf-mr-9</code></dt><dd>margin-right: 4.21em</dd>
-            <dt><code>.dcf-mr-10</code></dt><dd>margin-right: 5.61em</dd>
+            <dt><code>.dcf-mr-10</code></dt><dd>margin-right: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2614,7 +2614,7 @@
             <dt><code>.dcf-mb-7</code></dt><dd>margin-bottom: 2.37em</dd>
             <dt><code>.dcf-mb-8</code></dt><dd>margin-bottom: 3.16em</dd>
             <dt><code>.dcf-mb-9</code></dt><dd>margin-bottom: 4.21em</dd>
-            <dt><code>.dcf-mb-10</code></dt><dd>margin-bottom: 5.61em</dd>
+            <dt><code>.dcf-mb-10</code></dt><dd>margin-bottom: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2630,7 +2630,7 @@
             <dt><code>.dcf-ml-7</code></dt><dd>margin-left: 2.37em</dd>
             <dt><code>.dcf-ml-8</code></dt><dd>margin-left: 3.16em</dd>
             <dt><code>.dcf-ml-9</code></dt><dd>margin-left: 4.21em</dd>
-            <dt><code>.dcf-ml-10</code></dt><dd>margin-left: 5.61em</dd>
+            <dt><code>.dcf-ml-10</code></dt><dd>margin-left: 5.62em</dd>
           </dl>
         </div>
       </div>
@@ -2689,7 +2689,7 @@
             <dt><code>.dcf-p-7</code></dt><dd>padding (all sides): 2.37em</dd>
             <dt><code>.dcf-p-8</code></dt><dd>padding (all sides): 3.16em</dd>
             <dt><code>.dcf-p-9</code></dt><dd>padding (all sides): 4.21em</dd>
-            <dt><code>.dcf-p-10</code></dt><dd>padding (all sides): 5.61em</dd>
+            <dt><code>.dcf-p-10</code></dt><dd>padding (all sides): 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2705,7 +2705,7 @@
             <dt><code>.dcf-pt-7</code></dt><dd>padding-top: 2.37em</dd>
             <dt><code>.dcf-pt-8</code></dt><dd>padding-top: 3.16em</dd>
             <dt><code>.dcf-pt-9</code></dt><dd>padding-top: 4.21em</dd>
-            <dt><code>.dcf-pt-10</code></dt><dd>padding-top: 5.61em</dd>
+            <dt><code>.dcf-pt-10</code></dt><dd>padding-top: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2721,7 +2721,7 @@
             <dt><code>.dcf-pr-7</code></dt><dd>padding-right: 2.37em</dd>
             <dt><code>.dcf-pr-8</code></dt><dd>padding-right: 3.16em</dd>
             <dt><code>.dcf-pr-9</code></dt><dd>padding-right: 4.21em</dd>
-            <dt><code>.dcf-pr-10</code></dt><dd>padding-right: 5.61em</dd>
+            <dt><code>.dcf-pr-10</code></dt><dd>padding-right: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2736,7 +2736,7 @@
             <dt><code>.dcf-pb-6</code></dt><dd>padding-bottom: 1.77em</dd>
             <dt><code>.dcf-pb-7</code></dt><dd>padding-bottom: 2.37em</dd>
             <dt><code>.dcf-pb-8</code></dt><dd>padding-bottom: 3.16em</dd>
-            <dt><code>.dcf-pb-10</code></dt><dd>padding-bottom: 5.61em</dd>
+            <dt><code>.dcf-pb-10</code></dt><dd>padding-bottom: 5.62em</dd>
           </dl>
         </div>
         <div>
@@ -2752,7 +2752,7 @@
             <dt><code>.dcf-pl-7</code></dt><dd>padding-left: 2.37em</dd>
             <dt><code>.dcf-pl-8</code></dt><dd>padding-left: 3.16em</dd>
             <dt><code>.dcf-pl-9</code></dt><dd>padding-left: 4.21em</dd>
-            <dt><code>.dcf-pl-10</code></dt><dd>padding-left: 5.61em</dd>
+            <dt><code>.dcf-pl-10</code></dt><dd>padding-left: 5.62em</dd>
           </dl>
         </div>
       </div>
