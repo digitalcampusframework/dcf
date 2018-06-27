@@ -2667,6 +2667,8 @@
         <dt><code>.dcf-overflow-visible</code></dt><dd>overflow: visible</dd>
         <dt><code>.dcf-overflow-hidden</code></dt><dd>overflow: hidden</dd>
         <dt><code>.dcf-overflow-auto</code></dt><dd>overflow: auto</dd>
+        <dt><code>.dcf-overflow-x-auto</code></dt><dd>overflow-x: auto</dd>
+        <dt><code>.dcf-overflow-y-auto</code></dt><dd>overflow-y: auto</dd>
         <dt><code>.dcf-overflow-scroll</code></dt><dd>overflow: scroll</dd>
         <dt><code>.dcf-overflow-x-scroll</code></dt><dd>overflow-x: scroll</dd>
         <dt><code>.dcf-overflow-y-scroll</code></dt><dd>overflow-y: scroll</dd>

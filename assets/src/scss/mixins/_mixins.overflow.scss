@@ -21,6 +21,20 @@
 }
 
 
+// !Overflow-X: Auto
+@mixin overflow-x-auto($imp:null) {
+  overflow-x: auto $imp;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+// !Overflow-Y: Auto
+@mixin overflow-y-auto($imp:null) {
+  overflow-y: auto $imp;
+  -webkit-overflow-scrolling: touch;
+}
+
+
 // !Scroll
 @mixin overflow-scroll($imp:null) {
   overflow: scroll $imp;
