@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<!--#include virtual="/dcf/theme/example/includes/global/meta.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/head-1.html" -->
 <title>Debugging Out | Framework Testing Page</title>
-<!--#include virtual="/dcf/theme/example/includes/global/fonts.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/css.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/js-head.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/favicon.html" -->
+<!--#include virtual="/dcf/theme/example/includes/global/head-2.html" -->
 </head>
 <body class="debug example" data-version="1.0">
   <!--#include virtual="/dcf/theme/example/includes/global/skip-nav.html" -->
