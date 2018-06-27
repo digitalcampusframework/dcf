@@ -9,13 +9,14 @@ const commonAppPath = path.join(commonPaths.outputBuild, 'js', 'app','common');
 
 //Load in dependencies from package
 const dialogPolyfill = require.resolve('dialog-polyfill');
+const intersectionObserver = require.resolve('intersection-observer');
 const picturefill = require.resolve('picturefill');
 const objectFitImages = require.resolve('object-fit-images');
 
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
 	// better to use unminified vendor files since all files will be concatenated & minified
-	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, `${dialogPolyfill}`],
+	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, `${dialogPolyfill}`, `${intersectionObserver}`],
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	// better to use unminified vendor files since all files will be concatenated & minified
 	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`],
