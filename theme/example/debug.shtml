@@ -2859,10 +2859,10 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-line-height">Line Height</h4>
           <dl>
-            <dt><code>.dcf-lh-1</code></dt><dd>tightest line-height</dd>
-            <dt><code>.dcf-lh-2</code></dt><dd>tighter line-height (e.g., headings)</dd>
-            <dt><code>.dcf-lh-3</code></dt><dd>medium line-height</dd>
-            <dt><code>.dcf-lh-4</code></dt><dd>regular line-height</dd>
+            <dt><code>.dcf-lh-1</code></dt><dd>line-height: 1</dd>
+            <dt><code>.dcf-lh-2</code></dt><dd>line-height: 1.13</dd>
+            <dt><code>.dcf-lh-3</code></dt><dd>line-height: 1.33</dd>
+            <dt><code>.dcf-lh-4</code></dt><dd>line-height: 1.5</dd>
           </dl>
         </div>
         <div>
