@@ -32,7 +32,7 @@
 
       <!--#include virtual="/dcf/theme/example/includes/global/institution.html" -->
 
-      <div class="dcf-d-flex dcf-ai-center dcf-pt-4 dcf-logo" style="overflow: hidden;">
+      <div class="dcf-d-flex dcf-ai-center dcf-pt-4 dcf-logo dcf-overflow-hidden">
         <!--#include virtual="/dcf/theme/example/includes/global/logo.html" -->
 
         <div class="dcf-d-flex dcf-flex-col dcf-jc-center">
