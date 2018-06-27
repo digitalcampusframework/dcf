@@ -15,6 +15,14 @@
 .dcf-overflow-auto { @include overflow-auto(!important); }
 
 
+// !Overflow-X: Auto
+.dcf-overflow-x-auto { @include overflow-x-auto(!important); }
+
+
+// !Overflow-Y: Auto
+.dcf-overflow-y-auto { @include overflow-y-auto(!important); }
+
+
 // !Scroll
 .dcf-overflow-scroll { @include overflow-scroll(!important); }
 
