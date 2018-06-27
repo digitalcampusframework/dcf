@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<!--#include virtual="/dcf/theme/example/includes/global/meta.html" -->
+<!--#include virtual="/includes/global/head-1.html" -->
 <title>Debugging Out | Framework Testing Page</title>
-<!--#include virtual="/dcf/theme/example/includes/global/fonts.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/css.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/js-head.html" -->
-<!--#include virtual="/dcf/theme/example/includes/global/favicon.html" -->
+<!--#include virtual="/includes/global/head-2.html" -->
 </head>
 <body class="debug example" data-version="1.0">
-  <!--#include virtual="/dcf/theme/example/includes/global/skip-nav.html" -->
+  <!--#include virtual="/includes/global/skip-nav.html" -->
 
 <!--
   <div class="dcf-alert dcf-wrapper dcf-pt-4 dcf-pb-4 dcf-txt-xs">
@@ -30,10 +27,10 @@
 
 <!--     <header class="" id="dcf-header" role="banner"> -->
 
-      <!--#include virtual="/dcf/theme/example/includes/global/institution.html" -->
+      <!--#include virtual="/includes/global/institution.html" -->
 
       <div class="dcf-d-flex dcf-ai-center dcf-pt-4 dcf-logo dcf-overflow-hidden">
-        <!--#include virtual="/dcf/theme/example/includes/global/logo.html" -->
+        <!--#include virtual="/includes/global/logo.html" -->
 
         <div class="dcf-d-flex dcf-flex-col dcf-jc-center">
           <div class="dcf-uppercase dcf-txt-h3 dcf-lh-4 dcf-regular example-ls-2" id="dcf-site-affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --></div>
@@ -56,16 +53,16 @@
 <!--     <div class="" id="dcf-navigation"> -->
       <nav class="dcf-pt-5 dcf-nav-local" id="dcf-local-navigation" role="navigation" aria-label="local navigation">
         <!-- InstanceBeginEditable name="navlinks" -->
-        <!--#include virtual="/dcf/theme/example/includes/local/nav-local.html" -->
+        <!--#include virtual="/includes/local/nav-local.html" -->
         <!-- InstanceEndEditable -->
       </nav>
       <nav class="dcf-d-flex dcf-ai-center dcf-mt-1 dcf-txt-xs dcf-nav-global" id="dcf-global-navigation" role="navigation" aria-label="global navigation">
-      	<!--#include virtual="/dcf/theme/example/includes/global/nav-global.html" -->
+      	<!--#include virtual="/includes/global/nav-global.html" -->
       </nav>
 <!--     </div> -->
 
-    <!--#include virtual="/dcf/theme/example/includes/global/idm.html" -->
-    <!--#include virtual="/dcf/theme/example/includes/global/search.html" -->
+    <!--#include virtual="/includes/global/idm.html" -->
+    <!--#include virtual="/includes/global/search.html" -->
   </div>
 
   <main class="dcf-wrapper" id="dcf-main" role="main" tabindex="-1">
@@ -2913,11 +2910,11 @@
   </main>
   <footer class="dcf-footer" id="dcf-footer" role="contentinfo">
     <!-- InstanceBeginEditable name="contactinfo" -->
-    <!--#include virtual="/dcf/theme/example/includes/local/footer-local.html" -->
+    <!--#include virtual="/includes/local/footer-local.html" -->
     <!-- InstanceEndEditable -->
-    <!--#include virtual="/dcf/theme/example/includes/global/footer-global.html" -->
+    <!--#include virtual="/includes/global/footer-global.html" -->
   </footer>
-  <!--#include virtual="/dcf/theme/example/includes/global/noscript.html" -->
-  <!--#include virtual="/dcf/theme/example/includes/global/js-body.html" -->
+  <!--#include virtual="/includes/global/noscript.html" -->
+  <!--#include virtual="/includes/global/js-body.html" -->
 </body>
 <!-- InstanceEnd --></html>

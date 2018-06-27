@@ -4,35 +4,35 @@
 
 
 // !Variables
-@import '../../../core/scss/variables/variables';
+@import '../../assets/dist/scss/variables/variables';
 @import 'variables/variables.borders';
 @import 'variables/variables.colors';
 
 
 // !Mixins
-@import '../../../core/scss/mixins/mixins';
+@import '../../assets/dist/scss/mixins/mixins';
 @import 'mixins/mixins.backgrounds';
 @import 'mixins/mixins.typography';
 
 
 // !Functions
-@import '../../../core/scss/functions/functions';
+@import '../../assets/dist/scss/functions/functions';
 
 
 // !Generic
-@import '../../../core/scss/generic/generic';
+@import '../../assets/dist/scss/generic/generic';
 
 
 // !Elements
-@import '../../../core/scss/elements/elements';
+@import '../../assets/dist/scss/elements/elements';
 
 
 // !Objects
-@import '../../../core/scss/objects/objects';
+@import '../../assets/dist/scss/objects/objects';
 
 
 // !Components
-@import '../../../core/scss/components/components';
+@import '../../assets/dist/scss/components/components';
 @import 'components/components.breadcrumbs';
 @import 'components/components.button-groups';
 @import 'components/components.buttons';
@@ -48,10 +48,10 @@
 
 
 // !JavaScript
-@import '../../../core/scss/javascript/javascript';
+@import '../../assets/dist/scss/javascript/javascript';
 
 
 // !Utilities
-@import '../../../core/scss/utilities/utilities';
+@import '../../assets/dist/scss/utilities/utilities';
 @import 'utilities/utilities.backgrounds';
 @import 'utilities/utilities.typography';
