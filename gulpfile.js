@@ -22,6 +22,7 @@ const concat = require('./build-utils/concat');
 const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
+const sassCompile = require('./build-utils/sass-compile');
 
 /**
  * ------------
@@ -175,75 +176,31 @@ gulp.task('sassDist-watch', () => {
 /* ----------------- */
 /* EXAMPLE SASS TASKS
 /* ----------------- */
-const autoprefixer = require('autoprefixer');
-const postcssNormalize = require('postcss-normalize');
-const postcssCSSO = require('postcss-csso');
-const postcssPresetEnv = require('postcss-preset-env');
-
-gulp.task('sassCompile:example:screen', (done) => {
-	$.fancyLog('----> //** Compiling all.css');
-	$.pump([
-		gulp.src(buildPaths.exampleScreenScssEntry),
-		customPlumber('Error Running sassCompile:all'),
-		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass({
-			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
-		})
-				.on('error', $.sass.logError),
-		$.postcss(
-				[
-						autoprefixer,
-						postcssPresetEnv(),
-						postcssNormalize({forceImport:true}),
-						// postcssCSSO()
-				]
-		),
-		$.debug({title: 'Passed Through - [sassCompile:example:screen]'}),
-		$.sourcemaps.write('./'),
-		gulp.dest(buildPaths.exampleCompiledCss)
-	], done);
+gulp.task('sassCompile:example:screen', () => {
+	// need to return the stream
+	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCss, 'sassCompile:example:screen');
 });
 
 
-gulp.task('sassCompile:example:mustard', (done) => {
-	$.fancyLog('----> //** Compiling mustard.css');
-	$.pump([
-		gulp.src(buildPaths.exampleMustardScssEntry),
-		customPlumber('Error Running sassCompile:all'),
-		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass()
-				.on('error', $.sass.logError),
-		$.autoprefixer(),
-		$.debug({title: 'Passed Through - [sassCompile:mustard]'}),
-		$.sourcemaps.write('./'),
-		gulp.dest(buildPaths.exampleCompiledCss)
-	], done);
+// TODO: needs to be tested when there are actual files to work with
+gulp.task('sassCompile:example:mustard', () => {
+	return sassCompile.base(buildPaths.exampleMustardScssEntry,buildPaths.exampleCompiledCss, 'sassCompile:example:mustard');
 });
 
 
-gulp.task('sassCompile:example:print', (done) => {
-	$.fancyLog('----> //** Compiling print.css');
-	$.pump([
-		gulp.src(buildPaths.examplePrintScssEntry),
-		customPlumber('Error Running sassCompile:all'),
-		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass()
-				.on('error', $.sass.logError),
-		$.autoprefixer(),
-		$.debug({title: 'Passed Through - [sassCompile:print]'}),
-		$.sourcemaps.write('./'),
-		gulp.dest(buildPaths.exampleCompiledCss)
-	], done);
+// TODO: needs to be tested when there are actual files to work with
+gulp.task('sassCompile:example:print', () => {
+	return sassCompile.base(buildPaths.examplePrintScssEntry,buildPaths.exampleCompiledCss, 'sassCompile:example:print');
 });
+
+
+gulp.task('cssConcat:example:screen', () => {
+  // return concat.
+});
+
 
 gulp.task('sassDist:example:screen-watch', () => {
-	//stylelint:cached:example will only lint changed files so it is fine to lint the entire scss folder
+	//stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder
 	gulp.watch(buildPaths.exampleScreenScssWatchGlob,gulp.series('stylelint:example:cached', 'sassCompile:example:screen'));
 });
 
