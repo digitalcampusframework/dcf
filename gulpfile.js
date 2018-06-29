@@ -178,25 +178,26 @@ gulp.task('sassDist-watch', () => {
 /* ----------------- */
 gulp.task('sassCompile:example:screen', () => {
 	// need to return the stream
-	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCss, 'sassCompile:example:screen');
+	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen');
 });
 
 
 // TODO: needs to be tested when there are actual files to work with
 gulp.task('sassCompile:example:mustard', () => {
-	return sassCompile.base(buildPaths.exampleMustardScssEntry,buildPaths.exampleCompiledCss, 'sassCompile:example:mustard');
+	return sassCompile.base(buildPaths.exampleMustardScssEntry,buildPaths.exampleCompiledCssDir, 'sassCompile:example:mustard');
 });
 
 
 // TODO: needs to be tested when there are actual files to work with
 gulp.task('sassCompile:example:print', () => {
-	return sassCompile.base(buildPaths.examplePrintScssEntry,buildPaths.exampleCompiledCss, 'sassCompile:example:print');
+	return sassCompile.base(buildPaths.examplePrintScssEntry,buildPaths.exampleCompiledCssDir, 'sassCompile:example:print');
 });
 
 
 gulp.task('cssConcat:example:screen', () => {
-  // return concat.
+  return concat.base(buildPaths.exampleScreenConcatGlob, buildPaths.exampleCompiledCssDir, 'all.css','cssConcat:example:screen');
 });
+
 
 
 gulp.task('sassDist:example:screen-watch', () => {

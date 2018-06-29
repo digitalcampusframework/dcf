@@ -7,6 +7,7 @@ const mustardJsSrcPath = path.join(commonPaths.srcPath, 'js', 'mustard');
 const appJsSrcPath = path.join(commonPaths.srcPath, 'js', 'app');
 const commonAppPath = path.join(commonPaths.outputBuild, 'js', 'app','common');
 const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
+const distCssPath = path.join(commonPaths.outputDist,'css');
 
 //Obtain paths to dependencies from package
 const dialogPolyfill = require.resolve('dialog-polyfill');
@@ -35,5 +36,6 @@ module.exports = {
 	exampleScreenScssWatchGlob: [`${exampleScssSrcPath}/**/*.scss`, `!${exampleScssSrcPath}/mustard/**/*.scss`, `!${exampleScssSrcPath}/print/**/*.scss`],
 	exampleMustardScssWatchGlob: `${exampleScssSrcPath}/mustard/**/*.scss`,
 	examplePrintScssWatchGlob: `${exampleScssSrcPath}/print/**/*.scss`,
-	exampleCompiledCss: path.join(commonPaths.exampleBuild,'css')
+	exampleCompiledCssDir: path.join(commonPaths.exampleBuild,'css'),
+	exampleScreenConcatGlob: [path.join(commonPaths.exampleBuild,'css','all.css'), `${distCssPath}/screen/**/*.css`]
 };
