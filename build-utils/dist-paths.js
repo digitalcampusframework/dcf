@@ -21,5 +21,5 @@ module.exports = {
 	optionalAppGlob: `${optionalAppPath}/**/*.js`,
 	optionalAppDest: path.join(commonPaths.outputDist,'js', 'app', 'optional'),
 	commonAppSrc: path.join(buildPaths.commonAppDest, buildNames.appJs),
-	commonAppDest: path.join(commonPaths.outputDist, 'js', 'app', 'common')
+	commonAppDest: path.join(commonPaths.outputDist, 'js', 'app', 'common'),
 };

@@ -30,7 +30,7 @@ const checkDirectory = require('./build-utils/check-directory');
  */
 
 /* ----------------- */
-/* STYLE LINT TASKS
+/* CORE STYLE LINT TASKS
 /* ----------------- */
 gulp.task('stylelint:newer', (done) => {
 	$.fancyLog('----> //** Linting SCSS files');
@@ -100,9 +100,35 @@ gulp.task('stylelintFixTest', (done) => {
 });
 
 
+/* ----------------- */
+/* EXAMPLE STYLE LINT TASKS
+/* ----------------- */
+gulp.task('stylelint:example:cached', (done) => {
+	$.fancyLog('----> //** Linting Example SCSS files');
+	$.pump([
+		gulp.src(buildPaths.exampleScssGlob),
+		customPlumber('Error Running stylelint:newer:Example'),
+		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
+		$.cached('stylelint:Example'),
+		$.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
+		$.stylelint({
+			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
+			failAfterError: true,
+			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
+			reporters: [
+				{formatter: 'string', console: true},
+				{formatter: 'verbose', save: 'report.txt'},
+			],
+			debug: true
+		}),
+		gulp.dest(buildPaths.exampleScssLintedDest) // outputs autofixed files to build
+	], done);
+});
+
+
 
 /* ----------------- */
-/* SASS TASKS
+/* CORE SASS TASKS
 /* ----------------- */
 gulp.task('copySass', (done) => {
 	$.fancyLog('----> //** Copying SCSS files');
@@ -138,11 +164,87 @@ gulp.task('sassDist', gulp.series('stylelint:newer', 'copySass:newer'));
 
 
 gulp.task('sassDist-watch', () => {
-	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer'))
+	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer', 'sassCompile:example:screen'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				cascadeDelete(ePath, stats, distPaths.scssDest, 'sassDist-watch', true);
 			});
+});
+
+
+/* ----------------- */
+/* EXAMPLE SASS TASKS
+/* ----------------- */
+const autoprefixer = require('autoprefixer');
+const postcssNormalize = require('postcss-normalize');
+const postcssCSSO = require('postcss-csso');
+const postcssPresetEnv = require('postcss-preset-env');
+
+gulp.task('sassCompile:example:screen', (done) => {
+	$.fancyLog('----> //** Compiling all.css');
+	$.pump([
+		gulp.src(buildPaths.exampleScreenScssEntry),
+		customPlumber('Error Running sassCompile:all'),
+		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
+		$.sassGlob(),
+		$.sourcemaps.init({loadMaps:true}),
+		$.sass({
+			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
+		})
+				.on('error', $.sass.logError),
+		$.postcss(
+				[
+						autoprefixer,
+						postcssPresetEnv(),
+						postcssNormalize({forceImport:true}),
+						// postcssCSSO()
+				]
+		),
+		$.debug({title: 'Passed Through - [sassCompile:example:screen]'}),
+		$.sourcemaps.write('./'),
+		gulp.dest(buildPaths.exampleCompiledCss)
+	], done);
+});
+
+
+gulp.task('sassCompile:example:mustard', (done) => {
+	$.fancyLog('----> //** Compiling mustard.css');
+	$.pump([
+		gulp.src(buildPaths.exampleMustardScssEntry),
+		customPlumber('Error Running sassCompile:all'),
+		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
+		$.sassGlob(),
+		$.sourcemaps.init({loadMaps:true}),
+		$.sass()
+				.on('error', $.sass.logError),
+		$.autoprefixer(),
+		$.debug({title: 'Passed Through - [sassCompile:mustard]'}),
+		$.sourcemaps.write('./'),
+		gulp.dest(buildPaths.exampleCompiledCss)
+	], done);
+});
+
+
+gulp.task('sassCompile:example:print', (done) => {
+	$.fancyLog('----> //** Compiling print.css');
+	$.pump([
+		gulp.src(buildPaths.examplePrintScssEntry),
+		customPlumber('Error Running sassCompile:all'),
+		// $.debug({title: 'All Files - [copySass:newer]'}), // uncomment to see src files
+		$.sassGlob(),
+		$.sourcemaps.init({loadMaps:true}),
+		$.sass()
+				.on('error', $.sass.logError),
+		$.autoprefixer(),
+		$.debug({title: 'Passed Through - [sassCompile:print]'}),
+		$.sourcemaps.write('./'),
+		gulp.dest(buildPaths.exampleCompiledCss)
+	], done);
+});
+
+gulp.task('sassDist:example:screen-watch', () => {
+	//stylelint:cached:example will only lint changed files so it is fine to lint the entire scss folder
+	gulp.watch(buildPaths.exampleScreenScssWatchGlob,gulp.series('stylelint:example:cached', 'sassCompile:example:screen'));
 });
 
 
@@ -428,4 +530,3 @@ gulp.task('watching 👀', gulp.parallel('sassDist-watch', 'copyCSS-watch', 'ven
 
 // Default task
 gulp.task('default', gulp.series('preWatch', 'watching 👀'));
-
