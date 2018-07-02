@@ -10,7 +10,7 @@ const $ = require('./gulp-load-plugins');
  * @param {string} taskName: name of the task
  */
 function concatFn(src, dest, fileName, taskName) {
-	$.fancyLog(`----> //** Concatenating ${taskName} JS Files <========`);
+	$.fancyLog(`----> //** Concatenating ${taskName} Files <========`);
 	return $.pump([
 		gulp.src(src),
 		$.sourcemaps.init({loadMaps:true}),

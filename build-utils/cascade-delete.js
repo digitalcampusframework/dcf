@@ -17,7 +17,7 @@ function cascadeDelete (ePath, stats, deleteDest, taskName, grabParentFolder) {
 	if (grabParentFolder) {
 		parentFolder = pathPieces[pathPieces.length - 2];
 	}
-
+console.log(parentFolder);
 	if(grabParentFolder) {
 		// console.log(`${path.join(deleteDest,parentFolder, fileName)} path to be deleted`);
 		del(path.join(deleteDest,parentFolder, fileName), {force: true}, function(err, deleted) {

@@ -23,6 +23,7 @@ const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
+const cssMinify = require('./build-utils/css-minify');
 
 /**
  * ------------
@@ -165,7 +166,7 @@ gulp.task('sassDist', gulp.series('stylelint:newer', 'copySass:newer'));
 
 
 gulp.task('sassDist-watch', () => {
-	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer', 'sassCompile:example:screen'))
+	gulp.watch(distPaths.scssGlob, gulp.series('stylelint:newer', 'copySass:newer'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				cascadeDelete(ePath, stats, distPaths.scssDest, 'sassDist-watch', true);
@@ -181,6 +182,13 @@ gulp.task('sassCompile:example:screen', () => {
 	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen');
 });
 
+// TODO: what is this for? missing newerDest argument <--------
+gulp.task('sassCompile:example:screen:newer', () => {
+	// need to return the stream
+	return sassCompile.screenNewer(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen',);
+});
+
+// TODO: convert to scss glob right away, ask Ryan how will grunt handle the sass glob
 
 // TODO: needs to be tested when there are actual files to work with
 gulp.task('sassCompile:example:mustard', () => {
@@ -195,16 +203,34 @@ gulp.task('sassCompile:example:print', () => {
 
 
 gulp.task('cssConcat:example:screen', () => {
-  return concat.base(buildPaths.exampleScreenConcatGlob, buildPaths.exampleCompiledCssDir, 'all.css','cssConcat:example:screen');
+  return concat.base(buildPaths.exampleScreenConcatGlob, buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS,'cssConcat:example:screen');
 });
 
 
+gulp.task('cssDist:example:screen', () => {
+	return cssMinify(distPaths.exampleScreenCssSrc,distPaths.exampleScreenCssDest,'cssDist:example:screen',path.join(distPaths.exampleScreenCssDest, distNames.exampleScreenMinCSS));
+});
+
+gulp.task('exampleCssDist:screen', gulp.series(
+		'stylelint:example:cached',
+		'sassCompile:example:screen',
+		'cssConcat:example:screen',
+		'cssDist:example:screen'
+));
 
 gulp.task('sassDist:example:screen-watch', () => {
-	//stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder
-	gulp.watch(buildPaths.exampleScreenScssWatchGlob,gulp.series('stylelint:example:cached', 'sassCompile:example:screen'));
+	// stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder on watch
+	gulp.watch(distPaths.exampleScreenScssWatchGlob, gulp.series('exampleCssDist:screen'))
+			.on('unlink', (ePath, stats) => {
+				// if something is deleted in the example/scss folder it will also be removed from the example/build/scss folder
+				cascadeDelete(ePath, stats, buildPaths.exampleScssLintedDest, 'sassDist:example:screen-watch', true);
+			});
 });
 
+// watch for any changes in the assets/dist/scss folder and recompile all.min.css
+gulp.task('sassDist:example:screen-watch:core', () => {
+	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('exampleCssDist:screen'))
+});
 
 
 /* ----------------- */
@@ -385,7 +411,7 @@ gulp.task('lintBabel', gulp.series('cachedEslint', 'babel:newer'));
 
 
 gulp.task('lintBabel-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEslint', 'babel:newer'))
+	gulp.watch(buildPaths.appJsGlob, gulp.series('lintBabel'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [lintBabel-watch]`);
@@ -458,7 +484,7 @@ gulp.task('outputPlugins', (done) => {
 
 
 gulp.task('cleanBuildDist', (done) => {
-	$.delete([commonPaths.outputBuild, commonPaths.outputDist], {force: true}, function(err, deleted) {
+	$.delete([commonPaths.outputBuild, commonPaths.outputDist, commonPaths.exampleBuild, distPaths.exampleScreenCssDest], {force: true}, function(err, deleted) {
 		if (err) throw err;
 		// deleted files
 		console.log(`${deleted} build and dist folders cleaned 🗑`);
@@ -474,17 +500,32 @@ gulp.task('cleanBuildDist', (done) => {
  * -------------------------
  */
 gulp.task('preWatch',
-		gulp.series('cleanBuildDist',
+		gulp.series(
+			'cleanBuildDist',
 			gulp.parallel(
 					gulp.series('vendorDist'),
 					gulp.series('mustardDist'),
-					gulp.series('lintBabel',
-							gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
+					gulp.series(
+						'lintBabel',
+						gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
+			 		),
 					gulp.series('sassDist'),
 					gulp.series('copyCSS:newer')
-		))));
+			),
+			'exampleCssDist:screen'
+		));
 
-gulp.task('watching 👀', gulp.parallel('sassDist-watch', 'copyCSS-watch', 'vendorDist-watch', 'mustardDist-watch', 'appDist-watch'));
+gulp.task('watching 👀',
+		gulp.parallel(
+				'sassDist-watch',
+				'copyCSS-watch',
+				'vendorDist-watch',
+				'mustardDist-watch',
+				'appDist-watch',
+				'sassDist:example:screen-watch',
+				'sassDist:example:screen-watch:core'
+		)
+);
 
 // Default task
 gulp.task('default', gulp.series('preWatch', 'watching 👀'));

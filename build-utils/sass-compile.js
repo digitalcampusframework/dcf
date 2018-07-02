@@ -6,16 +6,21 @@ const $ = require('./gulp-load-plugins');
 // postCSS plugins
 const autoprefixer = require('autoprefixer');
 const postcssNormalize = require('postcss-normalize');
-const postcssCSSO = require('postcss-csso');
 const postcssPresetEnv = require('postcss-preset-env');
 
-function sassCompileScreen (src, dest, taskName) {
+/**
+ * @param {string} src: input concat path string
+ * @param {string} dest: output path
+ * @param {string} taskName: name of the task
+ */
+function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 	$.fancyLog('----> //** Compiling all.css');
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
 		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
-		$.sassGlob(),
+		$.newer({dest: newerDest}),
+		$.sassGlob(), // TODO simplify all.scss into scss globs
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
@@ -25,8 +30,32 @@ function sassCompileScreen (src, dest, taskName) {
 				[
 					autoprefixer,
 					postcssPresetEnv(),
-					postcssNormalize({forceImport:true}),
-					// postcssCSSO()
+					postcssNormalize({forceImport:true})
+				]
+		),
+		$.debug({title: `Passed Through - [${taskName}]`}),
+		$.sourcemaps.write('./'),
+		gulp.dest(dest)
+	]);
+}
+
+function sassCompileScreen (src, dest, taskName) {
+	$.fancyLog('----> //** Compiling all.css');
+	return $.pump([
+		gulp.src(src),
+		customPlumber(`Error Running ${taskName}`),
+		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
+		$.sassGlob(), // TODO simplify all.scss into scss globs
+		$.sourcemaps.init({loadMaps:true}),
+		$.sass({
+			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
+		})
+				.on('error', $.sass.logError),
+		$.postcss(
+				[
+					autoprefixer,
+					postcssPresetEnv(),
+					postcssNormalize({forceImport:true})
 				]
 		),
 		$.debug({title: `Passed Through - [${taskName}]`}),
@@ -62,7 +91,8 @@ function sassCompileBase (src, dest, taskName) {
 
 let sassCompileObj = {
 	base: sassCompileBase,
-	screen: sassCompileScreen
+	screen: sassCompileScreen,
+	screenNewer: sassCompileScreenNewer
 };
 
 module.exports = sassCompileObj;
