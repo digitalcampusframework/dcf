@@ -12,6 +12,7 @@ const postcssPresetEnv = require('postcss-preset-env');
  * @param {string} src: input concat path string
  * @param {string} dest: output path
  * @param {string} taskName: name of the task
+ * @param {string} newerDest: target file for newer to compared against
  */
 function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 	$.fancyLog('----> //** Compiling all.css');

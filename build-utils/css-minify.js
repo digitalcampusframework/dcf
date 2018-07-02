@@ -14,7 +14,7 @@ const postcssCSSO = require('postcss-csso');
  * @param {string} newerDest: target file for newer to compared against
  */
 
-function cssMinify (src, dest, taskName, newerDest) {
+function cssMinifyNewer (src, dest, taskName, newerDest) {
 	$.fancyLog('----> //** minify CSS files');
 	return $.pump([
 		gulp.src(src),
@@ -43,4 +43,4 @@ function cssMinify (src, dest, taskName, newerDest) {
 	]);
 }
 
-module.exports = cssMinify;
+module.exports = cssMinifyNewer;

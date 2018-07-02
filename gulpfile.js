@@ -23,7 +23,7 @@ const customPlumber = require('./build-utils/custom-plumber');
 const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
-const cssMinify = require('./build-utils/css-minify');
+const cssMinifyNewer = require('./build-utils/css-minify');
 
 /**
  * ------------
@@ -203,7 +203,7 @@ gulp.task('cssConcat:example:screen', () => {
 
 
 gulp.task('cssDist:example:screen', () => {
-	return cssMinify(distPaths.exampleScreenCssSrc,distPaths.exampleScreenCssDest,'cssDist:example:screen',path.join(distPaths.exampleScreenCssDest, distNames.exampleScreenMinCSS));
+	return cssMinifyNewer(distPaths.exampleScreenCssSrc,distPaths.exampleScreenCssDest,'cssDist:example:screen',path.join(distPaths.exampleScreenCssDest, distNames.exampleScreenMinCSS));
 });
 
 gulp.task('exampleCssDist:screen', gulp.series(
