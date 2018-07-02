@@ -1,57 +1,10 @@
-///////
-// !ALL
-///////
+////////////
+// !MUSTARD
+////////////
 
 
-// !Variables
-@import '../../assets/dist/scss/variables/variables';
-@import 'variables/variables.borders';
-@import 'variables/variables.colors';
+// !Core Mustard
+@import '../../assets/dist/scss/mustard/**/*';
 
-
-// !Mixins
-@import '../../assets/dist/scss/mixins/mixins';
-@import 'mixins/mixins.backgrounds';
-@import 'mixins/mixins.typography';
-
-
-// !Functions
-@import '../../assets/dist/scss/functions/functions';
-
-
-// !Generic
-@import '../../assets/dist/scss/generic/generic';
-
-
-// !Elements
-@import '../../assets/dist/scss/elements/elements';
-
-
-// !Objects
-@import '../../assets/dist/scss/objects/objects';
-
-
-// !Components
-@import '../../assets/dist/scss/components/components';
-@import 'components/components.breadcrumbs';
-@import 'components/components.button-groups';
-@import 'components/components.buttons';
-@import 'components/components.cards';
-@import 'components/components.footer';
-@import 'components/components.forms';
-@import 'components/components.header';
-@import 'components/components.headings';
-@import 'components/components.icons';
-@import 'components/components.input-groups';
-@import 'components/components.navigation';
-@import 'components/components.paragraphs';
-
-
-// !JavaScript
-@import '../../assets/dist/scss/javascript/javascript';
-
-
-// !Utilities
-@import '../../assets/dist/scss/utilities/utilities';
-@import 'utilities/utilities.backgrounds';
-@import 'utilities/utilities.typography';
+// !Theme Mustard
+@import '/mustard/**/*';

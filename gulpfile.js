@@ -182,11 +182,6 @@ gulp.task('sassCompile:example:screen', () => {
 	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen');
 });
 
-// TODO: what is this for? missing newerDest argument <--------
-gulp.task('sassCompile:example:screen:newer', () => {
-	// need to return the stream
-	return sassCompile.screenNewer(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen',);
-});
 
 // TODO: convert to scss glob right away, ask Ryan how will grunt handle the sass glob
 
@@ -233,6 +228,7 @@ gulp.task('sassDist:example:screen-watch:core', () => {
 });
 
 
+
 /* ----------------- */
 /* CSS TASKS
 /* ----------------- */
@@ -261,6 +257,8 @@ gulp.task('copyCSS-watch', () => {
 					cascadeDelete(ePath, stats, distPaths.cssDest, 'copyCSS-watch', true);
 				});
 });
+
+
 
 /* ----------------- */
 /* VENDOR JS TASKS

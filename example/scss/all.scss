@@ -7,14 +7,12 @@
 
 // !Variables
 @import '../../../assets/dist/scss/variables/variables';
-@import 'variables/variables.borders';
-@import 'variables/variables.colors';
+@import 'variables/**/*';
 
 
 // !Mixins
 @import '../../../assets/dist/scss/mixins/mixins';
-@import 'mixins/mixins.backgrounds';
-@import 'mixins/mixins.typography';
+@import 'mixins/**/*';
 
 
 // !Functions
@@ -35,18 +33,7 @@
 
 // !Components
 @import '../../../assets/dist/scss/components/components';
-@import 'components/components.breadcrumbs';
-@import 'components/components.button-groups';
-@import 'components/components.buttons';
-@import 'components/components.cards';
-@import 'components/components.footer';
-@import 'components/components.forms';
-@import 'components/components.header';
-@import 'components/components.headings';
-@import 'components/components.icons';
-@import 'components/components.input-groups';
-@import 'components/components.navigation';
-@import 'components/components.paragraphs';
+@import 'components/**/*';
 
 
 // !JavaScript
@@ -55,5 +42,4 @@
 
 // !Utilities
 @import '../../../assets/dist/scss/utilities/utilities';
-@import 'utilities/utilities.backgrounds';
-@import 'utilities/utilities.typography';
+@import 'utilities/**/*';
