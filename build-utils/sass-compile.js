@@ -21,7 +21,7 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 		customPlumber(`Error Running ${taskName}`),
 		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
 		$.newer({dest: newerDest}),
-		$.sassGlob(), // TODO simplify all.scss into scss globs
+		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
@@ -46,7 +46,7 @@ function sassCompileScreen (src, dest, taskName) {
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
 		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
-		$.sassGlob(), // TODO simplify all.scss into scss globs
+		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]

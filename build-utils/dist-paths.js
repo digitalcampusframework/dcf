@@ -24,10 +24,22 @@ module.exports = {
 	optionalAppDest: path.join(commonPaths.outputDist,'js', 'app', 'optional'),
 	commonAppSrc: path.join(buildPaths.commonAppDest, buildNames.appJs),
 	commonAppDest: path.join(commonPaths.outputDist, 'js', 'app', 'common'),
+
 	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),
 	exampleScreenCssDest: path.join(commonPaths.examplePath, 'css'),
-	exampleScreenScssWatchGlob: [`${exampleScssSrcPath}/**/*.scss`, `!${exampleScssSrcPath}/mustard/**/*.scss`, `!${exampleScssSrcPath}/print/**/*.scss`],
-	exampleScreenCoreScssWatchGlob:[`${coreDistScssPath}/**/*.scss`, `!${coreDistScssPath}/mustard/**/*.scss`, `!${coreDistScssPath}/print/**/*.scss`],
+	exampleScreenScssWatchGlob: [
+			`${exampleScssSrcPath}/**/*.scss`,
+			`!${exampleScssSrcPath}/mustard.scss`,
+			`!${exampleScssSrcPath}/mustard/**/*.scss`,
+			`!${exampleScssSrcPath}/print.scss`,
+			`!${exampleScssSrcPath}/print/**/*.scss`
+	],
+	exampleScreenCoreScssWatchGlob:[
+			`${coreDistScssPath}/**/*.scss`,
+			`!${coreDistScssPath}/mustard/**/*.scss`,
+			`!${coreDistScssPath}/print/**/*.scss`
+	],
+
 	exampleMustardScssWatchGlob: `${exampleScssSrcPath}/mustard/**/*.scss`,
 	examplePrintScssWatchGlob: `${exampleScssSrcPath}/print/**/*.scss`,
 };
