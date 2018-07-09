@@ -14,14 +14,17 @@ const dialogPolyfill = require.resolve('dialog-polyfill');
 const intersectionObserver = require.resolve('intersection-observer');
 const picturefill = require.resolve('picturefill');
 const objectFitImages = require.resolve('object-fit-images');
+const detailsPolyfill = require.resolve('details-polyfill');
+
+console.log([`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`, detailsPolyfill]);
 
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
 	// better to use unminified vendor files since all files will be concatenated & minified
-	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, `${dialogPolyfill}`, `${intersectionObserver}`],
+	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, dialogPolyfill, intersectionObserver],
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	// better to use unminified vendor files since all files will be concatenated & minified
-	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`],
+	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, picturefill, objectFitImages, detailsPolyfill],
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
 	appJsPath: appJsSrcPath,
 	appJsGlob: `${appJsSrcPath}/**/*.js`,

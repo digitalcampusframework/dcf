@@ -206,12 +206,14 @@ gulp.task('cssDist:example:screen', () => {
 	return cssMinifyNewer(distPaths.exampleScreenCssSrc,distPaths.exampleScreenCssDest,'cssDist:example:screen',path.join(distPaths.exampleScreenCssDest, distNames.exampleScreenMinCSS));
 });
 
+
 gulp.task('exampleCssDist:screen', gulp.series(
 		'stylelint:example:cached',
 		'sassCompile:example:screen',
 		'cssConcat:example:screen',
 		'cssDist:example:screen'
 ));
+
 
 gulp.task('sassDist:example:screen-watch', () => {
 	// stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder on watch
@@ -221,6 +223,7 @@ gulp.task('sassDist:example:screen-watch', () => {
 				cascadeDelete(ePath, stats, buildPaths.exampleScssLintedDest, 'sassDist:example:screen-watch', true);
 			});
 });
+
 
 // watch for any changes in the assets/dist/scss folder and recompile all.min.css
 gulp.task('sassDist:example:screen-watch:core', () => {
