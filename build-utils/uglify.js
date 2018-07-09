@@ -7,7 +7,6 @@ const $ = require('./gulp-load-plugins');
 /**
  * @param {string} src: input concat path string
  * @param {string} dest: output path
- * @param {string} fileName: concat file name
  * @param {string} taskName: name of the task
  * @param {string} newerDest: target file for newer to compared against
  */

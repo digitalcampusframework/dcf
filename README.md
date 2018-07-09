@@ -5,7 +5,7 @@ Digital Campus Framework
 
 ## Objective
 DCF contains core scripts and styles which are used as 'plumbing' and a foundation to build a theme. It is created to be brand agnostic.
-The core scripts and styles help create a more consistent user experience, incorporate the best possible web accessibility affordances, and allow for ease of development across themes, while individual themes built upon it allows for customizations and brand identity.
+The core scripts and styles help create a more consistent user experience, incorporate the best possible web accessibility accordance, and allow for ease of development across themes, while individual themes built upon it allows for customizations and brand identity.
 
 
 
@@ -20,14 +20,25 @@ Source files should be placed in the `assets/src` folder and running the default
 * The `assets/src` directory contains the core scripts and files for DCF.
 * The `assets/build` directory contains temporary files between build processes (e.g. concatenated JS files before minification).
 * The `assets/dist` directory contains production ready scripts and files for DCF.
+* The `example` directory contains compiled CSS and an `index.shtml` to preview the theme. 
 
 
 #### Sass Files
 `/assets/src/scss/**/*.scss`
 
-There will be no SCSS compilation `.scss` files in DCF Core. Sass file compilations is done on the theme layer to allow additional theme `.scss` files to be compiled alongside core `.scss` files. This also allows theme layer scss files to make use of includes and mixins defined in DCF core. There should be two "main/index" scss files in the _theme_ layer:
+There will be no SASS compilation of `.scss` files in DCF Core. Sass compilation is done on the theme layer to 
+allow additional theme `.scss` files to be compiled alongside core `.scss` files. This also allows theme layer scss 
+files to make use of includes and mixins defined in DCF core. There should be three "main/index" scss files in the 
+_theme_ layer:
 * `main.scss` - brings together all the core and theme layer sass partials for compilation
-* `mustard.scss` - brings together partials for fallback styles that will be used in the 'cutting the mustard' approach 
+* `print.scss` - brings together all the core and theme layer print-related partials from the print folder for 
+compilation
+* `mustard.scss` - brings together partials from the mustard folder for fallback styles that will be used in the 
+'cutting the mustard' 
+approach
+
+_Use a SASS glob plugin for your task runner to pull in the partials from DCF core in your entry files. See the example 
+folder on how to structure the imports using SASS globs._ 
 
 
 #### JavaScript Files
@@ -43,7 +54,9 @@ There will be no SCSS compilation `.scss` files in DCF Core. Sass file compilati
       
 #### CSS Files
 `/assets/src/css/vendor/**/*.css`
-DCF Core uses SASS. The CSS folder is mainly used for vendor associated CSS files 
+
+DCF Core uses SASS. The CSS folder is mainly used for vendor associated CSS files which can later be concatenated to 
+your compiled CSS file and then minified.
 
 
 
@@ -60,11 +73,15 @@ DCF Core uses Gulp 4.0. Gulp tasks are specified in the `gulpfile.js`. To modula
 * `check-directory.js` - custom function to check if a directory exists and if not create it, used in outputting eslint error logs
 * `common-paths.js` - contains base path variables to be composed from in build-paths.js and dist-paths.js
 * `concat.js` - contains object with two Gulp concat task functions, one with and one without gulp-newer
+* `css-minify.js` - contains function to minify CSS using CSSO, inserts a banner to the beginning of minified file and shows anticipated gzipped size 
 * `custom-plumber.js` - error notification function using gulp-notify
 * `dist-names.js` - contains variable names of files outputted into the build folder
 * `dist-paths.js` - contains path variables of files going that are being outputted into the `/assets/build` folder by Gulp
 * `gulp-load-plugins.js` - contains function to pull in `package.json` plugins using gulp-load-plugins and store it in the `$` variable. Scoped to just devDependencies plugins.
-*  `uglify.js` - contains function to run gulp-uglify task, preserves comments that starts with @license or @preserve, also shows anticipated gzipped size 
+* `sass-compile.js` - contains object with three SASS compile task for screen-related CSS. Print and mustard SASS 
+compilation tasks will be added in the future
+*  `uglify.js` - contains function to run gulp-uglify task, preserves comments that starts with @license or 
+@preserve, inserts a banner to the beginning of minified file and shows anticipated gzipped size 
 
 
 ### Gulp Processing for SCSS, JS, CSS files
@@ -90,7 +107,12 @@ You are good to go!
 
 ## Known issues
 * Some of the gulp tasks uses gulp-newer that compares against target files to see if a task needs to be performed (helps avoid performance issues when watching). On watching, when files are deleted from src folders, files such as vendor.concat.js in the build folder will be re-concatenated and then re-uglified (expected behavior). However if you add a file that is older than the gulp-newer targeted file, the associated task will not run. To overcome this, just do something (add a space and save) in that file so that it has a newer modified date than the gulp-newer targeted file.
-    * Example: gulp-newer observing file b.js in build folder but no b.js in src folder. While gulp is watching, file with the same filename b.js was just added in src folder but has an older modified date than what gulp-newer is looking at, then the associated gulp task will not run.   
+    * Example: Current state: gulp-newer observing file b.js in build folder but no b.js in src folder. While gulp is 
+    watching, file with the same filename b.js was just added in src folder but has an older modified date than what 
+    gulp-newer is looking at in the build folder, then the associated gulp task will not run.   
+* when using gulp-sass-glob, this plugin cannot perform nested glob imports 
+    * Example: If entry file uses a sass import glob that pulls in a sass partial that also has an import glob, it will 
+    throw an error.
 
 
 ---

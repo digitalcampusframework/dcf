@@ -10,14 +10,16 @@ const $ = require('./gulp-load-plugins');
  * @param {string} taskName: name of the task
  */
 function concatFn(src, dest, fileName, taskName) {
-	$.fancyLog(`----> //** Concatenating ${taskName} JS Files <========`);
+	$.fancyLog(`----> //** Concatenating ${taskName} Files <========`);
 	return $.pump([
 		gulp.src(src),
-		$.sourcemaps.init(),
+		$.sourcemaps.init({loadMaps:true}),
 		customPlumber(`Error Running ${taskName} task`),
+		$.debug({title: `All Files - [${taskName}]`}),
 		$.concat(
 				{path: fileName},
 				{newLine: '\n\n'}),
+		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
@@ -43,7 +45,7 @@ function concatNewerFn(src, dest, fileName, taskName, newerDest) {
 	$.fancyLog(`----> //** Concatenating ${taskName} Files`);
 	return $.pump([
 		gulp.src(src),
-		$.sourcemaps.init(),
+		$.sourcemaps.init({loadMaps:true}),
 		customPlumber(`Error Running ${taskName} task`),
 		$.debug({title: `All Files - [${taskName}]`}),
 		$.newer({dest: newerDest}),

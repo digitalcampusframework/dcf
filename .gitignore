@@ -5,5 +5,5 @@
 4
 /logs/**/*
 !logs/.gitkeep
-
+example/build/**/*
 

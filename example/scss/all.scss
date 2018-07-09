@@ -2,56 +2,44 @@
 // !ALL
 ///////
 
+// scss is compiled from a temporary _example/build/scss_ through the gulp tasks
+// hence the import path from core reflects that.
 
 // !Variables
-@import '../../assets/dist/scss/variables/variables';
-@import 'variables/variables.borders';
-@import 'variables/variables.colors';
+@import '../../../assets/dist/scss/variables/**/*.scss';
+@import 'variables/**/*';
 
 
 // !Mixins
-@import '../../assets/dist/scss/mixins/mixins';
-@import 'mixins/mixins.backgrounds';
-@import 'mixins/mixins.typography';
+@import '../../../assets/dist/scss/mixins/**/*.scss';
+@import 'mixins/**/*.scss';
 
 
 // !Functions
-@import '../../assets/dist/scss/functions/functions';
+@import '../../../assets/dist/scss/functions/**/*.scss';
 
 
 // !Generic
-@import '../../assets/dist/scss/generic/generic';
+@import '../../../assets/dist/scss/generic/**/*.scss';
 
 
 // !Elements
-@import '../../assets/dist/scss/elements/elements';
+@import '../../../assets/dist/scss/elements/**/*.scss';
 
 
 // !Objects
-@import '../../assets/dist/scss/objects/objects';
+@import '../../../assets/dist/scss/objects/**/*.scss';
 
 
 // !Components
-@import '../../assets/dist/scss/components/components';
-@import 'components/components.breadcrumbs';
-@import 'components/components.button-groups';
-@import 'components/components.buttons';
-@import 'components/components.cards';
-@import 'components/components.footer';
-@import 'components/components.forms';
-@import 'components/components.header';
-@import 'components/components.headings';
-@import 'components/components.icons';
-@import 'components/components.input-groups';
-@import 'components/components.navigation';
-@import 'components/components.paragraphs';
+@import '../../../assets/dist/scss/components/**/*.scss';
+@import 'components/**/*.scss';
 
 
 // !JavaScript
-@import '../../assets/dist/scss/javascript/javascript';
+@import '../../../assets/dist/scss/javascript/**/*.scss';
 
 
 // !Utilities
-@import '../../assets/dist/scss/utilities/utilities';
-@import 'utilities/utilities.backgrounds';
-@import 'utilities/utilities.typography';
+@import '../../../assets/dist/scss/utilities/**/*.scss';
+@import 'utilities/**/*.scss';
