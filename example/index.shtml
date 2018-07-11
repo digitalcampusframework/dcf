@@ -439,7 +439,7 @@
       <figure class="dcf-mt-6">
         <blockquote>Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</blockquote>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-quotes">Quotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-quotes">Quotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-elements-body">Body</h3>
@@ -458,7 +458,7 @@
         <input type="button" value="Input">
         <input type="submit" value="Submit">
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups-with-buttons">Input Groups With Buttons</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups-with-buttons">Input Groups With Buttons</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-code">Code</h3>
       <dl class="dcf-measure">
@@ -486,7 +486,7 @@
         <dd>This is sample output:</dd>
       </dl>
       <figure><samp>This text is meant to be treated as sample output from a computer program.</samp></figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-code">Code</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-code">Code</a> (Components)</p>
 
 
   <!--
@@ -519,7 +519,7 @@
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
         <figcaption>A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-figures">Figures</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-figures">Figures</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-forms">Forms</h3>
       <dl class="dcf-measure">
@@ -593,7 +593,7 @@
           <input name="submit" type="submit" value="Submit">
         </form>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-headings">Headings</h3>
       <dl class="dcf-measure">
@@ -613,7 +613,7 @@
         <h5>h5. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.5em</small></h5>
         <h6>h6. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.33em</small></h6>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-headings">Headings</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-headings">Headings</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-images">Images</h3>
       <dl class="dcf-measure">
@@ -633,7 +633,7 @@
         <img src="http://via.placeholder.com/225x225" alt="A placeholder image with a 1:1 aspect ratio">
         <figcaption class="dcf-figcaption">A placeholder image with a 1:1 aspect ratio</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-aspect-ratios">Aspect Ratios</a> (Utilities), <a href="#example-utilities-object-fit">Object-Fit</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-aspect-ratios">Aspect Ratios</a> (Utilities), <a href="#example-utilities-object-fit">Object-Fit</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-lists">Lists</h3>
 
@@ -685,7 +685,7 @@
           <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
         </ul>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-lists">Lists</a> (Objects), <a href="#example-components-pagination">Pagination</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-lists">Lists</a> (Objects), <a href="#example-components-pagination">Pagination</a> (Components)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-elements-main">Main</h3>
@@ -707,21 +707,21 @@
         <p class="dcf-measure">Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
         <p class="dcf-measure">Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
       </figure>
-<!--       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p> -->
+<!--       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p> -->
 
       <h3 class="dcf-mt-8" id="example-elements-quotes">Quotes</h3>
       <dl class="dcf-measure">
         <dt><code>&lt;q&gt;</code></dt>
         <dd><q>Smart</q> or <q>curly</q> quotes are applied to inline quotes—no need to add your own.</dd>
       </dl>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-small">Small</h3>
       <dl class="dcf-measure">
         <dt><code>&lt;small&gt;</code></dt>
         <dd>The small element is intended for <em>inline</em> text meant to be treated as <small>fine print</small>. It does not change the font-size. Add a <a href="#example-utilities-font-size">font-size utility class</a> (like <code>.dcf-txt-xs</code>) to the small element to <span class="dcf-txt-xs">reduce its font-size</span>.</dd>
       </dl>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-sub-sup">Subscripts &amp; Superscripts</h3>
       <dl class="dcf-measure">
@@ -775,7 +775,7 @@
           </tbody>
         </table>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components)</p>
     </section>
 
     <!-- !Objects -->
@@ -802,12 +802,12 @@
         <dd>The wrapper object applies left and right padding to the page to provide adequate whitespace.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray dcf-txt-center">
+        <div class="dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
           <code class="dcf-txt-middle dcf-bold">.dcf-wrapper</code>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-stretch">Stretch</a> (Objects)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-stretch">Stretch</a> (Objects)</p>
 
       <h3 class="dcf-mt-8" id="example-objects-stretch">Stretch</h3>
       <dl class="dcf-measure">
@@ -815,19 +815,19 @@
         <dd>The stretch object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-stretch dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray dcf-txt-center">
+        <div class="dcf-stretch dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
           <div class="dcf-mb3">
             <code class="dcf-txt-middle dcf-bold">.dcf-stretch</code>
           </div>
           <div class="dcf-wrapper">
-            <div class="dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray">
+            <div class="dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray">
               <code class="dcf-txt-middle dcf-bold">.dcf-wrapper</code>
             </div>
           </div>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the stretch object to reapply the page padding.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-wrapper">Wrapper</a> (Objects)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-wrapper">Wrapper</a> (Objects)</p>
 
       <h3 class="dcf-mt-8" id="example-objects-grids">Grids</h3>
       <p class="dcf-measure">The Digital Campus Framework uses <a href="https://www.w3.org/TR/css-grid-1/">CSS Grid</a> for grid-based layout and, using <a href="https://www.w3.org/TR/css3-conditional/#at-supports">feature queries</a>, provides a <a href="https://www.w3.org/TR/css-flexbox-1/">Flexbox-based</a> fallback for browsers that don't support <a href="https://caniuse.com/#feat=css-grid">CSS Grid</a>.</p>
@@ -838,25 +838,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">The <code>.dcf-grid</code> will take any number of child elements and place each in one of the available twelve columns. Additional classes to define column widths and column- and row-gap help to make the grid more useful.</figcaption>
       </figure>
@@ -870,25 +870,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-col-50%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-start</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-col-50%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-start</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -898,25 +898,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-col-50%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-end</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-col-50%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-end</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -926,25 +926,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-col-33%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-start</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-col-33%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-start</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -954,25 +954,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-col-33%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-end</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-col-33%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-end</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -982,25 +982,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-col-67%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-start</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-col-67%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-start</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1010,25 +1010,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-col-67%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-end</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-col-67%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-end</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1038,25 +1038,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-col-25%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-start</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-col-25%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-start</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1066,25 +1066,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-col-25%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-end</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-col-25%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-end</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1094,25 +1094,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-col-75%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-start</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-col-75%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-start</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1122,25 +1122,25 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-col-75%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-end</code></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-col-75%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-end</code></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">13</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">14</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">15</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">16</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">17</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
       </figure>
 
@@ -1152,18 +1152,18 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid-halves dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
       </figure>
 
@@ -1173,18 +1173,18 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid-thirds dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
       </figure>
 
@@ -1194,18 +1194,18 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid-fourths dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
       </figure>
 
@@ -1217,18 +1217,18 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid-fifths@md dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
       </figure>
 
@@ -1238,21 +1238,21 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-grid-sixths@md dcf-col-gap-sm dcf-row-gap-sm">
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
-          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-grid">Grid</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-grid">Grid</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-objects-lists">Lists</h3>
 
@@ -1299,7 +1299,7 @@
           </ul>
         </nav>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
 
       <h3 class="dcf-mt-8" id="example-objects-media">Media</h3>
       <dl class="dcf-measure">
@@ -1517,7 +1517,7 @@
           </footer>
         </article>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components) <!-- , <a href="#example-components-paragraphs">Paragraphs</a> (Components) --></p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components) <!-- , <a href="#example-components-paragraphs">Paragraphs</a> (Components) --></p>
 
       <h3 class="dcf-mt-8" id="example-components-badges">Badges</h3>
       <dl class="dcf-measure">
@@ -1568,7 +1568,7 @@
           <footer class="dcf-attribution">Jane Doe in <cite><i>Source Title</i></cite></footer>
         </blockquote>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-elements-quotes">Quotes</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-elements-quotes">Quotes</a> (Elements)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-breadcrumbs">Breadcrumbs</h3>
@@ -1596,7 +1596,7 @@
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">This example shows a button group with secondary buttons.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-components-buttons">Buttons</h3>
       <p class="dcf-measure">Buttons include the <code>&lt;button&gt;</code> element, as well as form inputs (<code>type="button"</code> and <code>type="submit"</code>) and links styled to appear as buttons.</p>
@@ -1669,7 +1669,7 @@
         <a class="dcf-btn dcf-btn-primary dcf-disabled" href="#" role="button" aria-disabled="true">Primary Link</a>
         <a class="dcf-btn dcf-btn-secondary dcf-disabled" href="#" role="button" aria-disabled="true">Secondary Link</a>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-cards">Cards</h3>
       <dl class="dcf-measure">
@@ -1710,7 +1710,7 @@
           </li>
         </ul>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-objects-grids">Grids</a> (Objects), <a href="#example-objects-bare-lists">Unstyled Lists</a> (Components), <a href="#example-utilities-grid">Grid</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-objects-grids">Grids</a> (Objects), <a href="#example-objects-bare-lists">Unstyled Lists</a> (Components), <a href="#example-utilities-grid">Grid</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-code">Code</h3>
       <dl class="dcf-measure">
@@ -1719,7 +1719,7 @@
       </dl>
       <figure><pre class="dcf-pre"><code data-lang="html">&lt;p&gt;Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
 &lt;p&gt;Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;</code></pre></figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-code">Code</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-code">Code</a> (Elements)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-events">Events</h3>
@@ -1741,7 +1741,7 @@
         <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
         <figcaption class="dcf-figcaption">A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>. Use the <code>&lt;small&gt;</code> element along with <a href="#example-utilities-display">display</a>, <a href="#example-utilities-padding">padding</a> and <a href="#example-utilities-font-size">font-size</a> utilities to credit the source(s) of figure content, like so: <small class="dcf-d-block dcf-txt-xs dcf-pt1">Illustrations by Jane Doe</small></figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-figures">Figures</a> (Elements), <a href="#example-elements-images">Images</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-margins">Margins</a> (Utilities), <a href="#example-utilities-padding">Padding</a> (Utilities), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-figures">Figures</a> (Elements), <a href="#example-elements-images">Images</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-margins">Margins</a> (Utilities), <a href="#example-utilities-padding">Padding</a> (Utilities), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-footer">Footer</h3>
@@ -1859,7 +1859,7 @@
           <input class="dcf-btn dcf-btn-primary" name="submit" type="submit" value="Submit">
         </form>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
 
 
       <h3 class="dcf-mt-8" id="example-components-headings">Headings</h3>
@@ -1876,7 +1876,7 @@
           <h2 class="dcf-subhead dcf-1st">Pellentesque Nibh Malesuada</h2>
         </div>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
       <dl class="dcf-measure">
@@ -1995,7 +1995,7 @@
           </div>
         </form>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components), <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-box-alignment">Display</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components), <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-box-alignment">Display</a> (Utilities)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-marks">Marks</h3>
@@ -2042,7 +2042,7 @@
         <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
         <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.</p>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
 -->
 
   <!--
@@ -2117,26 +2117,26 @@
             </tr>
             <tr>
               <td></td>
-              <td class="dcf-txt-right dcf-bt">16</td>
-              <td class="dcf-bt">Nullam quis risus eget urna mollis ornare vel eu leo</td>
-              <td class="dcf-bt">Ornare Porta Vulputate</td>
+              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">16</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Nullam quis risus eget urna mollis ornare vel eu leo</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Ornare Porta Vulputate</td>
             </tr>
             <tr>
-              <th class="dcf-bt">Table heading</th>
-              <td class="dcf-txt-right dcf-bt">387</td>
-              <td class="dcf-bt">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
-              <td class="dcf-bt">Inceptos Ullamcorper Etiam</td>
+              <th class="dcf-bt-solid dcf-bt-1 example-bt-gray">Table heading</th>
+              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">387</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Inceptos Ullamcorper Etiam</td>
             </tr>
             <tr>
               <td></td>
-              <td class="dcf-txt-right dcf-bt">9</td>
-              <td class="dcf-bt">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
-              <td class="dcf-bt">Bibendum Sit Lorem</td>
+              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">9</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
+              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Bibendum Sit Lorem</td>
             </tr>
           </tbody>
         </table>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-borders">Borders</a> (Utilities), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-borders">Borders</a> (Utilities), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->
@@ -2153,14 +2153,32 @@
             <li><a href="#example-utilities-backgrounds-none">None</a></li>
           </ul>
         </li>
-        <li><a href="#example-utilities-border-radius">Border Radius</a></li>
-        <li><a href="#example-utilities-borders">Borders</a>
+        <li><a href="#example-utilities-border-color">Border Color</a>
           <ul>
-            <li><a href="#example-utilities-border-all">Border (All Sides)</a></li>
-            <li><a href="#example-utilities-border-top">Border Top</a></li>
-            <li><a href="#example-utilities-border-right">Border Right</a></li>
-            <li><a href="#example-utilities-border-bottom">Border Bottom</a></li>
-            <li><a href="#example-utilities-border-left">Border Left</a></li>
+            <li><a href="#example-utilities-border-color-all">Border Color (All Sides)</a></li>
+            <li><a href="#example-utilities-border-top-color">Border Top Color</a></li>
+            <li><a href="#example-utilities-border-right-color">Border Right Color</a></li>
+            <li><a href="#example-utilities-border-bottom-color">Border Bottom Color</a></li>
+            <li><a href="#example-utilities-border-left-color">Border Left Color</a></li>
+          </ul>
+        </li>
+        <li><a href="#example-utilities-border-radius">Border Radius</a></li>
+        <li><a href="#example-utilities-border-style">Border Style</a>
+          <ul>
+            <li><a href="#example-utilities-border-style-all">Border Style (All Sides)</a></li>
+            <li><a href="#example-utilities-border-top-style">Border Top Style</a></li>
+            <li><a href="#example-utilities-border-right-style">Border Right Style</a></li>
+            <li><a href="#example-utilities-border-bottom-style">Border Bottom Style</a></li>
+            <li><a href="#example-utilities-border-left-style">Border Left Style</a></li>
+          </ul>
+        </li>
+        <li><a href="#example-utilities-border-width">Border Width</a>
+          <ul>
+            <li><a href="#example-utilities-border-width-all">Border Width (All Sides)</a></li>
+            <li><a href="#example-utilities-border-top-width">Border Top Width</a></li>
+            <li><a href="#example-utilities-border-right-width">Border Right Width</a></li>
+            <li><a href="#example-utilities-border-bottom-width">Border Bottom Width</a></li>
+            <li><a href="#example-utilities-border-left-width">Border Left Width</a></li>
           </ul>
         </li>
         <li><a href="#example-utilities-box-alignment">Box Alignment</a>
@@ -2302,6 +2320,41 @@
         </div>
       </div>
 
+      <h3 class="dcf-mt-8" id="example-utilities-border-color">Border Color</h3>
+      <p class="dcf-measure">Custom border colors should be applied with mixins and utility classes in your site’s theme.</p>
+      <div class="dcf-grid-halves@sm dcf-grid-thirds@md dcf-col-gap-vw">
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-color-all">Border Color (All Sides)</h4>
+          <dl>
+            <dt><code>.dcf-b-current</code></dt><dd>border-color: currentColor, all sides</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-top-color">Border Top Color</h4>
+          <dl>
+            <dt><code>.dcf-bt-current</code></dt><dd>border-top-color: currentColor</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-right-color">Border Right Color</h4>
+          <dl>
+            <dt><code>.dcf-br-current</code></dt><dd>border-right-color: currentColor</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-bottom-color">Border Bottom Color</h4>
+          <dl>
+            <dt><code>.dcf-bb-current</code></dt><dd>border-bottom-color: currentColor</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-left-color">Border Left Color</h4>
+          <dl>
+            <dt><code>.dcf-bl-current</code></dt><dd>border-left-color: currentColor</dd>
+          </dl>
+        </div>
+      </div>
+
       <h3 class="dcf-mt-8" id="example-utilities-border-radius">Border Radius</h3>
       <dl>
         <dt><code>.dcf-circle</code></dt><dd>circle border radius</dd>
@@ -2320,48 +2373,81 @@
       <img class="dcf-d-block dcf-circle" src="http://via.placeholder.com/100x100">
   -->
 
-      <h3 class="dcf-mt-8" id="example-utilities-borders">Borders</h3>
-      <p class="dcf-measure">Border colors should be applied with mixins and utility classes in your site’s theme.</p>
+      <h3 class="dcf-mt-8" id="example-utilities-border-style">Border Style</h3>
       <div class="dcf-grid-halves@sm dcf-grid-thirds@md dcf-col-gap-vw">
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-all">Border (All Sides)</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-style-all">Border Style (All Sides)</h4>
+          <dl>
+            <dt><code>.dcf-b-solid</code></dt><dd>border-style: solid, all sides</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-top-style">Border Top Style</h4>
+          <dl>
+            <dt><code>.dcf-bt-solid</code></dt><dd>border-top-style: solid</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-right-style">Border Right Style</h4>
+          <dl>
+            <dt><code>.dcf-br-solid</code></dt><dd>border-right-style: solid</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-bottom-style">Border Botttom Style</h4>
+          <dl>
+            <dt><code>.dcf-bb-solid</code></dt><dd>border-bottom-style: solid</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-left-style">Border Left Style</h4>
+          <dl>
+            <dt><code>.dcf-bl-solid</code></dt><dd>border-left-style: solid</dd>
+          </dl>
+        </div>
+      </div>
+
+      <h3 class="dcf-mt-8" id="example-utilities-border-width">Border Width</h3>
+      <div class="dcf-grid-halves@sm dcf-grid-thirds@md dcf-col-gap-vw">
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-border-width-all">Border Width (All Sides)</h4>
           <dl>
             <dt><code>.dcf-b-0</code></dt><dd>no border</dd>
-            <dt><code>.dcf-b-1</code></dt><dd>1px solid border, all sides</dd>
-            <dt><code>.dcf-b-2</code></dt><dd>2px solid border, all sides</dd>
-            <dt><code>.dcf-b-3</code></dt><dd>3px solid border, all sides</dd>
+            <dt><code>.dcf-b-1</code></dt><dd>border-width: 1px, all sides</dd>
+            <dt><code>.dcf-b-2</code></dt><dd>border-width: 2px, all sides</dd>
+            <dt><code>.dcf-b-3</code></dt><dd>border-width: 3px, all sides</dd>
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-top">Border Top</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-top-width">Border Top Width</h4>
           <dl>
-            <dt><code>.dcf-bt-1</code></dt><dd>1px solid border-top</dd>
-            <dt><code>.dcf-bt-2</code></dt><dd>2px solid border-top</dd>
-            <dt><code>.dcf-bt-3</code></dt><dd>3px solid border-top</dd>
+            <dt><code>.dcf-bt-1</code></dt><dd>border-top-width: 1px</dd>
+            <dt><code>.dcf-bt-2</code></dt><dd>border-top-width: 2px</dd>
+            <dt><code>.dcf-bt-3</code></dt><dd>border-top-width: 3px</dd>
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-right">Border Right</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-right-width">Border Right Width</h4>
           <dl>
-            <dt><code>.dcf-br-1</code></dt><dd>1px solid border-right</dd>
-            <dt><code>.dcf-br-2</code></dt><dd>2px solid border-right</dd>
-            <dt><code>.dcf-br-3</code></dt><dd>3px solid border-right</dd>
+            <dt><code>.dcf-br-1</code></dt><dd>border-top-width: 1px</dd>
+            <dt><code>.dcf-br-2</code></dt><dd>border-top-width: 2px</dd>
+            <dt><code>.dcf-br-3</code></dt><dd>border-top-width: 3px</dd>
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-bottom">Border Botttom</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-bottom-width">Border Botttom Width</h4>
           <dl>
-            <dt><code>.dcf-bb-1</code></dt><dd>1px solid border-bottom</dd>
-            <dt><code>.dcf-bb-2</code></dt><dd>2px solid border-bottom</dd>
-            <dt><code>.dcf-bb-3</code></dt><dd>3px solid border-bottom</dd>
+            <dt><code>.dcf-bb-1</code></dt><dd>border-top-width: 1px</dd>
+            <dt><code>.dcf-bb-2</code></dt><dd>border-top-width: 2px</dd>
+            <dt><code>.dcf-bb-3</code></dt><dd>border-top-width: 3px</dd>
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-left">Border Left</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-left-width">Border Left Width</h4>
           <dl>
-            <dt><code>.dcf-bl-1</code></dt><dd>1px solid border-left</dd>
-            <dt><code>.dcf-bl-2</code></dt><dd>2px solid border-left</dd>
-            <dt><code>.dcf-bl-3</code></dt><dd>3px solid border-left</dd>
+            <dt><code>.dcf-bl-1</code></dt><dd>border-top-width: 1px</dd>
+            <dt><code>.dcf-bl-2</code></dt><dd>border-top-width: 2px</dd>
+            <dt><code>.dcf-bl-3</code></dt><dd>border-top-width: 3px</dd>
           </dl>
         </div>
       </div>
@@ -2682,14 +2768,14 @@
       </dl>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-1 example-b-gray">
+        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
           <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/400x400" width="400" height="400" alt="">
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit contain</figcaption>
       </figure>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-1 example-b-gray">
+        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
           <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/400x400" width="400" height="400" alt="">
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
@@ -2952,7 +3038,7 @@
         </noscript>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
     </section>
   <!-- InstanceEndEditable -->

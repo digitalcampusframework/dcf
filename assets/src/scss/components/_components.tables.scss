@@ -5,6 +5,7 @@
 
 .dcf-table thead,
 .dcf-table tbody {
+  @include bb-solid;
   @include bb-1;
   border-color: $color-border;
   @include txt-sm;
