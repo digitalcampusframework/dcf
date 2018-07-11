@@ -17,12 +17,12 @@
 
 @mixin b-2($imp:null) {
   border-style: solid $imp;
-  border-width: 1px $imp;
+  border-width: 2px $imp;
 }
 
 @mixin b-3($imp:null) {
   border-style: solid $imp;
-  border-width: 1px $imp;
+  border-width: 3px $imp;
 }
 
 
