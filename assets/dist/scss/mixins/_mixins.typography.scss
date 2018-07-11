@@ -85,4 +85,4 @@
 
 
 // !Measure (Line Length)
-@mixin measure($imp:null) { max-width: #{ms(25)}rem $imp; }
+@mixin measure($imp:null) { max-width: #{ms(24)}rem $imp; } // limit line-length -- http://webtypography.net/2.1.2

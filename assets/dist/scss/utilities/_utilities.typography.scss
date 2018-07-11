@@ -72,3 +72,7 @@
 .dcf-lowercase { @include lowercase(!important); }
 .dcf-uppercase { @include uppercase(!important); }
 .dcf-case-reset { @include case-reset(!important); }
+
+
+// !Measure (Line Length)
+.dcf-measure { @include measure(!important); }

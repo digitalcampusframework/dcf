@@ -6,5 +6,4 @@
 p {
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
-  @include measure;
 }
