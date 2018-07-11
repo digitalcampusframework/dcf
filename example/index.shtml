@@ -2952,7 +2952,7 @@
         </noscript>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
     </section>
   <!-- InstanceEndEditable -->
