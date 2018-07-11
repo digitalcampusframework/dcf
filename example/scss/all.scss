@@ -6,40 +6,40 @@
 // hence the import path from core reflects that.
 
 // !Variables
-@import '../../../assets/dist/scss/variables/**/*.scss';
+@import '../../../assets/dist/scss/variables/**/*';
 @import 'variables/**/*';
 
 
 // !Mixins
-@import '../../../assets/dist/scss/mixins/**/*.scss';
-@import 'mixins/**/*.scss';
+@import '../../../assets/dist/scss/mixins/**/*';
+@import 'mixins/**/*';
 
 
 // !Functions
-@import '../../../assets/dist/scss/functions/**/*.scss';
+@import '../../../assets/dist/scss/functions/**/*';
 
 
 // !Generic
-@import '../../../assets/dist/scss/generic/**/*.scss';
+@import '../../../assets/dist/scss/generic/**/*';
 
 
 // !Elements
-@import '../../../assets/dist/scss/elements/**/*.scss';
+@import '../../../assets/dist/scss/elements/**/*';
 
 
 // !Objects
-@import '../../../assets/dist/scss/objects/**/*.scss';
+@import '../../../assets/dist/scss/objects/**/*';
 
 
 // !Components
-@import '../../../assets/dist/scss/components/**/*.scss';
-@import 'components/**/*.scss';
+@import '../../../assets/dist/scss/components/**/*';
+@import 'components/**/*';
 
 
 // !JavaScript
-@import '../../../assets/dist/scss/javascript/**/*.scss';
+@import '../../../assets/dist/scss/javascript/**/*';
 
 
 // !Utilities
-@import '../../../assets/dist/scss/utilities/**/*.scss';
-@import 'utilities/**/*.scss';
+@import '../../../assets/dist/scss/utilities/**/*';
+@import 'utilities/**/*';
