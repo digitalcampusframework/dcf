@@ -1,13 +1,13 @@
-//////////////////////////////
-// !CORE / UTILITIES / BORDERS
-//////////////////////////////
+///////////////////////////////////
+// !CORE / UTILITIES / BORDER-WIDTH
+///////////////////////////////////
 
 
 // !No Border
 .dcf-b-0 { @include b-0(!important); }
 
 
-// All Sides
+// !All Sides
 .dcf-b-1 { @include b-1(!important); }
 .dcf-b-2 { @include b-2(!important); }
 .dcf-b-3 { @include b-3(!important); }

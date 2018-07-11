@@ -1,0 +1,23 @@
+////////////////////////////////
+// !CORE / MIXINS / BORDER-STYLE
+////////////////////////////////
+
+
+// !All Sides
+@mixin b-solid($imp:null) { border-style: solid $imp; }
+
+
+// !Top
+@mixin bt-solid($imp:null) { border-top-style: solid $imp; }
+
+
+// !Right
+@mixin br-solid($imp:null) { border-right-style: solid $imp; }
+
+
+// !Bottom
+@mixin bb-solid($imp:null) { border-bottom-style: solid $imp; }
+
+
+// !Left
+@mixin bl-solid($imp:null) { border-left-style: solid $imp; }
