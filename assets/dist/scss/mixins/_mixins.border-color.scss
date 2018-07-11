@@ -1,0 +1,33 @@
+////////////////////////////////
+// !CORE / MIXINS / BORDER-COLOR
+////////////////////////////////
+
+
+// !All Sides
+@mixin b-current($imp:null) {
+  border-color: currentColor $imp;
+}
+
+
+// !Top
+@mixin bt-current($imp:null) {
+  border-top-color: currentColor $imp;
+}
+
+
+// !Right
+@mixin br-current($imp:null) {
+  border-right-color: currentColor $imp;
+}
+
+
+// !Bottom
+@mixin bb-current($imp:null) {
+  border-bottom-color: currentColor $imp;
+}
+
+
+// !Left
+@mixin bl-current($imp:null) {
+  border-left-color: currentColor $imp;
+}

@@ -1,0 +1,23 @@
+///////////////////////////////////
+// !CORE / UTILITIES / BORDER-COLOR
+///////////////////////////////////
+
+
+// !All Sides
+.dcf-b-current { @include b-current(!important); }
+
+
+// !Top
+.dcf-bt-current { @include bt-current(!important); }
+
+
+// !Right
+.dcf-br-current { @include br-current(!important); }
+
+
+// !Bottom
+.dcf-bb-current { @include bb-current(!important); }
+
+
+// !Left
+.dcf-bl-current { @include bl-current(!important); }
