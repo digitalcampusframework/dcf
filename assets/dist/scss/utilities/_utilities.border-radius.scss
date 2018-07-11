@@ -1,0 +1,27 @@
+////////////////////////////////////
+// !CORE / UTILITIES / BORDER-RADIUS
+////////////////////////////////////
+
+
+// !Circle
+.dcf-circle { @include circle(!important); }
+
+
+// !Rounded, All Sides
+.dcf-rounded { @include rounded(!important); }
+
+
+// !Rounded Top (Top Right, Top Left)
+.dcf-rounded-top { @include rounded-top(!important); }
+
+
+// !Rounded Right (Top Right, Bottom Right)
+.dcf-rounded-right { @include rounded-right(!important); }
+
+
+// !Rounded Bottom (Bottom Right, Bottom Left)
+.dcf-rounded-bottom { @include rounded-bottom(!important); }
+
+
+// !Rounded Left (Bottom Left, Top Left)
+.dcf-rounded-left { @include rounded-left(!important); }
