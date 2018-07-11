@@ -9,7 +9,7 @@
 }
 
 
-// All Sides
+// !All Sides
 @mixin b-1($imp:null) {
   border-style: solid $imp;
   border-width: 1px $imp;
