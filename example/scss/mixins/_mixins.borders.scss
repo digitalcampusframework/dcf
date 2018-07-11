@@ -1,0 +1,87 @@
+////////////////////////////
+// !THEME / MIXINS / BORDERS
+////////////////////////////
+
+
+// !Gray
+
+// All Sides
+@mixin b-color($imp:null) {
+  border-color: $color-border $imp;
+}
+
+// Top
+@mixin bt-color($imp:null) {
+  border-top-color: $color-border $imp;
+}
+
+// Right
+@mixin br-color($imp:null) {
+  border-right-color: $color-border $imp;
+}
+
+// Bottom
+@mixin bb-color($imp:null) {
+  border-bottom-color: $color-border $imp;
+}
+
+// Left
+@mixin bl-color($imp:null) {
+  border-left-color: $color-border $imp;
+}
+
+
+// !Brand: Alpha
+
+// All Sides
+@mixin b-alpha($imp:null) {
+  border-color: $color-brand-alpha $imp;
+}
+
+// Top
+@mixin bt-alpha($imp:null) {
+  border-top-color: $color-brand-alpha $imp;
+}
+
+// Right
+@mixin br-alpha($imp:null) {
+  border-right-color: $color-brand-alpha $imp;
+}
+
+// Bottom
+@mixin bb-alpha($imp:null) {
+  border-bottom-color: $color-brand-alpha $imp;
+}
+
+// Left
+@mixin bl-alpha($imp:null) {
+  border-left-color: $color-brand-alpha $imp;
+}
+
+
+// !Brand: Beta
+
+// All Sides
+@mixin b-beta($imp:null) {
+  border-color: $color-brand-beta $imp;
+}
+
+// Top
+@mixin bt-beta($imp:null) {
+  border-top-color: $color-brand-beta $imp;
+}
+
+// Right
+@mixin br-beta($imp:null) {
+  border-right-color: $color-brand-beta $imp;
+}
+
+// Bottom
+@mixin bb-beta($imp:null) {
+  border-bottom-color: $color-brand-beta $imp;
+}
+
+// Left
+@mixin bl-beta($imp:null) {
+  border-left-color: $color-brand-beta $imp;
+}

@@ -1,0 +1,57 @@
+///////////////////////////////
+// !THEME / UTILITIES / BORDERS
+///////////////////////////////
+
+
+// !Gray
+
+// All Sides
+.example-b-gray { @include b-color(!important); }
+
+// Top
+.example-bt-gray { @include bt-color(!important); }
+
+// Right
+.example-br-gray { @include br-color(!important); }
+
+// Bottom
+.example-bb-gray { @include bb-color(!important); }
+
+// Left
+.example-bl-gray { @include bl-color(!important); }
+
+
+// !Brand: Alpha
+
+// All Sides
+.example-b-alpha { @include b-alpha(!important); }
+
+// Top
+.example-bt-alpha { @include bt-alpha(!important); }
+
+// Right
+.example-br-alpha { @include br-alpha(!important); }
+
+// Bottom
+.example-bb-alpha { @include bb-alpha(!important); }
+
+// Left
+.example-bl-alpha { @include bl-alpha(!important); }
+
+
+// !Brand: Beta
+
+// All Sides
+.example-b-beta { @include b-beta(!important); }
+
+// Top
+.example-bt-beta { @include bt-beta(!important); }
+
+// Right
+.example-br-beta { @include br-beta(!important); }
+
+// Bottom
+.example-bb-beta { @include bb-beta(!important); }
+
+// Left
+.example-bl-beta { @include bl-beta(!important); }
