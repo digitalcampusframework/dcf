@@ -2154,7 +2154,8 @@
             <li><a href="#example-utilities-backgrounds-none">None</a></li>
           </ul>
         </li>
-        <li><a href="#example-utilities-border-radius">Border Radius</a>
+        <li><a href="#example-utilities-border-radius">Border Radius</a></li>
+        <li><a href="#example-utilities-borders">Borders</a>
           <ul>
             <li><a href="#example-utilities-border-all">Border (All Sides)</a></li>
             <li><a href="#example-utilities-border-top">Border Top</a></li>
@@ -2163,7 +2164,6 @@
             <li><a href="#example-utilities-border-left">Border Left</a></li>
           </ul>
         </li>
-        <li><a href="#example-utilities-borders">Borders</a></li>
         <li><a href="#example-utilities-box-alignment">Box Alignment</a>
           <ul>
             <li><a href="#example-utilities-align-items">Align Items</a></li>
@@ -2325,7 +2325,7 @@
       <p>Border colors should be applied with mixins and utility classes in your site’s theme.</p>
       <div class="dcf-grid-halves@sm dcf-grid-thirds@md dcf-col-gap-vw">
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-all-sides">Border (All Sides)</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-all">Border (All Sides)</h4>
           <dl>
             <dt><code>.dcf-b-0</code></dt><dd>no border</dd>
             <dt><code>.dcf-b-1</code></dt><dd>1px solid border, all sides</dd>
@@ -2342,7 +2342,7 @@
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-top">Border Right</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-right">Border Right</h4>
           <dl>
             <dt><code>.dcf-br-1</code></dt><dd>1px solid border-right</dd>
             <dt><code>.dcf-br-2</code></dt><dd>2px solid border-right</dd>
@@ -2350,7 +2350,7 @@
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-top">Border Botttom</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-bottom">Border Botttom</h4>
           <dl>
             <dt><code>.dcf-bb-1</code></dt><dd>1px solid border-bottom</dd>
             <dt><code>.dcf-bb-2</code></dt><dd>2px solid border-bottom</dd>
@@ -2358,7 +2358,7 @@
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-top">Border Left</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-left">Border Left</h4>
           <dl>
             <dt><code>.dcf-bl-1</code></dt><dd>1px solid border-left</dd>
             <dt><code>.dcf-bl-2</code></dt><dd>2px solid border-left</dd>
