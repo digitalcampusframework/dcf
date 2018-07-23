@@ -1275,27 +1275,27 @@
       <dl class="dcf-measure">
         <dt><code>.dcf-list-bare</code></dt>
         <dd>Remove left padding and list styles for the inline list.</dd>
-        <dt><code>.dcf-list-inline-item</code></dt>
+        <dt><code>.dcf-list-inline</code></dt>
         <dd>Change the display of list items to inline-block and add right margin to all but the last list item.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <ul class="dcf-list-bare">
-          <li class="dcf-list-inline-item">Inline list item #1</li>
-          <li class="dcf-list-inline-item">Inline list item #2</li>
-          <li class="dcf-list-inline-item">Inline list item #3</li>
-          <li class="dcf-list-inline-item">Inline list item #4</li>
-          <li class="dcf-list-inline-item">Inline list item #5</li>
+        <ul class="dcf-list-bare dcf-list-inline">
+          <li>Inline list item #1</li>
+          <li>Inline list item #2</li>
+          <li>Inline list item #3</li>
+          <li>Inline list item #4</li>
+          <li>Inline list item #5</li>
         </ul>
       </figure>
       <p class="dcf-measure">Inline lists are also used to create pagination:</p>
       <figure class="dcf-mt-6">
         <nav aria-label="pagination">
-          <ul class="dcf-list-bare dcf-mt5">
-            <li class="dcf-list-inline-item"><a href="#previous">Previous</a></li>
-            <li class="dcf-list-inline-item"><a href="#page1">1</a></li>
-            <li class="dcf-list-inline-item"><a href="#page2">2</a></li>
-            <li class="dcf-list-inline-item"><a href="#page3">3</a></li>
-            <li class="dcf-list-inline-item"><a href="#next">Next</a></li>
+          <ul class="dcf-list-bare dcf-list-inline dcf-mt5">
+            <li><a href="#previous">Previous</a></li>
+            <li><a href="#page1">1</a></li>
+            <li><a href="#page2">2</a></li>
+            <li><a href="#page3">3</a></li>
+            <li><a href="#next">Next</a></li>
           </ul>
         </nav>
       </figure>

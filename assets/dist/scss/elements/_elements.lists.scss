@@ -18,7 +18,7 @@ ul {
   dl,
   ol,
   ul {
-    @include mt-2; // pt2 instead?
+    @include mt-3;
   }
 
 }
@@ -31,21 +31,13 @@ dd {
 }
 
 
-li {
+li:not(:last-child) {
   @include mb-2;
 }
 
-// !Description List
-// dl {
-//
-//   p + & {
-//     padding-left: 1.5em;
-//   }
-// }
-
 
 dt,
-dd {
+dd:not(:last-child) {
   @include mb-1;
 }
 
@@ -63,8 +55,3 @@ dd {
 dd + dt {
   @include mt-4;
 }
-
-
-// dd:not(:last-child) {
-//   @include mb2;
-// }

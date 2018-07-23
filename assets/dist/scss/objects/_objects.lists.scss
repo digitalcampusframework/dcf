@@ -15,10 +15,10 @@
 
 
 // !Inline List
-.dcf-list-inline-item {
+.dcf-list-inline li {
   display: inline-block;
 }
 
-.dcf-list-inline-item:not(:last-child) {
+.dcf-list-inline li:not(:last-child) {
   @include mr-2;
 }
