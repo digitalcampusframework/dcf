@@ -35,14 +35,6 @@ li:not(:last-child) {
   @include mb-2;
 }
 
-// !Description List
-// dl {
-//
-//   p + & {
-//     padding-left: 1.5em;
-//   }
-// }
-
 
 dt,
 dd:not(:last-child) {
