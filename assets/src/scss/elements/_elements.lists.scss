@@ -31,7 +31,7 @@ dd {
 }
 
 
-li {
+li:not(:last-child) {
   @include mb-2;
 }
 
@@ -45,7 +45,7 @@ li {
 
 
 dt,
-dd {
+dd:not(:last-child) {
   @include mb-1;
 }
 
@@ -63,8 +63,3 @@ dd {
 dd + dt {
   @include mt-4;
 }
-
-
-// dd:not(:last-child) {
-//   @include mb2;
-// }
