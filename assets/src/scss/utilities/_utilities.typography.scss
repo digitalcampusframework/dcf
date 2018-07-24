@@ -6,6 +6,8 @@
 // !Font-Size
 
 .dcf-txt-base { @include txt-base; }
+.dcf-txt-3xs { @include txt-3xs; }
+.dcf-txt-2xs { @include txt-2xs; }
 .dcf-txt-xs { @include txt-xs; }
 .dcf-txt-sm { @include txt-sm; }
 .dcf-txt-md { @include txt-md; }
