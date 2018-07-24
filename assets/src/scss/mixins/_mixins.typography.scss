@@ -5,6 +5,8 @@
 
 // !Font-Size
 @mixin txt-base($imp:null) { font-size: #{ms(0)}rem; }
+@mixin txt-3xs($imp:null) { font-size: #{ms(-4)}em; }
+@mixin txt-2xs($imp:null) { font-size: #{ms(-3)}em; }
 @mixin txt-xs($imp:null) { font-size: #{ms(-2)}em; }
 @mixin txt-sm($imp:null) { font-size: #{ms(-1)}em; }
 @mixin txt-md($imp:null) { font-size: #{ms(0)}em; }
