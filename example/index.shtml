@@ -2,7 +2,7 @@
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <!--#include virtual="/includes/global/head-1.html" -->
-<title>Debugging Out | Framework Testing Page</title>
+<title>Digital Campus Framework &middot; Documentation</title>
 <!--#include virtual="/includes/global/head-2.html" -->
 </head>
 <body class="debug example" data-version="1.0">
@@ -2918,6 +2918,8 @@
           <h4 class="dcf-mt-6" id="example-utilities-font-size">Font Size</h4>
           <dl>
             <dt><code>.dcf-txt-base</code></dt><dd>font-size: 1rem</dd>
+            <dt><code>.dcf-txt-3xs</code></dt><dd>font-size: .56em</dd>
+            <dt><code>.dcf-txt-2xs</code></dt><dd>font-size: .63em</dd>
             <dt><code>.dcf-txt-xs</code></dt><dd>font-size: .75em</dd>
             <dt><code>.dcf-txt-sm</code></dt><dd>font-size: .84em</dd>
             <dt><code>.dcf-txt-md</code></dt><dd>font-size: 1em</dd>
