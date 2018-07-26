@@ -3,6 +3,8 @@
 ///////////////////////////
 
 
-@mixin z($key) {
-  z-index: z-index($key);
-}
+@mixin z-0($imp:null) { z-index: 0 $imp; }
+@mixin z-1($imp:null) { z-index: 1 $imp; }
+@mixin z-2($imp:null) { z-index: 2 $imp; }
+
+// TODO: add additional values to handle modals, dropdowns, etc.
