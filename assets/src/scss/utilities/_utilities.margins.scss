@@ -4,6 +4,7 @@
 
 
 // !All Sides
+.dcf-m-auto { @include m-auto(!important); }
 .dcf-m-0 { @include m-0(!important); }
 .dcf-m-1 { @include m-1(!important); }
 .dcf-m-2 { @include m-2(!important); }
@@ -18,6 +19,7 @@
 
 
 // !Top
+.dcf-mt-auto { @include mt-auto(!important); }
 .dcf-mt-0 { @include mt-0(!important); }
 .dcf-mt-1 { @include mt-1(!important); }
 .dcf-mt-2 { @include mt-2(!important); }
@@ -32,6 +34,7 @@
 
 
 // !Right
+.dcf-mr-auto { @include mr-auto(!important); }
 .dcf-mr-0 { @include mr-0(!important); }
 .dcf-mr-1 { @include mr-1(!important); }
 .dcf-mr-2 { @include mr-2(!important); }
@@ -46,6 +49,7 @@
 
 
 // !Bottom
+.dcf-mb-auto { @include mb-auto(!important); }
 .dcf-mb-0 { @include mb-0(!important); }
 .dcf-mb-1 { @include mb-1(!important); }
 .dcf-mb-2 { @include mb-2(!important); }
@@ -60,6 +64,7 @@
 
 
 // !Left
+.dcf-ml-auto { @include ml-auto(!important); }
 .dcf-ml-0 { @include ml-0(!important); }
 .dcf-ml-1 { @include ml-1(!important); }
 .dcf-ml-2 { @include ml-2(!important); }
