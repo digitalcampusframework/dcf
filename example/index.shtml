@@ -2682,6 +2682,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-all">Margin (All Sides)</h4>
           <dl>
+            <dt><code>.dcf-m-auto</code></dt><dd>margin (all sides): auto</dd>
             <dt><code>.dcf-m-0</code></dt><dd>margin (all sides): 0</dd>
             <dt><code>.dcf-m-1</code></dt><dd>margin (all sides): .42em</dd>
             <dt><code>.dcf-m-2</code></dt><dd>margin (all sides): .56em</dd>
@@ -2698,6 +2699,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-top">Margin Top</h4>
           <dl>
+            <dt><code>.dcf-mt-auto</code></dt><dd>margin-top: auto</dd>
             <dt><code>.dcf-mt-0</code></dt><dd>margin-top: 0</dd>
             <dt><code>.dcf-mt-1</code></dt><dd>margin-top: .42em</dd>
             <dt><code>.dcf-mt-2</code></dt><dd>margin-top: .56em</dd>
@@ -2714,6 +2716,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-right">Margin Right</h4>
           <dl>
+            <dt><code>.dcf-mr-auto</code></dt><dd>margin-right: auto</dd>
             <dt><code>.dcf-mr-0</code></dt><dd>margin-right: 0</dd>
             <dt><code>.dcf-mr-1</code></dt><dd>margin-right: .42em</dd>
             <dt><code>.dcf-mr-2</code></dt><dd>margin-right: .56em</dd>
@@ -2730,6 +2733,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-bottom">Margin Bottom</h4>
           <dl>
+            <dt><code>.dcf-mb-auto</code></dt><dd>margin-bottom: auto</dd>
             <dt><code>.dcf-mb-0</code></dt><dd>margin-bottom: 0</dd>
             <dt><code>.dcf-mb-1</code></dt><dd>margin-bottom: .42em</dd>
             <dt><code>.dcf-mb-2</code></dt><dd>margin-bottom: .56em</dd>
@@ -2746,6 +2750,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-left">Margin Left</h4>
           <dl>
+            <dt><code>.dcf-ml-auto</code></dt><dd>margin-left: auto</dd>
             <dt><code>.dcf-ml-0</code></dt><dd>margin-left: 0</dd>
             <dt><code>.dcf-ml-1</code></dt><dd>margin-left: .42em</dd>
             <dt><code>.dcf-ml-2</code></dt><dd>margin-left: .56em</dd>
