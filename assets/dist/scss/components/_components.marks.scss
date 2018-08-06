@@ -5,9 +5,6 @@
 
 // Marked (highlighted) text
 .dcf-mark {
-  background-color: #ff0;
-  padding-bottom: .125em;
-  @include pl1;
-  @include pr1;
-  padding-top: .125em;
+  background-color: $color-mark;
+  padding: #{ms(-12)}em $length-em-1; // .13em .43em
 }
