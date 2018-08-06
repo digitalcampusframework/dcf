@@ -1666,8 +1666,6 @@
       <figure class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary" disabled>Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary" disabled>Secondary Button</button>
-        <a class="dcf-btn dcf-btn-primary dcf-disabled" href="#" role="button" aria-disabled="true">Primary Link</a>
-        <a class="dcf-btn dcf-btn-secondary dcf-disabled" href="#" role="button" aria-disabled="true">Secondary Link</a>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
@@ -2192,7 +2190,6 @@
           </ul>
         </li>
         <li><a href="#example-utilities-colors">Colors</a></li>
-        <li><a href="#example-utilities-disabled">Disabled</a></li>
         <li><a href="#example-utilities-display">Display</a></li>
         <li><a href="#example-utilities-flexbox">Flexbox</a>
           <ul>
@@ -2530,11 +2527,6 @@
       <h3 class="dcf-mt-8" id="example-utilities-colors">Colors</h3>
       <dl>
         <dt><code>.dcf-inverse</code></dt><dd>light color on dark background</dd>
-      </dl>
-
-      <h3 class="dcf-mt-8" id="example-utilities-disabled">Disabled</h3>
-      <dl>
-        <dt><code>.dcf-disabled</code></dt><dd>cursor: not allowed, pointer-events: none, decreased opacity</dd>
       </dl>
 
       <h3 class="dcf-mt-8" id="example-utilities-display">Display</h3>
