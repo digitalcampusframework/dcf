@@ -1660,12 +1660,14 @@
       <figure class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary dcf-active" aria-pressed="true">Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary dcf-active" aria-pressed="true">Secondary Button</button>
+        <button class="dcf-btn dcf-btn-tertiary dcf-active" aria-pressed="true">Tertiary Button</button>
       </figure>
 
       <h4 class="dcf-mt-6" id="example-components-button-state-disabled">Button State: Disabled</h4>
       <figure class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary" disabled>Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary" disabled>Secondary Button</button>
+        <button class="dcf-btn dcf-btn-tertiary" disabled>Tertiary Button</button>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
