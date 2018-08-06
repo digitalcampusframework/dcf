@@ -29,12 +29,3 @@ a.dcf-btn-secondary {
 // .dcf-btn.dcf-active {
 // //   @extend .dcf-active;
 // }
-
-
-// !Disabled
-button:disabled,
-input[type="button"]:disabled,
-input[type="submit"]:disabled,
-.dcf-btn:disabled {
-  @include disabled;
-}
