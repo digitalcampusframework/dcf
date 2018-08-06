@@ -3020,8 +3020,6 @@
         <dt><code>.dcf-invisible</code></dt><dd>visibility: hidden</dd>
         <dt><code>.dcf-visible</code></dt><dd>visibility: visible</dd>
         <dt><code>.dcf-sr-only</code></dt><dd>visible for screen readers only</dd>
-        <dt><code>.dcf-sr-only.dcf-show-on-focus:active</code></dt><dd>visible for screen readers only when active</dd>
-        <dt><code>.dcf-sr-only.dcf-show-on-focus:focus</code></dt><dd>visible for screen readers only when focused</dd>
       </dl>
 
     </section>

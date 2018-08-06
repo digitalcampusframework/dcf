@@ -4,30 +4,24 @@
 
 
 // !Invisible
-@mixin invisible($imp:null) { visibility: hidden $imp; }
+@mixin invisible($imp:null) {
+  visibility: hidden $imp;
+}
 
 
 // !Visible
-@mixin visible($imp:null) { visibility: visible $imp; }
+@mixin visible($imp:null) {
+  visibility: visible $imp;
+}
 
 
 // !Screen Reader Only
 @mixin sr-only($imp:null) {
-  border: 0 $imp;
-  clip: rect(1px, 1px, 1px, 1px) $imp;
-  height: 1px $imp; // allow VoiceOver to see the text
-  overflow: hidden $imp;
-  position: absolute $imp;
-  width: 1px $imp;
-  word-wrap: normal $imp;
-}
-
-
-// !Screen Reader Only, Show On Focus
-@mixin show-on-focus($imp:null) {
-  clip: auto $imp;
-  height: auto $imp;
-  overflow: visible $imp;
-  position: static $imp;
-  width: auto $imp;
+  clip: rect(0 0 0 0) $imp; // Fallback for older browsers
+  clip-path: inset(50%) $imp; // Make content disappear with inset rectangle
+  height: 1px $imp; // Some screen readers ignore zero height
+  overflow: hidden $imp; // Hide resized content
+  position: absolute $imp; // Remove item from normal flow
+  width: 1px $imp; // Some screen readers ignore zero width
+  white-space: nowrap $imp; // Fix smushed, falsely pronounced text
 }
