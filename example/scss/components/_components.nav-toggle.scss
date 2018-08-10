@@ -1,0 +1,20 @@
+////////////////////////////////////
+// !THEME / COMPONENTS / NAV: TOGGLE
+////////////////////////////////////
+
+
+@include mq(md, max, width) {
+
+  .example .dcf-mobile-nav-toggle {
+    bottom: 0;
+    height: 4em;
+    position: fixed;
+    width: 25%;
+    z-index: 2;
+  }
+
+  .example .dcf-nav-toggle {
+    left: 0;
+  }
+
+}
