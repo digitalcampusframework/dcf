@@ -44,7 +44,7 @@
   flex-basis: 25%;
 }
 
-[class*='dcf-grid-col'] {
+[class*='dcf-col'] {
   flex-basis: 100%;
 }
 
@@ -386,7 +386,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  [class*='dcf-grid-col'] {
+  [class*='dcf-col'] {
     grid-column: 1 / span 12;
   }
 
