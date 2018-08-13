@@ -5,7 +5,9 @@ const buildNames = require('./build-names');
 const vendorJsSrcPath = path.join(commonPaths.srcPath, 'js', 'vendor');
 const mustardJsSrcPath = path.join(commonPaths.srcPath, 'js', 'mustard');
 const appJsSrcPath = path.join(commonPaths.srcPath, 'js', 'app');
+const appJsDestPath = path.join(commonPaths.outputBuild, 'js', 'app');
 const commonAppPath = path.join(commonPaths.outputBuild, 'js', 'app','common');
+const optionalAppPath = path.join(commonPaths.outputBuild, 'js', 'app','optional');
 const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
 const coreDistCssPath = path.join(commonPaths.outputDist,'css');
 
@@ -16,7 +18,8 @@ const picturefill = require.resolve('picturefill');
 const objectFitImages = require.resolve('object-fit-images');
 const detailsPolyfill = require.resolve('details-polyfill');
 
-console.log([`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`, detailsPolyfill]);
+// console.log([`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`, detailsPolyfill]);
+// TODO check to see if all the path properties are still being used
 
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
@@ -27,10 +30,15 @@ module.exports = {
 	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, picturefill, objectFitImages, detailsPolyfill],
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
 	appJsPath: appJsSrcPath,
+	appJsCommonSrc: path.join(appJsSrcPath, 'common'),
+	appJsOptionalSrc: path.join(appJsSrcPath, 'optional'),
 	appJsGlob: `${appJsSrcPath}/**/*.js`,
-	appJsDest: path.join(commonPaths.outputBuild, 'js', 'app'),
+	appJsDest: appJsDestPath,
+	appJSDestGlob: `${appJsDestPath}/**/*.js`,
 	commonAppGlob: [`${commonAppPath}/**/*.js`, `!${commonAppPath}/${buildNames.appJs}`],
 	commonAppDest: commonAppPath,
+	optionaAppDest: optionalAppPath,
+	// example theme related build paths
 	exampleScssGlob: [`${exampleScssSrcPath}/**/*.scss`, ],
 	exampleScssLintedDest: path.join(commonPaths.exampleBuild, 'scss'),
 	exampleScreenScssEntry: path.join(commonPaths.exampleBuild,'scss','all.scss'),
