@@ -24,6 +24,9 @@ module.exports = {
 	optionalAppDest: path.join(commonPaths.outputDist,'js', 'app', 'optional'),
 	commonAppSrc: path.join(buildPaths.commonAppDest, buildNames.appJs),
 	commonAppDest: path.join(commonPaths.outputDist, 'js', 'app', 'common'),
+	appSrc: buildPaths.appJsDest,
+	appSrcGlob: `${buildPaths.appJsDest}/**/*.js`,
+	appDest: path.join(commonPaths.outputDist, 'js', 'app'),
 
 	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),
 	exampleScreenCssDest: path.join(commonPaths.examplePath, 'css'),

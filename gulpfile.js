@@ -414,27 +414,27 @@ gulp.task('babel', (done) => {
 /* ----------------- */
 /* APP TASKS
 /* ----------------- */
-gulp.task('copyOptionalApp:newer', (done) => {
-	$.fancyLog('----> //** Copying Optional App files');
-
-	$.pump([
-		gulp.src(distPaths.optionalAppGlob),
-		$.debug({title: 'All Files - [copyOptionalApp:newer]'}), // uncomment to see src files
-		$.newer({ dest:distPaths.optionalAppDest }),
-		$.debug({title: 'Passed Through - [copyOptionalApp:newer]'}), // uncomment to see passed through files
-		gulp.dest(distPaths.optionalAppDest)
-	], done);
-});
-
-
-gulp.task('copyOptionalApp-watch', () => {
-	gulp.watch(distPaths.optionalAppGlob, gulp.series('copyOptionalApp:newer'))
-			.on('unlink', (ePath, stats) => {
-				// code to execute on delete
-				console.log(`${ePath} deleted - [copyOptionalApp-watch]`);
-				cascadeDelete(ePath, stats, distPaths.optionalAppDest, 'copyOptionalApp-watch', false);
-			});
-});
+// gulp.task('copyOptionalApp:newer', (done) => {
+// 	$.fancyLog('----> //** Copying Optional App files');
+//
+// 	$.pump([
+// 		gulp.src(distPaths.optionalAppGlob),
+// 		$.debug({title: 'All Files - [copyOptionalApp:newer]'}), // uncomment to see src files
+// 		$.newer({ dest:distPaths.optionalAppDest }),
+// 		$.debug({title: 'Passed Through - [copyOptionalApp:newer]'}), // uncomment to see passed through files
+// 		gulp.dest(distPaths.optionalAppDest)
+// 	], done);
+// });
+//
+//
+// gulp.task('copyOptionalApp-watch', () => {
+// 	gulp.watch(distPaths.optionalAppGlob, gulp.series('copyOptionalApp:newer'))
+// 			.on('unlink', (ePath, stats) => {
+// 				// code to execute on delete
+// 				console.log(`${ePath} deleted - [copyOptionalApp-watch]`);
+// 				cascadeDelete(ePath, stats, distPaths.optionalAppDest, 'copyOptionalApp-watch', false);
+// 			});
+// });
 
 
 // gulp.task('commonAppConcat:newer', () => {
@@ -509,17 +509,21 @@ gulp.task('optionalAppUMD', (done) => {
 });
 
 
-gulp.task('lintBabel', gulp.series('cachedEslint', 'commonAppUMD', 'optionalAppUMD', 'babel'));
+gulp.task('appBuild', gulp.series('cachedEslint', 'commonAppUMD', 'optionalAppUMD', 'babel'));
 
 
-gulp.task('lintBabel-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('lintBabel'))
+gulp.task('appBuild-watch', () => {
+	gulp.watch(buildPaths.appJsGlob, gulp.series('appBuild'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted - [lintBabel-watch]`);
+				console.log(`${ePath} deleted - [appBuild-watch]`);
 				delete $.cached.caches.eslint[ePath]; // remove deleted files from cache
-				cascadeDelete(ePath, stats, buildPaths.appJsDest, 'lintBabel-watch', true);
+				cascadeDelete(ePath, stats, buildPaths.appJsDest, 'appBuild-watch', true);
 			});
+});
+
+gulp.task('appUglify:newer', () => {
+	return uglifyNewer(distPaths.appSrcGlob, distPaths.appDest, 'appUglify', distPaths.appDest);
 });
 
 
@@ -559,7 +563,7 @@ gulp.task('preWatch',
 					gulp.series('vendorDist'),
 					gulp.series('mustardDist'),
 					gulp.series(
-						'lintBabel',
+						'appBuild',
 						// gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
 			 		),
 					gulp.series('sassDist'),
