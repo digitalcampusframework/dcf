@@ -22,10 +22,10 @@ module.exports = {
 	cssDest: path.join(commonPaths.outputDist, 'css'),
 	optionalAppGlob: `${optionalAppPath}/**/*.js`,
 	optionalAppDest: path.join(commonPaths.outputDist,'js', 'app', 'optional'),
-	commonAppSrc: path.join(buildPaths.commonAppDest, buildNames.appJs),
+	// commonAppSrc: path.join(buildPaths.commonAppDest, buildNames.appJs),
 	commonAppDest: path.join(commonPaths.outputDist, 'js', 'app', 'common'),
-	appSrc: buildPaths.appJsDest,
-	appSrcGlob: `${buildPaths.appJsDest}/**/*.js`,
+	appSrc: buildPaths.appJsDestPreBabel,
+	appSrcGlob: `${buildPaths.appJsDestPostBabel}/**/*.js`,
 	appDest: path.join(commonPaths.outputDist, 'js', 'app'),
 
 	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),

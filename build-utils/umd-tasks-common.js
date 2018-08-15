@@ -17,7 +17,7 @@ const noticeWidget = [
 	gulp.src(path.join(buildPaths.appJsCommonSrc, 'notice.js')),
 	customPlumber('error wrapping noticeWidget'),
 	$.debug({title: 'All Files - [UMDnoticeWidget:newer]'}), // uncomment to see src files
-	$.newer({ dest:buildPaths.commonAppDest }),
+	$.newer({ dest:buildPaths.umdCommonAppDest }),
 	$.debug({title: 'Passed Through - [UMDnoticeWidget:newer]'}), // uncomment to see passed
 	$.umd({
 		dependencies: () => {
@@ -33,40 +33,46 @@ const noticeWidget = [
 		},
 		namespace: () => 'dcfWidgetNotice'
 	}),
-	gulp.dest(buildPaths.commonAppDest)
+	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 
 const uuidGen = [
 		gulp.src(path.join(buildPaths.appJsCommonSrc, 'uuid-gen.js')),
 		customPlumber('error wrapping uuidGen'),
-		$.newer({ dest:buildPaths.commonAppDest }),
+	$.debug({title: 'All Files - [UMDuuidGen:newer]'}), // uncomment to see src files
+	$.newer({ dest:buildPaths.umdCommonAppDest }),
+	$.debug({title: 'Passed Through - [UMDuuidGen:newer]'}), // uncomment to see passed
 		$.umd({
 			exports: () => 'uuidv4',
 			namespace: () => 'dcfHelperUuidv4'
 		}),
-		gulp.dest(buildPaths.commonAppDest)
+		gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 
 const dialog = [
 	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dialog.js')),
 	customPlumber('error wrapping dialog'),
-	$.newer({ dest:buildPaths.commonAppDest }),
+	$.debug({title: 'All Files - [UMDdialog:newer]'}), // uncomment to see src files
+	$.newer({ dest:buildPaths.umdCommonAppDest }),
+	$.debug({title: 'Passed Through - [UMDdialog:newer]'}), // uncomment to see passed
 	$.umd({
 		namespace: () => 'dcfDialog'
 	}),
-	gulp.dest(buildPaths.commonAppDest)
+	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 const lazyLoad = [
 	gulp.src(path.join(buildPaths.appJsCommonSrc, 'lazy-load.js')),
 	customPlumber('error wrapping lazyLoad'),
-	$.newer({ dest:buildPaths.commonAppDest }),
+	$.debug({title: 'All Files - [UMDlazyload:newer]'}), // uncomment to see src files
+	$.newer({ dest:buildPaths.umdCommonAppDest }),
+	$.debug({title: 'Passed Through - [UMDlazyload:newer]'}), // uncomment to see passed
 	$.umd({
 		namespace: () => 'dcfLazyLoad'
 	}),
-	gulp.dest(buildPaths.commonAppDest)
+	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 module.exports = {

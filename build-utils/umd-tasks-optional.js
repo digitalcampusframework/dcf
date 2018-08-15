@@ -16,9 +16,9 @@ const customPlumber = require('./custom-plumber');
 const test = [
 	gulp.src(path.join(buildPaths.appJsOptionalSrc, 'test.js')),
 	customPlumber('error wrapping noticeWidget'),
-	$.debug({title: 'All Files - [UMDnoticeWidget:newer]'}), // uncomment to see src files
-	$.newer({ dest:buildPaths.commonAppDest }),
-	$.debug({title: 'Passed Through - [UMDnoticeWidget:newer]'}), // uncomment to see passed
+	$.debug({title: 'All Files - [testWidget:newer]'}), // uncomment to see src files
+	$.newer({ dest:buildPaths.umdOptionaAppDest }),
+	$.debug({title: 'Passed Through - [testWidget:newer]'}), // uncomment to see passed
 	$.umd({
 		dependencies: () => {
 			return [
@@ -33,7 +33,7 @@ const test = [
 		},
 		namespace: () => 'dcfWidgetNotice'
 	}),
-	gulp.dest(buildPaths.optionaAppDest)
+	gulp.dest(buildPaths.umdOptionaAppDest)
 ];
 
 

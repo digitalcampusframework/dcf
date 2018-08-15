@@ -6,7 +6,8 @@ const vendorJsSrcPath = path.join(commonPaths.srcPath, 'js', 'vendor');
 const mustardJsSrcPath = path.join(commonPaths.srcPath, 'js', 'mustard');
 const appJsSrcPath = path.join(commonPaths.srcPath, 'js', 'app');
 const appJsDestPath = path.join(commonPaths.outputBuild, 'js', 'app');
-const commonAppPath = path.join(commonPaths.outputBuild, 'js', 'app','common');
+const appJsDestPathPreBabel = path.join(appJsDestPath, 'preBabel');
+const appJsDestPathPostBabel = path.join(appJsDestPath, 'postBabel');
 const optionalAppPath = path.join(commonPaths.outputBuild, 'js', 'app','optional');
 const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
 const coreDistCssPath = path.join(commonPaths.outputDist,'css');
@@ -32,12 +33,13 @@ module.exports = {
 	appJsPath: appJsSrcPath,
 	appJsCommonSrc: path.join(appJsSrcPath, 'common'),
 	appJsOptionalSrc: path.join(appJsSrcPath, 'optional'),
-	appJsGlob: `${appJsSrcPath}/**/*.js`,
-	appJsDest: appJsDestPath,
-	appJSDestGlob: `${appJsDestPath}/**/*.js`,
-	commonAppGlob: [`${commonAppPath}/**/*.js`, `!${commonAppPath}/${buildNames.appJs}`],
-	commonAppDest: commonAppPath,
-	optionaAppDest: optionalAppPath,
+	appJsSrcGlob: `${appJsSrcPath}/**/*.js`,
+	appJsDestPreBabel: appJsDestPathPreBabel,
+	appJsDestPostBabel: appJsDestPathPostBabel,
+	babelAppGlob: `${appJsDestPathPreBabel}/**/*.js`,
+	umdCommonAppDest: path.join(appJsDestPathPreBabel, 'common'),
+	umdOptionaAppDest: path.join(appJsDestPathPreBabel, 'optional'),
+
 	// example theme related build paths
 	exampleScssGlob: [`${exampleScssSrcPath}/**/*.scss`, ],
 	exampleScssLintedDest: path.join(commonPaths.exampleBuild, 'scss'),

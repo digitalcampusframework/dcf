@@ -17,9 +17,9 @@ function uglifyNewer (src, dest, taskName, newerDest) {
 			gulp.src(src),
 			customPlumber(`Error Running ${taskName} task`),
 			$.sourcemaps.init({loadMaps:true}),
-			$.debug({title: 'All Files'}),
+			// $.debug({title: 'All Files'}),
 			$.newer({dest: newerDest}),
-			$.debug({title: 'Passed Through'}),
+			// $.debug({title: 'Passed Through'}),
 			$.uglifyEs.default({
 				output: { comments: $.uglifySaveLicense }
 			})
