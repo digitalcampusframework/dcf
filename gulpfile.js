@@ -416,7 +416,7 @@ gulp.task('babel', (done) => {
 /* ----------------- */
 /* APP TASKS
 /* ----------------- */
-gulp.task('commonAppUMD', () => {
+gulp.task('commonAppUMD', (done) => {
 	// TODO some things broke due to node caching some of the required stuff, try es6 exports module
 	delete require.cache[require.resolve('./build-utils/umd-tasks-common')];
 	const umdTasksCommon = require('./build-utils/umd-tasks-common');
@@ -433,13 +433,14 @@ gulp.task('commonAppUMD', () => {
 							console.err(err);
 							reject(err);
 						}
-					});
+					},done);
 				})
 		);
 	}
-	return Promise.all(promises).then(() => {
-	}).catch((err) => console.error(err));
 
+	Promise.all(promises)
+			.catch((err) => console.error(err))
+			.then(() => done());
 });
 
 
@@ -459,30 +460,36 @@ gulp.task('optionalAppUMD', (done) => {
 						} else {
 							reject(err);
 						}
-					});
+					},done);
 				})
 		);
 	}
 
 	Promise.all(promises)
-			.then(() => done())
-			.catch(err => console.error(err));
+			.catch(err => console.error(err))
+			.then(() => done());
+
 });
 
 
 gulp.task('appBuild', gulp.series('cachedEslint', 'commonAppUMD', 'optionalAppUMD', 'babel'));
 
 
-gulp.task('appBuild-watch', () => {
+gulp.task('appBuild-watch', (done) => {
 	gulp.watch(buildPaths.appJsSrcGlob, gulp.series('appBuild'))
 			// TODO test this
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [appBuild-watch]`);
+				// remove deleted files from cache,
+				// eslint and babel must be ran before to generate the cache otherwise it will throw an error
 				delete $.cached.caches.eslint[ePath];
-				// delete $.cached.caches.babel[ePath];
-				// remove deleted files from cache
+				delete $.cached.caches.babel[ePath];
+
+				// TODO when removing a module, please also delete the associated config from buildutils otherwise gulp will
+				// freak out
 				cascadeDelete(ePath, stats, buildPaths.appJsDestPreBabel, 'appBuild-watch', true);
+				cascadeDelete(ePath, stats, buildPaths.appJsDestPostBabel, 'appBuild-watch', true);
 			});
 });
 
