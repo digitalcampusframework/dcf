@@ -7,9 +7,11 @@ const $ = require('./gulp-load-plugins');
 const commonPaths = require('./common-paths');
 const browserify = require('browserify');
 
-export const browserifyCfg = [
+export function doStuff() {
+	return $.pump([
 				gulp.src(`${path.join(commonPaths.examplePath, 'js', 'src')}**/*.js`, {read: false}),
 				$.tap((file) => {
+					console.log(file.name);
 					$.fancyLog(`----> //**bundling ${file.path}`);
 					file.contents = browserify(file.path, {debug: true}).bundle();
 				}),
@@ -20,5 +22,6 @@ export const browserifyCfg = [
 				}),
 				$.sourcemaps.init({loadmaps: true}),
 				$.sourcemaps.write('./'),
-				gulp.dest(path.join(commonPaths.examplePath, 'js', 'bundled'))
-			];
+				gulp.dest(path.join(commonPaths.examplePath,'js','bundled'))
+		])
+}
