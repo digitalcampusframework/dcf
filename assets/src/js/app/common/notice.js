@@ -379,5 +379,4 @@
 
 		// call createNotice
 		createNotice(notice);
-
-	}
+	};

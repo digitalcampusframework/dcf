@@ -7,7 +7,7 @@ const $ = require('./gulp-load-plugins');
 const commonPaths = require('./common-paths');
 const browserify = require('browserify');
 
-export function doStuff() {
+function browserifyTask() {
 	return $.pump([
 				gulp.src(`${path.join(commonPaths.examplePath, 'js', 'src')}**/*.js`, {read: false}),
 				$.tap((file) => {
@@ -24,4 +24,8 @@ export function doStuff() {
 				$.sourcemaps.write('./'),
 				gulp.dest(path.join(commonPaths.examplePath,'js','bundled'))
 		])
+}
+
+export default {
+	browserifyTask
 }

@@ -81,3 +81,10 @@ module.exports = {
 	dialog,
 	lazyLoad
 };
+
+// export default {
+// 	noticeWidget,
+// 	uuidGen,
+// 	dialog,
+// 	lazyLoad
+// }
