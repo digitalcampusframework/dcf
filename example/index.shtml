@@ -3040,6 +3040,7 @@
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
     </section>
+    <script src="js/new/src/main-body.js"></script>
   <!-- InstanceEndEditable -->
   </main>
   <footer class="dcf-footer" id="dcf-footer" role="contentinfo">

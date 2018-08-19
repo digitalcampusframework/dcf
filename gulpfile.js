@@ -8,6 +8,7 @@ const pkg = require('./package.json'); // bring in properties specified in packa
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
+const browserify = require('browserify');
 const baseStylelint = require('stylelint'); // require stylelint separately from gulp-stylelint due to conflicting names in gulp-load-plugins
 // Path and name variables
 const commonPaths = require('./build-utils/common-paths');
@@ -26,7 +27,7 @@ const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
 // const umdTasksCommon = require('./build-utils/umd-tasks-common');
 // const umdTasksOptional = require('./build-utils/umd-tasks-optional');
-
+import brwCFG from './build-utils/example-theme-gulp-tasks';
 /**
  * ------------
  * GULP TASKS
@@ -398,7 +399,7 @@ gulp.task('cachedEslint-watch', () => {
 /* BABEL TASKS
 /* ----------------- */
 gulp.task('babel', (done) => {
-	$.fancyLog('-> Transpiling ES6 via Babel... 🍕');
+	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
 	// console.log($.cached.caches); uncomment to see what is stored in the caches
 	$.pump([
 		gulp.src(buildPaths.babelAppGlob),
@@ -411,6 +412,22 @@ gulp.task('babel', (done) => {
 	], done);
 });
 
+/* ----------------- */
+/* EXAMPLE BABEL TASKS
+/* ----------------- */
+gulp.task('babel:example', (done) => {
+	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
+	// console.log($.cached.caches); uncomment to see what is stored in the caches
+	$.pump([
+		gulp.src(buildPaths.babelAppGlob),
+		customPlumber('Error Running Babel'),
+		// $.debug({title: 'All Files - [Babel]'}),
+		$.cached('babel'),
+		// $.debug({title: 'PassedThrough - [Babel]'}),
+		$.babel({presets: [ 'env' ]}),
+		gulp.dest(buildPaths.appJsDestPostBabel)
+	], done);
+});
 
 
 /* ----------------- */
@@ -510,7 +527,31 @@ gulp.task('appUglify-watch', () => {
 
 gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch'));
 
+// /* ------------------------ */
+// /* EXAMPLE BROWSERIFY TASKS
+// /* ------------------------ */
+// gulp.task('browserify', (done) => {
+// 	$.pump([
+// 			gulp.src(`${path.join(commonPaths.examplePath, 'js', 'src')}**/*.js`, {read: false}),
+// 			$.tap((file) => {
+// 				console.log(file.name);
+// 				$.fancyLog(`----> //**bundling ${file.path}`);
+// 				file.contents = browserify(file.path, {debug: true}).bundle();
+// 			}),
+// 			$.buffer(),
+// 			$.rename((path) => {
+// 				path.dirname = ''; //remove src level from dirname
+// 				path.basename += '-bundled';
+// 			}),
+// 			$.sourcemaps.init({loadmaps: true}),
+// 			$.sourcemaps.write('./'),
+// 			gulp.dest(path.join(commonPaths.examplePath,'js','bundled'))
+// 	], done)
+// });
 
+gulp.task('browserify', (done) => {
+	$.pump(brwCFG, done)
+});
 
 /* ----------------- */
 /* MISC GULP TASKS
