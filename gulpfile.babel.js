@@ -8,7 +8,6 @@ const pkg = require('./package.json'); // bring in properties specified in packa
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs');
-const browserify = require('browserify');
 const baseStylelint = require('stylelint'); // require stylelint separately from gulp-stylelint due to conflicting names in gulp-load-plugins
 // Path and name variables
 const commonPaths = require('./build-utils/common-paths');
@@ -25,9 +24,9 @@ const uglifyNewer = require('./build-utils/uglify');
 const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
-// import {doStuff} from './build-utils/example-theme-gulp-tasks';
+
 import exampleTasks from './build-utils/example-theme-gulp-tasks';
-console.log(exampleTasks);
+
 /**
  * ------------
  * GULP TASKS
@@ -108,26 +107,30 @@ gulp.task('stylelintFixTest', (done) => {
 /* ----------------- */
 /* EXAMPLE STYLE LINT TASKS
 /* ----------------- */
-gulp.task('stylelint:example:cached', (done) => {
-	$.fancyLog('----> //** Linting Example SCSS files');
-	$.pump([
-		gulp.src(buildPaths.exampleScssGlob),
-		customPlumber('Error Running stylelint:newer:Example'),
-		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
-		$.cached('stylelint:Example'),
-		$.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
-		$.stylelint({
-			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
-			failAfterError: true,
-			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
-			reporters: [
-				{formatter: 'string', console: true},
-				{formatter: 'verbose', save: 'report.txt'},
-			],
-			debug: true
-		}),
-		gulp.dest(buildPaths.exampleScssLintedDest) // outputs autofixed files to build
-	], done);
+// gulp.task('stylelint:example:cached', (done) => {
+// 	$.fancyLog('----> //** Linting Example SCSS files');
+// 	$.pump([
+// 		gulp.src(buildPaths.exampleScssGlob),
+// 		customPlumber('Error Running stylelint:newer:Example'),
+// 		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
+// 		$.cached('stylelint:Example'),
+// 		$.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
+// 		$.stylelint({
+// 			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
+// 			failAfterError: true,
+// 			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
+// 			reporters: [
+// 				{formatter: 'string', console: true},
+// 				{formatter: 'verbose', save: 'report.txt'},
+// 			],
+// 			debug: true
+// 		}),
+// 		gulp.dest(buildPaths.exampleScssLintedDest) // outputs autofixed files to build
+// 	], done);
+// });
+gulp.task('stylelint:example:cached', () => {
+	console.log(exampleTasks.stylelint);
+	return exampleTasks.stylelint();
 });
 
 
@@ -410,22 +413,6 @@ gulp.task('babel', (done) => {
 	], done);
 });
 
-/* ----------------- */
-/* EXAMPLE BABEL TASKS
-/* ----------------- */
-gulp.task('babel:example', (done) => {
-	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
-	// console.log($.cached.caches); uncomment to see what is stored in the caches
-	$.pump([
-		gulp.src(buildPaths.babelAppGlob),
-		customPlumber('Error Running Babel'),
-		// $.debug({title: 'All Files - [Babel]'}),
-		$.cached('babel'),
-		// $.debug({title: 'PassedThrough - [Babel]'}),
-		$.babel({presets: [ 'env' ]}),
-		gulp.dest(buildPaths.appJsDestPostBabel)
-	], done);
-});
 
 
 /* ----------------- */
