@@ -354,7 +354,7 @@
 		const noticeContent = document.createElement('p');
 
 		// set up the notice element
-		keys = Object.keys(widgetOptions);
+		const keys = Object.keys(widgetOptions);
 		notice.setAttribute('role', 'alert');
 
 		keys.forEach(key => {
