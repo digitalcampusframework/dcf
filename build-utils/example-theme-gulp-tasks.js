@@ -1,35 +1,50 @@
-const path = require('path');
-const gulp = require('gulp');
+import path from 'path';
+import gulp from 'gulp';
 const $ = require('./gulp-load-plugins');
-const commonPaths = require('./common-paths');
-const buildPaths = require('./build-paths');
-const browserify = require('browserify');
-const customPlumber = require('./custom-plumber');
+import commonPaths from './common-paths';
+import buildPaths from'./build-paths';
+import browserify from 'browserify';
+import watchify from 'watchify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import customPlumber from './custom-plumber';
 
 
 /* ------------------------ */
 /* EXAMPLE BROWSERIFY TASKS
 /* ------------------------ */
-function browserifyTask() {
-	return $.pump([
-				gulp.src(`${path.join(commonPaths.examplePath, 'js', 'src')}**/*.js`, {read: false}),
-				$.tap((file) => {
-					$.fancyLog(`----> //**bundling ${file.path}`);
-					file.contents = browserify(file.path, {
-						paths: ['./assets/dist/js/app/common', './assets/dist/js/app/optional'],
-						debug: true
-					}).bundle();
-				}),
-				$.buffer(),
-				$.sourcemaps.init({loadmaps: true}),
-				$.rename((path) => {
-					path.dirname = ''; //remove src level from dirname
-					path.basename += '-bundled';
-				}),
-				$.sourcemaps.write('./'),
-				gulp.dest(path.join(commonPaths.examplePath,'js','bundled'))
-		])
-}
+// browserify and watchify multiple bundle examples: https://gist.github.com/ramasilveyra/b4309edf809e55121385
+const createBundle = ({entries, paths, output, extensions, debug, destination}, isWatchify) => {
+
+	const opts = Object.assign(watchify.args, {entries, paths, extensions, debug});
+	let b = browserify(opts);
+
+	// browserify transformations
+	b.transform(babelify.configure({
+		compact: false
+	}));
+
+
+	const rebundle = () => b.bundle()
+			.on('error', $.gulplog.error.bind($.gulplog, 'Browserify Error'))
+			.pipe(source(output))
+			.pipe(buffer())
+			.pipe($.sourcemaps.init({ loadMaps: true }))
+			// .pipe($.uglify())
+			.pipe($.sourcemaps.write('./'))
+			.pipe(gulp.dest(destination));
+
+
+	if (isWatchify) {
+		b = watchify(b);
+		b.on('update', rebundle);
+		b.on('log', $.gulplog.info);
+	}
+
+	return rebundle();
+};
+
 
 /* ----------------- */
 /* EXAMPLE STYLE LINT TASKS
@@ -59,5 +74,7 @@ function stylelint() {
 
 export default {
 	stylelint,
-	browserifyTask
+	createBundle
+	// bundle,
+	// browserifyTask
 }

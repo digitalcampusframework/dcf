@@ -497,8 +497,32 @@ gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch'));
 // /* ------------------------ */
 // /* EXAMPLE BROWSERIFY TASKS
 // /* ------------------------ */
-gulp.task('browserify', () => {
-	return exampleTasks.browserifyTask();
+// with the bundles array we can have more than one bundle output
+const bundles = [
+	{
+		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
+		// if you need modules that are preBabel use umd-related paths from buildPaths
+		paths: [buildPaths.umdCommonAppDest, buildPaths.umdOptionaAppDest],
+		output: 'bundle.js', //output file name
+		extensions: ['.js', '.json'],
+		debug: true,
+		destination: path.join(commonPaths.examplePath,'js','bundled')
+	}
+];
+
+gulp.task('browserify', (done) => {
+	bundles.forEach(bundle => {
+		exampleTasks.createBundle(bundle, false);
+	});
+	done(); // signal async completion
+});
+
+
+gulp.task('watchify', (done) => {
+	bundles.forEach(bundle => {
+		exampleTasks.createBundle(bundle, true);
+	});
+	done(); // signal async completion
 });
 
 

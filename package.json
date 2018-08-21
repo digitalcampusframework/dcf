@@ -23,6 +23,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
     "browserify": "^16.2.2",
     "browserslist": "^3.2.8",
     "delete": "^1.1.0",
@@ -49,10 +50,10 @@
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^7.0.0",
-    "gulp-tap": "^1.0.1",
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^1.0.1",
     "gulp-umd": "^2.0.0",
+    "gulplog": "^1.0.0",
     "modularscale-sass": "^3.0.5",
     "node-sass": "^4.9.0",
     "postcss-csso": "^3.0.0",
@@ -65,7 +66,10 @@
     "stylelint-no-unsupported-browser-features": "^3.0.0",
     "sync-exec": "^0.6.2",
     "tar-fs": "^1.16.2",
-    "uglify-save-license": "^0.4.1"
+    "uglify-save-license": "^0.4.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
   },
   "dependencies": {
     "details-polyfill": "^1.1.0",
