@@ -25,15 +25,16 @@ const createBundle = ({entries, paths, output, extensions, debug, destination}, 
 		compact: false
 	}));
 
-
-	const rebundle = () => b.bundle()
-			.on('error', $.gulplog.error.bind($.gulplog, 'Browserify Error'))
-			.pipe(source(output))
-			.pipe(buffer())
-			.pipe($.sourcemaps.init({ loadMaps: true }))
-			// .pipe($.uglify())
-			.pipe($.sourcemaps.write('./'))
-			.pipe(gulp.dest(destination));
+	$.fancyLog(`----> //** ${isWatchify ? 'Watchify' : 'Browserify'}`);
+	const rebundle = () => $.pump([
+		b.bundle().on('error', $.gulplog.error.bind($.gulplog, 'Browserify Error')),
+		source(output),
+		buffer(),
+		$.sourcemaps.init({ loadMaps: true }),
+		// $.uglify(),
+		$.sourcemaps.write('./'),
+		gulp.dest(destination),
+	]);
 
 
 	if (isWatchify) {
@@ -53,12 +54,13 @@ function stylelint() {
 	$.fancyLog('----> //** Linting Example SCSS files');
 	return $.pump([
 		gulp.src(buildPaths.exampleScssGlob),
-		customPlumber('Error Running stylelint:newer:Example'),
+		customPlumber('Error Running stylelint:example:cached'),
 		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
 		$.cached('stylelint:Example'),
-		$.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
+		// $.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
 		$.stylelint({
-			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
+			fix: false, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon,
+			// file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
 			failAfterError: true,
 			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
 			reporters: [

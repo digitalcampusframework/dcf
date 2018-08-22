@@ -132,7 +132,7 @@ gulp.task('copySass:newer', (done) => {
 		gulp.src(distPaths.scssGlob),
 		// $.debug({title: 'All Files - [copySass:newer]'})), // uncomment to see src files
 		$.newer(distPaths.scssDest),
-		$.debug({title: 'Passed Through - [copySass:newer]'}),
+		// $.debug({title: 'Passed Through - [copySass:newer]'}), // uncomment to see files passed through
 		gulp.dest(distPaths.scssDest)
 	], done);
 });
@@ -519,6 +519,7 @@ gulp.task('browserify', (done) => {
 
 
 gulp.task('watchify', (done) => {
+	// watchify runs browserify (not the gulp task) once before entering watch state
 	bundles.forEach(bundle => {
 		exampleTasks.createBundle(bundle, true);
 	});
@@ -570,6 +571,7 @@ gulp.task('preWatch',
 
 gulp.task('watching 👀',
 		gulp.parallel(
+				'watchify',
 				'sassDist-watch',
 				'copyCSS-watch',
 				'vendorDist-watch',
