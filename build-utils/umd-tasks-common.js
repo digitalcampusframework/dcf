@@ -32,6 +32,7 @@ const noticeWidget = [
 			]
 		},
 		namespace: () => 'dcfWidgetNotice'
+		// if no exports defined, capitalized filename will be used instead
 	}),
 	gulp.dest(buildPaths.umdCommonAppDest)
 ];
@@ -44,8 +45,8 @@ const uuidGen = [
 	$.newer({ dest:buildPaths.umdCommonAppDest }),
 	$.debug({title: 'Passed Through - [UMDuuidGen:newer]'}), // uncomment to see passed
 		$.umd({
-			exports: () => 'uuidv4',
-			namespace: () => 'dcfHelperUuidv4'
+			exports: () => 'uuidv4', // the variable name that will be returned
+			namespace: () => 'dcfHelperUuidv4' // how this module is named in the global scope
 		}),
 		gulp.dest(buildPaths.umdCommonAppDest)
 ];
