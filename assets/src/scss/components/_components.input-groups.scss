@@ -11,16 +11,23 @@
 }
 
 
-// Input group = field + button or add-on
+// Input group = input field + button or add-on
 .dcf-input-group {
   display: flex;
+  flex: 1 1 50%; // Grow/shrink as needed, 50% flex-basis
+}
+
+
+//  Child input field of input group
+.dcf-input-group .dcf-input-text {
+  flex: 1 1 auto; // Grow/shrink as needed, with auto width
 }
 
 
 // Input group and child input field
 .dcf-input-group,
 .dcf-input-group .dcf-input-text {
-  flex: 1 0 50%; // Grow as needed, with a minimum width of 50%
+  min-width: 0;
 }
 
 
