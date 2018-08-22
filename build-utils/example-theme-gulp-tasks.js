@@ -14,6 +14,20 @@ import customPlumber from './custom-plumber';
 /* ------------------------ */
 /* EXAMPLE BROWSERIFY TASKS
 /* ------------------------ */
+// with the exampleBundles array we can have more than one bundle output
+const exampleBundles = [
+	{
+		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
+		// if you need modules that are preBabel use umd-related paths from buildPaths
+		paths: [buildPaths.umdCommonAppDest, buildPaths.umdOptionaAppDest],
+		output: 'bundle.js', //output file name
+		extensions: ['.js', '.json'],
+		debug: true,
+		destination: path.join(commonPaths.examplePath,'js','bundled')
+	}
+];
+
+
 // browserify and watchify multiple bundle examples: https://gist.github.com/ramasilveyra/b4309edf809e55121385
 const createBundle = ({entries, paths, output, extensions, debug, destination}, isWatchify) => {
 
@@ -74,9 +88,13 @@ function stylelint() {
 }
 
 
+
+/* ----------------- */
+/* EXPORT MODULES
+/* ----------------- */
+export { exampleBundles };
+
 export default {
 	stylelint,
-	createBundle
-	// bundle,
-	// browserifyTask
+	createBundle,
 }

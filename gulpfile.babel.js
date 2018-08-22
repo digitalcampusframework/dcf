@@ -25,7 +25,7 @@ const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
 
-import exampleTasks from './build-utils/example-theme-gulp-tasks';
+import exampleTasks, { exampleBundles } from './build-utils/example-theme-gulp-tasks';
 
 /**
  * ------------
@@ -450,7 +450,6 @@ gulp.task('optionalAppUMD', (done) => {
 	Promise.all(promises)
 			.catch(err => console.error(err))
 			.then(() => done());
-
 });
 
 
@@ -497,21 +496,8 @@ gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch'));
 // /* ------------------------ */
 // /* EXAMPLE BROWSERIFY TASKS
 // /* ------------------------ */
-// with the bundles array we can have more than one bundle output
-const bundles = [
-	{
-		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
-		// if you need modules that are preBabel use umd-related paths from buildPaths
-		paths: [buildPaths.umdCommonAppDest, buildPaths.umdOptionaAppDest],
-		output: 'bundle.js', //output file name
-		extensions: ['.js', '.json'],
-		debug: true,
-		destination: path.join(commonPaths.examplePath,'js','bundled')
-	}
-];
-
 gulp.task('browserify', (done) => {
-	bundles.forEach(bundle => {
+	exampleBundles.forEach(bundle => {
 		exampleTasks.createBundle(bundle, false);
 	});
 	done(); // signal async completion
@@ -520,7 +506,7 @@ gulp.task('browserify', (done) => {
 
 gulp.task('watchify', (done) => {
 	// watchify runs browserify (not the gulp task) once before entering watch state
-	bundles.forEach(bundle => {
+	exampleBundles.forEach(bundle => {
 		exampleTasks.createBundle(bundle, true);
 	});
 	done(); // signal async completion

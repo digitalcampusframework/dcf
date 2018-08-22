@@ -1,11 +1,11 @@
-var dialog = require('dialog');
-// var lazyload = require('lazy-load');
-var Notice = require('notice');
-// var test = require('test');
+let dialog = require('dialog');
+// let lazyload = require('lazy-load');
+let Notice = require('notice');
+// let test = require('test');
 
 Notice.initialize();
 
-var noticeOptions = {
+const noticeOptions = {
 	widget: 'notice',
 	'notice-type': 'alert',
 	animation: 'true',
