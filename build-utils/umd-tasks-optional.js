@@ -14,7 +14,7 @@ const customPlumber = require('./custom-plumber');
  */
 
 const test = [
-	gulp.src(path.join(buildPaths.appJsOptionalSrc, 'test.js')),
+	gulp.src(path.join(buildPaths.appJsOptionalSrc, 'dcf-test.js')),
 	customPlumber('error wrapping noticeWidget'),
 	$.debug({title: 'All Files - [testWidget:newer]'}), // uncomment to see src files
 	$.newer({ dest:buildPaths.umdOptionaAppDest }),

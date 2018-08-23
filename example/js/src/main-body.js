@@ -1,16 +1,17 @@
-let dialog = require('dialog');
-// let lazyload = require('lazy-load');
-let Notice = require('notice');
-// let test = require('test');
+let dialog = require('dcf-dialog');
+// let lazyload = require('dcf-lazyLoad');
+let Notice = require('dcf-notice');
+// let test = require('dcf-test');
 
-Notice.initialize();
+// Notice.initialize();
 
 const noticeOptions = {
 	widget: 'notice',
 	'notice-type': 'alert',
 	animation: 'true',
 	location: 'fixedBottom',
-	collapsible: 'true'
+	collapsible: 'true',
+	id: 'dynamicNotice1'
 };
 
 Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);

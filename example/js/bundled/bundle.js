@@ -67,9 +67,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 ;(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
-		define(['./uuid-gen'], factory);
+		define(['./dcf-uuidGen'], factory);
 	} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-		module.exports = factory(require('./uuid-gen'));
+		module.exports = factory(require('./dcf-uuidGen'));
 	} else {
 		root.dcfWidgetNotice = factory(root.dcfHelperUuidv4);
 	}
@@ -160,13 +160,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			closeButton.innerText = "Expand";
 			title.classList.add('dcf-notice-title-collapse');
 			message.classList.add('dcf-notice-message-collapse');
-			localStorage.setItem(el.id, 'collapsed');
+			if (el.id) localStorage.setItem(el.id, 'collapsed');
 		} else {
 			// if collapse, expand message
 			closeButton.innerText = "Collapse";
 			message.classList.remove('dcf-notice-message-collapse');
 			title.classList.remove('dcf-notice-title-collapse');
-			localStorage.setItem(el.id, 'expanded');
+			if (el.id) localStorage.setItem(el.id, 'expanded');
 		}
 
 		// Invert to get new state
@@ -330,9 +330,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			if (!fixedBottomExists) {
 				// get provided id and append it with a prefix
 				if (notice.id) {
-					notice.id = 'unl-widget-fixedBottom--' + notice.id;
+					notice.id = 'dcf-widget-fixedBottom--' + notice.id;
 				} else {
-					console.error('An id attribute needs to be provided for the fixed to bottom notice to function properly with' + ' localStorage');
+					console.info('An id attribute needs to be provided for the fixed to bottom notice to function properly with' + ' localStorage');
 				}
 
 				// check to see if data-collapsible is false and exists in storage as closed, hide notice rightaway
@@ -433,9 +433,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	/**
   * widget.create takes in arguments to dynamically create notices on the fly
   */
-	Notice.create = function (noticeTitle, noticeMessage, widgetOptions) {
+	Notice.create = function () {
+		var noticeTitle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+		var noticeMessage = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+		var widgetOptions = arguments[2];
 		var insertionReference = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'main';
 		var insertionPoint = arguments[4];
+
+
+		if (noticeTitle.length === 0) {
+			console.error('Please provide a notice title');
+			return;
+		}
+
+		if (noticeMessage.length === 0) {
+			console.error('Please provide a notice message');
+			return;
+		}
 
 		var notice = document.createElement('div');
 		var noticeHeader = document.createElement('h2');
@@ -446,11 +460,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		notice.setAttribute('role', 'alert');
 
 		keys.forEach(function (key) {
-			notice.setAttribute('data-' + key, widgetOptions[key]);
+			if (key === 'id') {
+				notice.id = widgetOptions[key];
+			} else {
+				notice.setAttribute('data-' + key, widgetOptions[key]);
+			}
 		});
 
 		if (typeof noticeTitle === 'string') noticeHeader.innerText = noticeTitle;
 		if (typeof noticeMessage === 'string') noticeContent.innerText = noticeMessage;
+
+		noticeHeader.classList.add('js-notice-title');
+		noticeContent.classList.add('js-notice-message');
+
 		notice.appendChild(noticeHeader);
 		notice.appendChild(noticeContent);
 
@@ -472,7 +494,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	return Notice;
 });
 
-},{"./uuid-gen":3}],3:[function(require,module,exports){
+},{"./dcf-uuidGen":3}],3:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -500,23 +522,24 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 },{}],4:[function(require,module,exports){
 'use strict';
 
-var dialog = require('dialog');
-// let lazyload = require('lazy-load');
-var Notice = require('notice');
-// let test = require('test');
+var dialog = require('dcf-dialog');
+// let lazyload = require('dcf-lazyLoad');
+var Notice = require('dcf-notice');
+// let test = require('dcf-test');
 
-Notice.initialize();
+// Notice.initialize();
 
 var noticeOptions = {
 	widget: 'notice',
 	'notice-type': 'alert',
 	animation: 'true',
 	location: 'fixedBottom',
-	collapsible: 'true'
+	collapsible: 'true',
+	id: 'dynamicNotice1'
 };
 
 Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
-},{"dialog":1,"notice":2}]},{},[4])
+},{"dcf-dialog":1,"dcf-notice":2}]},{},[4])
 
 //# sourceMappingURL=bundle.js.map
