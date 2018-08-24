@@ -1,9 +1,6 @@
 let dialog = require('dcf-dialog');
 // let lazyload = require('dcf-lazyLoad');
 let Notice = require('dcf-notice');
-// let test = require('dcf-test');
-
-// Notice.initialize();
 
 const noticeOptions = {
 	widget: 'notice',
