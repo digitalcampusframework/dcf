@@ -9,3 +9,15 @@
 
 // !Brand: Beta
 .example-bg-brand-beta { @include bg-brand-beta(!important); }
+
+
+// !Light
+.example-bg-light { @include bg-light(!important); }
+.example-bg-lighter { @include bg-lighter(!important); }
+.example-bg-lightest { @include bg-lightest(!important); }
+
+
+// !Dark
+.example-bg-dark { @include bg-dark(!important); }
+.example-bg-darker { @include bg-darker(!important); }
+.example-bg-darkest { @include bg-darkest(!important); }

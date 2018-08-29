@@ -4,11 +4,20 @@
 
 
 // !Brand: Alpha
-@mixin bg-brand-alpha($imp:null) {
-  background-color: $color-brand-alpha $imp;
-}
+@mixin bg-brand-alpha($imp:null) { background-color: $color-brand-alpha $imp; }
+
 
 // !Brand: Beta
-@mixin bg-brand-beta($imp:null) {
-  background-color: $color-brand-beta $imp;
-}
+@mixin bg-brand-beta($imp:null) { background-color: $color-brand-beta $imp; }
+
+
+// !Light
+@mixin bg-light($imp:null) { background-color: $ui-light $imp; }
+@mixin bg-lighter($imp:null) { background-color: $ui-lighter $imp; }
+@mixin bg-lightest($imp:null) { background-color: $ui-lightest $imp; }
+
+
+// !Dark
+@mixin bg-dark($imp:null) { background-color: $ui-dark $imp; }
+@mixin bg-darker($imp:null) { background-color: $ui-darker $imp; }
+@mixin bg-darkest($imp:null) { background-color: $ui-darkest $imp; }
