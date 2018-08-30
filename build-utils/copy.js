@@ -7,7 +7,7 @@ export function copy (src, dest, taskName = 'missing task name') {
 		gulp.src(src),
 		gulp.dest(dest)
 	]);
-};
+}
 
 export function copyNewer (src, dest, taskName = 'missing task name', newerDest) {
 	$.fancyLog(`----> //** Copying files [${taskName}]`);
@@ -16,7 +16,7 @@ export function copyNewer (src, dest, taskName = 'missing task name', newerDest)
 		$.newer(newerDest),
 		gulp.dest(dest)
 	]);
-};
+}
 
 export function copyNewerRename (src, dest, taskName = 'missing task name', newerDest, ifConditions, renameConfig) {
 	$.fancyLog(`----> //** Copying files [${taskName}]`);
@@ -26,4 +26,4 @@ export function copyNewerRename (src, dest, taskName = 'missing task name', newe
 		$.if(ifConditions, $.rename(renameConfig)),
 		gulp.dest(dest)
 	]);
-};
+}
