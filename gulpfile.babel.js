@@ -365,7 +365,6 @@ gulp.task('cachedEslint-watch', () => {
 /* ----------------- */
 gulp.task('babel', (done) => {
 	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
-	console.log($.cached.caches); uncomment to see what is stored in the caches
 	$.pump([
 		gulp.src(buildPaths.babelAppGlob),
 		customPlumber('Error Running Babel'),
