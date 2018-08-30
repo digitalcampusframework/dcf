@@ -1,4 +1,13 @@
-function dialog(dialogPolyfill) {
+;(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
+  } else {
+    root.dcfDialog = factory();
+  }
+}(this, function() {
+function Dialog(dialogPolyfill) {
   // select all modal and convert node list to array
   const modalContainers = [].slice.call(document.querySelectorAll('.dcf-js-dialog'));
 
@@ -42,3 +51,6 @@ function dialog(dialogPolyfill) {
 
   return dialogPolyfill;
 }
+
+return Dialog;
+}));

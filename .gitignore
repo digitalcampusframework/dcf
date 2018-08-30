@@ -6,4 +6,4 @@
 /logs/**/*
 !logs/.gitkeep
 example/build/**/*
-
+/assets/build
