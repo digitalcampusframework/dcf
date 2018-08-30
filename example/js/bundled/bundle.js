@@ -525,9 +525,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var dialog = require('dcf-dialog');
 // let lazyload = require('dcf-lazyLoad');
 var Notice = require('dcf-notice');
-// let test = require('dcf-test');
-
-// Notice.initialize();
 
 var noticeOptions = {
 	widget: 'notice',

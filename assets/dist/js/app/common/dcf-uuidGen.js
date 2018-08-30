@@ -1,9 +1,23 @@
-/**
- * @project        dcf
- * @author         Digital Campus Nebraska
- * @website        http://digitalcampus.us/
- * @copyright      Copyright (c) 2018, BSD-3-Clause
- *
- */
-"use strict";var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o};!function(o,t){"function"==typeof define&&define.amd?define([],t):"object"===("undefined"==typeof exports?"undefined":_typeof(exports))?module.exports=t():o.dcfHelperUuidv4=t()}(void 0,function(){return function(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(o){var t=16*Math.random()|0;return("x"===o?t:3&t|8).toString(16)})}});
-//# sourceMappingURL=dcf-uuidGen.js.map
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+;(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
+    module.exports = factory();
+  } else {
+    root.dcfHelperUuidv4 = factory();
+  }
+})(undefined, function () {
+  function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0,
+          v = c === 'x' ? r : r & 0x3 | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  return uuidv4;
+});

@@ -12,31 +12,3 @@ const customPlumber = require('./custom-plumber');
  * so if you are returning something, make sure that you either specify an exports option or rename the file to
  * match. See https://github.com/eduardolundgren/gulp-umd#options
  */
-
-// const test = [
-// 	gulp.src(path.join(buildPaths.appJsOptionalSrc, 'dcf-test.js')),
-// 	customPlumber('error wrapping noticeWidget'),
-// 	$.debug({title: 'All Files - [testWidget:newer]'}), // uncomment to see src files
-// 	$.newer({ dest:buildPaths.umdOptionaAppDest }),
-// 	$.debug({title: 'Passed Through - [testWidget:newer]'}), // uncomment to see passed
-// 	$.umd({
-// 		dependencies: () => {
-// 			return [
-// 				{
-// 					name: 'uuidGenerator',
-// 					amd: 'uuid-gen',
-// 					cjs: 'uuid-gen',
-// 					global: 'dcf-helper-uuidv4', // how this dependency is defined in the global scope
-// 					param: 'uuidv4' // how this dependency is called inside the module
-// 				}
-// 			]
-// 		},
-// 		namespace: () => 'dcfWidgetNotice'
-// 	}),
-// 	gulp.dest(buildPaths.umdOptionaAppDest)
-// ];
-//
-//
-// module.exports = {
-// 	test
-// };

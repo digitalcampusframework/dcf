@@ -23,14 +23,6 @@ function concatFn(src, dest, fileName, taskName) {
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
-	// return gulp.src(src)
-	// 		.pipe($.sourcemaps.init())
-	// 		.pipe(customPlumber(`Error Running ${taskName} task`))
-	// 		.pipe($.concat(
-	// 				{path: fileName},
-	// 				{newLine: '\n\n'}))
-	// 		.pipe($.sourcemaps.write('./'))
-	// 		.pipe(gulp.dest(dest));
 }
 
 
@@ -56,17 +48,6 @@ function concatNewerFn(src, dest, fileName, taskName, newerDest) {
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
-	// return gulp.src(src)
-	// 		.pipe($.sourcemaps.init())
-	// 		.pipe(customPlumber(`Error Running ${taskName} task`))
-	// 		.pipe($.debug({title: `All Files - [${taskName}]`})) // uncomment to see src files
-	// 		.pipe($.newer({dest: newerDest}))
-	// 		.pipe($.debug({title: `Passed Through - [${taskName}]`})) //uncomment to see what files passed through
-	// 		.pipe($.concat(
-	// 				{path: fileName},
-	// 				{newLine: '\n\n'}))
-	// 		.pipe($.sourcemaps.write('./'))
-	// 		.pipe(gulp.dest(dest));
 }
 
 let concatObj = {

@@ -3,6 +3,7 @@
  * SETTING UP GULP
  * ------------------
  */
+
 // Modules
 const pkg = require('./package.json'); // bring in properties specified in package.json
 const gulp = require('gulp');
@@ -26,6 +27,7 @@ const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
 
 import exampleTasks, { exampleBundles } from './build-utils/example-theme-gulp-tasks';
+import { copy, copyNewer, copyNewerRename } from "./build-utils/copy";
 
 /**
  * ------------
@@ -108,7 +110,6 @@ gulp.task('stylelintFixTest', (done) => {
 /* EXAMPLE STYLE LINT TASKS
 /* ----------------- */
 gulp.task('stylelint:example:cached', () => {
-	console.log(exampleTasks.stylelint);
 	return exampleTasks.stylelint();
 });
 
@@ -117,24 +118,13 @@ gulp.task('stylelint:example:cached', () => {
 /* ----------------- */
 /* CORE SASS TASKS
 /* ----------------- */
-gulp.task('copySass', (done) => {
-	$.fancyLog('----> //** Copying SCSS files');
-	$.pump([
-		gulp.src(distPaths.scssGlob),
-		gulp.dest(distPaths.scssDest)
-	], done);
+gulp.task('copySass', () => {
+ return copy(distPaths.scssGlob, distPaths.scssDest, 'copySass');
 });
 
 
-gulp.task('copySass:newer', (done) => {
-	$.fancyLog('----> //** Copying SCSS files');
-	$.pump([
-		gulp.src(distPaths.scssGlob),
-		// $.debug({title: 'All Files - [copySass:newer]'})), // uncomment to see src files
-		$.newer(distPaths.scssDest),
-		// $.debug({title: 'Passed Through - [copySass:newer]'}), // uncomment to see files passed through
-		gulp.dest(distPaths.scssDest)
-	], done);
+gulp.task('copySass:newer', () => {
+	return copyNewer(distPaths.scssGlob, distPaths.scssDest, 'copySass:newer', distPaths.scssDest);
 });
 
 
@@ -397,9 +387,7 @@ gulp.task('babel', (done) => {
 /* ----------------- */
 /* APP TASKS
 /* ----------------- */
-// import umdTasksCommon from './build-utils/umd-tasks-common';
 gulp.task('commonAppUMD', (done) => {
-	// TODO some things broke due to node caching some of the required stuff, try es6 exports module
 	delete require.cache[require.resolve('./build-utils/umd-tasks-common')];
 	const umdTasksCommon = require('./build-utils/umd-tasks-common');
 	$.fancyLog('----> //** Wrapping common modules in UMD');
@@ -489,7 +477,33 @@ gulp.task('appUglify-watch', () => {
 			});
 });
 
-gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch'));
+gulp.task('copyPreBabel:newer', () => {
+	return copyNewerRename(buildPaths.babelAppGlob, distPaths.appDest, 'copyPreBabel:newer', distPaths.appDest, ['**/*.js','!**/*.babel.js', "!**/*.min.js"], {suffix: '.babel'});
+});
+
+
+gulp.task('copyPreBabel-watch', () => {
+	gulp.watch(buildPaths.babelAppGlob, gulp.series('copyPreBabel:newer'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, distPaths.appDest, 'copyPreBabel-watch', true);
+			});
+});
+
+gulp.task('copyPostBabel:newer', () => {
+	return copyNewer(distPaths.appSrcGlob, distPaths.appDest, 'copyPostBabel:newer', distPaths.appDest);
+});
+
+
+gulp.task('copyPostBabel-watch', () => {
+	gulp.watch(distPaths.appSrcGlob, gulp.series('copyPostBabel:newer'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, distPaths.appDest, 'copyPostBabel-watch', true);
+			});
+});
+
+gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch', 'copyPreBabel-watch', 'copyPostBabel-watch'));
 
 
 
@@ -547,7 +561,9 @@ gulp.task('preWatch',
 					gulp.series('mustardDist'),
 					gulp.series(
 						'appBuild',
-						'appUglify:newer'
+						'appUglify:newer',
+						'copyPreBabel:newer',
+						'copyPostBabel:newer'
 			 		),
 					gulp.series('sassDist'),
 					gulp.series('copyCSS:newer')

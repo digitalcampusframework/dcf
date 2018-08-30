@@ -69,9 +69,7 @@ function stylelint() {
 	return $.pump([
 		gulp.src(buildPaths.exampleScssGlob),
 		customPlumber('Error Running stylelint:example:cached'),
-		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
 		$.cached('stylelint:Example'),
-		// $.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
 		$.stylelint({
 			fix: false, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon,
 			// file will be overwritten with report not sure why at this moment, use stylelintFix task to do that

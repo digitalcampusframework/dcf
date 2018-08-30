@@ -128,6 +128,28 @@ You are good to go!
 * `gulp stylelintFix` - stylelint allows _some_ CSS/SCSS styling errors to be fixed automatically. It is not perfect but definitely helps. Run this task manually to have stylelint automatically fix some of the minor styling issues in your SCSS.
 * `gulp eslintFix` - eslint allows _some_ JS errors to be fixed automatically. It is not perfect but definitely helps. Does convert JS to ES6 version. Run this task manually to have eslint automatically fix some of the minor styling issues in your JS.
 
+### Troubleshooting Gulp Tasks
+* [gulp-debug](https://github.com/sindresorhus/gulp-debug) can be used to view files that are being streamed into a task and the files that are being 
+passed 
+through your Gulp pipeline. It is already included in the package.json
+* For example, to use gulp-debug to see what files are being passed into the task at the beginning and what files are
+ let through by gulp-newer, we can do the following:
+ 
+ ```javascript
+ gulp.task('copyCSS:newer', (done) => {
+  	$.pump([
+  		gulp.src(distPaths.cssGlob),
+  		customPlumber('Error Running copyCSS'),
+  		// add the gulp-debug line below to see what files are passed into gulp-newer
+  		$.debug({title: 'All files - [copySass:newer]'}), 
+  		$.newer(distPaths.cssDest),
+  		// add the gulp-debug line below to see what files are processed and let through by gulp-newer
+  		$.debug({title: 'Passed Through - [copySass:newer]'}), 
+  		gulp.dest(distPaths.cssDest)
+  	], done);
+  });
+  ```  
+
 ## Known issues
 * Some of the gulp tasks uses gulp-newer that compares against target files to see if a task needs to be performed (helps avoid performance issues when watching). On watching, when files are deleted from src folders, files such as vendor.concat.js in the build folder will be re-concatenated and then re-uglified (expected behavior). However if you add a file that is older than the gulp-newer targeted file, the associated task will not run. To overcome this, just do something (add a space and save) in that file so that it has a newer modified date than the gulp-newer targeted file.
     * Example: Current state: gulp-newer observing file b.js in build folder but no b.js in src folder. While gulp is 

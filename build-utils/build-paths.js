@@ -19,9 +19,6 @@ const picturefill = require.resolve('picturefill');
 const objectFitImages = require.resolve('object-fit-images');
 const detailsPolyfill = require.resolve('details-polyfill');
 
-// console.log([`${mustardJsSrcPath}/**/*.js`, `${picturefill}`, `${objectFitImages}`, detailsPolyfill]);
-// TODO check to see if all the path properties are still being used
-
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
 	// better to use unminified vendor files since all files will be concatenated & minified
