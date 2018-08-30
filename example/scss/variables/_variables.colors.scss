@@ -22,13 +22,13 @@ $black: #000;
 
 $mix-white-black: mix($white, $black); // gray
 
-$ui-light: lighten($mix-white-black, 36%); // #dcdcdc
-$ui-lighter: lighten($mix-white-black, 43%); // #eee
-$ui-lightest: lighten($mix-white-black, 47%); // #f8f8f8
+$gray-light: lighten($mix-white-black, 36%); // #dcdcdc
+$gray-lighter: lighten($mix-white-black, 43%); // #eee
+$gray-lightest: lighten($mix-white-black, 47%); // #f8f8f8
 
-$ui-dark: darken($mix-white-black, 10%); // #676767
-$ui-darker: darken($mix-white-black, 24%); // #434343
-$ui-darkest: darken($mix-white-black, 32%); // #2e2e2e
+$gray-dark: darken($mix-white-black, 10%); // #676767
+$gray-darker: darken($mix-white-black, 24%); // #434343
+$gray-darkest: darken($mix-white-black, 32%); // #2e2e2e
 
 
 // Body background color (usually white, off-white, or very light gray)
@@ -36,15 +36,15 @@ $color-body-bg: $white;
 
 
 // Strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
-$color-body: $ui-darker;
+$color-body: $gray-darker;
 
 
 // Strive for WCAG AAA (minimum contrast ratio of 7.0) for heading text
-$color-heading: $ui-darkest;
+$color-heading: $gray-darkest;
 
 
 // Must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-light-text: $ui-dark;
+$color-light-text: $gray-dark;
 
 
 // !Links
@@ -83,7 +83,7 @@ $color-breadcrumb: $color-light-text;
 
 
 // !Badges
-$color-badge: $ui-dark;
+$color-badge: $color-light-text;
 
 
 // !Captions
@@ -92,9 +92,9 @@ $color-caption: $color-light-text;
 
 // !Footer
 $color-footer-local: $color-body;
-$color-footer-local-bg: $ui-lightest;
+$color-footer-local-bg: $gray-lightest;
 $color-footer-global: $color-body;
-$color-footer-global-bg: $ui-lighter;
+$color-footer-global-bg: $gray-lighter;
 
 
 

@@ -12,12 +12,12 @@
 
 
 // !Light
-.example-bg-light { @include bg-light(!important); }
-.example-bg-lighter { @include bg-lighter(!important); }
-.example-bg-lightest { @include bg-lightest(!important); }
+.example-bg-gray-light { @include bg-gray-light(!important); }
+.example-bg-gray-lighter { @include bg-gray-lighter(!important); }
+.example-bg-gray-lightest { @include bg-gray-lightest(!important); }
 
 
 // !Dark
-.example-bg-dark { @include bg-dark(!important); }
-.example-bg-darker { @include bg-darker(!important); }
-.example-bg-darkest { @include bg-darkest(!important); }
+.example-bg-gray-dark { @include bg-gray-dark(!important); }
+.example-bg-gray-darker { @include bg-gray-darker(!important); }
+.example-bg-gray-darkest { @include bg-gray-darkest(!important); }

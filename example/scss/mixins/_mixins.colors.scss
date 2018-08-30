@@ -12,12 +12,12 @@
 
 
 // !Light
-@mixin light($imp:null) { color: $ui-light $imp; }
-@mixin lighter($imp:null) { color: $ui-lighter $imp; }
-@mixin lightest($imp:null) { color: $ui-lightest $imp; }
+@mixin gray-light($imp:null) { color: $gray-light $imp; }
+@mixin gray-lighter($imp:null) { color: $gray-lighter $imp; }
+@mixin gray-lightest($imp:null) { color: $gray-lightest $imp; }
 
 
 // !Dark
-@mixin dark($imp:null) { color: $ui-dark $imp; }
-@mixin darker($imp:null) { color: $ui-darker $imp; }
-@mixin darkest($imp:null) { color: $ui-darkest $imp; }
+@mixin gray-dark($imp:null) { color: $gray-dark $imp; }
+@mixin gray-darker($imp:null) { color: $gray-darker $imp; }
+@mixin gray-darkest($imp:null) { color: $gray-darkest $imp; }

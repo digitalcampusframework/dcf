@@ -12,12 +12,12 @@
 
 
 // !Light
-.example-light { @include light(!important); }
-.example-lighter { @include lighter(!important); }
-.example-lightest { @include lightest(!important); }
+.example-gray-light { @include gray-light(!important); }
+.example-gray-lighter { @include gray-lighter(!important); }
+.example-gray-lightest { @include gray-lightest(!important); }
 
 
 // !Dark
-.example-dark { @include dark(!important); }
-.example-darker { @include darker(!important); }
-.example-darkest { @include darkest(!important); }
+.example-gray-dark { @include gray-dark(!important); }
+.example-gray-darker { @include gray-darker(!important); }
+.example-gray-darkest { @include gray-darkest(!important); }
