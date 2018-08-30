@@ -149,6 +149,26 @@ through your Gulp pipeline. It is already included in the package.json
   	], done);
   });
   ```  
+* [gulp-cached](https://github.com/gulp-community/gulp-cached) to debug if something is being stored inside gulp-cached add `console.log($.cached.caches);`
+    * Cache key = file.path + file.contents
+    * Gulp-cached doesn't persist between new processes. It's an in-memory object that goes away when the process dies
+    . To check gulp-cached properly using the console.log it needs to be runned in a watch process
+
+ 
+ ```javascript
+gulp.task('babel', (done) => {
+	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
+	console.log($.cached.caches);
+	$.pump([
+		gulp.src(buildPaths.babelAppGlob),
+		customPlumber('Error Running Babel'),
+		$.cached('babel'),
+		console.log($.cached.caches); 
+		$.babel({presets: [ 'env' ]}),
+		gulp.dest(buildPaths.appJsDestPostBabel)
+	], done);
+});
+  ```  
 
 ## Known issues
 * Some of the gulp tasks uses gulp-newer that compares against target files to see if a task needs to be performed (helps avoid performance issues when watching). On watching, when files are deleted from src folders, files such as vendor.concat.js in the build folder will be re-concatenated and then re-uglified (expected behavior). However if you add a file that is older than the gulp-newer targeted file, the associated task will not run. To overcome this, just do something (add a space and save) in that file so that it has a newer modified date than the gulp-newer targeted file.

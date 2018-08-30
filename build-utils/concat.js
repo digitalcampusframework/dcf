@@ -15,11 +15,9 @@ function concatFn(src, dest, fileName, taskName) {
 		gulp.src(src),
 		$.sourcemaps.init({loadMaps:true}),
 		customPlumber(`Error Running ${taskName} task`),
-		$.debug({title: `All Files - [${taskName}]`}),
 		$.concat(
 				{path: fileName},
 				{newLine: '\n\n'}),
-		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
@@ -39,9 +37,7 @@ function concatNewerFn(src, dest, fileName, taskName, newerDest) {
 		gulp.src(src),
 		$.sourcemaps.init({loadMaps:true}),
 		customPlumber(`Error Running ${taskName} task`),
-		$.debug({title: `All Files - [${taskName}]`}),
 		$.newer({dest: newerDest}),
-		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.concat(
 				{path: fileName},
 				{newLine: '\n\n'}),

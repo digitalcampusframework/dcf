@@ -43,9 +43,7 @@ gulp.task('stylelint:newer', (done) => {
 	$.pump([
 		gulp.src(distPaths.scssGlob),
 		customPlumber('Error Running stylelint:newer'),
-		// $.debug({title: 'All Files - [stylelint:newer]'}), // uncomment to see src files
 		$.newer({dest: distPaths.scssDest}),
-		// $.debug({title: 'Passed Through - [stylelint:newer]'}), // uncomment to see files passed through
 		$.stylelint({
 			// fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
 			failAfterError: false,
@@ -68,7 +66,6 @@ gulp.task('stylelintFix', (done) => {
 				gulp.src(distPaths.scssGlob),
 				customPlumber('Error Running stylelintFix'),
 				$.newer({dest: distPaths.scssDest}),
-				$.debug({title: 'Passed Through - [stylelintFix]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
@@ -88,7 +85,6 @@ gulp.task('stylelintFixTest', (done) => {
 	$.pump([
 				gulp.src(distPaths.scssGlob),
 				$.newer({dest: distPaths.scssDest}),
-				$.debug({title: 'Passed Through - [stylelintFixTest]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
@@ -222,7 +218,6 @@ gulp.task('copyCSS:newer', (done) => {
 		gulp.src(distPaths.cssGlob),
 		customPlumber('Error Running copyCSS'),
 		$.newer(distPaths.cssDest),
-		// $.debug({title: 'Passed Through - [copySass:newer]'}), // uncomment to see what files are passed through
 		gulp.dest(distPaths.cssDest)
 	], done);
 });
@@ -370,13 +365,11 @@ gulp.task('cachedEslint-watch', () => {
 /* ----------------- */
 gulp.task('babel', (done) => {
 	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
-	// console.log($.cached.caches); uncomment to see what is stored in the caches
+	console.log($.cached.caches); uncomment to see what is stored in the caches
 	$.pump([
 		gulp.src(buildPaths.babelAppGlob),
 		customPlumber('Error Running Babel'),
-		// $.debug({title: 'All Files - [Babel]'}),
 		$.cached('babel'),
-		// $.debug({title: 'PassedThrough - [Babel]'}),
 		$.babel({presets: [ 'env' ]}),
 		gulp.dest(buildPaths.appJsDestPostBabel)
 	], done);
