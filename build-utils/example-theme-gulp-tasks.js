@@ -3,6 +3,7 @@ import gulp from 'gulp';
 const $ = require('./gulp-load-plugins');
 import commonPaths from './common-paths';
 import buildPaths from'./build-paths';
+import distPaths from'./dist-paths';
 import browserify from 'browserify';
 import watchify from 'watchify';
 import babelify from 'babelify';
@@ -19,7 +20,7 @@ const exampleBundles = [
 	{
 		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
 		// if you need modules that are preBabel use umd-related paths from buildPaths
-		paths: [buildPaths.umdCommonAppDest, buildPaths.umdOptionaAppDest],
+		paths: [distPaths.optionalAppDest, distPaths.commonAppDest],
 		output: 'bundle.js', //output file name
 		extensions: ['.js', '.json'],
 		debug: true,

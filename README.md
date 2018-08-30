@@ -112,10 +112,10 @@ compilation tasks will be added in the future (compilation is for example theme)
 * CSS files - The src css files are copied to the `assets/dist/css` folder
 
     
-_JS modules in `/assets/dist/js/app` will be linted, transpiled, wrapped in UMD, and minified. In the 
-    event, if your theme build process and module bundler requires files that are pretranspiled and/or preminified, you can 
-    look inside `/assets/build/js/app` for the linted and UMD-wrapped pre-processed module files._
-    
+_JS modules in `/assets/dist/js/app` comes in three different flavors:_
+ * _*.babel.js - pre-transpiled & UMD-wrapped_
+ * _*.js - transpiled & UMD-wrapped_
+ * _*.min.js - transpiled, minified, & UMD-wrapped_
     
 
 ## Installing the project

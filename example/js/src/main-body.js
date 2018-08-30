@@ -1,6 +1,6 @@
-let dialog = require('dcf-dialog');
+let dialog = require('dcf-dialog.babel');
 // let lazyload = require('dcf-lazyLoad');
-let Notice = require('dcf-notice');
+let Notice = require('dcf-notice.babel');
 
 const noticeOptions = {
 	widget: 'notice',

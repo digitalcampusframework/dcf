@@ -4,9 +4,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 ;(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
-		define(['./dcf-uuidGen'], factory);
+		define(['./dcf-uuidGen.min'], factory);
 	} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-		module.exports = factory(require('./dcf-uuidGen'));
+		module.exports = factory(require('./dcf-uuidGen.min'));
 	} else {
 		root.dcfWidgetNotice = factory(root.dcfHelperUuidv4);
 	}
