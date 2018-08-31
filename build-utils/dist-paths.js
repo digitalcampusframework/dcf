@@ -25,6 +25,8 @@ module.exports = {
 	appSrc: buildPaths.appJsDestPreBabel,
 	appSrcGlob: `${buildPaths.appJsDestPostBabel}/**/*.js`,
 	appDest: path.join(commonPaths.outputDist, 'js', 'app'),
+	appDestPreBabel: path.join(commonPaths.outputDist, 'js', 'app', 'preBabel'),
+	appDestPostBabel: path.join(commonPaths.outputDist, 'js', 'app', 'postBabel'),
 
 	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),
 	exampleScreenCssDest: path.join(commonPaths.examplePath, 'css'),

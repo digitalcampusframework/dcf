@@ -22,8 +22,8 @@ const noticeWidget = [
 			return [
 				{
 					name: 'uuidGenerator',
-					amd: './dcf-uuidGen.min',
-					cjs: './dcf-uuidGen.min',
+					amd: './dcf-uuidGen',
+					cjs: './dcf-uuidGen',
 					global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
 					param: 'uuidv4' // how this dependency is called inside the module
 				}

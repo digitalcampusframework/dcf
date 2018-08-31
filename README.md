@@ -113,9 +113,9 @@ compilation tasks will be added in the future (compilation is for example theme)
 
     
 _JS modules in `/assets/dist/js/app` comes in three different flavors:_
- * _*.babel.js - pre-transpiled & UMD-wrapped_
- * _*.js - transpiled & UMD-wrapped_
- * _*.min.js - transpiled, minified, & UMD-wrapped_
+ * `dist/js/app/common` & `dist/js/app/optional` - _module files are transpiled, minified, & UMD-wrapped_
+ * `dist/js/app/preBabel` - _module files are UMD-wrapped_
+ * `dist/js/app/postBabel` - _module files are transpiled & UMD-wrapped_
     
 
 ## Installing the project

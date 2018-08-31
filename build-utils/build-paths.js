@@ -32,8 +32,9 @@ module.exports = {
 	appJsOptionalSrc: path.join(appJsSrcPath, 'optional'),
 	appJsSrcGlob: `${appJsSrcPath}/**/*.js`,
 	appJsDestPreBabel: appJsDestPathPreBabel,
-	appJsDestPostBabel: appJsDestPathPostBabel,
 	babelAppGlob: `${appJsDestPathPreBabel}/**/*.js`,
+	appJsDestPostBabel: appJsDestPathPostBabel,
+	appJsDestPostBabelGlob: `${appJsDestPathPostBabel}/**/*.js`,
 	umdCommonAppDest: path.join(appJsDestPathPreBabel, 'common'),
 	umdOptionaAppDest: path.join(appJsDestPathPreBabel, 'optional'),
 
