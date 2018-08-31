@@ -20,7 +20,7 @@ const exampleBundles = [
 	{
 		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
 		// if you need modules that are preBabel use umd-related paths from buildPaths
-		paths: [distPaths.optionalAppDest, distPaths.commonAppDest],
+		paths: [`${path.join(distPaths.appDestPreBabel,'common')}`, `${path.join(distPaths.appDestPreBabel, 'optional')}`],
 		output: 'bundle.js', //output file name
 		extensions: ['.js', '.json'],
 		debug: true,

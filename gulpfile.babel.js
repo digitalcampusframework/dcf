@@ -470,7 +470,7 @@ gulp.task('appUglify-watch', () => {
 });
 
 gulp.task('copyPreBabel:newer', () => {
-	return copyNewerRename(buildPaths.babelAppGlob, distPaths.appDest, 'copyPreBabel:newer', distPaths.appDest, ['**/*.js','!**/*.babel.js', "!**/*.min.js"], {suffix: '.babel'});
+	return copyNewer(buildPaths.babelAppGlob, distPaths.appDestPreBabel, 'copyPreBabel:newer', distPaths.appDest);
 });
 
 
@@ -483,12 +483,12 @@ gulp.task('copyPreBabel-watch', () => {
 });
 
 gulp.task('copyPostBabel:newer', () => {
-	return copyNewer(distPaths.appSrcGlob, distPaths.appDest, 'copyPostBabel:newer', distPaths.appDest);
+	return copyNewer(buildPaths.appJsDestPostBabelGlob, distPaths.appDestPostBabel, 'copyPostBabel:newer', distPaths.appDest);
 });
 
 
 gulp.task('copyPostBabel-watch', () => {
-	gulp.watch(distPaths.appSrcGlob, gulp.series('copyPostBabel:newer'))
+	gulp.watch(buildPaths.appJsDestPostBabelGlob, gulp.series('copyPostBabel:newer'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				cascadeDelete(ePath, stats, distPaths.appDest, 'copyPostBabel-watch', true);

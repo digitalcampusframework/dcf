@@ -67,9 +67,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 ;(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
-		define(['./dcf-uuidGen.min'], factory);
+		define(['./dcf-uuidGen'], factory);
 	} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-		module.exports = factory(require('./dcf-uuidGen.min'));
+		module.exports = factory(require('./dcf-uuidGen'));
 	} else {
 		root.dcfWidgetNotice = factory(root.dcfHelperUuidv4);
 	}
@@ -494,39 +494,37 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	return Notice;
 });
 
-},{"./dcf-uuidGen.min":3}],3:[function(require,module,exports){
-/**
- * @project        dcf
- * @author         Digital Campus Nebraska
- * @website        http://digitalcampus.us/
- * @copyright      Copyright (c) 2018, BSD-3-Clause
- *
- */
-"use strict";
+},{"./dcf-uuidGen":3}],3:[function(require,module,exports){
+'use strict';
 
-var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (o) {
-  return typeof o === "undefined" ? "undefined" : _typeof2(o);
-} : function (o) {
-  return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o === "undefined" ? "undefined" : _typeof2(o);
-};!function (o, t) {
-  "function" == typeof define && define.amd ? define([], t) : "object" === ("undefined" == typeof exports ? "undefined" : _typeof(exports)) ? module.exports = t() : o.dcfHelperUuidv4 = t();
-}(void 0, function () {
-  return function () {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (o) {
-      var t = 16 * Math.random() | 0;return ("x" === o ? t : 3 & t | 8).toString(16);
+;(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
+    module.exports = factory();
+  } else {
+    root.dcfHelperUuidv4 = factory();
+  }
+})(undefined, function () {
+  function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0,
+          v = c === 'x' ? r : r & 0x3 | 0x8;
+      return v.toString(16);
     });
-  };
-});
+  }
 
+  return uuidv4;
+});
 
 },{}],4:[function(require,module,exports){
 'use strict';
 
-var dialog = require('dcf-dialog.babel');
+var dialog = require('dcf-dialog');
 // let lazyload = require('dcf-lazyLoad');
-var Notice = require('dcf-notice.babel');
+var Notice = require('dcf-notice');
 
 var noticeOptions = {
 	widget: 'notice',
@@ -539,6 +537,6 @@ var noticeOptions = {
 
 Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
-},{"dcf-dialog.babel":1,"dcf-notice.babel":2}]},{},[4])
+},{"dcf-dialog":1,"dcf-notice":2}]},{},[4])
 
 //# sourceMappingURL=bundle.js.map
