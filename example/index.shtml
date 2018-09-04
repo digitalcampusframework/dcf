@@ -43,7 +43,7 @@
 
   <button class="dcf-p-0 dcf-b-0 dcf-bg-transparent dcf-mobile-nav-toggle dcf-nav-toggle" id="dcf-menu-toggle" aria-pressed="false" aria-controls="dcf-local-navigation dcf-global-navigation" aria-haspopup="true">
     <span class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-h-100%">
-      <span class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-circle dcf-h-6 dcf-w-6" style="background-color: #30c;">
+      <span class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-circle dcf-h-6 dcf-w-6 example-bg-brand-alpha">
         <svg class="dcf-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 48 48"><g class="dcf-icon-menu-top"><path fill="#fff" d="M46,9H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-bottom"><path fill="#fff" d="M46,35H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-middle"><path fill="#fff" d="M46,22H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g></svg>
       </span>
     	<span class="dcf-sr-only">Show </span><span class="dcf-txt-xs">Menu</span>
