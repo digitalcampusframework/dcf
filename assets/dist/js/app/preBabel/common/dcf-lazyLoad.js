@@ -1,19 +1,26 @@
-'use strict';
-
+;(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
+  } else {
+    root.dcfLazyLoad = factory();
+  }
+}(this, function() {
 // https://github.com/deanhume/lazy-observer-load/blob/master/lazy-load.js
 
 // Get all of the images that are marked up to lazy load
-var images = document.querySelectorAll('.dcf-lazy-img');
-var config = {
+const images = document.querySelectorAll('.dcf-lazy-img');
+const config = {
   // If the image gets within 50px in the Y axis, start the download.
-  //   rootMargin: '0px 0px 50px 0px',
+//   rootMargin: '0px 0px 50px 0px',
   rootMargin: '0px',
-  //   threshold: 0.01
+//   threshold: 0.01
   threshold: 0.5
 };
 
-var imageCount = images.length;
-var observer = void 0;
+let imageCount = images.length;
+let observer;
 
 // If we don't have support for intersection observer, loads the images immediately
 if (!('IntersectionObserver' in window)) {
@@ -23,8 +30,8 @@ if (!('IntersectionObserver' in window)) {
   observer = new IntersectionObserver(onIntersection, config);
 
   // foreach() is not supported in IE
-  for (var i = 0; i < images.length; i++) {
-    var image = images[i];
+  for (let i = 0; i < images.length; i++) {
+    let image = images[i];
     if (image.classList.contains('dcf-lazy-img-handled')) {
       continue;
     }
@@ -38,8 +45,8 @@ if (!('IntersectionObserver' in window)) {
  * @param {string} url
  */
 function fetchImage(url) {
-  return new Promise(function (resolve, reject) {
-    var image = new Image();
+  return new Promise((resolve, reject) => {
+    const image = new Image();
     image.src = url;
     image.onload = resolve;
     image.onerror = reject;
@@ -51,14 +58,12 @@ function fetchImage(url) {
  * @param {object} image
  */
 function preloadImage(image) {
-  var src = image.dataset.src;
+  const src = image.dataset.src;
   if (!src) {
     return;
   }
 
-  return fetchImage(src).then(function () {
-    applyImage(image, src);
-  });
+  return fetchImage(src).then(() => { applyImage(image, src); });
 }
 
 /**
@@ -67,9 +72,9 @@ function preloadImage(image) {
  */
 function loadImagesImmediately(images) {
   // foreach() is not supported in IE
-  for (var _i = 0; _i < images.length; _i++) {
-    var _image = images[_i];
-    preloadImage(_image);
+  for (let i = 0; i < images.length; i++) {
+    let image = images[i];
+    preloadImage(image);
   }
 }
 
@@ -95,8 +100,8 @@ function onIntersection(entries) {
   }
 
   // Loop through the entries
-  for (var _i2 = 0; _i2 < entries.length; _i2++) {
-    var entry = entries[_i2];
+  for (let i = 0; i < entries.length; i++) {
+    let entry = entries[i];
     // Are we in viewport?
     if (entry.intersectionRatio > 0) {
       imageCount--;
@@ -119,3 +124,6 @@ function applyImage(img, src) {
   img.src = src;
   img.classList.add('dcf-fade-up');
 }
+
+return lazyLoad;
+}));

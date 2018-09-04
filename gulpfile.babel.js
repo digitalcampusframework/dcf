@@ -3,6 +3,7 @@
  * SETTING UP GULP
  * ------------------
  */
+
 // Modules
 const pkg = require('./package.json'); // bring in properties specified in package.json
 const gulp = require('gulp');
@@ -25,6 +26,9 @@ const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
 
+import exampleTasks, { exampleBundles } from './build-utils/example-theme-gulp-tasks';
+import { copy, copyNewer, copyNewerRename } from "./build-utils/copy";
+
 /**
  * ------------
  * GULP TASKS
@@ -39,9 +43,7 @@ gulp.task('stylelint:newer', (done) => {
 	$.pump([
 		gulp.src(distPaths.scssGlob),
 		customPlumber('Error Running stylelint:newer'),
-		// $.debug({title: 'All Files - [stylelint:newer]'}), // uncomment to see src files
 		$.newer({dest: distPaths.scssDest}),
-		$.debug({title: 'Passed Through - [stylelint:newer]'}), // uncomment to see files passed through
 		$.stylelint({
 			// fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
 			failAfterError: false,
@@ -64,7 +66,6 @@ gulp.task('stylelintFix', (done) => {
 				gulp.src(distPaths.scssGlob),
 				customPlumber('Error Running stylelintFix'),
 				$.newer({dest: distPaths.scssDest}),
-				$.debug({title: 'Passed Through - [stylelintFix]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
@@ -84,7 +85,6 @@ gulp.task('stylelintFixTest', (done) => {
 	$.pump([
 				gulp.src(distPaths.scssGlob),
 				$.newer({dest: distPaths.scssDest}),
-				$.debug({title: 'Passed Through - [stylelintFixTest]'}),
 				$.postcss(
 						[
 							baseStylelint({ fix:true }),
@@ -105,26 +105,8 @@ gulp.task('stylelintFixTest', (done) => {
 /* ----------------- */
 /* EXAMPLE STYLE LINT TASKS
 /* ----------------- */
-gulp.task('stylelint:example:cached', (done) => {
-	$.fancyLog('----> //** Linting Example SCSS files');
-	$.pump([
-		gulp.src(buildPaths.exampleScssGlob),
-		customPlumber('Error Running stylelint:newer:Example'),
-		// $.debug({title: 'All Files - [stylelint:newer:Example]'}), // uncomment to see src files
-		$.cached('stylelint:Example'),
-		$.debug({title: 'Passed Through - [stylelint:newer:Example]'}), // uncomment to see files passed through
-		$.stylelint({
-			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon, file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
-			failAfterError: true,
-			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),
-			reporters: [
-				{formatter: 'string', console: true},
-				{formatter: 'verbose', save: 'report.txt'},
-			],
-			debug: true
-		}),
-		gulp.dest(buildPaths.exampleScssLintedDest) // outputs autofixed files to build
-	], done);
+gulp.task('stylelint:example:cached', () => {
+	return exampleTasks.stylelint();
 });
 
 
@@ -132,24 +114,13 @@ gulp.task('stylelint:example:cached', (done) => {
 /* ----------------- */
 /* CORE SASS TASKS
 /* ----------------- */
-gulp.task('copySass', (done) => {
-	$.fancyLog('----> //** Copying SCSS files');
-	$.pump([
-		gulp.src(distPaths.scssGlob),
-		gulp.dest(distPaths.scssDest)
-	], done);
+gulp.task('copySass', () => {
+ return copy(distPaths.scssGlob, distPaths.scssDest, 'copySass');
 });
 
 
-gulp.task('copySass:newer', (done) => {
-	$.fancyLog('----> //** Copying SCSS files');
-	$.pump([
-		gulp.src(distPaths.scssGlob),
-		// $.debug({title: 'All Files - [copySass:newer]'})), // uncomment to see src files
-		$.newer(distPaths.scssDest),
-		$.debug({title: 'Passed Through - [copySass:newer]'}),
-		gulp.dest(distPaths.scssDest)
-	], done);
+gulp.task('copySass:newer', () => {
+	return copyNewer(distPaths.scssGlob, distPaths.scssDest, 'copySass:newer', distPaths.scssDest);
 });
 
 
@@ -182,8 +153,6 @@ gulp.task('sassCompile:example:screen', () => {
 	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen');
 });
 
-
-// TODO: convert to scss glob right away, ask Ryan how will grunt handle the sass glob
 
 // TODO: needs to be tested when there are actual files to work with
 gulp.task('sassCompile:example:mustard', () => {
@@ -249,7 +218,6 @@ gulp.task('copyCSS:newer', (done) => {
 		gulp.src(distPaths.cssGlob),
 		customPlumber('Error Running copyCSS'),
 		$.newer(distPaths.cssDest),
-		$.debug({title: 'Passed Through - [copySass:newer]'}), // uncomment to see what files are passed through
 		gulp.dest(distPaths.cssDest)
 	], done);
 });
@@ -326,7 +294,7 @@ gulp.task('cachedEslint', (done) => {
 	$.fancyLog('----> //** Linting JS files in App (cached) 🌈');
 
 	$.pump([
-		gulp.src(buildPaths.appJsGlob),
+		gulp.src(buildPaths.appJsSrcGlob),
 		customPlumber('Error Running eslint'),
 		$.cached('eslint'), // Only uncached and changed files past this point
 		$.eslint({fix: false}),
@@ -345,7 +313,8 @@ gulp.task('cachedEslint', (done) => {
 			});
 		}),
 		$.eslint.result((result) => {
-			if (result.warningCount > 0 || result.errorCount > 0) {
+			// allow caching if result.warningCount > 0
+			if (result.errorCount > 0) {
 				delete $.cached.caches.eslint[path.resolve(result.filePath)]; // If a file has errors/warnings uncache it
 			}
 		}),
@@ -358,7 +327,7 @@ gulp.task('cachedEslint', (done) => {
 gulp.task('eslintFix', (done) => {
 	$.fancyLog('----> //** Lint and Fix JS files in App 🌈');
 	$.pump([
-		gulp.src(buildPaths.appJsGlob),
+		gulp.src(buildPaths.appJsSrcGlob),
 		customPlumber('Error Running eslint'),
 		$.eslint({fix: true}),
 		$.eslint.format(),
@@ -381,7 +350,7 @@ gulp.task('eslintFix', (done) => {
 
 
 gulp.task('cachedEslint-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('cachedEslint'))
+	gulp.watch(buildPaths.appJsSrcGlob, gulp.series('cachedEslint'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
 				console.log(`${ePath} deleted - [cachedEsLint-watch]`);
@@ -394,31 +363,15 @@ gulp.task('cachedEslint-watch', () => {
 /* ----------------- */
 /* BABEL TASKS
 /* ----------------- */
-gulp.task('babel:newer', (done) => {
-	$.fancyLog('-> Transpiling ES6 via Babel... 🍕');
-
+gulp.task('babel', (done) => {
+	$.fancyLog('----> //** Transpiling ES6 via Babel... 🍕');
 	$.pump([
-		gulp.src(buildPaths.appJsGlob),
+		gulp.src(buildPaths.babelAppGlob),
 		customPlumber('Error Running Babel'),
-		$.newer({ dest: buildPaths.appJsDest }),
-		$.debug({title: 'Passed Through Babel Files'}),
+		$.cached('babel'),
 		$.babel({presets: [ 'env' ]}),
-		gulp.dest(buildPaths.appJsDest)
+		gulp.dest(buildPaths.appJsDestPostBabel)
 	], done);
-});
-
-
-gulp.task('lintBabel', gulp.series('cachedEslint', 'babel:newer'));
-
-
-gulp.task('lintBabel-watch', () => {
-	gulp.watch(buildPaths.appJsGlob, gulp.series('lintBabel'))
-			.on('unlink', (ePath, stats) => {
-				// code to execute on delete
-				console.log(`${ePath} deleted - [lintBabel-watch]`);
-				delete $.cached.caches.eslint[ePath]; // remove deleted files from cache
-				cascadeDelete(ePath, stats, buildPaths.appJsDest, 'lintBabel-watch', true);
-			});
 });
 
 
@@ -426,52 +379,144 @@ gulp.task('lintBabel-watch', () => {
 /* ----------------- */
 /* APP TASKS
 /* ----------------- */
-gulp.task('copyOptionalApp:newer', (done) => {
-	$.fancyLog('----> //** Copying Optional App files');
+gulp.task('commonAppUMD', (done) => {
+	delete require.cache[require.resolve('./build-utils/umd-tasks-common')];
+	const umdTasksCommon = require('./build-utils/umd-tasks-common');
+	$.fancyLog('----> //** Wrapping common modules in UMD');
+	const promises = [];
 
-	$.pump([
-		gulp.src(distPaths.optionalAppGlob),
-		$.debug({title: 'All Files - [copyOptionalApp:newer]'}), // uncomment to see src files
-		$.newer({ dest:distPaths.optionalAppDest }),
-		$.debug({title: 'Passed Through - [copyOptionalApp:newer]'}), // uncomment to see passed through files
-		gulp.dest(distPaths.optionalAppDest)
-	], done);
+	for (let umdTask in umdTasksCommon) {
+		promises.push(
+				new Promise((resolve, reject) => {
+					$.pump(umdTasksCommon[umdTask], function(err) {
+						if (!err) {
+							resolve();
+						} else {
+							console.err(err);
+							reject(err);
+						}
+					},done);
+				})
+		);
+	}
+
+	Promise.all(promises)
+			.catch((err) => console.error(err))
+			.then(() => done());
 });
 
 
-gulp.task('copyOptionalApp-watch', () => {
-	gulp.watch(distPaths.optionalAppGlob, gulp.series('copyOptionalApp:newer'))
+gulp.task('optionalAppUMD', (done) => {
+	delete require.cache[require.resolve('./build-utils/umd-tasks-optional')];
+	const umdTasksOptional = require('./build-utils/umd-tasks-optional');
+	$.fancyLog('----> //** Wrapping optional modules in UMD');
+
+	const promises = [];
+
+	for (let umdTask in umdTasksOptional) {
+		promises.push(
+				new Promise((resolve, reject) => {
+					$.pump(umdTasksOptional[umdTask], function(err) {
+						if (!err) {
+							resolve();
+						} else {
+							reject(err);
+						}
+					},done);
+				})
+		);
+	}
+
+	Promise.all(promises)
+			.catch(err => console.error(err))
+			.then(() => done());
+});
+
+
+gulp.task('appBuild', gulp.series('cachedEslint', 'commonAppUMD', 'optionalAppUMD', 'babel'));
+
+
+gulp.task('appBuild-watch', (done) => {
+	gulp.watch(buildPaths.appJsSrcGlob, gulp.series('appBuild'))
+			// TODO test this
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted - [copyOptionalApp-watch]`);
-				cascadeDelete(ePath, stats, distPaths.optionalAppDest, 'copyOptionalApp-watch', false);
+				console.log(`${ePath} deleted - [appBuild-watch]`);
+				// remove deleted files from cache,
+				// eslint and babel must be ran before to generate the cache otherwise it will throw an error
+				delete $.cached.caches.eslint[ePath];
+				delete $.cached.caches.babel[ePath];
+
+				// TODO when removing a module, please also delete the associated config from buildutils otherwise gulp will
+				// freak out
+				cascadeDelete(ePath, stats, buildPaths.appJsDestPreBabel, 'appBuild-watch', true);
+				cascadeDelete(ePath, stats, buildPaths.appJsDestPostBabel, 'appBuild-watch', true);
 			});
 });
 
 
-gulp.task('commonAppConcat:newer', () => {
-	return concat.newer(buildPaths.commonAppGlob, buildPaths.commonAppDest, buildNames.appJs, 'commonAppConcat:newer', path.join(buildPaths.commonAppDest, buildNames.appJs));
+gulp.task('appUglify:newer', () => {
+	return uglifyNewer(distPaths.appSrcGlob, distPaths.appDest, 'appUglify', distPaths.appDest);
 });
 
 
-gulp.task('commonAppUglify', () => {
-	return uglifyNewer(distPaths.commonAppSrc, distPaths.commonAppDest, 'commonAppUglify', path.join(distPaths.commonAppDest, distNames.commonAppMinJs));
-});
-
-
-gulp.task('commonAppDist', gulp.series('commonAppConcat:newer', 'commonAppUglify'));
-
-
-gulp.task('commonAppDist-watch', () => {
-	gulp.watch(buildPaths.commonAppGlob, gulp.series('commonAppConcat:newer', 'commonAppUglify'))
+gulp.task('appUglify-watch', () => {
+	gulp.watch(distPaths.appSrcGlob, gulp.series('appUglify:newer'))
 			.on('unlink', (ePath, stats) => {
-				console.log(`${ePath} deleted, recompiling ${distNames.commonAppMinJs} - [commonApp-watch]`)
-				concat.base(buildPaths.commonAppGlob, buildPaths.commonAppDest, buildNames.appJs, 'commonAppConcat'); // if src files get deleted, force rebuild of dist file.
+				// code to execute on delete
+				console.log(`${ePath} deleted - [appUglify-watch]`);
+				cascadeDelete(ePath, stats, distPaths.appDest, 'appUglify-watch', true);
 			});
 });
 
+gulp.task('copyPreBabel:newer', () => {
+	return copyNewer(buildPaths.babelAppGlob, distPaths.appDestPreBabel, 'copyPreBabel:newer', distPaths.appDest);
+});
 
-gulp.task('appDist-watch', gulp.parallel('lintBabel-watch', 'copyOptionalApp-watch', 'commonAppDist-watch'));
+
+gulp.task('copyPreBabel-watch', () => {
+	gulp.watch(buildPaths.babelAppGlob, gulp.series('copyPreBabel:newer'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, distPaths.appDest, 'copyPreBabel-watch', true);
+			});
+});
+
+gulp.task('copyPostBabel:newer', () => {
+	return copyNewer(buildPaths.appJsDestPostBabelGlob, distPaths.appDestPostBabel, 'copyPostBabel:newer', distPaths.appDest);
+});
+
+
+gulp.task('copyPostBabel-watch', () => {
+	gulp.watch(buildPaths.appJsDestPostBabelGlob, gulp.series('copyPostBabel:newer'))
+			.on('unlink', (ePath, stats) => {
+				// code to execute on delete
+				cascadeDelete(ePath, stats, distPaths.appDest, 'copyPostBabel-watch', true);
+			});
+});
+
+gulp.task('appDist-watch', gulp.parallel('appBuild-watch', 'appUglify-watch', 'copyPreBabel-watch', 'copyPostBabel-watch'));
+
+
+
+// /* ------------------------ */
+// /* EXAMPLE BROWSERIFY TASKS
+// /* ------------------------ */
+gulp.task('browserify', (done) => {
+	exampleBundles.forEach(bundle => {
+		exampleTasks.createBundle(bundle, false);
+	});
+	done(); // signal async completion
+});
+
+
+gulp.task('watchify', (done) => {
+	// watchify runs browserify (not the gulp task) once before entering watch state
+	exampleBundles.forEach(bundle => {
+		exampleTasks.createBundle(bundle, true);
+	});
+	done(); // signal async completion
+});
 
 
 
@@ -507,8 +552,10 @@ gulp.task('preWatch',
 					gulp.series('vendorDist'),
 					gulp.series('mustardDist'),
 					gulp.series(
-						'lintBabel',
-						gulp.parallel('copyOptionalApp:newer', 'commonAppDist'),
+						'appBuild',
+						'appUglify:newer',
+						'copyPreBabel:newer',
+						'copyPostBabel:newer'
 			 		),
 					gulp.series('sassDist'),
 					gulp.series('copyCSS:newer')
@@ -518,6 +565,7 @@ gulp.task('preWatch',
 
 gulp.task('watching 👀',
 		gulp.parallel(
+				'watchify',
 				'sassDist-watch',
 				'copyCSS-watch',
 				'vendorDist-watch',

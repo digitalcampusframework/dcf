@@ -19,7 +19,6 @@ function cssMinifyNewer (src, dest, taskName, newerDest) {
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
-		// $.debug({title: `All Files - [taskName]`})), // uncomment to see src files
 		$.newer(newerDest),
 		$.sourcemaps.init({loadMaps: true}),
 		$.postcss(
@@ -32,7 +31,6 @@ function cssMinifyNewer (src, dest, taskName, newerDest) {
 		$.if([ '*.css', '!*.min.css' ],
 				$.rename({ suffix: '.min' })
 		),
-		$.debug({title: `Passed Through - [taskName]`}),
 		$.header(banner, { pkg: pkg }),
 		$.size({
 			showFiles: true,
