@@ -3,29 +3,16 @@
 ///////////////////////////////
 
 
-// !Button
 .dcf-btn {
+  appearance: none;
   cursor: pointer;
   display: inline-block;
-//   font-family: inherit;
+  font-family: inherit;
   text-align: center;
   vertical-align: middle;
-  white-space: nowrap;
-//   -webkit-appearance: none;
 }
 
 a.dcf-btn-primary,
 a.dcf-btn-secondary {
   text-decoration: none;
 }
-
-
-// !Active
-// .dcf-active {
-//
-// }
-
-// button.dcf-active,
-// .dcf-btn.dcf-active {
-// //   @extend .dcf-active;
-// }
