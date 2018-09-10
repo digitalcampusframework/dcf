@@ -1,0 +1,12 @@
+///////////////////////////////////
+// !CORE / COMPONENTS / NAV: TOGGLE
+///////////////////////////////////
+
+
+@include mq(md, min, width) {
+
+  .dcf-nav-toggle {
+    display: none;
+  }
+
+}

@@ -1,0 +1,56 @@
+///////////////////////////////////
+// !THEME / COMPONENTS / NAV: LOCAL
+///////////////////////////////////
+
+
+.example .dcf-nav-local > ul > li > a {
+  font-weight: bold;
+  @include ls-1;
+  text-transform: uppercase;
+}
+
+
+.example .dcf-nav-local ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+
+.example .dcf-nav-local > ul {
+  display: grid;
+  @include txt-xs;
+  grid-gap: 1em 5vw;
+  grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr));
+}
+
+
+.example .dcf-nav-local ul ul {
+  @include txt-xs;
+  @include pt-4;
+}
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-nav-local {
+    grid-area: nav1;
+    position: relative;
+  }
+
+  .example .dcf-nav-local > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .example .dcf-nav-local > ul > li:not(:last-child) {
+    margin-right: 2vw;
+  }
+
+  .example .dcf-nav-local ul ul {
+    position: absolute;
+    @include sr-only;
+  }
+
+}

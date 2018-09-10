@@ -1,0 +1,23 @@
+//////////////////////////////
+// !THEME / UTILITIES / COLORS
+//////////////////////////////
+
+
+// !Brand: Alpha
+.example-brand-alpha { @include brand-alpha(!important); }
+
+
+// !Brand: Beta
+.example-brand-beta { @include brand-beta(!important); }
+
+
+// !Light
+.example-gray-light { @include gray-light(!important); }
+.example-gray-lighter { @include gray-lighter(!important); }
+.example-gray-lightest { @include gray-lightest(!important); }
+
+
+// !Dark
+.example-gray-dark { @include gray-dark(!important); }
+.example-gray-darker { @include gray-darker(!important); }
+.example-gray-darkest { @include gray-darkest(!important); }
