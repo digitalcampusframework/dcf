@@ -825,7 +825,7 @@
             </div>
           </div>
         </div>
-        <figcaption class="dcf-figcaption dcf-mt-4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the stretch object to reapply the page padding.</figcaption>
+        <figcaption class="dcf-figcaption dcf-mt-4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the bleed object to reapply the page padding.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-wrapper">Wrapper</a> (Objects)</p>
 
