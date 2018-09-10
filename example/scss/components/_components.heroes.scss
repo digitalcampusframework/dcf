@@ -1,30 +1,30 @@
-//////////////////////////////
-// !CORE / COMPONENTS / HEROES
-//////////////////////////////
+///////////////////////////////
+// !THEME / COMPONENTS / HEROES
+///////////////////////////////
 
 
-// .dcf-hero {
+// .example .dcf-hero {
 //
 // }
 //
-// .dcf-hero-fg {
+// .example .dcf-hero-fg {
 //
 // }
 //
-// .dcf-hero-bg {
+// .example .dcf-hero-bg {
 //
 // }
 //
-// .dcf-hero-video {
+// .example .dcf-hero-video {
 //
 // }
 //
-// .dcf-hero-img {
+// .example .dcf-hero-img {
 //
 // }
 
-.dcf-hero video,
-.dcf-hero img {
+.example .dcf-hero video,
+.example .dcf-hero img {
   display: block;
   width: 100%;
 
@@ -37,19 +37,19 @@
 
 @include mq(md) {
 
-  .dcf-hero {
+  .example .dcf-hero {
     height: 75vh;
     min-height: #{ms(24)}em; // 31.475em
     position: relative;
   }
 
-  .dcf-hero-layer {
+  .example .dcf-hero-layer {
     height: 100%;
     position: absolute;
     width: 100%;
   }
 
-  .dcf-hero-fg {
+  .example .dcf-hero-fg {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@
     z-index: 2;
   }
 
-  .dcf-hero-bg {
+  .example .dcf-hero-bg {
     overflow: hidden;
     z-index: 1;
   }
