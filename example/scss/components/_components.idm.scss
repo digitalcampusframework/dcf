@@ -1,11 +1,11 @@
-/////////////////////////////////////////////////
-// !CORE / COMPONENTS / IDM (IDENTITY MANAGEMENT)
-/////////////////////////////////////////////////
+//////////////////////////////////////////////////
+// !THEME / COMPONENTS / IDM (IDENTITY MANAGEMENT)
+//////////////////////////////////////////////////
 
 
 @include mq(md, max, width) {
 
-  .dcf-idm-toggle {
+  .example .dcf-idm-toggle {
     left: 75%;
   }
 
@@ -14,7 +14,7 @@
 
 @include mq(md, min, width) {
 
-  .dcf-idm {
+  .example .dcf-idm {
 
     @supports (display: grid) {
       grid-area: idm;
@@ -26,7 +26,7 @@
 
 
 // !Notification Center / Dashboard
-.dcf-dashboard {
+.example .dcf-dashboard {
 
   @supports (display: grid) {
     display: grid;
