@@ -36,12 +36,6 @@ li:not(:last-child) {
 }
 
 
-dt,
-dd:not(:last-child) {
-  @include mb-1;
-}
-
-
 dt {
   font-weight: bold;
 }
@@ -49,6 +43,12 @@ dt {
 
 dd {
   @include ml-0;
+}
+
+
+dt,
+dd:not(:last-child) {
+  @include mb-1;
 }
 
 
