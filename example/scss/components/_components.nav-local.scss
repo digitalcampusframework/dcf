@@ -10,13 +10,6 @@
 }
 
 
-.example .dcf-nav-local ul {
-  list-style: none;
-  margin-bottom: 0;
-  padding-left: 0;
-}
-
-
 .example .dcf-nav-local > ul {
   display: grid;
   @include txt-xs;
