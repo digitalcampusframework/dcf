@@ -783,7 +783,7 @@
       <h2>Objects</h2>
       <ul class="dcf-mt-6">
         <li><a href="#example-objects-wrapper">Wrapper</a></li>
-        <li><a href="#example-objects-stretch">Stretch</a></li>
+        <li><a href="#example-objects-bleed">Bleed</a></li>
         <li><a href="#example-objects-grids">Grids</a></li>
         <li><a href="#example-objects-lists">Lists</a>
           <ul>
@@ -807,17 +807,17 @@
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-stretch">Stretch</a> (Objects)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-bleed">Bleed</a> (Objects)</p>
 
-      <h3 class="dcf-mt-8" id="example-objects-stretch">Stretch</h3>
+      <h3 class="dcf-mt-8" id="example-objects-bleed">Bleed</h3>
       <dl class="dcf-measure">
-        <dt><code>.dcf-stretch</code></dt>
-        <dd>The stretch object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
+        <dt><code>.dcf-bleed</code></dt>
+        <dd>The bleed object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-stretch dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
+        <div class="dcf-bleed dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
           <div class="dcf-mb3">
-            <code class="dcf-txt-middle dcf-bold">.dcf-stretch</code>
+            <code class="dcf-txt-middle dcf-bold">.dcf-bleed</code>
           </div>
           <div class="dcf-wrapper">
             <div class="dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray">
@@ -1891,7 +1891,7 @@
         <dd>Hero styles are still in development.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-hero dcf-stretch">
+        <div class="dcf-hero dcf-bleed">
           <div class="dcf-wrapper dcf-hero-layer dcf-hero-fg">
             <header class="dcf-hgroup">
               <h1 class="">All-time Enrollment Record</h1>
