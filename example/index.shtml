@@ -1344,7 +1344,7 @@
       <h2>Components</h2>
       <ul class="dcf-mt-6">
   <!--       <li><a href="#example-components-alerts">Alerts</a></li> -->
-        <li><a href="#example-components-articles">Articles</a></li>
+<!--         <li><a href="#example-components-articles">Articles</a></li> -->
         <li><a href="#example-components-badges">Badges</a>
           <ul>
             <li><a href="#example-components-standard-badges">Standard Badges</a></li>
@@ -1376,7 +1376,7 @@
             <li><a href="#example-components-subheads">Subheads</a></li>
           </ul>
         </li>
-        <li><a href="#example-components-heroes">Heroes</a></li>
+<!--         <li><a href="#example-components-heroes">Heroes</a></li> -->
   <!--       <li><a href="#example-components-icons">Icons</a></li> -->
   <!--       <li><a href="#example-components-idm">Identity Management</a></li> -->
         <li><a href="#example-components-input-groups">Input Groups</a>
@@ -1403,6 +1403,7 @@
       <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
   -->
 
+<!--
       <h3 class="dcf-mt-8" id="example-components-articles">Articles</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-article</code></dt>
@@ -1517,7 +1518,8 @@
           </footer>
         </article>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components) <!-- , <a href="#example-components-paragraphs">Paragraphs</a> (Components) --></p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components), <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p>
+-->
 
       <h3 class="dcf-mt-8" id="example-components-badges">Badges</h3>
       <dl class="dcf-measure">
@@ -1880,7 +1882,7 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
-      <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
+ <!--     <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-hero</code></dt>
         <dt><code>.dcf-hero-layer</code></dt>
@@ -1903,13 +1905,13 @@
             </div>
           </div>
           <div class="dcf-hero-layer dcf-hero-bg">
-    <!--
+
             <div class="dcf-hero-layer dcf-hero-video">
               <video poster="http://via.placeholder.com/1600x900" autoplay loop>
                 <source src="images/1920x1080.mp4">
               </video>
             </div>
-    -->
+
             <div class="dcf-hero-layer dcf-hero-img">
               <img
                 sizes="100vw"
@@ -1927,6 +1929,7 @@
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">This example shows some of the elements that could be included in a hero, but styles and supported elements have not yet been finalized.</figcaption>
       </figure>
+-->
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-icons">Icons</h3>
