@@ -8,4 +8,23 @@
   @include bg-white;
   box-shadow: 0 0 2px 0 rgba(0,0,0,.25);
   @include txt-sm;
+  margin-bottom: 0;
+}
+
+
+// !Card Image
+.example .dcf-card img {
+  display: block;
+  width: 100%;
+}
+
+
+// !Card Block
+.example .dcf-card-block {
+  padding: $length-em-7 $length-em-6;
+}
+
+
+.example .dcf-card-block p:last-child {
+  margin-bottom: 0;
 }
