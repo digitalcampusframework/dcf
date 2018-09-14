@@ -43,7 +43,7 @@
 
   <button class="dcf-p-0 dcf-b-0 dcf-bg-transparent dcf-mobile-nav-toggle dcf-nav-toggle" id="dcf-menu-toggle" aria-pressed="false" aria-controls="dcf-local-navigation dcf-global-navigation" aria-haspopup="true">
     <span class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-h-100%">
-      <span class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-circle dcf-h-6 dcf-w-6" style="background-color: #30c;">
+      <span class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-circle dcf-h-6 dcf-w-6 example-bg-brand-alpha">
         <svg class="dcf-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 48 48"><g class="dcf-icon-menu-top"><path fill="#fff" d="M46,9H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-bottom"><path fill="#fff" d="M46,35H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-middle"><path fill="#fff" d="M46,22H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g></svg>
       </span>
     	<span class="dcf-sr-only">Show </span><span class="dcf-txt-xs">Menu</span>
@@ -783,7 +783,7 @@
       <h2>Objects</h2>
       <ul class="dcf-mt-6">
         <li><a href="#example-objects-wrapper">Wrapper</a></li>
-        <li><a href="#example-objects-stretch">Stretch</a></li>
+        <li><a href="#example-objects-bleed">Bleed</a></li>
         <li><a href="#example-objects-grids">Grids</a></li>
         <li><a href="#example-objects-lists">Lists</a>
           <ul>
@@ -807,17 +807,17 @@
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Ensure that the wrapper object is added to the <code>&lt;main&gt;</code> element to prevent content from colliding with the left and right edges of the browser viewport by default.</figcaption>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-stretch">Stretch</a> (Objects)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-bleed">Bleed</a> (Objects)</p>
 
-      <h3 class="dcf-mt-8" id="example-objects-stretch">Stretch</h3>
+      <h3 class="dcf-mt-8" id="example-objects-bleed">Bleed</h3>
       <dl class="dcf-measure">
-        <dt><code>.dcf-stretch</code></dt>
-        <dd>The stretch object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
+        <dt><code>.dcf-bleed</code></dt>
+        <dd>The bleed object forces content to extend beyond the confines of the <a href="#example-object-wrapper">wrapper object</a>, filling the browser viewport.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-stretch dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
+        <div class="dcf-bleed dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray dcf-txt-center">
           <div class="dcf-mb3">
-            <code class="dcf-txt-middle dcf-bold">.dcf-stretch</code>
+            <code class="dcf-txt-middle dcf-bold">.dcf-bleed</code>
           </div>
           <div class="dcf-wrapper">
             <div class="dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray">
@@ -825,7 +825,7 @@
             </div>
           </div>
         </div>
-        <figcaption class="dcf-figcaption dcf-mt-4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the stretch object to reapply the page padding.</figcaption>
+        <figcaption class="dcf-figcaption dcf-mt-4">The <a href="#example-object-wrapper">wrapper object</a> can be nested inside the bleed object to reapply the page padding.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-wrapper">Wrapper</a> (Objects)</p>
 
@@ -1344,7 +1344,7 @@
       <h2>Components</h2>
       <ul class="dcf-mt-6">
   <!--       <li><a href="#example-components-alerts">Alerts</a></li> -->
-        <li><a href="#example-components-articles">Articles</a></li>
+<!--         <li><a href="#example-components-articles">Articles</a></li> -->
         <li><a href="#example-components-badges">Badges</a>
           <ul>
             <li><a href="#example-components-standard-badges">Standard Badges</a></li>
@@ -1376,7 +1376,7 @@
             <li><a href="#example-components-subheads">Subheads</a></li>
           </ul>
         </li>
-        <li><a href="#example-components-heroes">Heroes</a></li>
+<!--         <li><a href="#example-components-heroes">Heroes</a></li> -->
   <!--       <li><a href="#example-components-icons">Icons</a></li> -->
   <!--       <li><a href="#example-components-idm">Identity Management</a></li> -->
         <li><a href="#example-components-input-groups">Input Groups</a>
@@ -1403,6 +1403,7 @@
       <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
   -->
 
+<!--
       <h3 class="dcf-mt-8" id="example-components-articles">Articles</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-article</code></dt>
@@ -1517,7 +1518,8 @@
           </footer>
         </article>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components) <!-- , <a href="#example-components-paragraphs">Paragraphs</a> (Components) --></p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components), <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p>
+-->
 
       <h3 class="dcf-mt-8" id="example-components-badges">Badges</h3>
       <dl class="dcf-measure">
@@ -1660,14 +1662,14 @@
       <figure class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary dcf-active" aria-pressed="true">Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary dcf-active" aria-pressed="true">Secondary Button</button>
+        <button class="dcf-btn dcf-btn-tertiary dcf-active" aria-pressed="true">Tertiary Button</button>
       </figure>
 
       <h4 class="dcf-mt-6" id="example-components-button-state-disabled">Button State: Disabled</h4>
       <figure class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary" disabled>Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary" disabled>Secondary Button</button>
-        <a class="dcf-btn dcf-btn-primary dcf-disabled" href="#" role="button" aria-disabled="true">Primary Link</a>
-        <a class="dcf-btn dcf-btn-secondary dcf-disabled" href="#" role="button" aria-disabled="true">Secondary Link</a>
+        <button class="dcf-btn dcf-btn-tertiary" disabled>Tertiary Button</button>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
@@ -1750,6 +1752,8 @@
 
       <h3 class="dcf-mt-8" id="example-components-forms">Forms</h3>
       <dl class="dcf-measure">
+        <dt><code>.dcf-legend</code></dt>
+        <dd>Add to <code>&lt;legend&gt;</code> elements.</dd>
         <dt><code>.dcf-form-group</code></dt>
         <dd>Wrap groups of form elements (such as a label and input pair) to visually offset them from other form elements.</dd>
         <dt><code>.dcf-label</code></dt>
@@ -1768,7 +1772,7 @@
       <figure class="dcf-mt-8">
         <form action="?" method="post">
           <fieldset>
-            <legend>Sample Form Content</legend>
+            <legend class="dcf-legend">Sample Form Content</legend>
             <div class="dcf-form-group">
               <label class="dcf-label" for="example-components-form-name">Name <small class="dcf-required">Required</small></label>
               <input class="dcf-input-text" id="example-components-form-name" type="text" required>
@@ -1809,7 +1813,7 @@
             </div>
     -->
             <fieldset>
-              <legend>Checkboxes</legend>
+              <legend class="dcf-legend">Checkboxes</legend>
               <div class="dcf-form-group">
                 <input class="dcf-input-control" id="example-components-form-checkbox1" type="checkbox" value="0">
                 <label for="example-components-form-checkbox1">Checkbox 1</label>
@@ -1820,7 +1824,7 @@
               </div>
             </fieldset>
             <fieldset>
-              <legend>Radio buttons</legend>
+              <legend class="dcf-legend">Radio buttons</legend>
               <div>
                 <div class="dcf-form-group">
                   <input class="dcf-input-control" id="example-components-form-radio-1" name="helpful" type="radio" value="0">
@@ -1878,7 +1882,7 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
-      <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
+ <!--     <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-hero</code></dt>
         <dt><code>.dcf-hero-layer</code></dt>
@@ -1889,7 +1893,7 @@
         <dd>Hero styles are still in development.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-hero dcf-stretch">
+        <div class="dcf-hero dcf-bleed">
           <div class="dcf-wrapper dcf-hero-layer dcf-hero-fg">
             <header class="dcf-hgroup">
               <h1 class="">All-time Enrollment Record</h1>
@@ -1901,13 +1905,13 @@
             </div>
           </div>
           <div class="dcf-hero-layer dcf-hero-bg">
-    <!--
+
             <div class="dcf-hero-layer dcf-hero-video">
               <video poster="http://via.placeholder.com/1600x900" autoplay loop>
                 <source src="images/1920x1080.mp4">
               </video>
             </div>
-    -->
+
             <div class="dcf-hero-layer dcf-hero-img">
               <img
                 sizes="100vw"
@@ -1925,6 +1929,7 @@
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">This example shows some of the elements that could be included in a hero, but styles and supported elements have not yet been finalized.</figcaption>
       </figure>
+-->
 
   <!--
       <h3 class="dcf-mt-8" id="example-components-icons">Icons</h3>
@@ -1948,7 +1953,7 @@
         <dd>An add-on provides additional context for a text input in a form. It can be placed before and/or after the text input.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <form class="dcf-d-flex dcf-ai-center" id="example-input-group-addon-before" action="#" method="get">
+        <form class="dcf-input-group-form" id="example-input-group-addon-before" action="#" method="get">
           <label class="dcf-label dcf-mr-4" for="example-input-group-addon-before-input">Username</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">@</span>
@@ -1959,7 +1964,7 @@
       </figure>
 
       <figure class="dcf-mt-6">
-        <form class="dcf-d-flex dcf-ai-center" id="example-input-group-addon-after" action="#" method="get">
+        <form class="dcf-input-group-form" id="example-input-group-addon-after" action="#" method="get">
           <label class="dcf-label dcf-mr-4" for="example-input-group-addon-after-input">Email</label>
           <div class="dcf-input-group">
             <input class="dcf-input-text" id="example-input-group-addon-after-input" name="q" type="search" required>
@@ -1970,7 +1975,7 @@
       </figure>
 
       <figure class="dcf-mt-6">
-        <form class="dcf-d-flex dcf-ai-center" id="example-input-group-addon-both" action="#" method="get">
+        <form class="dcf-input-group-form" id="example-input-group-addon-both" action="#" method="get">
           <label class="dcf-label dcf-mr-4" for="example-input-group-addon-both-input">Amount</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">$</span>
@@ -1984,7 +1989,7 @@
       <h4 class="dcf-mt-6" id="example-components-input-groups-button"><span class="dcf-sr-only">Input Groups </span>With A Button</h4>
       <p class="dcf-measure">If a form consists of a single field and button, consider using an input group for a more compact layout.</p>
       <figure class="dcf-mt-6">
-        <form class="dcf-d-flex dcf-ai-center" id="example-input-group-button" action="#" method="get">
+        <form class="dcf-input-group-form" id="example-input-group-button" action="#" method="get">
           <label class="dcf-label dcf-mr-4" for="example-input-group-button-input">Label</label>
           <div class="dcf-input-group">
             <input class="dcf-input-text" id="example-input-group-button-input" name="q" type="search" required>
@@ -2192,7 +2197,6 @@
           </ul>
         </li>
         <li><a href="#example-utilities-colors">Colors</a></li>
-        <li><a href="#example-utilities-disabled">Disabled</a></li>
         <li><a href="#example-utilities-display">Display</a></li>
         <li><a href="#example-utilities-flexbox">Flexbox</a>
           <ul>
@@ -2532,11 +2536,6 @@
         <dt><code>.dcf-inverse</code></dt><dd>light color on dark background</dd>
       </dl>
 
-      <h3 class="dcf-mt-8" id="example-utilities-disabled">Disabled</h3>
-      <dl>
-        <dt><code>.dcf-disabled</code></dt><dd>cursor: not allowed, pointer-events: none, decreased opacity</dd>
-      </dl>
-
       <h3 class="dcf-mt-8" id="example-utilities-display">Display</h3>
       <dl>
         <dt><code>.dcf-d-none</code></dt><dd>display: none</dd>
@@ -2682,6 +2681,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-all">Margin (All Sides)</h4>
           <dl>
+            <dt><code>.dcf-m-auto</code></dt><dd>margin (all sides): auto</dd>
             <dt><code>.dcf-m-0</code></dt><dd>margin (all sides): 0</dd>
             <dt><code>.dcf-m-1</code></dt><dd>margin (all sides): .42em</dd>
             <dt><code>.dcf-m-2</code></dt><dd>margin (all sides): .56em</dd>
@@ -2698,6 +2698,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-top">Margin Top</h4>
           <dl>
+            <dt><code>.dcf-mt-auto</code></dt><dd>margin-top: auto</dd>
             <dt><code>.dcf-mt-0</code></dt><dd>margin-top: 0</dd>
             <dt><code>.dcf-mt-1</code></dt><dd>margin-top: .42em</dd>
             <dt><code>.dcf-mt-2</code></dt><dd>margin-top: .56em</dd>
@@ -2714,6 +2715,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-right">Margin Right</h4>
           <dl>
+            <dt><code>.dcf-mr-auto</code></dt><dd>margin-right: auto</dd>
             <dt><code>.dcf-mr-0</code></dt><dd>margin-right: 0</dd>
             <dt><code>.dcf-mr-1</code></dt><dd>margin-right: .42em</dd>
             <dt><code>.dcf-mr-2</code></dt><dd>margin-right: .56em</dd>
@@ -2730,6 +2732,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-bottom">Margin Bottom</h4>
           <dl>
+            <dt><code>.dcf-mb-auto</code></dt><dd>margin-bottom: auto</dd>
             <dt><code>.dcf-mb-0</code></dt><dd>margin-bottom: 0</dd>
             <dt><code>.dcf-mb-1</code></dt><dd>margin-bottom: .42em</dd>
             <dt><code>.dcf-mb-2</code></dt><dd>margin-bottom: .56em</dd>
@@ -2746,6 +2749,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-margin-left">Margin Left</h4>
           <dl>
+            <dt><code>.dcf-ml-auto</code></dt><dd>margin-left: auto</dd>
             <dt><code>.dcf-ml-0</code></dt><dd>margin-left: 0</dd>
             <dt><code>.dcf-ml-1</code></dt><dd>margin-left: .42em</dd>
             <dt><code>.dcf-ml-2</code></dt><dd>margin-left: .56em</dd>
@@ -3015,8 +3019,6 @@
         <dt><code>.dcf-invisible</code></dt><dd>visibility: hidden</dd>
         <dt><code>.dcf-visible</code></dt><dd>visibility: visible</dd>
         <dt><code>.dcf-sr-only</code></dt><dd>visible for screen readers only</dd>
-        <dt><code>.dcf-sr-only.dcf-show-on-focus:active</code></dt><dd>visible for screen readers only when active</dd>
-        <dt><code>.dcf-sr-only.dcf-show-on-focus:focus</code></dt><dd>visible for screen readers only when focused</dd>
       </dl>
 
     </section>

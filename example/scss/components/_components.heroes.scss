@@ -1,0 +1,65 @@
+///////////////////////////////
+// !THEME / COMPONENTS / HEROES
+///////////////////////////////
+
+
+// .example .dcf-hero {
+//
+// }
+//
+// .example .dcf-hero-fg {
+//
+// }
+//
+// .example .dcf-hero-bg {
+//
+// }
+//
+// .example .dcf-hero-video {
+//
+// }
+//
+// .example .dcf-hero-img {
+//
+// }
+
+.example .dcf-hero video,
+.example .dcf-hero img {
+  display: block;
+  width: 100%;
+
+  @supports (object-fit: cover) {
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+@include mq(md) {
+
+  .example .dcf-hero {
+    height: 75vh;
+    min-height: #{ms(24)}em; // 31.475em
+    position: relative;
+  }
+
+  .example .dcf-hero-layer {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .example .dcf-hero-fg {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+  }
+
+  .example .dcf-hero-bg {
+    overflow: hidden;
+    z-index: 1;
+  }
+
+}

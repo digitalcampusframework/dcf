@@ -1,0 +1,23 @@
+///////////////////////////
+// !THEME / MIXINS / COLORS
+///////////////////////////
+
+
+// !Brand: Alpha
+@mixin brand-alpha($imp:null) { color: $color-brand-alpha $imp; }
+
+
+// !Brand: Beta
+@mixin brand-beta($imp:null) { color: $color-brand-beta $imp; }
+
+
+// !Light
+@mixin gray-light($imp:null) { color: $gray-light $imp; }
+@mixin gray-lighter($imp:null) { color: $gray-lighter $imp; }
+@mixin gray-lightest($imp:null) { color: $gray-lightest $imp; }
+
+
+// !Dark
+@mixin gray-dark($imp:null) { color: $gray-dark $imp; }
+@mixin gray-darker($imp:null) { color: $gray-darker $imp; }
+@mixin gray-darkest($imp:null) { color: $gray-darkest $imp; }

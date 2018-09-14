@@ -19,7 +19,6 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
-		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
 		$.newer({dest: newerDest}),
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
@@ -34,7 +33,6 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 					postcssNormalize({forceImport:true})
 				]
 		),
-		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
@@ -45,7 +43,6 @@ function sassCompileScreen (src, dest, taskName) {
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
-		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
@@ -59,7 +56,6 @@ function sassCompileScreen (src, dest, taskName) {
 					postcssNormalize({forceImport:true})
 				]
 		),
-		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);
@@ -71,7 +67,6 @@ function sassCompileBase (src, dest, taskName) {
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
-		// $.debug({title: `All Files - [${taskName}]`}), // uncomment to see src files
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
@@ -84,7 +79,6 @@ function sassCompileBase (src, dest, taskName) {
 					postcssPresetEnv(),
 				]
 		),
-		$.debug({title: `Passed Through - [${taskName}]`}),
 		$.sourcemaps.write('./'),
 		gulp.dest(dest)
 	]);

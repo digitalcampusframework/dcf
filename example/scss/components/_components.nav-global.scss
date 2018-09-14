@@ -1,0 +1,21 @@
+////////////////////////////////////
+// !THEME / COMPONENTS / NAV: GLOBAL
+////////////////////////////////////
+
+
+.example .dcf-nav-global li {
+  display: inline;
+}
+
+.example .dcf-nav-global li:not(:last-child) {
+  margin-right: 2vw;
+}
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-nav-global {
+    grid-area: nav2;
+  }
+
+}

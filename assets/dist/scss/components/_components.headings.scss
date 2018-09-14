@@ -10,11 +10,11 @@
 .dcf-h4,
 .dcf-h5,
 .dcf-h6 {
+  @include lh-2;
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
-  @include lh-2;
 
-  // ?
+  & + &,
   p + &,
   ol + &,
   ul + &,

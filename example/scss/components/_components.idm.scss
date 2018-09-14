@@ -1,0 +1,38 @@
+//////////////////////////////////////////////////
+// !THEME / COMPONENTS / IDM (IDENTITY MANAGEMENT)
+//////////////////////////////////////////////////
+
+
+@include mq(md, max, width) {
+
+  .example .dcf-idm-toggle {
+    left: 75%;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-idm {
+
+    @supports (display: grid) {
+      grid-area: idm;
+    }
+
+  }
+
+}
+
+
+// !Notification Center / Dashboard
+.example .dcf-dashboard {
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-areas: "one two";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: #{ms(8)}em 5vw;
+  }
+
+}
