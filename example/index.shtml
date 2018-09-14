@@ -2264,6 +2264,7 @@
           </ul>
         </li>
         <li><a href="#example-utilities-visibility">Visibility</a></li>
+        <li><a href="#example-utilities-z-index">Z-index</a></li>
       </ul>
 
       <h3 class="dcf-mt-8" id="example-utilities-aspect-ratios">Aspect Ratios</h3>
@@ -3019,6 +3020,13 @@
         <dt><code>.dcf-invisible</code></dt><dd>visibility: hidden</dd>
         <dt><code>.dcf-visible</code></dt><dd>visibility: visible</dd>
         <dt><code>.dcf-sr-only</code></dt><dd>visible for screen readers only</dd>
+      </dl>
+
+      <h3 class="dcf-mt-8" id="example-utilities-z-index">Z-index</h3>
+      <dl>
+        <dt><code>.dcf-z-0</code></dt><dd>z-index: 0</dd>
+        <dt><code>.dcf-z-1</code></dt><dd>z-index: 1</dd>
+        <dt><code>.dcf-z-2</code></dt><dd>z-index: 2</dd>
       </dl>
 
     </section>
