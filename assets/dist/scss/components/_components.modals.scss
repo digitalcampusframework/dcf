@@ -33,7 +33,7 @@
 .dcf-modal-content {
   height: auto;
   max-height: 100%;
-  width: 90%;
+  width: calc(100% - (2 * #{ms(12)}vw) ); // Match width of .dcf-wrapper
 }
 
 
