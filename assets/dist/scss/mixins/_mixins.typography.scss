@@ -11,18 +11,18 @@
 @mixin txt-sm($imp:null) { font-size: #{ms(-1)}em; }
 @mixin txt-md($imp:null) { font-size: #{ms(0)}em; }
 @mixin txt-lg($imp:null) { font-size: #{ms(1)}em; }
-@mixin txt-h6($imp:null) { font-size: #{ms(2)}em; }
-@mixin txt-h5($imp:null) { font-size: #{ms(3)}em; }
-@mixin txt-h4($imp:null) { font-size: #{ms(4)}em; }
-@mixin txt-h3($imp:null) { font-size: #{ms(5)}em; }
-@mixin txt-h2($imp:null) { font-size: #{ms(6)}em; }
-@mixin txt-h1($imp:null) { font-size: #{ms(7)}em; }
-@mixin txt-xl($imp:null) { font-size: #{ms(8)}em; }
-@mixin txt-2xl($imp:null) { font-size: #{ms(9)}em; }
-@mixin txt-3xl($imp:null) { font-size: #{ms(10)}em; }
-@mixin txt-4xl($imp:null) { font-size: #{ms(11)}em; }
-@mixin txt-5xl($imp:null) { font-size: #{ms(12)}em; }
-@mixin txt-6xl($imp:null) { font-size: #{ms(13)}em; }
+@mixin txt-h6($imp:null) { font-size: #{ms(1)}em; }
+@mixin txt-h5($imp:null) { font-size: #{ms(2)}em; }
+@mixin txt-h4($imp:null) { font-size: #{ms(3)}em; }
+@mixin txt-h3($imp:null) { font-size: #{ms(4)}em; }
+@mixin txt-h2($imp:null) { font-size: #{ms(5)}em; }
+@mixin txt-h1($imp:null) { font-size: #{ms(6)}em; }
+@mixin txt-xl($imp:null) { font-size: #{ms(7)}em; }
+@mixin txt-2xl($imp:null) { font-size: #{ms(8)}em; }
+@mixin txt-3xl($imp:null) { font-size: #{ms(9)}em; }
+@mixin txt-4xl($imp:null) { font-size: #{ms(10)}em; }
+@mixin txt-5xl($imp:null) { font-size: #{ms(11)}em; }
+@mixin txt-6xl($imp:null) { font-size: #{ms(12)}em; }
 
 
 // !Horizontal Text Alignment
