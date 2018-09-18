@@ -606,12 +606,12 @@
         <dd>Headings should be selected to accurately convey content hierarchy, not to resize text for the aesthetic needs of the page layout. Instead, use <a href="#example-utilities-typography">utility classes</a> to increase or decrease a heading's font-size.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <h1>h1. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2.67em</small></h1>
-        <h2>h2. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2.37em</small></h2>
-        <h3>h3. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2em</small></h3>
-        <h4>h4. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.77em</small></h4>
-        <h5>h5. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.5em</small></h5>
-        <h6>h6. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.33em</small></h6>
+        <h1>h1. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2.37em</small></h1>
+        <h2>h2. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2em</small></h2>
+        <h3>h3. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.77em</small></h3>
+        <h4>h4. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.5em</small></h4>
+        <h5>h5. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.33em</small></h5>
+        <h6>h6. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.13em</small></h6>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-headings">Headings</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
@@ -2928,19 +2928,19 @@
             <dt><code>.dcf-txt-xs</code></dt><dd>font-size: .75em</dd>
             <dt><code>.dcf-txt-sm</code></dt><dd>font-size: .84em</dd>
             <dt><code>.dcf-txt-md</code></dt><dd>font-size: 1em</dd>
-            <dt><code>.dcf-txt-lg</code></dt><dd>font-size: 1.13em</dd>
-            <dt><code>.dcf-txt-h6</code></dt><dd>font-size: 1.33em</dd>
-            <dt><code>.dcf-txt-h5</code></dt><dd>font-size: 1.5em</dd>
-            <dt><code>.dcf-txt-h4</code></dt><dd>font-size: 1.77em</dd>
-            <dt><code>.dcf-txt-h3</code></dt><dd>font-size: 2em</dd>
-            <dt><code>.dcf-txt-h2</code></dt><dd>font-size: 2.37em</dd>
-            <dt><code>.dcf-txt-h1</code></dt><dd>font-size: 2.67em</dd>
-            <dt><code>.dcf-txt-xl</code></dt><dd>font-size: 3.16em</dd>
-            <dt><code>.dcf-txt-2xl</code></dt><dd>font-size: 4.21em</dd>
-            <dt><code>.dcf-txt-3xl</code></dt><dd>font-size: 4.74em</dd>
-            <dt><code>.dcf-txt-4xl</code></dt><dd>font-size: 5.62em</dd>
-            <dt><code>.dcf-txt-5xl</code></dt><dd>font-size: 6.32em</dd>
-            <dt><code>.dcf-txt-6xl</code></dt><dd>font-size: 7.49em</dd>
+            <dt><code>.dcf-txt-lg</code></dt>
+            <dt><code>.dcf-txt-h6</code></dt><dd>font-size: 1.13em</dd>
+            <dt><code>.dcf-txt-h5</code></dt><dd>font-size: 1.33em</dd>
+            <dt><code>.dcf-txt-h4</code></dt><dd>font-size: 1.5em</dd>
+            <dt><code>.dcf-txt-h3</code></dt><dd>font-size: 1.77em</dd>
+            <dt><code>.dcf-txt-h2</code></dt><dd>font-size: 2em</dd>
+            <dt><code>.dcf-txt-h1</code></dt><dd>font-size: 2.37em</dd>
+            <dt><code>.dcf-txt-xl</code></dt><dd>font-size: 2.67em</dd>
+            <dt><code>.dcf-txt-2xl</code></dt><dd>font-size: 3.16em</dd>
+            <dt><code>.dcf-txt-3xl</code></dt><dd>font-size: 4.21em</dd>
+            <dt><code>.dcf-txt-4xl</code></dt><dd>font-size: 4.74em</dd>
+            <dt><code>.dcf-txt-5xl</code></dt><dd>font-size: 5.62em</dd>
+            <dt><code>.dcf-txt-6xl</code></dt><dd>font-size: 6.32em</dd>
           </dl>
         </div>
         <div>
