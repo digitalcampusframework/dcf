@@ -1394,7 +1394,12 @@
             <li><a href="#example-components-display-lead-paragraphs">Lead Paragraphs</a></li>
           </ul>
         </li>-->
-        <li><a href="#example-components-tables">Tables</a></li>
+        <li><a href="#example-components-tables">Tables</a>
+          <ul>
+            <li><a href="#example-components-bordered-tables">Bordered Tables</a></li>
+            <li><a href="#example-components-striped-tables">Striped Tables</a></li>
+          </ul>
+        </li>
       </ul>
 
 
@@ -2063,7 +2068,7 @@
       </dl>
       <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
         <table class="dcf-table">
-          <caption>This is the caption for a table. Utility classes are used to right-align numbers in this table.</caption>
+          <caption>This is a table. Utility classes are used to right-align numbers in this table.</caption>
           <thead>
             <tr>
               <th>Table heading</th>
@@ -2101,10 +2106,14 @@
         </table>
       </figure>
 
-      <p class="dcf-measure">Horizontal borders can be added as needed with utility classes:</p>
+      <h4 class="dcf-mt-6" id="example-components-bordered-tables">Bordered Tables</h4>
+      <dl class="dcf-measure">
+        <dt><code>.dcf-table-bordered</code></dt>
+        <dd>The bordered table adds borders to all cells in the table.</dd>
+      </dl>
       <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
-        <table class="dcf-table">
-          <caption>This is the caption for a table with border utilities added as needed.</caption>
+        <table class="dcf-table dcf-table-bordered">
+          <caption>This is a bordered table.</caption>
           <thead>
             <tr>
               <th>Table heading</th>
@@ -2122,25 +2131,71 @@
             </tr>
             <tr>
               <td></td>
-              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">16</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Nullam quis risus eget urna mollis ornare vel eu leo</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Ornare Porta Vulputate</td>
+              <td class="dcf-txt-right">16</td>
+              <td>Nullam quis risus eget urna mollis ornare vel eu leo</td>
+              <td>Ornare Porta Vulputate</td>
             </tr>
             <tr>
-              <th class="dcf-bt-solid dcf-bt-1 example-bt-gray">Table heading</th>
-              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">387</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Inceptos Ullamcorper Etiam</td>
+              <th>Table heading</th>
+              <td class="dcf-txt-right">387</td>
+              <td>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
+              <td>Inceptos Ullamcorper Etiam</td>
             </tr>
             <tr>
               <td></td>
-              <td class="dcf-txt-right dcf-bt-solid dcf-bt-1 example-bt-gray">9</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
-              <td class="dcf-bt-solid dcf-bt-1 example-bt-gray">Bibendum Sit Lorem</td>
+              <td class="dcf-txt-right">9</td>
+              <td>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
+              <td>Bibendum Sit Lorem</td>
             </tr>
           </tbody>
         </table>
       </figure>
+
+      <h4 class="dcf-mt-6" id="example-components-striped-tables">Striped Tables</h4>
+      <dl class="dcf-measure">
+        <dt><code>.dcf-table-striped</code></dt>
+        <dd>The striped table adds a subtle background color to alternating rows in the table.</dd>
+      </dl>
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+        <table class="dcf-table dcf-table-striped">
+          <caption>This is a striped table.</caption>
+          <thead>
+            <tr>
+              <th>Table heading</th>
+              <th class="dcf-txt-right">Table heading</th>
+              <th>Table heading</th>
+              <th>Table heading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Table heading</th>
+              <td class="dcf-txt-right">49</td>
+              <td>Cras mattis consectetur purus sit amet fermentum</td>
+              <td>Nullam Sollicitudin Mattis</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="dcf-txt-right">16</td>
+              <td>Nullam quis risus eget urna mollis ornare vel eu leo</td>
+              <td>Ornare Porta Vulputate</td>
+            </tr>
+            <tr>
+              <th>Table heading</th>
+              <td class="dcf-txt-right">387</td>
+              <td>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
+              <td>Inceptos Ullamcorper Etiam</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="dcf-txt-right">9</td>
+              <td>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
+              <td>Bibendum Sit Lorem</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-borders">Borders</a> (Utilities), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities)</p>
     </section>
 
