@@ -2472,7 +2472,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-width-all">Border Width (All Sides)</h4>
           <dl>
-            <dt><code>.dcf-b-0</code></dt><dd>no border</dd>
+            <dt><code>.dcf-b-0</code></dt><dd>border-width: 0, all sides</dd>
             <dt><code>.dcf-b-1</code></dt><dd>border-width: 1px, all sides</dd>
             <dt><code>.dcf-b-2</code></dt><dd>border-width: 2px, all sides</dd>
             <dt><code>.dcf-b-3</code></dt><dd>border-width: 3px, all sides</dd>
@@ -2481,6 +2481,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-top-width">Border Top Width</h4>
           <dl>
+            <dt><code>.dcf-bt-0</code></dt><dd>border-top-width: 0</dd>
             <dt><code>.dcf-bt-1</code></dt><dd>border-top-width: 1px</dd>
             <dt><code>.dcf-bt-2</code></dt><dd>border-top-width: 2px</dd>
             <dt><code>.dcf-bt-3</code></dt><dd>border-top-width: 3px</dd>
@@ -2489,25 +2490,28 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-right-width">Border Right Width</h4>
           <dl>
-            <dt><code>.dcf-br-1</code></dt><dd>border-top-width: 1px</dd>
-            <dt><code>.dcf-br-2</code></dt><dd>border-top-width: 2px</dd>
-            <dt><code>.dcf-br-3</code></dt><dd>border-top-width: 3px</dd>
+            <dt><code>.dcf-br-0</code></dt><dd>border-right-width: 0</dd>
+            <dt><code>.dcf-br-1</code></dt><dd>border-right-width: 1px</dd>
+            <dt><code>.dcf-br-2</code></dt><dd>border-right-width: 2px</dd>
+            <dt><code>.dcf-br-3</code></dt><dd>border-right-width: 3px</dd>
           </dl>
         </div>
         <div>
-          <h4 class="dcf-mt-6" id="example-utilities-border-bottom-width">Border Botttom Width</h4>
+          <h4 class="dcf-mt-6" id="example-utilities-border-bottom-width">Border Bottom Width</h4>
           <dl>
-            <dt><code>.dcf-bb-1</code></dt><dd>border-top-width: 1px</dd>
-            <dt><code>.dcf-bb-2</code></dt><dd>border-top-width: 2px</dd>
-            <dt><code>.dcf-bb-3</code></dt><dd>border-top-width: 3px</dd>
+            <dt><code>.dcf-bb-0</code></dt><dd>border-bottom-width: 0</dd>
+            <dt><code>.dcf-bb-1</code></dt><dd>border-bottom-width: 1px</dd>
+            <dt><code>.dcf-bb-2</code></dt><dd>border-bottom-width: 2px</dd>
+            <dt><code>.dcf-bb-3</code></dt><dd>border-bottom-width: 3px</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-left-width">Border Left Width</h4>
           <dl>
-            <dt><code>.dcf-bl-1</code></dt><dd>border-top-width: 1px</dd>
-            <dt><code>.dcf-bl-2</code></dt><dd>border-top-width: 2px</dd>
-            <dt><code>.dcf-bl-3</code></dt><dd>border-top-width: 3px</dd>
+            <dt><code>.dcf-bl-0</code></dt><dd>border-left-width: 0</dd>
+            <dt><code>.dcf-bl-1</code></dt><dd>border-left-width: 1px</dd>
+            <dt><code>.dcf-bl-2</code></dt><dd>border-left-width: 2px</dd>
+            <dt><code>.dcf-bl-3</code></dt><dd>border-left-width: 3px</dd>
           </dl>
         </div>
       </div>

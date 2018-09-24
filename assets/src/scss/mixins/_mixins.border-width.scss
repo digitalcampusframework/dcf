@@ -3,13 +3,11 @@
 ////////////////////////////////
 
 
-// !No Border
+// !All Sides
 @mixin b-0($imp:null) {
-  border: 0 $imp;
+  border-width: 0 $imp;
 }
 
-
-// !All Sides
 @mixin b-1($imp:null) {
   border-width: 1px $imp;
 }
@@ -24,6 +22,10 @@
 
 
 // !Top
+@mixin bt-0($imp:null) {
+  border-top-width: 0 $imp;
+}
+
 @mixin bt-1($imp:null) {
   border-top-width: 1px $imp;
 }
@@ -38,6 +40,10 @@
 
 
 // !Right
+@mixin br-0($imp:null) {
+  border-right-width: 0 $imp;
+}
+
 @mixin br-1($imp:null) {
   border-right-width: 1px $imp;
 }
@@ -52,6 +58,10 @@
 
 
 // !Bottom
+@mixin bb-0($imp:null) {
+  border-bottom-width: 0 $imp;
+}
+
 @mixin bb-1($imp:null) {
   border-bottom-width: 1px $imp;
 }
@@ -66,6 +76,10 @@
 
 
 // !Left
+@mixin bl-0($imp:null) {
+  border-left-width: 0 $imp;
+}
+
 @mixin bl-1($imp:null) {
   border-left-width: 1px $imp;
 }
