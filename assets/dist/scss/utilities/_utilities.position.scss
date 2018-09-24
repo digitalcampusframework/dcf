@@ -3,37 +3,16 @@
 ///////////////////////////////
 
 
-// !Static
-.dcf-static { @include static(!important); }
+// !Flow
+.dcf-static { @include static(!important); }      // Static
+.dcf-relative { @include relative(!important); }  // Relative
+.dcf-absolute { @include absolute(!important); }  // Absolute
+.dcf-fixed { @include fixed(!important); }        // Fixed
+.dcf-sticky { @include sticky(!important); }      // Sticky
 
 
-// !Relative
-.dcf-relative { @include relative(!important); }
-
-
-// !Absolute
-.dcf-absolute { @include absolute(!important); }
-
-
-// !Fixed
-.dcf-fixed { @include fixed(!important); }
-
-
-// !Sticky
-.dcf-sticky { @include sticky(!important); }
-
-
-// !Pin To Top
-.dcf-pin-top { @include pin-top(!important); }
-
-
-// !Pin To Right
-.dcf-pin-right { @include pin-right(!important); }
-
-
-// !Pin To Bottom
-.dcf-pin-bottom { @include pin-bottom(!important); }
-
-
-// !Pin To Left
-.dcf-pin-left { @include pin-left(!important); }
+// !Coordinates
+.dcf-pin-top { @include pin-top(!important); }        // Pin To Top
+.dcf-pin-right { @include pin-right(!important); }    // Pin To Right
+.dcf-pin-bottom { @include pin-bottom(!important); }  // Pin To Bottom
+.dcf-pin-left { @include pin-left(!important); }      // Pin To Left
