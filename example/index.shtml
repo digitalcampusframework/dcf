@@ -2387,30 +2387,35 @@
           <h4 class="dcf-mt-6" id="example-utilities-border-color-all">Border Color (All Sides)</h4>
           <dl>
             <dt><code>.dcf-b-current</code></dt><dd>border-color: currentColor, all sides</dd>
+            <dt><code>.dcf-b-transparent</code></dt><dd>border-color: transparent, all sides</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-top-color">Border Top Color</h4>
           <dl>
             <dt><code>.dcf-bt-current</code></dt><dd>border-top-color: currentColor</dd>
+            <dt><code>.dcf-bt-transparent</code></dt><dd>border-top-color: transparent</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-right-color">Border Right Color</h4>
           <dl>
             <dt><code>.dcf-br-current</code></dt><dd>border-right-color: currentColor</dd>
+            <dt><code>.dcf-br-transparent</code></dt><dd>border-right-color: transparent</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-bottom-color">Border Bottom Color</h4>
           <dl>
             <dt><code>.dcf-bb-current</code></dt><dd>border-bottom-color: currentColor</dd>
+            <dt><code>.dcf-bb-transparent</code></dt><dd>border-bottom-color: transparent</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-border-left-color">Border Left Color</h4>
           <dl>
             <dt><code>.dcf-bl-current</code></dt><dd>border-left-color: currentColor</dd>
+            <dt><code>.dcf-bl-transparent</code></dt><dd>border-left-color: transparent</dd>
           </dl>
         </div>
       </div>

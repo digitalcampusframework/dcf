@@ -3,21 +3,17 @@
 ///////////////////////////////////
 
 
-// !All Sides
-.dcf-b-current { @include b-current(!important); }
+// !currentColor
+.dcf-b-current { @include b-current(!important); }    // All Sides
+.dcf-bt-current { @include bt-current(!important); }  // Top
+.dcf-br-current { @include br-current(!important); }  // Right
+.dcf-bb-current { @include bb-current(!important); }  // Bottom
+.dcf-bl-current { @include bl-current(!important); }  // Left
 
 
-// !Top
-.dcf-bt-current { @include bt-current(!important); }
-
-
-// !Right
-.dcf-br-current { @include br-current(!important); }
-
-
-// !Bottom
-.dcf-bb-current { @include bb-current(!important); }
-
-
-// !Left
-.dcf-bl-current { @include bl-current(!important); }
+// !Transparent
+.dcf-b-transparent { @include b-transparent(!important); }    // All Sides
+.dcf-bt-transparent { @include bt-transparent(!important); }  // Top
+.dcf-br-transparent { @include br-transparent(!important); }  // Right
+.dcf-bb-transparent { @include bb-transparent(!important); }  // Bottom
+.dcf-bl-transparent { @include bl-transparent(!important); }  // Left
