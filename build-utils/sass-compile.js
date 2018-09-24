@@ -7,6 +7,7 @@ const $ = require('./gulp-load-plugins');
 const autoprefixer = require('autoprefixer');
 const postcssNormalize = require('postcss-normalize');
 const postcssPresetEnv = require('postcss-preset-env');
+const postcssObjectFitImages = require('postcss-object-fit-images');
 
 /**
  * @param {string} src: input concat path string
@@ -29,8 +30,9 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 		$.postcss(
 				[
 					autoprefixer,
+					postcssNormalize({forceImport:true}),
 					postcssPresetEnv(),
-					postcssNormalize({forceImport:true})
+					postcssObjectFitImages()
 				]
 		),
 		$.sourcemaps.write('./'),
@@ -52,8 +54,9 @@ function sassCompileScreen (src, dest, taskName) {
 		$.postcss(
 				[
 					autoprefixer,
+					postcssNormalize({forceImport:true}),
 					postcssPresetEnv(),
-					postcssNormalize({forceImport:true})
+          postcssObjectFitImages()
 				]
 		),
 		$.sourcemaps.write('./'),
@@ -77,6 +80,7 @@ function sassCompileBase (src, dest, taskName) {
 				[
 					autoprefixer,
 					postcssPresetEnv(),
+          postcssObjectFitImages()
 				]
 		),
 		$.sourcemaps.write('./'),
