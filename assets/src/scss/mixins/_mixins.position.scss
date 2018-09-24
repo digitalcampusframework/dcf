@@ -3,24 +3,12 @@
 ////////////////////////////
 
 
-// !Static
-@mixin static($imp:null) { position: static $imp; }
-
-
-// !Relative
-@mixin relative($imp:null) { position: relative $imp; }
-
-
-// !Absolute
-@mixin absolute($imp:null) { position: absolute $imp; }
-
-
-// !Fixed
-@mixin fixed($imp:null) { position: fixed $imp; }
-
-
-// !Sticky
-@mixin sticky($imp:null) {
+// !Flow
+@mixin static($imp:null) { position: static $imp; }     // Static
+@mixin relative($imp:null) { position: relative $imp; } // Relative
+@mixin absolute($imp:null) { position: absolute $imp; } // Absolute
+@mixin fixed($imp:null) { position: fixed $imp; }       // Fixed
+@mixin sticky($imp:null) {                              // Sticky
 
   @supports (position: sticky) {
     position: sticky $imp;
@@ -29,17 +17,8 @@
 }
 
 
-// !Pin To Top
-@mixin pin-top($imp:null) { top: 0 $imp; }
-
-
-// !Pin To Right
-@mixin pin-right($imp:null) { right: 0 $imp; }
-
-
-// !Pin To Bottom
-@mixin pin-bottom($imp:null) { bottom: 0 $imp; }
-
-
-// !Pin To Left
-@mixin pin-left($imp:null) { left: 0 $imp; }
+// !Coordinates
+@mixin pin-top($imp:null) { top: 0 $imp; }        // Pin To Top
+@mixin pin-right($imp:null) { right: 0 $imp; }    // Pin To Right
+@mixin pin-bottom($imp:null) { bottom: 0 $imp; }  // Pin To Bottom
+@mixin pin-left($imp:null) { left: 0 $imp; }      // Pin To Left
