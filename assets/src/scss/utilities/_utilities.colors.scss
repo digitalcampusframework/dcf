@@ -4,30 +4,8 @@
 
 
 // !Inverse (light text for dark backgrounds)
-.dcf-inverse {
-  @include inverse(!important);
-}
-
-
-// !Inverse Link
-a.dcf-inverse:link {
-  @include inverse-link(!important);
-}
-
-
-// !Inverse Visited
-a.dcf-inverse:visited {
-  @include inverse-link(!important);
-}
-
-
-// !Inverse Hover
-a.dcf-inverse:hover {
-  @include inverse-link(!important);
-}
-
-
-// !Inverse Active
-a.dcf-inverse:active {
-  @include inverse-link(!important);
-}
+.dcf-inverse { @include inverse(!important); }
+a.dcf-inverse:link { @include inverse-link(!important); }       // Link
+a.dcf-inverse:visited { @include inverse-visited(!important); } // Visited
+a.dcf-inverse:hover { @include inverse-hover(!important); }     // Hover
+a.dcf-inverse:active { @include inverse-active(!important); }   // Active

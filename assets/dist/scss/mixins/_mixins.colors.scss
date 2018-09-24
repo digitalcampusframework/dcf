@@ -4,26 +4,8 @@
 
 
 // !Inverse (light text for dark backgrounds)
-@mixin inverse($imp:null) {
-  color: $color-body-bg $imp;
-}
-
-// !Inverse Link
-@mixin inverse-link($imp:null) {
-  color: $color-body-bg $imp;
-}
-
-// !Inverse Visited
-@mixin inverse-visited($imp:null) {
-  color: $color-body-bg $imp;
-}
-
-// !Inverse Hover
-@mixin inverse-hover($imp:null) {
-  color: $color-body-bg $imp;
-}
-
-// !Inverse Active
-@mixin inverse-active($imp:null) {
-  color: $color-body-bg $imp;
-}
+@mixin inverse($imp:null) { color: $color-inverse-link $imp; }
+@mixin inverse-link($imp:null) { color: $color-inverse-link $imp; }    // Link
+@mixin inverse-visited($imp:null) { color: $color-inverse-link-visited $imp; } // Visited
+@mixin inverse-hover($imp:null) { color: $color-inverse-link-hover $imp; }   // Hover
+@mixin inverse-active($imp:null) { color: $color-inverse-link-active $imp; }  // Active

@@ -49,14 +49,19 @@ $color-light-text: $gray-dark;
 
 // !Links
 $color-link: $color-brand-alpha;
+// TODO: finalize state colors for example theme
 $color-link-visited: darken($color-link, 10%);
 $color-link-hover: darken($color-link, 10%);
 $color-link-active: darken($color-link, 10%);
 
 
-// $color-link-visited: scale-color($color-link, $lightness: -10%, $saturation: -100%);
-// $color-link-hover: scale-color($color-link, $lightness: -20%, $saturation: 100%);
-// $color-link-active: scale-color($color-link, $lightness: -30%, $saturation: 100%);
+// !Inverse
+// TODO: finalize state colors for example theme
+$color-inverse: $color-body-bg;
+$color-inverse-link: $color-body-bg;
+$color-inverse-link-visited: $color-body-bg;
+$color-inverse-link-hover: $color-body-bg;
+$color-inverse-link-active: $color-body-bg;
 
 
 // !Buttons
@@ -69,9 +74,6 @@ $color-button-active: $color-link-active;
 // !Borders
 $color-border: $gray-lighter;
 $color-border-hover: $gray-lighter;
-
-
-// $border-color: scale-color($scarlet, $saturation: -100%);
 
 
 // !Marks (Highlights) Background Color
