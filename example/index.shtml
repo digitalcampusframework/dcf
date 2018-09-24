@@ -2860,7 +2860,11 @@
       <h3 class="dcf-mt-8" id="example-utilities-overflow">Overflow</h3>
       <dl>
         <dt><code>.dcf-overflow-visible</code></dt><dd>overflow: visible</dd>
+        <dt><code>.dcf-overflow-x-visible</code></dt><dd>overflow-x: visible</dd>
+        <dt><code>.dcf-overflow-y-visible</code></dt><dd>overflow-y: visible</dd>
         <dt><code>.dcf-overflow-hidden</code></dt><dd>overflow: hidden</dd>
+        <dt><code>.dcf-overflow-x-hidden</code></dt><dd>overflow-x: hidden</dd>
+        <dt><code>.dcf-overflow-y-hidden</code></dt><dd>overflow-y: hidden</dd>
         <dt><code>.dcf-overflow-auto</code></dt><dd>overflow: auto</dd>
         <dt><code>.dcf-overflow-x-auto</code></dt><dd>overflow-x: auto</dd>
         <dt><code>.dcf-overflow-y-auto</code></dt><dd>overflow-y: auto</dd>
