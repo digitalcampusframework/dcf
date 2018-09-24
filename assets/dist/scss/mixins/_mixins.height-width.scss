@@ -21,7 +21,6 @@
 
 // !Min-Height
 @mixin h-min-0($imp:null) { min-height: 0 $imp; }
-// @mixin h-min-100pc($imp:null) { min-height: 100% $imp; }
 
 
 // !Max-Height
@@ -47,7 +46,6 @@
 
 // !Min-Width
 @mixin w-min-0($imp:null) { min-width: 0 $imp; }
-// @mixin w-min-100pc($imp:null) { min-width: 100% $imp; }
 
 
 // !Max-Width
