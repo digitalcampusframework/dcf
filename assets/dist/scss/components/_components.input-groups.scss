@@ -5,9 +5,9 @@
 
 // Form that contains input group
 .dcf-input-group-form {
-  align-items: center;
+  align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; // Allow input to wrap at narrower viewport widths
 }
 
 
