@@ -1885,7 +1885,7 @@
           <p class="dcf-subhead">Pellentesque Nibh Malesuada</p>
         </div>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
 
  <!--     <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
       <dl class="dcf-measure">
