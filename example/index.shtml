@@ -1876,16 +1876,16 @@
       <h4 class="dcf-mt-6" id="example-components-subheads">Subheads</h4>
       <dl class="dcf-measure">
         <dt><code>.dcf-subhead</code></dt>
-        <dd>A subhead is smaller and slightly lighter in appearance than a heading. Change the order of headings and subheads by wrapping them in a <code>&lt;div class="dcf-d-flex dcf-flex-col"&gt;&lt;/div&gt;</code> and adding <a href="#example-utilities-order">order classes</a> (<code>.dcf-1st</code>, <code>.dcf-2nd</code>, et al.) to the headings and subheads.</dd>
+        <dd>Use this class on the <code>&lt;p&gt;</code> element to mark up <a href="https://www.w3.org/TR/html5/common-idioms-without-dedicated-elements.html#subheadings-subtitles-alternative-titles-and-taglines">subheadings, alternative titles or taglines</a>.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-d-flex dcf-flex-col dcf-mb-4">
-          <h1 class="dcf-2nd">Maecenas faucibus mollis interdum</h1>
-          <h2 class="dcf-subhead dcf-3rd">Cras Ullamcorper Cursus Porta</h2>
-          <h2 class="dcf-subhead dcf-1st">Pellentesque Nibh Malesuada</h2>
+        <div class="dcf-mb-4">
+          <p class="dcf-subhead">Cras Ullamcorper Cursus Porta</p>
+          <h1>Maecenas faucibus mollis interdum</h1>
+          <p class="dcf-subhead">Pellentesque Nibh Malesuada</p>
         </div>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements)</p>
 
  <!--     <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
       <dl class="dcf-measure">

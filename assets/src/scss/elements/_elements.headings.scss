@@ -22,11 +22,11 @@ h6 {
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
 
-  & + &,
-  p + &,
+  dl + &,
   ol + &,
   ul + &,
-  dl + & {
+  & + &,
+  p:not(.dcf-subhead) + & {
     @include mt-5;
   }
 
