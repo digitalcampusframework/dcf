@@ -14,11 +14,11 @@
   margin-bottom: #{ms(0)}rem; // 1rem
   margin-top: 0;
 
-  & + &,
-  p + &,
+  dl + &,
   ol + &,
   ul + &,
-  dl + & {
+  & + &,
+  p:not(.dcf-subhead) + & {
     @include mt-5;
   }
 
@@ -28,7 +28,4 @@
 // !Subheads
 .dcf-subhead {
   display: block;
-  font-size: #{ms(-2)}rem; // .75rem
-  @include mb-4;
-  text-transform: uppercase;
 }
