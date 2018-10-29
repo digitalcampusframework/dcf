@@ -2252,6 +2252,7 @@
           </ul>
         </li>
         <li><a href="#example-utilities-colors">Colors</a></li>
+        <li><a href="#example-utilities-css-columns">CSS Columns</a></li>
         <li><a href="#example-utilities-display">Display</a></li>
         <li><a href="#example-utilities-flexbox">Flexbox</a>
           <ul>
@@ -2599,6 +2600,15 @@
       <h3 class="dcf-mt-8" id="example-utilities-colors">Colors</h3>
       <dl>
         <dt><code>.dcf-inverse</code></dt><dd>light color on dark background</dd>
+      </dl>
+
+      <h3 class="dcf-mt-8" id="example-utilities-css-columns">CSS Columns</h3>
+      <p class="dcf-measure">All CSS column utilities have a column-gap of 3.16vw. Responsive suffixes (<code>@sm</code>, <code>@md</code>, <code>@lg</code>, <code>@xl</code>) can be added to target desired breakpoints.</p>
+      <dl>
+        <dt><code>.dcf-columns-1</code></dt><dd>Lay out content in one column.</dd>
+        <dt><code>.dcf-columns-2</code></dt><dd>Lay out content in two equal width columns.</dd>
+        <dt><code>.dcf-columns-3</code></dt><dd>Lay out content in three equal width columns.</dd>
+        <dt><code>.dcf-columns-auto</code></dt><dd>Lay out content in equal width columns, each with a minimum width of 17.76em.</dd>
       </dl>
 
       <h3 class="dcf-mt-8" id="example-utilities-display">Display</h3>
