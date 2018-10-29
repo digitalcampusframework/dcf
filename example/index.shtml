@@ -2699,6 +2699,7 @@
           <h4 class="dcf-mt-6" id="example-utilities-min-height">Min-Height</h4>
 		      <dl>
 		        <dt><code>.dcf-h-min-0</code></dt><dd>min-height: 0</dd>
+		        <dt><code>.dcf-h-min-100vh</code></dt><dd>min-height: 100vh</dd>
 		      </dl>
         </div>
         <div>
