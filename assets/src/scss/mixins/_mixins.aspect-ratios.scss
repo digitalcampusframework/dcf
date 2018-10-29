@@ -4,35 +4,35 @@
 
 
 // !Maintain aspect ratio
-@mixin ratio {
-  position: relative;
+@mixin ratio($imp:null) {
+  position: relative $imp;
 
   &::before {
-    content: '';
-    display: block;
-    width: 100%;
+    content: '' $imp;
+    display: block $imp;
+    width: 100% $imp;
   }
 
 }
 
 
 // !16×9
-@mixin ratio-16x9 { padding-top: 56.25%; }
+@mixin ratio-16x9($imp:null) { padding-top: 56.25% $imp; }
 
 
 // !4×3
-@mixin ratio-4x3 { padding-top: 75%; }
+@mixin ratio-4x3($imp:null) { padding-top: 75% $imp; }
 
 
 // !1×1
-@mixin ratio-1x1 { padding-top: 100%; }
+@mixin ratio-1x1($imp:null) { padding-top: 100% $imp; }
 
 
 // Child
-@mixin ratio-child {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+@mixin ratio-child($imp:null) {
+  bottom: 0 $imp;
+  left: 0 $imp;
+  position: absolute $imp;
+  right: 0 $imp;
+  top: 0 $imp;
 }

@@ -4,20 +4,20 @@
 
 
 // !Maintain aspect ratio
-.dcf-ratio { @include ratio; }
+.dcf-ratio { @include ratio(!important); }
 
 
 // !16×9
-.dcf-ratio-16x9::before { @include ratio-16x9; }
+.dcf-ratio-16x9::before { @include ratio-16x9(!important); }
 
 
 // !4×3
-.dcf-ratio-4x3::before { @include ratio-4x3; }
+.dcf-ratio-4x3::before { @include ratio-4x3(!important); }
 
 
 // !1×1
-.dcf-ratio-1x1::before { @include ratio-1x1; }
+.dcf-ratio-1x1::before { @include ratio-1x1(!important); }
 
 
 // !Child
-.dcf-ratio-child { @include ratio-child; }
+.dcf-ratio-child { @include ratio-child(!important); }
