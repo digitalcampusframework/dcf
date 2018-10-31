@@ -12,4 +12,8 @@
 
 
 // !Screen Reader Only
-.dcf-sr-only:not(:focus):not(:active) { @include sr-only(!important); }
+.dcf-sr-only { @include sr-only(!important); }
+
+
+// !Show on focus
+.dcf-show-on-focus:not(:focus):not(:active) { @include sr-only(!important); }
