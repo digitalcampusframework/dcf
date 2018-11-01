@@ -44,7 +44,7 @@
   flex-basis: 25%;
 }
 
-[class*='dcf-col'] {
+.dcf-col-100\% {
   flex-basis: 100%;
 }
 
@@ -101,6 +101,10 @@
 
   .dcf-grid-fourths\@sm > * {
     flex-basis: 25%;
+  }
+
+  .dcf-col-100\%\@sm {
+    flex-basis: 100%;
   }
 
   .dcf-col-50\%-start\@sm {
@@ -168,6 +172,10 @@
     flex-basis: 16.66%;
   }
 
+  .dcf-col-100\%\@md {
+    flex-basis: 100%;
+  }
+
   .dcf-col-50\%-start\@md {
     flex-basis: 50%;
   }
@@ -233,6 +241,10 @@
     flex-basis: 16.66%;
   }
 
+  .dcf-col-100\%\@lg {
+    flex-basis: 100%;
+  }
+
   .dcf-col-50\%-start\@lg {
     flex-basis: 50%;
   }
@@ -296,6 +308,10 @@
 
   .dcf-grid-sixths\@xl > * {
     flex-basis: 16.66%;
+  }
+
+  .dcf-col-100\%\@xl {
+    flex-basis: 100%;
   }
 
   .dcf-col-50\%-start\@xl {
@@ -386,7 +402,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  [class*='dcf-col'] {
+  .dcf-col-100\% {
     grid-column: 1 / span 12;
   }
 
@@ -443,6 +459,10 @@
 
     .dcf-grid-fourths\@sm {
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcf-col-100\%\@sm {
+      grid-column: 1 / span 12;
     }
 
     .dcf-col-50\%-start\@sm {
@@ -510,6 +530,10 @@
       grid-template-columns: repeat(6, 1fr);
     }
 
+    .dcf-col-100\%\@md {
+      grid-column: 1 / span 12;
+    }
+
     .dcf-col-50\%-start\@md {
       grid-column: 1 / span 6;
     }
@@ -575,6 +599,10 @@
       grid-template-columns: repeat(6, 1fr);
     }
 
+    .dcf-col-100\%\@lg {
+      grid-column: 1 / span 12;
+    }
+
     .dcf-col-50\%-start\@lg {
       grid-column: 1 / span 6;
     }
@@ -638,6 +666,10 @@
 
     .dcf-grid-sixths\@xl {
       grid-template-columns: repeat(6, 1fr);
+    }
+
+    .dcf-col-100\%\@xl {
+      grid-column: 1 / span 12;
     }
 
     .dcf-col-50\%-start\@xl {
