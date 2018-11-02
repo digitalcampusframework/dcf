@@ -7,13 +7,27 @@
 
 
 // !Grid Column Gap
-.dcf-col-gap-sm { @include col-gap-sm(!important); } // 1em
-.dcf-col-gap-md { @include col-gap-md(!important); } // 1.77em
-.dcf-col-gap-lg { @include col-gap-lg(!important); } // 3.16em
+.dcf-col-gap-1 { @include col-gap-1(!important); }
+.dcf-col-gap-2 { @include col-gap-2(!important); }
+.dcf-col-gap-3 { @include col-gap-3(!important); }
+.dcf-col-gap-4 { @include col-gap-4(!important); }
+.dcf-col-gap-5 { @include col-gap-5(!important); }
+.dcf-col-gap-6 { @include col-gap-6(!important); }
+.dcf-col-gap-7 { @include col-gap-7(!important); }
+.dcf-col-gap-8 { @include col-gap-8(!important); }
+.dcf-col-gap-9 { @include col-gap-9(!important); }
+.dcf-col-gap-10 { @include col-gap-10(!important); }
 .dcf-col-gap-vw { @include col-gap-vw(!important); }
 
 
 // !Grid Row Gap
-.dcf-row-gap-sm { @include row-gap-sm(!important); } // 1em
-.dcf-row-gap-md { @include row-gap-md(!important); } // 1.77em
-.dcf-row-gap-lg { @include row-gap-lg(!important); } // 3.16em
+.dcf-row-gap-1 { @include row-gap-1(!important); }
+.dcf-row-gap-2 { @include row-gap-2(!important); }
+.dcf-row-gap-3 { @include row-gap-3(!important); }
+.dcf-row-gap-4 { @include row-gap-4(!important); }
+.dcf-row-gap-5 { @include row-gap-5(!important); }
+.dcf-row-gap-6 { @include row-gap-6(!important); }
+.dcf-row-gap-7 { @include row-gap-7(!important); }
+.dcf-row-gap-8 { @include row-gap-8(!important); }
+.dcf-row-gap-9 { @include row-gap-9(!important); }
+.dcf-row-gap-10 { @include row-gap-10(!important); }
