@@ -23,7 +23,7 @@
   </div>
 -->
 
-  <div class="dcf-wrapper dcf-d-grid dcf-col-gap-sm dcf-pt-2 dcf-pb-4 dcf-header">
+  <div class="dcf-wrapper dcf-d-grid dcf-col-gap-4 dcf-pt-2 dcf-pb-4 dcf-header">
 
 <!--     <header class="" id="dcf-header" role="banner"> -->
 
@@ -869,7 +869,7 @@
         <dd>Apply to a grid child element to define its column width as the full width of the grid.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-100% dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-100%</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -897,7 +897,7 @@
         <dd>Apply to a grid child element to define its column width as one-half of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-50%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -925,7 +925,7 @@
         <dd>Apply to a grid child element to define its column width as one-half of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-50%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -953,7 +953,7 @@
         <dd>Apply to a grid child element to define its column width as one-third of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-33%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -981,7 +981,7 @@
         <dd>Apply to a grid child element to define its column width as one-third of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-33%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1009,7 +1009,7 @@
         <dd>Apply to a grid child element to define its column width as two-thirds of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-67%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1037,7 +1037,7 @@
         <dd>Apply to a grid child element to define its column width as two-thirds of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-67%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1065,7 +1065,7 @@
         <dd>Apply to a grid child element to define its column width as one-fourth of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-25%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1093,7 +1093,7 @@
         <dd>Apply to a grid child element to define its column width as one-fourth of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-25%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1121,7 +1121,7 @@
         <dd>Apply to a grid child element to define its column width as three-fourths of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-75%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1149,7 +1149,7 @@
         <dd>Apply to a grid child element to define its column width as three-fourths of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-75%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-end</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1179,7 +1179,7 @@
         <dd>The grid-halves object lays out child elements in a grid of two equal-width columns.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid-halves dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid-halves dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1200,7 +1200,7 @@
         <dd>The grid-thirds object lays out child elements in a grid of three equal-width columns.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid-thirds dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid-thirds dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1221,7 +1221,7 @@
         <dd>The grid-fourths object lays out child elements in a grid of four equal-width columns.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid-fourths dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid-fourths dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1244,7 +1244,7 @@
         <dd>The grid-fifths object lays out child elements in a grid of five equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid-fifths@md dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid-fifths@md dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1265,7 +1265,7 @@
         <dd>The grid-sixths object lays out child elements in a grid of six equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid-sixths@md dcf-col-gap-sm dcf-row-gap-sm">
+        <div class="dcf-grid-sixths@md dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
@@ -1497,7 +1497,7 @@
             	</ul>
             </div>
           </aside>
-          <footer class="dcf-grid-halves@sm dcf-grid-fourths@md dcf-article-footer dcf-col-gap-vw dcf-row-gap-md">
+          <footer class="dcf-grid-halves@sm dcf-grid-fourths@md dcf-article-footer dcf-col-gap-vw dcf-row-gap-4">
             <div class="dcf-txt-xs dcf-bt dcf-pt-4">
               <div class="dcf-mb-4 dcf-bold dcf-uppercase example-ls-1" role="heading">
                 News Release Contacts
@@ -1714,7 +1714,7 @@
         <dd>The card block provides padding for text inside the card. Card contents that need to span the full width (like an image) should be placed outside of the card block.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <ul class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-list-bare dcf-col-gap-sm dcf-row-gap-sm dcf-mb-0">
+        <ul class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-list-bare dcf-col-gap-4 dcf-row-gap-4 dcf-mb-0">
           <li class="dcf-card dcf-d-flex dcf-flex-col">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #1</h3>
@@ -2697,18 +2697,32 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-column-gap">Column Gap</h4>
           <dl>
-            <dt><code>.dcf-col-gap-sm</code></dt><dd>small column-gap</dd>
-            <dt><code>.dcf-col-gap-md</code></dt><dd>medium column-gap</dd>
-            <dt><code>.dcf-col-gap-lg</code></dt><dd>large column-gap</dd>
-            <dt><code>.dcf-col-gap-vw</code></dt><dd>viewport-width-based column-gap</dd>
+		        <dt><code>.dcf-col-gap-1</code></dt><dd>grid-column-gap: .42em</dd>
+		        <dt><code>.dcf-col-gap-2</code></dt><dd>grid-column-gap: .56em</dd>
+		        <dt><code>.dcf-col-gap-3</code></dt><dd>grid-column-gap: .75em</dd>
+		        <dt><code>.dcf-col-gap-4</code></dt><dd>grid-column-gap: 1em</dd>
+		        <dt><code>.dcf-col-gap-5</code></dt><dd>grid-column-gap: 1.33em</dd>
+		        <dt><code>.dcf-col-gap-6</code></dt><dd>grid-column-gap: 1.77em</dd>
+		        <dt><code>.dcf-col-gap-7</code></dt><dd>grid-column-gap: 2.37em</dd>
+		        <dt><code>.dcf-col-gap-8</code></dt><dd>grid-column-gap: 3.16em</dd>
+		        <dt><code>.dcf-col-gap-9</code></dt><dd>grid-column-gap: 4.21em</dd>
+		        <dt><code>.dcf-col-gap-10</code></dt><dd>grid-column-gap: 5.62em</dd>
+            <dt><code>.dcf-col-gap-vw</code></dt><dd>grid-column-gap: 3.16vw</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-row-gap">Row Gap</h4>
           <dl>
-            <dt><code>.dcf-row-gap-sm</code></dt><dd>small row-gap</dd>
-            <dt><code>.dcf-row-gap-md</code></dt><dd>medium row-gap</dd>
-            <dt><code>.dcf-row-gap-lg</code></dt><dd>large row-gap</dd>
+		        <dt><code>.dcf-row-gap-1</code></dt><dd>grid-row-gap: .42em</dd>
+		        <dt><code>.dcf-row-gap-2</code></dt><dd>grid-row-gap: .56em</dd>
+		        <dt><code>.dcf-row-gap-3</code></dt><dd>grid-row-gap: .75em</dd>
+		        <dt><code>.dcf-row-gap-4</code></dt><dd>grid-row-gap: 1em</dd>
+		        <dt><code>.dcf-row-gap-5</code></dt><dd>grid-row-gap: 1.33em</dd>
+		        <dt><code>.dcf-row-gap-6</code></dt><dd>grid-row-gap: 1.77em</dd>
+		        <dt><code>.dcf-row-gap-7</code></dt><dd>grid-row-gap: 2.37em</dd>
+		        <dt><code>.dcf-row-gap-8</code></dt><dd>grid-row-gap: 3.16em</dd>
+		        <dt><code>.dcf-row-gap-9</code></dt><dd>grid-row-gap: 4.21em</dd>
+		        <dt><code>.dcf-row-gap-10</code></dt><dd>grid-row-gap: 5.62em</dd>
           </dl>
         </div>
       </div>
