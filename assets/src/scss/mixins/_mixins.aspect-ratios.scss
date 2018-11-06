@@ -5,6 +5,7 @@
 
 // !Maintain aspect ratio
 @mixin ratio($imp:null) {
+  overflow: hidden $imp;
   position: relative $imp;
 
   &::before {
