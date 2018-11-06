@@ -77,3 +77,7 @@
 
 // !Measure (Line Length)
 .dcf-measure { @include measure(!important); }
+
+
+// !Writing Mode
+.dcf-txt-vertical-lr { @include txt-vertical-lr(!important); }

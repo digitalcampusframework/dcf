@@ -2345,6 +2345,7 @@
             <li><a href="#example-utilities-font-weight">Font Weight</a></li>
             <li><a href="#example-utilities-line-height">Line Height</a></li>
             <li><a href="#example-utilities-text-transform">Text Transform</a></li>
+            <li><a href="#example-utilities-writing-mode">Writing Mode</a></li>
           </ul>
         </li>
         <li><a href="#example-utilities-visibility">Visibility</a></li>
@@ -3132,6 +3133,12 @@
             <dt><code>.dcf-lowercase</code></dt><dd>text-transform: lowercase</dd>
             <dt><code>.dcf-uppercase</code></dt><dd>text-transform: uppercase</dd>
             <dt><code>.dcf-case-reset</code></dt><dd>text-transform: none</dd>
+          </dl>
+        </div>
+        <div>
+          <h4 class="dcf-mt-6" id="example-utilities-writing-mode">Writing Mode</h4>
+          <dl>
+            <dt><code>.dcf-txt-vertical-lr</code></dt><dd>writing-mode: vertical-lr</dd>
           </dl>
         </div>
       </div>
