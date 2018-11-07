@@ -3,18 +3,7 @@
 //////////////////////////////
 
 
-.dcf-header a {
+.dcf-header a,
+.dcf-header a:link {
   text-decoration: none;
-}
-
-.dcf-header button {
-  color: $color-link;
-}
-
-.dcf-header button:hover {
-  color: $color-link-hover;
-}
-
-.dcf-header button:active {
-  color: $color-link-active;
 }
