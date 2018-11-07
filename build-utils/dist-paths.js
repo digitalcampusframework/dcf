@@ -12,7 +12,7 @@ const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
 module.exports = {
 	vendorJsSrc: path.join(buildPaths.vendorJsDest, buildNames.vendorJs),
 	vendorJsDest: path.join(commonPaths.outputDist, 'js', 'vendor'),
-	mustardJsSrc: path.join(buildPaths.mustardJsDest, buildNames.mustardJs),
+	mustardJsSrc: [`${buildPaths.mustardJsDest}/**/*.js`, `!${buildPaths.mustardJsDest}/**/*.min.js`],
 	mustardJsDest: path.join(commonPaths.outputDist, 'js', 'mustard'),
 	scssPath: scssPath,
 	scssGlob: `${scssPath}/**/*.scss`,
