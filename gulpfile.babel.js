@@ -262,22 +262,53 @@ gulp.task('vendorDist-watch', () => {
 /* ----------------- */
 /* MUSTARD JS TASKS
 /* ----------------- */
+// this task is not used atm because we are providing individual polyfill files
 gulp.task('mustardConcat:newer', () => {
 	// need to return the stream
 	return concat.newer(buildPaths.mustardJsGlob, buildPaths.mustardJsDest, buildNames.mustardJs, 'mustardConcat:newer',  path.join(buildPaths.mustardJsDest, buildNames.mustardJs));
 });
 
 
-gulp.task('mustardUglify', () => {
-	return uglifyNewer(distPaths.mustardJsSrc, distPaths.mustardJsDest, 'mustardUglify', path.join(distPaths.mustardJsDest, distNames.vendorMinJs));
+// copy polyfills from packages and src/mustard into build
+gulp.task('copyMustard:newer', () => {
+	return copyNewer(buildPaths.mustardJsGlob, buildPaths.mustardJsDest, 'copyMustard:newer', buildPaths.mustardJsDest);
 });
 
 
-gulp.task('mustardDist', gulp.series('mustardConcat:newer', 'mustardUglify'));
+// copy unminified mustard files from build to dist folder to allow manipulation
+gulp.task('copyMustardDist:newer', () => {
+	return copyNewer(distPaths.mustardJsSrc, distPaths.mustardJsDest, 'copyMustard:newer', distPaths.mustardJsDest);
+});
+
+
+// custom tasks to rename details-polyfill file, might become an issue if more than single index.js file exists
+gulp.task('renameDetailsIndex', (done) => {
+	$.pump([
+		gulp.src(path.join(buildPaths.mustardJsDest, 'index.js'), {allowEmpty:true}),
+		$.rename('details-polyfill.js'),
+		gulp.dest(buildPaths.mustardJsDest),
+	], done);
+});
+
+// gulp-rename does not remove existing files
+gulp.task('deleteDetailsIndex', ()=>{
+	return	$.delete(path.join(buildPaths.mustardJsDest, 'index.js'));
+});
+
+gulp.task('renameDetailsPolyfill', gulp.series('renameDetailsIndex', 'deleteDetailsIndex'));
+
+
+// minify polyfill files into dist folder
+gulp.task('mustardUglify', () => {
+	return uglifyNewer(distPaths.mustardJsSrc, distPaths.mustardJsDest, 'mustardUglify', distPaths.mustardJsDest, true);
+});
+
+
+gulp.task('mustardDist', gulp.series('copyMustard:newer', 'renameDetailsPolyfill', 'mustardUglify', 'copyMustardDist:newer'));
 
 
 gulp.task('mustardDist-watch', () => {
-	gulp.watch(buildPaths.mustardJsGlob, gulp.series('mustardConcat:newer', 'mustardUglify'))
+	gulp.watch(buildPaths.mustardJsGlob, gulp.series('mustardDist'))
 			.on('unlink', (ePath, stats) => {
 // code to execute on delete
 				console.log(`${ePath} deleted, recompiling ${buildNames.mustardMinJs} - [mustardDist-watch]`);
