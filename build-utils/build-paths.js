@@ -14,8 +14,6 @@ const coreDistCssPath = path.join(commonPaths.outputDist,'css');
 
 //Obtain paths to dependencies from package
 const dialogPolyfill = require.resolve('dialog-polyfill');
-const intersectionObserver = require.resolve('intersection-observer');
-const picturefill = require.resolve('picturefill');
 const objectFitImages = require.resolve('object-fit-images');
 const detailsPolyfill = require.resolve('details-polyfill');
 
