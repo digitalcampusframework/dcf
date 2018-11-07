@@ -23,47 +23,24 @@
   </div>
 -->
 
-  <div class="dcf-wrapper dcf-d-grid dcf-col-gap-4 dcf-pt-2 dcf-pb-4 dcf-header">
-
-<!--     <header class="" id="dcf-header" role="banner"> -->
-
-      <!--#include virtual="/includes/global/institution.html" -->
-
-      <div class="dcf-d-flex dcf-ai-center dcf-pt-4 dcf-logo dcf-overflow-hidden">
-        <!--#include virtual="/includes/global/logo.html" -->
-
-        <div class="dcf-d-flex dcf-flex-col dcf-jc-center">
-          <div class="dcf-uppercase dcf-txt-h3 dcf-lh-4 dcf-regular example-ls-2" id="dcf-site-affiliation"><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --></div>
-          <div class="dcf-txt-xs dcf-italic" id="dcf-site-title"><!-- InstanceBeginEditable name="titlegraphic" --><a href="#"><!-- Jane Doe Department of Accounting --></a><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --></div>
-        </div>
-      </div>
-
-<!--     </header> -->
-
-
-  <button class="dcf-p-0 dcf-b-0 dcf-bg-transparent dcf-mobile-nav-toggle dcf-nav-toggle example-brand-alpha" id="dcf-menu-toggle" aria-pressed="false" aria-controls="dcf-local-navigation dcf-global-navigation" aria-haspopup="true">
-    <span class="dcf-d-flex dcf-flex-col dcf-ai-center dcf-jc-center dcf-h-100%">
-      <span class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-circle dcf-h-6 dcf-w-6 example-bg-brand-alpha">
-        <svg class="dcf-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 48 48"><g class="dcf-icon-menu-top"><path fill="#fff" d="M46,9H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-bottom"><path fill="#fff" d="M46,35H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g><g class="dcf-icon-menu-middle"><path fill="#fff" d="M46,22H2a2,2,0,0,0,0,4H46a2,2,0,0,0,0-4Z"/></g></svg>
-      </span>
-    	<span class="dcf-sr-only">Show </span><span class="dcf-txt-xs">Menu</span>
-    </span>
-  </button>
-
-<!--     <div class="" id="dcf-navigation"> -->
-      <nav class="dcf-pt-5 dcf-nav-local" id="dcf-local-navigation" role="navigation" aria-label="local navigation">
+  <header class="dcf-header" id="dcf-header" role="banner">
+    <!--#include virtual="/includes/global/header-global-1.html" -->
+      <!--#include virtual="/includes/global/idm.html" -->
+      <!--#include virtual="/includes/global/search.html" -->
+    <!--#include virtual="/includes/global/header-global-2.html" -->
+      <!--#include virtual="/includes/global/logo-lockup-1.html" -->
+          <!--#include virtual="/includes/global/site-affiliation-1.html" --><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-affiliation-2.html" -->
+          <!--#include virtual="/includes/global/site-title-1.html" --><!-- InstanceBeginEditable name="titlegraphic" --><a href="#"><!-- Jane Doe Department of Accounting --></a><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-title-2.html" -->
+      <!--#include virtual="/includes/global/logo-lockup-2.html" -->
+      <!--#include virtual="/includes/global/nav-toggle-group.html" -->
+      <!--#include virtual="/includes/global/nav-menu-1.html" -->
+        <!--#include virtual="/includes/global/nav-toggle-btn.html" -->
         <!-- InstanceBeginEditable name="navlinks" -->
         <!--#include virtual="/includes/local/nav-local.html" -->
         <!-- InstanceEndEditable -->
-      </nav>
-      <nav class="dcf-d-flex dcf-ai-center dcf-mt-1 dcf-txt-xs dcf-nav-global" id="dcf-global-navigation" role="navigation" aria-label="global navigation">
-      	<!--#include virtual="/includes/global/nav-global.html" -->
-      </nav>
-<!--     </div> -->
-
-    <!--#include virtual="/includes/global/idm.html" -->
-    <!--#include virtual="/includes/global/search.html" -->
-  </div>
+      <!--#include virtual="/includes/global/nav-menu-2.html" -->
+    </div>
+  </header>
 
   <main class="dcf-wrapper" id="dcf-main" role="main" tabindex="-1">
 
