@@ -4,38 +4,55 @@
 
 
 // !Search Results
-.example .dcf-search-results-wrapper {
-  height: calc(100% - #{ms(16)}em); // 100% - 9.97em
-}
+// .example .dcf-search-results-wrapper {
+//   height: calc(100% - #{ms(16)}em); // 100% - 9.97em
+// }
 
-.example .dcf-search-results {
-  @include pr-6;
 
+// .example .dcf-search-results {
+//   @include pr-6;
+//
 //   @supports (display: grid) {
 //     @include grid;
 //     grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
 //     grid-gap: #{ms(16)}em 5vw;
 //   }
-}
+// }
 
-.example .dcf-search-results-directory {
 
-  @supports (display: grid) {
-    display: grid;
-    grid-gap: #{ms(8)}em 5vw;
-    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
-  }
-
-}
+// .example .dcf-search-results-directory {
+//
+//   @supports (display: grid) {
+//     display: grid;
+//     grid-gap: #{ms(8)}em 5vw;
+//     grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
+//   }
+//
+// }
 
 
 @include mq(md, max, width) {
 
-  .example .dcf-search-toggle {
-    left: 50%;
+  .example .dcf-search {
+    display: none;
+  }
+
+
+  .example .dcf-nav-toggle-btn-search {
+    left: 33%;
   }
 
 }
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-search {
+    display: flex;
+  }
+
+}
+
 
 // @include mq(sm, min, width) {
 //
@@ -63,37 +80,3 @@
 // }
 
 
-@include mq(md, min, width) {
-
-  @supports (display: grid) {
-
-    .example .dcf-search {
-      grid-area: search;
-    }
-
-    .example .dcf-search-results {
-      display: grid;
-      grid-gap: #{ms(8)}em 5vw;
-      grid-template-areas: "web directory";
-      grid-template-columns: 1fr 1fr;
-    }
-
-//     .example .dcf-search-results {
-//       @include grid;
-//       grid-template-columns: 2fr 1fr 1fr;
-//       grid-template-areas:
-//         "pages people places";
-//       grid-gap: #{ms(8)}em 5vw;
-//     }
-
-    .example .dcf-search-results-web {
-      grid-area: web;
-    }
-
-    .example .dcf-search-results-directory {
-      grid-area: directory;
-    }
-
-  }
-
-}

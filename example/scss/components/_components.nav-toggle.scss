@@ -3,18 +3,43 @@
 ////////////////////////////////////
 
 
+.example .dcf-nav-toggle-btn {
+  width: 33%;
+}
+
+
+.example .dcf-nav-toggle-btn-menu {
+  left: 0;
+}
+
+
 @include mq(md, max, width) {
 
-  .example .dcf-mobile-nav-toggle {
-    bottom: 0;
-    height: 4em;
-    position: fixed;
+  .example .dcf-nav-toggle-group {
+    display: flex;
     width: 25%;
     z-index: 2;
   }
 
-  .example .dcf-nav-toggle {
+
+  .example .dcf-nav-toggle-group::after {
+    bottom: 0;
+    box-shadow: 0 0 4px 0 fade-out($color-body, .75);
+    content: '';
+    height: #{ms(10)}em;
     left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .example .dcf-nav-toggle-group {
+    display: none;
   }
 
 }
