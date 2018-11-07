@@ -75,9 +75,7 @@
   "dependencies": {
     "details-polyfill": "^1.1.0",
     "dialog-polyfill": "^0.4.9",
-    "intersection-observer": "^0.5.0",
-    "object-fit-images": "^3.2.3",
-    "picturefill": "^3.0.2"
+    "object-fit-images": "^3.2.3"
   },
   "engines": {
     "node": "node >= 0.10.0"

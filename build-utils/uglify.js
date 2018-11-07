@@ -9,12 +9,13 @@ const $ = require('./gulp-load-plugins');
  * @param {string} dest: output path
  * @param {string} taskName: name of the task
  * @param {string} newerDest: target file for newer to compared against
+ * @param {bool} noBanner: default false, includes banner at start of file
  */
 
-function uglifyNewer (src, dest, taskName, newerDest) {
+function uglifyNewer (src, dest, taskName, newerDest, noBanner = false) {
 		$.fancyLog(`----> //** Uglifying JS Files -- ${taskName}`);
 		return $.pump([
-			gulp.src(src),
+			gulp.src(src, {allowEmpty: true}),
 			customPlumber(`Error Running ${taskName} task`),
 			$.sourcemaps.init({loadMaps:true}),
 			$.newer({dest: newerDest}),
@@ -32,7 +33,9 @@ function uglifyNewer (src, dest, taskName, newerDest) {
 				showFiles: true,
 				gzip: true,
 			}),
-			$.header(banner, { pkg: pkg }),
+			$.if(!noBanner,
+					$.header(banner, { pkg: pkg })
+			),
 			$.sourcemaps.write('./'),
 			gulp.dest(dest)
 		]);
