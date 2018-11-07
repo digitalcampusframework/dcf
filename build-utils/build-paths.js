@@ -14,16 +14,16 @@ const coreDistCssPath = path.join(commonPaths.outputDist,'css');
 
 //Obtain paths to dependencies from package
 const dialogPolyfill = require.resolve('dialog-polyfill');
-const objectFitImages = require.resolve('object-fit-images');
+const objectFitImages = require.resolve('object-fit-images/dist/ofi.js');
 const detailsPolyfill = require.resolve('details-polyfill');
 
 module.exports = {
 	vendorJsSrc: vendorJsSrcPath,
 	// better to use unminified vendor files since all files will be concatenated & minified
-	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`, dialogPolyfill, intersectionObserver],
+	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`],
 	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
 	// better to use unminified vendor files since all files will be concatenated & minified
-	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, picturefill, objectFitImages, detailsPolyfill],
+	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, objectFitImages, detailsPolyfill, dialogPolyfill],
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
 	appJsPath: appJsSrcPath,
 	appJsCommonSrc: path.join(appJsSrcPath, 'common'),
