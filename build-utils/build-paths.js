@@ -39,9 +39,9 @@ module.exports = {
 	// example theme related build paths
 	exampleScssGlob: [`${exampleScssSrcPath}/**/*.scss`, ],
 	exampleScssLintedDest: path.join(commonPaths.exampleBuild, 'scss'),
-	exampleScreenScssEntry: path.join(commonPaths.exampleBuild,'scss','all.scss'),
-	exampleMustardScssEntry: path.join(commonPaths.exampleBuild,'scss','mustard.scss'),
-	examplePrintScssEntry: path.join(commonPaths.exampleBuild,'scss','print.scss'),
+	exampleScreenScssEntry: path.join(commonPaths.exampleBuild,'scss', buildNames.exampleScreenSCSS),
+	exampleMustardScssEntry: path.join(commonPaths.exampleBuild,'scss',buildNames.exampleMustardSCSS),
+	examplePrintScssEntry: path.join(commonPaths.exampleBuild,'scss',buildNames.examplePrintSCSS),
 	exampleCompiledCssDir: path.join(commonPaths.exampleBuild,'css'),
-	exampleScreenConcatGlob: [path.join(commonPaths.exampleBuild,'css','all.css'), `${coreDistCssPath}/screen/**/*.css`]
+	exampleScreenConcatGlob: [path.join(commonPaths.exampleBuild,'css', buildNames.exampleScreenCSS), `${coreDistCssPath}/screen/**/*.css`]
 };

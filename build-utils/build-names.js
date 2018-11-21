@@ -6,5 +6,9 @@ module.exports = {
 	vendorJs: "vendor.concat.js",
 	mustardJs: "mustard.concat.js",
 	appJs: "common-app.concat.js",
-	exampleScreenCSS: "all.css"
+	exampleScreenSCSS: "all.scss",
+	exampleScreenCSS: "all.css",
+	examplePrintSCSS: "print.scss",
+	examplePrintCSS: "print.css",
+	exampleMustardSCSS: "mustard.scss",
 }
