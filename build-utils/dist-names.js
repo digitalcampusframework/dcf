@@ -6,5 +6,6 @@ module.exports = {
 	vendorMinJs: 'vendor.concat.min.js',
 	mustardMinJs: 'mustard.concat.min.js',
 	commonAppMinJs: 'common-app.concat.min.js',
-	exampleScreenMinCSS: 'all.min.css'
+	exampleScreenMinCSS: 'all.min.css',
+	examplePrintMinCSS: 'print.min.css',
 }

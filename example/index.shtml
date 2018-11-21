@@ -72,6 +72,7 @@
       <li><a href="#example-components">Components</a></li>
       <li><a href="#example-utilities">Utilities</a></li>
       <li><a href="#example-javascript">JavaScript</a></li>
+      <li><a href="#example-print">Print</a></li>
     </ul>
 
     <!-- !General -->
@@ -3156,6 +3157,21 @@
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
+
+    </section>
+
+    <section class="dcf-pt-10 dcf-mb-10" id="example-print">
+
+      <h2>Print</h2>
+      <ul class="dcf-mt-6">
+        <li><a href="#example-print-display">Display</a></li>
+      </ul>
+
+      <h3 class="dcf-mt-8" id="example-javascript-states">Display</h3>
+      <dl class="dcf-measure">
+        <dt><code>.dcf-d-none@print</code></dt><dd>display: none when printed</dd>
+      </dl>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-display">Display</a> (Utilities)</p>
 
     </section>
   <!-- InstanceEndEditable -->

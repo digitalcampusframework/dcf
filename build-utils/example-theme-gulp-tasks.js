@@ -65,6 +65,10 @@ const createBundle = ({entries, paths, output, extensions, debug, destination}, 
 /* ----------------- */
 /* EXAMPLE STYLE LINT TASKS
 /* ----------------- */
+/**
+ * TODO breakout src to lint screen, print, mustard
+ * instead of just linting everything each time the example stylelint task is ran
+ */
 function stylelint() {
 	$.fancyLog('----> //** Linting Example SCSS files');
 	return $.pump([
@@ -72,7 +76,7 @@ function stylelint() {
 		customPlumber('Error Running stylelint:example:cached'),
 		$.cached('stylelint:Example'),
 		$.stylelint({
-			fix: false, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon,
+			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon,
 			// file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
 			failAfterError: true,
 			reportOutputDir: path.join(commonPaths.logPath, 'stylelint'),

@@ -29,7 +29,6 @@ module.exports = {
 	appDestPostBabel: path.join(commonPaths.outputDist, 'js', 'app', 'postBabel'),
 
 	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),
-	exampleScreenCssDest: path.join(commonPaths.examplePath, 'css'),
 	exampleScreenScssWatchGlob: [
 			`${exampleScssSrcPath}/**/*.scss`,
 			`!${exampleScssSrcPath}/mustard.scss`,
@@ -44,5 +43,10 @@ module.exports = {
 	],
 
 	exampleMustardScssWatchGlob: `${exampleScssSrcPath}/mustard/**/*.scss`,
+
+	examplePrintCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.examplePrintCSS),
 	examplePrintScssWatchGlob: `${exampleScssSrcPath}/print/**/*.scss`,
+	examplePrintCoreScssWatchGlob: `${coreDistScssPath}/print/**/*.scss`,
+
+	exampleCssMinDest: path.join(commonPaths.examplePath, 'css'),
 };
