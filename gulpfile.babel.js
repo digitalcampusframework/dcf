@@ -148,6 +148,7 @@ gulp.task('sassDist-watch', () => {
 /* ----------------- */
 /* EXAMPLE SASS TASKS
 /* ----------------- */
+/** Example theme styles sass compilation */
 gulp.task('sassCompile:example:screen', () => {
 	// need to return the stream
 	return sassCompile.screen(buildPaths.exampleScreenScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:screen');
@@ -160,33 +161,47 @@ gulp.task('sassCompile:example:mustard', () => {
 });
 
 
-// TODO: needs to be tested when there are actual files to work with
 gulp.task('sassCompile:example:print', () => {
-	return sassCompile.base(buildPaths.examplePrintScssEntry,buildPaths.exampleCompiledCssDir, 'sassCompile:example:print');
+	return sassCompile.base(buildPaths.examplePrintScssEntry, buildPaths.exampleCompiledCssDir, 'sassCompile:example:print');
 });
 
 
+/** Concat screen styles */
 gulp.task('cssConcat:example:screen', () => {
   return concat.base(buildPaths.exampleScreenConcatGlob, buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS,'cssConcat:example:screen');
 });
 
 
+/** Minify example theme styles */
 gulp.task('cssDist:example:screen', () => {
-	return cssMinifyNewer(distPaths.exampleScreenCssSrc,distPaths.exampleScreenCssDest,'cssDist:example:screen',path.join(distPaths.exampleScreenCssDest, distNames.exampleScreenMinCSS));
+	return cssMinifyNewer(distPaths.exampleScreenCssSrc, distPaths.exampleCssMinDest,'cssDist:example:print',path.join(distPaths.exampleCssMinDest, distNames.exampleScreenMinCSS));
 });
 
 
+gulp.task('cssDist:example:print', () => {
+	return cssMinifyNewer(distPaths.examplePrintCssSrc, distPaths.exampleCssMinDest,'cssDist:example:print',path.join(distPaths.exampleCssMinDest, distNames.examplePrintMinCSS));
+});
+
+
+/** Compose example screen styles */
 gulp.task('exampleCssDist:screen', gulp.series(
-		'stylelint:example:cached',
 		'sassCompile:example:screen',
 		'cssConcat:example:screen',
 		'cssDist:example:screen'
 ));
 
 
+/** Compose example print styles */
+gulp.task('exampleCssDist:print', gulp.series(
+		'sassCompile:example:print',
+		'cssDist:example:print'
+));
+
+/** Example theme screen styles watch tasks */
+// watch for any changes in the example/scss folder and recompile all.min.css
 gulp.task('sassDist:example:screen-watch', () => {
 	// stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder on watch
-	gulp.watch(distPaths.exampleScreenScssWatchGlob, gulp.series('exampleCssDist:screen'))
+	gulp.watch(distPaths.exampleScreenScssWatchGlob, gulp.series('stylelint:example:cached', 'exampleCssDist:screen'))
 			.on('unlink', (ePath, stats) => {
 				// if something is deleted in the example/scss folder it will also be removed from the example/build/scss folder
 				cascadeDelete(ePath, stats, buildPaths.exampleScssLintedDest, 'sassDist:example:screen-watch', true);
@@ -196,8 +211,28 @@ gulp.task('sassDist:example:screen-watch', () => {
 
 // watch for any changes in the assets/dist/scss folder and recompile all.min.css
 gulp.task('sassDist:example:screen-watch:core', () => {
-	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('exampleCssDist:screen'))
+	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('stylelint:example:cached', 'exampleCssDist:screen'))
 });
+
+
+/** Example theme print styles watch tasks */
+// watch for any changes in the example/scss/print folder and recompile print.min.css
+gulp.task('sassDist:example:print-watch', () => {
+	// stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder on watch
+	gulp.watch(distPaths.examplePrintScssWatchGlob, gulp.series('exampleCssDist:print'))
+			.on('unlink', (ePath, stats) => {
+				// if something is deleted in the example/scss folder it will also be removed from the example/build/scss folder
+				cascadeDelete(ePath, stats, buildPaths.exampleScssLintedDest, 'sassDist:example:screen-watch', true);
+			});
+});
+
+
+// watch for any changes in the assets/dist/scss folder and recompile print.min.css
+gulp.task('sassDist:example:print-watch:core', () => {
+	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('exampleCssDist:print'))
+});
+
+
 
 
 
@@ -557,7 +592,7 @@ gulp.task('outputPlugins', (done) => {
 
 
 gulp.task('cleanBuildDist', (done) => {
-	$.delete([commonPaths.outputBuild, commonPaths.outputDist, commonPaths.exampleBuild, distPaths.exampleScreenCssDest], {force: true}, function(err, deleted) {
+	$.delete([commonPaths.outputBuild, commonPaths.outputDist, commonPaths.exampleBuild, distPaths.exampleCssMinDest], {force: true}, function(err, deleted) {
 		if (err) throw err;
 		// deleted files
 		console.log(`${deleted} build and dist folders cleaned 🗑`);
@@ -587,7 +622,13 @@ gulp.task('preWatch',
 					gulp.series('sassDist'),
 					gulp.series('copyCSS:newer')
 			),
-			'exampleCssDist:screen'
+			gulp.series(
+					'stylelint:example:cached',
+					gulp.parallel(
+							'exampleCssDist:screen',
+							'exampleCssDist:print',
+					),
+			),
 		));
 
 gulp.task('watching 👀',
@@ -599,7 +640,9 @@ gulp.task('watching 👀',
 				'mustardDist-watch',
 				'appDist-watch',
 				'sassDist:example:screen-watch',
-				'sassDist:example:screen-watch:core'
+				'sassDist:example:screen-watch:core',
+				'sassDist:example:print-watch',
+				'sassDist:example:print-watch:core',
 		)
 );
 

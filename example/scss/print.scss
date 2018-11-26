@@ -3,9 +3,23 @@
 /////////
 
 
-// !Core Print
-@import '../../assets/dist/scss/print/**/*';
+// scss is compiled from a temporary _example/build/scss_ through the gulp tasks
+// hence the import path from core reflects that.
+
+// !Variables
+@import '../../../assets/dist/scss/variables/**/*';
+@import 'variables/**/*';
 
 
-// !Theme Print
+// !Mixins
+@import '../../../assets/dist/scss/mixins/**/*';
+@import 'mixins/**/*';
+
+
+// !Functions
+@import '../../../assets/dist/scss/functions/**/*';
+
+
+// !Print
+@import '../../../assets/dist/scss/print/**/*';
 @import 'print/**/*';
