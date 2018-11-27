@@ -2721,8 +2721,10 @@ var noticeOptions = {
 Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
 var datepicker = document.querySelector('[data-widget*="flatpickr"]');
-console.log(datepicker);
-flatpickr(datepicker);
+flatpickr(datepicker, {
+	enableTime: true,
+	dateFormat: "Y-m-d h:iK"
+});
 
 },{"dcf-dialog":1,"dcf-notice":2,"flatpickr/flatpickr":5,"flatpickr/flatpickr.css":4}],7:[function(require,module,exports){
 'use strict';

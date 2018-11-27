@@ -19,5 +19,7 @@ Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions)
 
 
 let datepicker = document.querySelector('[data-widget*="flatpickr"]');
-console.log(datepicker);
-flatpickr(datepicker);
+flatpickr(datepicker, {
+	enableTime: true,
+	dateFormat: "Y-m-d h:iK",
+});

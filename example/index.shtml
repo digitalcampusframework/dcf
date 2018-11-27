@@ -563,12 +563,7 @@
               <label for="example-elements-form-datetime">Date/time</label>
               <input id="example-elements-form-datetime" type="datetime-local">
             </div>
-            <div>
-              <label for="example-elements-form-datetime-flatpickr">Date/time (using Flatpickr)</label>
-              <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
-                     placeholder="Select Date.."
-                     readonly="readonly">
-            </div>
+
             <div>
               <label for="example-elements-form-input-file">File input</label>
               <input id="example-elements-form-input-file" type="file">
@@ -3148,6 +3143,7 @@
       <h2>JavaScript</h2>
       <ul class="dcf-mt-6">
         <li><a href="#example-javascript-states">States</a></li>
+        <li><a href="#example-javascript-datepicker">Date Picker Form Input Field</a></li>
       </ul>
 
       <h3 class="dcf-mt-8" id="example-javascript-states">States</h3>
@@ -3164,6 +3160,18 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
+        <h3 id="example-javascript-datepicker">Date Picker Form Input Field</h3>
+        <dt><code>&#x3C;input  data-widget=&#x22;flatpickr&#x22; type=&#x22;text&#x22; placeholder=&#x22;Select Date & Time ..&#x22; readonly&#x3E;</code></dt>
+        <dd>Utilizes the Flatpickr plugin for a more browser uniform date picker widget see <a
+                href="https://flatpickr.js.org/">Flatpickr documentation</a> for options.</dd>
+        <form>
+            <fieldset>
+                <label for="example-elements-form-datetime-flatpickr">Date/time: </label>
+                <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
+                           placeholder="Select Date & Time.."
+                           readonly="readonly">
+            </fieldset>
+        </form>
     </section>
 
     <section class="dcf-pt-10 dcf-mb-10" id="example-print">
