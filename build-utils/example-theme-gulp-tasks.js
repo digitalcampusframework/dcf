@@ -20,7 +20,7 @@ const exampleBundles = [
 	{
 		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
 		// if you need modules that are preBabel use umd-related paths from buildPaths
-		paths: [`${path.join(distPaths.appDestPreBabel,'common')}`, `${path.join(distPaths.appDestPreBabel, 'optional')}`],
+		paths: [distPaths.vendorJsDest, `${path.join(distPaths.appDestPreBabel,'common')}`, `${path.join(distPaths.appDestPreBabel, 'optional')}`],
 		output: 'bundle.js', //output file name
 		extensions: ['.js', '.json'],
 		debug: true,
@@ -39,6 +39,12 @@ const createBundle = ({entries, paths, output, extensions, debug, destination}, 
 	b.transform(babelify.configure({
 		compact: false
 	}));
+	b.transform(['browserify-css', {
+		autoInject: true,
+		minify: true,
+	}]);
+
+	// browserify({ 'entries': ['./client/components/TVScheduleTab/render.js'], 'transform': [[babelify], ['envify', {'global': true, NODE_ENV: 'production'}]] }
 
 	$.fancyLog(`----> //** ${isWatchify ? 'Watchify' : 'Browserify'}`);
 	const rebundle = () => $.pump([

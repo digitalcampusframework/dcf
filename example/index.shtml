@@ -564,6 +564,12 @@
               <input id="example-elements-form-datetime" type="datetime-local">
             </div>
             <div>
+              <label for="example-elements-form-datetime-flatpickr">Date/time (using Flatpickr)</label>
+              <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
+                     placeholder="Select Date.."
+                     readonly="readonly">
+            </div>
+            <div>
               <label for="example-elements-form-input-file">File input</label>
               <input id="example-elements-form-input-file" type="file">
             </div>
