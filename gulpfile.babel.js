@@ -234,8 +234,6 @@ gulp.task('sassDist:example:print-watch:core', () => {
 
 
 
-
-
 /* ----------------- */
 /* CSS TASKS
 /* ----------------- */
@@ -269,26 +267,22 @@ gulp.task('copyCSS-watch', () => {
 /* ----------------- */
 /* VENDOR JS TASKS
 /* ----------------- */
-gulp.task('vendorConcat:newer', () => {
-	// need to return the stream
-  return concat.newer(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorConcat:newer',  path.join(buildPaths.vendorJsDest, buildNames.vendorJs));
+// copy vendor libraries from packages and src/mustard into dist
+gulp.task('copyVendor:newer', () => {
+	return copyNewer(distPaths.vendorJsGlob, distPaths.vendorJsDest, 'copyVendor:newer', distPaths.vendorJsDest);
 });
 
 
-gulp.task('vendorUglify', () => {
-	return uglifyNewer(distPaths.vendorJsSrc, distPaths.vendorJsDest, 'vendorUglify', path.join(distPaths.vendorJsDest, distNames.vendorMinJs));
-});
-
-
-gulp.task('vendorDist', gulp.series('vendorConcat:newer', 'vendorUglify'));
+gulp.task('vendorDist', gulp.series('copyVendor:newer'));
 
 
 gulp.task('vendorDist-watch', () => {
-	gulp.watch(buildPaths.vendorJsGlob, gulp.series('vendorConcat:newer', 'vendorUglify'))
+	gulp.watch(distPaths.vendorJsGlob, gulp.series('vendorDist'))
 			.on('unlink', (ePath, stats) => {
 				// code to execute on delete
-				console.log(`${ePath} deleted, recompiling ${distNames.vendorMinJs} - [vendorDist-watch]`);
-				concat.base(buildPaths.vendorJsGlob, buildPaths.vendorJsDest, buildNames.vendorJs, 'vendorConcat'); // if src files get deleted, force rebuild of dist file
+				console.log(`${ePath} deleted`);
+				cascadeDelete(ePath, stats, distPaths.vendorJsDest, 'vendorDist-watch', true); // if src files
+				// get deleted, delete the files inside of dist as well
 			});
 });
 

@@ -27,6 +27,7 @@
     "babel-register": "^6.26.0",
     "babelify": "^8.0.0",
     "browserify": "^16.2.3",
+    "browserify-css": "^0.14.0",
     "browserslist": "^4.3.4",
     "delete": "^1.1.0",
     "eslint-html-reporter": "^0.5.2",
@@ -75,6 +76,7 @@
   "dependencies": {
     "details-polyfill": "^1.1.0",
     "dialog-polyfill": "^0.4.9",
+    "flatpickr": "^4.5.2",
     "object-fit-images": "^3.2.4"
   },
   "engines": {

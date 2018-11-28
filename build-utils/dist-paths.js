@@ -3,14 +3,19 @@ const commonPaths = require('./common-paths');
 const buildPaths = require('./build-paths');
 const buildNames = require('./build-names');
 
+const vendorJsSrcPath = path.join(commonPaths.srcPath, 'js', 'vendor');
 const scssPath = path.join(commonPaths.srcPath, 'scss');
 const cssPath = path.join(commonPaths.srcPath, 'css');
 const optionalAppPath = path.join(commonPaths.outputBuild, 'js', 'app', 'optional');
 const coreDistScssPath = path.join(commonPaths.outputDist, 'scss');
 const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
 
+//Obtain paths to dependencies from package
+
 module.exports = {
-	vendorJsSrc: path.join(buildPaths.vendorJsDest, buildNames.vendorJs),
+	vendorJsSrc: vendorJsSrcPath,
+	// better to use unminified vendor files since all files will be concatenated & minified
+	vendorJsGlob: [`${vendorJsSrcPath}/**/*`, `!${vendorJsSrcPath}/**/*.ts`],
 	vendorJsDest: path.join(commonPaths.outputDist, 'js', 'vendor'),
 	mustardJsSrc: [`${buildPaths.mustardJsDest}/**/*.js`, `!${buildPaths.mustardJsDest}/**/*.min.js`],
 	mustardJsDest: path.join(commonPaths.outputDist, 'js', 'mustard'),

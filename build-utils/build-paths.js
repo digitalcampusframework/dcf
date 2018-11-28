@@ -2,7 +2,6 @@ const path = require('path');
 const commonPaths = require('./common-paths');
 const buildNames = require('./build-names');
 
-const vendorJsSrcPath = path.join(commonPaths.srcPath, 'js', 'vendor');
 const mustardJsSrcPath = path.join(commonPaths.srcPath, 'js', 'mustard');
 const appJsSrcPath = path.join(commonPaths.srcPath, 'js', 'app');
 const appJsDestPath = path.join(commonPaths.outputBuild, 'js', 'app');
@@ -17,12 +16,8 @@ const dialogPolyfill = require.resolve('dialog-polyfill');
 const objectFitImages = require.resolve('object-fit-images/dist/ofi.js');
 const detailsPolyfill = require.resolve('details-polyfill');
 
+
 module.exports = {
-	vendorJsSrc: vendorJsSrcPath,
-	// better to use unminified vendor files since all files will be concatenated & minified
-	vendorJsGlob: [`${vendorJsSrcPath}/**/*.js`],
-	vendorJsDest: path.join(commonPaths.outputBuild, 'js', 'vendor'),
-	// better to use unminified vendor files since all files will be concatenated & minified
 	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, objectFitImages, detailsPolyfill, dialogPolyfill],
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
 	appJsPath: appJsSrcPath,
