@@ -4,6 +4,7 @@
 
 
 // !Height
+.dcf-h-auto { @include h-auto(!important); }
 .dcf-h-0 { @include h-0(!important); }
 .dcf-h-1 { @include h-1(!important); }
 .dcf-h-2 { @include h-2(!important); }
@@ -30,6 +31,7 @@
 
 
 // !Width
+.dcf-w-auto { @include w-auto(!important); }
 .dcf-w-0 { @include w-0(!important); }
 .dcf-w-1 { @include w-1(!important); }
 .dcf-w-2 { @include w-2(!important); }
