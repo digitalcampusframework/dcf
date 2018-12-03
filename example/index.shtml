@@ -2712,6 +2712,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-height">Height</h4>
 		      <dl>
+		        <dt><code>.dcf-h-auto</code></dt><dd>height: auto</dd>
 		        <dt><code>.dcf-h-0</code></dt><dd>height: 0</dd>
 		        <dt><code>.dcf-h-1</code></dt><dd>height: .42em</dd>
 		        <dt><code>.dcf-h-2</code></dt><dd>height: .56em</dd>
@@ -2744,7 +2745,8 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-width">Width</h4>
 		      <dl>
-		        <dt><code>.dcf-w-0</code></dt><dd>width: 0</dd>
+		        <dt><code>.dcf-w-auto</code></dt><dd>width: auto</dd>
+                <dt><code>.dcf-w-0</code></dt><dd>width: 0</dd>
 		        <dt><code>.dcf-w-1</code></dt><dd>width: .42em</dd>
 		        <dt><code>.dcf-w-2</code></dt><dd>width: .56em</dd>
 		        <dt><code>.dcf-w-3</code></dt><dd>width: .75em</dd>

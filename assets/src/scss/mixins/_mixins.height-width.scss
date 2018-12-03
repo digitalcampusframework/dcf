@@ -4,6 +4,7 @@
 
 
 // !Height
+@mixin h-auto($imp:null) { height: auto $imp; }
 @mixin h-0($imp:null) { height: 0 $imp; }
 @mixin h-1($imp:null) { height: $length-em-1 $imp; }
 @mixin h-2($imp:null) { height: $length-em-2 $imp; }
@@ -30,6 +31,7 @@
 
 
 // !Width
+@mixin w-auto($imp:null) { width: auto $imp; }
 @mixin w-0($imp:null) { width: 0 $imp; }
 @mixin w-1($imp:null) { width: $length-em-1 $imp; }
 @mixin w-2($imp:null) { width: $length-em-2 $imp; }
