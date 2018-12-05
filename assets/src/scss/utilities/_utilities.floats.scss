@@ -11,5 +11,17 @@
 .dcf-float-left { @include float-left(!important); }
 
 
+// !Clear Right
+.dcf-clear-right { @include clear-right(!important); }
+
+
+// !Clear Left
+.dcf-clear-left { @include clear-left(!important); }
+
+
+// !Clear Both
+.dcf-clear-both { @include clear-both(!important); }
+
+
 // !Clearfix
 .dcf-clearfix { @include clearfix(!important); }
