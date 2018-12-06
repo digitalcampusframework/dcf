@@ -1780,8 +1780,6 @@
         <dd>Add to a div that wraps the checkbox input and label.</dd>
         <dt><code>.dcf-input-radio</code></dt>
         <dd>Add to a div that wraps the radio input and label.</dd>
-        <dt><code>.dcf-input-control</code></dt>
-        <dd>Add to checkboxes and radio inputs.</dd>
         <dt><code>.dcf-input-file</code></dt>
         <dd>Add to file inputs.</dd>
       </dl>
@@ -1867,26 +1865,26 @@
                           class="dcf-d-flex dcf-flex-col dcf-ml-4">
                   <legend class="dcf-legend">Position</legend>
                   <div class="dcf-input-radio">
-                    <input id="student_Position" class="dcf-input-control" name="Position" type="radio" value="student">
+                    <input id="student_Position" name="Position" type="radio" value="student">
                     <label for="student_Position" class="dcf-label">student</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="faculty_member_Position" class="dcf-input-control" name="Position" type="radio"
+                    <input id="faculty_member_Position" name="Position" type="radio"
                            value="faculty member">
                     <label for="faculty_member_Position"  class="dcf-label">faculty member</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="administrator_Position" class="dcf-input-control" name="Position" type="radio"
+                    <input id="administrator_Position" name="Position" type="radio"
                            value="administrator">
                     <label for="administrator_Position" class="dcf-label">administrator</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="staff_member_Position" class="dcf-input-control" name="Position" type="radio"
+                    <input id="staff_member_Position" name="Position" type="radio"
                            value="staff member">
                     <label for="staff_member_Position" class="dcf-label">staff member</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="other_Position" class="dcf-input-control" name="Position" type="radio" value="other">
+                    <input id="other_Position" name="Position" type="radio" value="other">
                     <label for="other_Position" class="dcf-label">other</label>
                   </div>
                 </fieldset>
