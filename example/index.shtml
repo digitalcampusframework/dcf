@@ -1776,7 +1776,7 @@
         <dd>Add to text-based inputs—either an <code>&lt;input&gt;</code> with a type attribute that supports text input, or a <code>&lt;textarea&gt;</code>.</dd>
         <dt><code>.dcf-input-select</code></dt>
         <dd>Add to a div that wraps the <code>&lt;select&gt;</code> elements.</dd>
-        <dt><code>.dcf-input-checkboxes</code></dt>
+        <dt><code>.dcf-input-checkbox</code></dt>
         <dd>Add to a div that wraps the checkbox input and label.</dd>
         <dt><code>.dcf-input-radio</code></dt>
         <dd>Add to a div that wraps the radio input and label.</dd>
