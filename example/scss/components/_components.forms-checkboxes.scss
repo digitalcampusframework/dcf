@@ -1,0 +1,80 @@
+///////////////////////////////////////////
+// !THEME / COMPONENTS / FORMS - CHECKBOXES
+///////////////////////////////////////////
+// Custom styled checkbox https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox/
+
+.example .dcf-input-checkbox {
+	position: relative;
+	@include pl-6;
+	@include mb-2;
+
+	input[type="checkbox"] {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		width: $length-em-6;
+		height: $length-em-6;
+		z-index: 1;
+		margin: 0;
+		zoom: 1;
+		opacity: 0;
+	}
+
+	label {
+		cursor: pointer;
+		touch-action: manipulation;
+	}
+
+	label::before, label::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+
+	label::before {
+		width: $length-em-6;
+		height: $length-em-6;
+		border-radius: $roundrect;
+		border: 1px solid $color-border;
+		box-shadow: inset 0 1px 2px fade-out($color-border,0.5);
+		transition: border-color $hover-off, box-shadow $hover-off;
+	}
+
+	label::after {
+		border: solid;
+		border-color: $color-brand-alpha;
+		border-width: 0 0 5px 5px;
+		background: transparent;
+		border-top-color: transparent;
+		width: $length-em-4;
+		height: $length-em-2;
+		transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(0);
+		transition: transform $hover-on;
+	}
+
+	// display checkmark
+	input[type="checkbox"]:checked + label::after {
+		transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(1);
+	}
+
+	input[type="checkbox"]:checked + label::before {
+		border-color: $color-border-hover;
+	}
+
+	&:hover {
+		label::before {
+			border-color: $color-border-hover;
+			box-shadow: inset 0 1px 2px fade-out($color-border,.5);
+			transition: border-color $hover-on, box-shadow $hover-on;
+		}
+	}
+
+	//focus state
+	input[type="checkbox"]:focus + label::before {
+		border-color: $color-button;
+		outline: none;
+	}
+}

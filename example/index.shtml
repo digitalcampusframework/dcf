@@ -1775,7 +1775,11 @@
         <dt><code>.dcf-input-text</code></dt>
         <dd>Add to text-based inputs—either an <code>&lt;input&gt;</code> with a type attribute that supports text input, or a <code>&lt;textarea&gt;</code>.</dd>
         <dt><code>.dcf-input-select</code></dt>
-        <dd>Add to <code>&lt;select&gt;</code> elements.</dd>
+        <dd>Add to a div that wraps the <code>&lt;select&gt;</code> elements.</dd>
+        <dt><code>.dcf-input-checkboxes</code></dt>
+        <dd>Add to a div that wraps the checkbox input and label.</dd>
+        <dt><code>.dcf-input-radio</code></dt>
+        <dd>Add to a div that wraps the radio input and label.</dd>
         <dt><code>.dcf-input-control</code></dt>
         <dd>Add to checkboxes and radio inputs.</dd>
         <dt><code>.dcf-input-file</code></dt>
@@ -1824,33 +1828,70 @@
               </div>
             </div>
     -->
-            <fieldset>
+            <fieldset class="dcf-d-flex dcf-flex-col dcf-form-group">
               <legend class="dcf-legend">Checkboxes</legend>
-              <div class="dcf-form-group">
-                <input class="dcf-input-control" id="example-components-form-checkbox1" type="checkbox" value="0">
-                <label for="example-components-form-checkbox1">Checkbox 1</label>
+              <div class="dcf-input-checkbox">
+                <input id="elements-form-checkboxA" type="checkbox" value="0"
+                       aria-labelledby="elements-form-checkboxA-label">
+                <label for="elements-form-checkboxA"
+                       id="elements-form-checkboxA-label"
+                       class="dcf-label">
+                  Checkbox A
+                </label>
               </div>
-              <div class="dcf-form-group">
-                <input class="dcf-input-control" id="example-components-form-checkbox2" type="checkbox" value="1">
-                <label for="example-components-form-checkbox2">Checkbox 2</label>
+              <div class="dcf-input-checkbox">
+                <input id="elements-form-checkboxB" type="checkbox" value="1"
+                       aria-labelledby="elements-form-checkboxB-label" disabled>
+                <label for="elements-form-checkboxB"
+                       id="elements-form-checkboxB-label"
+                       class="dcf-label">
+                  Checkbox B
+                </label>
+              </div>
+              <div class="dcf-input-checkbox">
+                <input id="elements-form-checkboxC" type="checkbox" value="2"
+                       aria-labelledby="elements-form-checkboxC-label">
+                <label for="elements-form-checkboxC"
+                       id="elements-form-checkboxC-label"
+                       class="dcf-label">
+                  Checkbox C
+                </label>
               </div>
             </fieldset>
             <fieldset>
               <legend class="dcf-legend">Radio buttons</legend>
-              <div>
-                <div class="dcf-form-group">
-                  <input class="dcf-input-control" id="example-components-form-radio-1" name="helpful" type="radio" value="0">
-                  <label for="example-components-form-radio-1">Radio 1</label>
-                </div>
-                <div class="dcf-form-group">
-                  <input class="dcf-input-control" id="example-components-form-radio-2" name="helpful" type="radio" value="1">
-                  <label for="example-components-form-radio-2">Radio 2</label>
-                </div>
-                <div class="dcf-form-group">
-                  <input class="dcf-input-control" id="example-components-form-radio-radio" name="helpful" type="radio" value="2">
-                  <label for="example-components-form-radio-radio">Radio Radio</label>
-                </div>
+              <div class="dcf-d-flex dcf-form-group dcf-input-group-form">
+                <label for="position" id="position-level" class="dcf-label">I identify myself as a:
+                </label>
+                <fieldset id="Position" name="Position" aria-labelledby="position-level"
+                          class="dcf-d-flex dcf-flex-col dcf-ml-4">
+                  <legend class="dcf-legend">Position</legend>
+                  <div class="dcf-input-radio">
+                    <input id="student_Position" class="dcf-input-control" name="Position" type="radio" value="student">
+                    <label for="student_Position" class="dcf-label">student</label>
+                  </div>
+                  <div class="dcf-input-radio">
+                    <input id="faculty_member_Position" class="dcf-input-control" name="Position" type="radio"
+                           value="faculty member">
+                    <label for="faculty_member_Position"  class="dcf-label">faculty member</label>
+                  </div>
+                  <div class="dcf-input-radio">
+                    <input id="administrator_Position" class="dcf-input-control" name="Position" type="radio"
+                           value="administrator">
+                    <label for="administrator_Position" class="dcf-label">administrator</label>
+                  </div>
+                  <div class="dcf-input-radio">
+                    <input id="staff_member_Position" class="dcf-input-control" name="Position" type="radio"
+                           value="staff member">
+                    <label for="staff_member_Position" class="dcf-label">staff member</label>
+                  </div>
+                  <div class="dcf-input-radio">
+                    <input id="other_Position" class="dcf-input-control" name="Position" type="radio" value="other">
+                    <label for="other_Position" class="dcf-label">other</label>
+                  </div>
+                </fieldset>
               </div>
+
             </fieldset>
             <div class="dcf-form-group">
               <label class="dcf-label" for="example-components-form-comments">Comments</label>
