@@ -3,20 +3,20 @@
 /////////////////////////////
 
 
-// !Float Left
-.dcf-float-left { @include float-left(!important); }
-
-
 // !Float Right
 .dcf-float-right { @include float-right(!important); }
 
 
-// !Clear Left
-.dcf-clear-left { @include clear-left(!important); }
+// !Float Left
+.dcf-float-left { @include float-left(!important); }
 
 
 // !Clear Right
 .dcf-clear-right { @include clear-right(!important); }
+
+
+// !Clear Left
+.dcf-clear-left { @include clear-left(!important); }
 
 
 // !Clear Both
