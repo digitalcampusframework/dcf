@@ -3,20 +3,20 @@
 //////////////////////////
 
 
-// !Float Left
-@mixin float-left($imp:null) { float: left $imp; }
-
-
 // !Float Right
 @mixin float-right($imp:null) { float: right $imp; }
 
 
-// !Clear Left
-@mixin clear-left($imp:null) { clear: left $imp; }
+// !Float Left
+@mixin float-left($imp:null) { float: left $imp; }
 
 
 // !Clear Right
 @mixin clear-right($imp:null) { clear: right $imp; }
+
+
+// !Clear Left
+@mixin clear-left($imp:null) { clear: left $imp; }
 
 
 // !Clear Both
