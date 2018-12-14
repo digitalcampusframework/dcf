@@ -1154,6 +1154,27 @@
       <p class="dcf-mt-8 dcf-measure">Grids of equal-width columns can more easily be created using the following grid objects instead of applying classes to each and every grid column in the twelve-column grid.</p>
 
       <dl class="dcf-mt-8 dcf-measure">
+        <dt><code>.dcf-grid-full</code></dt>
+        <dd>The grid-full object lays out child elements to each span all twelve columns of the grid.</dd>
+      </dl>
+      <figure class="dcf-mt-6">
+        <div class="dcf-grid-full dcf-col-gap-4 dcf-row-gap-4">
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">3</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">4</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">5</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">6</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">7</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">8</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">9</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">10</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
+          <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
+        </div>
+      </figure>
+
+      <dl class="dcf-mt-8 dcf-measure">
         <dt><code>.dcf-grid-halves</code></dt>
         <dd>The grid-halves object lays out child elements in a grid of two equal-width columns.</dd>
       </dl>
