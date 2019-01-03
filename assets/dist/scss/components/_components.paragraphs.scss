@@ -3,12 +3,6 @@
 //////////////////////////////////
 
 
-// !Lead Paragraphs
-.dcf-lead {
-  @include txt-lg;
-}
-
-
 // !Drop Caps
 .dcf-dropcap::first-letter {
   float: left;
