@@ -8,20 +8,20 @@
 @mixin bg-white($imp:null) { background-color: #fff $imp; }
 
 @mixin bg-overlay-dark($imp:null) {
-  background-color: rgba(0,0,0,.96) $imp;
+  background-color: fade-out($color-overlay-dark,.02) $imp;
 
-  @supports (backdrop-filter: blur(6px)) {
-    background-color: rgba(0,0,0,.8) $imp;
-    backdrop-filter: blur(6px) grayscale(10%) $imp;
+  @supports (backdrop-filter: blur(5px)) {
+    background-color: fade-out($color-overlay-dark,.05) $imp;
+    backdrop-filter: blur(5px) grayscale(50%) $imp;
   }
 }
 
 @mixin bg-overlay-light($imp:null) {
-  background-color: rgba(255,255,255,.98) $imp;
+  background-color: fade-out($color-overlay-light,.02) $imp;
 
-  @supports (backdrop-filter: blur(6px)) {
-    background-color: rgba(255,255,255,.95) $imp;
-    backdrop-filter: blur(6px) grayscale(33%) $imp;
+  @supports (backdrop-filter: blur(5px)) {
+    background-color: fade-out($color-overlay-light,.1) $imp;
+    backdrop-filter: blur(5px) grayscale(50%) $imp;
   }
 }
 
