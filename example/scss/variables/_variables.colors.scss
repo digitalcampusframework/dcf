@@ -31,20 +31,16 @@ $gray-darker: darken($mix-white-black, 24%); // #434343
 $gray-darkest: darken($mix-white-black, 32%); // #2e2e2e
 
 
-// Body background color (usually white, off-white, or very light gray)
-$color-body-bg: $white;
+// Background colors
+$color-body-bg: $white; // Body background color (usually white, off-white, or very light gray)
+$color-overlay-light: $white; // Light overlay background color for modals
+$color-overlay-dark: $gray-darkest; // Dark overlay background color for modals
 
 
-// Strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
-$color-body: $gray-darker;
-
-
-// Strive for WCAG AAA (minimum contrast ratio of 7.0) for heading text
-$color-heading: $gray-darkest;
-
-
-// Must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-light-text: $gray-dark;
+// Text colors
+$color-body: $gray-darker; // Strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
+$color-heading: $gray-darkest; // Strive for WCAG AAA (minimum contrast ratio of 7.0) for heading text
+$color-light-text: $gray-dark; // Must meet WCAG AA (minimum contrast ratio of 4.5)
 
 
 // !Links
