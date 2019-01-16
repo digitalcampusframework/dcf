@@ -5,6 +5,7 @@
 
 .example .dcf-input-checkbox {
 	position: relative;
+	width: max-content;
 	@include pl-6;
 	@include mb-2;
 
@@ -38,8 +39,8 @@
 		width: $length-em-6;
 		height: $length-em-6;
 		border-radius: $roundrect;
-		border: 1px solid $color-border;
-		box-shadow: inset 0 1px 2px fade-out($color-border,0.5);
+		border: 1px solid $color-border-input;
+		box-shadow: inset 0 1px 2px fade-out($color-border-input,0.5);
 		transition: border-color $hover-off, box-shadow $hover-off;
 	}
 
@@ -61,13 +62,13 @@
 	}
 
 	input[type="checkbox"]:checked + label::before {
-		border-color: $color-border-hover;
+		border-color: $color-border-input-hover;
 	}
 
 	&:hover {
 		label::before {
-			border-color: $color-border-hover;
-			box-shadow: inset 0 1px 2px fade-out($color-border,.5);
+			border-color: $color-border-input-hover;
+			box-shadow: inset 0 1px 2px fade-out($color-border-input,.5);
 			transition: border-color $hover-on, box-shadow $hover-on;
 		}
 	}
