@@ -65,7 +65,7 @@ const lazyLoad = [
 	customPlumber('error wrapping lazyLoad'),
 	$.newer({ dest:buildPaths.umdCommonAppDest }),
 	$.umd({
-		exports: () => 'lazyLoad', // TODO: needs to be redefined when file is modularized
+		exports: () => 'LazyLoad',
 		namespace: () => 'dcfLazyLoad'
 	}),
 	gulp.dest(buildPaths.umdCommonAppDest)
