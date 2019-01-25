@@ -1878,7 +1878,7 @@
             </fieldset>
             <fieldset>
               <legend class="dcf-legend">Radio buttons</legend>
-              <div class="dcf-d-flex dcf-form-group dcf-input-group-form">
+              <div class="dcf-d-flex dcf-form-group dcf-input-group-form dcf-ai-flex-start">
                 <label for="position" id="position-level" class="dcf-label">I identify myself as a:
                 </label>
                 <fieldset id="Position" name="Position" aria-labelledby="position-level"
