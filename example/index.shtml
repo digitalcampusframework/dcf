@@ -3224,11 +3224,7 @@
              http://via.placeholder.com/800x300 800w,
              http://via.placeholder.com/1280x300 1280w,
              http://via.placeholder.com/2000x300 2000w"
-             sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            (max-width: 800px) 760px,
-            (max-width: 1280px) 1275px,
-            100vw" alt="blank placeholder image for lazy-loading demonstration">
+             sizes="calc(100vw - 5.61866vw)" alt="blank placeholder image for lazy-loading demonstration">
         <noscript>
           <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
         </noscript>

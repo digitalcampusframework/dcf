@@ -125,7 +125,7 @@ class LazyLoad {
 			// foreach() is not supported in IE
 			for (let i = 0; i < this.imageCount; i++) {
 				let image = this.imagesList[i];
-				if (image.classList.contains('dcf-lazy-img-handled')) {
+				if (image.classList.contains('dcf-lazy-img-loaded')) {
 					continue;
 				}
 
