@@ -3216,7 +3216,19 @@
         <dt><code>.dcf-fade-up</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from 50% to 0, moving it into view.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <img class="dcf-lazy-img" src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" data-src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+        <img class="dcf-lazy-img"
+             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+             data-src="http://via.placeholder.com/400x300"
+             data-srcset="http://via.placeholder.com/320x300 320w,
+             http://via.placeholder.com/480x300 480w,
+             http://via.placeholder.com/800x300 800w,
+             http://via.placeholder.com/1280x300 1280w,
+             http://via.placeholder.com/2000x300 2000w"
+             sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            (max-width: 800px) 760px,
+            (max-width: 1280px) 1275px,
+            100vw" alt="blank placeholder image for lazy-loading demonstration">
         <noscript>
           <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
         </noscript>
