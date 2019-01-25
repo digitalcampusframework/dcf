@@ -8,23 +8,25 @@
 	@include pl-6;
 	@include mb-2;
 
+
 	input[type="checkbox"] {
 		position: absolute;
 		cursor: pointer;
 		top: 0;
 		left: 0;
-		width: $length-em-6;
+		width: $length-em-7; // slightly wider to avoid hover state gaps between the label::before and the label
 		height: $length-em-6;
 		z-index: 1;
 		margin: 0;
-		zoom: 1;
 		opacity: 0;
 	}
+
 
 	label {
 		cursor: pointer;
 		touch-action: manipulation;
 	}
+
 
 	label::before, label::after {
 		content: '';
@@ -38,10 +40,11 @@
 		width: $length-em-6;
 		height: $length-em-6;
 		border-radius: $roundrect;
-		border: 1px solid $color-border;
-		box-shadow: inset 0 1px 2px fade-out($color-border,0.5);
+		border: 1px solid $color-border-input;
+		box-shadow: inset 0 1px 2px fade-out($color-border-input,0.5);
 		transition: border-color $hover-off, box-shadow $hover-off;
 	}
+
 
 	label::after {
 		border: solid;
@@ -55,26 +58,28 @@
 		transition: transform $hover-on;
 	}
 
+
 	// display checkmark
 	input[type="checkbox"]:checked + label::after {
 		transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(1);
 	}
 
+
 	input[type="checkbox"]:checked + label::before {
-		border-color: $color-border-hover;
+		border-color: $color-border-input-hover;
 	}
 
-	&:hover {
-		label::before {
-			border-color: $color-border-hover;
-			box-shadow: inset 0 1px 2px fade-out($color-border,.5);
-			transition: border-color $hover-on, box-shadow $hover-on;
-		}
+
+	input[type="checkbox"]:hover + label::before, // enable hover state on label::before
+	label:hover::before {
+		border-color: $color-border-input-hover;
+		box-shadow: inset 0 1px 2px fade-out($color-border-input,.5);
+		transition: border-color $hover-on, box-shadow $hover-on;
 	}
+
 
 	//focus state
 	input[type="checkbox"]:focus + label::before {
 		border-color: $color-button;
-		outline: none;
 	}
 }

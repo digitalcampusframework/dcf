@@ -1796,7 +1796,7 @@
         <dt><code>.dcf-input-text</code></dt>
         <dd>Add to text-based inputs—either an <code>&lt;input&gt;</code> with a type attribute that supports text input, or a <code>&lt;textarea&gt;</code>.</dd>
         <dt><code>.dcf-input-select</code></dt>
-        <dd>Add to a div that wraps the <code>&lt;select&gt;</code> elements.</dd>
+        <dd>Add directly to <code>&lt;select&gt;</code> input element.</dd>
         <dt><code>.dcf-input-checkbox</code></dt>
         <dd>Add to a div that wraps the checkbox input and label.</dd>
         <dt><code>.dcf-input-radio</code></dt>
@@ -1823,15 +1823,14 @@
             </div>
             <div class="dcf-form-group">
               <label class="dcf-label" for="example-components-form-institution">Institution</label>
-              <div class="dcf-input-select">
-                <select id="example-components-form-institution" name="institution">
-                  <option value="unca" selected>University of Nebraska</option>
-                  <option value="unl">UNL</option>
-                  <option value="unk">UNK</option>
-                  <option value="uno">UNO</option>
-                  <option value="unmc">UNMC</option>
-                </select>
-              </div>
+
+              <select id="example-components-form-institution" name="institution" class="dcf-input-select">
+                <option value="unca" selected>University of Nebraska</option>
+                <option value="unl">UNL</option>
+                <option value="unk">UNK</option>
+                <option value="uno">UNO</option>
+                <option value="unmc">UNMC</option>
+              </select>
             </div>
     <!--
             <div class="dcf-form-group">
