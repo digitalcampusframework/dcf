@@ -165,7 +165,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					// foreach() is not supported in IE
 					for (var i = 0; i < this.imageCount; i++) {
 						var image = this.imagesList[i];
-						if (image.classList.contains('dcf-lazy-img-handled')) {
+						if (image.classList.contains('dcf-lazy-img-loaded')) {
 							continue;
 						}
 

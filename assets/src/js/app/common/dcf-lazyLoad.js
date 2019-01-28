@@ -1,4 +1,10 @@
 class LazyLoad {
+	/**
+	 * Apply the image
+	 * @param {imagesList} nodelist of selected images
+	 * @param {observerConfig} object of intersectionObserver configuration
+	 * @param {classNames} array of classes applied
+	 */
 	constructor(imagesList, observerConfig, classNames) {
 		this.imagesList = imagesList;
 		this.observerConfig = observerConfig;
@@ -116,7 +122,7 @@ class LazyLoad {
 			// foreach() is not supported in IE
 			for (let i = 0; i < this.imageCount; i++) {
 				let image = this.imagesList[i];
-				if (image.classList.contains('dcf-lazy-img-handled')) {
+				if (image.classList.contains('dcf-lazy-img-loaded')) {
 					continue;
 				}
 
