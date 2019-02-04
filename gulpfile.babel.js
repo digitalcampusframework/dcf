@@ -429,7 +429,7 @@ gulp.task('babel', (done) => {
 		gulp.src(buildPaths.babelAppGlob),
 		customPlumber('Error Running Babel'),
 		$.cached('babel'),
-		$.babel({presets: [ 'env' ]}),
+		$.babel(),
 		gulp.dest(buildPaths.appJsDestPostBabel)
 	], done);
 });

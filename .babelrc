@@ -1,8 +1,8 @@
 {
   "presets": ["env"],
   "plugins": [
-    "syntax-dynamic-import",
     "transform-class-properties",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
   ]
 }
