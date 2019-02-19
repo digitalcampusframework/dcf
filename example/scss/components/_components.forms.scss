@@ -15,18 +15,6 @@
 }
 
 
-// Form group and form with input group
-.example .dcf-form-group,
-.example .dcf-input-group-form {
-  margin-top: -#{ms(-12)}em; // Apply negative margin-top to equalize label margin-top
-}
-
-
-// Label
-.example .dcf-label {
-  margin-top: #{ms(-12)}em;
-}
-
 .example .dcf-form-group input ~ label {
 	@include ml-2;
 }
@@ -95,12 +83,4 @@
   color: $color-light-text;
   @include txt-xs;
   @include mt-1;
-}
-
-
-// Inputs
-.example .dcf-label + .dcf-input-text,
-.example .dcf-label + .dcf-input-select,
-.example .dcf-label + .dcf-input-group {
-  margin-top: #{ms(-12)}em;
 }
