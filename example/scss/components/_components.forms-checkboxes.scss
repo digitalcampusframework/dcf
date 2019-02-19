@@ -55,10 +55,9 @@
 // Style checkmark
 .example .dcf-input-checkbox label::after {
   background: transparent;
-  border: solid;
-  border-color: $color-brand-alpha;
+  border-color: transparent $color-brand-alpha $color-brand-alpha;
+  border-style: solid;
   border-width: 0 0 5px 5px;
-  border-top-color: transparent;
   height: $length-em-2;
   width: $length-em-4;
   transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(0);
