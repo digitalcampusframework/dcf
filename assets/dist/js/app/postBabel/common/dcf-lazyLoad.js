@@ -16,6 +16,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	}
 })(undefined, function () {
 	var LazyLoad = function () {
+		/**
+   * Apply the image
+   * @param {imagesList} nodelist of selected images
+   * @param {observerConfig} object of intersectionObserver configuration
+   * @param {classNames} array of classes applied
+   */
 		function LazyLoad(imagesList, observerConfig, classNames) {
 			var _this = this;
 

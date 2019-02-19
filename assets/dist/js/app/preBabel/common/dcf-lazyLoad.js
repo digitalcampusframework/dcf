@@ -8,6 +8,12 @@
   }
 }(this, function() {
 class LazyLoad {
+	/**
+	 * Apply the image
+	 * @param {imagesList} nodelist of selected images
+	 * @param {observerConfig} object of intersectionObserver configuration
+	 * @param {classNames} array of classes applied
+	 */
 	constructor(imagesList, observerConfig, classNames) {
 		this.imagesList = imagesList;
 		this.observerConfig = observerConfig;
