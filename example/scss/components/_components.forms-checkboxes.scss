@@ -45,7 +45,7 @@
 .example .dcf-input-checkbox label::before {
   border: 1px solid $color-border-input;
   border-radius: $roundrect;
-  box-shadow: inset 0 1px 2px fade-out($color-border-input,0.5);
+  box-shadow: inset 0 1px 2px fade-out($color-border-input,.5);
   height: $length-em-6;
   transition: border-color $hover-off, box-shadow $hover-off;
   width: $length-em-6;
@@ -60,7 +60,7 @@
   border-width: 0 0 5px 5px;
   height: $length-em-2;
   width: $length-em-4;
-  transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(0);
+  transform: rotate(-45deg) translate(-.15em,.7em) scale(0);
   transition: transform $hover-on;
 }
 
@@ -75,7 +75,7 @@
 
 
 .example .dcf-input-checkbox input[type="checkbox"]:checked + label::after {
-  transform: rotate(-45deg) translate(-0.15em, 0.7em) scale(1);
+  transform: rotate(-45deg) translate(-.15em,.7em) scale(1);
 }
 
 
