@@ -18,6 +18,13 @@
 }
 
 
+.dcf-input-group label {
+  // Force input group to wrap when label text is long and
+  // flex-wrap is applied to parent of label & input group
+  flex-shrink: 0;
+}
+
+
 //  Child input field of input group
 .dcf-input-group .dcf-input-text {
   flex: 1 1 auto; // Grow/shrink as needed, with auto width

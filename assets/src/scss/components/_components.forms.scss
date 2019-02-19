@@ -3,13 +3,6 @@
 /////////////////////////////
 
 
-.dcf-label {
-  // Force input group to wrap when label text is long and
-  // flex-wrap is applied to parent of label & input group
-  flex-shrink: 0;
-}
-
-
 .dcf-input-text {
   appearance: none;
   color: inherit;
