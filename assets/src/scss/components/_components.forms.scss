@@ -3,7 +3,15 @@
 /////////////////////////////
 
 
-.dcf-input-text {
+.dcf-form input[type="email"],
+.dcf-form input[type="number"],
+.dcf-form input[type="password"],
+.dcf-form input[type="search"],
+.dcf-form input[type="tel"],
+.dcf-form input[type="text"],
+.dcf-form input[type="url"],
+.dcf-form textarea,
+.dcf-input-text { // TODO: deprecate .dcf-input-text
   appearance: none;
   color: inherit;
   display: block;
@@ -11,6 +19,7 @@
 }
 
 
-.dcf-input-file {
+.dcf-form input[type="file"],
+.dcf-input-file { // TODO: deprecate .dcf-input-file
   display: block;
 }

@@ -26,14 +26,14 @@
 
 
 //  Child input field of input group
-.dcf-input-group .dcf-input-text {
+.dcf-input-group input {
   flex: 1 1 auto; // Grow/shrink as needed, with auto width
 }
 
 
 // Input group and child input field
 .dcf-input-group,
-.dcf-input-group .dcf-input-text {
+.dcf-input-group input {
   min-width: 0;
 }
 
