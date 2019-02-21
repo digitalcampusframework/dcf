@@ -24,7 +24,7 @@
 // !Input Group Add-on
 .example .dcf-input-group-addon {
   @include bg-gray-lightest;
-  border: 1px solid $color-border;
+  border: 1px solid $color-border-input;
   color: $color-light-text;
   @include pb-2;
   @include pl-3;
