@@ -36,7 +36,7 @@
 .example .dcf-form input[type="text"],
 .example .dcf-form input[type="url"],
 .example .dcf-form textarea {
-  border: 1px solid $color-border;
+  border: 1px solid $color-border-input;
   border-radius: $roundrect;
   box-shadow: inset 0 1px 2px fade-out($color-border,1);
   @include pb-2;
@@ -55,7 +55,7 @@
 .example .dcf-form input[type="text"]:hover,
 .example .dcf-form input[type="url"]:hover,
 .example .dcf-form textarea:hover {
-  border-color: $color-border-hover;
+  border-color: $color-border-input-hover;
   box-shadow: inset 0 1px 2px fade-out($color-border,.5);
   transition: border-color $hover-on, box-shadow $hover-on;
 }
@@ -69,7 +69,7 @@
 .example .dcf-form input[type="text"]:focus,
 .example .dcf-form input[type="url"]:focus,
 .example .dcf-form textarea:focus {
-  border-color: $color-button;
+  border-color: $color-border-input-focus;
   outline: none;
 }
 

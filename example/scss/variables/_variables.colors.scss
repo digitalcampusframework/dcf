@@ -20,15 +20,15 @@ $color-brand-beta: #c00;
 $white: #fff;
 $black: #000;
 
-$mix-white-black: mix($white, $black); // gray
+$gray: mix($white, $black); // gray
 
-$gray-light: lighten($mix-white-black, 36%); // #dcdcdc
-$gray-lighter: lighten($mix-white-black, 43%); // #eee
-$gray-lightest: lighten($mix-white-black, 47%); // #f8f8f8
+$gray-light: lighten($gray, 36%); // #dcdcdc
+$gray-lighter: lighten($gray, 43%); // #eee
+$gray-lightest: lighten($gray, 47%); // #f8f8f8
 
-$gray-dark: darken($mix-white-black, 10%); // #676767
-$gray-darker: darken($mix-white-black, 24%); // #434343
-$gray-darkest: darken($mix-white-black, 32%); // #2e2e2e
+$gray-dark: darken($gray, 10%); // #676767
+$gray-darker: darken($gray, 24%); // #434343
+$gray-darkest: darken($gray, 32%); // #2e2e2e
 
 
 // Background colors
@@ -70,8 +70,9 @@ $color-button-active: $color-link-active;
 // !Borders
 $color-border: $gray-lighter;
 $color-border-hover: $gray-light;
-$color-border-input: $gray-lighter;
-$color-border-input-hover: $gray-light;
+$color-border-input: $gray-light;
+$color-border-input-hover: $gray;
+$color-border-input-focus: $color-button;
 
 
 // !Marks (Highlights) Background Color

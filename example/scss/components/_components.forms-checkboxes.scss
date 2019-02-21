@@ -74,18 +74,14 @@
 }
 
 
+// Checked state
 .example .dcf-input-checkbox input[type="checkbox"]:checked + label::after {
   transform: rotate(-45deg) translate(-.15em,.7em) scale(1);
 }
 
 
-.example .dcf-input-checkbox input[type="checkbox"]:checked + label::before {
-  border-color: $color-border-input-hover;
-}
-
-
-// Focus state
+// Checked, focus state
+.example .dcf-input-checkbox input[type="checkbox"]:checked + label::before,
 .example .dcf-input-checkbox input[type="checkbox"]:focus + label::before {
-  border-color: $color-button;
+  border-color: $color-border-input-focus;
 }
-
