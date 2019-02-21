@@ -74,12 +74,6 @@
 }
 
 
-// Input: Control
-.example .dcf-input-control {
-  @include mr-1;
-}
-
-
 // Input: File
 .example .dcf-form input[type="file"] {
   @include mb-2;
