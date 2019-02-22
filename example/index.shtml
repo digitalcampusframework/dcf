@@ -1839,7 +1839,7 @@
               </div>
             </div>
     -->
-            <fieldset class="dcf-d-flex dcf-flex-col dcf-form-group">
+            <fieldset class="dcf-d-flex dcf-flex-col">
               <legend>Checkboxes</legend>
               <div class="dcf-input-checkbox">
                 <input id="elements-form-checkboxA" type="checkbox" value="0" aria-labelledby="elements-form-checkboxA-label">
@@ -1882,7 +1882,6 @@
                   </div>
                 </fieldset>
               </div>
-
             </fieldset>
             <div class="dcf-form-group">
               <label for="example-components-form-comments">Comments</label>
