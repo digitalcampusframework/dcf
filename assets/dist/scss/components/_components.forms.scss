@@ -3,6 +3,20 @@
 /////////////////////////////
 
 
+
+// Display form controls inline instead of stacked
+.dcf-form-controls-inline {
+  align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
+  display: flex;
+  flex-wrap: wrap; // Allow input to wrap at narrower viewport widths
+}
+
+
+.dcf-form-controls-inline label {
+  flex-shrink: 0; // Force input to wrap when label text is long
+}
+
+
 .dcf-form input[type="email"],
 .dcf-form input[type="number"],
 .dcf-form input[type="password"],
