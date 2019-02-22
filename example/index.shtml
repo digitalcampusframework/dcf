@@ -1785,46 +1785,39 @@
 
       <h3 class="dcf-mt-8" id="example-components-forms">Forms</h3>
       <dl class="dcf-measure">
-        <dt><code>.dcf-legend</code></dt>
-        <dd>Add to <code>&lt;legend&gt;</code> elements.</dd>
+        <dt><code>.dcf-form</code></dt>
+        <dd>Style a form and its children.</dd>
         <dt><code>.dcf-form-group</code></dt>
         <dd>Wrap groups of form elements (such as a label and input pair) to visually offset them from other form elements.</dd>
-        <dt><code>.dcf-label</code></dt>
-        <dd>Add to <code>&lt;label&gt;</code> elements.</dd>
+        <dt><code>.dcf-form-controls-inline</code></dt>
+        <dd>Display form controls inline instead of stacked.</dd>
         <dt><code>.dcf-required</code></dt>
         <dd>Indicate that an adjacent form input is required to submit the form.</dd>
-        <dt><code>.dcf-input-text</code></dt>
-        <dd>Add to text-based inputs—either an <code>&lt;input&gt;</code> with a type attribute that supports text input, or a <code>&lt;textarea&gt;</code>.</dd>
-        <dt><code>.dcf-input-select</code></dt>
-        <dd>Add directly to <code>&lt;select&gt;</code> input element.</dd>
         <dt><code>.dcf-input-checkbox</code></dt>
-        <dd>Add to a div that wraps the checkbox input and label.</dd>
         <dt><code>.dcf-input-radio</code></dt>
-        <dd>Add to a div that wraps the radio input and label.</dd>
-        <dt><code>.dcf-input-file</code></dt>
-        <dd>Add to file inputs.</dd>
+        <dd>Wrap a checkbox or radio input and label pair for consistent cross-browser styling.</dd>
       </dl>
       <figure class="dcf-mt-8">
-        <form action="?" method="post">
+        <form class="dcf-form" action="?" method="post">
           <fieldset>
-            <legend class="dcf-legend">Sample Form Content</legend>
+            <legend>Sample Form Content</legend>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-name">Name <small class="dcf-required">Required</small></label>
-              <input class="dcf-input-text" id="example-components-form-name" type="text" required>
+              <label for="example-components-form-name">Name <small class="dcf-required">Required</small></label>
+              <input id="example-components-form-name" type="text" required>
             </div>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-email">Email <small class="dcf-required">Required</small></label>
-              <input class="dcf-input-text" id="example-components-form-email" type="email" required>
+              <label for="example-components-form-email">Email <small class="dcf-required">Required</small></label>
+              <input id="example-components-form-email" type="email" required>
             </div>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-password">Password <small class="dcf-required">Required</small></label>
-              <input class="dcf-input-text" id="example-components-form-password" type="password" required aria-describedby="example-components-form-pwd-help">
+              <label for="example-components-form-password">Password <small class="dcf-required">Required</small></label>
+              <input id="example-components-form-password" type="password" required aria-describedby="example-components-form-pwd-help">
               <p class="dcf-form-help" id="example-components-form-pwd-help">Make sure it’s a good one!</p>
             </div>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-institution">Institution</label>
+              <label for="example-components-form-institution">Institution</label>
 
-              <select id="example-components-form-institution" name="institution" class="dcf-input-select">
+              <select id="example-components-form-institution" name="institution">
                 <option value="unca" selected>University of Nebraska</option>
                 <option value="unl">UNL</option>
                 <option value="unk">UNK</option>
@@ -1847,87 +1840,67 @@
             </div>
     -->
             <fieldset class="dcf-d-flex dcf-flex-col dcf-form-group">
-              <legend class="dcf-legend">Checkboxes</legend>
+              <legend>Checkboxes</legend>
               <div class="dcf-input-checkbox">
-                <input id="elements-form-checkboxA" type="checkbox" value="0"
-                       aria-labelledby="elements-form-checkboxA-label">
-                <label for="elements-form-checkboxA"
-                       id="elements-form-checkboxA-label"
-                       class="dcf-label">
-                  Checkbox A
-                </label>
+                <input id="elements-form-checkboxA" type="checkbox" value="0" aria-labelledby="elements-form-checkboxA-label">
+                <label id="elements-form-checkboxA-label" for="elements-form-checkboxA">Checkbox A</label>
               </div>
               <div class="dcf-input-checkbox">
-                <input id="elements-form-checkboxB" type="checkbox" value="1"
-                       aria-labelledby="elements-form-checkboxB-label" disabled>
-                <label for="elements-form-checkboxB"
-                       id="elements-form-checkboxB-label"
-                       class="dcf-label">
-                  Checkbox B
-                </label>
+                <input id="elements-form-checkboxB" type="checkbox" value="1" aria-labelledby="elements-form-checkboxB-label" disabled>
+                <label id="elements-form-checkboxB-label" for="elements-form-checkboxB">Checkbox B</label>
               </div>
               <div class="dcf-input-checkbox">
-                <input id="elements-form-checkboxC" type="checkbox" value="2"
-                       aria-labelledby="elements-form-checkboxC-label">
-                <label for="elements-form-checkboxC"
-                       id="elements-form-checkboxC-label"
-                       class="dcf-label">
-                  Checkbox C
-                </label>
+                <input id="elements-form-checkboxC" type="checkbox" value="2" aria-labelledby="elements-form-checkboxC-label">
+                <label id="elements-form-checkboxC-label" for="elements-form-checkboxC">Checkbox C</label>
               </div>
             </fieldset>
             <fieldset>
-              <legend class="dcf-legend">Radio buttons</legend>
-              <div class="dcf-d-flex dcf-form-group dcf-input-group-form dcf-ai-flex-start">
-                <label for="position" id="position-level" class="dcf-label">I identify myself as a:
-                </label>
-                <fieldset id="Position" name="Position" aria-labelledby="position-level"
-                          class="dcf-d-flex dcf-flex-col dcf-ml-4">
-                  <legend class="dcf-legend">Position</legend>
+              <legend>Radio buttons</legend>
+              <div class="dcf-d-flex dcf-form-group dcf-ai-flex-start">
+                <label for="position" id="position-level">I identify myself as a:</label>
+                <fieldset id="Position" name="Position" aria-labelledby="position-level" class="dcf-d-flex dcf-flex-col dcf-ml-4">
+                  <legend>Position</legend>
                   <div class="dcf-input-radio">
                     <input id="student_Position" name="Position" type="radio" value="student">
-                    <label for="student_Position" class="dcf-label">student</label>
+                    <label for="student_Position">student</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="faculty_member_Position" name="Position" type="radio"
-                           value="faculty member">
-                    <label for="faculty_member_Position"  class="dcf-label">faculty member</label>
+                    <input id="faculty_member_Position" name="Position" type="radio" value="faculty member">
+                    <label for="faculty_member_Position">faculty member</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="administrator_Position" name="Position" type="radio"
-                           value="administrator">
-                    <label for="administrator_Position" class="dcf-label">administrator</label>
+                    <input id="administrator_Position" name="Position" type="radio" value="administrator">
+                    <label for="administrator_Position">administrator</label>
                   </div>
                   <div class="dcf-input-radio">
-                    <input id="staff_member_Position" name="Position" type="radio"
-                           value="staff member">
-                    <label for="staff_member_Position" class="dcf-label">staff member</label>
+                    <input id="staff_member_Position" name="Position" type="radio" value="staff member">
+                    <label for="staff_member_Position">staff member</label>
                   </div>
                   <div class="dcf-input-radio">
                     <input id="other_Position" name="Position" type="radio" value="other">
-                    <label for="other_Position" class="dcf-label">other</label>
+                    <label for="other_Position">other</label>
                   </div>
                 </fieldset>
               </div>
 
             </fieldset>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-comments">Comments</label>
-              <textarea class="dcf-input-text" id="example-components-form-comments" cols="60" rows="5"></textarea>
+              <label for="example-components-form-comments">Comments</label>
+              <textarea id="example-components-form-comments" cols="60" rows="5"></textarea>
             </div>
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-datetime">Date/time</label>
-              <input class="dcf-input-text" id="example-components-form-datetime" type="datetime-local">
+              <label for="example-components-form-datetime">Date/time</label>
+              <input id="example-components-form-datetime" type="datetime-local">
             </div>
     <!--
             <div class="dcf-form-group">
-              <label  class="dcf-label" for="example-components-form-output">Example output</label>
+              <label  for="example-components-form-output">Example output</label>
               <output id="example-components-form-output" name="result">100</output>
             </div>
     -->
             <div class="dcf-form-group">
-              <label class="dcf-label" for="example-components-form-input-file">File input</label>
-              <input class="dcf-input-file" id="example-components-form-input-file" type="file" aria-describedby="example-components-form-file-help">
+              <label for="example-components-form-input-file">File input</label>
+              <input id="example-components-form-input-file" type="file" aria-describedby="example-components-form-file-help">
               <p class="dcf-form-help" id="example-components-form-file-help">This is some placeholder block-level help text for the above input. It’s a bit lighter and easily wraps to a new line.</p>
             </div>
           </fieldset>
@@ -2015,7 +1988,7 @@
       <h3 class="dcf-mt-8" id="example-components-input-groups">Input Groups</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-input-group</code></dt>
-        <dd>An input group prepends or appends text or a button to a text input. The form label <strong>must</strong> be placed outside of the input group. It can be vertically aligned with the input group by adding <code>.dcf-flex</code> and <code>.dcf-ai-center</code> to the input group's parent element.</dd>
+        <dd>An input group prepends or appends text or a button to a text input. The form label <strong>must</strong> be placed outside of the input group.</dd>
       </dl>
 
       <h4 class="dcf-mt-6" id="example-components-input-groups-addons"><span class="dcf-sr-only">Input Groups </span>With Add-ons</h4>
@@ -2024,21 +1997,21 @@
         <dd>An add-on provides additional context for a text input in a form. It can be placed before and/or after the text input.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <form class="dcf-input-group-form" id="example-input-group-addon-before" action="#" method="get">
-          <label class="dcf-label dcf-mr-4" for="example-input-group-addon-before-input">Username</label>
+        <form class="dcf-form" id="example-input-group-addon-before" action="#" method="get">
+          <label class="dcf-mr-4" for="example-input-group-addon-before-input">Username</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">@</span>
-            <input class="dcf-input-text" id="example-input-group-addon-before-input" name="q" type="search" required>
+            <input id="example-input-group-addon-before-input" name="q" type="search" required>
           </div>
         </form>
         <figcaption class="dcf-figcaption dcf-mt-4">This example shows an input group with an add-on <em>before</em> the input.</figcaption>
       </figure>
 
       <figure class="dcf-mt-6">
-        <form class="dcf-input-group-form" id="example-input-group-addon-after" action="#" method="get">
-          <label class="dcf-label dcf-mr-4" for="example-input-group-addon-after-input">Email</label>
+        <form class="dcf-form" id="example-input-group-addon-after" action="#" method="get">
+          <label class="dcf-mr-4" for="example-input-group-addon-after-input">Email</label>
           <div class="dcf-input-group">
-            <input class="dcf-input-text" id="example-input-group-addon-after-input" name="q" type="search" required>
+            <input id="example-input-group-addon-after-input" name="q" type="search" required>
             <span class="dcf-input-group-addon">@example.com</span>
           </div>
         </form>
@@ -2046,11 +2019,11 @@
       </figure>
 
       <figure class="dcf-mt-6">
-        <form class="dcf-input-group-form" id="example-input-group-addon-both" action="#" method="get">
-          <label class="dcf-label dcf-mr-4" for="example-input-group-addon-both-input">Amount</label>
+        <form class="dcf-form" id="example-input-group-addon-both" action="#" method="get">
+          <label class="dcf-mr-4" for="example-input-group-addon-both-input">Amount</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">$</span>
-            <input class="dcf-input-text" id="example-input-group-addon-both-input" name="q" type="search" required>
+            <input id="example-input-group-addon-both-input" name="q" type="search" required>
             <span class="dcf-input-group-addon">.00</span>
           </div>
         </form>
@@ -2060,16 +2033,17 @@
       <h4 class="dcf-mt-6" id="example-components-input-groups-button"><span class="dcf-sr-only">Input Groups </span>With A Button</h4>
       <p class="dcf-measure">If a form consists of a single field and button, consider using an input group for a more compact layout.</p>
       <figure class="dcf-mt-6">
-        <form class="dcf-input-group-form" id="example-input-group-button" action="#" method="get">
-          <label class="dcf-label dcf-mr-4" for="example-input-group-button-input">Label</label>
+        <form class="dcf-form dcf-form-controls-inline" id="example-input-group-button" action="#" method="get">
+          <label class="dcf-mr-4" for="example-input-group-button-input">Label</label>
           <div class="dcf-input-group">
-            <input class="dcf-input-text" id="example-input-group-button-input" name="q" type="search" required>
+            <input id="example-input-group-button-input" name="q" type="search" required>
             <button class="dcf-btn dcf-btn-primary" type="submit">
     <!--               <svg class="dcf-search-icon" focusable="false" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="8.5" cy="8.5" r="8"/><path stroke-linecap="round" d="M14.156 14.156L23.5 23.5"/></g><g><path fill="none" d="M0 0h24v24H0z"/></g></svg> -->
               Submit
             </button>
           </div>
         </form>
+        <figcaption class="dcf-figcaption dcf-mt-4">This example shows an input group with a button after the text input. The <code>.dcf-form-controls-inline</code> class is added to the form to display the label and input group inline.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components), <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-box-alignment">Display</a> (Utilities)</p>
 
