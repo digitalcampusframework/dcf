@@ -22,8 +22,8 @@ $black: #000;
 
 $gray: mix($white, $black); // gray
 
-$gray-light: lighten($gray, 36%); // #dcdcdc
-$gray-lighter: lighten($gray, 43%); // #eee
+$gray-light: lighten($gray, 27%); // #c5c5c5
+$gray-lighter: lighten($gray, 36%); // #dcdcdc
 $gray-lightest: lighten($gray, 47%); // #f8f8f8
 
 $gray-dark: darken($gray, 10%); // #676767
