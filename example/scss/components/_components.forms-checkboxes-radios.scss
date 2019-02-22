@@ -1,0 +1,135 @@
+////////////////////////////////////////////////////
+// !THEME / COMPONENTS / FORMS - CHECKBOXES & RADIOS
+////////////////////////////////////////////////////
+
+
+// Custom styled checkboxes https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox/
+// and radio buttons https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button/
+
+.example .dcf-input-checkbox,
+.example .dcf-input-radio {
+  @include mb-2;
+  @include pl-6;
+  position: relative;
+}
+
+
+.example .dcf-input-checkbox input[type="checkbox"],
+.example .dcf-input-radio input[type="radio"] {
+  cursor: pointer;
+  height: $length-em-6;
+  left: 0;
+  margin: 0;
+  opacity: 0; // Hide the actual input
+  position: absolute;
+  top: 0;
+  width: $length-em-7; // Slightly wider to avoid hover state gaps between the label::before and the label
+  z-index: 1;
+}
+
+
+.example .dcf-input-checkbox label,
+.example .dcf-input-radio label {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+
+// Create checkbox, checkmark, radio input and radio button
+.example .dcf-input-checkbox label::before,
+.example .dcf-input-checkbox label::after,
+.example .dcf-input-radio label::before,
+.example .dcf-input-radio label::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+
+// Style checkbox and radio input
+.example .dcf-input-checkbox label::before,
+.example .dcf-input-radio label::before {
+  border: 1px solid $color-border-input;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,1);
+  height: $length-em-6;
+  transition: border-color $hover-off, box-shadow $hover-off;
+  width: $length-em-6;
+}
+
+
+// Style checkbox
+.example .dcf-input-checkbox label::before {
+  border-radius: $roundrect;
+}
+
+
+// Style checkmark
+.example .dcf-input-checkbox label::after {
+  background-color: transparent;
+  border-color: transparent $color-brand-alpha $color-brand-alpha;
+  border-style: solid;
+  border-width: 0 0 5px 5px;
+  height: $length-em-2;
+  width: $length-em-4;
+  transform: rotate(-45deg) translate(-.15em,.7em) scale(0);
+  transition: transform $hover-on;
+}
+
+
+// Style radio input and selection
+.example .dcf-input-radio label::before,
+.example .dcf-input-radio label::after {
+  border-radius: $circle;
+}
+
+
+// Style radio selection
+.example .dcf-input-radio label::after {
+  background-color: $color-button;
+  height: $length-em-6;
+  opacity: 0;
+  transform: translate(.01em) scale(.4); // Reposition the dot after scaling down
+  transition: transform $hover-on;
+  width: $length-em-6;
+}
+
+
+// Hover state
+.example .dcf-input-checkbox label:hover::before,
+.example .dcf-input-radio label:hover::before,
+.example .dcf-input-checkbox input[type="checkbox"]:hover + label::before,
+.example .dcf-input-radio input[type="radio"]:hover + label::before {
+  border-color: $color-border-input-hover;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
+  transition: border-color $hover-on, box-shadow $hover-on;
+}
+
+
+// Checked, focus state
+.example .dcf-input-checkbox input[type="checkbox"]:checked + label::before,
+.example .dcf-input-checkbox input[type="checkbox"]:focus + label::before {
+  border-color: $color-border-input-focus;
+}
+
+
+// Checked state
+.example .dcf-input-checkbox input[type="checkbox"]:checked + label::after {
+  transform: rotate(-45deg) translate(-.15em,.7em) scale(1);
+}
+
+
+// Change input style when radio is selected
+.example .dcf-input-radio input[type="radio"]:checked + label::before {
+  border-color: $color-button;
+  box-shadow: inset 0 1px 2px fade-out($color-button,.5);
+}
+
+
+// Show radio button when checked
+.example .dcf-input-radio input[type="radio"]:checked + label::after {
+  box-shadow: -1px 2px 5px 1px fade-out($color-button,.7);
+  opacity: 1;
+  transform: translate(.4px,.1px) scale(.5);
+  transition: opacity $hover-on transform $hover-on;
+}
