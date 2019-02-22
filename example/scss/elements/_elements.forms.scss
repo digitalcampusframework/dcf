@@ -1,0 +1,26 @@
+////////////////////////////
+// !THEME / ELEMENTS / FORMS
+////////////////////////////
+
+
+// !Fieldset
+.example fieldset {
+  border: 1px solid $color-border;
+  padding: $length-em-4 $length-vw-1;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+.example fieldset:not(:last-child) {
+  @include mb-4;
+}
+
+
+// !Legend
+.example legend {
+  margin-left: -#{$length-em-2};
+  padding-left: $length-em-2;
+  padding-right: $length-em-2;
+}
+
