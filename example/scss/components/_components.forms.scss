@@ -28,13 +28,7 @@
 
 
 // Input: Text
-.example .dcf-form input[type="email"],
-.example .dcf-form input[type="number"],
-.example .dcf-form input[type="password"],
-.example .dcf-form input[type="search"],
-.example .dcf-form input[type="tel"],
-.example .dcf-form input[type="text"],
-.example .dcf-form input[type="url"],
+.example .dcf-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
 .example .dcf-form textarea {
   border: 1px solid $color-border-input;
   border-radius: $roundrect;
@@ -47,13 +41,7 @@
 }
 
 
-.example .dcf-form input[type="email"]:hover,
-.example .dcf-form input[type="number"]:hover,
-.example .dcf-form input[type="password"]:hover,
-.example .dcf-form input[type="search"]:hover,
-.example .dcf-form input[type="tel"]:hover,
-.example .dcf-form input[type="text"]:hover,
-.example .dcf-form input[type="url"]:hover,
+.example .dcf-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover,
 .example .dcf-form textarea:hover {
   border-color: $color-border-input-hover;
   box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
@@ -61,23 +49,10 @@
 }
 
 
-.example .dcf-form input[type="email"]:focus,
-.example .dcf-form input[type="number"]:focus,
-.example .dcf-form input[type="password"]:focus,
-.example .dcf-form input[type="search"]:focus,
-.example .dcf-form input[type="tel"]:focus,
-.example .dcf-form input[type="text"]:focus,
-.example .dcf-form input[type="url"]:focus,
+.example .dcf-form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus,
 .example .dcf-form textarea:focus {
   border-color: $color-border-input-focus;
   outline: none;
-}
-
-
-// Input: File
-.example .dcf-form input[type="file"] {
-  @include mb-2;
-  @include mt-2;
 }
 
 

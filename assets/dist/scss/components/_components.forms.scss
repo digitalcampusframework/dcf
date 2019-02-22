@@ -17,23 +17,12 @@
 }
 
 
-.dcf-form input[type="email"],
-.dcf-form input[type="number"],
-.dcf-form input[type="password"],
-.dcf-form input[type="search"],
-.dcf-form input[type="tel"],
-.dcf-form input[type="text"],
-.dcf-form input[type="url"],
+.dcf-form input,
 .dcf-form textarea,
-.dcf-input-text { // TODO: deprecate .dcf-input-text
+.dcf-input-text, // TODO: deprecate .dcf-input-text
+.dcf-input-file { // TODO: deprecate .dcf-input-file
   appearance: none;
   color: inherit;
   display: block;
   font-family: inherit;
-}
-
-
-.dcf-form input[type="file"],
-.dcf-input-file { // TODO: deprecate .dcf-input-file
-  display: block;
 }
