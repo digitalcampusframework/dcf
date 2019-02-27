@@ -2932,6 +2932,7 @@
         <dt><code>.dcf-obj-fit-contain</code></dt><dd>object-fit: contain</dd>
         <dt><code>.dcf-obj-fit-cover</code></dt><dd>object-fit: cover</dd>
       </dl>
+      <p>The object-fit utilities use the <a href="https://github.com/bfred-it/object-fit-images">object-fit-images</a> polyfill for <a href="https://caniuse.com/#feat=object-fit">browsers that don't support object-fit</a>. This explains why you might see <code>font-family: "object-fit: contain”</code> or <code>font-family: "object-fit: cover"</code> in the rules.</p>
 
       <figure class="dcf-mt-6">
         <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
