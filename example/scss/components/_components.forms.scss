@@ -9,11 +9,6 @@
 }
 
 
-.example .dcf-form-group input ~ label {
-	@include ml-2;
-}
-
-
 .example .dcf-form-group[disabled] label,
 .example .dcf-form-group input[disabled] ~ label {
   cursor: not-allowed !important;

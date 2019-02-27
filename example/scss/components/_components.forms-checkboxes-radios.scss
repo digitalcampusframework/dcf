@@ -31,6 +31,7 @@
 .example .dcf-input-checkbox label,
 .example .dcf-input-radio label {
   cursor: pointer;
+  @include ml-2;
   touch-action: manipulation;
 }
 
