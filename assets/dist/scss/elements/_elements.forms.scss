@@ -11,6 +11,13 @@ textarea {
 }
 
 
+fieldset {
+  // Reset browser defaults
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
 label {
   display: inline-block;
 }
