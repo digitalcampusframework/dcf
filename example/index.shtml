@@ -1790,7 +1790,7 @@
         <dt><code>.dcf-form-group</code></dt>
         <dd>Wrap groups of form elements (such as a label and input pair) to visually offset them from other form elements.</dd>
         <dt><code>.dcf-form-controls-inline</code></dt>
-        <dd>Display form controls inline instead of stacked.</dd>
+        <dd>Display labels and form controls inline (as space allows) instead of stacked.</dd>
         <dt><code>.dcf-required</code></dt>
         <dd>Indicate that an adjacent form input is required to submit the form.</dd>
         <dt><code>.dcf-input-checkbox</code></dt>
