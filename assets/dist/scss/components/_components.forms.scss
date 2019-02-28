@@ -5,6 +5,7 @@
 
 
 // Display form controls inline instead of stacked
+.dcf-input-group-form, // TODO: deprecate .dcf-input-group-form
 .dcf-form-controls-inline {
   align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
   display: flex;
