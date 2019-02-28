@@ -19,7 +19,7 @@
 
 // !Legend
 .example .dcf-form legend {
-  margin-left: -#{$length-em-2};
+  margin-left: -#{$length-em-2}; // Left align legend with form elements
   padding-left: $length-em-2;
   padding-right: $length-em-2;
 }
