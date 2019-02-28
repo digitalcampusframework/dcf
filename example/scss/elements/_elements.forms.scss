@@ -6,6 +6,7 @@
 // !Fieldset
 .example .dcf-form fieldset {
   border: 1px solid $color-border;
+  border-radius: $roundrect;
   padding: $length-em-4 $length-vw-1;
   margin-left: 0;
   margin-right: 0;
