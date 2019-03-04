@@ -34,3 +34,8 @@ textarea {
   resize: vertical;
   width: 100%;
 }
+
+
+input[type="file"] {
+  width: 100%; // Prevent overflow in narrow viewports
+}
