@@ -19,6 +19,22 @@
 }
 
 
+.dcf-form-controls-inline input,
+.dcf-form-controls-inline select {
+  flex: 1 1 auto; // Let input or select grow, shrink and wrap as needed
+}
+
+
+.dcf-form-controls-inline select {
+  width: auto; // Let select wrap as needed (100% width prevents wrap)
+}
+
+
+.dcf-form-controls-inline .dcf-form-help {
+  flex-basis: 100%; // Place help text on its own line
+}
+
+
 .dcf-form input,
 .dcf-form textarea,
 .dcf-input-text, // TODO: deprecate .dcf-input-text
