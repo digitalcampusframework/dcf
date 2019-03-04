@@ -15,6 +15,7 @@
 
 .dcf-form-controls-inline label {
   flex-shrink: 0; // Force input to wrap when label text is long
+  @include mr-4;
 }
 
 
