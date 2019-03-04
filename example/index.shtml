@@ -1816,7 +1816,6 @@
             </div>
             <div class="dcf-form-group">
               <label for="example-components-form-institution">Institution</label>
-
               <select id="example-components-form-institution" name="institution">
                 <option value="unca" selected>University of Nebraska</option>
                 <option value="unl">UNL</option>
