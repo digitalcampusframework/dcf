@@ -3,38 +3,6 @@
 /////////////////////////////
 
 
-
-// Display form controls inline instead of stacked
-.dcf-input-group-form, // TODO: deprecate .dcf-input-group-form
-.dcf-form-controls-inline {
-  align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
-  display: flex;
-  flex-wrap: wrap; // Allow input to wrap at narrower viewport widths
-}
-
-
-.dcf-form-controls-inline label {
-  flex-shrink: 0; // Force input to wrap when label text is long
-  @include mr-4;
-}
-
-
-.dcf-form-controls-inline input,
-.dcf-form-controls-inline select {
-  flex: 1 1 auto; // Let input or select grow, shrink and wrap as needed
-}
-
-
-.dcf-form-controls-inline select {
-  width: auto; // Let select wrap as needed (100% width prevents wrap)
-}
-
-
-.dcf-form-controls-inline .dcf-form-help {
-  flex-basis: 100%; // Place help text on its own line
-}
-
-
 .dcf-form input,
 .dcf-form textarea,
 .dcf-input-text, // TODO: deprecate .dcf-input-text
@@ -43,4 +11,34 @@
   color: inherit;
   display: block;
   font-family: inherit;
+}
+
+
+// Display form controls inline instead of stacked at the small breakpoint
+@include mq(sm) {
+
+  .dcf-input-group-form, // TODO: deprecate .dcf-input-group-form
+  .dcf-form-controls-inline {
+    align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
+    display: flex;
+    flex-wrap: wrap; // Allow input to wrap at narrower viewport widths
+  }
+
+
+  .dcf-form-controls-inline label {
+    flex-shrink: 0; // Force input to wrap when label text is long
+    @include mr-4;
+  }
+
+
+  .dcf-form-controls-inline input,
+  .dcf-form-controls-inline select {
+    flex: 1 1 1px; // Let input or select grow, shrink and wrap as needed
+  }
+
+
+  .dcf-form-controls-inline .dcf-form-help {
+    flex-basis: 100%; // Place help text on its own line
+  }
+
 }
