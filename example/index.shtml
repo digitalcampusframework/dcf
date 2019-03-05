@@ -1790,7 +1790,7 @@
         <dt><code>.dcf-form-group</code></dt>
         <dd>Wrap groups of form elements (such as a label and input pair) to visually offset them from other form elements.</dd>
         <dt><code>.dcf-form-controls-inline</code></dt>
-        <dd>Display labels and form controls inline (as space allows) instead of stacked.</dd>
+        <dd>At the small breakpoint, display labels and form controls inline (as space allows) instead of stacked.</dd>
         <dt><code>.dcf-required</code></dt>
         <dd>Indicate that an adjacent form input is required to submit the form.</dd>
         <dt><code>.dcf-input-checkbox</code></dt>
@@ -1813,6 +1813,10 @@
               <label for="example-components-form-password">Password <small class="dcf-required">Required</small></label>
               <input id="example-components-form-password" type="password" required aria-describedby="example-components-form-pwd-help">
               <p class="dcf-form-help" id="example-components-form-pwd-help">Make sure it’s a good one!</p>
+            </div>
+            <div class="dcf-form-group dcf-form-controls-inline">
+              <label for="example-components-form-inline">An Inline Form Field</label>
+              <input id="example-components-form-inline" type="text">
             </div>
             <div class="dcf-form-group">
               <label for="example-components-form-institution">Institution</label>
