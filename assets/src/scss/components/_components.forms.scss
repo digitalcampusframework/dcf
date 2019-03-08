@@ -5,8 +5,8 @@
 
 .dcf-form input,
 .dcf-form textarea,
-.dcf-input-text, // TODO: deprecate .dcf-input-text
-.dcf-input-file { // TODO: deprecate .dcf-input-file
+.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-file { // TODO: deprecate .dcf-input-file?
   appearance: none;
   color: inherit;
   display: block;
@@ -17,7 +17,7 @@
 // Display form controls inline instead of stacked at the small breakpoint
 @include mq(sm) {
 
-  .dcf-input-group-form, // TODO: deprecate .dcf-input-group-form
+  .dcf-input-group-form, // TODO: deprecate .dcf-input-group-form?
   .dcf-form-controls-inline {
     align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
     display: flex;
