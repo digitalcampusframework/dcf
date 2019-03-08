@@ -4,12 +4,12 @@
 
 
 // !Input Group Text Input
-.example .dcf-input-group .dcf-input-text:not(:first-child) {
+.example .dcf-input-group input:not(:first-child) {
   @include sharp-left;
 }
 
 
-.example .dcf-input-group .dcf-input-text:not(:last-child) {
+.example .dcf-input-group input:not(:last-child) {
   @include sharp-right;
 }
 
@@ -24,7 +24,7 @@
 // !Input Group Add-on
 .example .dcf-input-group-addon {
   @include bg-gray-lightest;
-  border: 1px solid $color-border;
+  border: 1px solid $color-border-input;
   color: $color-light-text;
   @include pb-2;
   @include pl-3;

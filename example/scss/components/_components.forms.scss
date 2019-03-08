@@ -3,9 +3,24 @@
 //////////////////////////////
 
 
+// Fieldset
+.example .dcf-form fieldset {
+  border: 1px solid $color-border;
+  border-radius: $roundrect;
+  padding: $length-em-4 $length-vw-1;
+}
+
+
+.example .dcf-form fieldset:not(:last-child) {
+  @include mb-4;
+}
+
+
 // Legend
-.example .dcf-legend {
-  @include mb-1;
+.example .dcf-form legend {
+  margin-left: -#{$length-em-2}; // Left align legend with form elements
+  padding-left: $length-em-2;
+  padding-right: $length-em-2;
 }
 
 
@@ -15,38 +30,19 @@
 }
 
 
-// Form group and form with input group
-.example .dcf-form-group,
-.example .dcf-input-group-form {
-  margin-top: -#{ms(-12)}em; // Apply negative margin-top to equalize label margin-top
-}
-
-
-// Label
-.example .dcf-label {
-  margin-top: #{ms(-12)}em;
-}
-
-.example .dcf-form-group input ~ label {
-	@include ml-2;
-}
-
+.example input[disabled] ~ label,
 .example .dcf-form-group[disabled] label {
-	cursor: not-allowed !important;
-	opacity: .7;
-}
-
-.example .dcf-form-group input[disabled] ~ label {
-	cursor: not-allowed !important;
-	opacity: .7;
+  cursor: not-allowed !important;
+  opacity: .7;
 }
 
 
 // Input: Text
-.example .dcf-input-text {
-  border: 1px solid $color-border;
+.example .dcf-form input:not([type="submit"]),
+.example .dcf-form textarea {
+  border: 1px solid $color-border-input;
   border-radius: $roundrect;
-  box-shadow: inset 0 1px 2px fade-out($color-border,1);
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,1);
   @include pb-2;
   @include pl-3;
   @include pr-3;
@@ -55,29 +51,18 @@
 }
 
 
-.example .dcf-input-text:hover {
-  border-color: $color-border-hover;
-  box-shadow: inset 0 1px 2px fade-out($color-border,.5);
+.example .dcf-form input:not([type="submit"]):hover,
+.example .dcf-form textarea:hover {
+  border-color: $color-border-input-hover;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
   transition: border-color $hover-on, box-shadow $hover-on;
 }
 
 
-.example .dcf-input-text:focus {
-  border-color: $color-button;
+.example .dcf-form input:not([type="submit"]):focus,
+.example .dcf-form textarea:focus {
+  border-color: $color-border-input-focus;
   outline: none;
-}
-
-
-// Input: Control
-.example .dcf-input-control {
-  @include mr-1;
-}
-
-
-// Input: File
-.example .dcf-input-file {
-  @include mb-2;
-  @include mt-2;
 }
 
 
@@ -86,7 +71,7 @@
   color: #d00;
   @include txt-xs;
   font-style: italic;
-  @include pl-2;
+  @include pl-1;
 }
 
 
@@ -95,12 +80,4 @@
   color: $color-light-text;
   @include txt-xs;
   @include mt-1;
-}
-
-
-// Inputs
-.example .dcf-label + .dcf-input-text,
-.example .dcf-label + .dcf-input-select,
-.example .dcf-label + .dcf-input-group {
-  margin-top: #{ms(-12)}em;
 }

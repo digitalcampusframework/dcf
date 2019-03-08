@@ -3,14 +3,10 @@
 /////////////////////////////
 
 
-.dcf-label {
-  // Force input group to wrap when label text is long and
-  // flex-wrap is applied to parent of label & input group
-  flex-shrink: 0;
-}
-
-
-.dcf-input-text {
+.dcf-form input,
+.dcf-form textarea,
+.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-file { // TODO: deprecate .dcf-input-file?
   appearance: none;
   color: inherit;
   display: block;
@@ -18,6 +14,31 @@
 }
 
 
-.dcf-input-file {
-  display: block;
+// Display form controls inline instead of stacked at the small breakpoint
+@include mq(sm) {
+
+  .dcf-input-group-form, // TODO: deprecate .dcf-input-group-form?
+  .dcf-form-controls-inline {
+    align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
+    display: flex;
+    flex-wrap: wrap; // Allow input to wrap at narrower viewport widths
+  }
+
+
+  .dcf-form-controls-inline label {
+    flex-shrink: 0; // Force input to wrap when label text is long
+    @include mr-4;
+  }
+
+
+  .dcf-form-controls-inline input,
+  .dcf-form-controls-inline select {
+    flex: 1 1 1px; // Let input or select grow, shrink and wrap as needed
+  }
+
+
+  .dcf-form-controls-inline .dcf-form-help {
+    flex-basis: 100%; // Place help text on its own line
+  }
+
 }
