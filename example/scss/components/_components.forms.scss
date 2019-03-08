@@ -3,6 +3,27 @@
 //////////////////////////////
 
 
+// Fieldset
+.example .dcf-form fieldset {
+  border: 1px solid $color-border;
+  border-radius: $roundrect;
+  padding: $length-em-4 $length-vw-1;
+}
+
+
+.example .dcf-form fieldset:not(:last-child) {
+  @include mb-4;
+}
+
+
+// Legend
+.example .dcf-form legend {
+  margin-left: -#{$length-em-2}; // Left align legend with form elements
+  padding-left: $length-em-2;
+  padding-right: $length-em-2;
+}
+
+
 // Form group
 .example .dcf-form-group {
   @include mb-4;
