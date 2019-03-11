@@ -664,7 +664,7 @@
           <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
         </ul>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-objects-lists">Lists</a> (Objects), <a href="#example-components-pagination">Pagination</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-lists">Lists</a> (Components), <a href="#example-components-pagination">Pagination</a> (Components)</p>
 
   <!--
       <h3 class="dcf-mt-8" id="example-elements-main">Main</h3>
@@ -764,12 +764,6 @@
         <li><a href="#example-objects-wrapper">Wrapper</a></li>
         <li><a href="#example-objects-bleed">Bleed</a></li>
         <li><a href="#example-objects-grids">Grids</a></li>
-        <li><a href="#example-objects-lists">Lists</a>
-          <ul>
-            <li><a href="#example-objects-inline-lists">Inline Lists</a></li>
-            <li><a href="#example-objects-bare-lists">Bare Lists</a></li>
-          </ul>
-        </li>
         <li><a href="#example-objects-media">Media</a></li>
   <!--       <li><a href="#example-objects-dialog">Dialog</a></li> -->
       </ul>
@@ -1282,53 +1276,6 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-grid">Grid</a> (Utilities)</p>
 
-      <h3 class="dcf-mt-8" id="example-objects-lists">Lists</h3>
-
-      <h4 class="dcf-mt-6" id="example-objects-bare-lists">Bare Lists</h4>
-      <dl class="dcf-measure">
-        <dt><code>.dcf-list-bare</code></dt>
-        <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
-      </dl>
-      <figure class="dcf-mt-6">
-        <ul class="dcf-list-bare">
-          <li>Bare list item #1</li>
-          <li>Bare list item #2</li>
-          <li>Bare list item #3</li>
-          <li>Bare list item #4</li>
-          <li>Bare list item #5</li>
-        </ul>
-      </figure>
-
-      <h4 class="dcf-mt-6" id="example-objects-inline-lists">Inline Lists</h4>
-      <dl class="dcf-measure">
-        <dt><code>.dcf-list-bare</code></dt>
-        <dd>Remove left padding and list styles for the inline list.</dd>
-        <dt><code>.dcf-list-inline</code></dt>
-        <dd>Change the display of list items to inline-block and add right margin to all but the last list item.</dd>
-      </dl>
-      <figure class="dcf-mt-6">
-        <ul class="dcf-list-bare dcf-list-inline">
-          <li>Inline list item #1</li>
-          <li>Inline list item #2</li>
-          <li>Inline list item #3</li>
-          <li>Inline list item #4</li>
-          <li>Inline list item #5</li>
-        </ul>
-      </figure>
-      <p class="dcf-measure">Inline lists are also used to create pagination:</p>
-      <figure class="dcf-mt-6">
-        <nav aria-label="pagination">
-          <ul class="dcf-list-bare dcf-list-inline dcf-mt5">
-            <li><a href="#previous">Previous</a></li>
-            <li><a href="#page1">1</a></li>
-            <li><a href="#page2">2</a></li>
-            <li><a href="#page3">3</a></li>
-            <li><a href="#next">Next</a></li>
-          </ul>
-        </nav>
-      </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
-
       <h3 class="dcf-mt-8" id="example-objects-media">Media</h3>
       <dl class="dcf-measure">
         <dt><code>.dcf-media</code></dt>
@@ -1413,6 +1360,13 @@
             <li><a href="#example-components-input-groups-buttons"><span class="dcf-sr-only">Input Groups </span>With A Button</a></li>
           </ul>
         </li>
+        <li><a href="#example-components-lists">Lists</a>
+          <ul>
+            <li><a href="#example-components-bare-lists">Bare Lists</a></li>
+            <li><a href="#example-components-inline-lists">Inline Lists</a></li>
+          </ul>
+        </li>
+
   <!--       <li><a href="#example-components-marks">Marks</a></li> -->
   <!--       <li><a href="#example-components-modals">Modals</a></li> -->
   <!--       <li><a href="#example-components-modals">Navigation</a></li> -->
@@ -1745,7 +1699,7 @@
           </li>
         </ul>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-objects-grids">Grids</a> (Objects), <a href="#example-objects-bare-lists">Unstyled Lists</a> (Components), <a href="#example-utilities-grid">Grid</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-objects-grids">Grids</a> (Objects), <a href="#example-components-bare-lists">Bare Lists</a> (Components), <a href="#example-utilities-grid">Grid</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-code">Code</h3>
       <dl class="dcf-measure">
@@ -2049,6 +2003,53 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-elements-forms">Forms</a> (Components), <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-box-alignment">Display</a> (Utilities)</p>
 
+      <h3 class="dcf-mt-8" id="example-components-lists">Lists</h3>
+
+      <h4 class="dcf-mt-6" id="example-components-bare-lists">Bare Lists</h4>
+      <dl class="dcf-measure">
+        <dt><code>.dcf-list-bare</code></dt>
+        <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
+      </dl>
+      <figure class="dcf-mt-6">
+        <ul class="dcf-list-bare">
+          <li>Bare list item #1</li>
+          <li>Bare list item #2</li>
+          <li>Bare list item #3</li>
+          <li>Bare list item #4</li>
+          <li>Bare list item #5</li>
+        </ul>
+      </figure>
+
+      <h4 class="dcf-mt-6" id="example-components-inline-lists">Inline Lists</h4>
+      <dl class="dcf-measure">
+        <dt><code>.dcf-list-bare</code></dt>
+        <dd>Remove left padding and list styles for the inline list.</dd>
+        <dt><code>.dcf-list-inline</code></dt>
+        <dd>Change the display of list items to inline-block and add right margin to all but the last list item.</dd>
+      </dl>
+      <figure class="dcf-mt-6">
+        <ul class="dcf-list-bare dcf-list-inline">
+          <li>Inline list item #1</li>
+          <li>Inline list item #2</li>
+          <li>Inline list item #3</li>
+          <li>Inline list item #4</li>
+          <li>Inline list item #5</li>
+        </ul>
+      </figure>
+      <p class="dcf-measure">Inline lists are also used to create pagination:</p>
+      <figure class="dcf-mt-6">
+        <nav aria-label="pagination">
+          <ul class="dcf-list-bare dcf-list-inline dcf-mt5">
+            <li><a href="#previous">Previous</a></li>
+            <li><a href="#page1">1</a></li>
+            <li><a href="#page2">2</a></li>
+            <li><a href="#page3">3</a></li>
+            <li><a href="#next">Next</a></li>
+          </ul>
+        </nav>
+      </figure>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
+
   <!--
       <h3 class="dcf-mt-8" id="example-components-marks">Marks</h3>
       <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -2079,7 +2080,7 @@
   -->
 
       <h3 class="dcf-mt-8" id="example-components-pagination">Pagination</h3>
-      <p>See <a href="#example-objects-inline-lists">Inline Lists</a></p>
+      <p>See <a href="#example-components-inline-lists">Inline Lists</a> (Components)</p>
 
 <!--
       <h3 class="dcf-mt-8" id="example-components-paragraphs">Paragraphs</h3>
