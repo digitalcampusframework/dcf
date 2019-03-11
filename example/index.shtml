@@ -754,7 +754,7 @@
           </tbody>
         </table>
       </figure>
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
     <!-- !Objects -->
@@ -2238,7 +2238,7 @@
         </table>
       </figure>
 
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-borders">Borders</a> (Utilities), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements)<a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->
@@ -2348,6 +2348,7 @@
           </ul>
         </li>
         <li><a href="#example-utilities-svg"><abbr title="Scalable Vector Graphics">SVG</abbr></a></li>
+        <li><a href="#example-utilities-tables">Tables</a></li>
         <li><a href="#example-utilities-typography">Typography</a>
           <ul>
             <li><a href="#example-utilities-font-size">Font Size</a></li>
@@ -3057,6 +3058,11 @@
       <dl>
         <dt><code>.dcf-fill-current</code></dt><dd>fill: currentColor</dd>
         <dt><code>.dcf-stroke-current</code></dt><dd>stroke: currentColor</dd>
+      </dl>
+
+      <h3 class="dcf-mt-8" id="example-utilities-tables">Tables</h3>
+      <dl>
+        <dt><code>.dcf-table-fixed</code></dt><dd>table-layout: fixed</dd>
       </dl>
 
       <h3 class="dcf-mt-8" id="example-utilities-typography">Typography</h3>
