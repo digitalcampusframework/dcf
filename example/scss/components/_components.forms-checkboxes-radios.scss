@@ -97,10 +97,10 @@
 
 
 // Hover state
-.example .dcf-input-checkbox label:hover::before,
-.example .dcf-input-radio label:hover::before,
-.example .dcf-input-checkbox input[type="checkbox"]:hover + label::before,
-.example .dcf-input-radio input[type="radio"]:hover + label::before {
+.example .dcf-input-checkbox input[type="checkbox"]:enabled + label:hover::before,
+.example .dcf-input-radio input[type="radio"]:enabled + label:hover::before,
+.example .dcf-input-checkbox input[type="checkbox"]:enabled:hover + label::before,
+.example .dcf-input-radio input[type="radio"]:enabled:hover + label::before {
   border-color: $color-border-input-hover;
   box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
   transition: border-color $hover-on, box-shadow $hover-on;
