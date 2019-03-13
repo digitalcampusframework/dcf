@@ -9,7 +9,7 @@
 .example .dcf-input-checkbox,
 .example .dcf-input-radio {
   @include mb-1;
-  @include pl-6
+  @include pl-6;
   height: $length-em-6;
   position: relative;
 }
