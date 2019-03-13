@@ -37,32 +37,35 @@
 }
 
 
-// Input: Text
+// Input: General
 .example .dcf-form input:not([type="submit"]),
 .example .dcf-form textarea {
   border: 1px solid $color-border-input;
   border-radius: $roundrect;
   box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,1);
+  transition: border-color $hover-off, box-shadow $hover-off;
+}
+
+// apply padding to input that needs it
+.example .dcf-form input:not([type="submit"]):not([type="range"]),
+.example .dcf-form textarea {
   @include pb-2;
   @include pl-3;
   @include pr-3;
   @include pt-2;
-  transition: border-color $hover-off, box-shadow $hover-off;
 }
-
-
-.example .dcf-form input:not([type="submit"]):hover,
-.example .dcf-form textarea:hover {
-  border-color: $color-border-input-hover;
-  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
-  transition: border-color $hover-on, box-shadow $hover-on;
-}
-
 
 .example .dcf-form input:not([type="submit"]):focus,
 .example .dcf-form textarea:focus {
   border-color: $color-border-input-focus;
   outline: none;
+}
+
+.example .dcf-form input:not([type="submit"]):enabled:hover,
+.example .dcf-form textarea:enabled:hover {
+  border-color: $color-border-input-hover;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
+  transition: border-color $hover-on, box-shadow $hover-on;
 }
 
 
