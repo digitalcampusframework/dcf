@@ -55,18 +55,17 @@
   @include pt-2;
 }
 
-.example .dcf-form input:not([type="submit"]):hover,
-.example .dcf-form textarea:hover {
-  border-color: $color-border-input-hover;
-  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
-  transition: border-color $hover-on, box-shadow $hover-on;
-}
-
-
 .example .dcf-form input:not([type="submit"]):focus,
 .example .dcf-form textarea:focus {
   border-color: $color-border-input-focus;
   outline: none;
+}
+
+.example .dcf-form input:not([type="submit"]):enabled:hover,
+.example .dcf-form textarea:enabled:hover {
+  border-color: $color-border-input-hover;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
+  transition: border-color $hover-on, box-shadow $hover-on;
 }
 
 
