@@ -96,17 +96,6 @@
 }
 
 
-// Hover state
-.example .dcf-input-checkbox input[type="checkbox"]:enabled + label:hover::before,
-.example .dcf-input-radio input[type="radio"]:enabled + label:hover::before,
-.example .dcf-input-checkbox input[type="checkbox"]:enabled:hover + label::before,
-.example .dcf-input-radio input[type="radio"]:enabled:hover + label::before {
-  border-color: $color-border-input-hover;
-  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
-  transition: border-color $hover-on, box-shadow $hover-on;
-}
-
-
 // Checked, focus state
 .example .dcf-input-checkbox input[type="checkbox"]:checked + label::before,
 .example .dcf-input-checkbox input[type="checkbox"]:focus + label::before {
@@ -133,4 +122,15 @@
   opacity: 1;
   transform: translate(.4px,.1px) scale(.5);
   transition: opacity $hover-on transform $hover-on;
+}
+
+
+// Hover state
+.example .dcf-input-checkbox input[type="checkbox"]:enabled + label:hover::before,
+.example .dcf-input-radio input[type="radio"]:enabled + label:hover::before,
+.example .dcf-input-checkbox input[type="checkbox"]:enabled:hover + label::before,
+.example .dcf-input-radio input[type="radio"]:enabled:hover + label::before {
+  border-color: $color-border-input-hover;
+  box-shadow: inset 0 1px 2px fade-out($color-border-input-hover,.5);
+  transition: border-color $hover-on, box-shadow $hover-on;
 }
