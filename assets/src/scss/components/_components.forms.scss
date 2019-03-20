@@ -3,7 +3,7 @@
 /////////////////////////////
 
 
-.dcf-form input,
+.dcf-form input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="color"]), // not applying display:block to button-type inputs
 .dcf-form textarea,
 .dcf-input-text, // TODO: deprecate .dcf-input-text?
 .dcf-input-file { // TODO: deprecate .dcf-input-file?
