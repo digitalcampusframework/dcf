@@ -1380,6 +1380,7 @@
           <ul>
             <li><a href="#example-components-bordered-tables">Bordered Tables</a></li>
             <li><a href="#example-components-striped-tables">Striped Tables</a></li>
+            <li><a href="#example-components-responsive-tables">Responsive Tables</a></li>
           </ul>
         </li>
       </ul>
@@ -2239,7 +2240,178 @@
         </table>
       </figure>
 
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure-3 dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements)<a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
+      <h4 class="dcf-mt-6" id="example-components-responsive-tables">Responsive Tables</h4>
+      <dl class="dcf-measure-3">
+        <dt><code>.dcf-table-responsive</code></dt>
+        <dd>The responsive table needs documentation.</dd>
+      </dl>
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+        <table class="dcf-table dcf-table-responsive">
+          <caption>This is a responsive table.</caption>
+          <thead>
+            <tr>
+              <th>Greeting</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Greeting">Hello</td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hi</td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hey</td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Yo</td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+        <table class="dcf-table dcf-table-bordered dcf-table-responsive">
+          <caption>This is a responsive bordered table.</caption>
+          <thead>
+            <tr>
+              <th>Greeting</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Greeting">Hello</td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hi</td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hey</td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Yo</td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+        <table class="dcf-table dcf-table-striped dcf-table-responsive">
+          <caption>This is a responsive striped table.</caption>
+          <thead>
+            <tr>
+              <th>Bear</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-wrapper-table-scroll">
+        <table class="dcf-table dcf-table-fixed">
+          <caption>This is a responsive striped table.</caption>
+          <thead>
+            <tr>
+              <th>Bear</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description 1</th>
+              <th>Description 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description 1">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+              <td data-label="Description 2">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description 1">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+              <td data-label="Description 2">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description 1">Donec ullamcorper nulla non metus auctor fringilla</td>
+              <td data-label="Description 2">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description 1">Nulla vitae elit libero, a pharetra augue</td>
+              <td data-label="Description 2">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+      <p class="dcf-mt-6 dcf-pl-4 dcf-measure-3 dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->

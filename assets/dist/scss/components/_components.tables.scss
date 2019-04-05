@@ -5,8 +5,13 @@
 
 .dcf-table thead,
 .dcf-table tbody {
-  border-bottom: 1px solid $color-border;
   @include txt-sm;
+}
+
+
+.dcf-table tbody {
+  border-bottom: 1px solid $color-border;
+  border-top: 1px solid $color-border;
 }
 
 
@@ -32,7 +37,8 @@
 }
 
 
-.dcf-table-striped tr {
+.dcf-table-bordered tr:not(:last-child),
+.dcf-table-striped tr:not(:last-child) {
   border-bottom: 1px solid $color-border;
 }
 
@@ -59,4 +65,110 @@
 
 .dcf-table-bordered thead th {
   @include pt-5;
+}
+
+
+@include mq(md, max, width) {
+
+  .dcf-table-responsive thead {
+    @include sr-only;
+  }
+
+
+  .dcf-table-responsive tr {
+    display: block;
+  }
+
+
+  .dcf-table-responsive td {
+    column-gap: $length-vw-1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: left !important;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered,
+  .dcf-table-responsive.dcf-table-bordered thead th {
+    @include b-0;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered tbody td {
+    @include bt-0;
+  }
+
+
+//   .dcf-table-responsive.dcf-table-bordered tbody td {
+//     @include bl-0;
+//     @include br-0;
+//     @include bt-0;
+//   }
+
+
+  .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
+    @include bb-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
+    @include pb-3;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody td {
+    @include pb-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered):not(.dcf-table-striped) tbody td {
+    @include pr-0;
+  }
+
+
+  .dcf-table-responsive tbody td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    @include pr-6;
+  }
+
+
+  .dcf-wrapper-table-scroll {
+//     background-color: white;
+//     background-image: linear-gradient(to right, #fff, rgba(255,255,255,0)),
+//                       linear-gradient(to left, #fff, rgba(255,255,255,0)),
+//                       linear-gradient(to right, rgba(0,0,0,.1), rgba(0,0,0,0)),
+//                       linear-gradient(to left, rgba(0,0,0,.1), rgba(0,0,0,0));
+//     background-position: 0 0, 100% 0, 0 0, 100% 0;
+//     background-repeat: no-repeat;
+//     background-size: $length-vw-2 100%, $length-vw-2 100%, $length-vw-1 100%, $length-vw-1 100%;
+//     background-attachment: local, local, scroll, scroll;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    @include overflow-x-auto;
+    @include pb-4;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
+
+
+  .dcf-wrapper-table-scroll > table {
+    margin-left: $length-vw-2;
+    margin-right: $length-vw-2;
+  }
+
+
+//   .dcf-table-scroll::after {
+//     background-image: linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.25));
+//     content: '';
+//     @include h-100pc;
+//     position: absolute;
+//     right: 0;
+//     top: 0;
+//     @include w-4;
+//   }
+
 }
