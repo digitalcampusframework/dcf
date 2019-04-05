@@ -2717,32 +2717,32 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-column-gap">Column Gap</h4>
           <dl>
-		        <dt><code>.dcf-col-gap-1</code></dt><dd>grid-column-gap: .42em</dd>
-		        <dt><code>.dcf-col-gap-2</code></dt><dd>grid-column-gap: .56em</dd>
-		        <dt><code>.dcf-col-gap-3</code></dt><dd>grid-column-gap: .75em</dd>
-		        <dt><code>.dcf-col-gap-4</code></dt><dd>grid-column-gap: 1em</dd>
-		        <dt><code>.dcf-col-gap-5</code></dt><dd>grid-column-gap: 1.33em</dd>
-		        <dt><code>.dcf-col-gap-6</code></dt><dd>grid-column-gap: 1.77em</dd>
-		        <dt><code>.dcf-col-gap-7</code></dt><dd>grid-column-gap: 2.37em</dd>
-		        <dt><code>.dcf-col-gap-8</code></dt><dd>grid-column-gap: 3.16em</dd>
-		        <dt><code>.dcf-col-gap-9</code></dt><dd>grid-column-gap: 4.21em</dd>
-		        <dt><code>.dcf-col-gap-10</code></dt><dd>grid-column-gap: 5.62em</dd>
+            <dt><code>.dcf-col-gap-1</code></dt><dd>grid-column-gap: .42em</dd>
+            <dt><code>.dcf-col-gap-2</code></dt><dd>grid-column-gap: .56em</dd>
+            <dt><code>.dcf-col-gap-3</code></dt><dd>grid-column-gap: .75em</dd>
+            <dt><code>.dcf-col-gap-4</code></dt><dd>grid-column-gap: 1em</dd>
+            <dt><code>.dcf-col-gap-5</code></dt><dd>grid-column-gap: 1.33em</dd>
+            <dt><code>.dcf-col-gap-6</code></dt><dd>grid-column-gap: 1.77em</dd>
+            <dt><code>.dcf-col-gap-7</code></dt><dd>grid-column-gap: 2.37em</dd>
+            <dt><code>.dcf-col-gap-8</code></dt><dd>grid-column-gap: 3.16em</dd>
+            <dt><code>.dcf-col-gap-9</code></dt><dd>grid-column-gap: 4.21em</dd>
+            <dt><code>.dcf-col-gap-10</code></dt><dd>grid-column-gap: 5.62em</dd>
             <dt><code>.dcf-col-gap-vw</code></dt><dd>grid-column-gap: 3.16vw</dd>
           </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-row-gap">Row Gap</h4>
           <dl>
-		        <dt><code>.dcf-row-gap-1</code></dt><dd>grid-row-gap: .42em</dd>
-		        <dt><code>.dcf-row-gap-2</code></dt><dd>grid-row-gap: .56em</dd>
-		        <dt><code>.dcf-row-gap-3</code></dt><dd>grid-row-gap: .75em</dd>
-		        <dt><code>.dcf-row-gap-4</code></dt><dd>grid-row-gap: 1em</dd>
-		        <dt><code>.dcf-row-gap-5</code></dt><dd>grid-row-gap: 1.33em</dd>
-		        <dt><code>.dcf-row-gap-6</code></dt><dd>grid-row-gap: 1.77em</dd>
-		        <dt><code>.dcf-row-gap-7</code></dt><dd>grid-row-gap: 2.37em</dd>
-		        <dt><code>.dcf-row-gap-8</code></dt><dd>grid-row-gap: 3.16em</dd>
-		        <dt><code>.dcf-row-gap-9</code></dt><dd>grid-row-gap: 4.21em</dd>
-		        <dt><code>.dcf-row-gap-10</code></dt><dd>grid-row-gap: 5.62em</dd>
+            <dt><code>.dcf-row-gap-1</code></dt><dd>grid-row-gap: .42em</dd>
+            <dt><code>.dcf-row-gap-2</code></dt><dd>grid-row-gap: .56em</dd>
+            <dt><code>.dcf-row-gap-3</code></dt><dd>grid-row-gap: .75em</dd>
+            <dt><code>.dcf-row-gap-4</code></dt><dd>grid-row-gap: 1em</dd>
+            <dt><code>.dcf-row-gap-5</code></dt><dd>grid-row-gap: 1.33em</dd>
+            <dt><code>.dcf-row-gap-6</code></dt><dd>grid-row-gap: 1.77em</dd>
+            <dt><code>.dcf-row-gap-7</code></dt><dd>grid-row-gap: 2.37em</dd>
+            <dt><code>.dcf-row-gap-8</code></dt><dd>grid-row-gap: 3.16em</dd>
+            <dt><code>.dcf-row-gap-9</code></dt><dd>grid-row-gap: 4.21em</dd>
+            <dt><code>.dcf-row-gap-10</code></dt><dd>grid-row-gap: 5.62em</dd>
           </dl>
         </div>
       </div>
@@ -2751,71 +2751,71 @@
       <div class="dcf-grid-halves@sm dcf-grid-thirds@md dcf-col-gap-vw">
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-height">Height</h4>
-		      <dl>
-		        <dt><code>.dcf-h-auto</code></dt><dd>height: auto</dd>
-		        <dt><code>.dcf-h-0</code></dt><dd>height: 0</dd>
-		        <dt><code>.dcf-h-1</code></dt><dd>height: .42em</dd>
-		        <dt><code>.dcf-h-2</code></dt><dd>height: .56em</dd>
-		        <dt><code>.dcf-h-3</code></dt><dd>height: .75em</dd>
-		        <dt><code>.dcf-h-4</code></dt><dd>height: 1em</dd>
-		        <dt><code>.dcf-h-5</code></dt><dd>height: 1.33em</dd>
-		        <dt><code>.dcf-h-6</code></dt><dd>height: 1.77em</dd>
-		        <dt><code>.dcf-h-7</code></dt><dd>height: 2.37em</dd>
-		        <dt><code>.dcf-h-8</code></dt><dd>height: 3.16em</dd>
-		        <dt><code>.dcf-h-9</code></dt><dd>height: 4.21em</dd>
-		        <dt><code>.dcf-h-10</code></dt><dd>height: 5.62em</dd>
-		        <dt><code>.dcf-h-100%</code></dt><dd>height: 100%</dd>
-		        <dt><code>.dcf-h-100vh</code></dt><dd>height: 100vw</dd>
-		      </dl>
+          <dl>
+            <dt><code>.dcf-h-auto</code></dt><dd>height: auto</dd>
+            <dt><code>.dcf-h-0</code></dt><dd>height: 0</dd>
+            <dt><code>.dcf-h-1</code></dt><dd>height: .42em</dd>
+            <dt><code>.dcf-h-2</code></dt><dd>height: .56em</dd>
+            <dt><code>.dcf-h-3</code></dt><dd>height: .75em</dd>
+            <dt><code>.dcf-h-4</code></dt><dd>height: 1em</dd>
+            <dt><code>.dcf-h-5</code></dt><dd>height: 1.33em</dd>
+            <dt><code>.dcf-h-6</code></dt><dd>height: 1.77em</dd>
+            <dt><code>.dcf-h-7</code></dt><dd>height: 2.37em</dd>
+            <dt><code>.dcf-h-8</code></dt><dd>height: 3.16em</dd>
+            <dt><code>.dcf-h-9</code></dt><dd>height: 4.21em</dd>
+            <dt><code>.dcf-h-10</code></dt><dd>height: 5.62em</dd>
+            <dt><code>.dcf-h-100%</code></dt><dd>height: 100%</dd>
+            <dt><code>.dcf-h-100vh</code></dt><dd>height: 100vw</dd>
+          </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-min-height">Min-Height</h4>
-		      <dl>
-		        <dt><code>.dcf-h-min-0</code></dt><dd>min-height: 0</dd>
-		        <dt><code>.dcf-h-min-100vh</code></dt><dd>min-height: 100vh</dd>
-		      </dl>
+          <dl>
+            <dt><code>.dcf-h-min-0</code></dt><dd>min-height: 0</dd>
+            <dt><code>.dcf-h-min-100vh</code></dt><dd>min-height: 100vh</dd>
+          </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-max-height">Max-Height</h4>
-		      <dl>
-		        <dt><code>.dcf-h-max-100%</code></dt><dd>max-height: 100%</dd>
-		        <dt><code>.dcf-h-max-100vh</code></dt><dd>max-height: 100vh</dd>
-		      </dl>
+          <dl>
+            <dt><code>.dcf-h-max-100%</code></dt><dd>max-height: 100%</dd>
+            <dt><code>.dcf-h-max-100vh</code></dt><dd>max-height: 100vh</dd>
+          </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-width">Width</h4>
-		      <dl>
-		        <dt><code>.dcf-w-auto</code></dt><dd>width: auto</dd>
-                <dt><code>.dcf-w-0</code></dt><dd>width: 0</dd>
-		        <dt><code>.dcf-w-1</code></dt><dd>width: .42em</dd>
-		        <dt><code>.dcf-w-2</code></dt><dd>width: .56em</dd>
-		        <dt><code>.dcf-w-3</code></dt><dd>width: .75em</dd>
-		        <dt><code>.dcf-w-4</code></dt><dd>width: 1em</dd>
-		        <dt><code>.dcf-w-5</code></dt><dd>width: 1.33em</dd>
-		        <dt><code>.dcf-w-6</code></dt><dd>width: 1.77em</dd>
-		        <dt><code>.dcf-w-7</code></dt><dd>width: 2.37em</dd>
-		        <dt><code>.dcf-w-8</code></dt><dd>width: 3.16em</dd>
-		        <dt><code>.dcf-w-9</code></dt><dd>width: 4.21em</dd>
-		        <dt><code>.dcf-w-10</code></dt><dd>width: 5.62em</dd>
-		        <dt><code>.dcf-w-100%</code></dt><dd>width: 100%</dd>
-		        <dt><code>.dcf-w-100vw</code></dt><dd>width: 100vw</dd>
-		      </dl>
+          <dl>
+            <dt><code>.dcf-w-auto</code></dt><dd>width: auto</dd>
+            <dt><code>.dcf-w-0</code></dt><dd>width: 0</dd>
+            <dt><code>.dcf-w-1</code></dt><dd>width: .42em</dd>
+            <dt><code>.dcf-w-2</code></dt><dd>width: .56em</dd>
+            <dt><code>.dcf-w-3</code></dt><dd>width: .75em</dd>
+            <dt><code>.dcf-w-4</code></dt><dd>width: 1em</dd>
+            <dt><code>.dcf-w-5</code></dt><dd>width: 1.33em</dd>
+            <dt><code>.dcf-w-6</code></dt><dd>width: 1.77em</dd>
+            <dt><code>.dcf-w-7</code></dt><dd>width: 2.37em</dd>
+            <dt><code>.dcf-w-8</code></dt><dd>width: 3.16em</dd>
+            <dt><code>.dcf-w-9</code></dt><dd>width: 4.21em</dd>
+            <dt><code>.dcf-w-10</code></dt><dd>width: 5.62em</dd>
+            <dt><code>.dcf-w-100%</code></dt><dd>width: 100%</dd>
+            <dt><code>.dcf-w-100vw</code></dt><dd>width: 100vw</dd>
+          </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-min-width">Min-Width</h4>
-		      <dl>
-		        <dt><code>.dcf-w-min-0</code></dt><dd>min-width: 0</dd>
-		      </dl>
+          <dl>
+            <dt><code>.dcf-w-min-0</code></dt><dd>min-width: 0</dd>
+          </dl>
         </div>
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-max-width">Max-Width</h4>
-		      <dl>
+          <dl>
             <dt><code>.dcf-w-max-sm</code></dt><dd>max-width: 23.68rem</dd>
             <dt><code>.dcf-w-max-md</code></dt><dd>max-width: 31.57rem</dd>
             <dt><code>.dcf-w-max-lg</code></dt><dd>max-width: 42.09rem</dd>
-		        <dt><code>.dcf-w-max-100%</code></dt><dd>max-width: 100%</dd>
-		        <dt><code>.dcf-w-max-100vw</code></dt><dd>max-width: 100vw</dd>
-		      </dl>
+            <dt><code>.dcf-w-max-100%</code></dt><dd>max-width: 100%</dd>
+            <dt><code>.dcf-w-max-100vw</code></dt><dd>max-width: 100vw</dd>
+          </dl>
         </div>
       </div>
 
