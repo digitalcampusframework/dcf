@@ -53,12 +53,5 @@
 .dcf-case-reset { @include case-reset(!important); }
 
 
-// !Measure (Line Length)
-.dcf-measure-1 { @include measure-1(!important); }
-.dcf-measure, // TODO: deprecate
-.dcf-measure-2 { @include measure-2(!important); }
-.dcf-measure-3 { @include measure-3(!important); }
-
-
 // !Writing Mode
 .dcf-txt-vertical-lr { @include txt-vertical-lr(!important); }
