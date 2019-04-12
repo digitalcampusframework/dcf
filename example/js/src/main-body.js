@@ -24,14 +24,14 @@ flatpickr(datepicker, {
 	dateFormat: "Y-m-d h:iK",
 });
 
-const images = document.querySelectorAll('.dcf-lazy-img');
+const images = document.querySelectorAll('.dcf-lazy-img:not(.dcf-lazy-img-loaded)');
 const observerConfig = {
 	// If the image gets within 50px in the Y axis, start the download.
 //   rootMargin: '0px 0px 50px 0px',
-	rootMargin: '0px',
+	rootMargin: '0px 0px 50px 0px',
 //   threshold: 0.01
-	threshold: 0.5
+  threshold: [0, 0.25],
 };
-const enterClassNames = ['dcf-fade-up'];
+const enterClassNames = ['dcf-fade-in'];
 const exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();

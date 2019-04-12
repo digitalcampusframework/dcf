@@ -128,7 +128,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				var srcset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
 				// Prevent this from being lazy loaded a second time.
-				img.classList.add('dcf-lazy-img-handled');
+				img.classList.add('dcf-lazy-img-loaded');
 				img.src = src;
 				src && img.removeAttribute('data-src');
 				srcset && (img.srcset = srcset);
@@ -2916,15 +2916,15 @@ flatpickr(datepicker, {
 	dateFormat: "Y-m-d h:iK"
 });
 
-var images = document.querySelectorAll('.dcf-lazy-img');
+var images = document.querySelectorAll('.dcf-lazy-img:not(.dcf-lazy-img-loaded)');
 var observerConfig = {
 	// If the image gets within 50px in the Y axis, start the download.
 	//   rootMargin: '0px 0px 50px 0px',
-	rootMargin: '0px',
+	rootMargin: '0px 0px 50px 0px',
 	//   threshold: 0.01
-	threshold: 0.5
+	threshold: [0, 0.25]
 };
-var enterClassNames = ['dcf-fade-up'];
+var enterClassNames = ['dcf-fade-in'];
 var exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 
