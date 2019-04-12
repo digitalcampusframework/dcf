@@ -3,6 +3,12 @@
 //////////////////////////////
 
 
+.dcf-fade-in {
+  opacity: 0;
+  animation: appear 2s forwards ease-out;
+}
+
+
 .dcf-fade-up {
   opacity: 0;
   transform: translateY(50%);
