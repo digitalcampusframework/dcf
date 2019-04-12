@@ -5,12 +5,25 @@
 
 .dcf-fade-in {
   opacity: 0;
-  animation: appear 2s forwards ease-out;
+  animation: appear $timing-fade-in forwards $easing-fade-in;
 }
 
 
-.dcf-fade-up {
+.dcf-fade-in-down {
+  opacity: 0;
+  transform: translateY(-50%);
+  animation: appear $timing-fade-down forwards $easing-fade-down;
+}
+
+
+.dcf-fade-in-up {
   opacity: 0;
   transform: translateY(50%);
-  animation: appear 2s forwards ease-out;
+  animation: appear $timing-fade-up forwards $easing-fade-up;
+}
+
+
+.dcf-fade-out {
+  opacity: 1;
+  animation: disappear $timing-fade-out forwards $easing-fade-out;
 }
