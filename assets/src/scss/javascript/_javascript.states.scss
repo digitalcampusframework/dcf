@@ -4,5 +4,7 @@
 
 
 .dcf-fade-up {
-  animation: fade-up 2s forwards ease-out;
+  opacity: 0;
+  transform: translateY(50%);
+  animation: appear 2s forwards ease-out;
 }
