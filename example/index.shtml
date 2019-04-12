@@ -3193,10 +3193,13 @@
 
       <h3 class="dcf-mt-8" id="example-javascript-states">States</h3>
       <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-fade-in</code></dt><dd>animates opacity from 0 to 100%</dd>
+        <dt><code>.dcf-fade-in-down</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from -50% to 0, moving it into view.</dd>
+        <dt><code>.dcf-fade-in-up</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from 50% to 0, moving it into view.</dd>
+        <dt><code>.dcf-fade-out</code></dt><dd>animates opacity from 100% to 0</dd>
         <dt><code>.dcf-lazy-img</code></dt><dd>lazy-loads an image when a user scrolls to its position</dd>
-        <dt><code>.dcf-fade-up</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from 50% to 0, moving it into view.</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-bleed">
+      <figure class="dcf-mt-6">
         <img class="dcf-lazy-img"
              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
              data-src="http://via.placeholder.com/400x300"
