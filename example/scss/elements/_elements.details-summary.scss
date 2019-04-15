@@ -1,0 +1,16 @@
+////////////////////////////////////////
+// !THEME / ELEMENTS / DETAILS & SUMMARY
+////////////////////////////////////////
+
+
+.example details {
+  @include mb-3;
+}
+
+
+.example summary {
+  @include txt-lg;
+  @include mb-4;
+  margin-bottom: #{ms(-12)}rem;
+}
+
