@@ -344,6 +344,7 @@
   <!--       <li><a href="#example-elements-body">Body</a></li> -->
         <li><a href="#example-elements-buttons">Buttons</a></li>
         <li><a href="#example-elements-code">Code</a></li>
+        <li><a href="#example-elements-details-summary">Details &amp; Summary</a></li>
   <!--       <li><a href="#example-elements-dialog">Dialog</a></li> -->
         <li><a href="#example-elements-figures">Figures</a></li>
         <li><a href="#example-elements-forms">Forms</a></li>
@@ -466,6 +467,26 @@
       <figure><samp>This text is meant to be treated as sample output from a computer program.</samp></figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-code">Code</a> (Components)</p>
 
+      <h3 class="dcf-mt-8" id="example-elements-details-summary">Details &amp; Summary</h3>
+      <dl class="dcf-w-max-lg">
+        <dt><code>&lt;details&gt;</code></dt>
+        <dt><code>&lt;summary&gt;</code></dt>
+        <dd>Combine these elements to build a <a href="https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/">native accordion</a> (i.e., content that can be expanded and contracted).</dd>
+      </dl>
+      <figure class="dcf-mt-6 dcf-w-max-lg">
+        <details>
+          <summary>Nullam id dolor id nibh ultricies vehicula ut id elit.</summary>
+          Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.
+        </details>
+        <details>
+          <summary>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</summary>
+          Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        </details>
+        <details>
+          <summary>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</summary>
+          Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </details>
+      </figure>
 
   <!--
       <h3 class="dcf-mt-8" id="example-elements-dialog">Dialog</h3>
