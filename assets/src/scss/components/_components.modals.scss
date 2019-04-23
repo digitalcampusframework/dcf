@@ -10,22 +10,28 @@
   height: 100%;
   justify-content: center;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
   position: fixed;
   top: 0;
-  transition: opacity .5s ease-out, visibility 0s linear .6s;
-  visibility: hidden;
   width: 100%;
-  z-index: 999;
+  z-index: 100149;
+}
 
-  &.dcf-is-open {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity .2s ease-out;
-    visibility: visible;
-  }
 
+// Modal is closed, hidden
+.dcf-modal-overlay[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-out, visibility 0ms 400ms;
+  visibility: hidden;
+}
+
+
+// Modal is open, visible
+.dcf-modal-overlay[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 200ms ease-out;
+  visibility: visible;
 }
 
 
