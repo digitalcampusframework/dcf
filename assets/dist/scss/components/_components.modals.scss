@@ -21,7 +21,7 @@
 .dcf-modal-overlay[aria-hidden="true"] {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 300ms ease-out, visibility 0ms 400ms;
+  transition: opacity $timing-fade-out $easing-fade-out, visibility 0ms $timing-fade-out;
   visibility: hidden;
 }
 
@@ -30,7 +30,7 @@
 .dcf-modal-overlay[aria-hidden="false"] {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 200ms ease-out;
+  transition: opacity $timing-fade-in $easing-fade-in;
   visibility: visible;
 }
 
