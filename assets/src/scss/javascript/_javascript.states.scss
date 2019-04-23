@@ -12,14 +12,14 @@
 .dcf-fade-in-down {
   opacity: 0;
   transform: translateY(-50%);
-  animation: appear $timing-fade-down forwards $easing-fade-down;
+  animation: appear $timing-fade-in-down forwards $easing-fade-in-down;
 }
 
 
 .dcf-fade-in-up {
   opacity: 0;
   transform: translateY(50%);
-  animation: appear $timing-fade-up forwards $easing-fade-up;
+  animation: appear $timing-fade-in-up forwards $easing-fade-in-up;
 }
 
 
