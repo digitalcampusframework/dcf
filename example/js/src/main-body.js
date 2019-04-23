@@ -26,12 +26,10 @@ flatpickr(datepicker, {
 
 const images = document.querySelectorAll('.dcf-lazy-img');
 const observerConfig = {
-	// If the image gets within 50px in the Y axis, start the download.
-//   rootMargin: '0px 0px 50px 0px',
-	rootMargin: '0px',
-//   threshold: 0.01
-	threshold: 0.5
+	// extend intersection root margin by 50px to start intersection earlier by 50px
+	rootMargin: '0px 0px 50px 0px',
+	threshold: [0, 0.25]
 };
-const enterClassNames = ['dcf-fade-up'];
+const enterClassNames = ['dcf-fade-in-up'];
 const exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
