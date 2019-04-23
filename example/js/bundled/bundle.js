@@ -2944,7 +2944,7 @@ var observerConfig = {
 	rootMargin: '0px 0px 50px 0px',
 	threshold: [0, 0.25]
 };
-var enterClassNames = ['dcf-fade-in-up'];
+var enterClassNames = ['dcf-fade-in'];
 var exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 
