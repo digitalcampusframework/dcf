@@ -111,24 +111,9 @@ class LazyLoad {
 		// Loop through the entries
 		for (let i = 0; i < entries.length; i++) {
 			let entry = entries[i];
-			console.log(entry.intersectionRatio);
-			// Are we in viewport?
 
-			// observer.thresholds.forEach(threshold => {
-			// 	if (threshold === 0) {
-			// 		// preload image
-			// 		if (entry.intersectionRatio > threshold) {
-			// 			this.preloadImage(entry.target);
-			// 		}
-			// 	} else {
-			// 		// allow flexible threshold value to apply the image
-			// 		if (entry.intersectionRatio > threshold) {
-			// 			this.imageCount--;
-			// 			this.applyImage(entry.target);
-			// 			this.observer.unobserve(entry.target);
-			// 		}
-			// 	}
-			// });
+			// Are we in viewport?
+			// console.log(entry.intersectionRatio);
 
 			if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
 				this.preloadImage(entry.target);
@@ -137,9 +122,6 @@ class LazyLoad {
 				this.applyImage(entry.target);
 				this.observer.unobserve(entry.target);
 			}
-
-
-
 		}
 	};
 

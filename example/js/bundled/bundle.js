@@ -100,24 +100,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				// Loop through the entries
 				for (var i = 0; i < entries.length; i++) {
 					var entry = entries[i];
-					console.log(entry.intersectionRatio);
-					// Are we in viewport?
 
-					// observer.thresholds.forEach(threshold => {
-					// 	if (threshold === 0) {
-					// 		// preload image
-					// 		if (entry.intersectionRatio > threshold) {
-					// 			this.preloadImage(entry.target);
-					// 		}
-					// 	} else {
-					// 		// allow flexible threshold value to apply the image
-					// 		if (entry.intersectionRatio > threshold) {
-					// 			this.imageCount--;
-					// 			this.applyImage(entry.target);
-					// 			this.observer.unobserve(entry.target);
-					// 		}
-					// 	}
-					// });
+					// Are we in viewport?
+					// console.log(entry.intersectionRatio);
 
 					if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
 						_this.preloadImage(entry.target);
