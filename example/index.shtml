@@ -3215,9 +3215,9 @@
       <h3 class="dcf-mt-8" id="example-javascript-states">States</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-fade-in</code></dt><dd>animates opacity from 0 to 100%</dd>
-        <dt><code>.dcf-fade-in-down</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from -50% to 0, moving it into view.</dd>
-        <dt><code>.dcf-fade-in-up</code></dt><dd>animates opacity from 0 to 100% and translates its vertical position from 50% to 0, moving it into view.</dd>
         <dt><code>.dcf-fade-out</code></dt><dd>animates opacity from 100% to 0</dd>
+        <dt><code>.dcf-slide-down</code></dt><dd>animates an element’s vertical position from -50% to 0</dd>
+        <dt><code>.dcf-slide-up</code></dt><dd>animates an element’s vertical position from 50% to 0</dd>
         <dt><code>.dcf-lazy-img</code></dt><dd>lazy-loads an image when a user scrolls to its position</dd>
       </dl>
       <figure class="dcf-mt-6 dcf-bleed">
