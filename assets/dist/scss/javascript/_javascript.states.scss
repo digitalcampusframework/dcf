@@ -13,15 +13,3 @@
   opacity: 1;
   animation: disappear $timing-fade-out forwards $easing-fade-out;
 }
-
-
-.dcf-slide-down {
-  transform: translateY(-50%);
-  animation: appear $timing-slide-down forwards $easing-slide-down;
-}
-
-
-.dcf-slide-up {
-  transform: translateY(50%);
-  animation: appear $timing-slide-up forwards $easing-slide-up;
-}
