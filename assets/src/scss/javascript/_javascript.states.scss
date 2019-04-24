@@ -3,13 +3,16 @@
 //////////////////////////////
 
 
-.dcf-fade-in {
+.dcf-lazy-img {
   opacity: 0;
+}
+
+
+.dcf-fade-in {
   animation: appear $timing-fade-in forwards $easing-fade-in;
 }
 
 
 .dcf-fade-out {
-  opacity: 1;
   animation: disappear $timing-fade-out forwards $easing-fade-out;
 }
