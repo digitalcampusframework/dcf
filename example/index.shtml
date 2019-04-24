@@ -3219,18 +3219,20 @@
         <dt><code>.dcf-lazy-img</code></dt><dd>lazy-loads an image when a user scrolls to its position</dd>
       </dl>
       <figure class="dcf-mt-6 dcf-bleed">
-        <img class="dcf-lazy-img"
-             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-             data-src="http://via.placeholder.com/400x300"
-             data-srcset="http://via.placeholder.com/320x300 320w,
-             http://via.placeholder.com/480x300 480w,
-             http://via.placeholder.com/800x300 800w,
-             http://via.placeholder.com/1280x300 1280w,
-             http://via.placeholder.com/2000x300 2000w"
-             sizes="100vw" alt="blank placeholder image for lazy-loading demonstration">
-        <noscript>
-          <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
-        </noscript>
+        <div class="dcf-ratio dcf-ratio-16x9">
+          <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+               data-src="http://via.placeholder.com/400x300"
+               data-srcset="http://via.placeholder.com/320x300 320w,
+               http://via.placeholder.com/400x300 400w,
+               http://via.placeholder.com/800x600 800w,
+               http://via.placeholder.com/1200x900 1200w,
+               http://via.placeholder.com/1600x1200 1600w"
+               sizes="100vw" alt="blank placeholder image for lazy-loading demonstration">
+          <noscript>
+            <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+          </noscript>
+        </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
