@@ -28,7 +28,7 @@ const images = document.querySelectorAll('.dcf-lazy-img');
 const observerConfig = {
 	// extend intersection root margin by 50px to start intersection earlier by 50px
 	rootMargin: '0px 0px 50px 0px',
-	threshold: [0, 0.25]
+	threshold: [0, 0.40]
 };
 const enterClassNames = ['dcf-fade-in'];
 const exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);

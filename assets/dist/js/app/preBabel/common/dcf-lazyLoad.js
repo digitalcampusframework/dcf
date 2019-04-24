@@ -35,7 +35,7 @@ class LazyLoad {
 		// Prevent this from being lazy loaded a second time.
 		image.classList.add('dcf-lazy-img-loaded');
 
-		// src && (image.src = src);
+		src && (image.src = src);
 		src && (image.removeAttribute('data-src'));
 		srcset && (image.srcset = srcset);
 		srcset && (image.removeAttribute('data-srcset'));
