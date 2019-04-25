@@ -18,6 +18,7 @@ class LazyLoad {
 	applyImage(image) {
 		const src = image.dataset.src;
 		const srcset = image.dataset.srcset || null;
+		const sizes = image.dataset.sizes || null;
 
 		if (!src) {
 			throw new Error('No image src attribute provided');
@@ -30,6 +31,8 @@ class LazyLoad {
 		src && (image.removeAttribute('data-src'));
 		srcset && (image.srcset = srcset);
 		srcset && (image.removeAttribute('data-srcset'));
+		sizes && (image.sizes = sizes);
+		sizes && (image.removeAttribute('data-sizes'));
 		this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
 	};
 
@@ -43,6 +46,7 @@ class LazyLoad {
 			const image = new Image();
 			src && (image.src = src);
 			srcset && (image.srcset = srcset);
+			sizes && (image.sizes = sizes);
 
 			image.onload = resolve;
 			image.onerror = reject;
@@ -56,6 +60,7 @@ class LazyLoad {
 	preloadImage(image) {
 		const src = image.dataset.src;
 		const srcset = image.dataset.srcset;
+		const sizes = image.dataset.sizes;
 
 		if (!src) {
 			throw new Error('No image src attribute provided');

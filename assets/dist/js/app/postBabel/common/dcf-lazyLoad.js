@@ -67,6 +67,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			value: function applyImage(image) {
 				var src = image.dataset.src;
 				var srcset = image.dataset.srcset || null;
+				var sizes = image.dataset.sizes || null;
 
 				if (!src) {
 					throw new Error('No image src attribute provided');
@@ -79,6 +80,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				src && image.removeAttribute('data-src');
 				srcset && (image.srcset = srcset);
 				srcset && image.removeAttribute('data-srcset');
+				sizes && (image.sizes = sizes);
+				sizes && image.removeAttribute('data-sizes');
 				this.classNames.length && this.classNames.forEach(function (className) {
 					return image.classList.add(className);
 				});
@@ -99,6 +102,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					var image = new Image();
 					src && (image.src = src);
 					srcset && (image.srcset = srcset);
+					sizes && (image.sizes = sizes);
 
 					image.onload = resolve;
 					image.onerror = reject;
@@ -115,6 +119,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			value: function preloadImage(image) {
 				var src = image.dataset.src;
 				var srcset = image.dataset.srcset;
+				var sizes = image.dataset.sizes;
 
 				if (!src) {
 					throw new Error('No image src attribute provided');
