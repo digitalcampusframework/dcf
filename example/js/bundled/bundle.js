@@ -80,7 +80,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 })(undefined, function () {
 	var LazyLoad = function () {
 		/**
-   * Apply the image
+   * class constructor
    * @param {imagesList} nodelist of selected images
    * @param {observerConfig} object of intersectionObserver configuration
    * @param {classNames} array of classes applied
@@ -90,7 +90,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			_classCallCheck(this, LazyLoad);
 
-			this.onIntersection = function (entries) {
+			this.onIntersection = function (entries, observer) {
+
 				// Disconnect if we've already loaded all of the images
 				if (_this.imageCount === 0) {
 					_this.observer.disconnect();
@@ -99,13 +100,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				// Loop through the entries
 				for (var i = 0; i < entries.length; i++) {
 					var entry = entries[i];
-					// Are we in viewport?
-					if (entry.intersectionRatio > 0) {
-						_this.imageCount--;
 
-						// Stop watching and load the image
-						_this.observer.unobserve(entry.target);
+					// Are we in viewport?
+					// console.log(entry.intersectionRatio);
+
+					if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
 						_this.preloadImage(entry.target);
+					} else if (entry.intersectionRatio > observer.thresholds[1]) {
+						_this.imageCount--;
+						_this.applyImage(entry.target);
+						_this.observer.unobserve(entry.target);
 					}
 				}
 			};
@@ -116,44 +120,48 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}
 
 		/**
-   * Apply the image
-   * @param {object} img
-   * @param {string} src
+   * Apply the image: preloaded image is loaded but not applied to actual image element
+   * @param {string} image: the image element that we are targetting
    */
 
 
 		_createClass(LazyLoad, [{
 			key: 'applyImage',
-			value: function applyImage(img, src) {
-				var srcset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+			value: function applyImage(image) {
+				var src = image.dataset.src;
+				var srcset = image.dataset.srcset || null;
+
+				if (!src) {
+					throw new Error('No image src attribute provided');
+				}
 
 				// Prevent this from being lazy loaded a second time.
-				img.classList.add('dcf-lazy-img-handled');
-				img.src = src;
-				src && img.removeAttribute('data-src');
-				srcset && (img.srcset = srcset);
-				srcset && img.removeAttribute('data-srcset');
+				image.classList.add('dcf-lazy-img-loaded');
+
+				src && (image.src = src);
+				src && image.removeAttribute('data-src');
+				srcset && (image.srcset = srcset);
+				srcset && image.removeAttribute('data-srcset');
 				this.classNames.length && this.classNames.forEach(function (className) {
-					return img.classList.add(className);
+					return image.classList.add(className);
 				});
-				// img.classList.add('dcf-fade-up');
 			}
 		}, {
 			key: 'fetchImage',
 
 
 			/**
-    * Fetches the image for the given URL
-    * @param {string} url
+    * Fetches the image for the given source
+    * @param {string} src
+    * @param {string} srcset, defaults to null if not provided
     */
-			value: function fetchImage() {
-				var _arguments = arguments;
+			value: function fetchImage(src) {
+				var srcset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
 				return new Promise(function (resolve, reject) {
 					var image = new Image();
-					// image.src = url;
-					_arguments[0] && (image.src = _arguments[0]);
-					_arguments[1] && (image.srcset = _arguments[1]);
+					src && (image.src = src);
+					srcset && (image.srcset = srcset);
 
 					image.onload = resolve;
 					image.onerror = reject;
@@ -168,18 +176,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}, {
 			key: 'preloadImage',
 			value: function preloadImage(image) {
-				var _this2 = this;
-
 				var src = image.dataset.src;
 				var srcset = image.dataset.srcset;
 
 				if (!src) {
-					return;
+					throw new Error('No image src attribute provided');
 				}
 
-				return this.fetchImage(src, srcset).then(function () {
-					_this2.applyImage(image, src, srcset);
-				}).catch(function (err) {
+				return this.fetchImage(src, srcset).catch(function (err) {
 					return 'Image failed to fetch ' + err.mes;
 				});
 			}
@@ -215,16 +219,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			/**
     * On intersection
-    * @param {array} entries
+    * @param {array} intersection entries
+    * @param {object} intersection observer
     */
 
 		}, {
 			key: 'initialize',
 			value: function initialize() {
 				if (!this.imagesList) return;
+
+				// counter: keeps track of which images that hasn't been loaded
 				this.imageCount = this.imagesList.length;
 
-				// If we don't have support for intersection observer, loads the images immediately
+				// If browser doesn't support intersection observer, load the images immediately
 				if (!('IntersectionObserver' in window)) {
 					this.loadImagesImmediately(this.imagesList);
 				} else {
@@ -2918,13 +2925,11 @@ flatpickr(datepicker, {
 
 var images = document.querySelectorAll('.dcf-lazy-img');
 var observerConfig = {
-	// If the image gets within 50px in the Y axis, start the download.
-	//   rootMargin: '0px 0px 50px 0px',
-	rootMargin: '0px',
-	//   threshold: 0.01
-	threshold: 0.5
+	// extend intersection root margin by 50px to start intersection earlier by 50px
+	rootMargin: '0px 0px 50px 0px',
+	threshold: [0, 0.40]
 };
-var enterClassNames = ['dcf-fade-up'];
+var enterClassNames = ['dcf-fade-in'];
 var exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 

@@ -9,7 +9,7 @@
 }(this, function() {
 class LazyLoad {
 	/**
-	 * Apply the image
+	 * class constructor
 	 * @param {imagesList} nodelist of selected images
 	 * @param {observerConfig} object of intersectionObserver configuration
 	 * @param {classNames} array of classes applied
@@ -21,31 +21,37 @@ class LazyLoad {
 	}
 
 	/**
-	 * Apply the image
-	 * @param {object} img
-	 * @param {string} src
+	 * Apply the image: preloaded image is loaded but not applied to actual image element
+	 * @param {string} image: the image element that we are targetting
 	 */
-	applyImage(img, src, srcset = null) {
+	applyImage(image) {
+		const src = image.dataset.src;
+		const srcset = image.dataset.srcset || null;
+
+		if (!src) {
+			throw new Error('No image src attribute provided');
+		}
+
 		// Prevent this from being lazy loaded a second time.
-		img.classList.add('dcf-lazy-img-handled');
-		img.src = src;
-		src && (img.removeAttribute('data-src'));
-		srcset && (img.srcset = srcset);
-		srcset && (img.removeAttribute('data-srcset'));
-		this.classNames.length && this.classNames.forEach(className => img.classList.add(className));
-		// img.classList.add('dcf-fade-up');
+		image.classList.add('dcf-lazy-img-loaded');
+
+		src && (image.src = src);
+		src && (image.removeAttribute('data-src'));
+		srcset && (image.srcset = srcset);
+		srcset && (image.removeAttribute('data-srcset'));
+		this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
 	};
 
 	/**
-	 * Fetches the image for the given URL
-	 * @param {string} url
+	 * Fetches the image for the given source
+	 * @param {string} src
+	 * @param {string} srcset, defaults to null if not provided
 	 */
-	fetchImage() {
+	fetchImage(src, srcset = null) {
 		return new Promise((resolve, reject) => {
 			const image = new Image();
-			// image.src = url;
-			arguments[0] && (image.src = arguments[0]);
-			arguments[1] && (image.srcset = arguments[1]);
+			src && (image.src = src);
+			srcset && (image.srcset = srcset);
 
 			image.onload = resolve;
 			image.onerror = reject;
@@ -61,12 +67,10 @@ class LazyLoad {
 		const srcset = image.dataset.srcset;
 
 		if (!src) {
-			return;
+			throw new Error('No image src attribute provided');
 		}
 
-		return this.fetchImage(src, srcset).then(() => {
-			this.applyImage(image, src, srcset);
-		}).catch(err => `Image failed to fetch ${err.mes}`);
+		return this.fetchImage(src, srcset).catch(err => `Image failed to fetch ${err.mes}`);
 	};
 
 	/**
@@ -94,9 +98,11 @@ class LazyLoad {
 
 	/**
 	 * On intersection
-	 * @param {array} entries
+	 * @param {array} intersection entries
+	 * @param {object} intersection observer
 	 */
-	onIntersection = (entries) => {
+	onIntersection = (entries, observer) => {
+
 		// Disconnect if we've already loaded all of the images
 		if (this.imageCount === 0) {
 			this.observer.disconnect();
@@ -105,13 +111,16 @@ class LazyLoad {
 		// Loop through the entries
 		for (let i = 0; i < entries.length; i++) {
 			let entry = entries[i];
-			// Are we in viewport?
-			if (entry.intersectionRatio > 0) {
-				this.imageCount--;
 
-				// Stop watching and load the image
-				this.observer.unobserve(entry.target);
+			// Are we in viewport?
+			// console.log(entry.intersectionRatio);
+
+			if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
 				this.preloadImage(entry.target);
+			} else if (entry.intersectionRatio > observer.thresholds[1]) {
+				this.imageCount--;
+				this.applyImage(entry.target);
+				this.observer.unobserve(entry.target);
 			}
 		}
 	};
@@ -119,9 +128,11 @@ class LazyLoad {
 
 	initialize() {
 		if(!this.imagesList) return;
+
+		// counter: keeps track of which images that hasn't been loaded
 		this.imageCount = this.imagesList.length;
 
-		// If we don't have support for intersection observer, loads the images immediately
+		// If browser doesn't support intersection observer, load the images immediately
 		if (!('IntersectionObserver' in window)) {
 			this.loadImagesImmediately(this.imagesList);
 		} else {
