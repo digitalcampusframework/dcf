@@ -11,6 +11,17 @@ class LazyLoad {
 		this.classNames = classNames; // add onEnter, onEnterActive?
 	}
 
+  pxTOvw(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth;
+
+    var result = (100*value)/x;
+    return result + 'vw';
+  };
+
 	/**
 	 * Apply the image: preloaded image is loaded but not applied to actual image element
 	 * @param {string} image: the image element that we are targetting
@@ -18,7 +29,7 @@ class LazyLoad {
 	applyImage(image) {
 		const src = image.dataset.src;
 		const srcset = image.dataset.srcset || null;
-		const sizes = image.dataset.sizes || null;
+		const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
 
 		if (!src) {
 			throw new Error('No image src attribute provided');
@@ -147,4 +158,3 @@ class LazyLoad {
 		}
 	}
 }
-

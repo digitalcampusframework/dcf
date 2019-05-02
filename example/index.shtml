@@ -39,7 +39,6 @@
         <!--#include virtual="/includes/local/nav-local.html" -->
         <!-- InstanceEndEditable -->
       <!--#include virtual="/includes/global/nav-menu-2.html" -->
-    </div>
   </header>
 
   <main class="dcf-wrapper" id="dcf-main" role="main" tabindex="-1">
@@ -84,7 +83,7 @@
       </ul>
 
       <h3 class="dcf-mt-8" id="example-general-breakpoints">Breakpoints</h3>
-      <p class="dcf-w-max-lg">It’s foolish to define breakpoints that attempt to target the resolutions of popular devices and screen sizes. Those resolutions are constantly changing as manufacturers compete to pack more pixels into screens. Screen size matters little on desktop as a user can resize a browser window to a seemingly infinite combination of heights and widths. Instead, this framework’s device-agnostic breakpoints map to values in its <a href="#example-general-modular-scale">modular scale</a>.</p>
+      <p class="dcf-w-max-lg">It’s foolish to define breakpoints that attempt to target the resolutions of popular devices and screen sizes. Those resolutions are constantly changing as manufacturers compete to pack more pixels into screens. Screen size matters little on desktop as a user can resize a browser window to a seemingly infinite combination of heights and widths. Instead, this framework’s device-agnostic breakpoints map to values in its <a href="#example-general-modular-scale">modular scale</a>.</p>
       <table class="dcf-mt-6 dcf-table">
         <caption>The framework’s breakpoints are shown with their corresponding em and pixel values rounded to two decimal points.</caption>
         <thead>
@@ -509,13 +508,69 @@
         <dd>The browser default margins have been removed from the figures.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/400x225" alt="A placeholder image with a 16:9 aspect ratio"> </a>
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption>A <code>&lt;figure&gt;</code> with one image and a <code>&lt;figcaption&gt;</code>.</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
+        <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption>A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-figures">Figures</a> (Components)</p>
@@ -622,15 +677,60 @@
       </dl>
   <!--     <p>Maecenas faucibus mollis interdum.</p> -->
       <figure class="dcf-mt-6">
-        <img src="http://via.placeholder.com/400x225" alt="A placeholder image with a 16:9 aspect ratio">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x225 400w,
+                 http://via.placeholder.com/800x450 800w,
+                 http://via.placeholder.com/1200x675 1200w,
+                 http://via.placeholder.com/1600x900 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="225" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 16:9 aspect ratio.</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <img src="http://via.placeholder.com/300x225" alt="A placeholder image with a 4:3 aspect ratio">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-33%-start@md dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 4:3 aspect ratio</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <img src="http://via.placeholder.com/225x225" alt="A placeholder image with a 1:1 aspect ratio">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-25%-start@md dcf-ratio dcf-ratio-1x1">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x400 400w,
+                 http://via.placeholder.com/800x800 800w,
+                 http://via.placeholder.com/1200x1200 1200w,
+                 http://via.placeholder.com/1600x1600 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="400" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 1:1 aspect ratio</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-aspect-ratios">Aspect Ratios</a> (Utilities), <a href="#example-utilities-object-fit">Object-Fit</a> (Utilities)</p>
@@ -1306,8 +1406,17 @@
       </dl>
       <figure class="dcf-mt-6">
         <div class="dcf-media">
-          <div class="dcf-mr-4">
-            <img src="http://via.placeholder.com/100x100" alt="placeholder image">
+          <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10 dcf-mr-4">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/320x320"
+                 data-srcset="http://via.placeholder.com/320x320 320w,
+                 http://via.placeholder.com/640x640 640w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/320x320" width="320" height="320" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
           </div>
           <div class="dcf-media-body">
             <p class="dcf-w-max-lg">Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -1695,28 +1804,80 @@
               <h3 class="dcf-h4">Card #1</h3>
               <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
-            <img class="dcf-1st" src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
+            <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                   src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                   data-src="http://via.placeholder.com/400x300"
+                   data-srcset="http://via.placeholder.com/400x300 400w,
+                   http://via.placeholder.com/800x600 800w,
+                   http://via.placeholder.com/1200x900 1200w,
+                   http://via.placeholder.com/1600x1200 1600w"
+                   data-sizes=""
+                   alt="blank placeholder image for lazy-loading demonstration">
+              <noscript>
+                <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              </noscript>
+            </div>
           </li>
           <li class="dcf-card dcf-d-flex dcf-flex-col">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #2 with a super, duper long title</h3>
               <p>Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
-            <img class="dcf-1st" src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
+            <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                   src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                   data-src="http://via.placeholder.com/400x300"
+                   data-srcset="http://via.placeholder.com/400x300 400w,
+                   http://via.placeholder.com/800x600 800w,
+                   http://via.placeholder.com/1200x900 1200w,
+                   http://via.placeholder.com/1600x1200 1600w"
+                   data-sizes=""
+                   alt="blank placeholder image for lazy-loading demonstration">
+              <noscript>
+                <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              </noscript>
+            </div>
           </li>
           <li class="dcf-card dcf-d-flex dcf-flex-col">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #3</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
             </div>
-            <img class="dcf-1st" src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
+            <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                   src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                   data-src="http://via.placeholder.com/400x300"
+                   data-srcset="http://via.placeholder.com/400x300 400w,
+                   http://via.placeholder.com/800x600 800w,
+                   http://via.placeholder.com/1200x900 1200w,
+                   http://via.placeholder.com/1600x1200 1600w"
+                   data-sizes=""
+                   alt="blank placeholder image for lazy-loading demonstration">
+              <noscript>
+                <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              </noscript>
+            </div>
           </li>
           <li class="dcf-card dcf-d-flex dcf-flex-col">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #4</h3>
               <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
-            <img class="dcf-1st" src="http://via.placeholder.com/800x600" alt="A placeholder image with a 4:3 aspect ratio">
+            <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                   src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                   data-src="http://via.placeholder.com/400x300"
+                   data-srcset="http://via.placeholder.com/400x300 400w,
+                   http://via.placeholder.com/800x600 800w,
+                   http://via.placeholder.com/1200x900 1200w,
+                   http://via.placeholder.com/1600x1200 1600w"
+                   data-sizes=""
+                   alt="blank placeholder image for lazy-loading demonstration">
+              <noscript>
+                <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              </noscript>
+            </div>
           </li>
         </ul>
       </figure>
@@ -1742,13 +1903,69 @@
         <dd>Figures do not require any additional classes, but <code>.dcf-figcaption</code> provides consistent styles for the <code>&lt;figcaption&gt;</code>. It reduces the font-size and lightens the text to help distinguish it from body copy. Use utility classes to add <a href="#example-utilities-margins">margins</a> or <a href="#example-utilities-padding">padding</a> as needed by the content in your <code>&lt;figure&gt;</code>.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/400x225" alt="A placeholder image with a 16:9 aspect ratio"> </a>
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption class="dcf-figcaption">A <code>&lt;figure&gt;</code> with one image and a <code>&lt;figcaption&gt;</code>.</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
-        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150" alt="A placeholder image with a 4:3 aspect ratio"></a>
+        <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+          <div class="dcf-ratio dcf-ratio-4x3">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
+        </div>
         <figcaption class="dcf-figcaption">A <code>&lt;figure&gt;</code> with multiple images and a <code>&lt;figcaption&gt;</code>. Use the <code>&lt;small&gt;</code> element along with <a href="#example-utilities-display">display</a>, <a href="#example-utilities-padding">padding</a> and <a href="#example-utilities-font-size">font-size</a> utilities to credit the source(s) of figure content, like so: <small class="dcf-d-block dcf-txt-xs dcf-pt1">Illustrations by Jane Doe</small></figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-figures">Figures</a> (Elements), <a href="#example-elements-images">Images</a> (Elements), <a href="#example-utilities-display">Display</a> (Utilities), <a href="#example-utilities-margins">Margins</a> (Utilities), <a href="#example-utilities-padding">Padding</a> (Utilities), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
@@ -1835,9 +2052,8 @@
             <fieldset>
               <legend>Radio buttons</legend>
               <div class="dcf-d-flex dcf-form-group dcf-ai-flex-start">
-                <label for="position" id="position-level">I identify myself as a:</label>
-                <fieldset id="Position" name="Position" aria-labelledby="position-level" class="dcf-d-flex dcf-flex-col dcf-ml-4">
-                  <legend>Position</legend>
+                <fieldset name="Position" class="dcf-d-flex dcf-flex-col dcf-ml-4">
+                  <legend>I identify myself as a:</legend>
                   <div class="dcf-input-radio">
                     <input id="student_Position" name="Position" type="radio" value="student">
                     <label for="student_Position">student</label>
@@ -2937,15 +3153,39 @@
       <p>The object-fit utilities use the <a href="https://github.com/bfred-it/object-fit-images">object-fit-images</a> polyfill for <a href="https://caniuse.com/#feat=object-fit">browsers that don't support object-fit</a>. This explains why you might see <code>font-family: "object-fit: contain”</code> or <code>font-family: "object-fit: cover"</code> in the rules.</p>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
-          <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/400x400" width="400" height="400" alt="">
+        <div class="dcf-grid">
+          <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
+            <img class="dcf-ratio-child dcf-obj-fit-contain dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/100x100 100w,
+                 http://via.placeholder.com/200x200 200w,
+                 http://via.placeholder.com/300x300 300w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit contain</figcaption>
       </figure>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
-          <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/400x400" width="400" height="400" alt="">
+        <div class="dcf-grid">
+          <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/100x100 100w,
+                 http://via.placeholder.com/200x200 200w,
+                 http://via.placeholder.com/300x300 300w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+          </div>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
       </figure>
@@ -3234,22 +3474,23 @@
             <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
           </noscript>
         </div>
-        <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
+        <figcaption class="dcf-wrapper dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
-        <h3 id="example-javascript-datepicker">Date Picker Form Input Field</h3>
+      <h3 id="example-javascript-datepicker">Date Picker Form Input Field</h3>
+      <dl>
         <dt><code>&#x3C;input  data-widget=&#x22;flatpickr&#x22; type=&#x22;text&#x22; placeholder=&#x22;Select Date & Time ..&#x22; readonly&#x3E;</code></dt>
-        <dd>Utilizes the Flatpickr plugin for a more browser uniform date picker widget see <a
-                href="https://flatpickr.js.org/">Flatpickr documentation</a> for options.</dd>
-        <form>
-            <fieldset>
-                <label for="example-elements-form-datetime-flatpickr">Date/time: </label>
-                <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
+        <dd>Utilizes the Flatpickr plugin for a more browser uniform date picker widget see <a href="https://flatpickr.js.org/">Flatpickr documentation</a> for options.</dd>
+      </dl>
+      <form>
+        <fieldset>
+          <label for="example-elements-form-datetime-flatpickr">Date/time: </label>
+          <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
                            placeholder="Select Date & Time.."
                            readonly="readonly">
-            </fieldset>
-        </form>
+        </fieldset>
+      </form>
     </section>
 
     <section class="dcf-pt-10 dcf-mb-10" id="example-print">
@@ -3259,7 +3500,7 @@
         <li><a href="#example-print-display">Display</a></li>
       </ul>
 
-      <h3 class="dcf-mt-8" id="example-javascript-states">Display</h3>
+      <h3 class="dcf-mt-8" id="example-print-display">Display</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-d-none@print</code></dt><dd>display: none when printed</dd>
       </dl>
