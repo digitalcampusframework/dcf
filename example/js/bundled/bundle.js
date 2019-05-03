@@ -145,12 +145,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				var sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
 
 				if (!src) {
-					throw new Error('No image src attribute provided');
+					return;
+					//throw new Error('No image src attribute provided');
 				}
 
 				// Prevent this from being lazy loaded a second time.
 				image.classList.add('dcf-lazy-img-loaded');
-
 				src && (image.src = src);
 				src && image.removeAttribute('data-src');
 				srcset && (image.srcset = srcset);
@@ -172,6 +172,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     */
 			value: function fetchImage(src) {
 				var srcset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+				var sizes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
 				return new Promise(function (resolve, reject) {
 					var image = new Image();
@@ -194,13 +195,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			value: function preloadImage(image) {
 				var src = image.dataset.src;
 				var srcset = image.dataset.srcset;
-				var sizes = image.dataset.sizes;
+				var sizes = image.dataset.sizes || null;
 
 				if (!src) {
-					throw new Error('No image src attribute provided');
+					return;
+					//throw new Error('No image src attribute provided');
 				}
 
-				return this.fetchImage(src, srcset).catch(function (err) {
+				return this.fetchImage(src, srcset, sizes).catch(function (err) {
 					return 'Image failed to fetch ' + err.mes;
 				});
 			}
@@ -217,6 +219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				for (var i = 0; i < images.length; i++) {
 					var image = images[i];
 					this.preloadImage(image);
+					this.applyImage(image);
 				}
 			}
 

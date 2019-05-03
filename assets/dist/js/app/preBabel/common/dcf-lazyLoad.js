@@ -41,12 +41,12 @@ class LazyLoad {
 		const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
 
 		if (!src) {
-			throw new Error('No image src attribute provided');
+			return;
+			//throw new Error('No image src attribute provided');
 		}
 
 		// Prevent this from being lazy loaded a second time.
 		image.classList.add('dcf-lazy-img-loaded');
-
 		src && (image.src = src);
 		src && (image.removeAttribute('data-src'));
 		srcset && (image.srcset = srcset);
@@ -55,13 +55,13 @@ class LazyLoad {
 		sizes && (image.removeAttribute('data-sizes'));
 		this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
 	};
-
+	
 	/**
 	 * Fetches the image for the given source
 	 * @param {string} src
 	 * @param {string} srcset, defaults to null if not provided
 	 */
-	fetchImage(src, srcset = null) {
+	fetchImage(src, srcset = null, sizes = null) {
 		return new Promise((resolve, reject) => {
 			const image = new Image();
 			src && (image.src = src);
@@ -80,13 +80,14 @@ class LazyLoad {
 	preloadImage(image) {
 		const src = image.dataset.src;
 		const srcset = image.dataset.srcset;
-		const sizes = image.dataset.sizes;
+		const sizes = image.dataset.sizes || null;
 
 		if (!src) {
-			throw new Error('No image src attribute provided');
+			return;
+			//throw new Error('No image src attribute provided');
 		}
 
-		return this.fetchImage(src, srcset).catch(err => `Image failed to fetch ${err.mes}`);
+		return this.fetchImage(src, srcset, sizes).catch(err => `Image failed to fetch ${err.mes}`);
 	};
 
 	/**
@@ -98,6 +99,7 @@ class LazyLoad {
 		for (let i = 0; i < images.length; i++) {
 			let image = images[i];
 			this.preloadImage(image);
+			this.applyImage(image)
 		}
 	}
 
