@@ -54,6 +54,16 @@
       </ol>
     </nav>
 
+    <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
+    <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-img dcf-lazy-img-loaded dcf-fade-in" src="http://via.placeholder.com/400x300" alt="blank placeholder image for lazy-loading demonstration" srcset="http://via.placeholder.com/400x300 400w,
+                 http://via.placeholder.com/800x600 800w,
+                 http://via.placeholder.com/1200x900 1200w,
+                 http://via.placeholder.com/1600x1200 1600w" sizes="44.42082890541977vw">
+    <noscript>
+      <img src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+    </noscript>
+  </div>
+
     <div class="dcf-pt-5" id="dcf-page-title">
       <!-- InstanceBeginEditable name="pagetitle" -->
       <h1>Documentation</h1>
