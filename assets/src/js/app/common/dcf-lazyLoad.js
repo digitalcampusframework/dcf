@@ -81,18 +81,21 @@ class LazyLoad {
 		return this.fetchImage(src, srcset, sizes).catch(err => `Image failed to fetch ${err.mes}`);
 	};
 
-	/**
-	 * Load all of the images immediately
-	 * @param {NodeListOf<Element>} images
-	 */
-	loadImagesImmediately(images) {
-		// foreach() is not supported in IE
-		for (let i = 0; i < images.length; i++) {
-			let image = images[i];
-			this.preloadImage(image);
-			this.applyImage(image)
-		}
-	}
+  /**
+   * Load all of the images immediately
+   * @param {NodeListOf<Element>} preload
+   * @param {boolean} images
+   */
+  loadImagesImmediately(images, preload = true) {
+    // foreach() is not supported in IE
+    for (let i = 0; i < images.length; i++) {
+      let image = images[i];
+      if (preload === true) {
+        this.preloadImage(image);
+      }
+      this.applyImage(image);
+    }
+  }
 
 	/**
 	 * Disconnect the observer
@@ -141,22 +144,28 @@ class LazyLoad {
 		// counter: keeps track of which images that hasn't been loaded
 		this.imageCount = this.imagesList.length;
 
-		// If browser doesn't support intersection observer, load the images immediately
-		if (!('IntersectionObserver' in window)) {
-			this.loadImagesImmediately(this.imagesList);
+		if ("loading" in HTMLImageElement.prototype) {
+			// Native lazy loading IS supported, so set src-data to src
+      this.loadImagesImmediately(this.imagesList, false);
 		} else {
-			// It is supported, load the images
-			this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
+			// Native lazy loading NOT supported, so handle via javascript
+      // If browser doesn't support intersection observer, load the images immediately
+      if (!('IntersectionObserver' in window)) {
+        this.loadImagesImmediately(this.imagesList);
+      } else {
+        // It is supported, load the images
+        this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
 
-			// foreach() is not supported in IE
-			for (let i = 0; i < this.imageCount; i++) {
-				let image = this.imagesList[i];
-				if (image.classList.contains('dcf-lazy-img-loaded')) {
-					continue;
-				}
+        // foreach() is not supported in IE
+        for (let i = 0; i < this.imageCount; i++) {
+          let image = this.imagesList[i];
+          if (image.classList.contains('dcf-lazy-img-loaded')) {
+            continue;
+          }
 
-				this.observer.observe(image);
-			}
-		}
+          this.observer.observe(image);
+        }
+      }
+    }
 	}
 }
