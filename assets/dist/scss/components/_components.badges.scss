@@ -9,8 +9,8 @@
   color: #fff;
   display: inline-block;
   @include txt-3xs;
-  @include lh-4;
-  padding: #{ms(-18)}rem #{ms(-6)}em; // .08rem .43em
+  @include lh-1;
+  padding: #{ms(-12)}em #{ms(-6)}em; // .18em .43em
   text-align: center;
   vertical-align: top;
   white-space: nowrap;
