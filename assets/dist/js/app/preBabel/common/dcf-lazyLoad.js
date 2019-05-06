@@ -8,17 +8,17 @@
   }
 }(this, function() {
 class LazyLoad {
-	/**
-	 * class constructor
-	 * @param {imagesList} nodelist of selected images
-	 * @param {observerConfig} object of intersectionObserver configuration
-	 * @param {classNames} array of classes applied
-	 */
-	constructor(imagesList, observerConfig, classNames) {
-		this.imagesList = imagesList;
-		this.observerConfig = observerConfig;
-		this.classNames = classNames; // add onEnter, onEnterActive?
-	}
+  /**
+   * class constructor
+   * @param {imagesList} nodelist of selected images
+   * @param {observerConfig} object of intersectionObserver configuration
+   * @param {classNames} array of classes applied
+   */
+  constructor(imagesList, observerConfig, classNames) {
+    this.imagesList = imagesList;
+    this.observerConfig = observerConfig;
+    this.classNames = classNames; // add onEnter, onEnterActive?
+  }
 
   pxTOvw(value) {
     var w = window,
@@ -31,64 +31,64 @@ class LazyLoad {
     return result + 'vw';
   };
 
-	/**
-	 * Apply the image: preloaded image is loaded but not applied to actual image element
-	 * @param {string} image: the image element that we are targetting
-	 */
-	applyImage(image) {
-		const src = image.dataset.src;
-		const srcset = image.dataset.srcset || null;
-		const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
+  /**
+   * Apply the image: preloaded image is loaded but not applied to actual image element
+   * @param {string} image: the image element that we are targetting
+   */
+  applyImage(image) {
+    const src = image.dataset.src;
+    const srcset = image.dataset.srcset || null;
+    const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
 
-		if (!src) {
-			return;
-			//throw new Error('No image src attribute provided');
-		}
+    if (!src) {
+      return;
+      //throw new Error('No image src attribute provided');
+    }
 
-		// Prevent this from being lazy loaded a second time.
-		image.classList.add('dcf-lazy-img-loaded');
-		src && (image.src = src);
-		src && (image.removeAttribute('data-src'));
-		srcset && (image.srcset = srcset);
-		srcset && (image.removeAttribute('data-srcset'));
-		sizes && (image.sizes = sizes);
-		sizes && (image.removeAttribute('data-sizes'));
-		this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
-	};
-	
-	/**
-	 * Fetches the image for the given source
-	 * @param {string} src
-	 * @param {string} srcset, defaults to null if not provided
-	 */
-	fetchImage(src, srcset = null, sizes = null) {
-		return new Promise((resolve, reject) => {
-			const image = new Image();
-			src && (image.src = src);
-			srcset && (image.srcset = srcset);
-			sizes && (image.sizes = sizes);
+    // Prevent this from being lazy loaded a second time.
+    image.classList.add('dcf-lazy-img-loaded');
+    src && (image.src = src);
+    src && (image.removeAttribute('data-src'));
+    srcset && (image.srcset = srcset);
+    srcset && (image.removeAttribute('data-srcset'));
+    sizes && (image.sizes = sizes);
+    sizes && (image.removeAttribute('data-sizes'));
+    this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
+  };
 
-			image.onload = resolve;
-			image.onerror = reject;
-		});
-	}
+  /**
+   * Fetches the image for the given source
+   * @param {string} src
+   * @param {string} srcset, defaults to null if not provided
+   */
+  fetchImage(src, srcset = null, sizes = null) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      src && (image.src = src);
+      srcset && (image.srcset = srcset);
+      sizes && (image.sizes = sizes);
 
-	/**
-	 * Preloads the image
-	 * @param {object} image
-	 */
-	preloadImage(image) {
-		const src = image.dataset.src;
-		const srcset = image.dataset.srcset;
-		const sizes = image.dataset.sizes || null;
+      image.onload = resolve;
+      image.onerror = reject;
+    });
+  }
 
-		if (!src) {
-			return;
-			//throw new Error('No image src attribute provided');
-		}
+  /**
+   * Preloads the image
+   * @param {object} image
+   */
+  preloadImage(image) {
+    const src = image.dataset.src;
+    const srcset = image.dataset.srcset;
+    const sizes = image.dataset.sizes || null;
 
-		return this.fetchImage(src, srcset, sizes).catch(err => `Image failed to fetch ${err.mes}`);
-	};
+    if (!src) {
+      return;
+      //throw new Error('No image src attribute provided');
+    }
+
+    return this.fetchImage(src, srcset, sizes).catch(err => `Image failed to fetch ${err.mes}`);
+  };
 
   /**
    * Load all of the images immediately
@@ -106,58 +106,58 @@ class LazyLoad {
     }
   }
 
-	/**
-	 * Disconnect the observer
-	 */
-	disconnect() {
-		if (!this.observer) {
-			return;
-		}
+  /**
+   * Disconnect the observer
+   */
+  disconnect() {
+    if (!this.observer) {
+      return;
+    }
 
-		this.observer.disconnect();
-	};
+    this.observer.disconnect();
+  };
 
-	/**
-	 * On intersection
-	 * @param {array} intersection entries
-	 * @param {object} intersection observer
-	 */
-	onIntersection = (entries, observer) => {
+  /**
+   * On intersection
+   * @param {array} intersection entries
+   * @param {object} intersection observer
+   */
+  onIntersection = (entries, observer) => {
 
-		// Disconnect if we've already loaded all of the images
-		if (this.imageCount === 0) {
-			this.observer.disconnect();
-		}
+    // Disconnect if we've already loaded all of the images
+    if (this.imageCount === 0) {
+      this.observer.disconnect();
+    }
 
-		// Loop through the entries
-		for (let i = 0; i < entries.length; i++) {
-			let entry = entries[i];
+    // Loop through the entries
+    for (let i = 0; i < entries.length; i++) {
+      let entry = entries[i];
 
-			// Are we in viewport?
-			// console.log(entry.intersectionRatio);
+      // Are we in viewport?
+      // console.log(entry.intersectionRatio);
 
-			if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
-				this.preloadImage(entry.target);
-			} else if (entry.intersectionRatio > observer.thresholds[1]) {
-				this.imageCount--;
-				this.applyImage(entry.target);
-				this.observer.unobserve(entry.target);
-			}
-		}
-	};
+      if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
+        this.preloadImage(entry.target);
+      } else if (entry.intersectionRatio > observer.thresholds[1]) {
+        this.imageCount--;
+        this.applyImage(entry.target);
+        this.observer.unobserve(entry.target);
+      }
+    }
+  };
 
 
-	initialize() {
-		if(!this.imagesList) return;
+  initialize() {
+    if(!this.imagesList) return;
 
-		// counter: keeps track of which images that hasn't been loaded
-		this.imageCount = this.imagesList.length;
+    // counter: keeps track of which images that hasn't been loaded
+    this.imageCount = this.imagesList.length;
 
-		if ("loading" in HTMLImageElement.prototype) {
-			// Native lazy loading IS supported, so set src-data to src
+    if ("loading" in HTMLImageElement.prototype) {
+      // Native lazy loading IS supported, so set src-data to src
       this.loadImagesImmediately(this.imagesList, false);
-		} else {
-			// Native lazy loading NOT supported, so handle via javascript
+    } else {
+      // Native lazy loading NOT supported, so handle via javascript
       // If browser doesn't support intersection observer, load the images immediately
       if (!('IntersectionObserver' in window)) {
         this.loadImagesImmediately(this.imagesList);
@@ -176,7 +176,7 @@ class LazyLoad {
         }
       }
     }
-	}
+  }
 }
 
 return LazyLoad;
