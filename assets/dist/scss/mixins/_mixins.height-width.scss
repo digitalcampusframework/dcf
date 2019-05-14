@@ -55,6 +55,7 @@
 @mixin w-max-sm($imp:null) { max-width: #{ms(22)}rem $imp; } // [1]
 @mixin w-max-md($imp:null) { max-width: #{ms(24)}rem $imp; } // [1]
 @mixin w-max-lg($imp:null) { max-width: #{ms(26)}rem $imp; } // [1]
+@mixin w-max-xl($imp:null) { max-width: #{ms(28)}rem $imp; } // [1]
 @mixin w-max-100pc($imp:null) { max-width: 100% $imp; }
 @mixin w-max-100vw($imp:null) { max-width: 100vw $imp; }
 // [1] http://webtypography.net/2.1.2
