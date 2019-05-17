@@ -1,134 +1,171 @@
 class LazyLoad {
-	/**
-	 * Apply the image
-	 * @param {imagesList} nodelist of selected images
-	 * @param {observerConfig} object of intersectionObserver configuration
-	 * @param {classNames} array of classes applied
-	 */
-	constructor(imagesList, observerConfig, classNames) {
-		this.imagesList = imagesList;
-		this.observerConfig = observerConfig;
-		this.classNames = classNames; // add onEnter, onEnterActive?
-	}
+  /**
+   * class constructor
+   * @param {imagesList} nodelist of selected images
+   * @param {observerConfig} object of intersectionObserver configuration
+   * @param {classNames} array of classes applied
+   */
+  constructor(imagesList, observerConfig, classNames) {
+    this.imagesList = imagesList;
+    this.observerConfig = observerConfig;
+    this.classNames = classNames; // add onEnter, onEnterActive?
+  }
 
-	/**
-	 * Apply the image
-	 * @param {object} img
-	 * @param {string} src
-	 */
-	applyImage(img, src, srcset = null) {
-		// Prevent this from being lazy loaded a second time.
-		img.classList.add('dcf-lazy-img-handled');
-		img.src = src;
-		src && (img.removeAttribute('data-src'));
-		srcset && (img.srcset = srcset);
-		srcset && (img.removeAttribute('data-srcset'));
-		this.classNames.length && this.classNames.forEach(className => img.classList.add(className));
-		// img.classList.add('dcf-fade-up');
-	};
+  pxTOvw(value) {
+    var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-	/**
-	 * Fetches the image for the given URL
-	 * @param {string} url
-	 */
-	fetchImage() {
-		return new Promise((resolve, reject) => {
-			const image = new Image();
-			// image.src = url;
-			arguments[0] && (image.src = arguments[0]);
-			arguments[1] && (image.srcset = arguments[1]);
+    var result = (100*value)/x;
+    return result + 'vw';
+  };
 
-			image.onload = resolve;
-			image.onerror = reject;
-		});
-	}
+  /**
+   * Apply the image: preloaded image is loaded but not applied to actual image element
+   * @param {string} image: the image element that we are targetting
+   */
+  applyImage(image) {
+    const src = image.dataset.src;
+    const srcset = image.dataset.srcset || null;
+    const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
 
-	/**
-	 * Preloads the image
-	 * @param {object} image
-	 */
-	preloadImage(image) {
-		const src = image.dataset.src;
-		const srcset = image.dataset.srcset;
+    if (!src) {
+      return;
+      //throw new Error('No image src attribute provided');
+    }
 
-		if (!src) {
-			return;
-		}
+    // Prevent this from being lazy loaded a second time.
+    image.classList.add('dcf-lazy-img-loaded');
+    src && (image.src = src);
+    src && (image.removeAttribute('data-src'));
+    srcset && (image.srcset = srcset);
+    srcset && (image.removeAttribute('data-srcset'));
+    sizes && (image.sizes = sizes);
+    sizes && (image.removeAttribute('data-sizes'));
+    this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
+  };
 
-		return this.fetchImage(src, srcset).then(() => {
-			this.applyImage(image, src, srcset);
-		}).catch(err => `Image failed to fetch ${err.mes}`);
-	};
+  /**
+   * Fetches the image for the given source
+   * @param {string} src
+   * @param {string} srcset, defaults to null if not provided
+   */
+  fetchImage(src, srcset = null, sizes = null) {
+    return new Promise((resolve, reject) => {
+      const image = new Image();
+      src && (image.src = src);
+      srcset && (image.srcset = srcset);
+      sizes && (image.sizes = sizes);
 
-	/**
-	 * Load all of the images immediately
-	 * @param {NodeListOf<Element>} images
-	 */
-	loadImagesImmediately(images) {
-		// foreach() is not supported in IE
-		for (let i = 0; i < images.length; i++) {
-			let image = images[i];
-			this.preloadImage(image);
-		}
-	}
+      image.onload = resolve;
+      image.onerror = reject;
+    });
+  }
 
-	/**
-	 * Disconnect the observer
-	 */
-	disconnect() {
-		if (!this.observer) {
-			return;
-		}
+  /**
+   * Preloads the image
+   * @param {object} image
+   */
+  preloadImage(image) {
+    const src = image.dataset.src;
+    const srcset = image.dataset.srcset;
+    const sizes = image.dataset.sizes || null;
 
-		this.observer.disconnect();
-	};
+    if (!src) {
+      return;
+      //throw new Error('No image src attribute provided');
+    }
 
-	/**
-	 * On intersection
-	 * @param {array} entries
-	 */
-	onIntersection = (entries) => {
-		// Disconnect if we've already loaded all of the images
-		if (this.imageCount === 0) {
-			this.observer.disconnect();
-		}
+    return this.fetchImage(src, srcset, sizes).catch(err => `Image failed to fetch ${err.mes}`);
+  };
 
-		// Loop through the entries
-		for (let i = 0; i < entries.length; i++) {
-			let entry = entries[i];
-			// Are we in viewport?
-			if (entry.intersectionRatio > 0) {
-				this.imageCount--;
+  /**
+   * Load all of the images immediately
+   * @param {NodeListOf<Element>} preload
+   * @param {boolean} images
+   */
+  loadImagesImmediately(images, preload = true) {
+    // foreach() is not supported in IE
+    for (let i = 0; i < images.length; i++) {
+      let image = images[i];
+      if (preload === true) {
+        this.preloadImage(image);
+      }
+      this.applyImage(image);
+    }
+  }
 
-				// Stop watching and load the image
-				this.observer.unobserve(entry.target);
-				this.preloadImage(entry.target);
-			}
-		}
-	};
+  /**
+   * Disconnect the observer
+   */
+  disconnect() {
+    if (!this.observer) {
+      return;
+    }
+
+    this.observer.disconnect();
+  };
+
+  /**
+   * On intersection
+   * @param {array} intersection entries
+   * @param {object} intersection observer
+   */
+  onIntersection = (entries, observer) => {
+
+    // Disconnect if we've already loaded all of the images
+    if (this.imageCount === 0) {
+      this.observer.disconnect();
+    }
+
+    // Loop through the entries
+    for (let i = 0; i < entries.length; i++) {
+      let entry = entries[i];
+
+      // Are we in viewport?
+      // console.log(entry.intersectionRatio);
+
+      if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
+        this.preloadImage(entry.target);
+      } else if (entry.intersectionRatio > observer.thresholds[1]) {
+        this.imageCount--;
+        this.applyImage(entry.target);
+        this.observer.unobserve(entry.target);
+      }
+    }
+  };
 
 
-	initialize() {
-		if(!this.imagesList) return;
-		this.imageCount = this.imagesList.length;
+  initialize() {
+    if(!this.imagesList) return;
 
-		// If we don't have support for intersection observer, loads the images immediately
-		if (!('IntersectionObserver' in window)) {
-			this.loadImagesImmediately(this.imagesList);
-		} else {
-			// It is supported, load the images
-			this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
+    // counter: keeps track of which images that hasn't been loaded
+    this.imageCount = this.imagesList.length;
 
-			// foreach() is not supported in IE
-			for (let i = 0; i < this.imageCount; i++) {
-				let image = this.imagesList[i];
-				if (image.classList.contains('dcf-lazy-img-loaded')) {
-					continue;
-				}
+    if ("loading" in HTMLImageElement.prototype) {
+      // Native lazy loading IS supported, so set src-data to src
+      this.loadImagesImmediately(this.imagesList, false);
+    } else {
+      // Native lazy loading NOT supported, so handle via javascript
+      // If browser doesn't support intersection observer, load the images immediately
+      if (!('IntersectionObserver' in window)) {
+        this.loadImagesImmediately(this.imagesList);
+      } else {
+        // It is supported, load the images
+        this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
 
-				this.observer.observe(image);
-			}
-		}
-	}
+        // foreach() is not supported in IE
+        for (let i = 0; i < this.imageCount; i++) {
+          let image = this.imagesList[i];
+          if (image.classList.contains('dcf-lazy-img-loaded')) {
+            continue;
+          }
+
+          this.observer.observe(image);
+        }
+      }
+    }
+  }
 }
-

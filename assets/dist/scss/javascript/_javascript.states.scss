@@ -3,6 +3,16 @@
 //////////////////////////////
 
 
-.dcf-fade-up {
-  animation: fade-up 2s forwards ease-out;
+[loading="lazy"] {
+  opacity: 0;
+}
+
+
+.dcf-fade-in {
+  animation: appear $timing-fade-in forwards $easing-fade-in;
+}
+
+
+.dcf-fade-out {
+  animation: disappear $timing-fade-out forwards $easing-fade-out;
 }

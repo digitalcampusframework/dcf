@@ -86,12 +86,6 @@
 @mixin case-reset($imp:null) { text-transform: none $imp; }
 
 
-// !Measure (Line Length) -- http://webtypography.net/2.1.2
-@mixin measure-1($imp:null) { max-width: #{ms(22)}rem $imp; }
-@mixin measure-2($imp:null) { max-width: #{ms(24)}rem $imp; }
-@mixin measure-3($imp:null) { max-width: #{ms(26)}rem $imp; }
-
-
 // !Writing Mode
 @mixin txt-vertical-lr($imp:null) {
   transform: translateY(-100%) rotateZ(90deg);

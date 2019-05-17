@@ -24,6 +24,7 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
+			precision: 2,
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
 		})
 				.on('error', $.sass.logError),
@@ -48,6 +49,7 @@ function sassCompileScreen (src, dest, taskName) {
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
+			precision: 2,
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
 		})
 				.on('error', $.sass.logError),
@@ -73,6 +75,7 @@ function sassCompileBase (src, dest, taskName) {
 		$.sassGlob(),
 		$.sourcemaps.init({loadMaps:true}),
 		$.sass({
+			precision: 2,
 			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
 		})
 				.on('error', $.sass.logError),
