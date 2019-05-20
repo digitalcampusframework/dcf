@@ -2584,7 +2584,7 @@
           <caption>This is a responsive striped table.</caption>
           <thead>
             <tr>
-              <th>Bear</th>
+              <th>Image</th>
               <th class="dcf-txt-right">Amount</th>
               <th class="dcf-txt-right">Year</th>
               <th>Description</th>
@@ -2592,25 +2592,25 @@
           </thead>
           <tbody>
             <tr>
-              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
               <td class="dcf-txt-right" data-label="Amount">$2.00</td>
               <td class="dcf-txt-right" data-label="Year">1984</td>
               <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
             </tr>
             <tr>
-              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
               <td class="dcf-txt-right" data-label="Amount">$999.99</td>
               <td class="dcf-txt-right" data-label="Year">1999</td>
               <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
             </tr>
             <tr>
-              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
               <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
               <td class="dcf-txt-right" data-label="Year">2001</td>
               <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
             </tr>
             <tr>
-              <td data-label="Bear"><img class="dcf-d-block" src="https://placebear.com/800/450" alt="A placeholder bear"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
               <td class="dcf-txt-right" data-label="Amount">$.01</td>
               <td class="dcf-txt-right" data-label="Year">2020</td>
               <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
