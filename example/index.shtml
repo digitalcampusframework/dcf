@@ -2624,8 +2624,10 @@
       <h3 class="dcf-mt-8" id="example-utilities-aspect-ratios">Aspect Ratios</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-ratio</code></dt><dd>apply an aspect ratio to an element and specify the ratio with one of the following classes</dd>
-        <dt><code>.dcf-ratio-16x9</code></dt><dd>apply a 16&times;9 aspect ratio to an element</dd>
-        <dt><code>.dcf-ratio-4x3</code></dt><dd>apply a 4&times;3 aspect ratio to an element</dd>
+        <dt><code>.dcf-ratio-16x9</code></dt><dd>apply a 16&times;9 (landscape) aspect ratio to an element</dd>
+        <dt><code>.dcf-ratio-9x16</code></dt><dd>apply a 9&times;16 (portrait) aspect ratio to an element</dd>
+        <dt><code>.dcf-ratio-4x3</code></dt><dd>apply a 4&times;3 (landscape) aspect ratio to an element</dd>
+        <dt><code>.dcf-ratio-3x4</code></dt><dd>apply a 3&times;4 (portrait) aspect ratio to an element</dd>
         <dt><code>.dcf-ratio-1x1</code></dt><dd>apply a 1&times;1 aspect ratio to an element</dd>
         <dt><code>.dcf-ratio-child</code></dt><dd>child element contained within the aspect ratio</dd>
       </dl>

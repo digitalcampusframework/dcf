@@ -7,12 +7,20 @@
 .dcf-ratio { @include ratio(!important); }
 
 
-// !16×9
+// !16×9 (Landscape)
 .dcf-ratio-16x9::before { @include ratio-16x9(!important); }
 
 
-// !4×3
+// !9×16 (Portrait)
+.dcf-ratio-9x16::before { @include ratio-9x16(!important); }
+
+
+// !4×3 (Landscape)
 .dcf-ratio-4x3::before { @include ratio-4x3(!important); }
+
+
+// !3×4 (Portrait)
+.dcf-ratio-3x4::before { @include ratio-3x4(!important); }
 
 
 // !1×1
