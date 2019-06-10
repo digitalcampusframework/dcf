@@ -92,7 +92,7 @@
 }
 
 
-@include mq(md, max, width) {
+@include mq(sm, max, width) {
 
   .dcf-table-responsive thead {
     @include sr-only;
