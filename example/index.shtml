@@ -2676,6 +2676,11 @@
               <td data-label="Description 3">Vestibulum id ligula porta felis euismod semper</td>
             </tr>
           </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="8">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</td>
+            </tr>
+          </tfoot>
         </table>
       </figure>
 
