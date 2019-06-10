@@ -2495,7 +2495,7 @@
       </figure>
 
       <h4 class="dcf-mt-6" id="example-components-responsive-tables">Responsive Tables</h4>
-      <dl class="dcf-measure-3">
+      <dl class="dcf-w-max-lg">
         <dt><code>.dcf-table-responsive</code></dt>
         <dd>Responsive table contents display &ldquo;stacked&rdquo; at narrow screen widths.</dd>
       </dl>
@@ -2621,7 +2621,7 @@
       </figure>
 
       <h4 class="dcf-mt-6" id="example-components-scrollable-tables">Scrollable Tables</h4>
-      <dl class="dcf-measure-3">
+      <dl class="dcf-w-max-lg">
         <dt><code>.dcf-wrapper-table-scroll</code></dt>
         <dd>Add this class along with <code>.dcf-wrapper</code> to a <code>&lt;div&gt;</code> that wraps the <code>&lt;table&gt;</code> to enable horizontal scrolling as needed.</dd>
       </dl>
@@ -2692,7 +2692,7 @@
       </figure>
 
 
-      <p class="dcf-mt-6 dcf-pl-4 dcf-measure-3 dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->
