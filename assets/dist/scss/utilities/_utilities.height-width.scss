@@ -53,8 +53,7 @@
 
 // !Max-Width
 .dcf-w-max-sm { @include w-max-sm(!important); }
-.dcf-measure, // TODO: deprecate
-.dcf-w-max-md { @include w-max-md(!important); }
+.dcf-measure, .dcf-w-max-md { @include w-max-md(!important); } // TODO: deprecate .dcf-measure
 .dcf-w-max-lg { @include w-max-lg(!important); }
 .dcf-w-max-xl { @include w-max-xl(!important); }
 .dcf-w-max-100\% { @include w-max-100pc(!important); } // .dcf-w-max-100%
