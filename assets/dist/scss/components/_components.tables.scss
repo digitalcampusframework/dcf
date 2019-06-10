@@ -123,13 +123,6 @@
   }
 
 
-  //   .dcf-table-responsive.dcf-table-bordered tbody td {
-  //     @include bl-0;
-  //     @include br-0;
-  //     @include bt-0;
-  //   }
-
-
   .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
     @include pb-3;
   }
