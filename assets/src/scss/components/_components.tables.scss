@@ -5,8 +5,18 @@
 
 .dcf-table thead,
 .dcf-table tbody {
-  border-bottom: 1px solid $color-border;
   @include txt-sm;
+}
+
+
+.dcf-table tfoot {
+  @include txt-xs;
+}
+
+
+.dcf-table tbody {
+  border-bottom: 1px solid $color-border;
+  border-top: 1px solid $color-border;
 }
 
 
@@ -32,7 +42,8 @@
 }
 
 
-.dcf-table-striped tr {
+.dcf-table-bordered tr:not(:last-child),
+.dcf-table-striped tr:not(:last-child) {
   border-bottom: 1px solid $color-border;
 }
 
@@ -50,13 +61,93 @@
 
 
 .dcf-table tbody th,
-.dcf-table tbody td {
-  @include pb-3;
+.dcf-table tbody td,
+.dcf-table tfoot th,
+.dcf-table tfoot td {
   @include pt-3;
   vertical-align: top;
 }
 
 
+.dcf-table tbody th,
+.dcf-table tbody td {
+  @include pb-3;
+}
+
+
 .dcf-table-bordered thead th {
   @include pt-5;
+}
+
+
+.dcf-wrapper-table-scroll {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  @include overflow-x-auto;
+  @include pb-4;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+
+@include mq(sm, max, width) {
+
+  .dcf-table-responsive thead {
+    @include sr-only;
+  }
+
+
+  .dcf-table-responsive tr {
+    display: block;
+  }
+
+
+  .dcf-table-responsive td {
+    column-gap: $length-vw-1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: left !important;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered,
+  .dcf-table-responsive.dcf-table-bordered thead th {
+    @include b-0;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered tbody td {
+    @include bt-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
+    @include pb-3;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody td {
+    @include pb-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered):not(.dcf-table-striped) tbody td {
+    @include pr-0;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
+    @include bb-0;
+  }
+
+
+  .dcf-table-responsive tbody td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    @include pr-6;
+  }
+
 }

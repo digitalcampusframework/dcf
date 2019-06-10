@@ -1518,6 +1518,8 @@
           <ul>
             <li><a href="#example-components-bordered-tables">Bordered Tables</a></li>
             <li><a href="#example-components-striped-tables">Striped Tables</a></li>
+            <li><a href="#example-components-responsive-tables">Responsive Tables</a></li>
+            <li><a href="#example-components-scrollable-tables">Scrollable Tables</a></li>
           </ul>
         </li>
       </ul>
@@ -2492,7 +2494,205 @@
         </table>
       </figure>
 
-      <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements)<a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
+      <h4 class="dcf-mt-6" id="example-components-responsive-tables">Responsive Tables</h4>
+      <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-table-responsive</code></dt>
+        <dd>Responsive table contents display &ldquo;stacked&rdquo; at narrow screen widths.</dd>
+      </dl>
+
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+        <table class="dcf-table dcf-table-responsive">
+          <caption>This is a responsive table.</caption>
+          <thead>
+            <tr>
+              <th>Greeting</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Greeting">Hello</td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hi</td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hey</td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Yo</td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <figure class="dcf-mt-6 dcf-mb-6">
+        <table class="dcf-table dcf-table-bordered dcf-table-responsive">
+          <caption>This is a responsive bordered table.</caption>
+          <thead>
+            <tr>
+              <th>Greeting</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Greeting">Hello</td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hi</td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hey</td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Yo</td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <figure class="dcf-mt-6 dcf-mb-6">
+        <table class="dcf-table dcf-table-striped dcf-table-responsive">
+          <caption>This is a responsive striped table.</caption>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
+            </tr>
+            <tr>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
+            </tr>
+            <tr>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <h4 class="dcf-mt-6" id="example-components-scrollable-tables">Scrollable Tables</h4>
+      <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-wrapper-table-scroll</code></dt>
+        <dd>Add this class along with <code>.dcf-wrapper</code> to a <code>&lt;div&gt;</code> that wraps the <code>&lt;table&gt;</code> to enable horizontal scrolling as needed.</dd>
+      </dl>
+
+      <figure class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="example-scrollable-table">
+        <table class="dcf-table" id="example-scrollable-table">
+          <caption>This is a scrollable table.</caption>
+          <thead>
+            <tr>
+              <th>Greeting</th>
+              <th class="dcf-txt-right">Amount</th>
+              <th class="dcf-txt-right">Year</th>
+              <th>Month</th>
+              <th>Day</th>
+              <th>Description 1</th>
+              <th>Description 2</th>
+              <th>Description 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Greeting">Hello</td>
+              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
+              <td class="dcf-txt-right" data-label="Year">1984</td>
+              <td data-label="Month">Jan</td>
+              <td data-label="Day">11</td>
+              <td data-label="Description 1">Nullam id dolor</td>
+              <td data-label="Description 2">Etiam porta sem malesuada magna mollis euismod</td>
+              <td data-label="Description 3">Donec id elit non mi porta gravida at eget metus</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hi</td>
+              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
+              <td class="dcf-txt-right" data-label="Year">1999</td>
+              <td data-label="Month">Dec</td>
+              <td data-label="Day">31</td>
+              <td data-label="Description 1">Integer posuere erat</td>
+              <td data-label="Description 2">Donec sed odio dui</td>
+              <td data-label="Description 3">Cras justo odio</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Hey</td>
+              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
+              <td class="dcf-txt-right" data-label="Year">2001</td>
+              <td data-label="Month">Jul</td>
+              <td data-label="Day">15</td>
+              <td data-label="Description 1">Donec ullamcorper nulla non metus auctor fringilla</td>
+              <td data-label="Description 2">Cras mattis consectetur purus sit amet fermentum</td>
+              <td data-label="Description 3">Donec ullamcorper nulla non metus auctor fringilla</td>
+            </tr>
+            <tr>
+              <td data-label="Greeting">Yo</td>
+              <td class="dcf-txt-right" data-label="Amount">$.01</td>
+              <td class="dcf-txt-right" data-label="Year">2020</td>
+              <td data-label="Month">Feb</td>
+              <td data-label="Day">23</td>
+              <td data-label="Description 1">Nulla vitae elit libero, a pharetra augue</td>
+              <td data-label="Description 2">Cras mattis consectetur purus sit amet fermentum</td>
+              <td data-label="Description 3">Vestibulum id ligula porta felis euismod semper</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="8">Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </figure>
+
+
+      <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
     <!-- !Utilities -->

@@ -111,7 +111,6 @@
     "selector-max-empty-lines": 0,
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
-    "time-min-milliseconds": 100,
     "unit-case": "lower",
     "unit-no-unknown": true,
     "value-keyword-case": "lower",
