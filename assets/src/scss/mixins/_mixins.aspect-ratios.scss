@@ -17,26 +17,6 @@
 }
 
 
-// !16×9 (Landscape)
-@mixin ratio-16x9($imp:null) { padding-top: 56.25% $imp; }
-
-
-// !9×16 (Portrait)
-@mixin ratio-9x16($imp:null) { padding-top: 177.77% $imp; }
-
-
-// !4×3 (Landscape)
-@mixin ratio-4x3($imp:null) { padding-top: 75% $imp; }
-
-
-// !3×4 (Portrait)
-@mixin ratio-3x4($imp:null) { padding-top: 133.33% $imp; }
-
-
-// !1×1
-@mixin ratio-1x1($imp:null) { padding-top: 100% $imp; }
-
-
 // Child
 @mixin ratio-child($imp:null) {
   bottom: 0 $imp;
@@ -45,3 +25,11 @@
   right: 0 $imp;
   top: 0 $imp;
 }
+
+
+// !Aspect Ratios
+@mixin ratio-16x9($imp:null) { padding-top: 56.25% $imp; }  // 16×9  Landscape
+@mixin ratio-9x16($imp:null) { padding-top: 177.77% $imp; } // 9×16  Portrait
+@mixin ratio-4x3($imp:null) { padding-top: 75% $imp; }      // 4×3   Landscape
+@mixin ratio-3x4($imp:null) { padding-top: 133.33% $imp; }  // 3×4   Portrait
+@mixin ratio-1x1($imp:null) { padding-top: 100% $imp; }     // 1×1   Square
