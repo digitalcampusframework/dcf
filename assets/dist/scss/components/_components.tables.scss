@@ -9,6 +9,11 @@
 }
 
 
+.dcf-table tfoot {
+  @include txt-xs;
+}
+
+
 .dcf-table tbody {
   border-bottom: 1px solid $color-border;
   border-top: 1px solid $color-border;
@@ -56,10 +61,17 @@
 
 
 .dcf-table tbody th,
-.dcf-table tbody td {
-  @include pb-3;
+.dcf-table tbody td,
+.dcf-table tfoot th,
+.dcf-table tfoot td {
   @include pt-3;
   vertical-align: top;
+}
+
+
+.dcf-table tbody th,
+.dcf-table tbody td {
+  @include pb-3;
 }
 
 
