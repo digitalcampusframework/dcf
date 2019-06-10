@@ -1519,6 +1519,7 @@
             <li><a href="#example-components-bordered-tables">Bordered Tables</a></li>
             <li><a href="#example-components-striped-tables">Striped Tables</a></li>
             <li><a href="#example-components-responsive-tables">Responsive Tables</a></li>
+            <li><a href="#example-components-scrollable-tables">Scrollable Tables</a></li>
           </ul>
         </li>
       </ul>
@@ -2496,7 +2497,7 @@
       <h4 class="dcf-mt-6" id="example-components-responsive-tables">Responsive Tables</h4>
       <dl class="dcf-measure-3">
         <dt><code>.dcf-table-responsive</code></dt>
-        <dd>The responsive table needs documentation.</dd>
+        <dd>Responsive table contents display &ldquo;stacked&rdquo; at narrow screen widths.</dd>
       </dl>
 
       <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
@@ -2618,6 +2619,12 @@
           </tbody>
         </table>
       </figure>
+
+      <h4 class="dcf-mt-6" id="example-components-scrollable-tables">Scrollable Tables</h4>
+      <dl class="dcf-measure-3">
+        <dt><code>.dcf-wrapper-table-scroll</code></dt>
+        <dd>Add this class along with <code>.dcf-wrapper</code> to a <code>&lt;div&gt;</code> that wraps the <code>&lt;table&gt;</code> to enable horizontal scrolling as needed.</dd>
+      </dl>
 
       <figure class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="example-scrollable-table">
         <table class="dcf-table" id="example-scrollable-table">
