@@ -52,6 +52,7 @@
 
 
 // !Max-Width
+.dcf-w-max-xs { @include w-max-xs(!important); }
 .dcf-w-max-sm { @include w-max-sm(!important); }
 .dcf-measure, .dcf-w-max-md { @include w-max-md(!important); } // TODO: deprecate .dcf-measure
 .dcf-w-max-lg { @include w-max-lg(!important); }

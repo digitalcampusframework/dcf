@@ -3265,6 +3265,7 @@
         <div>
           <h4 class="dcf-mt-6" id="example-utilities-max-width">Max-Width</h4>
           <dl>
+            <dt><code>.dcf-w-max-xs</code></dt><dd>max-width: 17.76rem</dd>
             <dt><code>.dcf-w-max-sm</code></dt><dd>max-width: 23.68rem</dd>
             <dt><code>.dcf-w-max-md</code></dt><dd>max-width: 31.57rem</dd>
             <dt><code>.dcf-w-max-lg</code></dt><dd>max-width: 42.09rem</dd>
