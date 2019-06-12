@@ -52,6 +52,7 @@
 
 
 // !Max-Width
+@mixin w-max-xs($imp:null) { max-width: #{ms(20)}rem $imp; } // [1]
 @mixin w-max-sm($imp:null) { max-width: #{ms(22)}rem $imp; } // [1]
 @mixin w-max-md($imp:null) { max-width: #{ms(24)}rem $imp; } // [1]
 @mixin w-max-lg($imp:null) { max-width: #{ms(26)}rem $imp; } // [1]
