@@ -5,19 +5,17 @@
 
 // !Bare List
 .dcf-list-bare {
-  list-style: none;
+  // Fix list-style: none in VoiceOver and Safari: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+  list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
   padding-left: 0;
 }
-
-// .dcf-list-bare li::before {
-//   content: "\200B"; // add zero-width space
-// }
 
 
 // !Inline List
 .dcf-list-inline li {
   display: inline-block;
 }
+
 
 .dcf-list-inline li:not(:last-child) {
   @include mr-2;
