@@ -18,38 +18,9 @@
 }
 
 
-// Modal is closed, hidden
-.dcf-modal-overlay[aria-hidden="true"] {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity $timing-fade-out $easing-fade-out, visibility 0ms $timing-fade-out;
-  visibility: hidden;
-}
-
-
-// Modal is open, visible
-.dcf-modal-overlay[aria-hidden="false"] {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity $timing-fade-in $easing-fade-in;
-  visibility: visible;
-}
-
-
 // !Modal Content
 .dcf-modal-content {
   height: auto;
   max-height: 100%;
   width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
-}
-
-
-// !Modal Controls
-.dcf-close-modal {
-  @include bg-transparent;
-  @include b-0;
-  cursor: pointer;
-  position: absolute;
-  right: 1%;
-  top: 1%;
 }
