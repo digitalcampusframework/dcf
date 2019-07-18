@@ -9,10 +9,11 @@
   color: #fff;
   display: inline-block;
   @include txt-3xs;
+  font-size: #{ms(-4)}rem;
   @include lh-1;
-  padding: #{ms(-12)}em #{ms(-6)}em; // .18em .43em
+  padding: #{ms(-6)}em #{ms(-4)}em; // .42em .56em
   text-align: center;
-  vertical-align: top;
+  vertical-align: text-top;
   white-space: nowrap;
 }
 
@@ -26,6 +27,6 @@
 // !Pill Badges
 .dcf-badge-pill {
   border-radius: $pill;
-  @include pl-2; // Increase horizontal padding to account for increased border-radius
-  @include pr-2; // Increase horizontal padding to account for increased border-radius
+  @include pl-3; // Increase horizontal padding to account for increased border-radius
+  @include pr-3; // Increase horizontal padding to account for increased border-radius
 }
