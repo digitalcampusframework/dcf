@@ -55,6 +55,14 @@
 // !Text Wrap
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
 
+@mixin word-wrap($imp:null) {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
 @mixin truncate($imp:null) {
   overflow: hidden $imp;
   text-overflow: ellipsis $imp;

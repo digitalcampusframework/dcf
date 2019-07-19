@@ -3607,6 +3607,7 @@
           <h4 class="dcf-mt-6" id="example-utilities-text-wrap">Text Wrap</h4>
           <dl>
             <dt><code>.dcf-txt-nowrap</code></dt><dd>white-space: nowrap</dd>
+            <dt><code>.dcf-word-wrap</code></dt><dd>force long words or strings to hyphenate and wrap to a new line as needed</dd>
             <dt><code>.dcf-truncate</code></dt><dd>truncate text with an ellipsis as needed</dd>
           </dl>
         </div>
