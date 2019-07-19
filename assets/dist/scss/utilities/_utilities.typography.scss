@@ -26,6 +26,7 @@
 
 // !Text Wrap
 .dcf-txt-nowrap { @include txt-nowrap(!important); }
+.dcf-word-wrap { @include word-wrap(!important); }
 .dcf-truncate { @include truncate(!important); }
 
 
