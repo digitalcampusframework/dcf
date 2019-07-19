@@ -8,6 +8,11 @@
 }
 
 
+[class*='dcf-columns-'] > * {
+  break-inside: avoid;
+}
+
+
 //.dcf-columns-1 is unnecessary as content is one column by default
 .dcf-columns-2 { @include columns-2(!important); }
 .dcf-columns-3 { @include columns-3(!important); }
