@@ -2784,6 +2784,7 @@
           </ul>
         </li>
         <li><a href="#example-utilities-object-fit">Object-Fit</a></li>
+        <li><a href="#example-utilities-object-position">Object-Position</a></li>
         <li><a href="#example-utilities-order">Order (for Flexbox and Grid)</a></li>
         <li><a href="#example-utilities-overflow">Overflow</a></li>
         <li><a href="#example-utilities-padding">Padding</a>
@@ -3369,6 +3370,7 @@
       <dl>
         <dt><code>.dcf-obj-fit-contain</code></dt><dd>object-fit: contain</dd>
         <dt><code>.dcf-obj-fit-cover</code></dt><dd>object-fit: cover</dd>
+        <dt><code>.dcf-obj-fit-none</code></dt><dd>object-fit: none</dd>
       </dl>
       <p>The object-fit utilities use the <a href="https://github.com/bfred-it/object-fit-images">object-fit-images</a> polyfill for <a href="https://caniuse.com/#feat=object-fit">browsers that don't support object-fit</a>. This explains why you might see <code>font-family: "object-fit: contain”</code> or <code>font-family: "object-fit: cover"</code> in the rules.</p>
 
@@ -3410,6 +3412,41 @@
           </div>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
+      </figure>
+
+      <h3 class="dcf-mt-8" id="example-utilities-object-position">Object-Position</h3>
+      <dl>
+        <dt><code>.dcf-obj-top</code></dt><dd>object-position: top</dd>
+        <dt><code>.dcf-obj-right</code></dt><dd>object-position: right</dd>
+        <dt><code>.dcf-obj-bottom</code></dt><dd>object-position: bottom</dd>
+        <dt><code>.dcf-obj-left</code></dt><dd>object-position: left</dd>
+        <dt><code>.dcf-obj-right-top</code></dt><dd>object-position: right top</dd>
+        <dt><code>.dcf-obj-right-right</code></dt><dd>object-position: right bottom</dd>
+        <dt><code>.dcf-obj-left-bottom</code></dt><dd>object-position: left bottom</dd>
+        <dt><code>.dcf-obj-left-top</code></dt><dd>object-position: left top</dd>
+      </dl>
+
+      <figure class="dcf-mt-6">
+        <div class="dcf-ratio dcf-ratio-3x4 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
+          <div class="dcf-ratio-child">
+            <img class="dcf-obj-fit-cover dcf-obj-right-bottom" src="http://via.placeholder.com/400x400">
+<!--
+            <img class="dcf-obj-fit-none dcf-obj-bottom"
+                 loading="lazy"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+                 data-src="http://via.placeholder.com/400x300"
+                 data-srcset="http://via.placeholder.com/100x100 100w,
+                 http://via.placeholder.com/200x200 200w,
+                 http://via.placeholder.com/300x300 300w"
+                 data-sizes=""
+                 alt="blank placeholder image for lazy-loading demonstration">
+            <noscript>
+              <img src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            </noscript>
+-->
+          </div>
+        </div>
+        <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-position right bottom combined with object-fit cover</figcaption>
       </figure>
 
       <h3 class="dcf-mt-8" id="example-utilities-order">Order (for Flexbox and Grid)</h3>
