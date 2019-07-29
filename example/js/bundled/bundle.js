@@ -47,8 +47,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       // for this to work properly, child elements of dialog must span the entire region
       // within the dialog box so that when clicking within the dialog, child elements
       // are clicked on instead of the dialog box itself
-      modalContainer.addEventListener('click', function (e) {
-        if (e.target == modalDialog) {
+      modalContainer.addEventListener('click', function (el) {
+        if (el.target === modalDialog) {
           modalDialog.close('cancelled');
         }
       });
