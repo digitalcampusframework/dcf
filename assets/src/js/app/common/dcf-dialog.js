@@ -33,8 +33,8 @@ function Dialog(dialogPolyfill) {
     // for this to work properly, child elements of dialog must span the entire region
     // within the dialog box so that when clicking within the dialog, child elements
     // are clicked on instead of the dialog box itself
-    modalContainer.addEventListener('click', (e) => {
-      if (e.target == modalDialog) {
+    modalContainer.addEventListener('click', (el) => {
+      if (el.target === modalDialog) {
         modalDialog.close('cancelled');
       }
     });

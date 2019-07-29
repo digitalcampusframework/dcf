@@ -1,68 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-;(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-    module.exports = factory();
-  } else {
-    root.dcfDialog = factory();
-  }
-})(undefined, function () {
-  function Dialog(dialogPolyfill) {
-    // select all modal and convert node list to array
-    var modalContainers = [].slice.call(document.querySelectorAll('.dcf-js-dialog'));
-
-    modalContainers.forEach(function (modalContainer) {
-      var trigger = modalContainer.querySelector('.dcf-js-dialog-trigger');
-      var modalDialog = modalContainer.querySelector('dialog');
-      var closeButton = modalContainer.querySelector('.dcf-o-dialog__close');
-
-      // if global dialog property not present, register all dialog modal with polyfill
-      if (!window.HTMLDialogElement) {
-        dialogPolyfill.registerDialog(modalDialog);
-      }
-
-      // show dialog on trigger button click
-      trigger.addEventListener('click', function () {
-        modalDialog.showModal();
-        // translate doesn't seem to work on dialog
-        modalDialog.style.top = 'calc(50% - ' + modalDialog.scrollHeight / 2 + 'px)';
-      });
-
-      // close dialog on close button click
-      closeButton.addEventListener('click', function () {
-        modalDialog.close('closed');
-      });
-
-      // close dialog on Esc button press
-      modalDialog.addEventListener('cancel', function () {
-        modalDialog.close('cancelled');
-      });
-
-      // close dialog when clicking on dialog backdrop
-      // for this to work properly, child elements of dialog must span the entire region
-      // within the dialog box so that when clicking within the dialog, child elements
-      // are clicked on instead of the dialog box itself
-      modalContainer.addEventListener('click', function (e) {
-        if (e.target == modalDialog) {
-          modalDialog.close('cancelled');
-        }
-      });
-    });
-
-    return dialogPolyfill;
-  }
-
-  return Dialog;
-});
-
-},{}],2:[function(require,module,exports){
-'use strict';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -288,468 +226,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   return LazyLoad;
 });
 
-},{}],3:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-;(function (root, factory) {
-	if (typeof define === 'function' && define.amd) {
-		define(['./dcf-uuidGen'], factory);
-	} else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-		module.exports = factory(require('./dcf-uuidGen'));
-	} else {
-		root.dcfWidgetNotice = factory(root.dcfHelperUuidv4);
-	}
-})(undefined, function (uuidv4) {
-	// uuid-gen dependency defined in gruntfile UMD task and passed in as uuidv4
-	//TODO change this to use Class instead
-
-	var Notice = {};
-	var notices = document.querySelectorAll('[data-widget="notice"]');
-	var fixedBottomExists = document.querySelector('[id*="unl-widget-fixedBottom-"]') ? true : false; // flag for checking if a fixedBottom notice has been previously added to the page set flag to true
-
-	notices = [].slice.call(notices);
-
-	// standard classes based on what kind of notice, keep it to DCF classes for now
-	var noticeClasses = {
-		notify: ['dcf-notice', 'unl-notice-notify'],
-		success: ['dcf-notice', 'unl-notice-success'],
-		alert: ['dcf-notice', 'unl-notice--alert'],
-		fatal: ['dcf-notice', 'unl-notice--fatal']
-	};
-
-	var noticeLocationClasses = {
-		current: ['uno'],
-		nav: ['foo'],
-		fixedBottom: ['bar', 'dcf-fixed', 'dcf-notice-fixedBottom', 'dcf-pin-bottom', 'dcf-pin-right', 'dcf-pin-left'],
-		fixedBottomLeft: ['zoink'] // TODO add option that goes 50% width on desktop when fixedBottom
-	};
-
-	// default animations depending on associated locations
-	// fixedBottom associated with slideUp animation. Everything else uses slideInScroll
-	var noticeAnimationClasses = {
-		slideInScroll: ['baz'],
-		slideUp: ['car']
-	};
-
-	var closeButtonClasses = ['dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-mt-3', 'dcf-mr-3', 'dcf-btn', 'dcf-btn-tertiary', 'js-notice-toggle'];
-
-	/**
-  *
-  * Functions
-  */
-
-	/**
-  * @purpose - move element to be the first child of main
-  * @param el - the element to be moved
-  *
-  */
-	function prependMain(el) {
-		var main = document.querySelector('main');
-		var firstChild = main.firstElementChild;
-		main.insertBefore(el, firstChild);
-	}
-
-	/**
-  * @purpose - permanently closes the notice element
-  * @param notice - notice to be closed
-  *
-  */
-	function closeNotice(notice) {
-
-		function hideNotice(e) {
-			if (e.propertyName !== "max-height") return;
-			notice.classList.add('dcf-d-none');
-			notice.removeEventListener('transitionend', hideNotice);
-			document.querySelector('main').focus(); // sending focus back to main
-		}
-
-		notice.addEventListener('transitionend', hideNotice);
-		notice.classList.add('dcf-notice-fixedBottom--close');
-
-		localStorage.setItem(notice.id, 'closed');
-	}
-
-	/**
-  * @purpose - collapse message when collapse button is selected
-  * @param el - notice to be closed
-  * @param closeButton - the close button associated with this notice
-  * @param title - title of notice
-  * @param message - message of notice
-  *
-  */
-	function collapseExpandMessage(el, closeButton, title, message) {
-		// Find out if notice is expanded
-		var expanded = closeButton.getAttribute('aria-expanded') === "true" ? true : false;
-
-		if (expanded) {
-			// if expanded, collapse message
-			closeButton.innerText = "Expand";
-			title.classList.add('dcf-notice-title-collapse');
-			message.classList.add('dcf-notice-message-collapse');
-			if (el.id) localStorage.setItem(el.id, 'collapsed');
-		} else {
-			// if collapse, expand message
-			closeButton.innerText = "Collapse";
-			message.classList.remove('dcf-notice-message-collapse');
-			title.classList.remove('dcf-notice-title-collapse');
-			if (el.id) localStorage.setItem(el.id, 'expanded');
-		}
-
-		// Invert to get new state
-		expanded = new Boolean(!expanded);
-
-		//Apply new state to notice
-		closeButton.setAttribute('aria-expanded', expanded.toString());
-	}
-
-	/**
-  * @purpose add a close button to the widget and the associated click events
-  * @param el
-  * @param isCollapsible
-  *
-  */
-	function addCloseButton(el, isCollapsible) {
-		var closeButton = document.createElement('button');
-		closeButtonClasses.forEach(function (closeButtonclass) {
-			return closeButton.classList.add(closeButtonclass);
-		});
-
-		if (isCollapsible) {
-			// if notice can be collapsed
-			var noticeTitle = el.querySelector('.js-notice-title');
-			var noticeMessage = el.querySelector('.js-notice-message');
-			var noticeMessageId = noticeMessage.id || uuidv4();
-
-			closeButton.innerText = 'collapse';
-			closeButton.setAttribute('aria-expanded', 'true');
-
-			if (!noticeTitle) {
-				console.error('Your notice is missing a title.');
-				return;
-			}
-
-			if (!noticeMessage) {
-				console.error('Your notice is missing a message.');
-				return;
-			}
-
-			noticeTitle.classList.add('dcf-notice-title');
-
-			!noticeMessage.id && (noticeMessage.id = noticeMessageId); //if no id is provided use the generated id
-			closeButton.setAttribute('aria-controls', noticeMessageId);
-			noticeMessage.classList.add('dcf-notice-message');
-
-			closeButton.addEventListener('click', function () {
-				collapseExpandMessage(el, closeButton, noticeTitle, noticeMessage);
-			});
-		} else {
-			// else close the notice out completely
-			closeButton.innerText = 'close';
-			closeButton.addEventListener('click', function () {
-				closeNotice(el);
-			});
-		}
-
-		el.insertBefore(closeButton, el.firstElementChild);
-	}
-
-	/**
-  * Intersection Observer related code
-  */
-
-	// intersection observer - one time drawing variables and functions
-	var isDrawn = false;
-	var isMobile = false;
-	var mobileObserver = void 0,
-	    desktopObserver = void 0;
-	var mq = window.matchMedia("(min-width: 480px)");
-	var mobileConfig = {
-		/* on mobile given potential line breaks, we won't be able to view the entire notice in its
-   entirety at one go so might want to show the notice when close to half of it is shown */
-		root: null,
-		rootMargin: '0px',
-		threshold: 0.65
-	};
-	var desktopConfig = {
-		root: null,
-		rootMargin: '0px',
-		threshold: 0.8
-	};
-
-	function observerCallback(entries, observer) {
-		entries.forEach(function (entry) {
-			if (entry.isIntersecting) {
-				if (entry.intersectionRatio > 0 && entry.intersectionRatio >= observer.thresholds[0]) {
-					noticeAnimationClasses.slideInScroll.forEach(function (noticeAnimationClass) {
-						return entry.target.classList.add(noticeAnimationClass);
-					});
-
-					// set isDrawn flag to true after actions have been taken
-					isDrawn = true;
-					observer.disconnect();
-				}
-			}
-		});
-	}
-
-	function onWidthChange(mq) {
-		if (isDrawn) return;
-		if (mq.matches) {
-			//desktop
-			isMobile = false;
-			createDesktopObserver();
-
-			if (mobileObserver) {
-				mobileObserver.disconnect();
-			}
-		} else {
-			//mobile
-			isMobile = true;
-			createMobileObserver();
-
-			if (desktopObserver) {
-				desktopObserver.disconnect();
-			}
-		}
-	}
-
-	function createMobileObserver() {
-		notices.forEach(function (notice) {
-			mobileObserver = new IntersectionObserver(observerCallback, mobileConfig);
-			mobileObserver.observe(notice);
-		});
-	}
-
-	function createDesktopObserver() {
-		notices.forEach(function (notice) {
-			desktopObserver = new IntersectionObserver(observerCallback, desktopConfig);
-			desktopObserver.observe(notice);
-		});
-	}
-
-	/**
-  * @purpose reusable notice creation and styling code
-  * @param notice - the notice element
-  */
-	function createNotice(notice) {
-		if (notice.initialized) return; // exit if the notice has been initialized
-
-		var noticeType = notice.dataset.noticeType;
-		var noticeLocation = notice.dataset.location;
-		var noticeAnimation = notice.dataset.animation === "true" ? true : false;
-		var noticeCollapsible = notice.dataset.collapsible === "true" ? true : false;
-
-		// 1.check notice option type and add the needed classes
-		if (noticeClasses[noticeType]) {
-			noticeClasses[noticeType].forEach(function (noticeClass) {
-				return notice.classList.add(noticeClass);
-			});
-		} else {
-			// default to info notify styling
-			noticeClasses.notify.forEach(function (noticeClass) {
-				return notice.classList.add(noticeClass);
-			});
-		}
-
-		// 2.check widget location whether its current, nav, or fixed-bottom and assign class names
-		if (noticeLocation === 'fixedBottom') {
-			if (!fixedBottomExists) {
-				// get provided id and append it with a prefix
-				if (notice.id) {
-					notice.id = 'dcf-widget-fixedBottom--' + notice.id;
-				} else {
-					console.info('An id attribute needs to be provided for the fixed to bottom notice to function properly with' + ' localStorage');
-				}
-
-				// check to see if data-collapsible is false and exists in storage as closed, hide notice rightaway
-				if (!noticeCollapsible && localStorage.getItem(notice.id) === 'closed') {
-					notice.classList.add('dcf-d-none');
-					return;
-				}
-
-				// add assigned classes
-				if (noticeLocationClasses[noticeLocation]) {
-					noticeLocationClasses[noticeLocation].forEach(function (noticeLocationClass) {
-						return notice.classList.add(noticeLocationClass);
-					});
-				}
-
-				addCloseButton(notice, noticeCollapsible);
-				prependMain(notice); // move fixed-bottom notice to the top of source
-				fixedBottomExists = true;
-			} else {
-				console.error('Only one fixed to bottom notice may exist on a page');
-			}
-		} else {
-			// location other than fixedBottom
-
-			if (noticeLocationClasses[noticeLocation]) {
-				noticeLocationClasses[noticeLocation].forEach(function (noticeLocationClass) {
-					return notice.classList.add(noticeLocationClass);
-				});
-			} else {
-				// set current option as the default notice styling
-				noticeLocationClasses.current.forEach(function (noticeLocationClass) {
-					return notice.classList.add(noticeLocationClass);
-				});
-			}
-
-			// 2.1 if its nav, move the element to after the nav and before the page title
-			if (noticeLocation === 'nav') {
-				prependMain(notice);
-			}
-		}
-
-		// 3. check animation type whether its slide-in-scroll?
-		// if exist will have to implement intersection observer
-		// Question for Michael if multiple widgets need intersection observer, how can we make it more modular?
-		if (noticeAnimation) {
-			if (noticeLocation === 'fixedBottom') {
-				// add noticeAnimationClasses.slideUp
-				noticeAnimationClasses.slideUp.forEach(function (noticeAnimationClass) {
-					return notice.classList.add(noticeAnimationClass);
-				});
-			} else {
-				// implement intersection observer
-				// add noticeAnimationClasses.slideInScroll
-				if ('IntersectionObserver' in window) {
-					notice.classList.add('hide-animate');
-					mq.addListener(function () {
-						return onWidthChange(mq);
-					});
-
-					//check browser width once on page load
-					onWidthChange(mq);
-				}
-			}
-		}
-
-		notice.initialized = true;
-
-		// 4. check localStorage for fixed bottom and collapsible
-		if (noticeCollapsible && localStorage.getItem(notice.id) === 'collapsed') {
-			var noticeTitle = notice.querySelector('.js-notice-title');
-			var noticeMessage = notice.querySelector('.js-notice-message');
-			var toggleButton = notice.querySelector('.js-notice-toggle');
-
-			if (!noticeTitle) {
-				console.error('Your notice is missing a title.');
-				return;
-			}
-
-			if (!noticeMessage) {
-				console.error('Your notice is missing a message.');
-				return;
-			}
-
-			collapseExpandMessage(notice, toggleButton, noticeTitle, noticeMessage);
-		}
-	}
-
-	/**
-  *  widget.initialize is the default functionality that scans all the existing notice widgets in the dom
-  *  and initialize them
-  */
-	Notice.initialize = function () {
-		notices.forEach(function (notice) {
-			createNotice(notice);
-		});
-	};
-
-	/**
-  * widget.create takes in arguments to dynamically create notices on the fly
-  */
-	Notice.create = function () {
-		var noticeTitle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-		var noticeMessage = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-		var widgetOptions = arguments[2];
-		var insertionReference = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'main';
-		var insertionPoint = arguments[4];
-
-
-		if (noticeTitle.length === 0) {
-			console.error('Please provide a notice title');
-			return;
-		}
-
-		if (noticeMessage.length === 0) {
-			console.error('Please provide a notice message');
-			return;
-		}
-
-		var notice = document.createElement('div');
-		var noticeHeader = document.createElement('h2');
-		var noticeContent = document.createElement('p');
-
-		// set up the notice element
-		var keys = Object.keys(widgetOptions);
-		notice.setAttribute('role', 'alert');
-
-		keys.forEach(function (key) {
-			if (key === 'id') {
-				notice.id = widgetOptions[key];
-			} else {
-				notice.setAttribute('data-' + key, widgetOptions[key]);
-			}
-		});
-
-		if (typeof noticeTitle === 'string') noticeHeader.innerText = noticeTitle;
-		if (typeof noticeMessage === 'string') noticeContent.innerText = noticeMessage;
-
-		noticeHeader.classList.add('js-notice-title');
-		noticeContent.classList.add('js-notice-message');
-
-		notice.appendChild(noticeHeader);
-		notice.appendChild(noticeContent);
-
-		// insert the notice
-		if (insertionReference === 'main' && insertionPoint === undefined) {
-			// assuming no insertionReference or insertionPoint provided
-			prependMain(notice);
-		} else {
-			// if insertionReference provided without insertigonPoint provided, default will be afterbegin
-			if (insertionPoint === undefined) insertionPoint = 'afterbegin';
-			var targetElement = document.querySelector(insertionReference);
-			targetElement.insertAdjacentElement(insertionPoint, notice);
-		}
-
-		// call createNotice
-		createNotice(notice);
-	};
-
-	return Notice;
-});
-
-},{"./dcf-uuidGen":4}],4:[function(require,module,exports){
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-;(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-    module.exports = factory();
-  } else {
-    root.dcfHelperUuidv4 = factory();
-  }
-})(undefined, function () {
-  function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = Math.random() * 16 | 0,
-          v = c === 'x' ? r : r & 0x3 | 0x8;
-      return v.toString(16);
-    });
-  }
-
-  return uuidv4;
-});
-
-},{}],5:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 var css = ".flatpickr-calendar{background:0 0;opacity:0;display:none;text-align:center;visibility:hidden;padding:0;-webkit-animation:none;animation:none;direction:ltr;border:0;font-size:14px;line-height:24px;border-radius:5px;position:absolute;width:307.875px;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-touch-action:manipulation;touch-action:manipulation;background:#fff;-webkit-box-shadow:1px 0 0 #e6e6e6,-1px 0 0 #e6e6e6,0 1px 0 #e6e6e6,0 -1px 0 #e6e6e6,0 3px 13px rgba(0,0,0,.08);box-shadow:1px 0 0 #e6e6e6,-1px 0 0 #e6e6e6,0 1px 0 #e6e6e6,0 -1px 0 #e6e6e6,0 3px 13px rgba(0,0,0,.08)}.flatpickr-calendar.inline,.flatpickr-calendar.open{opacity:1;max-height:640px;visibility:visible}.flatpickr-calendar.open{display:inline-block;z-index:99999}.flatpickr-calendar.animate.open{-webkit-animation:fpFadeInDown .3s cubic-bezier(.23,1,.32,1);animation:fpFadeInDown .3s cubic-bezier(.23,1,.32,1)}.flatpickr-calendar.inline{display:block;position:relative;top:2px}.flatpickr-calendar.static{position:absolute;top:calc(100% + 2px)}.flatpickr-calendar.static.open{z-index:999;display:block}.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7){-webkit-box-shadow:none!important;box-shadow:none!important}.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1){-webkit-box-shadow:-2px 0 0 #e6e6e6,5px 0 0 #e6e6e6;box-shadow:-2px 0 0 #e6e6e6,5px 0 0 #e6e6e6}.flatpickr-calendar .hasTime .dayContainer,.flatpickr-calendar .hasWeeks .dayContainer{border-bottom:0;border-bottom-right-radius:0;border-bottom-left-radius:0}.flatpickr-calendar .hasWeeks .dayContainer{border-left:0}.flatpickr-calendar.showTimeInput.hasTime .flatpickr-time{height:40px;border-top:1px solid #e6e6e6}.flatpickr-calendar.noCalendar.hasTime .flatpickr-time{height:auto}.flatpickr-calendar:after,.flatpickr-calendar:before{position:absolute;display:block;pointer-events:none;border:solid transparent;content:'';height:0;width:0;left:22px}.flatpickr-calendar.rightMost:after,.flatpickr-calendar.rightMost:before{left:auto;right:22px}.flatpickr-calendar:before{border-width:5px;margin:0 -5px}.flatpickr-calendar:after{border-width:4px;margin:0 -4px}.flatpickr-calendar.arrowTop:after,.flatpickr-calendar.arrowTop:before{bottom:100%}.flatpickr-calendar.arrowTop:before{border-bottom-color:#e6e6e6}.flatpickr-calendar.arrowTop:after{border-bottom-color:#fff}.flatpickr-calendar.arrowBottom:after,.flatpickr-calendar.arrowBottom:before{top:100%}.flatpickr-calendar.arrowBottom:before{border-top-color:#e6e6e6}.flatpickr-calendar.arrowBottom:after{border-top-color:#fff}.flatpickr-calendar:focus{outline:0}.flatpickr-wrapper{position:relative;display:inline-block}.flatpickr-months{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.flatpickr-months .flatpickr-month{background:0 0;color:rgba(0,0,0,.9);fill:rgba(0,0,0,.9);height:28px;line-height:1;text-align:center;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.flatpickr-months .flatpickr-next-month,.flatpickr-months .flatpickr-prev-month{text-decoration:none;cursor:pointer;position:absolute;top:0;line-height:16px;height:28px;padding:10px;z-index:3;color:rgba(0,0,0,.9);fill:rgba(0,0,0,.9)}.flatpickr-months .flatpickr-next-month.disabled,.flatpickr-months .flatpickr-prev-month.disabled{display:none}.flatpickr-months .flatpickr-next-month i,.flatpickr-months .flatpickr-prev-month i{position:relative}.flatpickr-months .flatpickr-next-month.flatpickr-prev-month,.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month{left:0}.flatpickr-months .flatpickr-next-month.flatpickr-next-month,.flatpickr-months .flatpickr-prev-month.flatpickr-next-month{right:0}.flatpickr-months .flatpickr-next-month:hover,.flatpickr-months .flatpickr-prev-month:hover{color:#959ea9}.flatpickr-months .flatpickr-next-month:hover svg,.flatpickr-months .flatpickr-prev-month:hover svg{fill:#f64747}.flatpickr-months .flatpickr-next-month svg,.flatpickr-months .flatpickr-prev-month svg{width:14px;height:14px}.flatpickr-months .flatpickr-next-month svg path,.flatpickr-months .flatpickr-prev-month svg path{-webkit-transition:fill .1s;transition:fill .1s;fill:inherit}.numInputWrapper{position:relative;height:auto}.numInputWrapper input,.numInputWrapper span{display:inline-block}.numInputWrapper input{width:100%}.numInputWrapper input::-ms-clear{display:none}.numInputWrapper span{position:absolute;right:0;width:14px;padding:0 4px 0 2px;height:50%;line-height:50%;opacity:0;cursor:pointer;border:1px solid rgba(57,57,57,.15);-webkit-box-sizing:border-box;box-sizing:border-box}.numInputWrapper span:hover{background:rgba(0,0,0,.1)}.numInputWrapper span:active{background:rgba(0,0,0,.2)}.numInputWrapper span:after{display:block;content:\"\";position:absolute}.numInputWrapper span.arrowUp{top:0;border-bottom:0}.numInputWrapper span.arrowUp:after{border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:4px solid rgba(57,57,57,.6);top:26%}.numInputWrapper span.arrowDown{top:50%}.numInputWrapper span.arrowDown:after{border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid rgba(57,57,57,.6);top:40%}.numInputWrapper span svg{width:inherit;height:auto}.numInputWrapper span svg path{fill:rgba(0,0,0,.5)}.numInputWrapper:hover{background:rgba(0,0,0,.05)}.numInputWrapper:hover span{opacity:1}.flatpickr-current-month{font-size:135%;line-height:inherit;font-weight:300;color:inherit;position:absolute;width:75%;left:12.5%;padding:6.16px 0 0 0;line-height:1;height:28px;display:inline-block;text-align:center;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.flatpickr-current-month span.cur-month{font-family:inherit;font-weight:700;color:inherit;display:inline-block;margin-left:.5ch;padding:0}.flatpickr-current-month span.cur-month:hover{background:rgba(0,0,0,.05)}.flatpickr-current-month .numInputWrapper{width:6ch;display:inline-block}.flatpickr-current-month .numInputWrapper span.arrowUp:after{border-bottom-color:rgba(0,0,0,.9)}.flatpickr-current-month .numInputWrapper span.arrowDown:after{border-top-color:rgba(0,0,0,.9)}.flatpickr-current-month input.cur-year{background:0 0;-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;cursor:text;padding:0 0 0 .5ch;margin:0;display:inline-block;font-size:inherit;font-family:inherit;font-weight:300;line-height:inherit;height:auto;border:0;border-radius:0;vertical-align:initial}.flatpickr-current-month input.cur-year:focus{outline:0}.flatpickr-current-month input.cur-year[disabled],.flatpickr-current-month input.cur-year[disabled]:hover{font-size:100%;color:rgba(0,0,0,.5);background:0 0;pointer-events:none}.flatpickr-weekdays{background:0 0;text-align:center;overflow:hidden;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;height:28px}.flatpickr-weekdays .flatpickr-weekdaycontainer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}span.flatpickr-weekday{cursor:default;font-size:90%;background:0 0;color:rgba(0,0,0,.54);line-height:1;margin:0;text-align:center;display:block;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;font-weight:bolder}.dayContainer,.flatpickr-weeks{padding:1px 0 0 0}.flatpickr-days{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start;width:307.875px}.flatpickr-days:focus{outline:0}.dayContainer{padding:0;outline:0;text-align:left;width:307.875px;min-width:307.875px;max-width:307.875px;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;display:-ms-flexbox;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-wrap:wrap;-ms-flex-pack:justify;-webkit-justify-content:space-around;justify-content:space-around;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.dayContainer+.dayContainer{-webkit-box-shadow:-1px 0 0 #e6e6e6;box-shadow:-1px 0 0 #e6e6e6}.flatpickr-day{background:0 0;border:1px solid transparent;border-radius:150px;-webkit-box-sizing:border-box;box-sizing:border-box;color:#393939;cursor:pointer;font-weight:400;width:14.2857143%;-webkit-flex-basis:14.2857143%;-ms-flex-preferred-size:14.2857143%;flex-basis:14.2857143%;max-width:39px;height:39px;line-height:39px;margin:0;display:inline-block;position:relative;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center}.flatpickr-day.inRange,.flatpickr-day.nextMonthDay.inRange,.flatpickr-day.nextMonthDay.today.inRange,.flatpickr-day.nextMonthDay:focus,.flatpickr-day.nextMonthDay:hover,.flatpickr-day.prevMonthDay.inRange,.flatpickr-day.prevMonthDay.today.inRange,.flatpickr-day.prevMonthDay:focus,.flatpickr-day.prevMonthDay:hover,.flatpickr-day.today.inRange,.flatpickr-day:focus,.flatpickr-day:hover{cursor:pointer;outline:0;background:#e6e6e6;border-color:#e6e6e6}.flatpickr-day.today{border-color:#959ea9}.flatpickr-day.today:focus,.flatpickr-day.today:hover{border-color:#959ea9;background:#959ea9;color:#fff}.flatpickr-day.endRange,.flatpickr-day.endRange.inRange,.flatpickr-day.endRange.nextMonthDay,.flatpickr-day.endRange.prevMonthDay,.flatpickr-day.endRange:focus,.flatpickr-day.endRange:hover,.flatpickr-day.selected,.flatpickr-day.selected.inRange,.flatpickr-day.selected.nextMonthDay,.flatpickr-day.selected.prevMonthDay,.flatpickr-day.selected:focus,.flatpickr-day.selected:hover,.flatpickr-day.startRange,.flatpickr-day.startRange.inRange,.flatpickr-day.startRange.nextMonthDay,.flatpickr-day.startRange.prevMonthDay,.flatpickr-day.startRange:focus,.flatpickr-day.startRange:hover{background:#569ff7;-webkit-box-shadow:none;box-shadow:none;color:#fff;border-color:#569ff7}.flatpickr-day.endRange.startRange,.flatpickr-day.selected.startRange,.flatpickr-day.startRange.startRange{border-radius:50px 0 0 50px}.flatpickr-day.endRange.endRange,.flatpickr-day.selected.endRange,.flatpickr-day.startRange.endRange{border-radius:0 50px 50px 0}.flatpickr-day.endRange.startRange+.endRange:not(:nth-child(7n+1)),.flatpickr-day.selected.startRange+.endRange:not(:nth-child(7n+1)),.flatpickr-day.startRange.startRange+.endRange:not(:nth-child(7n+1)){-webkit-box-shadow:-10px 0 0 #569ff7;box-shadow:-10px 0 0 #569ff7}.flatpickr-day.endRange.startRange.endRange,.flatpickr-day.selected.startRange.endRange,.flatpickr-day.startRange.startRange.endRange{border-radius:50px}.flatpickr-day.inRange{border-radius:0;-webkit-box-shadow:-5px 0 0 #e6e6e6,5px 0 0 #e6e6e6;box-shadow:-5px 0 0 #e6e6e6,5px 0 0 #e6e6e6}.flatpickr-day.disabled,.flatpickr-day.disabled:hover,.flatpickr-day.nextMonthDay,.flatpickr-day.notAllowed,.flatpickr-day.notAllowed.nextMonthDay,.flatpickr-day.notAllowed.prevMonthDay,.flatpickr-day.prevMonthDay{color:rgba(57,57,57,.3);background:0 0;border-color:transparent;cursor:default}.flatpickr-day.disabled,.flatpickr-day.disabled:hover{cursor:not-allowed;color:rgba(57,57,57,.1)}.flatpickr-day.week.selected{border-radius:0;-webkit-box-shadow:-5px 0 0 #569ff7,5px 0 0 #569ff7;box-shadow:-5px 0 0 #569ff7,5px 0 0 #569ff7}.flatpickr-day.hidden{visibility:hidden}.rangeMode .flatpickr-day{margin-top:1px}.flatpickr-weekwrapper{display:inline-block;float:left}.flatpickr-weekwrapper .flatpickr-weeks{padding:0 12px;-webkit-box-shadow:1px 0 0 #e6e6e6;box-shadow:1px 0 0 #e6e6e6}.flatpickr-weekwrapper .flatpickr-weekday{float:none;width:100%;line-height:28px}.flatpickr-weekwrapper span.flatpickr-day,.flatpickr-weekwrapper span.flatpickr-day:hover{display:block;width:100%;max-width:none;color:rgba(57,57,57,.3);background:0 0;cursor:default;border:none}.flatpickr-innerContainer{display:block;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.flatpickr-rContainer{display:inline-block;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}.flatpickr-time{text-align:center;outline:0;display:block;height:0;line-height:40px;max-height:40px;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.flatpickr-time:after{content:\"\";display:table;clear:both}.flatpickr-time .numInputWrapper{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;width:40%;height:40px;float:left}.flatpickr-time .numInputWrapper span.arrowUp:after{border-bottom-color:#393939}.flatpickr-time .numInputWrapper span.arrowDown:after{border-top-color:#393939}.flatpickr-time.hasSeconds .numInputWrapper{width:26%}.flatpickr-time.time24hr .numInputWrapper{width:49%}.flatpickr-time input{background:0 0;-webkit-box-shadow:none;box-shadow:none;border:0;border-radius:0;text-align:center;margin:0;padding:0;height:inherit;line-height:inherit;color:#393939;font-size:14px;position:relative;-webkit-box-sizing:border-box;box-sizing:border-box}.flatpickr-time input.flatpickr-hour{font-weight:700}.flatpickr-time input.flatpickr-minute,.flatpickr-time input.flatpickr-second{font-weight:400}.flatpickr-time input:focus{outline:0;border:0}.flatpickr-time .flatpickr-am-pm,.flatpickr-time .flatpickr-time-separator{height:inherit;display:inline-block;float:left;line-height:inherit;color:#393939;font-weight:700;width:2%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}.flatpickr-time .flatpickr-am-pm{outline:0;width:18%;cursor:pointer;text-align:center;font-weight:400}.flatpickr-time .flatpickr-am-pm:focus,.flatpickr-time .flatpickr-am-pm:hover,.flatpickr-time input:focus,.flatpickr-time input:hover{background:#f3f3f3}.flatpickr-input[readonly]{cursor:pointer}@-webkit-keyframes fpFadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}to{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes fpFadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}to{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}"; (require("browserify-css").createStyle(css, { "href": "assets/dist/js/vendor/flatpickr/flatpickr.css" }, { "insertAt": "bottom" })); module.exports = css;
-},{"browserify-css":8}],6:[function(require,module,exports){
+},{"browserify-css":5}],3:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -2927,26 +2406,27 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return flatpickr;
 });
 
-},{}],7:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
-var dialog = require('dcf-dialog');
+// let dialog = require('dcf-dialog');
 var LazyLoad = require('dcf-lazyLoad');
-var Notice = require('dcf-notice');
+// let Notice = require('dcf-notice');
 
 var flatpickr = require('flatpickr/flatpickr');
 require("flatpickr/flatpickr.css");
 
-var noticeOptions = {
-	widget: 'notice',
-	'notice-type': 'alert',
-	animation: 'true',
-	location: 'fixedBottom',
-	collapsible: 'true',
-	id: 'dynamicNotice1'
-};
+// const noticeOptions = {
+// 	widget: 'notice',
+// 	'notice-type': 'alert',
+// 	animation: 'true',
+// 	location: 'fixedBottom',
+// 	collapsible: 'true',
+// 	id: 'dynamicNotice1'
+// };
+//
+// Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
-Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
 var datepicker = document.querySelector('[data-widget*="flatpickr"]');
 flatpickr(datepicker, {
@@ -2964,7 +2444,7 @@ var enterClassNames = ['dcf-fade-in'];
 var exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 
-},{"dcf-dialog":1,"dcf-lazyLoad":2,"dcf-notice":3,"flatpickr/flatpickr":6,"flatpickr/flatpickr.css":5}],8:[function(require,module,exports){
+},{"dcf-lazyLoad":1,"flatpickr/flatpickr":3,"flatpickr/flatpickr.css":2}],5:[function(require,module,exports){
 'use strict';
 // For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
 
@@ -3041,6 +2521,6 @@ module.exports = {
     }
 };
 
-},{}]},{},[7])
+},{}]},{},[4])
 
 //# sourceMappingURL=bundle.js.map
