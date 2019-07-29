@@ -37,7 +37,7 @@ class LazyLoad {
     }
 
     // Prevent this from being lazy loaded a second time.
-    image.classList.add('dcf-lazy-img-loaded');
+    image.classList.add('dcf-lazy-loaded');
     src && (image.src = src);
     src && (image.removeAttribute('data-src'));
     srcset && (image.srcset = srcset);
@@ -159,7 +159,7 @@ class LazyLoad {
         // foreach() is not supported in IE
         for (let i = 0; i < this.imageCount; i++) {
           let image = this.imagesList[i];
-          if (image.classList.contains('dcf-lazy-img-loaded')) {
+          if (image.classList.contains('dcf-lazy-loaded')) {
             continue;
           }
 

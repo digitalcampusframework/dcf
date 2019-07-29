@@ -87,7 +87,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Prevent this from being lazy loaded a second time.
-        image.classList.add('dcf-lazy-img-loaded');
+        image.classList.add('dcf-lazy-loaded');
         src && (image.src = src);
         src && image.removeAttribute('data-src');
         srcset && (image.srcset = srcset);
@@ -208,7 +208,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // foreach() is not supported in IE
             for (var i = 0; i < this.imageCount; i++) {
               var image = this.imagesList[i];
-              if (image.classList.contains('dcf-lazy-img-loaded')) {
+              if (image.classList.contains('dcf-lazy-loaded')) {
                 continue;
               }
 
