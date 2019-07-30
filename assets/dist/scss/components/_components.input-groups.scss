@@ -13,7 +13,7 @@
 //  Child input field of input group
 .dcf-input-group input {
   flex: 1 1 auto; // Grow/shrink as needed, with auto width
-  z-index: 1; // Place :focus and :hover states (e.g. borders, outlines) above input group add-ons
+  z-index: 1; // Place :focus and :hover states (e.g., borders, outlines) above input group add-ons
 }
 
 
