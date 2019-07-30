@@ -4,7 +4,7 @@
 
 
 @mixin obj-top($imp:null) { object-position: top $imp; }
-@mixin obj-right($imp:null) {object-position: right $imp; }
+@mixin obj-right($imp:null) { object-position: right $imp; }
 @mixin obj-bottom($imp:null) { object-position: bottom $imp; }
 @mixin obj-left($imp:null) { object-position: left $imp; }
 @mixin obj-right-top($imp:null) { object-position: right top $imp; }
