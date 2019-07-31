@@ -3359,39 +3359,35 @@
       <p>The object-fit utilities use the <a href="https://github.com/bfred-it/object-fit-images">object-fit-images</a> polyfill for <a href="https://caniuse.com/#feat=object-fit">browsers that don't support object-fit</a>. This explains why you might see <code>font-family: "object-fit: contain”</code> or <code>font-family: "object-fit: cover"</code> in the rules.</p>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-grid">
-          <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
-            <img class="dcf-ratio-child dcf-obj-fit-contain dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/100x100 100w,
-              http://via.placeholder.com/200x200 200w,
-              http://via.placeholder.com/300x300 300w"
-              data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
-            <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
-            </noscript>
-          </div>
+        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
+          <img class="dcf-ratio-child dcf-obj-fit-contain dcf-lazy-load"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+            data-src="http://via.placeholder.com/400x300"
+            data-srcset="http://via.placeholder.com/100x100 100w,
+            http://via.placeholder.com/200x200 200w,
+            http://via.placeholder.com/300x300 300w"
+            data-sizes=""
+            alt="blank placeholder image for lazy-loading demonstration">
+          <noscript>
+            <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+          </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit contain</figcaption>
       </figure>
 
       <figure class="dcf-mt-6">
-        <div class="dcf-grid">
-          <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/100x100 100w,
-              http://via.placeholder.com/200x200 200w,
-              http://via.placeholder.com/300x300 300w"
-              data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
-            <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
-            </noscript>
-          </div>
+        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
+          <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+            data-src="http://via.placeholder.com/400x300"
+            data-srcset="http://via.placeholder.com/100x100 100w,
+            http://via.placeholder.com/200x200 200w,
+            http://via.placeholder.com/300x300 300w"
+            data-sizes=""
+            alt="blank placeholder image for lazy-loading demonstration">
+          <noscript>
+            <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+          </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
       </figure>
@@ -3410,21 +3406,19 @@
 
       <figure class="dcf-mt-6">
         <div class="dcf-ratio dcf-ratio-3x4 dcf-w-10 dcf-b-solid dcf-b-1 example-b-gray">
-          <div class="dcf-ratio-child">
-            <img class="dcf-obj-fit-none dcf-obj-bottom dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/100x100 100w,
-              http://via.placeholder.com/200x200 200w,
-              http://via.placeholder.com/300x300 300w"
-              data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
-            <noscript>
-              <img class="dcf-obj-fit-none dcf-obj-bottom" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
-            </noscript>
-          </div>
+          <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom dcf-lazy-load"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
+            data-src="http://via.placeholder.com/400x300"
+            data-srcset="http://via.placeholder.com/100x100 100w,
+            http://via.placeholder.com/200x200 200w,
+            http://via.placeholder.com/300x300 300w"
+            data-sizes=""
+            alt="blank placeholder image for lazy-loading demonstration">
+          <noscript>
+            <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+          </noscript>
         </div>
-        <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-position right bottom combined with object-fit cover</figcaption>
+        <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-position right bottom combined with object-fit none</figcaption>
       </figure>
 
       <h3 class="dcf-mt-8" id="example-utilities-order">Order (for Flexbox and Grid)</h3>
