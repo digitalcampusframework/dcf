@@ -30,7 +30,7 @@
     <!--#include virtual="/includes/global/header-global-2.html" -->
       <!--#include virtual="/includes/global/logo-lockup-1.html" -->
           <!--#include virtual="/includes/global/site-affiliation-1.html" --><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-affiliation-2.html" -->
-          <!--#include virtual="/includes/global/site-title-1.html" --><!-- InstanceBeginEditable name="titlegraphic" --><a href="#"><!-- Jane Doe Department of Accounting --></a><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-title-2.html" -->
+          <!--#include virtual="/includes/global/site-title-1.html" --><!-- InstanceBeginEditable name="titlegraphic" --><!--<a href="#"> Jane Doe Department of Accounting </a>--><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-title-2.html" -->
       <!--#include virtual="/includes/global/logo-lockup-2.html" -->
       <!--#include virtual="/includes/global/nav-toggle-group.html" -->
       <!--#include virtual="/includes/global/nav-menu-1.html" -->
@@ -61,7 +61,7 @@
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
-    <p class="dcf-lead dcf-w-max-lg">This documentation, like the framework itself, is a work in progress. Expect additions, edits and even some subtractions as the framework continues to evolve in the coming months.</p>
+    <p class="dcf-txt-lg dcf-w-max-lg">This documentation, like the framework itself, is a work in progress. Expect additions, edits and even some subtractions as the framework continues to evolve in the coming months.</p>
     <p class="dcf-mt-6 dcf-w-max-lg"><a href="#example-elements">Element</a> styles are applied directly to an element, while <a href="#example-objects">object</a>, <a href="#example-components">component</a> and <a href="#example-utilities">utility</a> styles are applied by adding classes to the elements in the markup. These classes are prefixed with the <code>dcf-</code> namespace to avoid code collisions with third-party or custom styles. Please prefix your own custom styles with a namespace unique to your organization.</p>
 
     <ul class="dcf-mt-6">
@@ -88,9 +88,9 @@
         <caption>The framework’s breakpoints are shown with their corresponding em and pixel values rounded to two decimal points.</caption>
         <thead>
           <tr>
-            <th>Breakpoint</th>
-            <th class="dcf-txt-right">Em Value</th>
-            <th class="dcf-txt-right">Pixel Value</th>
+            <th scope="col">Breakpoint</th>
+            <th scope="col" class="dcf-txt-right">Em Value</th>
+            <th scope="col" class="dcf-txt-right">Pixel Value</th>
           </tr>
         </thead>
         <tbody>
@@ -118,14 +118,14 @@
       </table>
 
       <h3 class="dcf-mt-8" id="example-general-modular-scale">Modular Scale</h3>
-      <p class="dcf-w-max-lg">Rather than eyeball it and choose arbitrary numbers for things like font-size, padding and margin, the framework utilizes a <a href="https://alistapart.com/article/more-meaningful-typography">modular scale</a>, resulting in a more visually consistent and harmonious composition. The scale consists of a primary and secondary strand of values that are calculated with the perfect fourth (1.333) ratio. These proportions align well with common media formats—16:9 and 4:3.</p>
+      <p class="dcf-w-max-lg">Rather than eyeball it and choose arbitrary numbers for things like font-size, padding and margin, the framework utilizes a <a href="https://alistapart.com/article/more-meaningful-typography">modular scale</a>, resulting in a more visually consistent and harmonious composition. The scale consists of a primary and secondary strand of values that are calculated with the perfect fourth (1.33) ratio. These proportions align well with common media formats—16:9 and 4:3.</p>
 
       <table class="dcf-mt-6 dcf-table">
         <caption>The framework modular scale is shown in em and pixel values rounded to two decimal points. The primary strand values are shown in bold.</caption>
         <thead>
           <tr>
-            <th class="dcf-txt-right">Em Value</th>
-            <th class="dcf-txt-right">Pixel Value</th>
+            <th scope="col" class="dcf-txt-right">Em Value</th>
+            <th scope="col" class="dcf-txt-right">Pixel Value</th>
           </tr>
         </thead>
         <tbody>
@@ -392,31 +392,31 @@
         <dt><code>&lt;address&gt;</code></dt>
         <dd>The address element should be used for physical or digital contact information for a person, people or an organization.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <address>
           <b>University of Digital Campus</b><br>
           1234 Main Street<br>
           Anytown, NE 65432
         </address>
-      </figure>
+      </div>
 
       <h3 class="dcf-mt-8" id="example-elements-anchors">Anchors</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;a&gt;</code></dt>
         <dd>Use to link to other content.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <p class="dcf-w-max-lg">This is an <a href="#">anchor link</a>. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-      </figure>
+      </div>
 
       <h3 class="dcf-mt-8" id="example-elements-blockquotes">Blockquotes</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;blockquote&gt;</code></dt>
         <dd>The blockquote element mostly retains browser default styling, but like <a href="#example-elements-paragraphs">paragraphs</a> and <a href="#example-elements-lists">list items</a>, its measure is restricted to prevent unnecessarily long lines, aiding readability.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <blockquote>Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</blockquote>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-quotes">Quotes</a> (Elements), <a href="#example-components-blockquotes">Blockquotes</a> (Components)</p>
 
   <!--
@@ -431,11 +431,11 @@
         <dt><code>&lt;input type="submit"&gt;</code></dt>
         <dd>Baseline button styles to reset display, padding, font-size, line-height, and text alignment.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <button type="submit">Button</button>
         <input type="button" value="Input">
         <input type="submit" value="Submit">
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups-with-buttons">Input Groups With Buttons</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-code">Code</h3>
@@ -447,32 +447,32 @@
         <dt><code>&lt;pre&gt;</code></dt>
         <dd>Wrap multiple lines of code with <code>&lt;pre&gt;</code>. Use the <code class="dcf-txt-nowrap">.dcf-pre</code> <a href="#example-components-code">component class</a> to retain code styling.</dd>
       </dl>
-      <figure><pre class="dcf-pre"><code data-lang="html">&lt;p&gt;Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
-&lt;p&gt;Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;</code></pre></figure>
+      <div><pre class="dcf-pre"><code data-lang="html">&lt;p&gt;Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+&lt;p&gt;Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;</code></pre></div>
       <dl class="dcf-mb-0 dcf-w-max-lg">
         <dt><code>&lt;var&gt;</code></dt>
         <dd>These are variables:</dd>
       </dl>
-      <figure class="dcf-mb-4"><var>y</var> = <var>m</var><var>x</var> + <var>b</var></figure>
+      <div class="dcf-mb-4"><var>y</var> = <var>m</var><var>x</var> + <var>b</var></div>
       <dl class="dcf-mb-0 dcf-w-max-lg">
         <dt><code>&lt;kbd&gt;</code></dt>
         <dd>This is user input:</dd>
       </dl>
-      <figure class="dcf-mb-4">To switch directories, type <kbd>cd</kbd> followed by the name of the directory. To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></figure>
+      <div class="dcf-mb-4">To switch directories, type <kbd>cd</kbd> followed by the name of the directory. To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></div>
       <dl class="dcf-mb-0 dcf-w-max-lg">
         <dt><code>&lt;samp&gt;</code></dt>
         <dd>This is sample output:</dd>
       </dl>
-      <figure><samp>This text is meant to be treated as sample output from a computer program.</samp></figure>
+      <div><samp>This text is meant to be treated as sample output from a computer program.</samp></div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-code">Code</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-details-summary">Details &amp; Summary</h3>
       <dl class="dcf-w-max-lg">
-        <dt><code>&lt;details&gt;</code></dt>
-        <dt><code>&lt;summary&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;details&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;summary&gt;</code></dt>
         <dd>Combine these elements to build a <a href="https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/">native accordion</a> (i.e., content that can be expanded and contracted).</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-w-max-lg">
+      <div class="dcf-mt-6 dcf-w-max-lg">
         <details>
           <summary>Nullam id dolor id nibh ultricies vehicula ut id elit.</summary>
           Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.
@@ -485,11 +485,11 @@
           <summary>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</summary>
           Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         </details>
-      </figure>
+      </div>
 
   <!--
       <h3 class="dcf-mt-8" id="example-elements-dialog">Dialog</h3>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-mb-6 dcf-modal">
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
@@ -499,7 +499,7 @@
             </div>
           </div>
         </div>
-      </figure>
+      </div>
   -->
 
       <h3 class="dcf-mt-8" id="example-elements-figures">Figures</h3>
@@ -518,9 +518,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -537,9 +537,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
@@ -551,9 +551,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
@@ -565,9 +565,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -587,7 +587,7 @@
         <dt class="dcf-d-inline-block"><code>&lt;textarea&gt;</code></dt>
         <dd>Styles applied directly to form elements are intentionally kept to a minimum.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <form action="?" method="post">
           <fieldset>
             <legend>Sample Form Content</legend>
@@ -647,7 +647,7 @@
           </fieldset>
           <input name="submit" type="submit" value="Submit">
         </form>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-headings">Headings</h3>
@@ -660,14 +660,14 @@
         <dt class="dcf-d-inline-block"><code>&lt;h6&gt;</code></dt>
         <dd>Headings should be selected to accurately convey content hierarchy, not to resize text for the aesthetic needs of the page layout. Instead, use <a href="#example-utilities-typography">utility classes</a> to increase or decrease a heading's font-size.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <h1>h1. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2.37em</small></h1>
         <h2>h2. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">2em</small></h2>
         <h3>h3. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.77em</small></h3>
         <h4>h4. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.5em</small></h4>
         <h5>h5. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.33em</small></h5>
         <h6>h6. Heading <small class="dcf-regular dcf-txt-xs dcf-pl-1">1.13em</small></h6>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-headings">Headings</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-elements-images">Images</h3>
@@ -675,7 +675,6 @@
         <dt><code>&lt;img&gt;</code></dt>
         <dd>Ensure that accurate descriptions of the image content are included in the <code>alt</code> attribute of each image for accessibility.</dd>
       </dl>
-  <!--     <p>Maecenas faucibus mollis interdum.</p> -->
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
@@ -687,9 +686,9 @@
               http://via.placeholder.com/1200x675 1200w,
               http://via.placeholder.com/1600x900 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="225" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="225" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -706,9 +705,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -725,9 +724,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="400" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="400" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -739,10 +738,12 @@
 
       <h4 class="dcf-mt-6" id="example-elements-description-lists">Description Lists</h4>
       <dl class="dcf-w-max-lg">
-        <dt><code>&lt;dl&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;dl&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;dt&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;dd&gt;</code></dt>
         <dd>The description list (once known as the <em>definition</em> list) is used to mark up groups of terms and descriptions.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <dl class="dcf-w-max-lg">
           <dt>Term 1</dt>
           <dd>Description 1</dd>
@@ -754,14 +755,15 @@
           <dt>Term 5</dt>
           <dd>Description for Terms 3, 4 and 5</dd>
         </dl>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-elements-ordered-lists">Ordered Lists</h4>
       <dl class="dcf-w-max-lg">
-        <dt><code>&lt;ol&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;ol&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;li&gt;</code></dt>
         <dd>The ordered list prepends each list item with a sequential number.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <ol class="dcf-w-max-lg">
           <li>This is the most important thing.</li>
           <li>This is the second most important thing.</li>
@@ -769,14 +771,15 @@
           <li>This is the fourth most important thing.</li>
           <li>This is the least important thing.</li>
         </ol>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-elements-unordered-lists">Unordered Lists</h4>
       <dl class="dcf-w-max-lg">
-        <dt><code>&lt;ul&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;ul&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;li&gt;</code></dt>
         <dd>The unordered list prepends each list item with a bullet.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <ul class="dcf-w-max-lg">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</li>
           <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</li>
@@ -784,7 +787,7 @@
           <li>Maecenas faucibus mollis interdum.</li>
           <li>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</li>
         </ul>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-lists">Lists</a> (Components), <a href="#example-components-pagination">Pagination</a> (Components)</p>
 
   <!--
@@ -803,10 +806,10 @@
         <dt><code>&lt;p&gt;</code></dt>
         <dd>Use the paragraph element to mark up—you guessed it—paragraphs:</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <p class="dcf-w-max-lg">Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p>
         <p class="dcf-w-max-lg">Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</p>
-      </figure>
+      </div>
 <!--       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p> -->
 
       <h3 class="dcf-mt-8" id="example-elements-quotes">Quotes</h3>
@@ -833,24 +836,24 @@
 
       <h3 class="dcf-mt-8" id="example-elements-tables">Tables</h3>
       <dl class="dcf-w-max-lg">
-        <dt><code>&lt;table&gt;</code></dt>
-        <dt><code>&lt;caption&gt;</code></dt>
-        <dt><code>&lt;thead&gt;</code></dt>
-        <dt><code>&lt;tbody&gt;</code></dt>
-        <dt><code>&lt;tr&gt;</code></dt>
-        <dt><code>&lt;th&gt;</code></dt>
-        <dt><code>&lt;td&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;table&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;caption&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;thead&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;tbody&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;tr&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;th&gt;</code></dt>
+        <dt class="dcf-d-inline-block"><code>&lt;td&gt;</code></dt>
         <dd>Table borders are collapsed and the background is made transparent.</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-overflow-x-scroll">
+      <div class="dcf-mt-6 dcf-overflow-x-scroll">
         <table>
           <caption>This is a table caption.</caption>
           <thead>
             <tr>
-              <th>Table heading</th>
-              <th class="dcf-txt-right">Table heading</th>
-              <th>Table heading</th>
-              <th>Table heading</th>
+              <th scope="col">Table heading</th>
+              <th scope="col" class="dcf-txt-right">Table heading</th>
+              <th scope="col">Table heading</th>
+              <th scope="col">Table heading</th>
             </tr>
           </thead>
           <tbody>
@@ -874,7 +877,7 @@
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-tables">Tables</a> (Components), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
     </section>
 
@@ -962,7 +965,7 @@
         <dt><code>.dcf-col-100%</code></dt>
         <dd>Apply to a grid child element to define its column width as the full width of the grid.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-100% dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-100%</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -984,13 +987,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-50%-start</code></dt>
         <dd>Apply to a grid child element to define its column width as one-half of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-50%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1012,13 +1015,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-50%-end</code></dt>
         <dd>Apply to a grid child element to define its column width as one-half of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-50%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-50%-end</code></div>
@@ -1040,13 +1043,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-33%-start</code></dt>
         <dd>Apply to a grid child element to define its column width as one-third of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-33%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1068,13 +1071,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-33%-end</code></dt>
         <dd>Apply to a grid child element to define its column width as one-third of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-33%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-33%-end</code></div>
@@ -1096,13 +1099,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-67%-start</code></dt>
         <dd>Apply to a grid child element to define its column width as two-thirds of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-67%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1124,13 +1127,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-67%-end</code></dt>
         <dd>Apply to a grid child element to define its column width as two-thirds of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-67%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-67%-end</code></div>
@@ -1152,13 +1155,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-25%-start</code></dt>
         <dd>Apply to a grid child element to define its column width as one-fourth of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-25%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1180,13 +1183,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-25%-end</code></dt>
         <dd>Apply to a grid child element to define its column width as one-fourth of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-25%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-25%-end</code></div>
@@ -1208,13 +1211,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-75%-start</code></dt>
         <dd>Apply to a grid child element to define its column width as three-fourths of the grid and locate it on the left side, at the start of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-col-75%-start dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-start</code></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1236,13 +1239,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-col-75%-end</code></dt>
         <dd>Apply to a grid child element to define its column width as three-fourths of the grid and locate it on the right side, at the end of the grid's tracks.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-col-75%-end dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><code class="dcf-bold dcf-txt-xs">.dcf-col-75%-end</code></div>
@@ -1264,7 +1267,7 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">18</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">&hellip;</span></div>
         </div>
-      </figure>
+      </div>
 
       <p class="dcf-mt-8 dcf-w-max-lg">Grids of equal-width columns can more easily be created using the following grid objects instead of applying classes to each and every grid column in the twelve-column grid.</p>
 
@@ -1272,7 +1275,7 @@
         <dt><code>.dcf-grid-full</code></dt>
         <dd>The grid-full object lays out child elements to each span all twelve columns of the grid.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-full dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1287,13 +1290,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-grid-halves</code></dt>
         <dd>The grid-halves object lays out child elements in a grid of two equal-width columns.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-halves dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1350,7 +1353,7 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
 
       <p class="dcf-mt-8 dcf-w-max-lg">Grids of five and six equal-width columns start at the <code>@md</code> breakpoint because there is not enough horizontal space to reasonably accommodate most content in such narrow columns for widths below the <code>@md</code> breakpoint.</p>
 
@@ -1358,7 +1361,7 @@
         <dt><code>.dcf-grid-fifths@md</code></dt>
         <dd>The grid-fifths object lays out child elements in a grid of five equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-fifths@md dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1373,13 +1376,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-grid-sixths@md</code></dt>
         <dd>The grid-sixths object lays out child elements in a grid of six equal-width columns for breakpoints greater than or equal to <code>@md</code>. <strong>It must be suffixed with <code>@md</code>, <code>@lg</code> or <code>@xl</code>.</strong></dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-sixths@md dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1394,7 +1397,7 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 example-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-box-alignment">Box Alignment</a> (Utilities), <a href="#example-utilities-grid">Grid</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-objects-media">Media</h3>
@@ -1404,7 +1407,7 @@
         <dt><code>.dcf-media-body</code></dt>
         <dd>The media body is the block of text in the media object.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-media">
           <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10 dcf-mr-4">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
@@ -1413,16 +1416,16 @@
               data-srcset="http://via.placeholder.com/320x320 320w,
               http://via.placeholder.com/640x640 640w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/320x320" width="320" height="320" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/320x320" width="320" height="320" alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-media-body">
             <p class="dcf-w-max-lg">Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
           </div>
         </div>
-      </figure>
+      </div>
 
   <!--
       <h3 class="dcf-mt-8" id="example-objects-dialog">Dialog</h3>
@@ -1430,7 +1433,7 @@
         <dt><code>.dcf-dialog</code></dt>
         <dd>Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-mb-6 dcf-modal">
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
@@ -1440,7 +1443,7 @@
             </div>
           </div>
         </div>
-      </figure>
+      </div>
   -->
     </section>
 
@@ -1533,7 +1536,7 @@
         <dt><code>.dcf-author-img</code></dt>
         <dd>The article component is still in development.</dd>
       </dl>
-      <figure class="dcf-mt-8">
+      <div class="dcf-mt-8">
         <article class="dcf-article dcf-col-gap-vw dcf-mt-5">
           <header class="dcf-article-header dcf-mb-5">
             <div class="dcf-d-flex dcf-flex-col dcf-mb-4">
@@ -1550,7 +1553,7 @@
                 <time class="dcf-d-block dcf-txt-xs" datetime="2018-12-02 11:11:03-0400">December 2, 2018</time>
               </div>
               <div class="dcf-author-img dcf-1st dcf-mr-4">
-                <img class="dcf-circle" src="http://via.placeholder.com/100x100" alt="A placeholder image with a 1:1 aspect ratio">
+                <img class="dcf-circle" src="http://via.placeholder.com/100x100" alt="A placeholder image with a 1:1 aspect ratio.">
               </div>
             </div>
           </header>
@@ -1636,7 +1639,7 @@
             </div>
           </footer>
         </article>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements), <a href="#example-components-headings">Headings</a> (Components), <a href="#example-components-paragraphs">Paragraphs</a> (Components)</p>
 -->
 
@@ -1651,7 +1654,7 @@
         <dt><code>.dcf-badge-roundrect</code></dt>
         <dd>Use this modifier for a badge with roundrect shape.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <h1>h1. Heading with roundrect badge <small class="dcf-badge dcf-badge-roundrect">New</small></h1>
         <h2>h2. Heading with roundrect badge <small class="dcf-badge dcf-badge-roundrect">New</small></h2>
         <h3>h3. Heading with roundrect badge <small class="dcf-badge dcf-badge-roundrect">New</small></h3>
@@ -1659,14 +1662,14 @@
         <h5>h5. Heading with roundrect badge <small class="dcf-badge dcf-badge-roundrect">New</small></h5>
         <h6>h6. Heading with roundrect badge <small class="dcf-badge dcf-badge-roundrect">New</small></h6>
         <p>Paragraph with roundrect badge <span class="dcf-badge dcf-badge-roundrect">New</span></p>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-pill-badges">Pill Badges</h4>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-badge-pill</code></dt>
         <dd>Use this modifier for a badge with pill shape.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <h1>h1. Heading with pill badge <small class="dcf-badge dcf-badge-pill">New</small></h1>
         <h2>h2. Heading with pill badge <small class="dcf-badge dcf-badge-pill">New</small></h2>
         <h3>h3. Heading with pill badge <small class="dcf-badge dcf-badge-pill">New</small></h3>
@@ -1674,7 +1677,7 @@
         <h5>h5. Heading with pill badge <small class="dcf-badge dcf-badge-pill">New</small></h5>
         <h6>h6. Heading with pill badge <small class="dcf-badge dcf-badge-pill">New</small></h6>
         <p>Paragraph with pill badge <span class="dcf-badge dcf-badge-pill">New</span></p>
-      </figure>
+      </div>
 
       <h3 class="dcf-mt-8" id="example-components-blockquotes">Blockquotes</h3>
       <dl class="dcf-w-max-lg">
@@ -1683,12 +1686,12 @@
         <dt><code>.dcf-attribution</code></dt>
         <dd>To attribute the source of a quote, put the attribution in a <code>&lt;footer&gt;</code> element with the <code>dcf-attribution</code> class. It will automatically prepend an em dash (<code>&amp;mdash;</code>) followed by a thin space (<code>&amp;thinsp;</code>). If the attribution source comes from a creative work, it should be cited using the <code>&lt;cite&gt;</code> element and italicized with the <code>&lt;i&gt;</code> element to visually offset the title of the work from the rest of the attribution.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <blockquote class="dcf-blockquote">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
           <footer class="dcf-attribution">Jane Doe in <cite><i>Source Title</i></cite></footer>
         </blockquote>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-blockquotes">Blockquotes</a> (Elements), <a href="#example-elements-quotes">Quotes</a> (Elements)</p>
 
   <!--
@@ -1731,41 +1734,41 @@
         <dt><code>.dcf-btn-primary</code></dt>
         <dd>Use the primary modifier to give standard emphasis to a button.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <a class="dcf-btn dcf-btn-primary" href="#" role="button">Link</a>
         <button class="dcf-btn dcf-btn-primary" type="submit">Button</button>
         <input class="dcf-btn dcf-btn-primary" type="button" value="Input">
         <input class="dcf-btn dcf-btn-primary" type="submit" value="Submit">
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-secondary-buttons">Secondary Buttons</h4>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-btn-secondary</code></dt>
         <dd>Visually de-emphasize buttons by using the secondary modifier.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <a class="dcf-btn dcf-btn-secondary" href="#" role="button">Link</a>
         <button class="dcf-btn dcf-btn-secondary" type="submit">Button</button>
         <input class="dcf-btn dcf-btn-secondary" type="button" value="Input">
         <input class="dcf-btn dcf-btn-secondary" type="submit" value="Submit">
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-tertiary-buttons">Tertiary Buttons</h4>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-btn-tertiary</code></dt>
         <dd>Visually de-emphasize buttons by using the tertiary modifier.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <a class="dcf-btn dcf-btn-tertiary" href="#" role="button">Link</a>
         <button class="dcf-btn dcf-btn-tertiary" type="submit">Button</button>
         <input class="dcf-btn dcf-btn-tertiary" type="button" value="Input">
         <input class="dcf-btn dcf-btn-tertiary" type="submit" value="Submit">
-      </figure>
+      </div>
 
 
       <h4 class="dcf-mt-6" id="example-components-button-sizes">Button Sizes</h4>
       <p class="dcf-w-max-lg">Buttons can be resized as needed by using the font-size utilities to make buttons <a href="#example-utilities-font-size">larger or smaller</a>.</p>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary dcf-mb-4" type="button">Default Button</button>
         <button class="dcf-btn dcf-btn-primary dcf-txt-sm dcf-mb-4" type="button">Small Button</button>
         <button class="dcf-btn dcf-btn-primary dcf-txt-xs dcf-mb-4" type="button">Smaller Button</button>
@@ -1775,21 +1778,21 @@
         <button class="dcf-btn dcf-btn-primary dcf-txt-h6 dcf-mb-4" type="button">Larger Button</button>
         <button class="dcf-btn dcf-btn-primary dcf-txt-h5 dcf-mb-4" type="button">Really?!</button>
         <button class="dcf-btn dcf-btn-primary dcf-d-block dcf-w-100%" type="button">Block Level Button</button>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-button-state-active">Button State: Active</h4>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary dcf-active" aria-pressed="true">Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary dcf-active" aria-pressed="true">Secondary Button</button>
         <button class="dcf-btn dcf-btn-tertiary dcf-active" aria-pressed="true">Tertiary Button</button>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-button-state-disabled">Button State: Disabled</h4>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <button class="dcf-btn dcf-btn-primary" disabled>Primary Button</button>
         <button class="dcf-btn dcf-btn-secondary" disabled>Secondary Button</button>
         <button class="dcf-btn dcf-btn-tertiary" disabled>Tertiary Button</button>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-components-button-groups">Button Groups</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-forms">Forms</a> (Components), <a href="#example-components-input-groups">Input Groups</a> (Components), <a href="#example-utilities-font-size">Font Size</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-cards">Cards</h3>
@@ -1799,7 +1802,7 @@
         <dt><code>.dcf-card-block</code></dt>
         <dd>The card block provides padding for text inside the card. Card contents that need to span the full width (like an image) should be placed outside of the card block.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <ul class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-list-bare dcf-col-gap-4 dcf-row-gap-4 dcf-mb-0">
           <li class="dcf-card dcf-d-flex dcf-flex-col">
             <div class="dcf-card-block dcf-2nd">
@@ -1815,9 +1818,9 @@
                 http://via.placeholder.com/1200x900 1200w,
                 http://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
-                alt="blank placeholder image for lazy-loading demonstration">
+                alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1835,9 +1838,9 @@
                 http://via.placeholder.com/1200x900 1200w,
                 http://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
-                alt="blank placeholder image for lazy-loading demonstration">
+                alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1855,9 +1858,9 @@
                 http://via.placeholder.com/1200x900 1200w,
                 http://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
-                alt="blank placeholder image for lazy-loading demonstration">
+                alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1875,14 +1878,14 @@
                 http://via.placeholder.com/1200x900 1200w,
                 http://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
-                alt="blank placeholder image for lazy-loading demonstration">
+                alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
               </noscript>
             </div>
           </li>
         </ul>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements), <a href="#example-objects-grids">Grids</a> (Objects), <a href="#example-components-bare-lists">Bare Lists</a> (Components), <a href="#example-utilities-grid">Grid</a> (Utilities), <a href="#example-utilities-flexbox">Flexbox</a> (Utilities), <a href="#example-utilities-order">Order</a> (Utilities)</p>
 
       <h3 class="dcf-mt-8" id="example-components-code">Code</h3>
@@ -1890,8 +1893,8 @@
         <dt><code>.dcf-pre</code></dt>
         <dd>Retain code styling for multiple lines of code wrapped with <code>&lt;pre&gt;</code> element.</dd>
       </dl>
-      <figure><pre class="dcf-pre"><code data-lang="html">&lt;p&gt;Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
-&lt;p&gt;Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;</code></pre></figure>
+      <div><pre class="dcf-pre"><code data-lang="html">&lt;p&gt;Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+&lt;p&gt;Nulla vitae elit libero, a pharetra augue.&lt;/p&gt;</code></pre></div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-code">Code</a> (Elements)</p>
 
   <!--
@@ -1915,9 +1918,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -1934,9 +1937,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
@@ -1948,9 +1951,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
@@ -1962,9 +1965,9 @@
               http://via.placeholder.com/1200x900 1200w,
               http://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
-              alt="blank placeholder image for lazy-loading demonstration">
+              alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -1991,7 +1994,7 @@
         <dt><code>.dcf-input-radio</code></dt>
         <dd>Wrap a checkbox or radio input and label pair for consistent cross-browser styling.</dd>
       </dl>
-      <figure class="dcf-mt-8">
+      <div class="dcf-mt-8">
         <form class="dcf-form" action="?" method="post">
           <fieldset>
             <legend>Sample Form Content</legend>
@@ -2101,7 +2104,7 @@
           </fieldset>
           <input class="dcf-btn dcf-btn-primary" name="submit" type="submit" value="Submit">
         </form>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-components-buttons">Buttons</a> (Components), <a href="#example-elements-forms">Forms</a> (Elements), <a href="#example-components-input-groups">Input Groups</a> (Components)</p>
 
 
@@ -2112,13 +2115,13 @@
         <dt><code>.dcf-subhead</code></dt>
         <dd>Use this class on the <code>&lt;p&gt;</code> element to mark up <a href="https://www.w3.org/TR/html5/common-idioms-without-dedicated-elements.html#subheadings-subtitles-alternative-titles-and-taglines">subheadings, alternative titles or taglines</a>.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-mb-4">
           <p class="dcf-subhead">Cras Ullamcorper Cursus Porta</p>
           <h1>Maecenas faucibus mollis interdum</h1>
           <p class="dcf-subhead">Pellentesque Nibh Malesuada</p>
         </div>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
 
  <!--     <h3 class="dcf-mt-8" id="example-components-heroes">Heroes</h3>
@@ -2161,7 +2164,7 @@
                 http://via.placeholder.com/960x540 960w,
                 http://via.placeholder.com/480x270 480w"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-                alt="A placeholder image with a 16:9 aspect ratio"
+                alt="A placeholder image with a 16:9 aspect ratio."
               >
             </div>
           </div>
@@ -2249,7 +2252,7 @@
         <dt><code>.dcf-list-bare</code></dt>
         <dd>This removes the left padding from a list and removes numbers from ordered lists or bullets from unordered lists.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <ul class="dcf-list-bare">
           <li>Bare list item #1</li>
           <li>Bare list item #2</li>
@@ -2257,7 +2260,7 @@
           <li>Bare list item #4</li>
           <li>Bare list item #5</li>
         </ul>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-inline-lists">Inline Lists</h4>
       <dl class="dcf-w-max-lg">
@@ -2266,7 +2269,7 @@
         <dt><code>.dcf-list-inline</code></dt>
         <dd>Change the display of list items to inline-block and add right margin to all but the last list item.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <ul class="dcf-list-bare dcf-list-inline">
           <li>Inline list item #1</li>
           <li>Inline list item #2</li>
@@ -2274,19 +2277,19 @@
           <li>Inline list item #4</li>
           <li>Inline list item #5</li>
         </ul>
-      </figure>
+      </div>
       <p class="dcf-w-max-lg">Inline lists are also used to create pagination:</p>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <nav aria-label="pagination">
-          <ul class="dcf-list-bare dcf-list-inline dcf-mt5">
-            <li><a href="#previous">Previous</a></li>
-            <li><a href="#page1">1</a></li>
-            <li><a href="#page2">2</a></li>
-            <li><a href="#page3">3</a></li>
-            <li><a href="#next">Next</a></li>
+          <ul class="dcf-list-bare dcf-list-inline">
+            <li><a class="dcf-pt-1 dcf-pr-1 dcf-pb-1" href="#previous">Previous</a></li>
+            <li><a class="dcf-p-1" href="#page1">1</a></li>
+            <li><a class="dcf-p-1" href="#page2">2</a></li>
+            <li><a class="dcf-p-1" href="#page3">3</a></li>
+            <li><a class="dcf-pt-1 dcf-pl-1 dcf-pb-1" href="#next">Next</a></li>
           </ul>
         </nav>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
 
   <!--
@@ -2300,7 +2303,7 @@
         <dt><code>.dcf-dialog</code></dt>
         <dd>Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
       </dl>
-      <figure>
+      <div>
         <div class="dcf-mb-6 dcf-modal">
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
@@ -2310,7 +2313,7 @@
             </div>
           </div>
         </div>
-      </figure>
+      </div>
   -->
 
   <!--
@@ -2329,11 +2332,11 @@
         <dt><code>.dcf-lead</code></dt>
         <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <p class="dcf-lead">Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
         <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum.</p>
         <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.</p>
-      </figure>
+      </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-paragraphs">Paragraphs</a> (Elements)</p>
 -->
 
@@ -2348,15 +2351,15 @@
         <dt><code>.dcf-table</code></dt>
         <dd>The table font-size is slightly smaller than the body copy. Padding and borders are also added.</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table">
           <caption>This is a table. Utility classes are used to right-align numbers in this table.</caption>
           <thead>
             <tr>
-              <th>Table heading</th>
-              <th class="dcf-txt-right">Table heading</th>
-              <th>Table heading</th>
-              <th>Table heading</th>
+              <th scope="col">Table heading</th>
+              <th scope="col" class="dcf-txt-right">Table heading</th>
+              <th scope="col">Table heading</th>
+              <th scope="col">Table heading</th>
             </tr>
           </thead>
           <tbody>
@@ -2386,97 +2389,95 @@
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-bordered-tables">Bordered Tables</h4>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-table-bordered</code></dt>
         <dd>The bordered table adds borders to all cells in the table.</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table dcf-table-bordered">
           <caption>This is a bordered table.</caption>
           <thead>
             <tr>
-              <th>Table heading</th>
-              <th class="dcf-txt-right">Table heading</th>
-              <th>Table heading</th>
-              <th>Table heading</th>
+              <th scope="col">Column 1 heading</th>
+              <th scope="col" class="dcf-txt-right">Column 2 heading</th>
+              <th scope="col">Column 3 heading</th>
+              <th scope="col">Column 4 heading</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>Table heading</th>
+              <th scope="rowgroup" rowspan="2">Row group 1 heading</th>
               <td class="dcf-txt-right">49</td>
               <td>Cras mattis consectetur purus sit amet fermentum</td>
               <td>Nullam Sollicitudin Mattis</td>
             </tr>
             <tr>
-              <td></td>
               <td class="dcf-txt-right">16</td>
               <td>Nullam quis risus eget urna mollis ornare vel eu leo</td>
               <td>Ornare Porta Vulputate</td>
             </tr>
             <tr>
-              <th>Table heading</th>
+              <th scope="rowgroup" rowspan="2">Row group 2 heading</th>
               <td class="dcf-txt-right">387</td>
               <td>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
               <td>Inceptos Ullamcorper Etiam</td>
             </tr>
             <tr>
-              <td></td>
               <td class="dcf-txt-right">9</td>
               <td>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
               <td>Bibendum Sit Lorem</td>
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-striped-tables">Striped Tables</h4>
       <dl class="dcf-w-max-lg">
         <dt><code>.dcf-table-striped</code></dt>
         <dd>The striped table adds a subtle background color to alternating rows in the table.</dd>
       </dl>
-      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table dcf-table-striped">
           <caption>This is a striped table.</caption>
           <thead>
             <tr>
-              <th>Table heading</th>
-              <th class="dcf-txt-right">Table heading</th>
-              <th>Table heading</th>
-              <th>Table heading</th>
+              <th scope="col">Column 1 heading</th>
+              <th scope="col" class="dcf-txt-right">Column 2 heading</th>
+              <th scope="col">Column 3 heading</th>
+              <th scope="col">Column 4 heading</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>Table heading</th>
+              <th scope="row">Row 1 heading</th>
               <td class="dcf-txt-right">49</td>
               <td>Cras mattis consectetur purus sit amet fermentum</td>
               <td>Nullam Sollicitudin Mattis</td>
             </tr>
             <tr>
-              <td></td>
+              <th scope="row">Row 2 heading</th>
               <td class="dcf-txt-right">16</td>
               <td>Nullam quis risus eget urna mollis ornare vel eu leo</td>
               <td>Ornare Porta Vulputate</td>
             </tr>
             <tr>
-              <th>Table heading</th>
+              <th scope="row">Row 3 heading</th>
               <td class="dcf-txt-right">387</td>
               <td>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</td>
               <td>Inceptos Ullamcorper Etiam</td>
             </tr>
             <tr>
-              <td></td>
+              <th scope="row">Row 4 heading</th>
               <td class="dcf-txt-right">9</td>
               <td>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit</td>
               <td>Bibendum Sit Lorem</td>
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-responsive-tables">Responsive Tables</h4>
       <dl class="dcf-w-max-lg">
@@ -2484,15 +2485,15 @@
         <dd>Responsive table contents display &ldquo;stacked&rdquo; at narrow screen widths.</dd>
       </dl>
 
-      <figure class="dcf-mt-6 dcf-mb-6 dcf-overflow-x-scroll">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table dcf-table-responsive">
           <caption>This is a responsive table.</caption>
           <thead>
             <tr>
-              <th>Greeting</th>
-              <th class="dcf-txt-right">Amount</th>
-              <th class="dcf-txt-right">Year</th>
-              <th>Description</th>
+              <th scope="col">Greeting</th>
+              <th scope="col" class="dcf-txt-right">Amount</th>
+              <th scope="col" class="dcf-txt-right">Year</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
@@ -2522,17 +2523,17 @@
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
-      <figure class="dcf-mt-6 dcf-mb-6">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table dcf-table-bordered dcf-table-responsive">
           <caption>This is a responsive bordered table.</caption>
           <thead>
             <tr>
-              <th>Greeting</th>
-              <th class="dcf-txt-right">Amount</th>
-              <th class="dcf-txt-right">Year</th>
-              <th>Description</th>
+              <th scope="col">Greeting</th>
+              <th scope="col" class="dcf-txt-right">Amount</th>
+              <th scope="col" class="dcf-txt-right">Year</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
@@ -2562,47 +2563,47 @@
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
-      <figure class="dcf-mt-6 dcf-mb-6">
+      <div class="dcf-mt-6 dcf-mb-6">
         <table class="dcf-table dcf-table-striped dcf-table-responsive">
           <caption>This is a responsive striped table.</caption>
           <thead>
             <tr>
-              <th>Image</th>
-              <th class="dcf-txt-right">Amount</th>
-              <th class="dcf-txt-right">Year</th>
-              <th>Description</th>
+              <th scope="col">Image</th>
+              <th scope="col" class="dcf-txt-right">Amount</th>
+              <th scope="col" class="dcf-txt-right">Year</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image."></td>
               <td class="dcf-txt-right" data-label="Amount">$2.00</td>
               <td class="dcf-txt-right" data-label="Year">1984</td>
               <td data-label="Description">Nullam id dolor id nibh ultricies vehicula ut id elit</td>
             </tr>
             <tr>
-              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image."></td>
               <td class="dcf-txt-right" data-label="Amount">$999.99</td>
               <td class="dcf-txt-right" data-label="Year">1999</td>
               <td data-label="Description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.</td>
             </tr>
             <tr>
-              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image."></td>
               <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
               <td class="dcf-txt-right" data-label="Year">2001</td>
               <td data-label="Description">Donec ullamcorper nulla non metus auctor fringilla</td>
             </tr>
             <tr>
-              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image"></td>
+              <td data-label="Image"><img class="dcf-d-block" src="http://via.placeholder.com/800x450" alt="A placeholder image."></td>
               <td class="dcf-txt-right" data-label="Amount">$.01</td>
               <td class="dcf-txt-right" data-label="Year">2020</td>
               <td data-label="Description">Nulla vitae elit libero, a pharetra augue</td>
             </tr>
           </tbody>
         </table>
-      </figure>
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-scrollable-tables">Scrollable Tables</h4>
       <dl class="dcf-w-max-lg">
@@ -2610,61 +2611,61 @@
         <dd>Add this class along with <code>.dcf-wrapper</code> to a <code>&lt;div&gt;</code> that wraps the <code>&lt;table&gt;</code> to enable horizontal scrolling as needed.</dd>
       </dl>
 
-      <figure class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="example-scrollable-table">
+      <div class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="example-scrollable-table">
         <table class="dcf-table" id="example-scrollable-table">
           <caption>This is a scrollable table.</caption>
           <thead>
             <tr>
-              <th>Greeting</th>
-              <th class="dcf-txt-right">Amount</th>
-              <th class="dcf-txt-right">Year</th>
-              <th>Month</th>
-              <th>Day</th>
-              <th>Description 1</th>
-              <th>Description 2</th>
-              <th>Description 3</th>
+              <th scope="col">Greeting</th>
+              <th scope="col" class="dcf-txt-right">Amount</th>
+              <th scope="col" class="dcf-txt-right">Year</th>
+              <th scope="col">Month</th>
+              <th scope="col">Day</th>
+              <th scope="col">Description 1</th>
+              <th scope="col">Description 2</th>
+              <th scope="col">Description 3</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td data-label="Greeting">Hello</td>
-              <td class="dcf-txt-right" data-label="Amount">$2.00</td>
-              <td class="dcf-txt-right" data-label="Year">1984</td>
-              <td data-label="Month">Jan</td>
-              <td data-label="Day">11</td>
-              <td data-label="Description 1">Nullam id dolor</td>
-              <td data-label="Description 2">Etiam porta sem malesuada magna mollis euismod</td>
-              <td data-label="Description 3">Donec id elit non mi porta gravida at eget metus</td>
+              <td>Hello</td>
+              <td class="dcf-txt-right">$2.00</td>
+              <td class="dcf-txt-right">1984</td>
+              <td>Jan</td>
+              <td>11</td>
+              <td>Nullam id dolor</td>
+              <td>Etiam porta sem malesuada magna mollis euismod</td>
+              <td>Donec id elit non mi porta gravida at eget metus</td>
             </tr>
             <tr>
-              <td data-label="Greeting">Hi</td>
-              <td class="dcf-txt-right" data-label="Amount">$999.99</td>
-              <td class="dcf-txt-right" data-label="Year">1999</td>
-              <td data-label="Month">Dec</td>
-              <td data-label="Day">31</td>
-              <td data-label="Description 1">Integer posuere erat</td>
-              <td data-label="Description 2">Donec sed odio dui</td>
-              <td data-label="Description 3">Cras justo odio</td>
+              <td>Hi</td>
+              <td class="dcf-txt-right">$999.99</td>
+              <td class="dcf-txt-right">1999</td>
+              <td>Dec</td>
+              <td>31</td>
+              <td>Integer posuere erat</td>
+              <td>Donec sed odio dui</td>
+              <td>Cras justo odio</td>
             </tr>
             <tr>
-              <td data-label="Greeting">Hey</td>
-              <td class="dcf-txt-right" data-label="Amount">$1,000,000.01</td>
-              <td class="dcf-txt-right" data-label="Year">2001</td>
-              <td data-label="Month">Jul</td>
-              <td data-label="Day">15</td>
-              <td data-label="Description 1">Donec ullamcorper nulla non metus auctor fringilla</td>
-              <td data-label="Description 2">Cras mattis consectetur purus sit amet fermentum</td>
-              <td data-label="Description 3">Donec ullamcorper nulla non metus auctor fringilla</td>
+              <td>Hey</td>
+              <td class="dcf-txt-right">$1,000,000.01</td>
+              <td class="dcf-txt-right">2001</td>
+              <td>Jul</td>
+              <td>15</td>
+              <td>Donec ullamcorper nulla non metus auctor fringilla</td>
+              <td>Cras mattis consectetur purus sit amet fermentum</td>
+              <td>Donec ullamcorper nulla non metus auctor fringilla</td>
             </tr>
             <tr>
-              <td data-label="Greeting">Yo</td>
-              <td class="dcf-txt-right" data-label="Amount">$.01</td>
-              <td class="dcf-txt-right" data-label="Year">2020</td>
-              <td data-label="Month">Feb</td>
-              <td data-label="Day">23</td>
-              <td data-label="Description 1">Nulla vitae elit libero, a pharetra augue</td>
-              <td data-label="Description 2">Cras mattis consectetur purus sit amet fermentum</td>
-              <td data-label="Description 3">Vestibulum id ligula porta felis euismod semper</td>
+              <td>Yo</td>
+              <td class="dcf-txt-right">$.01</td>
+              <td class="dcf-txt-right">2020</td>
+              <td>Feb</td>
+              <td>23</td>
+              <td>Nulla vitae elit libero, a pharetra augue</td>
+              <td>Cras mattis consectetur purus sit amet fermentum</td>
+              <td>Vestibulum id ligula porta felis euismod semper</td>
             </tr>
           </tbody>
           <tfoot>
@@ -2673,7 +2674,7 @@
             </tr>
           </tfoot>
         </table>
-      </figure>
+      </div>
 
 
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-tables">Tables</a> (Elements), <a href="#example-utilities-text-align">Horizontal Text Alignment</a> (Utilities), <a href="#example-utilities-tables">Tables</a> (Utilities)</p>
@@ -3367,9 +3368,9 @@
             http://via.placeholder.com/200x200 200w,
             http://via.placeholder.com/300x300 300w"
             data-sizes=""
-            alt="blank placeholder image for lazy-loading demonstration">
+            alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            <img class="dcf-ratio-child dcf-obj-fit-contain" src="http://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit contain</figcaption>
@@ -3384,9 +3385,9 @@
             http://via.placeholder.com/200x200 200w,
             http://via.placeholder.com/300x300 300w"
             data-sizes=""
-            alt="blank placeholder image for lazy-loading demonstration">
+            alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            <img class="dcf-ratio-child dcf-obj-fit-cover" src="http://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
@@ -3413,9 +3414,9 @@
             http://via.placeholder.com/200x200 200w,
             http://via.placeholder.com/300x300 300w"
             data-sizes=""
-            alt="blank placeholder image for lazy-loading demonstration">
+            alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom" src="http://via.placeholder.com/100x100" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom" src="http://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-position right bottom combined with object-fit none</figcaption>
@@ -3427,6 +3428,7 @@
         <dt><code>.dcf-2nd</code></dt><dd>second</dd>
         <dt><code>.dcf-3rd</code></dt><dd>third</dd>
       </dl>
+      <p>Responsive suffixes (<code>@sm</code>, <code>@md</code>, <code>@lg</code>, <code>@xl</code>) can be used with the order utilities to adjust order at the desired breakpoints.</p>
 
       <h3 class="dcf-mt-8" id="example-utilities-overflow">Overflow</h3>
       <dl>
@@ -3681,7 +3683,7 @@
       <h2>JavaScript</h2>
       <ul class="dcf-mt-6">
         <li><a href="#example-javascript-states">States</a></li>
-        <li><a href="#example-javascript-datepicker">Date Picker Form Input Field</a></li>
+<!--         <li><a href="#example-javascript-datepicker">Date Picker Form Input Field</a></li> -->
       </ul>
 
       <h3 class="dcf-mt-8" id="example-javascript-states">States</h3>
@@ -3701,28 +3703,31 @@
             http://via.placeholder.com/1200x900 1200w,
             http://via.placeholder.com/1600x1200 1600w"
             data-sizes="100vw"
-            alt="blank placeholder image for lazy-loading demonstration">
+            alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="blank placeholder image for lazy-loading demonstration">
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-wrapper dcf-figcaption dcf-mt-4">Demonstration of lazy-loading and animating an image using the <code>.dcf-fade-in</code> class.</figcaption>
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-images">Images</a> (Elements)</p>
 
+<!--
       <h3 id="example-javascript-datepicker">Date Picker Form Input Field</h3>
       <dl>
         <dt><code>&#x3C;input  data-widget=&#x22;flatpickr&#x22; type=&#x22;text&#x22; placeholder=&#x22;Select Date & Time ..&#x22; readonly&#x3E;</code></dt>
         <dd>Utilizes the Flatpickr plugin for a more browser uniform date picker widget see <a href="https://flatpickr.js.org/">Flatpickr documentation</a> for options.</dd>
       </dl>
       <form>
+        <legend>Select a date and time</legend>
         <fieldset>
-          <label for="example-elements-form-datetime-flatpickr">Date/time: </label>
+          <label for="example-elements-form-datetime-flatpickr">Date/time:</label>
           <input id="example-elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
                            placeholder="Select Date & Time.."
                            readonly="readonly">
         </fieldset>
       </form>
+-->
     </section>
 
     <section class="dcf-pt-10 dcf-mb-10" id="example-print">
