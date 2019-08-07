@@ -7,6 +7,16 @@
 .dcf-d-none { @include d-none(!important); }
 
 
+// None (Screen, Show When Printed)
+.dcf-d-none\@screen {
+
+  @media only screen {
+    @include d-none(!important);
+  }
+
+}
+
+
 // !Block
 .dcf-d-block { @include d-block(!important); }
 
