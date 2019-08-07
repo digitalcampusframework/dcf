@@ -3100,6 +3100,7 @@
       <h3 class="dcf-mt-8" id="example-utilities-display">Display</h3>
       <dl>
         <dt><code>.dcf-d-none</code></dt><dd>display: none</dd>
+        <dt><code>.dcf-d-none@screen</code></dt><dd>display: none on screen, show when printed</dd>
         <dt><code>.dcf-d-block</code></dt><dd>display: block</dd>
         <dt><code>.dcf-d-inline</code></dt><dd>display: inline</dd>
         <dt><code>.dcf-d-inline-block</code></dt><dd>display: inline-block</dd>
