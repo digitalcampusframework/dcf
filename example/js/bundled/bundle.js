@@ -2409,7 +2409,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 },{}],4:[function(require,module,exports){
 'use strict';
 
-// let dialog = require('dcf-dialog');
 var LazyLoad = require('dcf-lazyLoad');
 // let Notice = require('dcf-notice');
 
