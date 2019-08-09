@@ -36,7 +36,6 @@ const noticeWidget = [
 	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
-
 const uuidGen = [
 		gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-uuidGen.js')),
 		customPlumber('error wrapping uuidGen'),
@@ -46,18 +45,6 @@ const uuidGen = [
 			namespace: () => 'dcfHelperUuidv4' // how this module is named in the global scope
 		}),
 		gulp.dest(buildPaths.umdCommonAppDest)
-];
-
-
-const dialog = [
-	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-dialog.js')),
-	customPlumber('error wrapping dialog'),
-	$.newer({ dest:buildPaths.umdCommonAppDest }),
-	$.umd({
-		exports: () => 'Dialog', // TODO: needs to be redefined when file is modularized
-		namespace: () => 'dcfDialog'
-	}),
-	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 const lazyLoad = [
@@ -74,6 +61,5 @@ const lazyLoad = [
 module.exports = {
 	noticeWidget,
 	uuidGen,
-	dialog,
 	lazyLoad
 };
