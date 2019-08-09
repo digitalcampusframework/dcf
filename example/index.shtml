@@ -344,7 +344,6 @@
         <li><a href="#example-elements-buttons">Buttons</a></li>
         <li><a href="#example-elements-code">Code</a></li>
         <li><a href="#example-elements-details-summary">Details &amp; Summary</a></li>
-  <!--       <li><a href="#example-elements-dialog">Dialog</a></li> -->
         <li><a href="#example-elements-figures">Figures</a></li>
         <li><a href="#example-elements-forms">Forms</a></li>
         <li><a href="#example-elements-headings">Headings</a></li>
@@ -486,21 +485,6 @@
           Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         </details>
       </div>
-
-  <!--
-      <h3 class="dcf-mt-8" id="example-elements-dialog">Dialog</h3>
-      <div class="dcf-mt-6">
-        <div class="dcf-mb-6 dcf-modal">
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
-          <div class="dcf-modal-overlay dcf-overlay-dark dcf-invisible" role="dialog" aria-hidden="true" aria-label="modal">
-            <div class="dcf-modal-content" role="document" tabindex="-1">
-              <button class="dcf-close-modal" type="button">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  -->
 
       <h3 class="dcf-mt-8" id="example-elements-figures">Figures</h3>
       <dl class="dcf-w-max-lg">
@@ -889,7 +873,6 @@
         <li><a href="#example-objects-bleed">Bleed</a></li>
         <li><a href="#example-objects-grids">Grids</a></li>
         <li><a href="#example-objects-media">Media</a></li>
-  <!--       <li><a href="#example-objects-dialog">Dialog</a></li> -->
       </ul>
 
       <h3 class="dcf-mt-8" id="example-objects-wrapper">Wrapper</h3>
@@ -1427,24 +1410,6 @@
         </div>
       </div>
 
-  <!--
-      <h3 class="dcf-mt-8" id="example-objects-dialog">Dialog</h3>
-      <dl>
-        <dt><code>.dcf-dialog</code></dt>
-        <dd>Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
-      </dl>
-      <div class="dcf-mt-6">
-        <div class="dcf-mb-6 dcf-modal">
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
-          <div class="dcf-modal-overlay dcf-overlay-dark dcf-invisible" role="dialog" aria-hidden="true" aria-label="modal">
-            <div class="dcf-modal-content" role="document" tabindex="-1">
-              <button class="dcf-close-modal" type="button">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-  -->
     </section>
 
     <!-- !Components -->
@@ -2295,25 +2260,6 @@
   <!--
       <h3 class="dcf-mt-8" id="example-components-marks">Marks</h3>
       <p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-  -->
-
-  <!--
-      <h3 class="dcf-mt-8" id="example-components-modals">Modals</h3>
-      <dl>
-        <dt><code>.dcf-dialog</code></dt>
-        <dd>Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</dd>
-      </dl>
-      <div>
-        <div class="dcf-mb-6 dcf-modal">
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a class="dcf-btn dcf-btn-primary dcf-activate-modal" href="#">Activate Modal</a>
-          <div class="dcf-modal-overlay dcf-overlay-dark dcf-invisible" role="dialog" aria-hidden="true" aria-label="modal">
-            <div class="dcf-modal-content" role="document" tabindex="-1">
-              <button class="dcf-close-modal" type="button">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
   -->
 
   <!--
