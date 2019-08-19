@@ -1418,7 +1418,7 @@
         <li><a href="#example-components-input-groups">Input Groups</a>
           <ul>
             <li><a href="#example-components-input-groups-addons"><span class="dcf-sr-only">Input Groups </span>With Add-ons</a></li>
-            <li><a href="#example-components-input-groups-buttons"><span class="dcf-sr-only">Input Groups </span>With A Button</a></li>
+            <li><a href="#example-components-input-groups-button"><span class="dcf-sr-only">Input Groups </span>With A Button</a></li>
           </ul>
         </li>
         <li><a href="#example-components-lists">Lists</a>
