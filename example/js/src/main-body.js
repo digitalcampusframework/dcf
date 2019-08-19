@@ -1,4 +1,3 @@
-// let dialog = require('dcf-dialog');
 let LazyLoad = require('dcf-lazyLoad');
 // let Notice = require('dcf-notice');
 
