@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "flatpickr": "^4.5.2",
+    "inert-polyfill": "^0.2.5",
     "object-fit-images": "^3.2.4"
   },
   "engines": {
