@@ -74,7 +74,6 @@
     "watchify": "^3.11.0"
   },
   "dependencies": {
-    "details-polyfill": "^1.1.0",
     "flatpickr": "^4.5.2",
     "object-fit-images": "^3.2.4"
   },
