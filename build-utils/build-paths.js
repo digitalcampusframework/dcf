@@ -13,11 +13,10 @@ const coreDistCssPath = path.join(commonPaths.outputDist,'css');
 
 //Obtain paths to dependencies from package
 const objectFitImages = require.resolve('object-fit-images/dist/ofi.js');
-const detailsPolyfill = require.resolve('details-polyfill');
 
 
 module.exports = {
-	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, objectFitImages, detailsPolyfill],
+	mustardJsGlob: [`${mustardJsSrcPath}/**/*.js`, objectFitImages],
 	mustardJsDest: path.join(commonPaths.outputBuild, 'js', 'mustard'),
 	appJsPath: appJsSrcPath,
 	appJsCommonSrc: path.join(appJsSrcPath, 'common'),
