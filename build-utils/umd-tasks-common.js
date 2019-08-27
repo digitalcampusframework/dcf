@@ -58,8 +58,20 @@ const lazyLoad = [
 	gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
+const modal = [
+	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-modal.js')),
+	customPlumber('error wrapping modal'),
+	$.newer({ dest:buildPaths.umdCommonAppDest }),
+	$.umd({
+		exports: () => 'Modal',
+		namespace: () => 'dcfModal'
+	}),
+	gulp.dest(buildPaths.umdCommonAppDest)
+];
+
 module.exports = {
 	noticeWidget,
 	uuidGen,
-	lazyLoad
+	lazyLoad,
+	modal
 };

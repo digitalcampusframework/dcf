@@ -1,8 +1,9 @@
 let LazyLoad = require('dcf-lazyLoad');
+let Modal = require('dcf-modal');
 // let Notice = require('dcf-notice');
 
-let flatpickr = require('flatpickr/flatpickr');
-require("flatpickr/flatpickr.css");
+// let flatpickr = require('flatpickr/flatpickr');
+// require("flatpickr/flatpickr.css");
 
 
 // const noticeOptions = {
@@ -17,11 +18,11 @@ require("flatpickr/flatpickr.css");
 // Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
 
-let datepicker = document.querySelector('[data-widget*="flatpickr"]');
-flatpickr(datepicker, {
-	enableTime: true,
-	dateFormat: "Y-m-d h:iK",
-});
+// let datepicker = document.querySelector('[data-widget*="flatpickr"]');
+// flatpickr(datepicker, {
+// 	enableTime: true,
+// 	dateFormat: "Y-m-d h:iK",
+// });
 
 const images = document.querySelectorAll('[loading=lazy], .dcf-lazy-load');
 const observerConfig = {
@@ -32,3 +33,7 @@ const observerConfig = {
 const enterClassNames = ['dcf-fade-in'];
 const exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
+
+const modals = document.querySelectorAll('.dcf-modal');
+const exampleModal = new Modal(modals);
+exampleModal.initialize();
