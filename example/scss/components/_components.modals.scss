@@ -1,0 +1,26 @@
+///////////////////////////////
+// !THEME / COMPONENTS / MODALS
+///////////////////////////////
+
+
+// !Modal
+.example .dcf-modal[aria-hidden="true"] {
+  transition: opacity $timing-fade-out $easing-fade-out;
+}
+
+
+.example .dcf-modal[aria-hidden="false"] {
+  transition: opacity $timing-fade-in $easing-fade-in;
+}
+
+
+// !Modal Content
+.example .dcf-modal-content {
+  width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
+}
+
+
+// !Modal Content
+.example .dcf-modal-content > *:nth-last-child(2) {
+  margin-bottom: 0;
+}
