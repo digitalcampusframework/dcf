@@ -71,13 +71,6 @@
         </div>
       </div>
 
-      <style>
-        [role="dialog"][hidden] {
-          display: block !important;
-          visibility: hidden !important;
-        }
-      </style>
-
 <!--
       <script>
         document.addEventListener('DOMContentLoaded', function(event) {
