@@ -63,6 +63,17 @@ const modal = [
   customPlumber('error wrapping modal'),
   $.newer({ dest:buildPaths.umdCommonAppDest }),
   $.umd({
+    dependencies: () => {
+      return [
+        {
+          name: 'uuidGenerator',
+          amd: './dcf-uuidGen',
+          cjs: './dcf-uuidGen',
+          global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
+          param: 'uuidv4' // how this dependency is called inside the module
+        }
+      ]
+    },
     exports: () => 'Modal',
     namespace: () => 'dcfModal'
   }),
