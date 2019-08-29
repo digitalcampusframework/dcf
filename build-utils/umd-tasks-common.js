@@ -14,64 +14,64 @@ const customPlumber = require('./custom-plumber');
  */
 
 const noticeWidget = [
-	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-notice.js')),
-	customPlumber('error wrapping noticeWidget'),
-	$.newer({ dest:buildPaths.umdCommonAppDest }),
-	$.umd({
-		dependencies: () => {
-			return [
-				{
-					name: 'uuidGenerator',
-					amd: './dcf-uuidGen',
-					cjs: './dcf-uuidGen',
-					global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
-					param: 'uuidv4' // how this dependency is called inside the module
-				}
-			]
-		},
-		exports: () => 'Notice', // the variable name that will be returned
-		namespace: () => 'dcfWidgetNotice' // how this module is named in the global scope
-		// if no exports defined, capitalized filename will be used instead
-	}),
-	gulp.dest(buildPaths.umdCommonAppDest)
+  gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-notice.js')),
+  customPlumber('error wrapping noticeWidget'),
+  $.newer({ dest:buildPaths.umdCommonAppDest }),
+  $.umd({
+    dependencies: () => {
+      return [
+        {
+          name: 'uuidGenerator',
+          amd: './dcf-uuidGen',
+          cjs: './dcf-uuidGen',
+          global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
+          param: 'uuidv4' // how this dependency is called inside the module
+        }
+      ]
+    },
+    exports: () => 'Notice', // the variable name that will be returned
+    namespace: () => 'dcfWidgetNotice' // how this module is named in the global scope
+    // if no exports defined, capitalized filename will be used instead
+  }),
+  gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 const uuidGen = [
-		gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-uuidGen.js')),
-		customPlumber('error wrapping uuidGen'),
-	$.newer({ dest:buildPaths.umdCommonAppDest }),
-		$.umd({
-			exports: () => 'uuidv4', // the variable name that will be returned
-			namespace: () => 'dcfHelperUuidv4' // how this module is named in the global scope
-		}),
-		gulp.dest(buildPaths.umdCommonAppDest)
+  gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-uuidGen.js')),
+  customPlumber('error wrapping uuidGen'),
+  $.newer({ dest:buildPaths.umdCommonAppDest }),
+  $.umd({
+    exports: () => 'uuidv4', // the variable name that will be returned
+    namespace: () => 'dcfHelperUuidv4' // how this module is named in the global scope
+  }),
+  gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 const lazyLoad = [
-	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-lazyLoad.js')),
-	customPlumber('error wrapping lazyLoad'),
-	$.newer({ dest:buildPaths.umdCommonAppDest }),
-	$.umd({
-		exports: () => 'LazyLoad',
-		namespace: () => 'dcfLazyLoad'
-	}),
-	gulp.dest(buildPaths.umdCommonAppDest)
+  gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-lazyLoad.js')),
+  customPlumber('error wrapping lazyLoad'),
+  $.newer({ dest:buildPaths.umdCommonAppDest }),
+  $.umd({
+    exports: () => 'LazyLoad',
+    namespace: () => 'dcfLazyLoad'
+  }),
+  gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 const modal = [
-	gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-modal.js')),
-	customPlumber('error wrapping modal'),
-	$.newer({ dest:buildPaths.umdCommonAppDest }),
-	$.umd({
-		exports: () => 'Modal',
-		namespace: () => 'dcfModal'
-	}),
-	gulp.dest(buildPaths.umdCommonAppDest)
+  gulp.src(path.join(buildPaths.appJsCommonSrc, 'dcf-modal.js')),
+  customPlumber('error wrapping modal'),
+  $.newer({ dest:buildPaths.umdCommonAppDest }),
+  $.umd({
+    exports: () => 'Modal',
+    namespace: () => 'dcfModal'
+  }),
+  gulp.dest(buildPaths.umdCommonAppDest)
 ];
 
 module.exports = {
-	noticeWidget,
-	uuidGen,
-	lazyLoad,
-	modal
+  noticeWidget,
+  uuidGen,
+  lazyLoad,
+  modal
 };
