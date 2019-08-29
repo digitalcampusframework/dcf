@@ -16,11 +16,11 @@
 
 // !Modal Content
 .example .dcf-modal-content {
+  max-height: 75vh;
   width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
 }
 
 
-// !Modal Content
 .example .dcf-modal-content > *:nth-last-child(2) {
   margin-bottom: 0;
 }
