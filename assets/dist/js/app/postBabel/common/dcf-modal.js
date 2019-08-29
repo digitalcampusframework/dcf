@@ -15,8 +15,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     root.dcfModal = factory();
   }
 })(undefined, function () {
-  var Modal = function () {
+  var bodyScrollLock = require('body-scroll-lock');
+  var disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
+  var Modal = function () {
     /**
      * class constructor
      * @param {modals} modals of selected modals
@@ -24,7 +27,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function Modal(modals) {
       _classCallCheck(this, Modal);
 
-      //     this.thebody = body;
       this.modals = modals;
     }
 
@@ -42,19 +44,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         body.insertBefore(el, firstChild);
       }
 
-      // Transition modal on close
-      //   modalTransition(event, modal) {
-      //     const thisModal = this;
-      //
-      //     // Remove the event listener after the modal transition has completed
-      //     thisModal.removeEventListener('transitionend', modalTransition);
-      //
-      //     // Add the `.dcf-invisible` class to this modal after the transition
-      //     if (!thisModal.classList.contains('dcf-invisible')) {
-      //       thisModal.classList.add('dcf-invisible');
-      //     }
-      //   }
-
       // Open modal
 
     }, {
@@ -62,10 +51,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function openModal(modalId, openBtnId) {
 
         var body = document.querySelector('body');
+        var skipNav = document.getElementById('dcf-skip-nav');
+        var header = document.getElementById('dcf-header');
+        var main = document.getElementById('dcf-main');
+        var footer = document.getElementById('dcf-footer');
+        var nonModals = [skipNav, header, main, footer];
 
         for (var i = 0; i < this.modals.length; i++) {
           var modal = this.modals[i];
-
           if (modal.getAttribute('id') !== modalId) {
             this.closeModal(modal.getAttribute('id'));
           }
@@ -75,10 +68,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var modalOpen = thisModal.getAttribute('aria-hidden') === 'false' ? true : false;
 
         if (openBtnId) {
-          currentBtn = openBtnId;
+          this.currentBtn = openBtnId;
         }
 
-        currentModal = modalId;
+        this.currentModal = modalId;
 
         // Don't open modal if it's already open
         if (modalOpen) {
@@ -89,11 +82,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         nonModals.forEach(function (el, array) {
           el.setAttribute('aria-hidden', 'true');
           el.setAttribute('inert', '');
-          // TODO: Configure inert polyfill
         });
 
-        //   	Prevent body from scrolling
-        //   	disableBodyScroll(thisModal);
+        // Prevent body from scrolling
+        disableBodyScroll(thisModal);
 
         // Add `.dcf-modal-is-open` helper class to body
         body.classList.add('dcf-modal-is-open');
@@ -105,10 +97,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
         thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
-        // Send focus to modal content
-        thisModal.focus();
+        var keycodeTab = 9;
+        var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), [href]:not([hidden]), input:not([hidden]):' + 'not([type="hidden"]):not([disabled]), select:not([hidden]):not([disabled]), text' + 'area:not([hidden]):not([disabled]), [tabindex="0"]:not([hidden]):not([disabled])' + ', summary:not([hidden]), [contenteditable]:not([hidden]), audio[controls]:not([h' + 'idden]), video[controls]:not([hidden])');
+        var firstTabFocusEl = tabFocusEls[0];
+        var lastTabFocusEl = tabFocusEls[tabFocusEls.length - 1];
 
-        // TODO: Trap focus inside the modal content
+        // Send focus to the first focusable element in the modal content
+        firstTabFocusEl.focus();
+
+        // Trap focus inside the modal content
+        thisModal.addEventListener('keydown', function (e) {
+
+          var isTabPressed = e.key === 'Tab' || e.keyCode === keycodeTab;
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if (e.key === 'Tab' || e.keyCode === keycodeTab) {
+            if (e.shiftKey) {
+              // Tab backwards (shift + tab)
+              if (document.activeElement === firstTabFocusEl) {
+                e.preventDefault();
+                lastTabFocusEl.focus();
+              }
+            } else {
+              // Tab forwards
+              if (document.activeElement === lastTabFocusEl) {
+                e.preventDefault();
+                firstTabFocusEl.focus();
+              }
+            }
+          }
+        });
       }
 
       // Close modal
@@ -118,11 +139,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function closeModal(modalId) {
 
         var body = document.querySelector('body');
+        var skipNav = document.getElementById('dcf-skip-nav');
+        var header = document.getElementById('dcf-header');
+        var main = document.getElementById('dcf-main');
+        var footer = document.getElementById('dcf-footer');
+        var nonModals = [skipNav, header, main, footer];
         var thisModal = document.getElementById(modalId);
-
         var modalClosed = thisModal.getAttribute('aria-hidden') === 'true' ? true : false;
-
-        currentModal = null;
+        this.currentModal = null;
 
         // Don't close modal if it's already closed
         if (modalClosed) {
@@ -145,40 +169,57 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
         thisModal.classList.add('dcf-opacity-0', 'dcf-pointer-events-none');
 
-        // Add event listener for the end of the modal transition
-        //     thisModal.addEventListener('transitionend', modalTransition);
+        // Modal transition
+        function modalTransition() {
 
-        // Send focus back to button that opened modal
-        if (currentBtn) {
-          document.getElementById(currentBtn).focus();
+          // Remove event listener after the modal transition
+          thisModal.removeEventListener('transitionend', modalTransition);
+
+          // Add the `.dcf-invisible` class to this modal after the transition
+          if (!thisModal.classList.contains('dcf-invisible')) {
+            thisModal.classList.add('dcf-invisible');
+          }
         }
 
-        // TODO: Allow body to scroll
+        // Add event listener for the end of the modal transition
+        thisModal.addEventListener('transitionend', modalTransition);
+
+        // Send focus back to button that opened modal
+        if (this.currentBtn) {
+          document.getElementById(this.currentBtn).focus();
+        }
+
+        // Allow body to scroll
+        enableBodyScroll(thisModal);
       }
     }, {
       key: 'btnOpenListen',
       value: function btnOpenListen(btnOpenModal, modalId, btnId) {
+        var modalInstance = this;
 
-        // TODO: account for multiple buttons able to open a single modal (e.g., search)
         // Listen for when 'open modal' button is pressed
         btnOpenModal.addEventListener('click', function () {
+
           // Open modal when button is pressed
-          this.openModal(modalId, btnId);
+          modalInstance.openModal(modalId, btnId);
         }, false);
       }
     }, {
       key: 'btnCloseListen',
       value: function btnCloseListen(btnCloseModal, modal) {
+        var modalInstance = this;
 
         // Listen for when 'close modal' button is pressed
         btnCloseModal.addEventListener('click', function () {
+
           // Open modal when button is pressed
-          this.closeModal(modal.getAttribute('id'));
+          modalInstance.closeModal(modal.getAttribute('id'));
         }, false);
       }
     }, {
       key: 'overlayListen',
       value: function overlayListen(modal, modalContent) {
+        var modalInstance = this;
 
         // Listen for clicks on the open modal
         modal.addEventListener('click', function (event) {
@@ -189,25 +230,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           // If the click is outside the modal content (on the modal overlay), close the modal
-          this.closeModal(modal.getAttribute('id'));
+          modalInstance.closeModal(modal.getAttribute('id'));
         });
       }
+    }, {
+      key: 'escListen',
+      value: function escListen() {
+        var modalInstance = this;
 
-      // Listen for when 'esc' key is pressed
-      //   document.addEventListener('keydown', function (event) {
-      //
-      //     // Close the currently open modal when 'esc' key is pressed
-      //     if (event.which === 27 && currentModal) {
-      //       event.preventDefault();
-      //       closeModal(currentModal);
-      //     }
-      //   }, false);
+        // Listen for when 'esc' key is pressed
+        document.addEventListener('keydown', function (event) {
 
-
+          // Close the currently open modal when 'esc' key is pressed
+          if (event.which === 27 && modalInstance.currentModal) {
+            event.preventDefault();
+            modalInstance.closeModal(modalInstance.currentModal);
+          }
+        });
+      }
     }, {
       key: 'initialize',
       value: function initialize() {
-
         if (!this.modals) {
           return;
         }
@@ -217,11 +260,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var btnsOpenModal = document.querySelectorAll('.dcf-btn-open-modal');
         var btnsCloseModal = document.querySelectorAll('.dcf-btn-close-modal');
         var modalsContent = document.querySelectorAll('.dcf-modal-content');
-        var skipNav = document.getElementById('dcf-skip-nav');
-        var header = document.getElementById('dcf-header');
-        var main = document.getElementById('dcf-main');
-        var footer = document.getElementById('dcf-footer');
-        var nonModals = [skipNav, header, main, footer];
 
         var currentBtn = null;
         var currentModal = null;
@@ -230,13 +268,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         for (var i = 0; i < btnsOpenModal.length; i++) {
           var btnOpenModal = btnsOpenModal[i];
           var modalId = btnOpenModal.getAttribute('data-opens-modal');
-          var btnId = 'dcf-btn-opens-' + modalId;
+
+          // Generate unique ID for each 'open modal' button
+          var btnId = uuidv4();
           btnOpenModal.setAttribute('id', btnId);
 
           // Buttons are disabled by default until JavaScript has loaded.
           // Remove the 'disabled' attribute to make them functional.
           btnOpenModal.removeAttribute('disabled');
-
           this.btnOpenListen(btnOpenModal, modalId, btnId);
         }
 
@@ -267,26 +306,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           modal.setAttribute('role', 'dialog');
           modal.setAttribute('tabindex', '-1');
 
-          // Add classes to each modal
-          modal.classList.add('dcf-fixed', 'dcf-pin-top', 'dcf-pin-left', 'dcf-h-100%', 'dcf-w-100%', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-center', 'dcf-invisible');
+          // Check modal for any additional classes
+          if (modal.classList.length === 1 && modal.classList.contains('dcf-modal')) {
+            // If no custom classes are present, add default background utility class to modal
+            modal.classList.add('dcf-bg-overlay-dark');
+          }
+
+          // Add default utility classes to each modal
+          modal.classList.add('dcf-fixed', 'dcf-pin-top', 'dcf-pin-left', 'dcf-h-100%', 'dcf-w-100%', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-center', 'dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
 
           // Set attribute for modal content
           modalContent.setAttribute('role', 'document');
 
-          // Add classes to modal content
-          // TODO: add these classes only if no custom classes are present in the markup
-          modalContent.classList.add('dcf-relative', 'dcf-wrapper', 'dcf-pt-7', 'dcf-pb-7');
+          // Check modal content for any additional classes
+          if (modalContent.classList.length === 1 && modalContent.classList.contains('dcf-modal-content')) {
+            // If no custom classes are present, add default utility classes to modal content
+            modalContent.classList.add('dcf-bg-white', 'dcf-relative', 'dcf-wrapper', 'dcf-pt-8', 'dcf-pb-7', 'dcf-h-auto', 'dcf-overflow-y-auto');
+          }
 
-          // Add classes and attributes to each 'close' button
-          // TODO: add these classes only if no custom classes are present in the markup
-          btnCloseModal.classList.add('dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
+          // Check each 'close' button for any additional classes
+          if (btnCloseModal.classList.length === 1 && btnCloseModal.classList.contains('dcf-btn-close-modal')) {
+            // If no custom classes are present, add default utility classes to 'close' button
+            btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
+          }
 
           // Set attributes for each 'close' button
           btnCloseModal.setAttribute('type', 'button');
           btnCloseModal.setAttribute('aria-label', 'Close');
 
+          this.escListen();
           this.overlayListen(modal, modalContent);
-
           this.btnCloseListen(btnCloseModal, modal);
         }
       }
