@@ -8,13 +8,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 ;(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory);
+    define(['./dcf-uuidGen'], factory);
   } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-    module.exports = factory();
+    module.exports = factory(require('./dcf-uuidGen'));
   } else {
-    root.dcfModal = factory();
+    root.dcfModal = factory(root.dcfHelperUuidv4);
   }
-})(undefined, function () {
+})(undefined, function (uuidv4) {
   var bodyScrollLock = require('body-scroll-lock');
   var disableBodyScroll = bodyScrollLock.disableBodyScroll;
   var enableBodyScroll = bodyScrollLock.enableBodyScroll;

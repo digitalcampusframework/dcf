@@ -1,12 +1,12 @@
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory);
+    define(['./dcf-uuidGen'], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory();
+    module.exports = factory(require('./dcf-uuidGen'));
   } else {
-    root.dcfModal = factory();
+    root.dcfModal = factory(root.dcfHelperUuidv4);
   }
-}(this, function() {
+}(this, function(uuidv4) {
 const bodyScrollLock = require('body-scroll-lock');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
