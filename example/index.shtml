@@ -44,43 +44,6 @@
     </div>
 
     <!-- InstanceBeginEditable name="maincontentarea" -->
-
-    <div class="dcf-mt-10 dcf-mb-10">
-
-      <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-1" type="button" disabled>Open Modal 1</button>
-      <div class="dcf-modal" id="test-modal-1" hidden>
-        <div class="dcf-modal-content">
-          <h2>1. First element must be heading</h2>
-          <!-- Modal content starts here -->
-          <p>This is my modal content. <a href="#">Fusce</a> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Curabitur blandit <a href="#">tempus porttitor</a>. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-          <!-- Modal content ends here -->
-          <button class="dcf-btn-close-modal">Close</button>
-        </div>
-      </div>
-
-
-      <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-2" type="button" disabled>Open Modal 2</button>
-      <div class="dcf-modal" id="test-modal-2" hidden>
-        <div class="dcf-modal-content">
-          <h2>2. First element must be heading</h2>
-          <!-- Modal content starts here -->
-          <p>This is my modal content. Fusce dapibus, tellus ac <a href="#">cursus commodo</a>, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus <a href="#">porttitor</a>. Cras justo odio, dapibus ac facilisis in, egestas <a href="#">eget quam</a>.</p>
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-<p>Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.</p>
-<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.</p>
-          <!-- Modal content ends here -->
-          <button class="dcf-btn-close-modal dcf-btn dcf-btn-tertiary dcf-absolute dcf-pin-top dcf-pin-right dcf-z-1 dcf-lh-1">
-            <svg class="dcf-h-5 dcf-w-5 dcf-fill-current" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24">
-              <path d="M20.5 4.2L4.2 20.5c-.2.2-.5.2-.7 0-.2-.2-.2-.5 0-.7L19.8 3.5c.2-.2.5-.2.7 0 .2.2.2.5 0 .7z"></path>
-              <path d="M3.5 4.2l16.3 16.3c.2.2.5.2.7 0s.2-.5 0-.7L4.2 3.5c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7z"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-    </div>
-
     <p class="dcf-txt-lg dcf-w-max-lg">This documentation, like the framework itself, is a work in progress. Expect additions, edits and even some subtractions as the framework continues to evolve in the coming months.</p>
     <p class="dcf-mt-6 dcf-w-max-lg"><a href="#example-elements">Element</a> styles are applied directly to an element, while <a href="#example-objects">object</a>, <a href="#example-components">component</a> and <a href="#example-utilities">utility</a> styles are applied by adding classes to the elements in the markup. These classes are prefixed with the <code>dcf-</code> namespace to avoid code collisions with third-party or custom styles. Please prefix your own custom styles with a namespace unique to your organization.</p>
 
@@ -1464,6 +1427,7 @@
             <li><a href="#example-components-inline-lists">Inline Lists</a></li>
           </ul>
         </li>
+        <li><a href="#example-components-modals">Modals</a></li>
         <li><a href="#example-components-pagination">Pagination</a></li>
         <li><a href="#example-components-tables">Tables</a>
           <ul>
@@ -2027,6 +1991,75 @@
         </nav>
       </div>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-lists">Lists</a> (Elements)</p>
+
+      <h3 class="dcf-mt-8" id="example-components-modals">Modals</h3>
+      <dl class="dcf-w-max-lg dcf-mb-6">
+        <dt><code>.dcf-modal</code></dt>
+        <dd>Each modal requires a unique <code>id</code> which must also match the value of the <code>data-opens-modal</code> attribute of any button(s) that will open the modal. This also functions as the overlay background of the open modal.</dd>
+        <dt><code>.dcf-modal-wrapper</code></dt>
+        <dd>This wrapper includes the modal header and modal content and excludes the modal overlay background.</dd>
+        <dt><code>.dcf-modal-header</code></dt>
+        <dd>The header contains the modal&rsquo;s heading and the button to close the modal.</dd>
+        <dt><code>.dcf-modal-content</code></dt>
+        <dd>Modal content should be placed inside this <code>div</code>.</dd>
+        <dt><code>.dcf-btn-open-modal</code></dt>
+        <dd>This button opens a modal. Its <code>data-opens-modal</code> attribute value should match the <code>id</code> of the target modal to open. The <code>disabled</code> attribute must be included. If the JavaScript fails to load, modals are inoperable and the <code>disabled</code> attribute conveys to users the button&rsquo;s disabled state. If/when the JavaScript loads, it will remove the <code>disabled</code> attribute.</dd>
+        <dt><code>.dcf-btn-close-modal</code></dt>
+        <dd>This button is located in the modal content and closes the currently open modal.</dd>
+      </dl>
+
+      <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-1" type="button" disabled>Open Modal 1</button>
+      <div class="dcf-modal" id="test-modal-1" hidden>
+        <div class="dcf-modal-wrapper">
+          <header class="dcf-modal-header">
+          	<h2>Example Modal 1</h2>
+          	<button class="dcf-btn-close-modal">Close</button>
+          </header>
+          <div class="dcf-modal-content">
+            <p>This is my modal content. <a href="#">Fusce</a> dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Curabitur blandit <a href="#">tempus porttitor</a>. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-2" type="button" disabled>Open Modal 2</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-2" type="button" disabled>Open Modal 2</button>
+      <div class="dcf-modal" id="test-modal-2" hidden>
+        <div class="dcf-modal-wrapper">
+          <header class="dcf-modal-header">
+          	<h2>Example Modal 2</h2>
+            <button class="dcf-btn-close-modal dcf-btn dcf-btn-tertiary dcf-absolute dcf-pin-top dcf-pin-right dcf-z-1 dcf-lh-1">
+              <svg class="dcf-h-5 dcf-w-5 dcf-fill-current" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M20.5 4.2L4.2 20.5c-.2.2-.5.2-.7 0-.2-.2-.2-.5 0-.7L19.8 3.5c.2-.2.5-.2.7 0 .2.2.2.5 0 .7z"></path>
+                <path d="M3.5 4.2l16.3 16.3c.2.2.5.2.7 0s.2-.5 0-.7L4.2 3.5c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7z"></path>
+              </svg>
+            </button>
+          </header>
+          <div class="dcf-modal-content">
+            <p>This is my modal content. Fusce dapibus, tellus ac <a href="#">cursus commodo</a>, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus <a href="#">porttitor</a>. Cras justo odio, dapibus ac facilisis in, egestas <a href="#">eget quam</a>.</p>
+  <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+  <p>Cras mattis consectetur purus sit amet fermentum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla.</p>
+  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.</p>
+            <button class="dcf-btn dcf-btn-primary dcf-btn-open-modal" data-opens-modal="test-modal-1" type="button" disabled>Open Modal 1</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="dcf-mt-6">While developers can &ndash; and should &ndash; add classes to style modals as needed, at a minimum, a modal requires the following markup for functionality:</p>
+<pre><code>&lt;button class="dcf-btn-open-modal" data-opens-modal="my-unique-modal-id" type="button" disabled&gt;Open Modal&lt;/button&gt;&lt;
+&lt;div class="dcf-modal" id="my-unique-modal-id" hidden&gt;
+  &lt;div class="dcf-modal-wrapper"&gt;
+    &lt;header class="dcf-modal-header"&gt;
+      &lt;h2&gt;Your modal heading&lt;/h2&gt;
+      &lt;button class="dcf-btn-close-modal"&gt;Close&lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div class="dcf-modal-content"&gt;
+      &lt;!-- Modal content goes here --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
 
       <h3 class="dcf-mt-8" id="example-components-pagination">Pagination</h3>
       <p>See <a href="#example-components-inline-lists">Inline Lists</a> (Components)</p>
