@@ -102,8 +102,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var firstTabFocusEl = tabFocusEls[0];
         var lastTabFocusEl = tabFocusEls[tabFocusEls.length - 1];
 
-        // Send focus to the first focusable element in the modal content
-        firstTabFocusEl.focus();
+        // Send focus to the modal
+        thisModal.focus();
 
         // Trap focus inside the modal content
         thisModal.addEventListener('keydown', function (e) {
