@@ -3,24 +3,7 @@
 //////////////////////////////
 
 
-// !Modal Overlay
-.dcf-modal-overlay {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transition: none;
-  width: 100%;
+// !Modal
+.dcf-modal {
   z-index: 100149;
-}
-
-
-// !Modal Content
-.dcf-modal-content {
-  height: auto;
-  max-height: 100%;
-  width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
 }

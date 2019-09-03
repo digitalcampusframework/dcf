@@ -1,0 +1,7 @@
+/////////////////////////////////////
+// !CORE / UTILITIES / POINTER EVENTS
+/////////////////////////////////////
+
+
+.dcf-pointer-events-auto { @include pointer-events-auto(!important); }
+.dcf-pointer-events-none { @include pointer-events-none(!important); }

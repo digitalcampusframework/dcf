@@ -1,0 +1,46 @@
+///////////////////////////////
+// !THEME / COMPONENTS / MODALS
+///////////////////////////////
+
+
+// !Modal
+.example .dcf-modal[aria-hidden="true"] {
+  transition: opacity $timing-fade-out $easing-fade-out;
+}
+
+
+.example .dcf-modal[aria-hidden="false"] {
+  transition: opacity $timing-fade-in $easing-fade-in;
+}
+
+
+// !Modal Wrapper
+.example .dcf-modal-wrapper {
+  @include bg-white;
+  max-height: 75vh;
+  width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
+}
+
+
+// !Modal Header
+.example .dcf-modal-header {
+  @include bg-white;
+}
+
+
+.example .dcf-modal-header::after {
+  background-image: linear-gradient($white, fade-out($white, 1));
+  content: '';
+  @include h-4;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+
+// !Modal Content
+.example .dcf-modal-content > *:last-child {
+  margin-bottom: 0;
+}
