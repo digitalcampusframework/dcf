@@ -447,18 +447,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: 'overlayListen',
-      value: function overlayListen(modal, modalContent) {
+      value: function overlayListen(modal, modalWrapper) {
         var modalInstance = this;
 
         // Listen for clicks on the open modal
         modal.addEventListener('click', function (event) {
 
-          // If the click is in modal content, leave the modal open
-          if (modalContent.contains(event.target)) {
+          // If the click is in modal wrapper, leave the modal open
+          if (modalWrapper.contains(event.target)) {
             return;
           }
 
-          // If the click is outside the modal content (on the modal overlay), close the modal
+          // If the click is outside the modal wrapper (on the modal overlay), close the modal
           modalInstance.closeModal(modal.getAttribute('id'));
         });
       }
@@ -488,7 +488,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var body = document.querySelector('body');
         var btnsOpenModal = document.querySelectorAll('.dcf-btn-open-modal');
         var btnsCloseModal = document.querySelectorAll('.dcf-btn-close-modal');
+        var modalsWrapper = document.querySelectorAll('.dcf-modal-wrapper');
         var modalsContent = document.querySelectorAll('.dcf-modal-content');
+        var modalsHeader = document.querySelectorAll('.dcf-modal-header');
 
         var currentBtn = null;
         var currentModal = null;
@@ -511,13 +513,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // Loop through all modals
         for (var _i = 0; _i < this.modals.length; _i++) {
           var modal = this.modals[_i];
+          var modalWrapper = modalsWrapper[_i];
           var modalContent = modalsContent[_i];
+          var modalHeader = modalsHeader[_i];
           var btnCloseModal = btnsCloseModal[_i];
           var _modalId = modal.id;
           var modalHeadingId = _modalId + '-heading';
 
-          // Get all headings in each modal
-          var modalHeadings = modalContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
+          // Get all headings in each modal header
+          var modalHeadings = modalHeader.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
           // Set ID on the first heading of each modal
           modalHeadings[0].id = modalHeadingId;
@@ -544,13 +548,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // Add default utility classes to each modal
           modal.classList.add('dcf-fixed', 'dcf-pin-top', 'dcf-pin-left', 'dcf-h-100%', 'dcf-w-100%', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-center', 'dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
 
-          // Set attribute for modal content
-          modalContent.setAttribute('role', 'document');
+          // Set attribute for modal wrapper
+          modalWrapper.setAttribute('role', 'document');
 
-          // Check modal content for any additional classes
-          if (modalContent.classList.length === 1 && modalContent.classList.contains('dcf-modal-content')) {
-            // If no custom classes are present, add default utility classes to modal content
-            modalContent.classList.add('dcf-bg-white', 'dcf-relative', 'dcf-wrapper', 'dcf-pt-8', 'dcf-pb-7', 'dcf-h-auto', 'dcf-overflow-y-auto');
+          // Check modal wrapper for any additional classes
+          if (modalWrapper.classList.length === 1 && modalWrapper.classList.contains('dcf-modal-wrapper')) {
+            // If no custom classes are present, add default utility classes to modal wrapper
+            modalWrapper.classList.add('dcf-h-auto', 'dcf-overflow-y-auto');
+          }
+
+          // Check modal header for any additional classes
+          if (modalHeader.classList.length === 1 && modalHeader.classList.contains('dcf-modal-header')) {
+            // If no custom classes are present, add default utility classes to modal header
+            modalHeader.classList.add('dcf-wrapper', 'dcf-pt-8', 'dcf-sticky', 'dcf-pin-top');
           }
 
           // Check each 'close' button for any additional classes
@@ -559,12 +569,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
           }
 
+          // Check modal content for any additional classes
+          if (modalContent.classList.length === 1 && modalContent.classList.contains('dcf-modal-content')) {
+            // If no custom classes are present, add default utility classes to modal content
+            modalContent.classList.add('dcf-wrapper', 'dcf-pb-8');
+          }
+
           // Set attributes for each 'close' button
           btnCloseModal.setAttribute('type', 'button');
           btnCloseModal.setAttribute('aria-label', 'Close');
 
           this.escListen();
-          this.overlayListen(modal, modalContent);
+          this.overlayListen(modal, modalWrapper);
           this.btnCloseListen(btnCloseModal, modal);
         }
       }
