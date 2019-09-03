@@ -2060,6 +2060,7 @@
 &lt;/div&gt;
 </code></pre>
 
+      <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-elements-buttons">Buttons</a> (Elements), <a href="#example-elements-headings">Headings</a> (Elements), <a href="#example-objects-wrapper">Wrapper</a> (Objects), <a href="#example-components-headings">Headings</a> (Components)</p>
 
       <h3 class="dcf-mt-8" id="example-components-pagination">Pagination</h3>
       <p>See <a href="#example-components-inline-lists">Inline Lists</a> (Components)</p>
