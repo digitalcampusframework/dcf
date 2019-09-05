@@ -244,19 +244,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     root.dcfModal = factory(root.dcfHelperUuidv4);
   }
 })(undefined, function (uuidv4) {
-  var bodyScrollLock = require('body-scroll-lock');
-  var disableBodyScroll = bodyScrollLock.disableBodyScroll;
-  var enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
   var Modal = function () {
     /**
      * class constructor
      * @param {modals} modals of selected modals
      */
-    function Modal(modals) {
+    function Modal(modals, bodyScrollLock) {
       _classCallCheck(this, Modal);
 
       this.modals = modals;
+      this.disableBodyScroll = null;
+      this.enableBodyScroll = null;
+      if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+        this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
+        this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
+      }
     }
 
     /**
@@ -314,7 +316,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
 
         // Prevent body from scrolling
-        disableBodyScroll(thisModal);
+        if (this.disableBodyScroll) {
+          this.disableBodyScroll(thisModal);
+        }
 
         // Add `.dcf-modal-is-open` helper class to body
         body.classList.add('dcf-modal-is-open');
@@ -419,7 +423,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Allow body to scroll
-        enableBodyScroll(thisModal);
+        if (this.enableBodyScroll) {
+          this.enableBodyScroll(thisModal);
+        }
       }
     }, {
       key: 'btnOpenListen',
@@ -478,6 +484,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
+      key: 'generateUUID',
+      value: function generateUUID() {
+        var d = new Date().getTime();
+        var d2 = performance && performance.now && performance.now() * 1000 || 0;
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16;
+          if (d > 0) {
+            r = (d + r) % 16 | 0;
+            d = Math.floor(d / 16);
+          } else {
+            r = (d2 + r) % 16 | 0;
+            d2 = Math.floor(d2 / 16);
+          }
+          return (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
+        });
+      }
+    }, {
       key: 'initialize',
       value: function initialize() {
         if (!this.modals) {
@@ -501,7 +524,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var modalId = btnOpenModal.getAttribute('data-opens-modal');
 
           // Generate unique ID for each 'open modal' button
-          var btnId = uuidv4();
+          var btnId = this.generateUUID();
           btnOpenModal.setAttribute('id', btnId);
 
           // Buttons are disabled by default until JavaScript has loaded.
@@ -592,7 +615,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   return Modal;
 });
 
-},{"./dcf-uuidGen":3,"body-scroll-lock":5}],3:[function(require,module,exports){
+},{"./dcf-uuidGen":3}],3:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -657,10 +680,11 @@ var exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 
 var modals = document.querySelectorAll('.dcf-modal');
-var exampleModal = new Modal(modals);
+var bodyScrollLock = require('body-scroll-lock');
+var exampleModal = new Modal(modals, bodyScrollLock);
 exampleModal.initialize();
 
-},{"dcf-lazyLoad":1,"dcf-modal":2}],5:[function(require,module,exports){
+},{"body-scroll-lock":5,"dcf-lazyLoad":1,"dcf-modal":2}],5:[function(require,module,exports){
 !function(e,t){if("function"==typeof define&&define.amd)define(["exports"],t);else if("undefined"!=typeof exports)t(exports);else{var o={};t(o),e.bodyScrollLock=o}}(this,function(exports){"use strict";function r(e){if(Array.isArray(e)){for(var t=0,o=Array(e.length);t<e.length;t++)o[t]=e[t];return o}return Array.from(e)}Object.defineProperty(exports,"__esModule",{value:!0});var l=!1;if("undefined"!=typeof window){var e={get passive(){l=!0}};window.addEventListener("testPassive",null,e),window.removeEventListener("testPassive",null,e)}var d="undefined"!=typeof window&&window.navigator&&window.navigator.platform&&/iP(ad|hone|od)/.test(window.navigator.platform),c=[],u=!1,a=-1,s=void 0,v=void 0,f=function(t){return c.some(function(e){return!(!e.options.allowTouchMove||!e.options.allowTouchMove(t))})},m=function(e){var t=e||window.event;return!!f(t.target)||(1<t.touches.length||(t.preventDefault&&t.preventDefault(),!1))},o=function(){setTimeout(function(){void 0!==v&&(document.body.style.paddingRight=v,v=void 0),void 0!==s&&(document.body.style.overflow=s,s=void 0)})};exports.disableBodyScroll=function(i,e){if(d){if(!i)return void console.error("disableBodyScroll unsuccessful - targetElement must be provided when calling disableBodyScroll on IOS devices.");if(i&&!c.some(function(e){return e.targetElement===i})){var t={targetElement:i,options:e||{}};c=[].concat(r(c),[t]),i.ontouchstart=function(e){1===e.targetTouches.length&&(a=e.targetTouches[0].clientY)},i.ontouchmove=function(e){var t,o,n,r;1===e.targetTouches.length&&(o=i,r=(t=e).targetTouches[0].clientY-a,!f(t.target)&&(o&&0===o.scrollTop&&0<r?m(t):(n=o)&&n.scrollHeight-n.scrollTop<=n.clientHeight&&r<0?m(t):t.stopPropagation()))},u||(document.addEventListener("touchmove",m,l?{passive:!1}:void 0),u=!0)}}else{n=e,setTimeout(function(){if(void 0===v){var e=!!n&&!0===n.reserveScrollBarGap,t=window.innerWidth-document.documentElement.clientWidth;e&&0<t&&(v=document.body.style.paddingRight,document.body.style.paddingRight=t+"px")}void 0===s&&(s=document.body.style.overflow,document.body.style.overflow="hidden")});var o={targetElement:i,options:e||{}};c=[].concat(r(c),[o])}var n},exports.clearAllBodyScrollLocks=function(){d?(c.forEach(function(e){e.targetElement.ontouchstart=null,e.targetElement.ontouchmove=null}),u&&(document.removeEventListener("touchmove",m,l?{passive:!1}:void 0),u=!1),c=[],a=-1):(o(),c=[])},exports.enableBodyScroll=function(t){if(d){if(!t)return void console.error("enableBodyScroll unsuccessful - targetElement must be provided when calling enableBodyScroll on IOS devices.");t.ontouchstart=null,t.ontouchmove=null,c=c.filter(function(e){return e.targetElement!==t}),u&&0===c.length&&(document.removeEventListener("touchmove",m,l?{passive:!1}:void 0),u=!1)}else(c=c.filter(function(e){return e.targetElement!==t})).length||o()}});
 
 },{}]},{},[4])
