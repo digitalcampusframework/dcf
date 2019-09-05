@@ -35,5 +35,6 @@ const exampleLazyLoad = new LazyLoad(images, observerConfig, enterClassNames);
 exampleLazyLoad.initialize();
 
 const modals = document.querySelectorAll('.dcf-modal');
-const exampleModal = new Modal(modals);
+const bodyScrollLock = require('body-scroll-lock');
+const exampleModal = new Modal(modals, bodyScrollLock);
 exampleModal.initialize();
