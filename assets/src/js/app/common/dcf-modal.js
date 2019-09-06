@@ -17,10 +17,9 @@ class Modal {
    * Prepend modals to body so that elements outside of modal can be made inert
    * @param {string} el: the element that we are targetting
    */
-  prependBody(el) {
+  appendToBody(el) {
     const body = document.querySelector('body');
-    const firstChild = body.firstElementChild;
-    body.insertBefore(el, firstChild);
+    body.appendChild(el);
   }
 
   // Open modal
@@ -286,8 +285,8 @@ class Modal {
       // Set ID on the first heading of each modal
       modalHeadings[0].id = modalHeadingId;
 
-      // Prepend modals to body so that elements outside of modal can be made inert when modal is open
-      this.prependBody(modal);
+      // Append modals to body so that elements outside of modal can be hidden when modal is open
+      this.appendToBody(modal);
 
       // Modals are hidden by default until JavaScript has loaded.
       // Remove `hidden` attribute, then later replace with `.dcf-invisible` to allow for modal transitions.

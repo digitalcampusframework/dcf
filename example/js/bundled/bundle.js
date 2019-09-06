@@ -268,11 +268,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     _createClass(Modal, [{
-      key: 'prependBody',
-      value: function prependBody(el) {
+      key: 'appendToBody',
+      value: function appendToBody(el) {
         var body = document.querySelector('body');
-        var firstChild = body.firstElementChild;
-        body.insertBefore(el, firstChild);
+        body.appendChild(el);
       }
 
       // Open modal
@@ -547,8 +546,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // Set ID on the first heading of each modal
           modalHeadings[0].id = modalHeadingId;
 
-          // Prepend modals to body so that elements outside of modal can be made inert when modal is open
-          this.prependBody(modal);
+          // Append modals to body so that elements outside of modal can be hidden when modal is open
+          this.appendToBody(modal);
 
           // Modals are hidden by default until JavaScript has loaded.
           // Remove `hidden` attribute, then later replace with `.dcf-invisible` to allow for modal transitions.
