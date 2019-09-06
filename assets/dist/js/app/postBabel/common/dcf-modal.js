@@ -39,11 +39,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
     _createClass(Modal, [{
-      key: 'prependBody',
-      value: function prependBody(el) {
+      key: 'appendToBody',
+      value: function appendToBody(el) {
         var body = document.querySelector('body');
-        var firstChild = body.firstElementChild;
-        body.insertBefore(el, firstChild);
+        body.appendChild(el);
       }
 
       // Open modal
@@ -83,7 +82,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // Set elements outside of modal to be inert and hidden from screen readers
         nonModals.forEach(function (el, array) {
           el.setAttribute('aria-hidden', 'true');
-          el.setAttribute('inert', '');
         });
 
         // Prevent body from scrolling
@@ -102,7 +100,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
         var keycodeTab = 9;
-        var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), [href]:not([hidden]), input:not([hidden]):' + 'not([type="hidden"]):not([disabled]), select:not([hidden]):not([disabled]), text' + 'area:not([hidden]):not([disabled]), [tabindex="0"]:not([hidden]):not([disabled])' + ', summary:not([hidden]), [contenteditable]:not([hidden]), audio[controls]:not([h' + 'idden]), video[controls]:not([hidden])');
+        var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' + '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' + 'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' + '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' + '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' + 'video[controls]:not([hidden])');
         var firstTabFocusEl = tabFocusEls[0];
         var lastTabFocusEl = tabFocusEls[tabFocusEls.length - 1];
 
@@ -160,10 +158,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // Remove `.dcf-modal-is-open` helper class from body
         body.classList.remove('dcf-modal-is-open');
 
-        // Restore visibility andd functionality to elements outside of modal
+        // Restore visibility and functionality to elements outside of modal
         nonModals.forEach(function (el, array) {
           el.setAttribute('aria-hidden', 'false');
-          el.removeAttribute('inert');
         });
 
         // Set attribute for this modal
@@ -320,8 +317,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // Set ID on the first heading of each modal
           modalHeadings[0].id = modalHeadingId;
 
-          // Prepend modals to body so that elements outside of modal can be made inert when modal is open
-          this.prependBody(modal);
+          // Append modals to body so that elements outside of modal can be hidden when modal is open
+          this.appendToBody(modal);
 
           // Modals are hidden by default until JavaScript has loaded.
           // Remove `hidden` attribute, then later replace with `.dcf-invisible` to allow for modal transitions.
