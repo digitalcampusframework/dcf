@@ -100,7 +100,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
         var keycodeTab = 9;
-        var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), [href]:not([hidden]), input:not([hidden]):' + 'not([type="hidden"]):not([disabled]), select:not([hidden]):not([disabled]), text' + 'area:not([hidden]):not([disabled]), [tabindex="0"]:not([hidden]):not([disabled])' + ', summary:not([hidden]), [contenteditable]:not([hidden]), audio[controls]:not([h' + 'idden]), video[controls]:not([hidden])');
+        var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' + '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' + 'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' + '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' + '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' + 'video[controls]:not([hidden])');
         var firstTabFocusEl = tabFocusEls[0];
         var lastTabFocusEl = tabFocusEls[tabFocusEls.length - 1];
 
@@ -158,7 +158,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // Remove `.dcf-modal-is-open` helper class from body
         body.classList.remove('dcf-modal-is-open');
 
-        // Restore visibility andd functionality to elements outside of modal
+        // Restore visibility and functionality to elements outside of modal
         nonModals.forEach(function (el, array) {
           el.setAttribute('aria-hidden', 'false');
         });
