@@ -66,7 +66,6 @@ class Modal {
     // Set elements outside of modal to be inert and hidden from screen readers
     nonModals.forEach(function(el, array) {
       el.setAttribute('aria-hidden','true');
-      el.setAttribute('inert','');
     });
 
     // Prevent body from scrolling
@@ -145,7 +144,6 @@ class Modal {
     // Restore visibility andd functionality to elements outside of modal
     nonModals.forEach(function(el, array) {
       el.setAttribute('aria-hidden','false');
-      el.removeAttribute('inert');
     });
 
     // Set attribute for this modal
