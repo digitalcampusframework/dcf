@@ -15,19 +15,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     root.dcfModal = factory(root.dcfHelperUuidv4);
   }
 })(undefined, function (uuidv4) {
-  var bodyScrollLock = require('body-scroll-lock');
-  var disableBodyScroll = bodyScrollLock.disableBodyScroll;
-  var enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
   var Modal = function () {
     /**
      * class constructor
      * @param {modals} modals of selected modals
      */
-    function Modal(modals) {
+    function Modal(modals, bodyScrollLock) {
       _classCallCheck(this, Modal);
 
       this.modals = modals;
+      this.disableBodyScroll = null;
+      this.enableBodyScroll = null;
+      if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+        this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
+        this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
+      }
     }
 
     /**
@@ -85,7 +87,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
 
         // Prevent body from scrolling
-        disableBodyScroll(thisModal);
+        if (this.disableBodyScroll) {
+          this.disableBodyScroll(thisModal);
+        }
 
         // Add `.dcf-modal-is-open` helper class to body
         body.classList.add('dcf-modal-is-open');
@@ -190,7 +194,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Allow body to scroll
-        enableBodyScroll(thisModal);
+        if (this.enableBodyScroll) {
+          this.enableBodyScroll(thisModal);
+        }
       }
     }, {
       key: 'btnOpenListen',
@@ -249,6 +255,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
+      key: 'generateUUID',
+      value: function generateUUID() {
+        var d = new Date().getTime();
+        var d2 = performance && performance.now && performance.now() * 1000 || 0;
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16;
+          if (d > 0) {
+            r = (d + r) % 16 | 0;
+            d = Math.floor(d / 16);
+          } else {
+            r = (d2 + r) % 16 | 0;
+            d2 = Math.floor(d2 / 16);
+          }
+          return (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
+        });
+      }
+    }, {
       key: 'initialize',
       value: function initialize() {
         if (!this.modals) {
@@ -272,7 +295,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var modalId = btnOpenModal.getAttribute('data-opens-modal');
 
           // Generate unique ID for each 'open modal' button
-          var btnId = uuidv4();
+          var btnId = this.generateUUID();
           btnOpenModal.setAttribute('id', btnId);
 
           // Buttons are disabled by default until JavaScript has loaded.

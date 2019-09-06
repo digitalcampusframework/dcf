@@ -1,14 +1,16 @@
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
 class Modal {
   /**
    * class constructor
    * @param {modals} modals of selected modals
    */
-  constructor(modals) {
+  constructor(modals, bodyScrollLock) {
     this.modals = modals;
+    this.disableBodyScroll = null;
+    this.enableBodyScroll = null;
+    if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+      this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
+      this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
+    }
   }
 
   /**
@@ -59,7 +61,9 @@ class Modal {
     });
 
     // Prevent body from scrolling
-    disableBodyScroll(thisModal);
+    if (this.disableBodyScroll) {
+      this.disableBodyScroll(thisModal);
+    }
 
     // Add `.dcf-modal-is-open` helper class to body
     body.classList.add('dcf-modal-is-open');
@@ -163,7 +167,9 @@ class Modal {
     }
 
     // Allow body to scroll
-    enableBodyScroll(thisModal);
+    if (this.enableBodyScroll) {
+      this.enableBodyScroll(thisModal);
+    }
   }
 
   btnOpenListen(btnOpenModal, modalId, btnId) {
@@ -219,6 +225,22 @@ class Modal {
 
   }
 
+  generateUUID() {
+    var d = new Date().getTime();
+    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16;
+      if(d > 0){
+        r = (d + r)%16 | 0;
+        d = Math.floor(d/16);
+      } else {
+        r = (d2 + r)%16 | 0;
+        d2 = Math.floor(d2/16);
+      }
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
   initialize() {
     if(!this.modals) {
       return;
@@ -241,7 +263,7 @@ class Modal {
       const modalId = btnOpenModal.getAttribute('data-opens-modal');
 
       // Generate unique ID for each 'open modal' button
-      const btnId = uuidv4();
+      const btnId = this.generateUUID();
       btnOpenModal.setAttribute('id', btnId);
 
       // Buttons are disabled by default until JavaScript has loaded.
