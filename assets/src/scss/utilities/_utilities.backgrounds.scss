@@ -6,16 +6,8 @@
 // !Color
 .dcf-bg-transparent { @include bg-transparent(!important); }
 .dcf-bg-white { @include bg-white(!important); }
-
-.dcf-bg-overlay-dark,
-.dcf-bg-overlay-dark::backdrop {
-  @include bg-overlay-dark(!important);
-}
-
-.dcf-bg-overlay-light,
-.dcf-bg-overlay-light::backdrop {
-  @include bg-overlay-light(!important);
-}
+.dcf-bg-overlay-dark { @include bg-overlay-dark(!important); }
+.dcf-bg-overlay-light { @include bg-overlay-light(!important); }
 
 
 // !Position
