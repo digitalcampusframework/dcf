@@ -314,7 +314,7 @@ class Modal {
       // Check modal wrapper for any additional classes
       if (modalWrapper.classList.length === 1 && modalWrapper.classList.contains('dcf-modal-wrapper')) {
         // If no custom classes are present, add default utility classes to modal wrapper
-        modalWrapper.classList.add('dcf-h-auto', 'dcf-overflow-y-auto');
+        modalWrapper.classList.add('dcf-relative', 'dcf-h-auto', 'dcf-overflow-y-auto');
       }
 
       // Check modal header for any additional classes
