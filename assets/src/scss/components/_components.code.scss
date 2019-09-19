@@ -1,9 +1,9 @@
-////////////////////////////
-// !CORE / COMPONENTS / CODE
-////////////////////////////
+///////////////////////////
+// CORE / COMPONENTS / CODE
+///////////////////////////
 
 
 .dcf-pre {
-  background-color: rgba(0,0,0,.05);
-  @include p-4;
+  background-color: $bg-color-pre;
+  padding: $padding-pre;
 }
