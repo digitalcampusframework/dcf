@@ -6,8 +6,8 @@
 // !Color
 @mixin bg-transparent($imp:null) { background-color: transparent $imp; }
 @mixin bg-white($imp:null) { background-color: #fff $imp; }
-@mixin bg-overlay-dark($imp:null) { background-color: fade-out($color-overlay-dark,.05) $imp; }
-@mixin bg-overlay-light($imp:null) { background-color: fade-out($color-overlay-light,.05) $imp; }
+@mixin bg-overlay-dark($imp:null) { background-color: $bg-color-overlay-dark $imp; }
+@mixin bg-overlay-light($imp:null) { background-color: $bg-color-overlay-light $imp; }
 
 
 // !Position
