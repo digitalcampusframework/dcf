@@ -1,0 +1,143 @@
+//////////////////////////////////////////////////
+// CORE / COMPONENTS / FORMS - CHECKBOXES & RADIOS
+//////////////////////////////////////////////////
+
+
+// Custom styled checkboxes https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox/
+// and radio buttons https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button/
+
+.dcf-input-checkbox,
+.dcf-input-radio {
+  margin-bottom: $margin-bottom-checkbox-radio;
+  position: relative;
+}
+
+
+// Hide the actual input, toggled by label instead
+.dcf-input-checkbox input[type="checkbox"],
+.dcf-input-radio input[type="radio"] {
+  cursor: pointer;
+  height: 1px;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  z-index: 1;
+}
+
+
+// Style label for checkboxes and radios
+.dcf-input-checkbox label,
+.dcf-input-radio label {
+  cursor: pointer;
+  padding-left: $padding-left-checkbox-radio;
+  touch-action: manipulation;
+  @if (to-number($height-width-checkbox-radio) < to-number(#{ms(4)}em)) {
+    vertical-align: top;
+  } @else {
+    vertical-align: text-top;
+  }
+}
+
+
+// Create checkbox, checkmark, radio input and radio button
+.dcf-input-checkbox label::before,
+.dcf-input-checkbox label::after,
+.dcf-input-radio label::before,
+.dcf-input-radio label::after {
+  content: '';
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+
+// Style checkbox and radio input
+.dcf-input-checkbox label::before,
+.dcf-input-radio label::before {
+  background-color: $bg-color-checkbox-radio;
+  border: $border-width-input solid $border-color-input;
+  height: $height-width-checkbox-radio;
+  width: $height-width-checkbox-radio;
+}
+
+
+// Style checkbox
+@if ($border-radius-input-roundrect) {
+  .dcf-input-checkbox label::before {
+    border-radius: $roundrect;
+  }
+}
+
+// Style checkmark
+.dcf-input-checkbox label::after {
+  background-color: transparent;
+  border-color: transparent $color-checkmark $color-checkmark;
+  border-style: solid;
+  border-width: 0 0 $border-width-checkmark $border-width-checkmark;
+  height: to-number($height-width-checkbox-radio) * to-number(#{ms(-8)});
+  top: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
+  width: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
+  opacity: 0;
+  transform: rotate(-45deg) translate(percentage(to-number(#{ms(-4)})), -(percentage(to-number(#{ms(-2)})))) scale(.5);
+  transition: opacity $transition-check-duration $transition-check-timing, transform $transition-check-duration $transition-check-timing;
+}
+
+
+// Style radio input and selection
+.dcf-input-radio label::before,
+.dcf-input-radio label::after {
+  @include circle;
+}
+
+
+// Style radio selection
+.dcf-input-radio label::after {
+  background-color: $color-radio;
+  height: $height-width-checkbox-radio;
+  opacity: 0;
+  top: 0;
+  transform: scale($scale-radio-start);
+  transition: transform $transition-radio-duration $transition-radio-timing;
+  width: $height-width-checkbox-radio;
+}
+
+
+// Checkbox and radio focus state
+.dcf-input-checkbox input[type="checkbox"]:focus + label::before,
+.dcf-input-radio input[type="radio"]:focus + label::before {
+  border-color: $border-color-input-focus;
+}
+
+
+// Checkbox and radio checked state
+.dcf-input-checkbox input[type="checkbox"]:checked + label::before,
+.dcf-input-radio input[type="radio"]:checked + label::before {
+  border-color: $border-color-input-checked;
+}
+
+
+// Show checkmark when checkbox is checked
+.dcf-input-checkbox input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+  transform: rotate(-45deg) translate(percentage(to-number(#{ms(-4)})), -(percentage(to-number(#{ms(-2)})))) scale(1);
+}
+
+
+// Show radio button when checked
+.dcf-input-radio input[type="radio"]:checked + label::after {
+  opacity: 1;
+  transform: scale($scale-radio-end);
+  transition: transform $transition-radio-duration $transition-radio-timing;
+}
+
+
+// Checkbox and radio hover state
+.dcf-input-checkbox input[type="checkbox"]:enabled + label:hover::before,
+.dcf-input-radio input[type="radio"]:enabled + label:hover::before,
+.dcf-input-checkbox input[type="checkbox"]:enabled:hover + label::before,
+.dcf-input-radio input[type="radio"]:enabled:hover + label::before {
+  border-color: $border-color-input-hover;
+}
