@@ -1,32 +1,31 @@
-//////////////////////////////
-// !CORE / COMPONENTS / BADGES
-//////////////////////////////
+/////////////////////////////
+// CORE / COMPONENTS / BADGES
+/////////////////////////////
 
 
-// !Default Badges
+// Default badges
 .dcf-badge {
-  background-color: $color-badge;
-  color: #fff;
+  background-color: $bg-color-badge;
+  color: $color-badge;
   display: inline-block;
-  @include txt-3xs;
-  font-size: #{ms(-4)}rem;
+  font-size: $font-size-badge;
   @include lh-1;
-  padding: #{ms(-6)}em #{ms(-4)}em; // .42em .56em
+  padding: $padding-top-badge $padding-right-badge $padding-bottom-badge $padding-left-badge;
   text-align: center;
-  vertical-align: text-top;
+  vertical-align: $vertical-align-badge;
   white-space: nowrap;
 }
 
 
-// !Roundrect Badges
+// Roundrect badges
 .dcf-badge-roundrect {
-  @include rounded;
+  border-radius: $roundrect;
 }
 
 
-// !Pill Badges
+// Pill badges
 .dcf-badge-pill {
   border-radius: $pill;
-  @include pl-3; // Increase horizontal padding to account for increased border-radius
-  @include pr-3; // Increase horizontal padding to account for increased border-radius
+  padding-left: $padding-left-badge-pill;
+  padding-right: $padding-right-badge-pill;
 }
