@@ -10,7 +10,7 @@
 .dcf-h4,
 .dcf-h5,
 .dcf-h6 {
-  @include lh-2;
+  line-height: $line-height-heading;
   margin-bottom: $margin-bottom-heading;
   margin-top: $margin-top-heading;
 

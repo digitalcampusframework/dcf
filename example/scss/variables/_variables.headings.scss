@@ -15,6 +15,10 @@ $color-heading: $gray-darkest;                // Strive for WCAG AAA (minimum co
 $font-size-subhead: #{ms(-2)}rem;             // Subhead font-size: .75rem
 
 
+// Line height
+$line-height-heading: #{ms(1)};               // Heading line-height
+
+
 // Margin
 $margin-bottom-heading: #{ms(0)}rem;          // Heading margin-bottom: 1rem
 $margin-top-heading: 0;                       // Heading margin-top: 0
