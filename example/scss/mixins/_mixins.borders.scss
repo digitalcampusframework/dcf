@@ -7,27 +7,27 @@
 
 // All Sides
 @mixin b-color($imp:null) {
-  border-color: $color-border $imp;
+  border-color: $border-color $imp;
 }
 
 // Top
 @mixin bt-color($imp:null) {
-  border-top-color: $color-border $imp;
+  border-top-color: $border-color $imp;
 }
 
 // Right
 @mixin br-color($imp:null) {
-  border-right-color: $color-border $imp;
+  border-right-color: $border-color $imp;
 }
 
 // Bottom
 @mixin bb-color($imp:null) {
-  border-bottom-color: $color-border $imp;
+  border-bottom-color: $border-color $imp;
 }
 
 // Left
 @mixin bl-color($imp:null) {
-  border-left-color: $color-border $imp;
+  border-left-color: $border-color $imp;
 }
 
 
