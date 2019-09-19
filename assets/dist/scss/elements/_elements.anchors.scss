@@ -1,29 +1,27 @@
-/////////////////////////////
-// !CORE / ELEMENTS / ANCHORS
-/////////////////////////////
+////////////////////////////
+// CORE / ELEMENTS / ANCHORS
+////////////////////////////
 
 
-// !Link
+// Link
 a:link {
-  color: $color-link;
-  transition: color $hover-off;
+  color: $color-anchor-link;
 }
 
 
-// !Visited
+// Visited
 a:visited {
-  color: $color-link-visited;
+  color: $color-anchor-visited;
 }
 
 
-// !Hover
+// Hover
 a:hover {
-  color: $color-link-hover;
-  transition: color $hover-on;
+  color: $color-anchor-hover;
 }
 
 
-// !Active
+// Active
 a:active {
-  color: $color-link-active;
+  color: $color-anchor-active;
 }

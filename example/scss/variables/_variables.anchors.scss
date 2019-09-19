@@ -1,0 +1,19 @@
+//////////////////////////////
+// THEME / VARIABLES / ANCHORS
+//////////////////////////////
+
+
+@import '_variables.colors';
+@import '_variables.body';
+
+
+// Color
+$color-anchor-link: $color-brand-alpha;
+$color-anchor-visited: darken($color-anchor-link, 10%); // TODO: finalize state colors for example theme
+$color-anchor-hover: darken($color-anchor-link, 10%);   // TODO: finalize state colors for example theme
+$color-anchor-active: darken($color-anchor-link, 10%);  // TODO: finalize state colors for example theme
+
+$color-link-inverse: $bg-color-body;
+$color-link-inverse-visited: $bg-color-body;            // TODO: finalize state colors for example theme
+$color-link-inverse-hover: $bg-color-body;              // TODO: finalize state colors for example theme
+$color-link-inverse-active: $bg-color-body;             // TODO: finalize state colors for example theme
