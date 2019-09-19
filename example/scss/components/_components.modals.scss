@@ -1,9 +1,9 @@
-///////////////////////////////
-// !THEME / COMPONENTS / MODALS
-///////////////////////////////
+//////////////////////////////
+// THEME / COMPONENTS / MODALS
+//////////////////////////////
 
 
-// !Modal
+// Modal
 .example .dcf-modal[aria-hidden="true"] {
   transition: opacity $timing-fade-out $easing-fade-out;
 }
@@ -14,22 +14,9 @@
 }
 
 
-// !Modal Wrapper
-.example .dcf-modal-wrapper {
-  @include bg-white;
-  max-height: 75vh;
-  width: calc(100% - (2 * #{ms(12)}vw)); // Match width of .dcf-wrapper
-}
-
-
-// !Modal Header
-.example .dcf-modal-header {
-  @include bg-white;
-}
-
-
+// Modal header
 .example .dcf-modal-header::after {
-  background-image: linear-gradient($white, fade-out($white, 1));
+  background-image: linear-gradient($bg-color-modal-header, fade-out($bg-color-modal-header, 1));
   content: '';
   @include h-4;
   left: 0;
@@ -37,10 +24,4 @@
   top: 100%;
   width: 100%;
   z-index: 1;
-}
-
-
-// !Modal Content
-.example .dcf-modal-content > *:last-child {
-  margin-bottom: 0;
 }

@@ -1,9 +1,29 @@
-//////////////////////////////
-// !CORE / COMPONENTS / MODALS
-//////////////////////////////
+/////////////////////////////
+// CORE / COMPONENTS / MODALS
+/////////////////////////////
 
 
-// !Modal
+// Modal
 .dcf-modal {
   z-index: 100149;
+}
+
+
+// Modal wrapper
+.dcf-modal-wrapper {
+  background-color: $bg-color-modal-wrapper;
+  max-height: $height-max-modal-wrapper;
+  width: $width-modal-wrapper;
+}
+
+
+// Modal header
+.dcf-modal-header {
+  background-color: $bg-color-modal-header;
+}
+
+
+// Modal content
+.dcf-modal-content > *:last-child {
+  margin-bottom: 0;
 }
