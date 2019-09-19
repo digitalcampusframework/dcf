@@ -1,27 +1,25 @@
-///////////////////////////////////
-// !CORE / COMPONENTS / BLOCKQUOTES
-///////////////////////////////////
+//////////////////////////////////
+// CORE / COMPONENTS / BLOCKQUOTES
+//////////////////////////////////
 
 
 .dcf-blockquote {
-  @include mb-7;
-  margin-left: 0;
-  margin-right: 0;
+  margin: $margin-top-blockquote $margin-right-blockquote $margin-bottom-blockquote $margin-left-blockquote;
   position: relative;
 }
 
 
 .dcf-blockquote::before {
   content: open-quote;
-  font-size: #{ms(16)}em; // 9.97em
+  font-size: $font-size-blockquote-open-quote;
   @include lh-1;
   position: absolute;
 }
 
 
 .dcf-blockquote p {
-  font-size: #{ms(2)}em; // 1.33em
-  padding-top: #{ms(9)}em; // 3.56em
+  font-size: $font-size-blockquote-p;
+  padding-top: $padding-top-blockquote-p;
 }
 
 
@@ -30,9 +28,9 @@
 }
 
 
-// !Attribution
+// Attribution
 .dcf-attribution {
-  @include mt-4;
+  margin-top: $margin-top-attribution;
 }
 
 
