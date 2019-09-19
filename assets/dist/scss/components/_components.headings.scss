@@ -1,6 +1,6 @@
-////////////////////////////////
-// !CORE / COMPONENTS / HEADINGS
-////////////////////////////////
+///////////////////////////////
+// CORE / COMPONENTS / HEADINGS
+///////////////////////////////
 
 
 // !Headings
@@ -11,15 +11,15 @@
 .dcf-h5,
 .dcf-h6 {
   @include lh-2;
-  margin-bottom: #{ms(0)}rem; // 1rem
-  margin-top: 0;
+  margin-bottom: $margin-bottom-heading;
+  margin-top: $margin-top-heading;
 
   dl + &,
   ol + &,
   ul + &,
   & + &,
   p:not(.dcf-subhead) + & {
-    @include mt-5;
+    margin-top: $margin-top-heading-after-els;
   }
 
 }
@@ -27,5 +27,9 @@
 
 // !Subheads
 .dcf-subhead {
-  display: block;
+  font-size: $font-size-subhead;
+  margin-bottom: $margin-bottom-subhead;
+  @if ($text-transform-subhead == true) {
+    text-transform: uppercase;
+  }
 }
