@@ -1,15 +1,10 @@
-///////////////////////////////
-// !CORE / COMPONENTS / FIGURES
-///////////////////////////////
+//////////////////////////////
+// CORE / COMPONENTS / FIGURES
+//////////////////////////////
 
 
-// !Figure
-// .dcf-figure {
-// }
-
-
-// !Figcaption
-.dcf-figcaption {
-  color: $color-caption;
-  @include txt-xs;
+// Figcaption
+.dcf-figcaption { // TODO: deprecate .dcf-figcaption?
+  color: $color-figcaption;
+  font-size: $font-size-figcaption;
 }

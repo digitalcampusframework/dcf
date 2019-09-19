@@ -1,9 +1,16 @@
-/////////////////////////////
-// !CORE / ELEMENTS / FIGURES
-/////////////////////////////
+////////////////////////////
+// CORE / ELEMENTS / FIGURES
+////////////////////////////
 
 
-// !Figure
+// Figure
 figure {
   margin: 0;
+}
+
+
+// Figure caption
+figcaption {
+  color: $color-figcaption;
+  font-size: $font-size-figcaption;
 }
