@@ -25,7 +25,6 @@ label {
 
 select {
   display: block;
-  @include mb-4;
 }
 
 
@@ -38,4 +37,11 @@ textarea {
 
 input[type="file"] {
   width: 100%; // Prevent overflow in narrow viewports
+}
+
+
+:disabled,
+input:disabled ~ label {
+  cursor: not-allowed !important;
+  opacity: $opacity-disabled;
 }
