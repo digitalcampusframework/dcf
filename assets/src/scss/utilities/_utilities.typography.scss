@@ -3,6 +3,11 @@
 ////////////////////////////////
 
 
+// Font size
+.dcf-txt-base { @include txt-base(!important); }
+// Remaining font sizes should be configured in theme _utilities.typography
+
+
 // Horizontal text alignment
 .dcf-txt-center { @include txt-center(!important); }
 .dcf-txt-left { @include txt-left(!important); }

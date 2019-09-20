@@ -4,7 +4,6 @@
 
 
 // Font size
-.theme .dcf-txt-base { @include txt-base(!important); }
 .theme .dcf-txt-3xs { @include txt-3xs(!important); }
 .theme .dcf-txt-2xs { @include txt-2xs(!important); }
 .theme .dcf-txt-xs { @include txt-xs(!important); }
