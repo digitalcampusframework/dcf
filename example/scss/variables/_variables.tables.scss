@@ -31,6 +31,8 @@ $grid-col-gap-table-responsive: $length-vw-1; // Grid column-gap in responsive t
 
 
 // Padding
+$padding-bottom-caption: #{ms(-4)}rem;                                  // Padding-bottom for table captions
+
 $padding-right-table-cell: $length-em-6;                                // Padding-right for <th> and <td> cells
 
 $padding-left-table-bordered-striped-cell: $length-em-4;                // Padding-left for bordered and/or striped table cells
