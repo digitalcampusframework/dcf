@@ -5,7 +5,7 @@
 
 // Abbreviation
 abbr {
-  letter-spacing: .05em;
+  letter-spacing: $letter-spacing-abbr;
 }
 
 
@@ -15,11 +15,11 @@ abbr[title] {
   text-decoration: none;
 
   &::after {
-    border-bottom: 1px dotted currentColor;
+    border-bottom: $border-bottom-width-abbr-title $border-bottom-style-abbr-title $border-bottom-color-abbr-title;
     content: '';
     height: 100%;
     left: 0;
-    opacity: .5;
+    opacity: $opacity-abbr-title;
     position: absolute;
     top: 0;
     width: 100%;
