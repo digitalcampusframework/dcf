@@ -4,12 +4,12 @@
 
 
 // Link
-.example a:link {
+.theme a:link {
   transition: color $hover-off;
 }
 
 
 // Hover
-.example a:hover {
+.theme a:hover {
   transition: color $hover-on;
 }

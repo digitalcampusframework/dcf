@@ -1,28 +1,28 @@
-////////////////////////////////////
-// !THEME / COMPONENTS / NAV: TOGGLE
-////////////////////////////////////
+///////////////////////////////////
+// THEME / COMPONENTS / NAV: TOGGLE
+///////////////////////////////////
 
 
-.example .dcf-nav-toggle-btn {
+.theme .dcf-nav-toggle-btn {
   width: 33%;
 }
 
 
-.example .dcf-nav-toggle-btn-menu {
+.theme .dcf-nav-toggle-btn-menu {
   left: 0;
 }
 
 
 @include mq(md, max, width) {
 
-  .example .dcf-nav-toggle-group {
+  .theme .dcf-nav-toggle-group {
     display: flex;
     width: 25%;
     z-index: 2;
   }
 
 
-  .example .dcf-nav-toggle-group::after {
+  .theme .dcf-nav-toggle-group::after {
     bottom: 0;
     box-shadow: 0 0 4px 0 fade-out($color-body, .75);
     content: '';
@@ -38,7 +38,7 @@
 
 @include mq(md, min, width) {
 
-  .example .dcf-nav-toggle-group {
+  .theme .dcf-nav-toggle-group {
     display: none;
   }
 

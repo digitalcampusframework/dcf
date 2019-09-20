@@ -1,23 +1,23 @@
-///////////////////////////////////
-// !THEME / UTILITIES / BACKGROUNDS
-///////////////////////////////////
+//////////////////////////////////
+// THEME / UTILITIES / BACKGROUNDS
+//////////////////////////////////
 
 
-// !Brand: Alpha
-.example-bg-brand-alpha { @include bg-brand-alpha(!important); }
+// Brand: Alpha
+.theme-bg-brand-alpha { @include bg-brand-alpha(!important); }
 
 
-// !Brand: Beta
-.example-bg-brand-beta { @include bg-brand-beta(!important); }
+// Brand: Beta
+.theme-bg-brand-beta { @include bg-brand-beta(!important); }
 
 
-// !Light
-.example-bg-gray-light { @include bg-gray-light(!important); }
-.example-bg-gray-lighter { @include bg-gray-lighter(!important); }
-.example-bg-gray-lightest { @include bg-gray-lightest(!important); }
+// Light
+.theme-bg-gray-light { @include bg-gray-light(!important); }
+.theme-bg-gray-lighter { @include bg-gray-lighter(!important); }
+.theme-bg-gray-lightest { @include bg-gray-lightest(!important); }
 
 
-// !Dark
-.example-bg-gray-dark { @include bg-gray-dark(!important); }
-.example-bg-gray-darker { @include bg-gray-darker(!important); }
-.example-bg-gray-darkest { @include bg-gray-darkest(!important); }
+// Dark
+.theme-bg-gray-dark { @include bg-gray-dark(!important); }
+.theme-bg-gray-darker { @include bg-gray-darker(!important); }
+.theme-bg-gray-darkest { @include bg-gray-darkest(!important); }

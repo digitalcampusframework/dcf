@@ -1,16 +1,16 @@
-///////////////////////////////
-// !THEME / COMPONENTS / SEARCH
-///////////////////////////////
+//////////////////////////////
+// THEME / COMPONENTS / SEARCH
+//////////////////////////////
 
 
 @include mq(md, max, width) {
 
-  .example .dcf-search {
+  .theme .dcf-search {
     display: none;
   }
 
 
-  .example .dcf-nav-toggle-btn-search {
+  .theme .dcf-nav-toggle-btn-search {
     left: 33%;
   }
 
@@ -19,7 +19,7 @@
 
 @include mq(md, min, width) {
 
-  .example .dcf-search {
+  .theme .dcf-search {
     display: flex;
   }
 

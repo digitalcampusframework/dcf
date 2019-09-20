@@ -4,18 +4,18 @@
 
 
 // Modal
-.example .dcf-modal[aria-hidden="true"] {
+.theme .dcf-modal[aria-hidden="true"] {
   transition: opacity $timing-fade-out $easing-fade-out;
 }
 
 
-.example .dcf-modal[aria-hidden="false"] {
+.theme .dcf-modal[aria-hidden="false"] {
   transition: opacity $timing-fade-in $easing-fade-in;
 }
 
 
 // Modal header
-.example .dcf-modal-header::after {
+.theme .dcf-modal-header::after {
   background-image: linear-gradient($bg-color-modal-header, fade-out($bg-color-modal-header, 1));
   content: '';
   @include h-4;
