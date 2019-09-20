@@ -9,5 +9,3 @@ module.exports = {
 	examplePath: path.resolve(__dirname, '../example'),
 	exampleBuild: path.resolve(__dirname, '../example', './build')
 }
-
-
