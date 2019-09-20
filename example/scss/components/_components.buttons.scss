@@ -17,57 +17,57 @@
 
 // Primary Button
 .example .dcf-btn-primary:visited {
-  background-color: $color-anchor-visited;
-  border-color: $color-anchor-visited;
+  background-color: $color-visited;
+  border-color: $color-visited;
 }
 
 
 .example .dcf-btn-primary:hover {
-  background-color: $color-anchor-hover;
-  border-color: $color-anchor-hover;
+  background-color: $color-hover;
+  border-color: $color-hover;
 }
 
 
 .example .dcf-btn-primary:active,
 .example .dcf-btn-primary.dcf-active {
-  background-color: $color-anchor-active;
-  border-color: $color-anchor-active;
+  background-color: $color-active;
+  border-color: $color-active;
 }
 
 
 // Secondary Button
 .example .dcf-btn-secondary:visited {
-  color: $color-anchor-visited;
+  color: $color-visited;
 }
 
 
 .example .dcf-btn-secondary:hover {
   background-color: lighten($color-button-secondary,56%);
-  color: $color-anchor-hover;
+  color: $color-hover;
 }
 
 
 .example .dcf-btn-secondary:active,
 .example .dcf-btn-secondary.dcf-active {
-  color: $color-anchor-active;
+  color: $color-active;
 }
 
 
 // Tertiary Button
 .example .dcf-btn-tertiary:visited {
-  color: $color-anchor-visited;
+  color: $color-visited;
 }
 
 
 .example .dcf-btn-tertiary:hover {
   background-color: lighten($color-button-tertiary,56%);
-  color: $color-anchor-hover;
+  color: $color-hover;
 }
 
 
 .example .dcf-btn-tertiary:active,
 .example .dcf-btn-tertiary.dcf-active {
-  color: $color-anchor-active;
+  color: $color-active;
 }
 
 

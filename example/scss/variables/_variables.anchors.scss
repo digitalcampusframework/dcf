@@ -8,12 +8,12 @@
 
 
 // Color
-$color-anchor-link: $color-brand-alpha;
-$color-anchor-visited: darken($color-anchor-link, 10%); // TODO: finalize state colors for example theme
-$color-anchor-hover: darken($color-anchor-link, 10%);   // TODO: finalize state colors for example theme
-$color-anchor-active: darken($color-anchor-link, 10%);  // TODO: finalize state colors for example theme
+$color-link: $color-brand-alpha;
+$color-visited: darken($color-link, 10%); // TODO: finalize state colors for example theme
+$color-hover: darken($color-link, 10%);   // TODO: finalize state colors for example theme
+$color-active: darken($color-link, 10%);  // TODO: finalize state colors for example theme
 
-$color-link-inverse: $bg-color-body;
-$color-link-inverse-visited: $bg-color-body;            // TODO: finalize state colors for example theme
-$color-link-inverse-hover: $bg-color-body;              // TODO: finalize state colors for example theme
-$color-link-inverse-active: $bg-color-body;             // TODO: finalize state colors for example theme
+$color-inverse-link: $bg-color-body;
+$color-inverse-visited: $bg-color-body;   // TODO: finalize state colors for example theme
+$color-inverse-hover: $bg-color-body;     // TODO: finalize state colors for example theme
+$color-inverse-active: $bg-color-body;    // TODO: finalize state colors for example theme

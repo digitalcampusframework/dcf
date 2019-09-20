@@ -10,7 +10,7 @@
 
 
 // Background color
-$bg-color-button-primary: $color-anchor-link;                           // Background color for primary button
+$bg-color-button-primary: $color-link;                                  // Background color for primary button
 $bg-color-button-secondary: $bg-color-body;                             // Background color for secondary button
 $bg-color-button-tertiary: transparent;                                 // Background color for tertiary button
 
@@ -43,8 +43,8 @@ $border-width-button: 1px;                                              // Butto
 
 // Color
 $color-button-primary: $bg-color-body;                                  // Color (text) for primary button
-$color-button-secondary: $color-anchor-link;                            // Color (text) for secondary button
-$color-button-tertiary: $color-anchor-link;                             // Color (text) for tertiary button
+$color-button-secondary: $color-link;                                   // Color (text) for secondary button
+$color-button-tertiary: $color-link;                                    // Color (text) for tertiary button
 
 $color-button-inverse-primary: inherit;                                 // Color (text) for inverse primary button
 $color-button-inverse-secondary: $bg-color-body;                        // Color (text) for inverse secondary button
