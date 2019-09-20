@@ -4,22 +4,22 @@
 
 
 :root {
-  font-size: #{$min_font_size}em;
+  font-size: #{$font-size-min}em;
   @include lh-4;
 }
 
-@media screen and (min-width: #{$min_lerp_width}em) {
+@media screen and (min-width: #{$min-width-lerp}em) {
 
   :root {
-    font-size: calc(#{$min_font_size}em + (#{$max_font_size} - #{$min_font_size}) * ( (100vw - #{$min_lerp_width}em) / ( #{$max_lerp_width} - #{$min_lerp_width})));
+    font-size: calc(#{$font-size-min}em + (#{$font-size-max} - #{$font-size-min}) * ( (100vw - #{$min-width-lerp}em) / ( #{$max-width-lerp} - #{$min-width-lerp})));
   }
 
 }
 
-@media screen and (min-width: #{$max_lerp_width}em) {
+@media screen and (min-width: #{$max-width-lerp}em) {
 
   :root {
-    font-size: #{$max_font_size}em;
+    font-size: #{$font-size-max}em;
   }
 
 }
