@@ -1,27 +1,27 @@
-///////////////////////////////
-// !CORE / UTILITIES / OVERFLOW
-///////////////////////////////
+//////////////////////////////
+// CORE / UTILITIES / OVERFLOW
+//////////////////////////////
 
 
-// !Visible
+// Visible
 .dcf-overflow-visible { @include overflow-visible(!important); }
 .dcf-overflow-x-visible { @include overflow-x-visible(!important); }  // -x
 .dcf-overflow-y-visible { @include overflow-y-visible(!important); }  // -y
 
 
-// !Hidden
+// Hidden
 .dcf-overflow-hidden { @include overflow-hidden(!important); }
-.dcf-overflow-x-hidden { @include overflow-x-hidden(!important); }  // -x
-.dcf-overflow-y-hidden { @include overflow-y-hidden(!important); }  // -y
+.dcf-overflow-x-hidden { @include overflow-x-hidden(!important); }    // -x
+.dcf-overflow-y-hidden { @include overflow-y-hidden(!important); }    // -y
 
 
-// !Auto
+// Auto
 .dcf-overflow-auto { @include overflow-auto(!important); }
-.dcf-overflow-x-auto { @include overflow-x-auto(!important); }  // -x
-.dcf-overflow-y-auto { @include overflow-y-auto(!important); }  // -y
+.dcf-overflow-x-auto { @include overflow-x-auto(!important); }        // -x
+.dcf-overflow-y-auto { @include overflow-y-auto(!important); }        // -y
 
 
-// !Scroll
+// Scroll
 .dcf-overflow-scroll { @include overflow-scroll(!important); }
-.dcf-overflow-x-scroll { @include overflow-x-scroll(!important); }  // -x
-.dcf-overflow-y-scroll { @include overflow-y-scroll(!important); }  // -y
+.dcf-overflow-x-scroll { @include overflow-x-scroll(!important); }    // -x
+.dcf-overflow-y-scroll { @include overflow-y-scroll(!important); }    // -y

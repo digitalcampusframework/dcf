@@ -1,17 +1,17 @@
-///////////////////////////////
-// !CORE / UTILITIES / POSITION
-///////////////////////////////
+//////////////////////////////
+// CORE / UTILITIES / POSITION
+//////////////////////////////
 
 
-// !Flow
-.dcf-static { @include static(!important); }      // Static
-.dcf-relative { @include relative(!important); }  // Relative
-.dcf-absolute { @include absolute(!important); }  // Absolute
-.dcf-fixed { @include fixed(!important); }        // Fixed
-.dcf-sticky { @include sticky(!important); }      // Sticky
+// Flow
+.dcf-static { @include static(!important); }          // Static
+.dcf-relative { @include relative(!important); }      // Relative
+.dcf-absolute { @include absolute(!important); }      // Absolute
+.dcf-fixed { @include fixed(!important); }            // Fixed
+.dcf-sticky { @include sticky(!important); }          // Sticky
 
 
-// !Coordinates
+// Coordinates
 .dcf-pin-top { @include pin-top(!important); }        // Pin To Top
 .dcf-pin-right { @include pin-right(!important); }    // Pin To Right
 .dcf-pin-bottom { @include pin-bottom(!important); }  // Pin To Bottom

@@ -1,9 +1,9 @@
-/////////////////////////////
-// !CORE / UTILITIES / COLORS
-/////////////////////////////
+////////////////////////////
+// CORE / UTILITIES / COLORS
+////////////////////////////
 
 
-// !Inverse (light text for dark backgrounds)
+// Inverse (light text for dark backgrounds)
 .dcf-inverse { @include inverse(!important); }
 a.dcf-inverse:link { @include inverse-link(!important); }       // Link
 a.dcf-inverse:visited { @include inverse-visited(!important); } // Visited

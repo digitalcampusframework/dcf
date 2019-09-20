@@ -1,9 +1,9 @@
-/////////////////////////////////
-// !CORE / MIXINS / BOX ALIGNMENT
-/////////////////////////////////
+////////////////////////////////
+// CORE / MIXINS / BOX ALIGNMENT
+////////////////////////////////
 
 
-// !Align Items
+// Align items
 @mixin ai-flex-start($imp:null) { align-items: flex-start $imp; }
 @mixin ai-flex-end($imp:null) { align-items: flex-end $imp; }
 @mixin ai-center($imp:null) { align-items: center $imp; }
@@ -13,7 +13,7 @@
 @mixin ai-end($imp:null) { align-items: end $imp; }
 
 
-// !Align Content
+// Align content
 @mixin ac-flex-start($imp:null) { align-content: flex-start $imp; }
 @mixin ac-flex-end($imp:null) { align-content: flex-end $imp; }
 @mixin ac-center($imp:null) { align-content: center $imp; }
@@ -25,7 +25,7 @@
 @mixin ac-end($imp:null) { align-content: end $imp; }
 
 
-// !Align Self
+// Align self
 @mixin as-auto($imp:null) { align-self: auto $imp; }
 @mixin as-flex-start($imp:null) { align-self: flex-start $imp; }
 @mixin as-flex-end($imp:null) { align-self: flex-end $imp; }
@@ -36,14 +36,14 @@
 @mixin as-end($imp:null) { align-self: end $imp; }
 
 
-// !Justify Items
+// Justify items
 @mixin ji-start($imp:null) { justify-items: start $imp; }
 @mixin ji-end($imp:null) { justify-items: end $imp; }
 @mixin ji-center($imp:null) { justify-items: center $imp; }
 @mixin ji-stretch($imp:null) { justify-items: stretch $imp; }
 
 
-// !Justify Content
+// Justify content
 @mixin jc-flex-start($imp:null) { justify-content: flex-start $imp; }
 @mixin jc-flex-end($imp:null) { justify-content: flex-end $imp; }
 @mixin jc-center($imp:null) { justify-content: center $imp; }
@@ -55,7 +55,7 @@
 @mixin jc-stretch($imp:null) { justify-content: stretch $imp; }
 
 
-// !Justify Self
+// Justify self
 @mixin js-start($imp:null) { justify-self: start $imp; }
 @mixin js-center($imp:null) { justify-self: center $imp; }
 @mixin js-end($imp:null) { justify-self: end $imp; }

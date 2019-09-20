@@ -1,14 +1,14 @@
-////////////////////////////
-// !CORE / ELEMENTS / QUOTES
-////////////////////////////
+///////////////////////////
+// CORE / ELEMENTS / QUOTES
+///////////////////////////
 
 
-// !Quotation Marks
+// Quotation marks
 body:lang(en) {
   quotes: '“' '”' '‘' '’' '“' '”' '‘' '’';
 }
 
 
-// !Inline Quotes
+// Inline quotes
 q::before { content: open-quote; }
 q::after { content: close-quote; }

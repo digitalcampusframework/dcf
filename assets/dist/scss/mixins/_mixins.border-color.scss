@@ -1,9 +1,9 @@
-////////////////////////////////
-// !CORE / MIXINS / BORDER-COLOR
-////////////////////////////////
+///////////////////////////////
+// CORE / MIXINS / BORDER-COLOR
+///////////////////////////////
 
 
-// !currentColor
+// currentColor
 @mixin b-current($imp:null) { border-color: currentColor $imp; }          // All Sides
 @mixin bt-current($imp:null) { border-top-color: currentColor $imp; }     // Top
 @mixin br-current($imp:null) { border-right-color: currentColor $imp; }   // Right
@@ -11,7 +11,7 @@
 @mixin bl-current($imp:null) { border-left-color: currentColor $imp; }    // Left
 
 
-// !Transparent
+// Transparent
 @mixin b-transparent($imp:null) { border-color: transparent $imp; }         // All Sides
 @mixin bt-transparent($imp:null) { border-top-color: transparent $imp; }    // Top
 @mixin br-transparent($imp:null) { border-right-color: transparent $imp; }  // Right

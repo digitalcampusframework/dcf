@@ -1,27 +1,27 @@
-/////////////////////////////
-// !CORE / UTILITIES / FLOATS
-/////////////////////////////
+////////////////////////////
+// CORE / UTILITIES / FLOATS
+////////////////////////////
 
 
-// !Float Right
+// Float right
 .dcf-float-right { @include float-right(!important); }
 
 
-// !Float Left
+// Float left
 .dcf-float-left { @include float-left(!important); }
 
 
-// !Clear Right
+// Clear right
 .dcf-clear-right { @include clear-right(!important); }
 
 
-// !Clear Left
+// Clear left
 .dcf-clear-left { @include clear-left(!important); }
 
 
-// !Clear Both
+// Clear both
 .dcf-clear-both { @include clear-both(!important); }
 
 
-// !Clearfix
+// Clearfix
 .dcf-clearfix { @include clearfix(!important); }

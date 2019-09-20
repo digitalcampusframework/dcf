@@ -1,43 +1,43 @@
 ///////////////////////////
-// !CORE / MIXINS / DISPLAY
+// CORE / MIXINS / DISPLAY
 ///////////////////////////
 
 
-// !None
+// None
 @mixin d-none($imp:null) { display: none $imp; }
 
 
-// !Block
+// Block
 @mixin d-block($imp:null) { display: block $imp; }
 
 
-// !Inline
+// Inline
 @mixin d-inline($imp:null) { display: inline $imp; }
 
 
-// !Inline-Block
+// Inline block
 @mixin d-inline-block($imp:null) { display: inline-block $imp; }
 
 
-// !Table
+// Table
 @mixin d-table($imp:null) { display: table $imp; }
 
 
-// !Table Cell
+// Table cell
 @mixin d-table-cell($imp:null) { display: table-cell $imp; }
 
 
-// !Flex
+// Flex
 @mixin d-flex($imp:null) { display: flex $imp; }
 
 
-// !Inline-Flex
+// Inline flex
 @mixin d-inline-flex($imp:null) { display: inline-flex $imp; }
 
 
-// !Grid
+// Grid
 @mixin d-grid($imp:null) { display: grid $imp; }
 
 
-// !Inline-Grid
+// Inline grid
 @mixin d-inline-grid($imp:null) { display: inline-grid $imp; }

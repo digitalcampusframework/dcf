@@ -1,16 +1,16 @@
-///////////////////////////////
-// !CORE / MIXINS / BACKGROUNDS
-///////////////////////////////
+//////////////////////////////
+// CORE / MIXINS / BACKGROUNDS
+//////////////////////////////
 
 
-// !Color
+// Color
 @mixin bg-transparent($imp:null) { background-color: transparent $imp; }
 @mixin bg-white($imp:null) { background-color: #fff $imp; }
 @mixin bg-overlay-dark($imp:null) { background-color: $bg-color-overlay-dark $imp; }
 @mixin bg-overlay-light($imp:null) { background-color: $bg-color-overlay-light $imp; }
 
 
-// !Position
+// Position
 @mixin bg-center($imp:null) { background-position: center $imp; }
 @mixin bg-top($imp:null) { background-position: top $imp; }
 @mixin bg-right($imp:null) { background-position: right $imp; }
@@ -22,17 +22,17 @@
 @mixin bg-left-bottom($imp:null) { background-position: left bottom $imp; }
 
 
-// !Repeat
+// Repeat
 @mixin bg-no-repeat($imp:null) { background-repeat: no-repeat $imp; }
 @mixin bg-repeat($imp:null) { background-repeat: repeat $imp; }
 @mixin bg-repeat-x($imp:null) { background-repeat: repeat-x $imp; }
 @mixin bg-repeat-y($imp:null) { background-repeat: repeat-y $imp; }
 
 
-// !Size
+// Size
 @mixin bg-contain($imp:null) { background-size: contain $imp; }
 @mixin bg-cover($imp:null) { background-size: cover $imp; }
 
 
-// !None
+// None
 @mixin bg-none($imp:null) { background: none $imp; }

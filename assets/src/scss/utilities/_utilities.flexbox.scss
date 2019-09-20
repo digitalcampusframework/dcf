@@ -1,25 +1,25 @@
-//////////////////////////////
-// !CORE / UTILITIES / FLEXBOX
-//////////////////////////////
+/////////////////////////////
+// CORE / UTILITIES / FLEXBOX
+/////////////////////////////
 
 
-// Flexbox display rules (.dcf-flex and .dcf-inlineflex) located in _utilities.display
+// Flexbox display rules located in _utilities.display
 
 
-// !Direction (Columns and Rows)
+// Direction (columns & rows)
 .dcf-flex-col { @include flex-col(!important); }
 .dcf-flex-col-rev { @include flex-col-rev(!important); }
 .dcf-flex-row { @include flex-row(!important); }
 .dcf-flex-row-rev { @include flex-row-rev(!important); }
 
 
-// !Wrap
+// Wrap
 .dcf-flex-wrap { @include flex-wrap(!important); }
 .dcf-flex-wrap-rev { @include flex-wrap-rev(!important); }
 .dcf-flex-nowrap { @include flex-nowrap(!important); }
 
 
-// !Grow & Shrink
+// Grow & shrink
 .dcf-flex-none { @include flex-none(!important); }
 .dcf-flex-initial { @include flex-initial(!important); }
 .dcf-flex-auto { @include flex-auto(!important); }

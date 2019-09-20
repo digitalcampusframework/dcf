@@ -1,9 +1,9 @@
-///////////////////////////////
-// !CORE / ELEMENTS / SUP & SUB
-///////////////////////////////
+//////////////////////////////
+// CORE / ELEMENTS / SUP & SUB
+//////////////////////////////
 
 
-// !Superscript & Subscript
+// Superscript & subscript
 sup,
 sub {
   font-size: #{ms(-3)}em; // .63em
@@ -12,13 +12,13 @@ sub {
 }
 
 
-// !Superscript
+// Superscript
 sup {
   top: -#{ms(-4)}em; // -.56em
 }
 
 
-// !Subscript
+// Subscript
 sub {
   top: #{ms(-10)}em; // .24em
 }

@@ -1,9 +1,9 @@
-//////////////////////////////
-// !CORE / UTILITIES / PADDING
-//////////////////////////////
+/////////////////////////////
+// CORE / UTILITIES / PADDING
+/////////////////////////////
 
 
-// !All Sides
+// All sides
 .dcf-p-0 { @include p-0(!important); }
 .dcf-p-1 { @include p-1(!important); }
 .dcf-p-2 { @include p-2(!important); }
@@ -17,7 +17,7 @@
 .dcf-p-10 { @include p-10(!important); }
 
 
-// !Top
+// Top
 .dcf-pt-0 { @include pt-0(!important); }
 .dcf-pt-1 { @include pt-1(!important); }
 .dcf-pt-2 { @include pt-2(!important); }
@@ -31,7 +31,7 @@
 .dcf-pt-10 { @include pt-10(!important); }
 
 
-// !Right
+// Right
 .dcf-pr-0 { @include pr-0(!important); }
 .dcf-pr-1 { @include pr-1(!important); }
 .dcf-pr-2 { @include pr-2(!important); }
@@ -45,7 +45,7 @@
 .dcf-pr-10 { @include pr-10(!important); }
 
 
-// !Bottom
+// Bottom
 .dcf-pb-0 { @include pb-0(!important); }
 .dcf-pb-1 { @include pb-1(!important); }
 .dcf-pb-2 { @include pb-2(!important); }
@@ -59,7 +59,7 @@
 .dcf-pb-10 { @include pb-10(!important); }
 
 
-// !Left
+// Left
 .dcf-pl-0 { @include pl-0(!important); }
 .dcf-pl-1 { @include pl-1(!important); }
 .dcf-pl-2 { @include pl-2(!important); }

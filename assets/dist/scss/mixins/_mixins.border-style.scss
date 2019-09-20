@@ -1,9 +1,9 @@
-////////////////////////////////
-// !CORE / MIXINS / BORDER-STYLE
-////////////////////////////////
+///////////////////////////////
+// CORE / MIXINS / BORDER-STYLE
+///////////////////////////////
 
 
-// !Solid
+// Solid
 @mixin b-solid($imp:null) { border-style: solid $imp; }         // All Sides
 @mixin bt-solid($imp:null) { border-top-style: solid $imp; }    // Top
 @mixin br-solid($imp:null) { border-right-style: solid $imp; }  // Right

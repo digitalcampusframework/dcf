@@ -1,9 +1,9 @@
-////////////////////////////////////
-// !CORE / MIXINS / HEIGHT AND WIDTH
-////////////////////////////////////
+/////////////////////////////////
+// CORE / MIXINS / HEIGHT & WIDTH
+/////////////////////////////////
 
 
-// !Height
+// Height
 @mixin h-auto($imp:null) { height: auto $imp; }
 @mixin h-0($imp:null) { height: 0 $imp; }
 @mixin h-1($imp:null) { height: $length-em-1 $imp; }
@@ -20,17 +20,17 @@
 @mixin h-100vh($imp:null) { height: 100vh $imp; }
 
 
-// !Min-Height
+// Minimum height
 @mixin h-min-0($imp:null) { min-height: 0 $imp; }
 @mixin h-min-100vh($imp:null) { min-height: 100vh $imp; }
 
 
-// !Max-Height
+// Maximum height
 @mixin h-max-100pc($imp:null) { max-height: 100% $imp; }
 @mixin h-max-100vh($imp:null) { max-height: 100vh $imp; }
 
 
-// !Width
+// Width
 @mixin w-auto($imp:null) { width: auto $imp; }
 @mixin w-0($imp:null) { width: 0 $imp; }
 @mixin w-1($imp:null) { width: $length-em-1 $imp; }
@@ -47,11 +47,11 @@
 @mixin w-100vw($imp:null) { width: 100vw $imp; }
 
 
-// !Min-Width
+// Minimum width
 @mixin w-min-0($imp:null) { min-width: 0 $imp; }
 
 
-// !Max-Width
+// Maximum width
 @mixin w-max-xs($imp:null) { max-width: #{ms(20)}rem $imp; } // [1]
 @mixin w-max-sm($imp:null) { max-width: #{ms(22)}rem $imp; } // [1]
 @mixin w-max-md($imp:null) { max-width: #{ms(24)}rem $imp; } // [1]

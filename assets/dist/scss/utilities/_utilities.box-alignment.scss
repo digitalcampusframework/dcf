@@ -1,9 +1,9 @@
-////////////////////////////////////
-// !CORE / UTILITIES / BOX ALIGNMENT
-////////////////////////////////////
+///////////////////////////////////
+// CORE / UTILITIES / BOX ALIGNMENT
+///////////////////////////////////
 
 
-// !Align Items
+// Align items
 .dcf-ai-flex-start { @include ai-flex-start(!important); }
 .dcf-ai-flex-end { @include ai-flex-end(!important); }
 .dcf-ai-center { @include ai-center(!important); }
@@ -13,7 +13,7 @@
 .dcf-ai-end { @include ai-end(!important); }
 
 
-// !Align Content
+// Align content
 .dcf-ac-flex-start { @include ac-flex-start(!important); }
 .dcf-ac-flex-end { @include ac-flex-end(!important); }
 .dcf-ac-center { @include ac-center(!important); }
@@ -25,7 +25,7 @@
 .dcf-ac-end { @include ac-end(!important); }
 
 
-// !Align Self
+// Align self
 .dcf-as-auto { @include as-auto(!important); }
 .dcf-as-flex-start { @include as-flex-start(!important); }
 .dcf-as-flex-end { @include as-flex-end(!important); }
@@ -36,14 +36,14 @@
 .dcf-as-end { @include as-end(!important); }
 
 
-// !Justify Items
+// Justify items
 .dcf-ji-start { @include ji-start(!important); }
 .dcf-ji-end { @include ji-end(!important); }
 .dcf-ji-center { @include ji-center(!important); }
 .dcf-ji-stretch { @include ji-stretch(!important); }
 
 
-// !Justify Content
+// Justify content
 .dcf-jc-flex-start { @include jc-flex-start(!important); }
 .dcf-jc-flex-end { @include jc-flex-end(!important); }
 .dcf-jc-center { @include jc-center(!important); }
@@ -55,7 +55,7 @@
 .dcf-jc-stretch { @include jc-stretch(!important); }
 
 
-// !Justify Self
+// Justify self
 .dcf-js-start { @include js-start(!important); }
 .dcf-js-center { @include js-center(!important); }
 .dcf-js-end { @include js-end(!important); }

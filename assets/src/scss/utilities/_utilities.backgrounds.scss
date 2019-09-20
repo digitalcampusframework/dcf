@@ -1,16 +1,16 @@
-//////////////////////////////////
-// !CORE / UTILITIES / BACKGROUNDS
-//////////////////////////////////
+/////////////////////////////////
+// CORE / UTILITIES / BACKGROUNDS
+/////////////////////////////////
 
 
-// !Color
+// Color
 .dcf-bg-transparent { @include bg-transparent(!important); }
 .dcf-bg-white { @include bg-white(!important); }
 .dcf-bg-overlay-dark { @include bg-overlay-dark(!important); }
 .dcf-bg-overlay-light { @include bg-overlay-light(!important); }
 
 
-// !Position
+// Position
 .dcf-bg-center { @include bg-center(!important); }
 .dcf-bg-top { @include bg-top(!important); }
 .dcf-bg-right { @include bg-right(!important); }
@@ -22,17 +22,17 @@
 .dcf-bg-left-bottom { @include bg-left-bottom(!important); }
 
 
-// !Repeat
+// Repeat
 .dcf-bg-no-repeat { @include bg-no-repeat(!important); }
 .dcf-bg-repeat { @include bg-repeat(!important); }
 .dcf-bg-repeat-x { @include bg-repeat-x(!important); }
 .dcf-bg-repeat-y { @include bg-repeat-y(!important); }
 
 
-// !Size
+// Size
 .dcf-bg-contain { @include bg-contain(!important); }
 .dcf-bg-cover { @include bg-cover(!important); }
 
 
-// !None
+// None
 .dcf-bg-none { @include bg-none(!important); }

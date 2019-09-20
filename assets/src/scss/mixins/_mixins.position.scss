@@ -1,9 +1,9 @@
-////////////////////////////
-// !CORE / MIXINS / POSITION
-////////////////////////////
+///////////////////////////
+// CORE / MIXINS / POSITION
+///////////////////////////
 
 
-// !Flow
+// Flow
 @mixin static($imp:null) { position: static $imp; }     // Static
 @mixin relative($imp:null) { position: relative $imp; } // Relative
 @mixin absolute($imp:null) { position: absolute $imp; } // Absolute
@@ -17,7 +17,7 @@
 }
 
 
-// !Coordinates
+// Coordinates
 @mixin pin-top($imp:null) { top: 0 $imp; }        // Pin To Top
 @mixin pin-right($imp:null) { right: 0 $imp; }    // Pin To Right
 @mixin pin-bottom($imp:null) { bottom: 0 $imp; }  // Pin To Bottom

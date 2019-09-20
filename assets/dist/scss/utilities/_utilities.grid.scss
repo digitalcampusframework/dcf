@@ -1,12 +1,12 @@
-///////////////////////////
-// !CORE / UTILITIES / GRID
-///////////////////////////
+//////////////////////////
+// CORE / UTILITIES / GRID
+//////////////////////////
 
 
-// Grid display rules (.dcf--d-grid and .dcf--d-inline-grid) located in _utilities.display
+// Grid display rules located in _utilities.display
 
 
-// !Grid Column Gap
+// Grid column gap
 .dcf-col-gap-1 { @include col-gap-1(!important); }
 .dcf-col-gap-2 { @include col-gap-2(!important); }
 .dcf-col-gap-3 { @include col-gap-3(!important); }
@@ -20,7 +20,7 @@
 .dcf-col-gap-vw { @include col-gap-vw(!important); }
 
 
-// !Grid Row Gap
+// Grid row gap
 .dcf-row-gap-1 { @include row-gap-1(!important); }
 .dcf-row-gap-2 { @include row-gap-2(!important); }
 .dcf-row-gap-3 { @include row-gap-3(!important); }

@@ -1,9 +1,9 @@
-/////////////////////////////
-// !CORE / COMPONENTS / LISTS
-/////////////////////////////
+////////////////////////////
+// CORE / COMPONENTS / LISTS
+////////////////////////////
 
 
-// !Bare List
+// Bare list
 .dcf-list-bare {
   // Fix list-style: none in VoiceOver and Safari: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
   list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
@@ -11,7 +11,7 @@
 }
 
 
-// !Inline List
+// Inline list
 .dcf-list-inline li {
   display: inline-block;
 }

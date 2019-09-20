@@ -1,45 +1,45 @@
 ///////
-// !ALL
+// ALL
 ///////
 
 // scss is compiled from a temporary _example/build/scss_ through the gulp tasks
 // hence the import path from core reflects that.
 
-// !Variables
+// Variables
 @import 'variables/**/*';
 
 
-// !Mixins
+// Mixins
 @import '../../../assets/dist/scss/mixins/**/*';
 @import 'mixins/**/*';
 
 
-// !Functions
+// Functions
 @import '../../../assets/dist/scss/functions/**/*';
 
 
-// !Generic
+// Generic
 @import '../../../assets/dist/scss/generic/**/*';
 
 
-// !Elements
+// Elements
 @import '../../../assets/dist/scss/elements/**/*';
 @import 'elements/**/*';
 
 
-// !Objects
+// Objects
 @import '../../../assets/dist/scss/objects/**/*';
 
 
-// !Components
+// Components
 @import '../../../assets/dist/scss/components/**/*';
 @import 'components/**/*';
 
 
-// !JavaScript
+// JavaScript
 @import '../../../assets/dist/scss/javascript/**/*';
 
 
-// !Utilities
+// Utilities
 @import '../../../assets/dist/scss/utilities/**/*';
 @import 'utilities/**/*';

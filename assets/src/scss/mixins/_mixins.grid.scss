@@ -1,12 +1,12 @@
 ////////////////////////
-// !CORE / MIXINS / GRID
+// CORE / MIXINS / GRID
 ////////////////////////
 
 
-// Grid display rules (.dcf--d-grid and .dcf--d-inline-grid) located in _mixins.display
+// Grid display rules located in _mixins.display
 
 
-// !Grid Column Gap
+// Grid column gap
 @mixin col-gap-1($imp:null) { grid-column-gap: $length-em-1 $imp; }
 @mixin col-gap-2($imp:null) { grid-column-gap: $length-em-2 $imp; }
 @mixin col-gap-3($imp:null) { grid-column-gap: $length-em-3 $imp; }
@@ -20,7 +20,7 @@
 @mixin col-gap-vw($imp:null) { grid-column-gap: $length-vw-1 $imp; }
 
 
-// !Grid Row Gap
+// Grid row gap
 @mixin row-gap-1($imp:null) { grid-row-gap: $length-em-1 $imp; }
 @mixin row-gap-2($imp:null) { grid-row-gap: $length-em-2 $imp; }
 @mixin row-gap-3($imp:null) { grid-row-gap: $length-em-3 $imp; }

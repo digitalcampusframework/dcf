@@ -1,9 +1,9 @@
-/////////////////////////
-// !CORE / OBJECTS / GRID
-/////////////////////////
+////////////////////////
+// CORE / OBJECTS / GRID
+////////////////////////
 
 
-// !Grid Fallback Styles
+// Grid fallback styles
 // Flexbox styles for browsers that don't support CSS Grid
 
 .dcf-grid,
@@ -382,7 +382,7 @@
 }
 
 
-// !CSS Grid
+// CSS Grid
 
 @supports (display: grid) {
 

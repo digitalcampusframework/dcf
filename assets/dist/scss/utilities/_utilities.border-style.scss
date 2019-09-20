@@ -1,10 +1,10 @@
-///////////////////////////////////
-// !CORE / UTILITIES / BORDER-STYLE
-///////////////////////////////////
+//////////////////////////////////
+// CORE / UTILITIES / BORDER-STYLE
+//////////////////////////////////
 
 
-// !Solid
-.dcf-b-solid { @include b-solid(!important); }    // All Sides
+// Solid
+.dcf-b-solid { @include b-solid(!important); }    // All sides
 .dcf-bt-solid { @include bt-solid(!important); }  // Top
 .dcf-br-solid { @include br-solid(!important); }  // Right
 .dcf-bb-solid { @include bb-solid(!important); }  // Bottom

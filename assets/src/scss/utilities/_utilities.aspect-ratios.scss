@@ -1,22 +1,22 @@
-////////////////////////////////////
-// !CORE / UTILITIES / ASPECT RATIOS
-////////////////////////////////////
+///////////////////////////////////
+// CORE / UTILITIES / ASPECT RATIOS
+///////////////////////////////////
 
 
-// !Maintain aspect ratio
+// Maintain aspect ratio
 .dcf-ratio { @include ratio(!important); }
 
 
-// !Child
+// Child
 .dcf-ratio-child { @include ratio-child(!important); }
 
 
-// !Aspect Ratios
-.dcf-ratio-16x9::before { @include ratio-16x9(!important); }  // 16×9 Landscape
-.dcf-ratio-9x16::before { @include ratio-9x16(!important); }  // 9×16 Portrait
-.dcf-ratio-4x3::before { @include ratio-4x3(!important); }    // 4×3  Landscape
-.dcf-ratio-3x4::before { @include ratio-3x4(!important); }    // 3×4  Portrait
-.dcf-ratio-1x1::before { @include ratio-1x1(!important); }    // 1×1  Square
+// Aspect ratios
+.dcf-ratio-16x9::before { @include ratio-16x9(!important); }        // 16×9 Landscape
+.dcf-ratio-9x16::before { @include ratio-9x16(!important); }        // 9×16 Portrait
+.dcf-ratio-4x3::before { @include ratio-4x3(!important); }          // 4×3  Landscape
+.dcf-ratio-3x4::before { @include ratio-3x4(!important); }          // 3×4  Portrait
+.dcf-ratio-1x1::before { @include ratio-1x1(!important); }          // 1×1  Square
 
 
 @include mq(sm, min, width) {

@@ -1,18 +1,18 @@
-///////////////////////////////////
-// !CORE / UTILITIES / BORDER-COLOR
-///////////////////////////////////
+//////////////////////////////////
+// CORE / UTILITIES / BORDER-COLOR
+//////////////////////////////////
 
 
-// !currentColor
-.dcf-b-current { @include b-current(!important); }    // All Sides
-.dcf-bt-current { @include bt-current(!important); }  // Top
-.dcf-br-current { @include br-current(!important); }  // Right
-.dcf-bb-current { @include bb-current(!important); }  // Bottom
-.dcf-bl-current { @include bl-current(!important); }  // Left
+// currentColor
+.dcf-b-current { @include b-current(!important); }            // All sides
+.dcf-bt-current { @include bt-current(!important); }          // Top
+.dcf-br-current { @include br-current(!important); }          // Right
+.dcf-bb-current { @include bb-current(!important); }          // Bottom
+.dcf-bl-current { @include bl-current(!important); }          // Left
 
 
-// !Transparent
-.dcf-b-transparent { @include b-transparent(!important); }    // All Sides
+// Transparent
+.dcf-b-transparent { @include b-transparent(!important); }    // All sides
 .dcf-bt-transparent { @include bt-transparent(!important); }  // Top
 .dcf-br-transparent { @include br-transparent(!important); }  // Right
 .dcf-bb-transparent { @include bb-transparent(!important); }  // Bottom

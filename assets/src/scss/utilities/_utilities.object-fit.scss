@@ -1,15 +1,15 @@
-/////////////////////////////////
-// !CORE / UTILITIES / OBJECT-FIT
-/////////////////////////////////
+////////////////////////////////
+// CORE / UTILITIES / OBJECT-FIT
+////////////////////////////////
 
 
-// !Contain
+// Contain
 .dcf-obj-fit-contain { @include obj-fit-contain(!important); }
 
 
-// !Cover
+// Cover
 .dcf-obj-fit-cover { @include obj-fit-cover(!important); }
 
 
-// !None
+// None
 .dcf-obj-fit-none { @include obj-fit-none(!important); }

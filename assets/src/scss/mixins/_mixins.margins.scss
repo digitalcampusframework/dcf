@@ -1,9 +1,9 @@
-///////////////////////////
-// !CORE / MIXINS / MARGINS
-///////////////////////////
+//////////////////////////
+// CORE / MIXINS / MARGINS
+//////////////////////////
 
 
-// !All Sides
+// All sides
 @mixin m-auto($imp:null) { margin: auto $imp; }
 @mixin m-0($imp:null) { margin: 0 $imp; }
 @mixin m-1($imp:null) { margin: $length-em-1 $imp; }
@@ -18,7 +18,7 @@
 @mixin m-10($imp:null) { margin: $length-em-10 $imp; }
 
 
-// !Top
+// Top
 @mixin mt-auto($imp:null) { margin-top: auto $imp; }
 @mixin mt-0($imp:null) { margin-top: 0 $imp; }
 @mixin mt-1($imp:null) { margin-top: $length-em-1 $imp; }
@@ -33,7 +33,7 @@
 @mixin mt-10($imp:null) { margin-top: $length-em-10 $imp; }
 
 
-// !Right
+// Right
 @mixin mr-auto($imp:null) { margin-right: auto $imp; }
 @mixin mr-0($imp:null) { margin-right: 0 $imp; }
 @mixin mr-1($imp:null) { margin-right: $length-em-1 $imp; }
@@ -48,7 +48,7 @@
 @mixin mr-10($imp:null) { margin-right: $length-em-10 $imp; }
 
 
-// !Bottom
+// Bottom
 @mixin mb-auto($imp:null) { margin-bottom: auto $imp; }
 @mixin mb-0($imp:null) { margin-bottom: 0 $imp; }
 @mixin mb-1($imp:null) { margin-bottom: $length-em-1 $imp; }
@@ -63,7 +63,7 @@
 @mixin mb-10($imp:null) { margin-bottom: $length-em-10 $imp; }
 
 
-// !Left
+// Left
 @mixin ml-auto($imp:null) { margin-left: auto $imp; }
 @mixin ml-0($imp:null) { margin-left: 0 $imp; }
 @mixin ml-1($imp:null) { margin-left: $length-em-1 $imp; }

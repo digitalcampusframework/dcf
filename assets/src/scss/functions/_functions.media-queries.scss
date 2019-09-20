@@ -1,16 +1,16 @@
-////////////////////////////////////
-// !CORE / FUNCTIONS / MEDIA QUERIES
-////////////////////////////////////
+///////////////////////////////////
+// CORE / FUNCTIONS / MEDIA QUERIES
+///////////////////////////////////
 
 
-// !Strip units
+// Strip units
 // Derived from Bourbon by thoughtbot (http://bourbon.io)
 @function _mq-strip-units($val) {
   @return ($val / ($val * 0 + 1));
 }
 
 
-// !Pixels to Ems
+// Pixels to ems
 // Derived from Bourbon by thoughtbot (http://bourbon.io)
 @function _mq-em($pxval, $base: $mq-em-base) {
   @if not unitless($pxval) {
@@ -23,7 +23,7 @@
 }
 
 
-// !mq-get Function
+// mq-get function
 @function mq-get($breakpoint, $ems: false) {
   @if map-has-key($mq-breakpoints, $breakpoint) {
     $value: map-get($mq-breakpoints, $breakpoint);

@@ -1,9 +1,9 @@
-///////////////////////////////////////
-// !CORE / UTILITIES / HEIGHT AND WIDTH
-///////////////////////////////////////
+////////////////////////////////////
+// CORE / UTILITIES / HEIGHT & WIDTH
+////////////////////////////////////
 
 
-// !Height
+// Height
 .dcf-h-auto { @include h-auto(!important); }
 .dcf-h-0 { @include h-0(!important); }
 .dcf-h-1 { @include h-1(!important); }
@@ -20,17 +20,17 @@
 .dcf-h-100vh { @include h-100vh(!important); }
 
 
-// !Min-Height
+// Minimum height
 .dcf-h-min-0 { @include h-min-0(!important); }
 .dcf-h-min-100vh { @include h-min-100vh(!important); }
 
 
-// !Max-Height
+// Maximum height
 .dcf-h-max-100\% { @include h-max-100pc(!important); } // .dcf-h-max-100%
 .dcf-h-max-100vh { @include h-max-100vh(!important); }
 
 
-// !Width
+// Width
 .dcf-w-auto { @include w-auto(!important); }
 .dcf-w-0 { @include w-0(!important); }
 .dcf-w-1 { @include w-1(!important); }
@@ -47,11 +47,11 @@
 .dcf-w-100vw { @include w-100vw(!important); }
 
 
-// !Min-Width
+// Minimum width
 .dcf-w-min-0 { @include w-min-0(!important); }
 
 
-// !Max-Width
+// Maximum width
 .dcf-w-max-xs { @include w-max-xs(!important); }
 .dcf-w-max-sm { @include w-max-sm(!important); }
 .dcf-measure, .dcf-w-max-md { @include w-max-md(!important); } // TODO: deprecate .dcf-measure

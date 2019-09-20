@@ -1,9 +1,9 @@
-//////////////////////////////
-// !CORE / MIXINS / TYPOGRAPHY
-//////////////////////////////
+/////////////////////////////
+// CORE / MIXINS / TYPOGRAPHY
+/////////////////////////////
 
 
-// !Font-Size
+// Font size
 @mixin txt-base($imp:null) { font-size: #{ms(0)}rem $imp; }
 @mixin txt-3xs($imp:null) { font-size: #{ms(-4)}em $imp; }
 @mixin txt-2xs($imp:null) { font-size: #{ms(-3)}em $imp; }
@@ -25,13 +25,13 @@
 @mixin txt-6xl($imp:null) { font-size: #{ms(12)}em $imp; }
 
 
-// !Horizontal Text Alignment
+// Horizontal text alignment
 @mixin txt-center($imp:null) { text-align: center $imp; }
 @mixin txt-left($imp:null) { text-align: left $imp; }
 @mixin txt-right($imp:null) { text-align: right $imp; }
 
 
-// !Vertical Text Alignment
+// Vertical text alignment
 @mixin txt-baseline($imp:null) { vertical-align: baseline $imp; }
 @mixin txt-top($imp:null) { vertical-align: top $imp; }
 @mixin txt-middle($imp:null) { vertical-align: middle $imp; }
@@ -40,7 +40,7 @@
 @mixin txt-text-bottom($imp:null) { vertical-align: text-bottom $imp; }
 
 
-// Text Decoration
+// Text decoration
 @mixin txt-decor-none($imp:null) { text-decoration: none $imp; }
 
 @mixin txt-decor-hover-on($imp:null) {
@@ -52,7 +52,7 @@
 }
 
 
-// !Text Wrap
+// Text wrap
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
 
 @mixin word-wrap($imp:null) {
@@ -70,31 +70,31 @@
 }
 
 
-// !Font Style
+// Font style
 @mixin roman($imp:null) { font-style: normal $imp; }
 @mixin italic($imp:null) { font-style: italic $imp; }
 
 
-// !Font Weight
+// Font weight
 @mixin regular($imp:null) { font-weight: normal $imp; }
 @mixin bold($imp:null) { font-weight: bold $imp; }
 
 
-// !Line Height
+// Line height
 @mixin lh-1($imp:null) { line-height: #{ms(0)} $imp; }
 @mixin lh-2($imp:null) { line-height: #{ms(1)} $imp; }
 @mixin lh-3($imp:null) { line-height: #{ms(2)} $imp; }
 @mixin lh-4($imp:null) { line-height: #{ms(3)} $imp; }
 
 
-// !Text Transform
+// Text transform
 @mixin capitalize($imp:null) { text-transform: capitalize $imp; }
 @mixin lowercase($imp:null) { text-transform: lowercase $imp; }
 @mixin uppercase($imp:null) { text-transform: uppercase $imp; }
 @mixin case-reset($imp:null) { text-transform: none $imp; }
 
 
-// !Writing Mode
+// Writing mode
 @mixin txt-vertical-lr($imp:null) {
   transform: translateY(-100%) rotateZ(90deg);
   transform-origin: 0 100%;

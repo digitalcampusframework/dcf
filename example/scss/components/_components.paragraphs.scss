@@ -3,6 +3,7 @@
 //////////////////////////////////
 
 
+// Drop cap
 .theme .dcf-dropcap::first-letter {
   font-size: #{ms(11)}em; // 4.74em
   line-height: #{ms(-3)}; // .63 -- then, adjust line-height for Chrome and Safari

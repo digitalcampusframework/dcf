@@ -1,9 +1,9 @@
-//////////////////////////////
-// !CORE / MIXINS / OBJECT-FIT
-//////////////////////////////
+/////////////////////////////
+// CORE / MIXINS / OBJECT-FIT
+/////////////////////////////
 
 
-// !Contain
+// Contain
 @mixin obj-fit-contain($imp:null) {
   height: 100% $imp;
   object-fit: contain $imp;
@@ -11,7 +11,7 @@
 }
 
 
-// !Cover
+// Cover
 @mixin obj-fit-cover($imp:null) {
   height: 100% $imp;
   object-fit: cover $imp;
@@ -19,7 +19,7 @@
 }
 
 
-// !None
+// None
 @mixin obj-fit-none($imp:null) {
   height: 100% $imp;
   object-fit: none $imp;

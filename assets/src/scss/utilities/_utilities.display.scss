@@ -1,13 +1,13 @@
-//////////////////////////////
-// !CORE / UTILITIES / DISPLAY
-//////////////////////////////
+/////////////////////////////
+// CORE / UTILITIES / DISPLAY
+/////////////////////////////
 
 
-// !None
+// None
 .dcf-d-none { @include d-none(!important); }
 
 
-// None (Screen, Show When Printed)
+// None (screen, show when printed)
 .dcf-d-none\@screen {
 
   @media only screen {
@@ -17,35 +17,35 @@
 }
 
 
-// !Block
+// Block
 .dcf-d-block { @include d-block(!important); }
 
 
-// !Inline
+// Inline
 .dcf-d-inline { @include d-inline(!important); }
 
 
-// !Inline-Block
+// Inline block
 .dcf-d-inline-block { @include d-inline-block(!important); }
 
 
-// !Table
+// Table
 .dcf-d-table { @include d-table(!important); }
 
 
-// !Table Cell
+// Table cell
 .dcf-d-table-cell { @include d-table-cell(!important); }
 
 
-// !Flex
+// Flex
 .dcf-d-flex { @include d-flex(!important); }
 
 
-// !Inline-Flex
+// Inline flex
 .dcf-d-inline-flex { @include d-inline-flex(!important); }
 
 
-// !Grid
+// Grid
 .dcf-d-grid {
 
   @supports (display: grid) {
@@ -55,7 +55,7 @@
 }
 
 
-// !Inline-Grid
+// Inline grid
 .dcf-d-inline-grid {
 
   @supports (display: inline-grid) {
