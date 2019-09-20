@@ -10,11 +10,8 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  @include txt-md;
+  font-size: $font-size-button;
   @include lh-4;
-  @include pb-2;
-  @include pl-4;
-  @include pr-4;
-  @include pt-2;
+  padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
   text-align: center;
 }
