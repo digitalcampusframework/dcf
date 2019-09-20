@@ -27,6 +27,9 @@
 // Input group button
 .dcf-input-group .dcf-btn {
   align-items: center;
+  @if ($border-radius-input-roundrect) {
+    @include sharp-left;
+  }
   display: flex;
 }
 
@@ -34,7 +37,37 @@
 // Input group add-on
 .dcf-input-group-addon {
   align-items: center;
+  background-color: $bg-color-input-group-addon;
+  border: $border-width-input-group-addon $border-style-input-group-addon $border-color-input-group-addon;
   display: flex;
+  padding: $padding-top-input-group-addon $padding-right-input-group-addon $padding-bottom-input-group-addon $padding-left-input-group-addon;
   text-align: center;
   white-space: nowrap;
+}
+
+
+// If inputs are roundrects, square off corners internal to input groups
+@if ($border-radius-input-roundrect) {
+
+  .dcf-input-group input:not(:first-child) {
+    @include sharp-left;
+  }
+
+
+  .dcf-input-group input:not(:last-child) {
+    @include sharp-right;
+  }
+
+
+  .dcf-input-group-addon:first-child {
+    @include rounded-left;
+    border-right-width: 0;
+  }
+
+
+  .dcf-input-group-addon:last-child {
+    @include rounded-right;
+    border-left-width: 0;
+  }
+
 }
