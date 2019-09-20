@@ -1,8 +1,17 @@
-///////////////////////////////////////
-// !CORE / ELEMENTS / DETAILS & SUMMARY
-///////////////////////////////////////
+//////////////////////////////////////
+// CORE / ELEMENTS / DETAILS & SUMMARY
+//////////////////////////////////////
+
+
+details {
+  margin-bottom: $margin-bottom-details;
+}
 
 
 summary {
-  font-weight: bold;
+  font-size: $font-size-summary;
+  @if ($font-weight-summary-bold) {
+    font-weight: bold;
+  }
+  margin-bottom: $margin-bottom-summary;
 }
