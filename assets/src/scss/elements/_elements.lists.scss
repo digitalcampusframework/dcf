@@ -5,20 +5,20 @@
 
 ol,
 ul {
-  @include pl-6;
+  padding-left: $padding-left-ol-ul;
 }
 
 
 dl,
 ol,
 ul {
-  @include mb-4;
-  margin-top: 0;
+  margin-bottom: $margin-bottom-dl-ol-ul;
+  margin-top: $margin-top-dl-ol-ul;
 
   dl,
   ol,
   ul {
-    @include mt-3;
+    margin-top: $margin-top-nested-dl-ol-ul;
   }
 
 }
@@ -27,31 +27,35 @@ ul {
 li,
 dt,
 dd {
-  margin-top: 0;
+  margin-top: $margin-top-li-dt-dd;
 }
 
 
 li {
-  @include mb-2;
+  margin-bottom: $margin-bottom-li;
 }
 
 
-dt {
-  font-weight: bold;
+@if ($font-weight-dt-bold) {
+
+  dt {
+    font-weight: bold;
+  }
+
 }
 
 
 dd {
-  @include ml-0;
+  margin-left: $margin-left-dd;
 }
 
 
 dt,
 dd {
-  @include mb-1;
+  margin-bottom: $margin-bottom-dt-dd;
 }
 
 
 dd + dt {
-  @include mt-4;
+  margin-top: $margin-top-dd-plus-dt;
 }
