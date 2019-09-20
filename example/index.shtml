@@ -1556,6 +1556,41 @@
         <input class="dcf-btn dcf-btn-tertiary" type="submit" value="Submit">
       </div>
 
+      <h4 class="dcf-mt-6" id="example-components-inverse-primary-buttons">Inverse Primary Buttons</h4>
+      <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-btn-inverse-primary</code></dt>
+        <dd>Use the primary modifier to give standard emphasis to a button on a dark background.</dd>
+      </dl>
+      <div class="dcf-w-max-lg dcf-mt-6 dcf-pt-5 dcf-pr-6 dcf-pb-5 dcf-pl-6 example-bg-gray-darker">
+        <a class="dcf-btn dcf-btn-inverse-primary" href="#" role="button">Link</a>
+        <button class="dcf-btn dcf-btn-inverse-primary" type="submit">Button</button>
+        <input class="dcf-btn dcf-btn-inverse-primary" type="button" value="Input">
+        <input class="dcf-btn dcf-btn-inverse-primary" type="submit" value="Submit">
+      </div>
+
+      <h4 class="dcf-mt-6" id="example-components-inverse-secondary-buttons">Inverse Secondary Buttons</h4>
+      <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-btn-inverse-secondary</code></dt>
+        <dd>Visually de-emphasize buttons on a dark background by using the inverse secondary modifier.</dd>
+      </dl>
+      <div class="dcf-w-max-lg dcf-mt-6 dcf-pt-5 dcf-pr-6 dcf-pb-5 dcf-pl-6 example-bg-gray-darker">
+        <a class="dcf-btn dcf-btn-inverse-secondary" href="#" role="button">Link</a>
+        <button class="dcf-btn dcf-btn-inverse-secondary" type="submit">Button</button>
+        <input class="dcf-btn dcf-btn-inverse-secondary" type="button" value="Input">
+        <input class="dcf-btn dcf-btn-inverse-secondary" type="submit" value="Submit">
+      </div>
+
+      <h4 class="dcf-mt-6" id="example-components-inverse-tertiary-buttons">Inverse Tertiary Buttons</h4>
+      <dl class="dcf-w-max-lg">
+        <dt><code>.dcf-btn-inverse-tertiary</code></dt>
+        <dd>Visually de-emphasize buttons  on a dark background by using the inverse tertiary modifier.</dd>
+      </dl>
+      <div class="dcf-w-max-lg dcf-mt-6 dcf-pt-5 dcf-pr-6 dcf-pb-5 dcf-pl-6 example-bg-gray-darker">
+        <a class="dcf-btn dcf-btn-inverse-tertiary" href="#" role="button">Link</a>
+        <button class="dcf-btn dcf-btn-inverse-tertiary" type="submit">Button</button>
+        <input class="dcf-btn dcf-btn-inverse-tertiary" type="button" value="Input">
+        <input class="dcf-btn dcf-btn-inverse-tertiary" type="submit" value="Submit">
+      </div>
 
       <h4 class="dcf-mt-6" id="example-components-button-sizes">Button Sizes</h4>
       <p class="dcf-w-max-lg">Buttons can be resized as needed by using the font-size utilities to make buttons <a href="#example-utilities-font-size">larger or smaller</a>.</p>
