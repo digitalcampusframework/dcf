@@ -5,7 +5,7 @@
 
 // Font size
 @mixin txt-base($imp:null) { font-size: #{ms(0)}rem $imp; }
-// Base font-size should act as a reset and always be 1 rem
+// Base font-size should act as a reset and always be 1rem
 // Remaining font sizes should be configured in theme _mixins.typography
 
 
