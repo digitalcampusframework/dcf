@@ -3,12 +3,12 @@
 /////////////////////////////
 
 
-h1 { @include txt-h1; } // 2.37em
-h2 { @include txt-h2; } // 2em
-h3 { @include txt-h3; } // 1.77em
-h4 { @include txt-h4; } // 1.5em
-h5 { @include txt-h5; } // 1.33em
-h6 { @include txt-h6; } // 1.13em
+h1 { @include txt-h1; }
+h2 { @include txt-h2; }
+h3 { @include txt-h3; }
+h4 { @include txt-h4; }
+h5 { @include txt-h5; }
+h6 { @include txt-h6; }
 
 
 h1,
@@ -18,16 +18,16 @@ h4,
 h5,
 h6 {
   color: $color-heading;
-  @include lh-2;
-  margin-bottom: #{ms(0)}rem; // 1rem
-  margin-top: 0;
+  line-height: $line-height-heading;
+  margin-bottom: $margin-bottom-heading;
+  margin-top: $margin-top-heading;
 
   dl + &,
   ol + &,
   ul + &,
   & + &,
   p:not(.dcf-subhead) + & {
-    @include mt-5;
+    margin-top: $margin-top-heading-after-els;
   }
 
 }
