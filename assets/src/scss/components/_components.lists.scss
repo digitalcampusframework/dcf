@@ -18,5 +18,5 @@
 
 
 .dcf-list-inline li:not(:last-child) {
-  @include mr-2;
+  margin-right: $margin-right-li-inline;
 }
