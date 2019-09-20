@@ -5,4 +5,6 @@
 
 small {
   @include txt-base;
+  // The small element is intended for inline text meant to be treated as fine print.
+  // It does not change the font-size. Use font-size utilities to size text as needed.
 }
