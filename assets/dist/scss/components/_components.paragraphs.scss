@@ -6,5 +6,9 @@
 // Drop cap
 .dcf-dropcap::first-letter {
   float: left;
-  // Apply custom styling in theme _components.paragraphs
+  font-size: $font-size-drop-cap;
+  line-height: $line-height-drop-cap;
+  margin-top: $margin-top-drop-cap;
+  padding-left: $padding-left-drop-cap;
+  padding-right: $padding-right-drop-cap;
 }
