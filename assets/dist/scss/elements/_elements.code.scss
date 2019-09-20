@@ -37,7 +37,7 @@ pre {
 pre code {
   background-color: transparent;
   display: block;
-  overflow-x: scroll;
+  @include overflow-x-scroll;
   padding: 0;
   white-space: pre;
 }
