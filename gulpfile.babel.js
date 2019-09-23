@@ -26,7 +26,7 @@ const checkDirectory = require('./build-utils/check-directory');
 const sassCompile = require('./build-utils/sass-compile');
 const cssMinifyNewer = require('./build-utils/css-minify');
 
-import exampleTasks, { exampleBundles } from './build-utils/example-theme-gulp-tasks';
+import exampleTasks, { exampleBundles } from './build-utils/theme-gulp-tasks';
 import { copy, copyNewer, copyNewerRename } from "./build-utils/copy";
 
 /**
