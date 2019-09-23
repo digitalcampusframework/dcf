@@ -7,7 +7,7 @@ function checkDirectory (directory, callback) {
       // Create the directory, call the callback.
       fs.mkdir(directory, callback);
     } else {
-      // just in case there was a different error:
+      // Just in case there was a different error:
       callback(err)
     }
   });

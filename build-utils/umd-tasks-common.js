@@ -24,14 +24,14 @@ const noticeWidget = [
           name: 'uuidGenerator',
           amd: './dcf-uuidGen',
           cjs: './dcf-uuidGen',
-          global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
-          param: 'uuidv4' // how this dependency is called inside the module
+          global: 'dcfHelperUuidv4', // How this dependency is defined in the global scope
+          param: 'uuidv4' // How this dependency is called inside the module
         }
       ]
     },
-    exports: () => 'Notice', // the variable name that will be returned
-    namespace: () => 'dcfWidgetNotice' // how this module is named in the global scope
-    // if no exports defined, capitalized filename will be used instead
+    exports: () => 'Notice', // The variable name that will be returned
+    namespace: () => 'dcfWidgetNotice' // How this module is named in the global scope
+    // If no exports defined, capitalized filename will be used instead
   }),
   gulp.dest(buildPaths.umdCommonAppDest)
 ];
@@ -41,8 +41,8 @@ const uuidGen = [
   customPlumber('error wrapping uuidGen'),
   $.newer({ dest:buildPaths.umdCommonAppDest }),
   $.umd({
-    exports: () => 'uuidv4', // the variable name that will be returned
-    namespace: () => 'dcfHelperUuidv4' // how this module is named in the global scope
+    exports: () => 'uuidv4', // The variable name that will be returned
+    namespace: () => 'dcfHelperUuidv4' // How this module is named in the global scope
   }),
   gulp.dest(buildPaths.umdCommonAppDest)
 ];
@@ -69,8 +69,8 @@ const modal = [
           name: 'uuidGenerator',
           amd: './dcf-uuidGen',
           cjs: './dcf-uuidGen',
-          global: 'dcfHelperUuidv4', // how this dependency is defined in the global scope
-          param: 'uuidv4' // how this dependency is called inside the module
+          global: 'dcfHelperUuidv4', // How this dependency is defined in the global scope
+          param: 'uuidv4' // How this dependency is called inside the module
         }
       ]
     },
