@@ -13,23 +13,23 @@ import customPlumber from './custom-plumber';
 
 
 /* ------------------------ */
-/* EXAMPLE BROWSERIFY TASKS
+/* THEME BROWSERIFY TASKS
 /* ------------------------ */
-// with the exampleBundles array we can have more than one bundle output
-const exampleBundles = [
+// with the themeBundles array we can have more than one bundle output
+const themeBundles = [
 	{
-		entries: [`${path.join(commonPaths.examplePath, 'js', 'src')}/main-body.js`],
+		entries: [`${path.join(commonPaths.themePath, 'js', 'src')}/main-body.js`],
 		// if you need modules that are preBabel use umd-related paths from buildPaths
 		paths: [distPaths.vendorJsDest, `${path.join(distPaths.appDestPreBabel,'common')}`, `${path.join(distPaths.appDestPreBabel, 'optional')}`],
 		output: 'bundle.js', //output file name
 		extensions: ['.js', '.json'],
 		debug: true,
-		destination: path.join(commonPaths.examplePath,'js','bundled')
+		destination: path.join(commonPaths.themePath,'js','bundled')
 	}
 ];
 
 
-// browserify and watchify multiple bundle examples: https://gist.github.com/ramasilveyra/b4309edf809e55121385
+// browserify and watchify multiple bundle themes: https://gist.github.com/ramasilveyra/b4309edf809e55121385
 const createBundle = ({entries, paths, output, extensions, debug, destination}, isWatchify) => {
 
 	const opts = Object.assign(watchify.args, {entries, paths, extensions, debug});
@@ -69,18 +69,18 @@ const createBundle = ({entries, paths, output, extensions, debug, destination}, 
 
 
 /* ----------------- */
-/* EXAMPLE STYLE LINT TASKS
+/* THEME STYLE LINT TASKS
 /* ----------------- */
 /**
  * TODO breakout src to lint screen, print, mustard
- * instead of just linting everything each time the example stylelint task is ran
+ * instead of just linting everything each time the theme stylelint task is ran
  */
 function stylelint() {
-	$.fancyLog('----> //** Linting Example SCSS files');
+	$.fancyLog('----> //** Linting Theme SCSS files');
 	return $.pump([
-		gulp.src(buildPaths.exampleScssGlob),
-		customPlumber('Error Running stylelint:example:cached'),
-		$.cached('stylelint:Example'),
+		gulp.src(buildPaths.themeScssGlob),
+		customPlumber('Error Running stylelint:theme:cached'),
+		$.cached('stylelint:Theme'),
 		$.stylelint({
 			fix: true, //some errors can't be fixed automatically, also seems to be an issue if word follows a semicolon,
 			// file will be overwritten with report not sure why at this moment, use stylelintFix task to do that
@@ -92,7 +92,7 @@ function stylelint() {
 			],
 			debug: true
 		}),
-		gulp.dest(buildPaths.exampleScssLintedDest) // outputs autofixed files to build
+		gulp.dest(buildPaths.themeScssLintedDest) // outputs autofixed files to build
 	]);
 }
 
@@ -101,7 +101,7 @@ function stylelint() {
 /* ----------------- */
 /* EXPORT MODULES
 /* ----------------- */
-export { exampleBundles };
+export { themeBundles };
 
 export default {
 	stylelint,

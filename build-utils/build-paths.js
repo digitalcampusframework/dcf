@@ -8,7 +8,7 @@ const appJsDestPath = path.join(commonPaths.outputBuild, 'js', 'app');
 const appJsDestPathPreBabel = path.join(appJsDestPath, 'preBabel');
 const appJsDestPathPostBabel = path.join(appJsDestPath, 'postBabel');
 const optionalAppPath = path.join(commonPaths.outputBuild, 'js', 'app','optional');
-const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
+const themeScssSrcPath = path.join(commonPaths.themePath, 'scss');
 const coreDistCssPath = path.join(commonPaths.outputDist,'css');
 
 // Obtain paths to dependencies from package
@@ -29,12 +29,12 @@ module.exports = {
   umdCommonAppDest: path.join(appJsDestPathPreBabel, 'common'),
   umdOptionaAppDest: path.join(appJsDestPathPreBabel, 'optional'),
 
-  // example theme related build paths
-  exampleScssGlob: [`${exampleScssSrcPath}/**/*.scss`, ],
-  exampleScssLintedDest: path.join(commonPaths.exampleBuild, 'scss'),
-  exampleScreenScssEntry: path.join(commonPaths.exampleBuild,'scss', buildNames.exampleScreenSCSS),
-  exampleMustardScssEntry: path.join(commonPaths.exampleBuild,'scss',buildNames.exampleMustardSCSS),
-  examplePrintScssEntry: path.join(commonPaths.exampleBuild,'scss',buildNames.examplePrintSCSS),
-  exampleCompiledCssDir: path.join(commonPaths.exampleBuild,'css'),
-  exampleScreenConcatGlob: [path.join(commonPaths.exampleBuild,'css', buildNames.exampleScreenCSS), `${coreDistCssPath}/screen/**/*.css`]
+  // Theme related build paths
+  themeScssGlob: [`${themeScssSrcPath}/**/*.scss`, ],
+  themeScssLintedDest: path.join(commonPaths.themeBuild, 'scss'),
+  themeMainScssEntry: path.join(commonPaths.themeBuild,'scss', buildNames.themeMainSCSS),
+  themeMustardScssEntry: path.join(commonPaths.themeBuild,'scss',buildNames.themeMustardSCSS),
+  themePrintScssEntry: path.join(commonPaths.themeBuild,'scss',buildNames.themePrintSCSS),
+  themeCompiledCssDir: path.join(commonPaths.themeBuild,'css'),
+  themeMainConcatGlob: [path.join(commonPaths.themeBuild,'css', buildNames.themeMainCSS), `${coreDistCssPath}/screen/**/*.css`]
 };

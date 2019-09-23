@@ -6,6 +6,6 @@ module.exports = {
 	srcPath: path.resolve(__dirname,'../core','./src'),
 	distSrcPath:path.resolve(__dirname,'../core','./build'),
 	logPath: path.resolve(__dirname, '../logs'),
-	examplePath: path.resolve(__dirname, '../theme'),
-	exampleBuild: path.resolve(__dirname, '../theme', './build')
+	themePath: path.resolve(__dirname, '../theme'),
+	themeBuild: path.resolve(__dirname, '../theme', './build')
 }

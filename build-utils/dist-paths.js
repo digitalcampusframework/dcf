@@ -8,7 +8,7 @@ const scssPath = path.join(commonPaths.srcPath, 'scss');
 const cssPath = path.join(commonPaths.srcPath, 'css');
 const optionalAppPath = path.join(commonPaths.outputBuild, 'js', 'app', 'optional');
 const coreDistScssPath = path.join(commonPaths.outputDist, 'scss');
-const exampleScssSrcPath = path.join(commonPaths.examplePath, 'scss');
+const themeScssSrcPath = path.join(commonPaths.themePath, 'scss');
 
 //Obtain paths to dependencies from package
 
@@ -33,25 +33,25 @@ module.exports = {
 	appDestPreBabel: path.join(commonPaths.outputDist, 'js', 'app', 'preBabel'),
 	appDestPostBabel: path.join(commonPaths.outputDist, 'js', 'app', 'postBabel'),
 
-	exampleScreenCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.exampleScreenCSS),
-	exampleScreenScssWatchGlob: [
-			`${exampleScssSrcPath}/**/*.scss`,
-			`!${exampleScssSrcPath}/mustard.scss`,
-			`!${exampleScssSrcPath}/mustard/**/*.scss`,
-			`!${exampleScssSrcPath}/print.scss`,
-			`!${exampleScssSrcPath}/print/**/*.scss`
+	themeMainCssSrc: path.join(buildPaths.themeCompiledCssDir, buildNames.themeMainCSS),
+	themeMainScssWatchGlob: [
+			`${themeScssSrcPath}/**/*.scss`,
+			`!${themeScssSrcPath}/mustard.scss`,
+			`!${themeScssSrcPath}/mustard/**/*.scss`,
+			`!${themeScssSrcPath}/print.scss`,
+			`!${themeScssSrcPath}/print/**/*.scss`
 	],
-	exampleScreenCoreScssWatchGlob:[
+	themeMainCoreScssWatchGlob:[
 			`${coreDistScssPath}/**/*.scss`,
 			`!${coreDistScssPath}/mustard/**/*.scss`,
 			`!${coreDistScssPath}/print/**/*.scss`
 	],
 
-	exampleMustardScssWatchGlob: `${exampleScssSrcPath}/mustard/**/*.scss`,
+	themeMustardScssWatchGlob: `${themeScssSrcPath}/mustard/**/*.scss`,
 
-	examplePrintCssSrc: path.join(buildPaths.exampleCompiledCssDir, buildNames.examplePrintCSS),
-	examplePrintScssWatchGlob: `${exampleScssSrcPath}/print/**/*.scss`,
-	examplePrintCoreScssWatchGlob: `${coreDistScssPath}/print/**/*.scss`,
+	themePrintCssSrc: path.join(buildPaths.themeCompiledCssDir, buildNames.themePrintCSS),
+	themePrintScssWatchGlob: `${themeScssSrcPath}/print/**/*.scss`,
+	themePrintCoreScssWatchGlob: `${coreDistScssPath}/print/**/*.scss`,
 
-	exampleCssMinDest: path.join(commonPaths.examplePath, 'css'),
+	themeCssMinDest: path.join(commonPaths.themePath, 'css'),
 };
