@@ -1,0 +1,34 @@
+//////////////////////////////
+// THEME / COMPONENTS / FOOTER
+//////////////////////////////
+
+
+@supports (display: grid) {
+
+  .theme .dcf-footer-local {
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
+  }
+
+  .theme .dcf-footer-global {
+    grid-template-columns: repeat(auto-fit, minmax(#{ms(18)}em, 1fr)); // 13.29em
+  }
+
+}
+
+
+@include mq(md, max, width) {
+
+  .theme .dcf-footer-global {
+    padding-bottom: #{ms(12)}em; // 5.61em
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .theme .dcf-footer-global {
+    @include pb-6;
+  }
+
+}

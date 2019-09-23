@@ -1,0 +1,26 @@
+/////////////////////////////////////////////////
+// THEME / COMPONENTS / IDM (IDENTITY MANAGEMENT)
+/////////////////////////////////////////////////
+
+
+@include mq(md, max, width) {
+
+  .theme .dcf-idm {
+    display: none;
+  }
+
+
+  .theme .dcf-nav-toggle-btn-idm {
+    left: 66%;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .theme .dcf-idm {
+    display: flex;
+  }
+
+}

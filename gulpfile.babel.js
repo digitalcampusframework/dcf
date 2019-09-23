@@ -209,7 +209,7 @@ gulp.task('sassDist:example:screen-watch', () => {
 });
 
 
-// watch for any changes in the assets/dist/scss folder and recompile main.min.css
+// watch for any changes in the core/dist/scss folder and recompile main.min.css
 gulp.task('sassDist:example:screen-watch:core', () => {
 	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('stylelint:example:cached', 'exampleCssDist:screen'))
 });
@@ -227,7 +227,7 @@ gulp.task('sassDist:example:print-watch', () => {
 });
 
 
-// watch for any changes in the assets/dist/scss folder and recompile print.min.css
+// watch for any changes in the core/dist/scss folder and recompile print.min.css
 gulp.task('sassDist:example:print-watch:core', () => {
 	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('exampleCssDist:print'))
 });

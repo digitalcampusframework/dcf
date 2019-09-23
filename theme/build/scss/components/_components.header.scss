@@ -1,0 +1,12 @@
+//////////////////////////////
+// THEME / COMPONENTS / HEADER
+//////////////////////////////
+
+
+@include mq(md, min, width) {
+
+  .dcf-header-global-child {
+    margin-left: $length-vw-1;
+  }
+
+}
