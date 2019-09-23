@@ -16,7 +16,7 @@ const postcssObjectFitImages = require('postcss-object-fit-images');
  * @param {string} newerDest: target file for newer to compared against
  */
 function sassCompileScreenNewer (src, dest, taskName, newerDest) {
-	$.fancyLog('----> //** Compiling all.css');
+	$.fancyLog('----> //** Compiling main.css');
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
@@ -42,7 +42,7 @@ function sassCompileScreenNewer (src, dest, taskName, newerDest) {
 }
 
 function sassCompileScreen (src, dest, taskName) {
-	$.fancyLog('----> //** Compiling all.css');
+	$.fancyLog('----> //** Compiling main.css');
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),
@@ -68,7 +68,7 @@ function sassCompileScreen (src, dest, taskName) {
 
 
 function sassCompileBase (src, dest, taskName) {
-	$.fancyLog('----> //** Compiling all.css');
+	$.fancyLog('----> //** Compiling main.css');
 	return $.pump([
 		gulp.src(src),
 		customPlumber(`Error Running ${taskName}`),

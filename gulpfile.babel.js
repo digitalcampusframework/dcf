@@ -198,7 +198,7 @@ gulp.task('exampleCssDist:print', gulp.series(
 ));
 
 /** Example theme screen styles watch tasks */
-// watch for any changes in the example/scss folder and recompile all.min.css
+// watch for any changes in the example/scss folder and recompile main.min.css
 gulp.task('sassDist:example:screen-watch', () => {
 	// stylelint:example:cached will only lint changed files so it is fine to lint the entire scss folder on watch
 	gulp.watch(distPaths.exampleScreenScssWatchGlob, gulp.series('stylelint:example:cached', 'exampleCssDist:screen'))
@@ -209,7 +209,7 @@ gulp.task('sassDist:example:screen-watch', () => {
 });
 
 
-// watch for any changes in the assets/dist/scss folder and recompile all.min.css
+// watch for any changes in the assets/dist/scss folder and recompile main.min.css
 gulp.task('sassDist:example:screen-watch:core', () => {
 	gulp.watch(distPaths.exampleScreenCoreScssWatchGlob, gulp.series('stylelint:example:cached', 'exampleCssDist:screen'))
 });
