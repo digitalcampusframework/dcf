@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/debug.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<!--#include virtual="/includes/global/head-1.html" -->
+<!--#include virtual="includes/global/head-1.html" -->
 <title>Digital Campus Framework &middot; Documentation</title>
-<!--#include virtual="/includes/global/head-2.html" -->
+<!--#include virtual="includes/global/head-2.html" -->
 </head>
 <body class="debug theme" data-version="1.0">
-  <!--#include virtual="/includes/global/skip-nav.html" -->
+  <!--#include virtual="includes/global/skip-nav.html" -->
   <header class="dcf-header" id="dcf-header" role="banner">
-    <!--#include virtual="/includes/global/header-global-1.html" -->
-    <!--#include virtual="/includes/global/idm.html" -->
-    <!--#include virtual="/includes/global/search.html" -->
-    <!--#include virtual="/includes/global/header-global-2.html" -->
-    <!--#include virtual="/includes/global/logo-lockup-1.html" -->
-    <!--#include virtual="/includes/global/site-affiliation-1.html" --><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-affiliation-2.html" -->
-    <!--#include virtual="/includes/global/site-title-1.html" --><!-- InstanceBeginEditable name="titlegraphic" --><!--<a href="#"> Jane Doe Department of Accounting </a>--><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --><!--#include virtual="/includes/global/site-title-2.html" -->
-    <!--#include virtual="/includes/global/logo-lockup-2.html" -->
-    <!--#include virtual="/includes/global/nav-toggle-group.html" -->
-    <!--#include virtual="/includes/global/nav-menu-1.html" -->
-    <!--#include virtual="/includes/global/nav-toggle-btn.html" -->
+    <!--#include virtual="includes/global/header-global-1.html" -->
+    <!--#include virtual="includes/global/idm.html" -->
+    <!--#include virtual="includes/global/search.html" -->
+    <!--#include virtual="includes/global/header-global-2.html" -->
+    <!--#include virtual="includes/global/logo-lockup-1.html" -->
+    <!--#include virtual="includes/global/site-affiliation-1.html" --><!-- InstanceBeginEditable name="affiliation" --><a href="#">College of Business</a><!-- InstanceEndEditable --><!--#include virtual="includes/global/site-affiliation-2.html" -->
+    <!--#include virtual="includes/global/site-title-1.html" --><!-- InstanceBeginEditable name="titlegraphic" --><!--<a href="#"> Jane Doe Department of Accounting </a>--><!--<abbr title="Jane Doe Department of Accounting">JDDoA</abbr>--><!-- InstanceEndEditable --><!--#include virtual="includes/global/site-title-2.html" -->
+    <!--#include virtual="includes/global/logo-lockup-2.html" -->
+    <!--#include virtual="includes/global/nav-toggle-group.html" -->
+    <!--#include virtual="includes/global/nav-menu-1.html" -->
+    <!--#include virtual="includes/global/nav-toggle-btn.html" -->
     <!-- InstanceBeginEditable name="navlinks" -->
-    <!--#include virtual="/includes/local/nav-local.html" -->
+    <!--#include virtual="includes/local/nav-local.html" -->
     <!-- InstanceEndEditable -->
-    <!--#include virtual="/includes/global/nav-menu-2.html" -->
+    <!--#include virtual="includes/global/nav-menu-2.html" -->
   </header>
   <main class="dcf-wrapper" id="dcf-main" role="main" tabindex="-1">
 
@@ -3505,11 +3505,11 @@
   </main>
   <footer class="dcf-footer" id="dcf-footer" role="contentinfo">
     <!-- InstanceBeginEditable name="contactinfo" -->
-    <!--#include virtual="/includes/local/footer-local.html" -->
+    <!--#include virtual="includes/local/footer-local.html" -->
     <!-- InstanceEndEditable -->
-    <!--#include virtual="/includes/global/footer-global.html" -->
+    <!--#include virtual="includes/global/footer-global.html" -->
   </footer>
-  <!--#include virtual="/includes/global/noscript.html" -->
-  <!--#include virtual="/includes/global/js-body.html" -->
+  <!--#include virtual="includes/global/noscript.html" -->
+  <!--#include virtual="includes/global/js-body.html" -->
 </body>
 <!-- InstanceEnd --></html>
