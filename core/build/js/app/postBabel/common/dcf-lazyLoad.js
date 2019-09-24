@@ -193,7 +193,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // counter: keeps track of which images that hasn't been loaded
         this.imageCount = this.imagesList.length;
 
-        if ("loading" in HTMLImageElement.prototype) {
+        if ('loading' in HTMLImageElement.prototype) {
           // Native lazy loading IS supported, so set src-data to src
           this.loadImagesImmediately(this.imagesList, false);
         } else {
