@@ -1266,13 +1266,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-grid-thirds</code></dt>
         <dd>The grid-thirds object lays out child elements in a grid of three equal-width columns.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-thirds dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">2</span></div>
@@ -1287,13 +1287,13 @@
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">11</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">12</span></div>
         </div>
-      </figure>
+      </div>
 
       <dl class="dcf-mt-8 dcf-w-max-lg">
         <dt><code>.dcf-grid-fourths</code></dt>
         <dd>The grid-fourths object lays out child elements in a grid of four equal-width columns.</dd>
       </dl>
-      <figure class="dcf-mt-6">
+      <div class="dcf-mt-6">
         <div class="dcf-grid-fourths dcf-col-gap-4 dcf-row-gap-4">
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">1</span></div>
           <div class="dcf-d-flex dcf-ai-center dcf-jc-center dcf-pt-2 dcf-pb-2 dcf-b-solid dcf-b-1 theme-b-gray"><span class="dcf-txt-xs">2</span></div>
