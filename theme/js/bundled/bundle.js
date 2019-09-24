@@ -274,12 +274,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         body.appendChild(el);
       }
 
+      // Toggle modal
+
+    }, {
+      key: 'toggleModal',
+      value: function toggleModal(modalId, btnId) {
+        var thisModal = document.getElementById(modalId);
+        var modalOpen = thisModal.getAttribute('aria-hidden') === 'false' ? true : false;
+
+        if (modalOpen) {
+          // modal open so close it
+          this.closeModal(modalId, btnId);
+        } else {
+          // modal closed so open it
+          this.openModal(modalId, btnId);
+        }
+      }
+
       // Open modal
 
     }, {
       key: 'openModal',
       value: function openModal(modalId, openBtnId) {
-
         var body = document.querySelector('body');
         var skipNav = document.getElementById('dcf-skip-nav');
         var header = document.getElementById('dcf-header');
@@ -297,8 +313,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var thisModal = document.getElementById(modalId);
         var modalOpen = thisModal.getAttribute('aria-hidden') === 'false' ? true : false;
 
+        var modalWithNavToggleGroup = false;
         if (openBtnId) {
           this.currentBtn = openBtnId;
+          var openBtn = document.getElementById(openBtnId);
+          modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-with-nav-toggle-group') === 'true';
         }
 
         this.currentModal = modalId;
@@ -328,6 +347,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
         thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
+        // Apply modal with toggle group class if request
+        if (modalWithNavToggleGroup) {
+          thisModal.classList.add('dcf-z-modal-with-nav-toggle-group');
+        }
         var keycodeTab = 9;
         var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' + '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' + 'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' + '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' + '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' + 'video[controls]:not([hidden])');
         var firstTabFocusEl = tabFocusEls[0];
@@ -396,7 +419,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.setAttribute('aria-hidden', 'true');
 
         // Add/remove classes to this modal
-        thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
+        thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto', 'z-modal-with-nav-toggle-group');
         thisModal.classList.add('dcf-opacity-0', 'dcf-pointer-events-none');
 
         // Modal transition
@@ -425,15 +448,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }
     }, {
-      key: 'btnOpenListen',
-      value: function btnOpenListen(btnOpenModal, modalId, btnId) {
+      key: 'btnToggleListen',
+      value: function btnToggleListen(btnToggleModal, modalId, btnId) {
         var modalInstance = this;
 
         // Listen for when 'open modal' button is pressed
-        btnOpenModal.addEventListener('click', function () {
-
-          // Open modal when button is pressed
-          modalInstance.openModal(modalId, btnId);
+        btnToggleModal.addEventListener('click', function () {
+          // Toggle modal when button is pressed
+          modalInstance.toggleModal(modalId, btnId);
         }, false);
       }
     }, {
@@ -506,7 +528,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Define constants used in modal component
         var body = document.querySelector('body');
-        var btnsOpenModal = document.querySelectorAll('.dcf-btn-open-modal');
+        var btnsToggleModal = document.querySelectorAll('.dcf-btn-toggle-modal');
         var btnsCloseModal = document.querySelectorAll('.dcf-btn-close-modal');
         var modalsWrapper = document.querySelectorAll('.dcf-modal-wrapper');
         var modalsContent = document.querySelectorAll('.dcf-modal-content');
@@ -516,18 +538,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var currentModal = null;
 
         // Loop through all buttons that open modals
-        for (var i = 0; i < btnsOpenModal.length; i++) {
-          var btnOpenModal = btnsOpenModal[i];
-          var modalId = btnOpenModal.getAttribute('data-opens-modal');
+        for (var i = 0; i < btnsToggleModal.length; i++) {
+          var btnToggleModal = btnsToggleModal[i];
+          var modalId = btnToggleModal.getAttribute('data-toggles-modal');
 
           // Generate unique ID for each 'open modal' button
           var btnId = this.generateUUID();
-          btnOpenModal.setAttribute('id', btnId);
+          btnToggleModal.setAttribute('id', btnId);
 
           // Buttons are disabled by default until JavaScript has loaded.
           // Remove the 'disabled' attribute to make them functional.
-          btnOpenModal.removeAttribute('disabled');
-          this.btnOpenListen(btnOpenModal, modalId, btnId);
+          btnToggleModal.removeAttribute('disabled');
+          this.btnToggleListen(btnToggleModal, modalId, btnId);
         }
 
         // Loop through all modals

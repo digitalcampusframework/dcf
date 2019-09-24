@@ -22,9 +22,22 @@ class Modal {
     body.appendChild(el);
   }
 
+  // Toggle modal
+  toggleModal(modalId, btnId) {
+    const thisModal = document.getElementById(modalId);
+    let modalOpen = thisModal.getAttribute('aria-hidden') === 'false' ? true : false;
+
+    if (modalOpen) {
+      // modal open so close it
+      this.closeModal(modalId, btnId);
+    } else {
+      // modal closed so open it
+      this.openModal(modalId, btnId);
+    }
+  }
+
   // Open modal
   openModal(modalId, openBtnId) {
-
     const body = document.querySelector('body');
     const skipNav = document.getElementById('dcf-skip-nav');
     const header = document.getElementById('dcf-header');
@@ -42,8 +55,11 @@ class Modal {
     const thisModal = document.getElementById(modalId);
     let modalOpen = thisModal.getAttribute('aria-hidden') === 'false' ? true : false;
 
+    let modalWithNavToggleGroup = false;
     if (openBtnId) {
       this.currentBtn = openBtnId;
+      const openBtn = document.getElementById(openBtnId);
+      modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-with-nav-toggle-group') === 'true';
     }
 
     this.currentModal = modalId;
@@ -73,6 +89,10 @@ class Modal {
     thisModal.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
     thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
+    // Apply modal with toggle group class if requested
+    if (modalWithNavToggleGroup) {
+      thisModal.classList.add('dcf-z-modal-with-nav-toggle-group');
+    }
     const keycodeTab = 9;
     const tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' +
       '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' +
@@ -141,7 +161,7 @@ class Modal {
     thisModal.setAttribute('aria-hidden', 'true');
 
     // Add/remove classes to this modal
-    thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
+    thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto', 'z-modal-with-nav-toggle-group');
     thisModal.classList.add('dcf-opacity-0', 'dcf-pointer-events-none');
 
     // Modal transition
@@ -170,14 +190,13 @@ class Modal {
     }
   }
 
-  btnOpenListen(btnOpenModal, modalId, btnId) {
+  btnToggleListen(btnToggleModal, modalId, btnId) {
     let modalInstance = this;
 
     // Listen for when 'open modal' button is pressed
-    btnOpenModal.addEventListener('click', function () {
-
-      // Open modal when button is pressed
-      modalInstance.openModal(modalId, btnId);
+    btnToggleModal.addEventListener('click', function () {
+      // Toggle modal when button is pressed
+      modalInstance.toggleModal(modalId, btnId);
     }, false);
   }
 
@@ -246,7 +265,7 @@ class Modal {
 
     // Define constants used in modal component
     const body = document.querySelector('body');
-    const btnsOpenModal = document.querySelectorAll('.dcf-btn-open-modal');
+    const btnsToggleModal = document.querySelectorAll('.dcf-btn-toggle-modal');
     const btnsCloseModal = document.querySelectorAll('.dcf-btn-close-modal');
     const modalsWrapper = document.querySelectorAll('.dcf-modal-wrapper');
     const modalsContent = document.querySelectorAll('.dcf-modal-content');
@@ -256,18 +275,18 @@ class Modal {
     let currentModal = null;
 
     // Loop through all buttons that open modals
-    for (let i = 0; i < btnsOpenModal.length; i++) {
-      const btnOpenModal = btnsOpenModal[i];
-      const modalId = btnOpenModal.getAttribute('data-opens-modal');
+    for (let i = 0; i < btnsToggleModal.length; i++) {
+      const btnToggleModal = btnsToggleModal[i];
+      const modalId = btnToggleModal.getAttribute('data-toggles-modal');
 
       // Generate unique ID for each 'open modal' button
       const btnId = this.generateUUID();
-      btnOpenModal.setAttribute('id', btnId);
+      btnToggleModal.setAttribute('id', btnId);
 
       // Buttons are disabled by default until JavaScript has loaded.
       // Remove the 'disabled' attribute to make them functional.
-      btnOpenModal.removeAttribute('disabled');
-      this.btnOpenListen(btnOpenModal, modalId, btnId);
+      btnToggleModal.removeAttribute('disabled');
+      this.btnToggleListen(btnToggleModal, modalId, btnId);
     }
 
     // Loop through all modals
