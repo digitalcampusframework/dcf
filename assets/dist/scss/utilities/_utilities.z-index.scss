@@ -8,3 +8,5 @@
 .dcf-z-2 { @include z-2(!important); }
 
 // TODO: add additional values to handle modals, dropdowns, etc.
+.dcf-z-modal-fullscreen { @include z-modal-fullscreen(!important); }
+.dcf-z-modal-with-nav-toggle-group { @include z-modal-with-nav-toggle-group(!important); }
