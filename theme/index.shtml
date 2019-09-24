@@ -471,6 +471,7 @@
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -490,6 +491,7 @@
         <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -504,6 +506,7 @@
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -518,6 +521,7 @@
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -639,6 +643,7 @@
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x225 400w,
@@ -658,6 +663,7 @@
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-33%-start@md dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -677,6 +683,7 @@
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-25%-start@md dcf-ratio dcf-ratio-1x1">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1366,6 +1373,7 @@
         <div class="dcf-media">
           <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10 dcf-mr-4">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/320x320"
               data-srcset="http://via.placeholder.com/320x320 320w,
@@ -1637,6 +1645,7 @@
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
               <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="http://via.placeholder.com/400x300"
                 data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1657,6 +1666,7 @@
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
               <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="http://via.placeholder.com/400x300"
                 data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1677,6 +1687,7 @@
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
               <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="http://via.placeholder.com/400x300"
                 data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1697,6 +1708,7 @@
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
               <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="http://via.placeholder.com/400x300"
                 data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1732,6 +1744,7 @@
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1751,6 +1764,7 @@
         <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1765,6 +1779,7 @@
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -1779,6 +1794,7 @@
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
             <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="http://via.placeholder.com/400x300"
               data-srcset="http://via.placeholder.com/400x300 400w,
@@ -3119,6 +3135,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 theme-b-gray">
           <img class="dcf-ratio-child dcf-obj-fit-contain dcf-lazy-load"
+            loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
             data-src="http://via.placeholder.com/400x300"
             data-srcset="http://via.placeholder.com/100x100 100w,
@@ -3136,6 +3153,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-ratio dcf-ratio-4x3 dcf-w-10 dcf-b-solid dcf-b-1 theme-b-gray">
           <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
+            loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
             data-src="http://via.placeholder.com/400x300"
             data-srcset="http://via.placeholder.com/100x100 100w,
@@ -3165,6 +3183,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-ratio dcf-ratio-3x4 dcf-w-10 dcf-b-solid dcf-b-1 theme-b-gray">
           <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom dcf-lazy-load"
+            loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
             data-src="http://via.placeholder.com/400x300"
             data-srcset="http://via.placeholder.com/100x100 100w,
@@ -3452,6 +3471,7 @@
       <figure class="dcf-mt-6 dcf-bleed">
         <div class="dcf-ratio dcf-ratio-16x9">
           <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
             data-src="http://via.placeholder.com/400x300"
             data-srcset="http://via.placeholder.com/320x300 320w,
