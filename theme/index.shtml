@@ -552,15 +552,15 @@
           <fieldset>
             <legend>Sample Form Content</legend>
             <div>
-              <label for="theme-elements-form-name">Name</label>
+              <label for="elements-form-name">Name</label>
               <input id="elements-form-name" type="text" required>
             </div>
             <div>
-              <label for="theme-elements-form-email">Email</label>
+              <label for="elements-form-email">Email</label>
               <input id="elements-form-email" type="email" required>
             </div>
             <div>
-              <label for="theme-elements-form-institution">Institution</label>
+              <label for="elements-form-institution">Institution</label>
               <select id="elements-form-institution" name="institution">
                 <option value="unca" selected>University of Nebraska</option>
                 <option value="unl">UNL</option>
@@ -573,35 +573,35 @@
               <legend>Checkboxes</legend>
               <div>
                 <input id="elements-form-checkbox1" type="checkbox" value="0">
-                <label for="theme-elements-form-checkbox1">Checkbox 1</label>
+                <label for="elements-form-checkbox1">Checkbox 1</label>
               </div>
               <div>
                 <input id="elements-form-checkbox2" type="checkbox" value="1">
-                <label for="theme-elements-form-checkbox2">Checkbox 2</label>
+                <label for="elements-form-checkbox2">Checkbox 2</label>
               </div>
             </fieldset>
             <fieldset>
               <legend>Radio buttons</legend>
               <div>
                 <input id="elements-form-radio-1" name="helpful" type="radio" value="0">
-                <label for="theme-elements-form-radio-1">Radio 1</label>
+                <label for="elements-form-radio-1">Radio 1</label>
               </div>
               <div>
                 <input id="elements-form-radio-2" name="helpful" type="radio" value="1">
-                <label for="theme-elements-form-radio-2">Radio 2</label>
+                <label for="elements-form-radio-2">Radio 2</label>
               </div>
             </fieldset>
             <div>
-              <label for="theme-elements-form-comments">Comments</label>
+              <label for="elements-form-comments">Comments</label>
               <textarea id="elements-form-comments" cols="60" rows="5"></textarea>
             </div>
             <div>
-              <label for="theme-elements-form-datetime">Date/time</label>
+              <label for="elements-form-datetime">Date/time</label>
               <input id="elements-form-datetime" type="datetime-local">
             </div>
 
             <div>
-              <label for="theme-elements-form-input-file">File input</label>
+              <label for="elements-form-input-file">File input</label>
               <input id="elements-form-input-file" type="file">
             </div>
           </fieldset>
@@ -1815,24 +1815,24 @@
           <fieldset>
             <legend>Sample Form Content</legend>
             <div class="dcf-form-group">
-              <label for="theme-components-form-name">Name <small class="dcf-required">Required</small></label>
+              <label for="components-form-name">Name <small class="dcf-required">Required</small></label>
               <input id="components-form-name" type="text" required>
             </div>
             <div class="dcf-form-group">
-              <label for="theme-components-form-email">Email <small class="dcf-required">Required</small></label>
+              <label for="components-form-email">Email <small class="dcf-required">Required</small></label>
               <input id="components-form-email" type="email" required>
             </div>
             <div class="dcf-form-group">
-              <label for="theme-components-form-password">Password <small class="dcf-required">Required</small></label>
-              <input id="components-form-password" type="password" required aria-describedby="theme-components-form-pwd-help">
+              <label for="components-form-password">Password <small class="dcf-required">Required</small></label>
+              <input id="components-form-password" type="password" required aria-describedby="components-form-pwd-help">
               <p class="dcf-form-help" id="components-form-pwd-help">Make sure it’s a good one!</p>
             </div>
             <div class="dcf-form-group dcf-form-controls-inline">
-              <label for="theme-components-form-inline">An Inline Form Field</label>
+              <label for="components-form-inline">An Inline Form Field</label>
               <input id="components-form-inline" type="text">
             </div>
             <div class="dcf-form-group">
-              <label for="theme-components-form-institution">Institution</label>
+              <label for="components-form-institution">Institution</label>
               <select id="components-form-institution" name="institution">
                 <option value="unca" selected>University of Nebraska</option>
                 <option value="unl">UNL</option>
@@ -1886,16 +1886,16 @@
               </div>
             </fieldset>
             <div class="dcf-form-group">
-              <label for="theme-components-form-comments">Comments</label>
+              <label for="components-form-comments">Comments</label>
               <textarea id="components-form-comments" cols="60" rows="5"></textarea>
             </div>
             <div class="dcf-form-group">
-              <label for="theme-components-form-datetime">Date/time</label>
+              <label for="components-form-datetime">Date/time</label>
               <input id="components-form-datetime" type="datetime-local">
             </div>
             <div class="dcf-form-group">
-              <label for="theme-components-form-input-file">File input</label>
-              <input id="components-form-input-file" type="file" aria-describedby="theme-components-form-file-help">
+              <label for="components-form-input-file">File input</label>
+              <input id="components-form-input-file" type="file" aria-describedby="components-form-file-help">
               <p class="dcf-form-help" id="components-form-file-help">This is some placeholder block-level help text for the above input. It’s a bit lighter and easily wraps to a new line.</p>
             </div>
           </fieldset>
@@ -1934,7 +1934,7 @@
       </dl>
       <figure class="dcf-mt-6">
         <form class="dcf-form" id="input-group-addon-before" action="#" method="get">
-          <label class="dcf-mr-4" for="theme-input-group-addon-before-input">Username</label>
+          <label class="dcf-mr-4" for="input-group-addon-before-input">Username</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">@</span>
             <input id="input-group-addon-before-input" name="q" type="search" required>
@@ -1945,7 +1945,7 @@
 
       <figure class="dcf-mt-6">
         <form class="dcf-form" id="input-group-addon-after" action="#" method="get">
-          <label class="dcf-mr-4" for="theme-input-group-addon-after-input">Email</label>
+          <label class="dcf-mr-4" for="input-group-addon-after-input">Email</label>
           <div class="dcf-input-group">
             <input id="input-group-addon-after-input" name="q" type="search" required>
             <span class="dcf-input-group-addon">@example.com</span>
@@ -1956,7 +1956,7 @@
 
       <figure class="dcf-mt-6">
         <form class="dcf-form" id="input-group-addon-both" action="#" method="get">
-          <label class="dcf-mr-4" for="theme-input-group-addon-both-input">Amount</label>
+          <label class="dcf-mr-4" for="input-group-addon-both-input">Amount</label>
           <div class="dcf-input-group">
             <span class="dcf-input-group-addon">$</span>
             <input id="input-group-addon-both-input" name="q" type="search" required>
@@ -1970,7 +1970,7 @@
       <p class="dcf-w-max-lg">If a form consists of a single field and button, consider using an input group for a more compact layout.</p>
       <figure class="dcf-mt-6">
         <form class="dcf-form dcf-form-controls-inline" id="input-group-button" action="#" method="get">
-          <label class="dcf-mr-4" for="theme-input-group-button-input">Label</label>
+          <label class="dcf-mr-4" for="input-group-button-input">Label</label>
           <div class="dcf-input-group">
             <input id="input-group-button-input" name="q" type="search" required>
             <button class="dcf-btn dcf-btn-primary" type="submit">Submit</button>
@@ -2368,7 +2368,7 @@
         <dd>Add this class along with <code>.dcf-wrapper</code> to a <code>&lt;div&gt;</code> that wraps the <code>&lt;table&gt;</code> to enable horizontal scrolling as needed.</dd>
       </dl>
 
-      <div class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="theme-scrollable-table">
+      <div class="dcf-mt-6 dcf-mb-6 dcf-wrapper dcf-wrapper-table-scroll" tabindex="0" role="group" aria-labelledby="scrollable-table">
         <table class="dcf-table" id="scrollable-table">
           <caption>This is a scrollable table.</caption>
           <thead>
@@ -3478,7 +3478,7 @@
       <form>
         <legend>Select a date and time</legend>
         <fieldset>
-          <label for="theme-elements-form-datetime-flatpickr">Date/time:</label>
+          <label for="elements-form-datetime-flatpickr">Date/time:</label>
           <input id="elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
                            placeholder="Select Date & Time.."
                            readonly="readonly">
