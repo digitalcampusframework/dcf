@@ -2043,7 +2043,7 @@
         <dd>This button is located in the modal content and closes the currently open modal.</dd>
       </dl>
 
-      <button class="dcf-btn dcf-btn-primary dcf-btn-toggle-modal" data-toggles-modal="test-modal-1" type="button" disabled>Open Modal 1</button>
+      <button class="dcf-btn dcf-btn-primary dcf-btn-toggle-modal" data-toggles-modal="test-modal-1" type="button" disabled>Toggle Modal 1</button>
       <div class="dcf-modal" id="test-modal-1" hidden>
         <div class="dcf-modal-wrapper">
           <header class="dcf-modal-header">

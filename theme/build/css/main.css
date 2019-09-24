@@ -1805,9 +1805,6 @@ button .dcf-icon {
 .dcf-list-inline li:not(:last-child) {
   margin-right: 0.56em; }
 
-.dcf-modal {
-  z-index: 100149; }
-
 .dcf-modal-wrapper {
   background-color: #fff;
   max-height: 75vh;
@@ -2105,7 +2102,7 @@ button .dcf-icon {
     display: -webkit-box;
     display: flex;
     width: 25%;
-    z-index: 2; }
+    z-index: 100000; }
   .theme .dcf-nav-toggle-group::after {
     bottom: 0;
     -webkit-box-shadow: 0 0 4px 0 rgba(67, 67, 67, 0.25);
@@ -2115,7 +2112,7 @@ button .dcf-icon {
     left: 0;
     position: fixed;
     width: 100%;
-    z-index: 1; } }
+    z-index: -2; } }
 
 @media only screen and (min-width: 56.12em) {
   .theme .dcf-nav-toggle-group {
@@ -3630,7 +3627,7 @@ a.dcf-inverse:active {
 .dcf-z-modal-fullscreen {
   z-index: 1000000 !important; }
 
-.dcf-z-modal-with-nav-toggle-group {
+.dcf-z-modal-behind-nav-toggle-group {
   z-index: 99000 !important; }
 
 .theme-bg-brand-alpha {
