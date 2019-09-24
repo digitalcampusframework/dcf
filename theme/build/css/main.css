@@ -3627,6 +3627,12 @@ a.dcf-inverse:active {
 .dcf-z-2 {
   z-index: 2 !important; }
 
+.dcf-z-modal-fullscreen {
+  z-index: 1000000 !important; }
+
+.dcf-z-modal-with-nav-toggle-group {
+  z-index: 99000 !important; }
+
 .theme-bg-brand-alpha {
   background-color: #30c !important; }
 

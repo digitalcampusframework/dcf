@@ -18,7 +18,7 @@
   .theme .dcf-nav-toggle-group {
     display: flex;
     width: 25%;
-    z-index: $z-nav-toggle-group;
+    z-index: 2;
   }
 
 
@@ -30,7 +30,7 @@
     left: 0;
     position: fixed;
     width: 100%;
-    z-index: $z-nav-toggle-group-after;
+    z-index: 1;
   }
 
 }
