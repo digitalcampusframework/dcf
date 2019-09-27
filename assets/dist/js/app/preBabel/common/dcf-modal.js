@@ -98,7 +98,7 @@ class Modal {
     thisModal.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
     thisModal.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
 
-    // Apply modal with toggle group class if request
+    // Apply modal with toggle group class if requested
     if (modalWithNavToggleGroup) {
       thisModal.classList.add('dcf-z-modal-with-nav-toggle-group');
     }
