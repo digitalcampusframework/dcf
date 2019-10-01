@@ -3,17 +3,12 @@
 /////////////////////////////
 
 
-[loading="lazy"],
-.dcf-lazy-load {
-  opacity: 0;
+// Fade in
+.js .dcf-fade-in { // This class targets elements to fade in
+  opacity: 0; // Starting opacity
 }
 
-
-.dcf-fade-in {
+.js .dcf-faded-in { // This class is applied programmatically to elements containing the `.dcf-fade-in` class
+  // Animate in to opacity: 1
   animation: appear $timing-fade-in forwards $easing-fade-in;
-}
-
-
-.dcf-fade-out {
-  animation: disappear $timing-fade-out forwards $easing-fade-out;
 }
