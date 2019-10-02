@@ -2129,6 +2129,9 @@ button .dcf-icon {
     display: -webkit-box;
     display: flex; } }
 
+.no-js .dcf-lazy-load {
+  display: none; }
+
 .js .dcf-fade-in {
   opacity: 0; }
 
