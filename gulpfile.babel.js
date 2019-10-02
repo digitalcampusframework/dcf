@@ -173,7 +173,7 @@ gulp.task('cssConcat:theme:main', () => {
 });
 
 
-/** Minify theme theme styles */
+/** Minify theme styles */
 gulp.task('cssDist:theme:main', () => {
   return cssMinifyNewer(distPaths.themeMainCssSrc, distPaths.themeCssMinDest,'cssDist:theme:print',path.join(distPaths.themeCssMinDest, distNames.themeMainMinCSS));
 });
