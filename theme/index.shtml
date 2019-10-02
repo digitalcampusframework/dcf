@@ -470,7 +470,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -479,9 +479,19 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 45vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -490,7 +500,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -499,13 +509,23 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -514,13 +534,24 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
+            </noscript>
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -529,9 +560,19 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -642,18 +683,28 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="https://via.placeholder.com/400x300"
+              data-src="https://via.placeholder.com/400x225"
               data-srcset="https://via.placeholder.com/400x225 400w,
               https://via.placeholder.com/800x450 800w,
               https://via.placeholder.com/1200x675 1200w,
               https://via.placeholder.com/1600x900 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="225" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x225"
+                srcset="https://via.placeholder.com/400x225 400w,
+                https://via.placeholder.com/800x450 800w,
+                https://via.placeholder.com/1200x675 1200w,
+                https://via.placeholder.com/1600x900 1600w"
+                sizes="(min-width: 56.12em) 45vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -662,7 +713,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-33%-start@md dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -671,9 +722,19 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -682,18 +743,28 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-25%-start@md dcf-ratio dcf-ratio-1x1">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="https://via.placeholder.com/400x300"
-              data-srcset="https://via.placeholder.com/400x300 400w,
-              https://via.placeholder.com/800x600 800w,
-              https://via.placeholder.com/1200x900 1200w,
-              https://via.placeholder.com/1600x1200 1600w"
+              data-src="https://via.placeholder.com/400x400"
+              data-srcset="https://via.placeholder.com/400x400 400w,
+              https://via.placeholder.com/800x800 800w,
+              https://via.placeholder.com/1200x1200 1200w,
+              https://via.placeholder.com/1600x1600 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="400" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x400"
+                srcset="https://via.placeholder.com/400x400 400w,
+                https://via.placeholder.com/800x800 800w,
+                https://via.placeholder.com/1200x1200 1200w,
+                https://via.placeholder.com/1600x1600 1600w"
+                sizes="(min-width: 56.12em) 23vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -1372,16 +1443,24 @@
       <div class="dcf-mt-6">
         <div class="dcf-media">
           <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10 dcf-mr-4">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/320x320"
               data-srcset="https://via.placeholder.com/320x320 320w,
               https://via.placeholder.com/640x640 640w"
               data-sizes=""
+              width="640"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/320x320" width="320" height="320" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/320x320"
+                srcset="https://via.placeholder.com/320x320 320w,
+              https://via.placeholder.com/640x640 640w"
+                sizes="8vw"
+                width="640"
+                alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-media-body">
@@ -1644,7 +1723,7 @@
               <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                 loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="https://via.placeholder.com/400x300"
@@ -1653,9 +1732,19 @@
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
+                width="1600"
                 alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+                <img class="dcf-ratio-child dcf-obj-fit-cover"
+                  loading="lazy"
+                  src="https://via.placeholder.com/400x300"
+                  srcset="https://via.placeholder.com/400x300 400w,
+                  https://via.placeholder.com/800x600 800w,
+                  https://via.placeholder.com/1200x900 1200w,
+                  https://via.placeholder.com/1600x1200 1600w"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  width="1600"
+                  alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1665,7 +1754,7 @@
               <p>Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                 loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="https://via.placeholder.com/400x300"
@@ -1674,9 +1763,19 @@
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
+                width="1600"
                 alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+                <img class="dcf-ratio-child dcf-obj-fit-cover"
+                  loading="lazy"
+                  src="https://via.placeholder.com/400x300"
+                  srcset="https://via.placeholder.com/400x300 400w,
+                  https://via.placeholder.com/800x600 800w,
+                  https://via.placeholder.com/1200x900 1200w,
+                  https://via.placeholder.com/1600x1200 1600w"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  width="1600"
+                  alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1686,7 +1785,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                 loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="https://via.placeholder.com/400x300"
@@ -1695,9 +1794,19 @@
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
+                width="1600"
                 alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+                <img class="dcf-ratio-child dcf-obj-fit-cover"
+                  loading="lazy"
+                  src="https://via.placeholder.com/400x300"
+                  srcset="https://via.placeholder.com/400x300 400w,
+                  https://via.placeholder.com/800x600 800w,
+                  https://via.placeholder.com/1200x900 1200w,
+                  https://via.placeholder.com/1600x1200 1600w"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  width="1600"
+                  alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1707,7 +1816,7 @@
               <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</p>
             </div>
             <div class="dcf-1st dcf-ratio dcf-ratio-4x3">
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                 loading="lazy"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
                 data-src="https://via.placeholder.com/400x300"
@@ -1716,9 +1825,19 @@
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
                 data-sizes=""
+                width="1600"
                 alt="Placeholder image.">
               <noscript>
-                <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+                <img class="dcf-ratio-child dcf-obj-fit-cover"
+                  loading="lazy"
+                  src="https://via.placeholder.com/400x300"
+                  srcset="https://via.placeholder.com/400x300 400w,
+                  https://via.placeholder.com/800x600 800w,
+                  https://via.placeholder.com/1200x900 1200w,
+                  https://via.placeholder.com/1600x1200 1600w"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  width="1600"
+                  alt="Placeholder image.">
               </noscript>
             </div>
           </li>
@@ -1743,7 +1862,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid">
           <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -1752,9 +1871,19 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 45vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -1763,7 +1892,7 @@
       <figure class="dcf-mt-6">
         <div class="dcf-grid-thirds@md dcf-col-gap-4 dcf-row-gap-3">
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -1772,13 +1901,23 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -1787,13 +1926,23 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
           <div class="dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
               loading="lazy"
               src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               data-src="https://via.placeholder.com/400x300"
@@ -1802,9 +1951,19 @@
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
               data-sizes=""
+              width="1600"
               alt="Placeholder image.">
             <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+              <img class="dcf-ratio-child dcf-obj-fit-cover"
+                loading="lazy"
+                src="https://via.placeholder.com/400x300"
+                srcset="https://via.placeholder.com/400x300 400w,
+                https://via.placeholder.com/800x600 800w,
+                https://via.placeholder.com/1200x900 1200w,
+                https://via.placeholder.com/1600x1200 1600w"
+                sizes="(min-width: 56.12em) 29vw, 100vw"
+                width="1600"
+                alt="Placeholder image.">
             </noscript>
           </div>
         </div>
@@ -2353,16 +2512,24 @@
             <tr>
               <td data-label="Image">
                 <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10">
-                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                     loading="lazy"
                     src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-                    data-src="https://via.placeholder.com/100x100"
-                    data-srcset="https://via.placeholder.com/100x100 100w,
-                    https://via.placeholder.com/200x200 200w"
+                    data-src="https://via.placeholder.com/200x200"
+                    data-srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
                     data-sizes=""
+                    width="400"
                     alt="Placeholder image.">
                   <noscript>
-                    <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Placeholder image.">
+                    <img class="dcf-ratio-child dcf-obj-fit-cover"
+                      loading="lazy"
+                      src="https://via.placeholder.com/200x200"
+                      srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
+                      sizes="7vw"
+                      width="400"
+                      alt="Placeholder image.">
                   </noscript>
                 </div>
               </td>
@@ -2373,16 +2540,24 @@
             <tr>
               <td data-label="Image">
                 <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10">
-                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                     loading="lazy"
                     src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-                    data-src="https://via.placeholder.com/100x100"
-                    data-srcset="https://via.placeholder.com/100x100 100w,
-                    https://via.placeholder.com/200x200 200w"
+                    data-src="https://via.placeholder.com/200x200"
+                    data-srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
                     data-sizes=""
+                    width="400"
                     alt="Placeholder image.">
                   <noscript>
-                    <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Placeholder image.">
+                    <img class="dcf-ratio-child dcf-obj-fit-cover"
+                      loading="lazy"
+                      src="https://via.placeholder.com/200x200"
+                      srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
+                      sizes="7vw"
+                      width="400"
+                      alt="Placeholder image.">
                   </noscript>
                 </div>
               </td>
@@ -2393,16 +2568,24 @@
             <tr>
               <td data-label="Image">
                 <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10">
-                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                     loading="lazy"
                     src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-                    data-src="https://via.placeholder.com/100x100"
-                    data-srcset="https://via.placeholder.com/100x100 100w,
-                    https://via.placeholder.com/200x200 200w"
+                    data-src="https://via.placeholder.com/200x200"
+                    data-srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
                     data-sizes=""
+                    width="400"
                     alt="Placeholder image.">
                   <noscript>
-                    <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Placeholder image.">
+                    <img class="dcf-ratio-child dcf-obj-fit-cover"
+                      loading="lazy"
+                      src="https://via.placeholder.com/200x200"
+                      srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
+                      sizes="7vw"
+                      width="400"
+                      alt="Placeholder image.">
                   </noscript>
                 </div>
               </td>
@@ -2413,16 +2596,24 @@
             <tr>
               <td data-label="Image">
                 <div class="dcf-ratio dcf-ratio-1x1 dcf-w-10">
-                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+                  <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
                     loading="lazy"
                     src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-                    data-src="https://via.placeholder.com/100x100"
-                    data-srcset="https://via.placeholder.com/100x100 100w,
-                    https://via.placeholder.com/200x200 200w"
+                    data-src="https://via.placeholder.com/200x200"
+                    data-srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
                     data-sizes=""
+                    width="400"
                     alt="Placeholder image.">
                   <noscript>
-                    <img src="https://via.placeholder.com/100x100" width="100" height="100" alt="Placeholder image.">
+                    <img class="dcf-ratio-child dcf-obj-fit-cover"
+                      loading="lazy"
+                      src="https://via.placeholder.com/200x200"
+                      srcset="https://via.placeholder.com/200x200 200w,
+                    https://via.placeholder.com/400x400 400w"
+                      sizes="7vw"
+                      width="400"
+                      alt="Placeholder image.">
                   </noscript>
                 </div>
               </td>
@@ -3193,14 +3384,21 @@
           <img class="dcf-ratio-child dcf-obj-fit-contain dcf-lazy-load"
             loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-            data-src="https://via.placeholder.com/400x300"
-            data-srcset="https://via.placeholder.com/100x100 100w,
-            https://via.placeholder.com/200x200 200w,
-            https://via.placeholder.com/300x300 300w"
+            data-src="https://via.placeholder.com/200x200"
+            data-srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
             data-sizes=""
+            width="400"
             alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-contain" src="https://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
+            <img class="dcf-ratio-child dcf-obj-fit-contain"
+              loading="lazy"
+              src="https://via.placeholder.com/200x200"
+              srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
+              sizes="8vw"
+              width="400"
+              alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit contain</figcaption>
@@ -3211,14 +3409,21 @@
           <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
             loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-            data-src="https://via.placeholder.com/400x300"
-            data-srcset="https://via.placeholder.com/100x100 100w,
-            https://via.placeholder.com/200x200 200w,
-            https://via.placeholder.com/300x300 300w"
+            data-src="https://via.placeholder.com/200x200"
+            data-srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
             data-sizes=""
+            width="400"
             alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-cover" src="https://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
+            <img class="dcf-ratio-child dcf-obj-fit-cover"
+              loading="lazy"
+              src="https://via.placeholder.com/200x200"
+              srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
+              sizes="8vw"
+              width="400"
+              alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-fit cover</figcaption>
@@ -3241,14 +3446,21 @@
           <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom dcf-lazy-load"
             loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-            data-src="https://via.placeholder.com/400x300"
-            data-srcset="https://via.placeholder.com/100x100 100w,
-            https://via.placeholder.com/200x200 200w,
-            https://via.placeholder.com/300x300 300w"
+            data-src="https://via.placeholder.com/200x200"
+            data-srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
             data-sizes=""
+            width="400"
             alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom" src="https://via.placeholder.com/100x100" width="400" height="300" alt="Placeholder image.">
+            <img class="dcf-ratio-child dcf-obj-fit-none dcf-obj-bottom"
+              loading="lazy"
+              src="https://via.placeholder.com/200x200"
+              srcset="https://via.placeholder.com/200x200 200w,
+            https://via.placeholder.com/400x400 400w"
+              sizes="8vw"
+              width="400"
+              alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-figcaption dcf-mt-4">Demonstration of object-position right bottom combined with object-fit none</figcaption>
@@ -3528,19 +3740,28 @@
       </dl>
       <figure class="dcf-mt-6 dcf-bleed">
         <div class="dcf-ratio dcf-ratio-16x9">
-          <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
+          <img class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
             loading="lazy"
             src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-            data-src="https://via.placeholder.com/400x300"
-            data-srcset="https://via.placeholder.com/320x300 320w,
-            https://via.placeholder.com/400x300 400w,
-            https://via.placeholder.com/800x600 800w,
-            https://via.placeholder.com/1200x900 1200w,
-            https://via.placeholder.com/1600x1200 1600w"
-            data-sizes="100vw"
+            data-src="https://via.placeholder.com/400x225"
+            data-srcset="https://via.placeholder.com/400x225 400w,
+            https://via.placeholder.com/800x450 800w,
+            https://via.placeholder.com/1200x675 1200w,
+            https://via.placeholder.com/1600x900 1600w"
+            data-sizes=""
+            width="1600"
             alt="Placeholder image.">
           <noscript>
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="https://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
+            <img class="dcf-ratio-child dcf-obj-fit-cover"
+              loading="lazy"
+              src="https://via.placeholder.com/400x225"
+              srcset="https://via.placeholder.com/400x225 400w,
+              https://via.placeholder.com/800x450 800w,
+              https://via.placeholder.com/1200x675 1200w,
+              https://via.placeholder.com/1600x900 1600w"
+              sizes="(min-width: 56.12em) 45vw, 100vw"
+              width="1600"
+              alt="Placeholder image.">
           </noscript>
         </div>
         <figcaption class="dcf-wrapper dcf-figcaption dcf-mt-4">Demonstration of lazy-loading an image using the <code>loading="lazy"</code> attribute and <code>.dcf-lazy-load</code> class.</figcaption>
