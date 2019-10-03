@@ -1717,7 +1717,7 @@
       </dl>
       <div class="dcf-mt-6">
         <ul class="dcf-grid-halves@sm dcf-grid-fourths@lg dcf-list-bare dcf-col-gap-4 dcf-row-gap-4 dcf-mb-0">
-          <li class="dcf-card dcf-d-flex dcf-flex-col">
+          <li class="dcf-card dcf-d-flex dcf-flex-col dcf-w-100%">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #1</h3>
               <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
@@ -1748,7 +1748,7 @@
               </noscript>
             </div>
           </li>
-          <li class="dcf-card dcf-d-flex dcf-flex-col">
+          <li class="dcf-card dcf-d-flex dcf-flex-col dcf-w-100%">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #2 with a super, duper long title</h3>
               <p>Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -1779,7 +1779,7 @@
               </noscript>
             </div>
           </li>
-          <li class="dcf-card dcf-d-flex dcf-flex-col">
+          <li class="dcf-card dcf-d-flex dcf-flex-col dcf-w-100%">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #3</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
@@ -1810,7 +1810,7 @@
               </noscript>
             </div>
           </li>
-          <li class="dcf-card dcf-d-flex dcf-flex-col">
+          <li class="dcf-card dcf-d-flex dcf-flex-col dcf-w-100%">
             <div class="dcf-card-block dcf-2nd">
               <h3 class="dcf-h4">Card #4</h3>
               <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</p>
