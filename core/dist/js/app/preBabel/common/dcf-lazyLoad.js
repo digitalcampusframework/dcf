@@ -10,16 +10,23 @@
 class LazyLoad {
   /**
    * class constructor
-   * @param {imagesList} nodelist of selected images
-   * @param {observerConfig} object of intersectionObserver configuration
-   * @param {classNames} array of classes applied
    */
-  constructor(imagesList, observerConfig, classNames) {
-    this.imagesList = imagesList;
-    this.observerConfig = observerConfig;
-    this.classNames = classNames; // add onEnter, onEnterActive?
+  constructor() {
+
+    // Elements to be lazy loaded
+    this.imagesList = document.querySelectorAll('[loading=lazy], .dcf-lazy-load');
+
+    // Configure Intersection Observer
+    this.observerConfig = {
+    	rootMargin: '0px 0px 50px 0px', // 50px from bottom of browser viewport
+    	threshold: [0]
+    };
   }
 
+  /**
+   * Convert pixels to viewport-width units
+   * @param {integer} value: pixel value of element
+   */
   pxTOvw(value) {
     var w = window,
       d = document,
@@ -47,13 +54,13 @@ class LazyLoad {
 
     // Prevent this from being lazy loaded a second time.
     image.classList.add('dcf-lazy-loaded');
+    image.classList.remove('dcf-lazy-load');
     src && (image.src = src);
     src && (image.removeAttribute('data-src'));
     srcset && (image.srcset = srcset);
     srcset && (image.removeAttribute('data-srcset'));
     sizes && (image.sizes = sizes);
     sizes && (image.removeAttribute('data-sizes'));
-    this.classNames.length && this.classNames.forEach(className => image.classList.add(className));
   };
 
   /**
@@ -136,10 +143,9 @@ class LazyLoad {
       // Are we in viewport?
       // console.log(entry.intersectionRatio);
 
-      if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
-        this.preloadImage(entry.target);
-      } else if (entry.intersectionRatio > observer.thresholds[1]) {
+      if (entry.intersectionRatio > 0) {
         this.imageCount--;
+        this.preloadImage(entry.target);
         this.applyImage(entry.target);
         this.observer.unobserve(entry.target);
       }
@@ -149,14 +155,14 @@ class LazyLoad {
   initialize() {
     if(!this.imagesList) return;
 
-    // counter: keeps track of which images that hasn't been loaded
+    // Counter: keeps track of which images haven't been loaded
     this.imageCount = this.imagesList.length;
 
     if ('loading' in HTMLImageElement.prototype) {
       // Native lazy loading IS supported, so set src-data to src
       this.loadImagesImmediately(this.imagesList, false);
     } else {
-      // Native lazy loading NOT supported, so handle via javascript
+      // Native lazy loading is NOT supported, so handle via JavaScript
       // If browser doesn't support intersection observer, load the images immediately
       if (!('IntersectionObserver' in window)) {
         this.loadImagesImmediately(this.imagesList);
