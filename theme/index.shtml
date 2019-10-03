@@ -478,7 +478,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -489,7 +489,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 45vw, 100vw"
+                sizes="(min-width: 56.12em) 45vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -508,7 +508,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -519,7 +519,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -533,7 +533,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -544,7 +544,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -559,7 +559,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -570,7 +570,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -691,7 +691,7 @@
               https://via.placeholder.com/800x450 800w,
               https://via.placeholder.com/1200x675 1200w,
               https://via.placeholder.com/1600x900 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -702,7 +702,7 @@
                 https://via.placeholder.com/800x450 800w,
                 https://via.placeholder.com/1200x675 1200w,
                 https://via.placeholder.com/1600x900 1600w"
-                sizes="(min-width: 56.12em) 45vw, 100vw"
+                sizes="(min-width: 56.12em) 45vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -721,7 +721,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -732,7 +732,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -751,7 +751,7 @@
               https://via.placeholder.com/800x800 800w,
               https://via.placeholder.com/1200x1200 1200w,
               https://via.placeholder.com/1600x1600 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -762,7 +762,7 @@
                 https://via.placeholder.com/800x800 800w,
                 https://via.placeholder.com/1200x1200 1200w,
                 https://via.placeholder.com/1600x1600 1600w"
-                sizes="(min-width: 56.12em) 23vw, 100vw"
+                sizes="(min-width: 56.12em) 23vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -1449,7 +1449,7 @@
               data-src="https://via.placeholder.com/320x320"
               data-srcset="https://via.placeholder.com/320x320 320w,
               https://via.placeholder.com/640x640 640w"
-              data-sizes=""
+              sizes="auto"
               width="640"
               alt="Placeholder image.">
             <noscript>
@@ -1731,7 +1731,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                data-sizes=""
+                sizes="auto"
                 width="1600"
                 alt="Placeholder image.">
               <noscript>
@@ -1742,7 +1742,7 @@
                   https://via.placeholder.com/800x600 800w,
                   https://via.placeholder.com/1200x900 1200w,
                   https://via.placeholder.com/1600x1200 1600w"
-                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 88vw"
                   width="1600"
                   alt="Placeholder image.">
               </noscript>
@@ -1762,7 +1762,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                data-sizes=""
+                sizes="auto"
                 width="1600"
                 alt="Placeholder image.">
               <noscript>
@@ -1773,7 +1773,7 @@
                   https://via.placeholder.com/800x600 800w,
                   https://via.placeholder.com/1200x900 1200w,
                   https://via.placeholder.com/1600x1200 1600w"
-                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 88vw"
                   width="1600"
                   alt="Placeholder image.">
               </noscript>
@@ -1793,7 +1793,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                data-sizes=""
+                sizes="auto"
                 width="1600"
                 alt="Placeholder image.">
               <noscript>
@@ -1804,7 +1804,7 @@
                   https://via.placeholder.com/800x600 800w,
                   https://via.placeholder.com/1200x900 1200w,
                   https://via.placeholder.com/1600x1200 1600w"
-                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 88vw"
                   width="1600"
                   alt="Placeholder image.">
               </noscript>
@@ -1824,7 +1824,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                data-sizes=""
+                sizes="auto"
                 width="1600"
                 alt="Placeholder image.">
               <noscript>
@@ -1835,7 +1835,7 @@
                   https://via.placeholder.com/800x600 800w,
                   https://via.placeholder.com/1200x900 1200w,
                   https://via.placeholder.com/1600x1200 1600w"
-                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 100vw"
+                  sizes="(min-width: 42.09em) 44vw, (min-width: 56.12em) 22vw, 88vw"
                   width="1600"
                   alt="Placeholder image.">
               </noscript>
@@ -1870,7 +1870,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -1881,7 +1881,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 45vw, 100vw"
+                sizes="(min-width: 56.12em) 45vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -1900,7 +1900,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -1911,7 +1911,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -1925,7 +1925,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -1936,7 +1936,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -1950,7 +1950,7 @@
               https://via.placeholder.com/800x600 800w,
               https://via.placeholder.com/1200x900 1200w,
               https://via.placeholder.com/1600x1200 1600w"
-              data-sizes=""
+              sizes="auto"
               width="1600"
               alt="Placeholder image.">
             <noscript>
@@ -1961,7 +1961,7 @@
                 https://via.placeholder.com/800x600 800w,
                 https://via.placeholder.com/1200x900 1200w,
                 https://via.placeholder.com/1600x1200 1600w"
-                sizes="(min-width: 56.12em) 29vw, 100vw"
+                sizes="(min-width: 56.12em) 29vw, 88vw"
                 width="1600"
                 alt="Placeholder image.">
             </noscript>
@@ -2518,7 +2518,7 @@
                     data-src="https://via.placeholder.com/200x200"
                     data-srcset="https://via.placeholder.com/200x200 200w,
                     https://via.placeholder.com/400x400 400w"
-                    data-sizes=""
+                    sizes="auto"
                     width="400"
                     alt="Placeholder image.">
                   <noscript>
@@ -2546,7 +2546,7 @@
                     data-src="https://via.placeholder.com/200x200"
                     data-srcset="https://via.placeholder.com/200x200 200w,
                     https://via.placeholder.com/400x400 400w"
-                    data-sizes=""
+                    sizes="auto"
                     width="400"
                     alt="Placeholder image.">
                   <noscript>
@@ -2574,7 +2574,7 @@
                     data-src="https://via.placeholder.com/200x200"
                     data-srcset="https://via.placeholder.com/200x200 200w,
                     https://via.placeholder.com/400x400 400w"
-                    data-sizes=""
+                    sizes="auto"
                     width="400"
                     alt="Placeholder image.">
                   <noscript>
@@ -2602,7 +2602,7 @@
                     data-src="https://via.placeholder.com/200x200"
                     data-srcset="https://via.placeholder.com/200x200 200w,
                     https://via.placeholder.com/400x400 400w"
-                    data-sizes=""
+                    sizes="auto"
                     width="400"
                     alt="Placeholder image.">
                   <noscript>
@@ -3387,7 +3387,7 @@
             data-src="https://via.placeholder.com/200x200"
             data-srcset="https://via.placeholder.com/200x200 200w,
             https://via.placeholder.com/400x400 400w"
-            data-sizes=""
+            sizes="auto"
             width="400"
             alt="Placeholder image.">
           <noscript>
@@ -3412,7 +3412,7 @@
             data-src="https://via.placeholder.com/200x200"
             data-srcset="https://via.placeholder.com/200x200 200w,
             https://via.placeholder.com/400x400 400w"
-            data-sizes=""
+            sizes="auto"
             width="400"
             alt="Placeholder image.">
           <noscript>
@@ -3449,7 +3449,7 @@
             data-src="https://via.placeholder.com/200x200"
             data-srcset="https://via.placeholder.com/200x200 200w,
             https://via.placeholder.com/400x400 400w"
-            data-sizes=""
+            sizes="auto"
             width="400"
             alt="Placeholder image.">
           <noscript>
@@ -3748,7 +3748,7 @@
             https://via.placeholder.com/800x450 800w,
             https://via.placeholder.com/1200x675 1200w,
             https://via.placeholder.com/1600x900 1600w"
-            data-sizes=""
+            sizes="auto"
             width="1600"
             alt="Placeholder image.">
           <noscript>
@@ -3759,7 +3759,7 @@
               https://via.placeholder.com/800x450 800w,
               https://via.placeholder.com/1200x675 1200w,
               https://via.placeholder.com/1600x900 1600w"
-              sizes="(min-width: 56.12em) 45vw, 100vw"
+              sizes="(min-width: 56.12em) 45vw, 88vw"
               width="1600"
               alt="Placeholder image.">
           </noscript>
