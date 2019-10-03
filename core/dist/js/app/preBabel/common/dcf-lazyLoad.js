@@ -45,7 +45,7 @@ class LazyLoad {
   applyImage(image) {
     const src = image.dataset.src;
     const srcset = image.dataset.srcset || null;
-    const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
+    const sizes = image.sizes || 'auto';
 
     if (!src) {
       return;
@@ -59,8 +59,9 @@ class LazyLoad {
     src && (image.removeAttribute('data-src'));
     srcset && (image.srcset = srcset);
     srcset && (image.removeAttribute('data-srcset'));
-    sizes && (image.sizes = sizes);
-    sizes && (image.removeAttribute('data-sizes'));
+    if (sizes == 'auto') {
+      image.sizes = this.pxTOvw(image.parentElement.clientWidth);
+    }
   };
 
   /**

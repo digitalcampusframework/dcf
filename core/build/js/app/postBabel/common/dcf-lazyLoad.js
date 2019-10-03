@@ -86,7 +86,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function applyImage(image) {
         var src = image.dataset.src;
         var srcset = image.dataset.srcset || null;
-        var sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
+        var sizes = image.sizes || 'auto';
 
         if (!src) {
           return;
@@ -100,8 +100,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         src && image.removeAttribute('data-src');
         srcset && (image.srcset = srcset);
         srcset && image.removeAttribute('data-srcset');
-        sizes && (image.sizes = sizes);
-        sizes && image.removeAttribute('data-sizes');
+        if (sizes == 'auto') {
+          image.sizes = this.pxTOvw(image.parentElement.clientWidth);
+        }
       }
     }, {
       key: 'fetchImage',
