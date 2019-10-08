@@ -155,6 +155,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
         });
+
+        // Trigger open modal event for this modal to allow event listeners to handle
+        var eventName = 'ModalOpenEvent_' + modalId;
+        document.dispatchEvent(new CustomEvent(eventName));
       }
 
       // Close modal
@@ -217,6 +221,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.enableBodyScroll) {
           this.enableBodyScroll(thisModal);
         }
+
+        // Trigger close modal event for this modal to allow event listeners to handle
+        var eventName = 'ModalCloseEvent_' + modalId;
+        document.dispatchEvent(new CustomEvent(eventName));
       }
     }, {
       key: 'btnToggleListen',
