@@ -3476,14 +3476,5 @@
   </footer>
   <!--#include virtual="/includes/global/noscript.html" -->
   <!--#include virtual="/includes/global/js-body.html" -->
-  <script type="text/javascript">
-
-    document.addEventListener('ModalOpenEvent_test-modal-1', function (e) {
-      alert('test-modal-1 modal opened!');
-    }, false);
-    document.addEventListener('ModalCloseEvent_test-modal-1', function (e) {
-      alert('test-modal-1 modal closed!');
-    }, false);
-  </script>
 </body>
 <!-- InstanceEnd --></html>
