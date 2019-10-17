@@ -129,6 +129,10 @@ class Modal {
         }
       }
     });
+
+    // Trigger open modal event for this modal to allow event listeners to handle
+    const eventName = 'ModalOpenEvent_' + modalId;
+    document.dispatchEvent(new CustomEvent(eventName));
   }
 
   // Close modal
@@ -188,6 +192,10 @@ class Modal {
     if (this.enableBodyScroll) {
       this.enableBodyScroll(thisModal);
     }
+
+    // Trigger close modal event for this modal to allow event listeners to handle
+    const eventName = 'ModalCloseEvent_' + modalId;
+    document.dispatchEvent(new CustomEvent(eventName));
   }
 
   btnToggleListen(btnToggleModal, modalId, btnId) {
