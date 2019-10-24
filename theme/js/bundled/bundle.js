@@ -323,7 +323,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (openBtnId) {
           this.currentBtn = openBtnId;
           var openBtn = document.getElementById(openBtnId);
-          modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-modal-behind-nav-toggle-group') === 'true';
+          modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-with-nav-toggle-group') === 'true';
         }
 
         this.currentModal = modalId;
@@ -355,11 +355,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Apply modal with toggle group class if requested
         if (modalWithNavToggleGroup) {
-          thisModal.classList.add('dcf-z-modal-behind-nav-toggle-group');
-        } else {
-          thisModal.classList.add('dcf-z-modal-fullscreen');
+          thisModal.classList.add('dcf-z-modal-with-nav-toggle-group');
         }
-
         var keycodeTab = 9;
         var tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' + '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' + 'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' + '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' + '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' + 'video[controls]:not([hidden])');
         var firstTabFocusEl = tabFocusEls[0];
@@ -393,6 +390,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
         });
+
+        // Trigger open modal event for this modal to allow event listeners to handle
+        var eventName = 'ModalOpenEvent_' + modalId;
+        document.dispatchEvent(new CustomEvent(eventName));
       }
 
       // Close modal
@@ -428,7 +429,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         thisModal.setAttribute('aria-hidden', 'true');
 
         // Add/remove classes to this modal
-        thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
+        thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto', 'z-modal-with-nav-toggle-group');
         thisModal.classList.add('dcf-opacity-0', 'dcf-pointer-events-none');
 
         // Modal transition
@@ -440,12 +441,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // Add the `.dcf-invisible` class to this modal after the transition
           if (!thisModal.classList.contains('dcf-invisible')) {
             thisModal.classList.add('dcf-invisible');
-          }
-          if (thisModal.classList.contains('dcf-z-modal-fullscreen')) {
-            thisModal.classList.remove('dcf-z-modal-fullscreen');
-          }
-          if (thisModal.classList.contains('dcf-z-modal-behind-nav-toggle-group')) {
-            thisModal.classList.remove('dcf-z-modal-behind-nav-toggle-group');
           }
         }
 
@@ -461,6 +456,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.enableBodyScroll) {
           this.enableBodyScroll(thisModal);
         }
+
+        // Trigger close modal event for this modal to allow event listeners to handle
+        var eventName = 'ModalCloseEvent_' + modalId;
+        document.dispatchEvent(new CustomEvent(eventName));
       }
     }, {
       key: 'btnToggleListen',
