@@ -1913,13 +1913,13 @@ button .dcf-icon {
     display: -webkit-box;
     display: flex; } }
 
-.no-js .dcf-lazy-load {
+.dcf-no-js .dcf-lazy-load {
   display: none; }
 
-.js .dcf-fade-in {
+.dcf-js .dcf-fade-in {
   opacity: 0; }
 
-.js .dcf-faded-in {
+.dcf-js .dcf-faded-in {
   -webkit-animation: appear 200ms forwards ease-out;
           animation: appear 200ms forwards ease-out; }
 

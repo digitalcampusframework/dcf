@@ -5,6 +5,6 @@
 
 // Hide lazy-loaded elements if JavaScript is unavailable
 // (<noscript> versions will be shown instead)
-.no-js .dcf-lazy-load {
+.dcf-no-js .dcf-lazy-load {
   display: none;
 }
