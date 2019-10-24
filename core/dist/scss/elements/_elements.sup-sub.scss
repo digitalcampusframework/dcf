@@ -1,0 +1,24 @@
+//////////////////////////////
+// CORE / ELEMENTS / SUP & SUB
+//////////////////////////////
+
+
+// Superscript & subscript
+sup,
+sub {
+  font-size: $font-size-sub-sup;
+  position: relative;
+  vertical-align: $vertical-align-sub-sup;
+}
+
+
+// Superscript
+sup {
+  top: $top-sup;
+}
+
+
+// Subscript
+sub {
+  top: $top-sub;
+}

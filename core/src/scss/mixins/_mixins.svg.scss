@@ -1,0 +1,7 @@
+//////////////////////
+// CORE / MIXINS / SVG
+//////////////////////
+
+
+@mixin fill-current($imp:null) { fill: currentColor $imp; }
+@mixin stroke-current($imp:null) { stroke: currentColor $imp; }

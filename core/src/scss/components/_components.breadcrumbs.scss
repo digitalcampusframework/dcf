@@ -1,0 +1,25 @@
+//////////////////////////////////
+// CORE / COMPONENTS / BREADCRUMBS
+//////////////////////////////////
+
+
+.dcf-breadcrumbs li {
+  align-items: center;
+  display: flex;
+}
+
+
+.dcf-breadcrumbs li:not(:last-child) {
+  margin-right: $breadcrumb-spacing;
+}
+
+
+.dcf-breadcrumbs li:not(:last-child)::after {
+  border-bottom: $breadcrumb-arrow-size solid transparent;
+  border-left: $breadcrumb-arrow-size solid $breadcrumb-arrow-color;
+  border-top: $breadcrumb-arrow-size solid transparent;
+  content: '';
+  margin-left: $breadcrumb-spacing;
+  height: 0;
+  width: 0;
+}

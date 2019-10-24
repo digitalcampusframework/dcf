@@ -1,0 +1,13 @@
+/////////////////////////////////////
+// CORE / UTILITIES / OBJECT-POSITION
+/////////////////////////////////////
+
+
+.dcf-obj-top { @include obj-top(!important); }
+.dcf-obj-right { @include obj-right(!important); }
+.dcf-obj-bottom { @include obj-bottom(!important); }
+.dcf-obj-left { @include obj-left(!important); }
+.dcf-obj-right-top { @include obj-right-top(!important); }
+.dcf-obj-right-bottom { @include obj-right-bottom(!important); }
+.dcf-obj-left-bottom { @include obj-left-bottom(!important); }
+.dcf-obj-left-top { @include obj-left-top(!important); }

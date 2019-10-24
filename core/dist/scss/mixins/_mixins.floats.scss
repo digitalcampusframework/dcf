@@ -1,0 +1,35 @@
+/////////////////////////
+// CORE / MIXINS / FLOATS
+/////////////////////////
+
+
+// Float right
+@mixin float-right($imp:null) { float: right $imp; }
+
+
+// Float left
+@mixin float-left($imp:null) { float: left $imp; }
+
+
+// Clear right
+@mixin clear-right($imp:null) { clear: right $imp; }
+
+
+// Clear left
+@mixin clear-left($imp:null) { clear: left $imp; }
+
+
+// Clear both
+@mixin clear-both($imp:null) { clear: both $imp; }
+
+
+// Clearfix
+@mixin clearfix($imp:null) {
+
+  &::after {
+    clear: both $imp;
+    content: '' $imp;
+    display: table $imp;
+  }
+
+}

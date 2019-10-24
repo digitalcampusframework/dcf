@@ -1,0 +1,73 @@
+///////////////////////////////////
+// CORE / COMPONENTS / INPUT GROUPS
+///////////////////////////////////
+
+
+// Input group = input field + button or add-on
+.dcf-input-group {
+  display: flex;
+  flex: 1 1 50%; // Grow/shrink as needed, 50% flex-basis
+}
+
+
+//  Child input field of input group
+.dcf-input-group input {
+  flex: 1 1 auto; // Grow/shrink as needed, with auto width
+  z-index: 1; // Place :focus and :hover states (e.g., borders, outlines) above input group add-ons
+}
+
+
+// Input group and child input field
+.dcf-input-group,
+.dcf-input-group input {
+  min-width: 0;
+}
+
+
+// Input group button
+.dcf-input-group .dcf-btn {
+  align-items: center;
+  @if ($border-radius-input-roundrect) {
+    @include sharp-left;
+  }
+  display: flex;
+}
+
+
+// Input group add-on
+.dcf-input-group-addon {
+  align-items: center;
+  background-color: $bg-color-input-group-addon;
+  border: $border-width-input-group-addon $border-style-input-group-addon $border-color-input-group-addon;
+  display: flex;
+  padding: $padding-top-input-group-addon $padding-right-input-group-addon $padding-bottom-input-group-addon $padding-left-input-group-addon;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+// If inputs are roundrects, square off corners internal to input groups
+@if ($border-radius-input-roundrect) {
+
+  .dcf-input-group input:not(:first-child) {
+    @include sharp-left;
+  }
+
+
+  .dcf-input-group input:not(:last-child) {
+    @include sharp-right;
+  }
+
+
+  .dcf-input-group-addon:first-child {
+    @include rounded-left;
+    border-right-width: 0;
+  }
+
+
+  .dcf-input-group-addon:last-child {
+    @include rounded-right;
+    border-left-width: 0;
+  }
+
+}

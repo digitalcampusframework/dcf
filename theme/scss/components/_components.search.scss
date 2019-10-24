@@ -1,0 +1,26 @@
+//////////////////////////////
+// THEME / COMPONENTS / SEARCH
+//////////////////////////////
+
+
+@include mq(md, max, width) {
+
+  .theme .dcf-search {
+    display: none;
+  }
+
+
+  .theme .dcf-nav-toggle-btn-search {
+    left: 33%;
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .theme .dcf-search {
+    display: flex;
+  }
+
+}

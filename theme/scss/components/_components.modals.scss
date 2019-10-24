@@ -1,0 +1,27 @@
+//////////////////////////////
+// THEME / COMPONENTS / MODALS
+//////////////////////////////
+
+
+// Modal
+.theme .dcf-modal[aria-hidden="true"] {
+  transition: opacity $timing-fade-out $easing-fade-out;
+}
+
+
+.theme .dcf-modal[aria-hidden="false"] {
+  transition: opacity $timing-fade-in $easing-fade-in;
+}
+
+
+// Modal header
+.theme .dcf-modal-header::after {
+  background-image: linear-gradient($bg-color-modal-header, fade-out($bg-color-modal-header, 1));
+  content: '';
+  @include h-4;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+}

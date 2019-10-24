@@ -15,30 +15,30 @@ const postcssCSSO = require('postcss-csso');
  */
 
 function cssMinifyNewer (src, dest, taskName, newerDest) {
-	$.fancyLog('----> //** minify CSS files');
-	return $.pump([
-		gulp.src(src),
-		customPlumber(`Error Running ${taskName}`),
-		$.newer(newerDest),
-		$.sourcemaps.init({loadMaps: true}),
-		$.postcss(
-				[
-					postcssCSSO({
-						comments: false,
-					})
-				]
-		),
-		$.if([ '*.css', '!*.min.css' ],
-				$.rename({ suffix: '.min' })
-		),
-		$.header(banner, { pkg: pkg }),
-		$.size({
-			showFiles: true,
-			gzip: true,
-		}),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+  $.fancyLog('----> //** minify CSS files');
+  return $.pump([
+    gulp.src(src),
+    customPlumber(`Error Running ${taskName}`),
+    $.newer(newerDest),
+    $.sourcemaps.init({loadMaps: true}),
+    $.postcss(
+      [
+        postcssCSSO({
+          comments: false,
+        })
+      ]
+    ),
+    $.if([ '*.css', '!*.min.css' ],
+      $.rename({ suffix: '.min' })
+    ),
+    $.header(banner, { pkg: pkg }),
+    $.size({
+      showFiles: true,
+      gzip: true,
+    }),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
 
 module.exports = cssMinifyNewer;

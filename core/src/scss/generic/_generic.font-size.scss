@@ -1,0 +1,25 @@
+/////////////////////////////
+// CORE / GENERIC / FONT-SIZE
+/////////////////////////////
+
+
+:root {
+  font-size: #{$font-size-min}em;
+  @include lh-4;
+}
+
+@media screen and (min-width: #{$min-width-lerp}em) {
+
+  :root {
+    font-size: calc(#{$font-size-min}em + (#{$font-size-max} - #{$font-size-min}) * ( (100vw - #{$min-width-lerp}em) / ( #{$max-width-lerp} - #{$min-width-lerp})));
+  }
+
+}
+
+@media screen and (min-width: #{$max-width-lerp}em) {
+
+  :root {
+    font-size: #{$font-size-max}em;
+  }
+
+}

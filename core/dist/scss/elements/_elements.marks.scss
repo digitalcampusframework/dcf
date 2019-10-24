@@ -1,0 +1,10 @@
+//////////////////////////
+// CORE / ELEMENTS / MARKS
+//////////////////////////
+
+
+// Marked (highlighted) text
+mark {
+  background-color: $bg-color-mark;
+  padding: $padding-top-mark $padding-right-mark $padding-bottom-mark $padding-left-mark;
+}

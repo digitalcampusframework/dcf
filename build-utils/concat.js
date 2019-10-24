@@ -10,19 +10,18 @@ const $ = require('./gulp-load-plugins');
  * @param {string} taskName: name of the task
  */
 function concatFn(src, dest, fileName, taskName) {
-	$.fancyLog(`----> //** Concatenating ${taskName} Files <========`);
-	return $.pump([
-		gulp.src(src),
-		$.sourcemaps.init({loadMaps:true}),
-		customPlumber(`Error Running ${taskName} task`),
-		$.concat(
-				{path: fileName},
-				{newLine: '\n\n'}),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+  $.fancyLog(`----> //** Concatenating ${taskName} Files <========`);
+  return $.pump([
+    gulp.src(src),
+    $.sourcemaps.init({loadMaps:true}),
+    customPlumber(`Error Running ${taskName} task`),
+    $.concat(
+      {path: fileName},
+      {newLine: '\n\n'}),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
-
 
 /**
  * @param {string} src: input glob string
@@ -32,23 +31,23 @@ function concatFn(src, dest, fileName, taskName) {
  * @param {string} newerDest: target file for newer to compared against
  */
 function concatNewerFn(src, dest, fileName, taskName, newerDest) {
-	$.fancyLog(`----> //** Concatenating ${taskName} Files`);
-	return $.pump([
-		gulp.src(src),
-		$.sourcemaps.init({loadMaps:true}),
-		customPlumber(`Error Running ${taskName} task`),
-		$.newer({dest: newerDest}),
-		$.concat(
-				{path: fileName},
-				{newLine: '\n\n'}),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+  $.fancyLog(`----> //** Concatenating ${taskName} Files`);
+  return $.pump([
+    gulp.src(src),
+    $.sourcemaps.init({loadMaps:true}),
+    customPlumber(`Error Running ${taskName} task`),
+    $.newer({dest: newerDest}),
+    $.concat(
+      {path: fileName},
+      {newLine: '\n\n'}),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
 
 let concatObj = {
-	base: concatFn,
-	newer: concatNewerFn
+  base: concatFn,
+  newer: concatNewerFn
 };
 
 module.exports = concatObj;

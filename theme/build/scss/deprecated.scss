@@ -1,0 +1,26 @@
+/////////////
+// DEPRECATED
+/////////////
+
+
+// Sass is compiled from a temporary _theme/build/scss_ through the Gulp tasks
+// hence the import path from core reflects that.
+
+
+// Variables
+@import '../../../core/dist/scss/variables/**/*';
+@import 'variables/**/*';
+
+
+// Mixins
+@import '../../../core/dist/scss/mixins/**/*';
+@import 'mixins/**/*';
+
+
+// Functions
+@import '../../../core/dist/scss/functions/**/*';
+
+
+// Deprecated
+@import '../../core/dist/scss/deprecated/**/*';
+@import '/deprecated/**/*';

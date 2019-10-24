@@ -1,0 +1,28 @@
+//////////////////////////////////
+// CORE / ELEMENTS / ABBREVIATIONS
+//////////////////////////////////
+
+
+// Abbreviation
+abbr {
+  letter-spacing: $letter-spacing-abbr;
+}
+
+
+// Abbreviation title
+abbr[title] {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    border-bottom: $border-bottom-width-abbr-title $border-bottom-style-abbr-title $border-bottom-color-abbr-title;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: $opacity-abbr-title;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+}

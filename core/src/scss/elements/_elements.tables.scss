@@ -1,0 +1,22 @@
+///////////////////////////
+// CORE / ELEMENTS / TABLES
+///////////////////////////
+
+
+// Table
+table {
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+
+// Caption
+caption {
+  padding-bottom: $padding-bottom-caption;
+}
+
+
+// Table Header
+th {
+  text-align: left;
+}

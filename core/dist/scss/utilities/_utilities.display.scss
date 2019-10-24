@@ -1,0 +1,65 @@
+/////////////////////////////
+// CORE / UTILITIES / DISPLAY
+/////////////////////////////
+
+
+// None
+.dcf-d-none { @include d-none(!important); }
+
+
+// None (screen, show when printed)
+.dcf-d-none\@screen {
+
+  @media only screen {
+    @include d-none(!important);
+  }
+
+}
+
+
+// Block
+.dcf-d-block { @include d-block(!important); }
+
+
+// Inline
+.dcf-d-inline { @include d-inline(!important); }
+
+
+// Inline block
+.dcf-d-inline-block { @include d-inline-block(!important); }
+
+
+// Table
+.dcf-d-table { @include d-table(!important); }
+
+
+// Table cell
+.dcf-d-table-cell { @include d-table-cell(!important); }
+
+
+// Flex
+.dcf-d-flex { @include d-flex(!important); }
+
+
+// Inline flex
+.dcf-d-inline-flex { @include d-inline-flex(!important); }
+
+
+// Grid
+.dcf-d-grid {
+
+  @supports (display: grid) {
+    @include d-grid(!important);
+  }
+
+}
+
+
+// Inline grid
+.dcf-d-inline-grid {
+
+  @supports (display: inline-grid) {
+    @include d-inline-grid(!important);
+  }
+
+}

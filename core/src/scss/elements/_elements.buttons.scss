@@ -1,0 +1,17 @@
+////////////////////////////
+// CORE / ELEMENTS / BUTTONS
+////////////////////////////
+
+
+// Button
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: $font-size-button;
+  @include lh-4;
+  padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
+  text-align: center;
+}

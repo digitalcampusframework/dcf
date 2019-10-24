@@ -1,0 +1,27 @@
+//////////////////////////////
+// THEME / UTILITIES / BORDERS
+//////////////////////////////
+
+
+// Gray
+.theme-b-gray { @include b-color(!important); }     // All sides
+.theme-bt-gray { @include bt-color(!important); }   // Top
+.theme-br-gray { @include br-color(!important); }   // Right
+.theme-bb-gray { @include bb-color(!important); }   // Bottom
+.theme-bl-gray { @include bl-color(!important); }   // Left
+
+
+// Brand: Alpha
+.theme-b-alpha { @include b-alpha(!important); }    // All sides
+.theme-bt-alpha { @include bt-alpha(!important); }  // Top
+.theme-br-alpha { @include br-alpha(!important); }  // Right
+.theme-bb-alpha { @include bb-alpha(!important); }  // Bottom
+.theme-bl-alpha { @include bl-alpha(!important); }  // Left
+
+
+// Brand: Beta
+.theme-b-beta { @include b-beta(!important); }      // All sides
+.theme-bt-beta { @include bt-beta(!important); }    // Top
+.theme-br-beta { @include br-beta(!important); }    // Right
+.theme-bb-beta { @include bb-beta(!important); }    // Bottom
+.theme-bl-beta { @include bl-beta(!important); }    // Left

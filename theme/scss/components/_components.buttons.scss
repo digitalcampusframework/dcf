@@ -1,0 +1,83 @@
+///////////////////////////////
+// THEME / COMPONENTS / BUTTONS
+///////////////////////////////
+
+
+
+.theme .dcf-btn {
+  transition: all $hover-off;
+}
+
+
+.theme .dcf-btn:hover {
+  transition: all $hover-on;
+}
+
+
+
+// Primary Button
+.theme .dcf-btn-primary:visited {
+  background-color: $color-visited;
+  border-color: $color-visited;
+}
+
+
+.theme .dcf-btn-primary:active,
+.theme .dcf-btn-primary.dcf-active {
+  background-color: $color-active;
+  border-color: $color-active;
+}
+
+
+.theme .dcf-btn-primary:not(:disabled):hover {
+  background-color: $color-hover;
+  border-color: $color-hover;
+}
+
+
+// Secondary Button
+.theme .dcf-btn-secondary:visited {
+  color: $color-visited;
+}
+
+
+.theme .dcf-btn-secondary:active,
+.theme .dcf-btn-secondary.dcf-active {
+  color: $color-active;
+}
+
+
+.theme .dcf-btn-secondary:not(:disabled):hover {
+  background-color: lighten($color-button-secondary,56%);
+  color: $color-hover;
+}
+
+
+// Tertiary Button
+.theme .dcf-btn-tertiary:visited {
+  color: $color-visited;
+}
+
+
+.theme .dcf-btn-tertiary:active,
+.theme .dcf-btn-tertiary.dcf-active {
+  color: $color-active;
+}
+
+
+.theme .dcf-btn-tertiary:not(:disabled):hover {
+  background-color: lighten($color-button-tertiary,56%);
+  color: $color-hover;
+}
+
+
+// Inverse Buttons
+.theme .dcf-btn-inverse-primary:not(:disabled):hover {
+  background-color: fade-out($bg-color-button-inverse-primary, .16);
+}
+
+
+.theme .dcf-btn-inverse-secondary:not(:disabled):hover,
+.theme .dcf-btn-inverse-tertiary:not(:disabled):hover {
+  background-color: fade-out($color-button-inverse-secondary, .84);
+}

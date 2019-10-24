@@ -1,0 +1,17 @@
+//////////////////////////
+// CORE / MIXINS / Z-INDEX
+//////////////////////////
+
+
+@mixin z-0($imp:null) { z-index: $z-0 $imp; }
+@mixin z-1($imp:null) { z-index: $z-1 $imp; }
+@mixin z-2($imp:null) { z-index: $z-2 $imp; }
+
+
+@mixin z-modal-fullscreen($imp:null) {
+  z-index: $z-modal-fullscreen $imp;
+}
+
+@mixin z-modal-behind-nav-toggle-group($imp:null) {
+  z-index: $z-modal-behind-nav-toggle-group $imp;
+}

@@ -1,0 +1,19 @@
+////////////////////////////////
+// THEME / VARIABLES / SUP & SUB
+////////////////////////////////
+
+
+@import '_variables.modular-scale';
+
+
+// Font size
+$font-size-sub-sup: #{ms(-3)}em;    // Superscript & subscript font-size: .63em;
+
+
+// Top
+$top-sup: -#{ms(-4)}em;             // Superscript top position: -.56em
+$top-sub: #{ms(-10)}em;             // Subscript top position: .24em
+
+
+// Vertical alignment
+$vertical-align-sub-sup: baseline;  // Superscript & subscript vertical alignment

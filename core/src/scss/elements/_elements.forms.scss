@@ -1,0 +1,47 @@
+//////////////////////////
+// CORE / ELEMENTS / FORMS
+//////////////////////////
+
+
+form,
+input,
+textarea {
+  @include txt-md;
+  @include lh-4;
+}
+
+
+fieldset {
+  // Reset browser defaults
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+label {
+  display: inline-block;
+}
+
+
+select {
+  display: block;
+}
+
+
+textarea {
+  display: block;
+  resize: vertical;
+  width: 100%;
+}
+
+
+input[type="file"] {
+  width: 100%; // Prevent overflow in narrow viewports
+}
+
+
+:disabled,
+input:disabled ~ label {
+  cursor: not-allowed !important;
+  opacity: $opacity-disabled;
+}

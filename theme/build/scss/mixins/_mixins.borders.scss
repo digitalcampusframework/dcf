@@ -1,0 +1,27 @@
+///////////////////////////
+// THEME / MIXINS / BORDERS
+///////////////////////////
+
+
+// Gray
+@mixin b-color($imp:null) { border-color: $border-color $imp; }               // All sides
+@mixin bt-color($imp:null) { border-top-color: $border-color $imp; }          // Top
+@mixin br-color($imp:null) { border-right-color: $border-color $imp; }        // Right
+@mixin bb-color($imp:null) { border-bottom-color: $border-color $imp; }       // Bottom
+@mixin bl-color($imp:null) { border-left-color: $border-color $imp; }         // Left
+
+
+// Brand: alpha
+@mixin b-alpha($imp:null) { border-color: $color-brand-alpha $imp; }          // All sides
+@mixin bt-alpha($imp:null) { border-top-color: $color-brand-alpha $imp; }     // Top
+@mixin br-alpha($imp:null) { border-right-color: $color-brand-alpha $imp; }   // Right
+@mixin bb-alpha($imp:null) { border-bottom-color: $color-brand-alpha $imp; }  // Bottom
+@mixin bl-alpha($imp:null) { border-left-color: $color-brand-alpha $imp; }    // Left
+
+
+// Brand: beta
+@mixin b-beta($imp:null) { border-color: $color-brand-beta $imp; }            // All sides
+@mixin bt-beta($imp:null) { border-top-color: $color-brand-beta $imp; }       // Top
+@mixin br-beta($imp:null) { border-right-color: $color-brand-beta $imp; }     // Right
+@mixin bb-beta($imp:null) { border-bottom-color: $color-brand-beta $imp; }    // Bottom
+@mixin bl-beta($imp:null) { border-left-color: $color-brand-beta $imp; }      // Left

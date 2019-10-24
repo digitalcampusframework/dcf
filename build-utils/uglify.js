@@ -13,32 +13,32 @@ const $ = require('./gulp-load-plugins');
  */
 
 function uglifyNewer (src, dest, taskName, newerDest, noBanner = false) {
-		$.fancyLog(`----> //** Uglifying JS Files -- ${taskName}`);
-		return $.pump([
-			gulp.src(src, {allowEmpty: true}),
-			customPlumber(`Error Running ${taskName} task`),
-			$.sourcemaps.init({loadMaps:true}),
-			$.newer({dest: newerDest}),
-			$.uglifyEs.default({
-				output: { comments: $.uglifySaveLicense }
-			})
-					.on('error', (err) => {
-						$.fancyLog($.ansiColors.red('[Error]'), err.toString()); //more detailed error message
-						// this.emit('end');
-					}),
-			$.if([ '**/*.js', '!**/*.min.js' ],
-					$.rename({ suffix: '.min' })
-			),
-			$.size({
-				showFiles: true,
-				gzip: true,
-			}),
-			$.if(!noBanner,
-					$.header(banner, { pkg: pkg })
-			),
-			$.sourcemaps.write('./'),
-			gulp.dest(dest)
-		]);
+  $.fancyLog(`----> //** Uglifying JS Files -- ${taskName}`);
+  return $.pump([
+    gulp.src(src, {allowEmpty: true}),
+    customPlumber(`Error Running ${taskName} task`),
+    $.sourcemaps.init({loadMaps:true}),
+    $.newer({dest: newerDest}),
+    $.uglifyEs.default({
+      output: { comments: $.uglifySaveLicense }
+    })
+    .on('error', (err) => {
+      $.fancyLog($.ansiColors.red('[Error]'), err.toString()); // more detailed error message
+      // this.emit('end');
+    }),
+    $.if([ '**/*.js', '!**/*.min.js' ],
+      $.rename({ suffix: '.min' })
+    ),
+    $.size({
+      showFiles: true,
+      gzip: true,
+    }),
+    $.if(!noBanner,
+      $.header(banner, { pkg: pkg })
+    ),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
 
 module.exports = uglifyNewer;

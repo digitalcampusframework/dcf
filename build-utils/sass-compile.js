@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const customPlumber = require('./custom-plumber');
 const $ = require('./gulp-load-plugins');
 
-// postCSS plugins
+// PostCSS plugins
 const autoprefixer = require('autoprefixer');
 const postcssNormalize = require('postcss-normalize');
 const postcssPresetEnv = require('postcss-preset-env');
@@ -15,86 +15,85 @@ const postcssObjectFitImages = require('postcss-object-fit-images');
  * @param {string} taskName: name of the task
  * @param {string} newerDest: target file for newer to compared against
  */
-function sassCompileScreenNewer (src, dest, taskName, newerDest) {
-	$.fancyLog('----> //** Compiling all.css');
-	return $.pump([
-		gulp.src(src),
-		customPlumber(`Error Running ${taskName}`),
-		$.newer({dest: newerDest}),
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass({
-			precision: 2,
-			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
-		})
-				.on('error', $.sass.logError),
-		$.postcss(
-				[
-					autoprefixer,
-					postcssNormalize({forceImport:true}),
-					postcssPresetEnv(),
-					postcssObjectFitImages()
-				]
-		),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+function sassCompileMainNewer (src, dest, taskName, newerDest) {
+  $.fancyLog('----> //** Compiling main.css');
+  return $.pump([
+    gulp.src(src),
+    customPlumber(`Error Running ${taskName}`),
+    $.newer({dest: newerDest}),
+    $.sassGlob(),
+    $.sourcemaps.init({loadMaps:true}),
+    $.sass({
+      precision: 2,
+      includePaths: [path.dirname(require.resolve('modularscale-sass'))]
+    })
+    .on('error', $.sass.logError),
+    $.postcss(
+      [
+        autoprefixer,
+        postcssNormalize({forceImport:true}),
+        postcssPresetEnv(),
+        postcssObjectFitImages()
+      ]
+    ),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
 
-function sassCompileScreen (src, dest, taskName) {
-	$.fancyLog('----> //** Compiling all.css');
-	return $.pump([
-		gulp.src(src),
-		customPlumber(`Error Running ${taskName}`),
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass({
-			precision: 2,
-			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
-		})
-				.on('error', $.sass.logError),
-		$.postcss(
-				[
-					autoprefixer,
-					postcssNormalize({forceImport:true}),
-					postcssPresetEnv(),
-          postcssObjectFitImages()
-				]
-		),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+function sassCompileMain (src, dest, taskName) {
+  $.fancyLog('----> //** Compiling main.css');
+  return $.pump([
+    gulp.src(src),
+    customPlumber(`Error Running ${taskName}`),
+    $.sassGlob(),
+    $.sourcemaps.init({loadMaps:true}),
+    $.sass({
+      precision: 2,
+      includePaths: [path.dirname(require.resolve('modularscale-sass'))]
+    })
+    .on('error', $.sass.logError),
+    $.postcss(
+      [
+        autoprefixer,
+        postcssNormalize({forceImport:true}),
+        postcssPresetEnv(),
+        postcssObjectFitImages()
+      ]
+    ),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
-
 
 function sassCompileBase (src, dest, taskName) {
-	$.fancyLog('----> //** Compiling all.css');
-	return $.pump([
-		gulp.src(src),
-		customPlumber(`Error Running ${taskName}`),
-		$.sassGlob(),
-		$.sourcemaps.init({loadMaps:true}),
-		$.sass({
-			precision: 2,
-			includePaths: [path.dirname(require.resolve('modularscale-sass'))]
-		})
-				.on('error', $.sass.logError),
-		$.postcss(
-				[
-					autoprefixer,
-					postcssPresetEnv(),
-          postcssObjectFitImages()
-				]
-		),
-		$.sourcemaps.write('./'),
-		gulp.dest(dest)
-	]);
+  $.fancyLog('----> //** Compiling main.css');
+  return $.pump([
+    gulp.src(src),
+    customPlumber(`Error Running ${taskName}`),
+    $.sassGlob(),
+    $.sourcemaps.init({loadMaps:true}),
+    $.sass({
+      precision: 2,
+      includePaths: [path.dirname(require.resolve('modularscale-sass'))]
+    })
+    .on('error', $.sass.logError),
+    $.postcss(
+      [
+        autoprefixer,
+        postcssPresetEnv(),
+        postcssObjectFitImages()
+      ]
+    ),
+    $.sourcemaps.write('./'),
+    gulp.dest(dest)
+  ]);
 }
 
 let sassCompileObj = {
-	base: sassCompileBase,
-	screen: sassCompileScreen,
-	screenNewer: sassCompileScreenNewer
+  base: sassCompileBase,
+  main: sassCompileMain,
+  mainNewer: sassCompileMainNewer
 };
 
 module.exports = sassCompileObj;

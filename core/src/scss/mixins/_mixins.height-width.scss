@@ -1,0 +1,62 @@
+/////////////////////////////////
+// CORE / MIXINS / HEIGHT & WIDTH
+/////////////////////////////////
+
+
+// Height
+@mixin h-auto($imp:null) { height: auto $imp; }
+@mixin h-0($imp:null) { height: 0 $imp; }
+@mixin h-1($imp:null) { height: $length-em-1 $imp; }
+@mixin h-2($imp:null) { height: $length-em-2 $imp; }
+@mixin h-3($imp:null) { height: $length-em-3 $imp; }
+@mixin h-4($imp:null) { height: $length-em-4 $imp; }
+@mixin h-5($imp:null) { height: $length-em-5 $imp; }
+@mixin h-6($imp:null) { height: $length-em-6 $imp; }
+@mixin h-7($imp:null) { height: $length-em-7 $imp; }
+@mixin h-8($imp:null) { height: $length-em-8 $imp; }
+@mixin h-9($imp:null) { height: $length-em-9 $imp; }
+@mixin h-10($imp:null) { height: $length-em-10 $imp; }
+@mixin h-100pc($imp:null) { height: 100% $imp; }
+@mixin h-100vh($imp:null) { height: 100vh $imp; }
+
+
+// Minimum height
+@mixin h-min-0($imp:null) { min-height: 0 $imp; }
+@mixin h-min-100vh($imp:null) { min-height: 100vh $imp; }
+
+
+// Maximum height
+@mixin h-max-100pc($imp:null) { max-height: 100% $imp; }
+@mixin h-max-100vh($imp:null) { max-height: 100vh $imp; }
+
+
+// Width
+@mixin w-auto($imp:null) { width: auto $imp; }
+@mixin w-0($imp:null) { width: 0 $imp; }
+@mixin w-1($imp:null) { width: $length-em-1 $imp; }
+@mixin w-2($imp:null) { width: $length-em-2 $imp; }
+@mixin w-3($imp:null) { width: $length-em-3 $imp; }
+@mixin w-4($imp:null) { width: $length-em-4 $imp; }
+@mixin w-5($imp:null) { width: $length-em-5 $imp; }
+@mixin w-6($imp:null) { width: $length-em-6 $imp; }
+@mixin w-7($imp:null) { width: $length-em-7 $imp; }
+@mixin w-8($imp:null) { width: $length-em-8 $imp; }
+@mixin w-9($imp:null) { width: $length-em-9 $imp; }
+@mixin w-10($imp:null) { width: $length-em-10 $imp; }
+@mixin w-100pc($imp:null) { width: 100% $imp; }
+@mixin w-100vw($imp:null) { width: 100vw $imp; }
+
+
+// Minimum width
+@mixin w-min-0($imp:null) { min-width: 0 $imp; }
+
+
+// Maximum width
+@mixin w-max-xs($imp:null) { max-width: #{ms(20)}rem $imp; } // [1]
+@mixin w-max-sm($imp:null) { max-width: #{ms(22)}rem $imp; } // [1]
+@mixin w-max-md($imp:null) { max-width: #{ms(24)}rem $imp; } // [1]
+@mixin w-max-lg($imp:null) { max-width: #{ms(26)}rem $imp; } // [1]
+@mixin w-max-xl($imp:null) { max-width: #{ms(28)}rem $imp; } // [1]
+@mixin w-max-100pc($imp:null) { max-width: 100% $imp; }
+@mixin w-max-100vw($imp:null) { max-width: 100vw $imp; }
+// [1] http://webtypography.net/2.1.2

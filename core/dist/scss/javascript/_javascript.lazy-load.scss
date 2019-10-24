@@ -1,0 +1,10 @@
+////////////////////////////////
+// CORE / JAVASCRIPT / LAZY LOAD
+////////////////////////////////
+
+
+// Hide lazy-loaded elements if JavaScript is unavailable
+// (<noscript> versions will be shown instead)
+.dcf-no-js .dcf-lazy-load {
+  display: none;
+}

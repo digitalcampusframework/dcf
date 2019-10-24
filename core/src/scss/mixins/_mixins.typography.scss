@@ -1,0 +1,85 @@
+/////////////////////////////
+// CORE / MIXINS / TYPOGRAPHY
+/////////////////////////////
+
+
+// Font size
+@mixin txt-base($imp:null) { font-size: #{ms(0)}rem $imp; }
+// Base font-size should act as a reset and always be 1rem
+// Remaining font sizes should be configured in theme _mixins.typography
+
+
+// Horizontal text alignment
+@mixin txt-center($imp:null) { text-align: center $imp; }
+@mixin txt-left($imp:null) { text-align: left $imp; }
+@mixin txt-right($imp:null) { text-align: right $imp; }
+
+
+// Vertical text alignment
+@mixin txt-baseline($imp:null) { vertical-align: baseline $imp; }
+@mixin txt-top($imp:null) { vertical-align: top $imp; }
+@mixin txt-middle($imp:null) { vertical-align: middle $imp; }
+@mixin txt-bottom($imp:null) { vertical-align: bottom $imp; }
+@mixin txt-text-top($imp:null) { vertical-align: text-top $imp; }
+@mixin txt-text-bottom($imp:null) { vertical-align: text-bottom $imp; }
+
+
+// Text decoration
+@mixin txt-decor-none($imp:null) { text-decoration: none $imp; }
+@mixin txt-decor-hover-on($imp:null) { text-decoration: underline $imp; }
+@mixin txt-decor-hover-off($imp:null) { text-decoration: none $imp; }
+
+
+// Text wrap
+@mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
+
+@mixin word-wrap($imp:null) {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@mixin truncate($imp:null) {
+  overflow: hidden $imp;
+  text-overflow: ellipsis $imp;
+  white-space: nowrap $imp;
+}
+
+
+// Font style
+@mixin roman($imp:null) { font-style: normal $imp; }
+@mixin italic($imp:null) { font-style: italic $imp; }
+
+
+// Font weight
+@mixin regular($imp:null) { font-weight: normal $imp; }
+@mixin bold($imp:null) { font-weight: bold $imp; }
+
+
+// Line height
+@mixin lh-1($imp:null) { line-height: #{ms(0)} $imp; }
+@mixin lh-2($imp:null) { line-height: #{ms(1)} $imp; }
+@mixin lh-3($imp:null) { line-height: #{ms(2)} $imp; }
+@mixin lh-4($imp:null) { line-height: #{ms(3)} $imp; }
+
+
+// Text transform
+@mixin capitalize($imp:null) { text-transform: capitalize $imp; }
+@mixin lowercase($imp:null) { text-transform: lowercase $imp; }
+@mixin uppercase($imp:null) { text-transform: uppercase $imp; }
+@mixin case-reset($imp:null) { text-transform: none $imp; }
+
+
+// Writing mode
+@mixin txt-vertical-lr($imp:null) {
+  transform: translateY(-100%) rotateZ(90deg);
+  transform-origin: 0 100%;
+
+  @supports (writing-mode: vertical-lr) {
+    transform: none;
+    writing-mode: vertical-lr;
+  }
+
+}

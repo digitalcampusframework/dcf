@@ -1,0 +1,36 @@
+///////////////////////////
+// CORE / UTILITIES / ORDER
+///////////////////////////
+
+
+.dcf-1st { @include order-1st(!important); }
+.dcf-2nd { @include order-2nd(!important); }
+.dcf-3rd { @include order-3rd(!important); }
+
+
+@include mq(sm, min, width) {
+  .dcf-1st\@sm { @include order-1st(!important); }
+  .dcf-2nd\@sm { @include order-2nd(!important); }
+  .dcf-3rd\@sm { @include order-3rd(!important); }
+}
+
+
+@include mq(md, min, width) {
+  .dcf-1st\@md { @include order-1st(!important); }
+  .dcf-2nd\@md { @include order-2nd(!important); }
+  .dcf-3rd\@md { @include order-3rd(!important); }
+}
+
+
+@include mq(lg, min, width) {
+  .dcf-1st\@lg { @include order-1st(!important); }
+  .dcf-2nd\@lg { @include order-2nd(!important); }
+  .dcf-3rd\@lg { @include order-3rd(!important); }
+}
+
+
+@include mq(xl, min, width) {
+  .dcf-1st\@xl { @include order-1st(!important); }
+  .dcf-2nd\@xl { @include order-2nd(!important); }
+  .dcf-3rd\@xl { @include order-3rd(!important); }
+}

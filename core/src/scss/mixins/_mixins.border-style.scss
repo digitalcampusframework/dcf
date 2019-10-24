@@ -1,0 +1,19 @@
+///////////////////////////////
+// CORE / MIXINS / BORDER-STYLE
+///////////////////////////////
+
+
+// Dotted
+@mixin b-dotted($imp:null) { border-style: dotted $imp; }         // All Sides
+@mixin bt-dotted($imp:null) { border-top-style: dotted $imp; }    // Top
+@mixin br-dotted($imp:null) { border-right-style: dotted $imp; }  // Right
+@mixin bb-dotted($imp:null) { border-bottom-style: dotted $imp; } // Bottom
+@mixin bl-dotted($imp:null) { border-left-style: dotted $imp; }   // Left
+
+
+// Solid
+@mixin b-solid($imp:null) { border-style: solid $imp; }           // All Sides
+@mixin bt-solid($imp:null) { border-top-style: solid $imp; }      // Top
+@mixin br-solid($imp:null) { border-right-style: solid $imp; }    // Right
+@mixin bb-solid($imp:null) { border-bottom-style: solid $imp; }   // Bottom
+@mixin bl-solid($imp:null) { border-left-style: solid $imp; }     // Left

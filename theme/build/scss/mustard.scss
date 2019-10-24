@@ -1,0 +1,12 @@
+//////////
+// MUSTARD
+//////////
+
+
+// Sass is compiled from a temporary _theme/build/scss_ through the Gulp tasks
+// hence the import path from core reflects that.
+
+
+// Mustard
+@import '../../core/dist/scss/mustard/**/*';
+@import '/mustard/**/*';

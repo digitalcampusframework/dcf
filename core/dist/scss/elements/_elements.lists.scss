@@ -1,0 +1,61 @@
+//////////////////////////
+// CORE / ELEMENTS / LISTS
+//////////////////////////
+
+
+ol,
+ul {
+  padding-left: $padding-left-ol-ul;
+}
+
+
+dl,
+ol,
+ul {
+  margin-bottom: $margin-bottom-dl-ol-ul;
+  margin-top: $margin-top-dl-ol-ul;
+
+  dl,
+  ol,
+  ul {
+    margin-top: $margin-top-nested-dl-ol-ul;
+  }
+
+}
+
+
+li,
+dt,
+dd {
+  margin-top: $margin-top-li-dt-dd;
+}
+
+
+li {
+  margin-bottom: $margin-bottom-li;
+}
+
+
+@if ($font-weight-dt-bold) {
+
+  dt {
+    font-weight: bold;
+  }
+
+}
+
+
+dd {
+  margin-left: $margin-left-dd;
+}
+
+
+dt,
+dd {
+  margin-bottom: $margin-bottom-dt-dd;
+}
+
+
+dd + dt {
+  margin-top: $margin-top-dd-plus-dt;
+}

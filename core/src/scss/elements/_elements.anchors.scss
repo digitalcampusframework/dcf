@@ -1,0 +1,27 @@
+////////////////////////////
+// CORE / ELEMENTS / ANCHORS
+////////////////////////////
+
+
+// Link
+a:link {
+  color: $color-link;
+}
+
+
+// Visited
+a:visited {
+  color: $color-visited;
+}
+
+
+// Hover
+a:hover {
+  color: $color-hover;
+}
+
+
+// Active
+a:active {
+  color: $color-active;
+}

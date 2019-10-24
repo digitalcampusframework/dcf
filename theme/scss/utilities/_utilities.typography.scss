@@ -1,0 +1,30 @@
+/////////////////////////////////
+// THEME / UTILITIES / TYPOGRAPHY
+/////////////////////////////////
+
+
+// Font size
+.theme .dcf-txt-3xs { @include txt-3xs(!important); }
+.theme .dcf-txt-2xs { @include txt-2xs(!important); }
+.theme .dcf-txt-xs { @include txt-xs(!important); }
+.theme .dcf-txt-sm { @include txt-sm(!important); }
+.theme .dcf-txt-md { @include txt-md(!important); }
+.theme .dcf-txt-lg { @include txt-lg(!important); }
+.theme .dcf-txt-h6 { @include txt-h6(!important); }
+.theme .dcf-txt-h5 { @include txt-h5(!important); }
+.theme .dcf-txt-h4 { @include txt-h4(!important); }
+.theme .dcf-txt-h3 { @include txt-h3(!important); }
+.theme .dcf-txt-h2 { @include txt-h2(!important); }
+.theme .dcf-txt-h1 { @include txt-h1(!important); }
+.theme .dcf-txt-xl { @include txt-xl(!important); }
+.theme .dcf-txt-2xl { @include txt-2xl(!important); }
+.theme .dcf-txt-3xl { @include txt-3xl(!important); }
+.theme .dcf-txt-4xl { @include txt-4xl(!important); }
+.theme .dcf-txt-5xl { @include txt-5xl(!important); }
+.theme .dcf-txt-6xl { @include txt-6xl(!important); }
+
+
+// Letter spacing
+.theme-ls-0 { @include ls-0(!important); }
+.theme-ls-1 { @include ls-1(!important); }
+.theme-ls-2 { @include ls-2(!important); }

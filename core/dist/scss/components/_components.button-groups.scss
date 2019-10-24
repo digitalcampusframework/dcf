@@ -1,0 +1,43 @@
+////////////////////////////////////
+// CORE / COMPONENTS / BUTTON GROUPS
+////////////////////////////////////
+
+
+.dcf-btn-group {
+  display: inline-flex;
+}
+
+
+.dcf-btn-group .dcf-btn:focus {
+  z-index: 1; // Ensure borders, outlines, etc appear above adjacent buttons when focused
+}
+
+
+.dcf-btn-group .dcf-btn-primary + .dcf-btn-primary {
+  margin-left: $spacing-button-group; // Provide spacing in between button group buttons
+}
+
+
+.dcf-btn-group .dcf-btn-secondary + .dcf-btn-secondary {
+  margin-left: -$spacing-button-group; // Collapse internal shared borders
+}
+
+
+// If buttons have rounded corners, square off internal corners in button group
+@if ($border-radius-button-roundrect) {
+
+  .dcf-btn-group > .dcf-btn:first-child {
+    @include sharp-right;
+  }
+
+
+  .dcf-btn-group > .dcf-btn:last-child {
+    @include sharp-left;
+  }
+
+
+  .dcf-btn-group > .dcf-btn:not(:first-child):not(:last-child) {
+    @include sharp;
+  }
+
+}
