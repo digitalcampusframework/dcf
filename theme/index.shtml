@@ -3726,7 +3726,6 @@
       <h2>JavaScript</h2>
       <ul class="dcf-mt-6">
         <li><a href="#javascript-states">States</a></li>
-<!--         <li><a href="#javascript-datepicker">Date Picker Form Input Field</a></li> -->
       </ul>
 
       <h3 class="dcf-mt-8" id="javascript-states">States</h3>
@@ -3767,22 +3766,6 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 theme-bl-alpha"><b>Related:</b> <a href="#elements-images">Images</a> (Elements)</p>
 
-<!--
-      <h3 id="javascript-datepicker">Date Picker Form Input Field</h3>
-      <dl>
-        <dt><code>&#x3C;input  data-widget=&#x22;flatpickr&#x22; type=&#x22;text&#x22; placeholder=&#x22;Select Date & Time ..&#x22; readonly&#x3E;</code></dt>
-        <dd>Utilizes the Flatpickr plugin for a more browser uniform date picker widget see <a href="https://flatpickr.js.org/">Flatpickr documentation</a> for options.</dd>
-      </dl>
-      <form>
-        <legend>Select a date and time</legend>
-        <fieldset>
-          <label for="elements-form-datetime-flatpickr">Date/time:</label>
-          <input id="elements-form-datetime-flatpickr" data-widget="flatpickr" type="text" class="flatpickr"
-                           placeholder="Select Date & Time.."
-                           readonly="readonly">
-        </fieldset>
-      </form>
--->
     </section>
 
     <section class="dcf-pt-10 dcf-mb-10" id="print">
