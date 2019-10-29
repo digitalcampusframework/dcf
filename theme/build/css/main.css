@@ -738,17 +738,17 @@ q::after {
 small {
   font-size: 1rem; }
 
-sup,
-sub {
+sub,
+sup {
   font-size: 0.63em;
   position: relative;
   vertical-align: baseline; }
 
-sup {
-  top: -0.56em; }
-
 sub {
-  top: 0.24em; }
+  bottom: -0.56ex; }
+
+sup {
+  bottom: 1.33ex; }
 
 table {
   background-color: transparent;
