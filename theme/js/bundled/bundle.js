@@ -755,16 +755,6 @@ exampleModal.initialize();
 //
 // Notice.create('Spaghetti Monster Lives', 'You know no spaghetti', noticeOptions);
 
-
-// Date Picker
-// let flatpickr = require('flatpickr/flatpickr');
-// require("flatpickr/flatpickr.css");
-// let datepicker = document.querySelector('[data-widget*="flatpickr"]');
-// flatpickr(datepicker, {
-// 	enableTime: true,
-// 	dateFormat: "Y-m-d h:iK",
-// });
-
 },{"body-scroll-lock":4,"dcf-lazyLoad":1,"dcf-modal":2}]},{},[5])
 
 //# sourceMappingURL=bundle.js.map
