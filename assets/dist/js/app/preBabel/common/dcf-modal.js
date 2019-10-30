@@ -52,6 +52,8 @@ class Modal {
     const header = document.getElementById('dcf-header');
     const main = document.getElementById('dcf-main');
     const footer = document.getElementById('dcf-footer');
+    const navToggleGroup = document.getElementById('dcf-nav-toggle-group');
+    const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement: null;
     const nonModals = [ skipNav, header, main, footer ];
 
     for (let i = 0; i < this.modals.length; i++) {
@@ -80,7 +82,23 @@ class Modal {
 
     // Set elements outside of modal to be inert and hidden from screen readers
     nonModals.forEach(function(el, array) {
-      el.setAttribute('aria-hidden','true');
+      if (modalWithNavToggleGroup && navToggleGroup && el === navToggleGroupParent) {
+        el.setAttribute('aria-hidden','false');
+
+        // hide all children of navToggleGroupParent except navToggleGroup
+        const children = navToggleGroupParent.childNodes;
+        children.forEach(function(child, array) {
+          if (child.nodeType === Node.ELEMENT_NODE) {
+            if (child === navToggleGroup) {
+              child.setAttribute('aria-hidden', 'false');
+            } else {
+              child.setAttribute('aria-hidden', 'true');
+            }
+          }
+        });
+      } else {
+        el.setAttribute('aria-hidden','true');
+      }
     });
 
     // Prevent body from scrolling
@@ -152,7 +170,9 @@ class Modal {
     const header = document.getElementById('dcf-header');
     const main = document.getElementById('dcf-main');
     const footer = document.getElementById('dcf-footer');
-    const nonModals = [skipNav, header, main, footer];
+    const navToggleGroup = document.getElementById('dcf-nav-toggle-group');
+    const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement: null;
+    const nonModals = [ skipNav, header, main, footer ];
     const thisModal = document.getElementById(modalId);
     let modalClosed = thisModal.getAttribute('aria-hidden') === 'true' ? true : false;
     this.currentModal = null;
@@ -167,6 +187,15 @@ class Modal {
 
     // Restore visibility and functionality to elements outside of modal
     nonModals.forEach(function(el, array) {
+      // show all children of navToggleGroupParent
+      const children = navToggleGroupParent.childNodes;
+      children.forEach(function(child, array) {
+        if (child.nodeType === Node.ELEMENT_NODE) {
+          child.setAttribute('aria-hidden', 'false');
+        }
+      });
+
+      // show all noModals
       el.setAttribute('aria-hidden','false');
     });
 
