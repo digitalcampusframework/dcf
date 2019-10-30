@@ -436,15 +436,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Restore visibility and functionality to elements outside of modal
         nonModals.forEach(function (el, array) {
-          // show all children of navToggleGroupParent
-          var children = navToggleGroupParent.childNodes;
-          children.forEach(function (child, array) {
-            if (child.nodeType === Node.ELEMENT_NODE) {
-              child.setAttribute('aria-hidden', 'false');
-            }
-          });
+          if (navToggleGroup && el === navToggleGroupParent) {
+            // show all children of navToggleGroupParent
+            var children = navToggleGroupParent.childNodes;
+            children.forEach(function (child, array) {
+              if (child.nodeType === Node.ELEMENT_NODE) {
+                child.setAttribute('aria-hidden', 'false');
+              }
+            });
+          }
 
-          // show all noModals
+          // show all nonModals
           el.setAttribute('aria-hidden', 'false');
         });
 
