@@ -186,7 +186,7 @@ class Modal {
         }
       });
 
-      // show all noModals
+      // show all nonModals
       el.setAttribute('aria-hidden','false');
     });
 
