@@ -4,7 +4,7 @@
 
 
 .example .dcf-nav-toggle-btn {
-  width: 33%;
+  flex-basis: 25%;
 }
 
 
@@ -17,7 +17,6 @@
 
   .example .dcf-nav-toggle-group {
     display: flex;
-    width: 25%;
     z-index: $z-nav-toggle-group;
   }
 
