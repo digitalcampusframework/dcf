@@ -301,6 +301,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var header = document.getElementById('dcf-header');
         var main = document.getElementById('dcf-main');
         var footer = document.getElementById('dcf-footer');
+        var navToggleGroup = document.getElementById('dcf-nav-toggle-group');
+        var navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
         var nonModals = [skipNav, header, main, footer];
 
         for (var i = 0; i < this.modals.length; i++) {
@@ -329,7 +331,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Set elements outside of modal to be inert and hidden from screen readers
         nonModals.forEach(function (el, array) {
-          el.setAttribute('aria-hidden', 'true');
+          if (modalWithNavToggleGroup && navToggleGroup && el === navToggleGroupParent) {
+            el.setAttribute('aria-hidden', 'false');
+
+            // hide all children of navToggleGroupParent except navToggleGroup
+            var children = navToggleGroupParent.childNodes;
+            children.forEach(function (child, array) {
+              if (child.nodeType === Node.ELEMENT_NODE) {
+                if (child === navToggleGroup) {
+                  child.setAttribute('aria-hidden', 'false');
+                } else {
+                  child.setAttribute('aria-hidden', 'true');
+                }
+              }
+            });
+          } else {
+            el.setAttribute('aria-hidden', 'true');
+          }
         });
 
         // Prevent body from scrolling
@@ -401,6 +419,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var header = document.getElementById('dcf-header');
         var main = document.getElementById('dcf-main');
         var footer = document.getElementById('dcf-footer');
+        var navToggleGroup = document.getElementById('dcf-nav-toggle-group');
+        var navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
         var nonModals = [skipNav, header, main, footer];
         var thisModal = document.getElementById(modalId);
         var modalClosed = thisModal.getAttribute('aria-hidden') === 'true' ? true : false;
@@ -416,6 +436,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Restore visibility and functionality to elements outside of modal
         nonModals.forEach(function (el, array) {
+          if (navToggleGroup && el === navToggleGroupParent) {
+            // show all children of navToggleGroupParent
+            var children = navToggleGroupParent.childNodes;
+            children.forEach(function (child, array) {
+              if (child.nodeType === Node.ELEMENT_NODE) {
+                child.setAttribute('aria-hidden', 'false');
+              }
+            });
+          }
+
+          // show all nonModals
           el.setAttribute('aria-hidden', 'false');
         });
 
