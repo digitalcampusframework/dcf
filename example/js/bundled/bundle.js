@@ -345,8 +345,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
         var nonModals = [skipNav, header, main, footer];
 
-        for (var _i = 0; _i < this.modals.length; _i++) {
-          var modal = this.modals[_i];
+        for (var m = 0; m < this.modals.length; m++) {
+          var modal = this.modals[m];
           if (modal.getAttribute('id') !== modalId) {
             this.closeModal(modal.getAttribute('id'));
           }
@@ -642,12 +642,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Loop through all modals
-        for (var _i2 = 0; _i2 < this.modals.length; _i2++) {
-          var modal = this.modals[_i2];
-          var modalWrapper = modalsWrapper[_i2];
-          var modalContent = modalsContent[_i2];
-          var modalHeader = modalsHeader[_i2];
-          var btnCloseModal = btnsCloseModal[_i2];
+        for (var _i = 0; _i < this.modals.length; _i++) {
+          var modal = this.modals[_i];
+          var modalWrapper = modalsWrapper[_i];
+          var modalContent = modalsContent[_i];
+          var modalHeader = modalsHeader[_i];
+          var btnCloseModal = btnsCloseModal[_i];
           var _modalId = modal.id;
           var modalHeadingId = _modalId + '-heading';
 

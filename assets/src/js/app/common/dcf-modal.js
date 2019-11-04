@@ -46,7 +46,7 @@ class Modal {
     // Set SVG state
     if (btnSVGs.length) {
       const gTags = btnSVGs[0].getElementsByTagName('g');
-      for (var i = 0; i < gTags.length; i++) {
+      for (let i = 0; i < gTags.length; i++) {
         if (gTags[i].classList.contains('dcf-nav-toggle-icon-open')) {
           if (btnState.toLowerCase() == 'open') {
             gTags[i].classList.remove('dcf-d-none');
@@ -85,8 +85,8 @@ class Modal {
     const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
     const nonModals = [ skipNav, header, main, footer ];
 
-    for (let i = 0; i < this.modals.length; i++) {
-      const modal = this.modals[i];
+    for (let m = 0; m < this.modals.length; m++) {
+      const modal = this.modals[m];
       if (modal.getAttribute('id') !== modalId) {
         this.closeModal(modal.getAttribute('id'));
       }
@@ -113,13 +113,13 @@ class Modal {
     }
 
     // Set elements outside of modal to be inert and hidden from screen readers
-    for (var i = 0; i < nonModals.length; i++) {
+    for (let i = 0; i < nonModals.length; i++) {
       if (modalWithNavToggleGroup && navToggleGroup && nonModals[i] === navToggleGroupParent) {
         nonModals[i].setAttribute('aria-hidden','false');
 
         // hide all children of navToggleGroupParent except navToggleGroup
         const children = navToggleGroupParent.childNodes;
-        for (var j = 0; j < children.length; j++) {
+        for (let j = 0; j < children.length; j++) {
           if (children[j].nodeType === Node.ELEMENT_NODE) {
             if (children[j] === navToggleGroup) {
               children[j].setAttribute('aria-hidden', 'false');
@@ -225,11 +225,11 @@ class Modal {
     }
 
     // Restore visibility and functionality to elements outside of modal
-    for (var i = 0; i < nonModals.length; i++) {
+    for (let i = 0; i < nonModals.length; i++) {
       if (navToggleGroup && nonModals[i] === navToggleGroupParent) {
         // show all children of navToggleGroupParent
         const children = navToggleGroupParent.childNodes;
-        for (var j = 0; j < children.length; j++) {
+        for (let j = 0; j < children.length; j++) {
           if (children[j].nodeType === Node.ELEMENT_NODE) {
             children[j].setAttribute('aria-hidden', 'false');
           }
@@ -330,10 +330,10 @@ class Modal {
   }
 
   generateUUID() {
-    var d = new Date().getTime();
-    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;
+    let d = new Date().getTime();
+    let d2 = (performance && performance.now && (performance.now()*1000)) || 0;
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16;
+      let r = Math.random() * 16;
       if(d > 0){
         r = (d + r)%16 | 0;
         d = Math.floor(d/16);
