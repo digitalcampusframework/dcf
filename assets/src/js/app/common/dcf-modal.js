@@ -29,11 +29,49 @@ class Modal {
 
     if (modalOpen) {
       // modal open so close it
-      this.closeModal(modalId, btnId);
+      this.closeModal(modalId);
     } else {
       // modal closed so open it
       this.openModal(modalId, btnId);
     }
+  }
+
+  // Set nav toggle button state as open or closed
+  // Note: Assumes nav toggle buttons are svgs with expected markup
+  setNavToggleBtnState(btn, btnState) {
+    btnState = typeof btnState !== 'undefined' ? btnState : 'open';
+    const btnSVGs = btn.getElementsByTagName('svg');
+    const btnLabels = btn.getElementsByClassName('dcf-nav-toggle-label');
+
+    // Set SVG state
+    if (btnSVGs.length) {
+      const gTags = btnSVGs[0].getElementsByTagName('g');
+      for (let i = 0; i < gTags.length; i++) {
+        if (gTags[i].classList.contains('dcf-nav-toggle-icon-open')) {
+          if (btnState.toLowerCase() == 'open') {
+            gTags[i].classList.remove('dcf-d-none');
+          } else {
+            gTags[i].classList.add('dcf-d-none');
+          }
+        } else if (gTags[i].classList.contains('dcf-nav-toggle-icon-close')) {
+          if (btnState.toLowerCase() == 'open') {
+            gTags[i].classList.add('dcf-d-none');
+          } else {
+            gTags[i].classList.remove('dcf-d-none');
+          }
+        }
+      }
+    }
+
+    // Set Button Label
+    if (btnLabels.length) {
+      if (btnState.toLowerCase() == 'open') {
+        btnLabels[0].textContent = btn.getAttribute('data-nav-toggle-label-open') ? btn.getAttribute('data-nav-toggle-label-open') : 'Open';
+      } else {
+        btnLabels[0].textContent = btn.getAttribute('data-nav-toggle-label-closed') ? btn.getAttribute('data-nav-toggle-label-closed') : 'Close';
+      }
+    }
+
   }
 
   // Open modal
@@ -44,11 +82,11 @@ class Modal {
     const main = document.getElementById('dcf-main');
     const footer = document.getElementById('dcf-footer');
     const navToggleGroup = document.getElementById('dcf-nav-toggle-group');
-    const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement: null;
+    const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
     const nonModals = [ skipNav, header, main, footer ];
 
-    for (let i = 0; i < this.modals.length; i++) {
-      const modal = this.modals[i];
+    for (let m = 0; m < this.modals.length; m++) {
+      const modal = this.modals[m];
       if (modal.getAttribute('id') !== modalId) {
         this.closeModal(modal.getAttribute('id'));
       }
@@ -62,6 +100,9 @@ class Modal {
       this.currentBtn = openBtnId;
       const openBtn = document.getElementById(openBtnId);
       modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-with-nav-toggle-group') === 'true';
+      if (modalWithNavToggleGroup) {
+        this.setNavToggleBtnState(openBtn, 'closed');
+      }
     }
 
     this.currentModal = modalId;
@@ -72,25 +113,25 @@ class Modal {
     }
 
     // Set elements outside of modal to be inert and hidden from screen readers
-    nonModals.forEach(function(el, array) {
-      if (modalWithNavToggleGroup && navToggleGroup && el === navToggleGroupParent) {
-        el.setAttribute('aria-hidden','false');
+    for (let i = 0; i < nonModals.length; i++) {
+      if (modalWithNavToggleGroup && navToggleGroup && nonModals[i] === navToggleGroupParent) {
+        nonModals[i].setAttribute('aria-hidden','false');
 
         // hide all children of navToggleGroupParent except navToggleGroup
         const children = navToggleGroupParent.childNodes;
-        children.forEach(function(child, array) {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            if (child === navToggleGroup) {
-              child.setAttribute('aria-hidden', 'false');
+        for (let j = 0; j < children.length; j++) {
+          if (children[j].nodeType === Node.ELEMENT_NODE) {
+            if (children[j] === navToggleGroup) {
+              children[j].setAttribute('aria-hidden', 'false');
             } else {
-              child.setAttribute('aria-hidden', 'true');
+              children[j].setAttribute('aria-hidden', 'true');
             }
           }
-        });
+        }
       } else {
-        el.setAttribute('aria-hidden','true');
+        nonModals[i].setAttribute('aria-hidden','true');
       }
-    });
+    }
 
     // Prevent body from scrolling
     if (this.disableBodyScroll) {
@@ -176,21 +217,28 @@ class Modal {
     // Remove `.dcf-modal-is-open` helper class from body
     body.classList.remove('dcf-modal-is-open');
 
+    if (this.currentBtn) {
+      const closeBtn = document.getElementById(this.currentBtn);
+      if (closeBtn && closeBtn.getAttribute('data-with-nav-toggle-group') === 'true') {
+        this.setNavToggleBtnState(closeBtn, 'open');
+      }
+    }
+
     // Restore visibility and functionality to elements outside of modal
-    nonModals.forEach(function(el, array) {
-      if (navToggleGroup && el === navToggleGroupParent) {
+    for (let i = 0; i < nonModals.length; i++) {
+      if (navToggleGroup && nonModals[i] === navToggleGroupParent) {
         // show all children of navToggleGroupParent
         const children = navToggleGroupParent.childNodes;
-        children.forEach(function (child, array) {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            child.setAttribute('aria-hidden', 'false');
+        for (let j = 0; j < children.length; j++) {
+          if (children[j].nodeType === Node.ELEMENT_NODE) {
+            children[j].setAttribute('aria-hidden', 'false');
           }
-        });
+        }
       }
 
       // show all nonModals
-      el.setAttribute('aria-hidden','false');
-    });
+      nonModals[i].setAttribute('aria-hidden','false');
+    }
 
     // Set attribute for this modal
     thisModal.setAttribute('aria-hidden', 'true');
@@ -282,10 +330,10 @@ class Modal {
   }
 
   generateUUID() {
-    var d = new Date().getTime();
-    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;
+    let d = new Date().getTime();
+    let d2 = (performance && performance.now && (performance.now()*1000)) || 0;
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16;
+      let r = Math.random() * 16;
       if(d > 0){
         r = (d + r)%16 | 0;
         d = Math.floor(d/16);
