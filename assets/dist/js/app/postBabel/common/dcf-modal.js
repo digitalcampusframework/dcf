@@ -55,10 +55,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (modalOpen) {
           // modal open so close it
-          this.closeModal(modalId, btnId);
+          this.closeModal(modalId);
         } else {
           // modal closed so open it
           this.openModal(modalId, btnId);
+        }
+      }
+
+      // Set nav toggle button state as open or closed
+      // Note: Assumes nav toggle buttons are svgs with expected markup
+
+    }, {
+      key: 'setNavToggleBtnState',
+      value: function setNavToggleBtnState(btn, btnState) {
+        btnState = typeof btnState !== 'undefined' ? btnState : 'open';
+        var btnSVGs = btn.getElementsByTagName('svg');
+        var btnLabels = btn.getElementsByClassName('dcf-nav-toggle-label');
+
+        // Set SVG state
+        if (btnSVGs.length) {
+          var gTags = btnSVGs[0].getElementsByTagName('g');
+          for (var i = 0; i < gTags.length; i++) {
+            if (gTags[i].classList.contains('dcf-nav-toggle-icon-open')) {
+              if (btnState.toLowerCase() == 'open') {
+                gTags[i].classList.remove('dcf-d-none');
+              } else {
+                gTags[i].classList.add('dcf-d-none');
+              }
+            } else if (gTags[i].classList.contains('dcf-nav-toggle-icon-close')) {
+              if (btnState.toLowerCase() == 'open') {
+                gTags[i].classList.add('dcf-d-none');
+              } else {
+                gTags[i].classList.remove('dcf-d-none');
+              }
+            }
+          }
+        }
+
+        // Set Button Label
+        if (btnLabels.length) {
+          if (btnState.toLowerCase() == 'open') {
+            btnLabels[0].textContent = btn.getAttribute('data-nav-toggle-label-open') ? btn.getAttribute('data-nav-toggle-label-open') : 'Open';
+          } else {
+            btnLabels[0].textContent = btn.getAttribute('data-nav-toggle-label-closed') ? btn.getAttribute('data-nav-toggle-label-closed') : 'Close';
+          }
         }
       }
 
@@ -91,6 +131,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.currentBtn = openBtnId;
           var openBtn = document.getElementById(openBtnId);
           modalWithNavToggleGroup = openBtn && openBtn.getAttribute('data-with-nav-toggle-group') === 'true';
+          if (modalWithNavToggleGroup) {
+            this.setNavToggleBtnState(openBtn, 'closed');
+          }
         }
 
         this.currentModal = modalId;
@@ -204,6 +247,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         // Remove `.dcf-modal-is-open` helper class from body
         body.classList.remove('dcf-modal-is-open');
+
+        if (this.currentBtn) {
+          var closeBtn = document.getElementById(this.currentBtn);
+          if (closeBtn && closeBtn.getAttribute('data-with-nav-toggle-group') === 'true') {
+            this.setNavToggleBtnState(closeBtn, 'open');
+          }
+        }
 
         // Restore visibility and functionality to elements outside of modal
         nonModals.forEach(function (el, array) {
