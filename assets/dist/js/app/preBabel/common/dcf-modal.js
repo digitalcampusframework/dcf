@@ -122,25 +122,25 @@ class Modal {
     }
 
     // Set elements outside of modal to be inert and hidden from screen readers
-    nonModals.forEach(function(el, array) {
-      if (modalWithNavToggleGroup && navToggleGroup && el === navToggleGroupParent) {
-        el.setAttribute('aria-hidden','false');
+    for (var i = 0; i < nonModals.length; i++) {
+      if (modalWithNavToggleGroup && navToggleGroup && nonModals[i] === navToggleGroupParent) {
+        nonModals[i].setAttribute('aria-hidden','false');
 
         // hide all children of navToggleGroupParent except navToggleGroup
         const children = navToggleGroupParent.childNodes;
-        children.forEach(function(child, array) {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            if (child === navToggleGroup) {
-              child.setAttribute('aria-hidden', 'false');
+        for (var j = 0; j < children.length; j++) {
+          if (children[j].nodeType === Node.ELEMENT_NODE) {
+            if (children[j] === navToggleGroup) {
+              children[j].setAttribute('aria-hidden', 'false');
             } else {
-              child.setAttribute('aria-hidden', 'true');
+              children[j].setAttribute('aria-hidden', 'true');
             }
           }
-        });
+        }
       } else {
-        el.setAttribute('aria-hidden','true');
+        nonModals[i].setAttribute('aria-hidden','true');
       }
-    });
+    }
 
     // Prevent body from scrolling
     if (this.disableBodyScroll) {
@@ -234,20 +234,20 @@ class Modal {
     }
 
     // Restore visibility and functionality to elements outside of modal
-    nonModals.forEach(function(el, array) {
-      if (navToggleGroup && el === navToggleGroupParent) {
+    for (var i = 0; i < nonModals.length; i++) {
+      if (navToggleGroup && nonModals[i] === navToggleGroupParent) {
         // show all children of navToggleGroupParent
         const children = navToggleGroupParent.childNodes;
-        children.forEach(function (child, array) {
-          if (child.nodeType === Node.ELEMENT_NODE) {
-            child.setAttribute('aria-hidden', 'false');
+        for (var j = 0; j < children.length; j++) {
+          if (children[j].nodeType === Node.ELEMENT_NODE) {
+            children[j].setAttribute('aria-hidden', 'false');
           }
-        });
+        }
       }
 
       // show all nonModals
-      el.setAttribute('aria-hidden','false');
-    });
+      nonModals[i].setAttribute('aria-hidden','false');
+    }
 
     // Set attribute for this modal
     thisModal.setAttribute('aria-hidden', 'true');

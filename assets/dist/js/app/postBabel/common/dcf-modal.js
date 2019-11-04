@@ -116,8 +116,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
         var nonModals = [skipNav, header, main, footer];
 
-        for (var i = 0; i < this.modals.length; i++) {
-          var modal = this.modals[i];
+        for (var _i = 0; _i < this.modals.length; _i++) {
+          var modal = this.modals[_i];
           if (modal.getAttribute('id') !== modalId) {
             this.closeModal(modal.getAttribute('id'));
           }
@@ -144,25 +144,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Set elements outside of modal to be inert and hidden from screen readers
-        nonModals.forEach(function (el, array) {
-          if (modalWithNavToggleGroup && navToggleGroup && el === navToggleGroupParent) {
-            el.setAttribute('aria-hidden', 'false');
+        for (var i = 0; i < nonModals.length; i++) {
+          if (modalWithNavToggleGroup && navToggleGroup && nonModals[i] === navToggleGroupParent) {
+            nonModals[i].setAttribute('aria-hidden', 'false');
 
             // hide all children of navToggleGroupParent except navToggleGroup
             var children = navToggleGroupParent.childNodes;
-            children.forEach(function (child, array) {
-              if (child.nodeType === Node.ELEMENT_NODE) {
-                if (child === navToggleGroup) {
-                  child.setAttribute('aria-hidden', 'false');
+            for (var j = 0; j < children.length; j++) {
+              if (children[j].nodeType === Node.ELEMENT_NODE) {
+                if (children[j] === navToggleGroup) {
+                  children[j].setAttribute('aria-hidden', 'false');
                 } else {
-                  child.setAttribute('aria-hidden', 'true');
+                  children[j].setAttribute('aria-hidden', 'true');
                 }
               }
-            });
+            }
           } else {
-            el.setAttribute('aria-hidden', 'true');
+            nonModals[i].setAttribute('aria-hidden', 'true');
           }
-        });
+        }
 
         // Prevent body from scrolling
         if (this.disableBodyScroll) {
@@ -256,20 +256,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Restore visibility and functionality to elements outside of modal
-        nonModals.forEach(function (el, array) {
-          if (navToggleGroup && el === navToggleGroupParent) {
+        for (var i = 0; i < nonModals.length; i++) {
+          if (navToggleGroup && nonModals[i] === navToggleGroupParent) {
             // show all children of navToggleGroupParent
             var children = navToggleGroupParent.childNodes;
-            children.forEach(function (child, array) {
-              if (child.nodeType === Node.ELEMENT_NODE) {
-                child.setAttribute('aria-hidden', 'false');
+            for (var j = 0; j < children.length; j++) {
+              if (children[j].nodeType === Node.ELEMENT_NODE) {
+                children[j].setAttribute('aria-hidden', 'false');
               }
-            });
+            }
           }
 
           // show all nonModals
-          el.setAttribute('aria-hidden', 'false');
-        });
+          nonModals[i].setAttribute('aria-hidden', 'false');
+        }
 
         // Set attribute for this modal
         thisModal.setAttribute('aria-hidden', 'true');
@@ -413,12 +413,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // Loop through all modals
-        for (var _i = 0; _i < this.modals.length; _i++) {
-          var modal = this.modals[_i];
-          var modalWrapper = modalsWrapper[_i];
-          var modalContent = modalsContent[_i];
-          var modalHeader = modalsHeader[_i];
-          var btnCloseModal = btnsCloseModal[_i];
+        for (var _i2 = 0; _i2 < this.modals.length; _i2++) {
+          var modal = this.modals[_i2];
+          var modalWrapper = modalsWrapper[_i2];
+          var modalContent = modalsContent[_i2];
+          var modalHeader = modalsHeader[_i2];
+          var btnCloseModal = btnsCloseModal[_i2];
           var _modalId = modal.id;
           var modalHeadingId = _modalId + '-heading';
 
