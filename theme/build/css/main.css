@@ -1876,7 +1876,7 @@ button .dcf-icon {
     white-space: nowrap; } }
 
 .theme .dcf-nav-toggle-btn {
-  width: 33%; }
+  flex-basis: 25%; }
 
 .theme .dcf-nav-toggle-btn-menu {
   left: 0; }
@@ -1885,7 +1885,6 @@ button .dcf-icon {
   .theme .dcf-nav-toggle-group {
     display: -webkit-box;
     display: flex;
-    width: 25%;
     z-index: 100000; }
   .theme .dcf-nav-toggle-group::after {
     bottom: 0;
