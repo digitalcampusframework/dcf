@@ -1999,13 +1999,22 @@
               <input id="components-form-email" type="email" required>
             </div>
             <div class="dcf-form-group">
-              <label for="components-form-password">Password <small class="dcf-required">Required</small></label>
-              <input id="components-form-password" type="password" required aria-describedby="components-form-pwd-help">
-              <p class="dcf-form-help" id="components-form-pwd-help">Make sure it’s a good one!</p>
+              <label id="components-form-password-label" for="components-form-password">Password <small class="dcf-required">Required</small></label>
+              <span>
+                <input id="components-form-password" type="password" aria-labelledby="components-form-password-label" aria-describedby="components-form-pwd-desc" required>
+                <span class="dcf-form-help" id="components-form-pwd-desc" tabindex="-1">Make sure it’s a good one!</span>
+              </span>
             </div>
             <div class="dcf-form-group dcf-form-controls-inline">
-              <label for="components-form-inline">An Inline Form Field</label>
-              <input id="components-form-inline" type="text">
+              <label id="components-form-inline-label" for="components-form-inline">An Inline Form Field</label>
+              <input id="components-form-inline" type="text" aria-labelledby="components-form-inline-label" aria-describedby="components-form-inline-desc">
+            </div>
+            <div class="dcf-form-group dcf-form-controls-inline">
+              <label id="components-form-inline-w-help-label" for="components-form-inline-w-help">An Inline Form Field with Help Text</label>
+              <span class="dcf-d-flex dcf-flex-col">
+                <input id="components-form-inline-w-help" type="text" aria-labelledby="components-form-inline-w-help-label" aria-describedby="components-form-inline-w-help-desc">
+                <span class="dcf-form-help" id="components-form-inline-w-help-desc" tabindex="-1">This inline form field also includes help text</span>
+              </span>
             </div>
             <div class="dcf-form-group">
               <label for="components-form-institution">Institution</label>

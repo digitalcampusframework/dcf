@@ -65,7 +65,9 @@
 // Form help
 .dcf-form-help {
   color: $color-form-help;
+  display: inline-block;
   font-size: $font-size-form-help;
+  line-height: $line-height-form-help;
   margin-top: $margin-top-form-help;
 }
 
@@ -139,7 +141,8 @@
 
 
   .dcf-form-controls-inline input,
-  .dcf-form-controls-inline select {
+  .dcf-form-controls-inline select,
+  .dcf-form-controls-inline label + span {
     flex: 1 1 1px; // Let input or select grow, shrink and wrap as needed
   }
 
