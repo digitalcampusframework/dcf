@@ -385,6 +385,7 @@ template {
             transition-duration: .001ms !important; } }
 
 abbr {
+  font-size: 0.84em;
   letter-spacing: 0.05em; }
 
 abbr[title] {
@@ -938,7 +939,7 @@ th {
       grid-column: 1 / span 9; }
     .dcf-col-75\%-end\@lg {
       grid-column: span 9 / -1; } }
-  @media only screen and (min-width: 99.78em) {
+  @media only screen and (min-width: 99.77em) {
     .dcf-grid-full\@xl {
       grid-template-columns: 1fr; }
     .dcf-grid-halves\@xl {
@@ -1981,7 +1982,7 @@ button .dcf-icon {
   .dcf-ratio-1x1\@lg::before {
     padding-top: 100% !important; } }
 
-@media only screen and (min-width: 99.78em) {
+@media only screen and (min-width: 99.77em) {
   .dcf-ratio-16x9\@xl::before {
     padding-top: 56.25% !important; }
   .dcf-ratio-9x16\@xl::before {
@@ -2416,7 +2417,7 @@ a.dcf-inverse:active {
        -moz-columns: 3 !important;
             columns: 3 !important; } }
 
-@media only screen and (min-width: 99.78em) {
+@media only screen and (min-width: 99.77em) {
   .dcf-columns-1\@xl {
     -webkit-columns: 1 !important;
        -moz-columns: 1 !important;
@@ -2996,7 +2997,7 @@ a.dcf-inverse:active {
     -webkit-box-ordinal-group: 4 !important;
             order: 3 !important; } }
 
-@media only screen and (min-width: 99.78em) {
+@media only screen and (min-width: 99.77em) {
   .dcf-1st\@xl {
     -webkit-box-ordinal-group: 2 !important;
             order: 1 !important; }

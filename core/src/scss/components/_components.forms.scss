@@ -21,7 +21,7 @@
 // Legend
 .dcf-legend, // TODO: deprecate .dcf-legend?
 .dcf-form legend {
-  @if (to-number($font-size-legend) != #{ms(0)}em) {
+  @if (to-number($font-size-legend) != to-number(#{ms(0)}em)) {
     font-size: $font-size-legend;
   }
   margin-left: -#{$padding-legend}; // Left align legend with form elements
@@ -31,7 +31,7 @@
 
 
 // Label
-@if (to-number($font-size-label) != #{ms(0)}em) {
+@if (to-number($font-size-label) != to-number(#{ms(0)}em)) {
   .dcf-label, // TODO: deprecate .dcf-label?
   .dcf-form label {
     font-size: $font-size-label;

@@ -364,8 +364,8 @@
         <dd>Abbreviations should be spelled out on first occurrence, then abbreviated using the <code>&lt;abbr&gt;</code> element on subsequent occurrences.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <p class="dcf-w-max-lg"><abbr class="dcf-txt-sm" title="Video Home System">VHS</abbr> is an abbreviation for Video Home System.</p>
-        <figcaption class="dcf-figcaption dcf-mt-4">This example uses the <code class="dcf-txt-nowrap">.dcf-txt-sm</code> class to slightly reduce the font-size.</figcaption>
+        <p class="dcf-w-max-lg"><abbr title="Video Home System">VHS</abbr> is an abbreviation for Video Home System.</p>
+        <figcaption class="dcf-figcaption dcf-mt-4">The example theme slightly reduces the font-size to distinguish abbreviations from their surrounding text. This size can be configured in the theme.</figcaption>
       </figure>
 
       <h3 class="dcf-mt-8" id="elements-addresses">Addresses</h3>
@@ -417,7 +417,7 @@
       <h3 class="dcf-mt-8" id="elements-code">Code</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;code&gt;</code></dt>
-        <dd>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape <abbr class="dcf-txt-sm" title="Hypertext Markup Language">HTML</abbr> angle brackets.</dd>
+        <dd>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape <abbr title="Hypertext Markup Language">HTML</abbr> angle brackets.</dd>
       </dl>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;pre&gt;</code></dt>
