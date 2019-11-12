@@ -5,6 +5,9 @@
 
 // Abbreviation
 abbr {
+  @if (to-number($font-size-abbr) != to-number(#{ms(0)}em)) {
+    font-size: $font-size-abbr;
+  }
   letter-spacing: $letter-spacing-abbr;
 }
 

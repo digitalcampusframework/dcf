@@ -385,6 +385,7 @@ template {
             transition-duration: .001ms !important; } }
 
 abbr {
+  font-size: 0.84em;
   letter-spacing: 0.05em; }
 
 abbr[title] {
