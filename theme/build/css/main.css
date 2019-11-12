@@ -2723,9 +2723,6 @@ a.dcf-inverse:active {
 .dcf-w-max-100vw {
   max-width: 100vw !important; }
 
-.dcf-no-js .dcf-lazy-load {
-  display: none; }
-
 .dcf-m-auto {
   margin: auto !important; }
 
@@ -3258,6 +3255,9 @@ a.dcf-inverse:active {
 .dcf-js .dcf-faded-in {
   -webkit-animation: appear 200ms forwards ease-out;
           animation: appear 200ms forwards ease-out; }
+
+.dcf-no-js .dcf-lazy-load {
+  display: none; }
 
 .dcf-fill-current {
   fill: currentColor !important; }

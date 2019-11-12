@@ -12,3 +12,10 @@
   // Animate in to opacity: 1
   animation: appear $timing-fade-in forwards $easing-fade-in;
 }
+
+
+// Lazy load
+.dcf-no-js .dcf-lazy-load { // Hide lazy-loaded elements if JavaScript is unavailable
+  // (<noscript> versions will be shown instead)
+  display: none;
+}
