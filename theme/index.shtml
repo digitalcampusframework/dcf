@@ -417,7 +417,7 @@
       <h3 class="dcf-mt-8" id="elements-code">Code</h3>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;code&gt;</code></dt>
-        <dd>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape <abbr class="dcf-txt-sm" title="Hypertext Markup Language">HTML</abbr> angle brackets.</dd>
+        <dd>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape <abbr title="Hypertext Markup Language">HTML</abbr> angle brackets.</dd>
       </dl>
       <dl class="dcf-w-max-lg">
         <dt><code>&lt;pre&gt;</code></dt>
