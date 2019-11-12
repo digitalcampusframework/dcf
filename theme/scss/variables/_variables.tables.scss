@@ -9,13 +9,19 @@
 
 
 // Background color
-$bg-color-table-stripe: $gray-lightest;       // Background color of table stripes
+$bg-color-table-stripe: $gray-lightest;       // Background-color of table stripes
 
 
-// Border
-$border-color-table: $border-color;           // Color of table borders
-$border-style-table: solid;                   // Style of table borders
-$border-width-table: 1px;                     // Width of table borders
+// Border color
+$border-color-table: $border-color;           // .dcf-table border-color
+
+
+// Border style
+$border-style-table: solid;                   // .dcf-table border-style
+
+
+// Border width
+$border-width-table: 1px;                     // .dcf-table border-Width
 
 
 // Font size
