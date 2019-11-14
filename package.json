@@ -78,7 +78,7 @@
     "object-fit-images": "^3.2.4"
   },
   "engines": {
-    "node": "node >= 0.10.0"
+    "node": ">= 0.10.0"
   },
   "browserslist": [
     "last 1 Chrome version",
