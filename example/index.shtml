@@ -694,6 +694,55 @@
       </figure>
       <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-aspect-ratios">Aspect Ratios</a> (Utilities), <a href="#example-utilities-object-fit">Object-Fit</a> (Utilities)</p>
 
+      <h3 class="dcf-mt-8" id="example-elements-images">Pictures</h3>
+      <dl class="dcf-w-max-lg">
+        <dt><code>&lt;picture&gt;</code></dt>
+        <dd>Ensure that accurate descriptions of the picture content are included in the <code>alt</code> attribute of each picture for accessibility.</dd>
+      </dl>
+      <figure class="dcf-mt-6">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
+            <picture class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load">
+              <source data-srcset="http://via.placeholder.com/400x225 400w,
+                    http://via.placeholder.com/800x450 800w,
+                    http://via.placeholder.com/1200x675 1200w,
+                    http://via.placeholder.com/1600x900 1600w" type="image/jpeg">
+              <img src="http://via.placeholder.com/400x300" alt="Sample picture tag" title="">
+            </picture>
+          </div>
+        </div>
+        <figcaption class="dcf-figcaption">A placeholder image with a 16:9 aspect ratio.</figcaption>
+      </figure>
+      <figure class="dcf-mt-6">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-33%-start@md dcf-ratio dcf-ratio-4x3">
+            <picture class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load">
+              <source data-srcset="http://via.placeholder.com/400x225 400w,
+                    http://via.placeholder.com/800x450 800w,
+                    http://via.placeholder.com/1200x675 1200w,
+                    http://via.placeholder.com/1600x900 1600w" type="image/jpeg">
+              <img src="http://via.placeholder.com/400x300" alt="Sample picture tag" title="">
+            </picture>
+          </div>
+        </div>
+        <figcaption class="dcf-figcaption">A placeholder image with a 4:3 aspect ratio</figcaption>
+      </figure>
+      <figure class="dcf-mt-6">
+        <div class="dcf-grid">
+          <div class="dcf-col-100% dcf-col-25%-start@md dcf-ratio dcf-ratio-1x1">
+            <picture class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load">
+              <source data-srcset="http://via.placeholder.com/400x225 400w,
+                    http://via.placeholder.com/800x450 800w,
+                    http://via.placeholder.com/1200x675 1200w,
+                    http://via.placeholder.com/1600x900 1600w" type="image/jpeg">
+              <img src="http://via.placeholder.com/400x300" alt="Sample picture tag" title="">
+            </picture>
+          </div>
+        </div>
+        <figcaption class="dcf-figcaption">A placeholder image with a 1:1 aspect ratio</figcaption>
+      </figure>
+      <p class="dcf-mt-6 dcf-pl-4 dcf-w-max-lg dcf-bl-solid dcf-bl-3 example-bl-alpha"><b>Related:</b> <a href="#example-utilities-aspect-ratios">Aspect Ratios</a> (Utilities), <a href="#example-utilities-object-fit">Object-Fit</a> (Utilities)</p>
+
       <h3 class="dcf-mt-8" id="example-elements-lists">Lists</h3>
 
       <h4 class="dcf-mt-6" id="example-elements-description-lists">Description Lists</h4>
