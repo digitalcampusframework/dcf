@@ -31,7 +31,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.onIntersection = function (entries, observer) {
 
         // Disconnect if we've already loaded all of the images
-        if (_this.observerEntryCount === 0) {
+        if (_this.itemsCount === 0) {
           _this.observer.disconnect();
         }
 
@@ -43,13 +43,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
               _this.preloadImage(entry.target);
             } else if (entry.intersectionRatio > observer.thresholds[1]) {
-              _this.observerEntryCount--;
+              _this.itemsCount--;
               _this.applyImage(entry.target);
               _this.observer.unobserve(entry.target);
             }
           } else if (entry.target.nodeName == 'PICTURE') {
             if (entry.intersectionRatio > observer.thresholds[1]) {
-              _this.observerEntryCount--;
+              _this.itemsCount--;
               _this.applyPicture(entry.target);
               _this.observer.unobserve(entry.target);
             }
@@ -239,7 +239,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.itemsCount = this.itemList.length;
 
-        if (false && "loading" in HTMLImageElement.prototype) {
+        if ("loading" in HTMLImageElement.prototype) {
           // Native lazy loading IS supported, so set src-data to src
           this.loadItemsImmediately(this.itemList, false);
         } else {

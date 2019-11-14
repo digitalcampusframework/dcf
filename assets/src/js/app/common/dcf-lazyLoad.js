@@ -151,7 +151,7 @@ class LazyLoad {
   onIntersection = (entries, observer) => {
 
     // Disconnect if we've already loaded all of the images
-    if (this.observerEntryCount === 0) {
+    if (this.itemsCount === 0) {
       this.observer.disconnect();
     }
 
@@ -163,13 +163,13 @@ class LazyLoad {
         if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
           this.preloadImage(entry.target);
         } else if (entry.intersectionRatio > observer.thresholds[1]) {
-          this.observerEntryCount--;
+          this.itemsCount--;
           this.applyImage(entry.target);
           this.observer.unobserve(entry.target);
         }
       } else if (entry.target.nodeName == 'PICTURE') {
         if (entry.intersectionRatio > observer.thresholds[1]) {
-          this.observerEntryCount--;
+          this.itemsCount--;
           this.applyPicture(entry.target);
           this.observer.unobserve(entry.target);
         }
@@ -183,7 +183,7 @@ class LazyLoad {
 
     this.itemsCount = this.itemList.length;
 
-    if (false && "loading" in HTMLImageElement.prototype) {
+    if ("loading" in HTMLImageElement.prototype) {
       // Native lazy loading IS supported, so set src-data to src
       this.loadItemsImmediately(this.itemList, false);
     } else {
