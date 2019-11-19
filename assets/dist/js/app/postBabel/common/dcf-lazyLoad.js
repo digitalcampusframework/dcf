@@ -38,7 +38,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         for (var i = 0; i < entries.length; i++) {
           var entry = entries[i];
 
-          switch (entry.nodeName) {
+          switch (entry.target.nodeName) {
             case 'IMG':
               if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
                 _this.preloadImage(entry.target);

@@ -157,7 +157,7 @@ class LazyLoad {
     for (let i = 0; i < entries.length; i++) {
       let entry = entries[i];
 
-      switch(entry.nodeName) {
+      switch(entry.target.nodeName) {
         case 'IMG':
           if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
             this.preloadImage(entry.target);
