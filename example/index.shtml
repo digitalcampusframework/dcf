@@ -636,59 +636,68 @@
         <dd>Ensure that accurate descriptions of the image content are included in the <code>alt</code> attribute of each image for accessibility.</dd>
       </dl>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid">
-          <div class="dcf-col-100% dcf-col-50%-start@md dcf-ratio dcf-ratio-16x9">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/400x225 400w,
-              http://via.placeholder.com/800x450 800w,
-              http://via.placeholder.com/1200x675 1200w,
-              http://via.placeholder.com/1600x900 1600w"
+        <div class="dcf-ratio dcf-ratio-16x9 dcf-w-max-xs">
+          <img
+              class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
+              loading="lazy"
               data-sizes=""
+              data-src="https://via.placeholder.com/400x300"
+              data-srcset="https://via.placeholder.com/400x300 400w,
+                 https://via.placeholder.com/800x600 800w,
+                 https://via.placeholder.com/1200x900 1200w,
+                 https://via.placeholder.com/1600x1200 1600w"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               alt="Placeholder image.">
-            <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="225" alt="Placeholder image.">
-            </noscript>
-          </div>
+          <noscript>
+            <img
+                class="dcf-ratio-child dcf-obj-fit-cover"
+                src="https://via.placeholder.com/400x300"
+                alt="Placeholder image.">
+          </noscript>
         </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 16:9 aspect ratio.</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid">
-          <div class="dcf-col-100% dcf-col-33%-start@md dcf-ratio dcf-ratio-4x3">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/400x300 400w,
-              http://via.placeholder.com/800x600 800w,
-              http://via.placeholder.com/1200x900 1200w,
-              http://via.placeholder.com/1600x1200 1600w"
+        <div class="dcf-ratio dcf-ratio-4x3 dcf-w-max-xs">
+          <img
+              class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
+              loading="lazy"
               data-sizes=""
+              data-src="https://via.placeholder.com/400x300"
+              data-srcset="https://via.placeholder.com/400x300 400w,
+                 https://via.placeholder.com/800x600 800w,
+                 https://via.placeholder.com/1200x900 1200w,
+                 https://via.placeholder.com/1600x1200 1600w"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               alt="Placeholder image.">
-            <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="300" alt="Placeholder image.">
-            </noscript>
-          </div>
+          <noscript>
+            <img
+                class="dcf-ratio-child dcf-obj-fit-cover"
+                src="https://via.placeholder.com/400x300"
+                alt="Placeholder image.">
+          </noscript>
         </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 4:3 aspect ratio</figcaption>
       </figure>
       <figure class="dcf-mt-6">
-        <div class="dcf-grid">
-          <div class="dcf-col-100% dcf-col-25%-start@md dcf-ratio dcf-ratio-1x1">
-            <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100% dcf-lazy-load"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
-              data-src="http://via.placeholder.com/400x300"
-              data-srcset="http://via.placeholder.com/400x300 400w,
-              http://via.placeholder.com/800x600 800w,
-              http://via.placeholder.com/1200x900 1200w,
-              http://via.placeholder.com/1600x1200 1600w"
+        <div class="dcf-ratio dcf-ratio-1x1 dcf-w-max-xs">
+          <img
+              class="dcf-ratio-child dcf-obj-fit-cover dcf-lazy-load"
+              loading="lazy"
               data-sizes=""
+              data-src="https://via.placeholder.com/400x300"
+              data-srcset="https://via.placeholder.com/400x300 400w,
+                 https://via.placeholder.com/800x600 800w,
+                 https://via.placeholder.com/1200x900 1200w,
+                 https://via.placeholder.com/1600x1200 1600w"
+              src="data:image/gif;base64,R0lGODlhAQABAAAAADs="
               alt="Placeholder image.">
-            <noscript>
-              <img class="dcf-ratio-child dcf-obj-fit-cover dcf-h-100% dcf-w-100%" src="http://via.placeholder.com/400x300" width="400" height="400" alt="Placeholder image.">
-            </noscript>
-          </div>
+          <noscript>
+            <img
+                class="dcf-ratio-child dcf-obj-fit-cover"
+                src="https://via.placeholder.com/400x300"
+                alt="Placeholder image.">
+          </noscript>
         </div>
         <figcaption class="dcf-figcaption">A placeholder image with a 1:1 aspect ratio</figcaption>
       </figure>
