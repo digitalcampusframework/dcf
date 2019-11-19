@@ -19,7 +19,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var LazyLoad = function () {
     /**
      * class constructor
-     * @param {itemList} nodelist of selected images and pictures
+     * @param {itemList} nodelist of selected lazy loadable nodes
      * @param {observerConfig} object of intersectionObserver configuration
      * @param {classNames} array of classes applied
      */
@@ -39,14 +39,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         for (var i = 0; i < entries.length; i++) {
           var entry = entries[i];
 
-          if (entry.target.nodeName == 'IMG') {
-            if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
-              _this.preloadImage(entry.target);
-            } else if (entry.intersectionRatio > observer.thresholds[1]) {
-              _this.itemsCount--;
-              _this.applyImage(entry.target);
-              _this.observer.unobserve(entry.target);
-            }
+          switch (entry.nodeName) {
+            case 'IMG':
+              if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
+                _this.preloadImage(entry.target);
+              } else if (entry.intersectionRatio > observer.thresholds[1]) {
+                _this.itemsCount--;
+                _this.applyImage(entry.target);
+                _this.observer.unobserve(entry.target);
+              }
+              break;
+
+            default:
+              // do nothing skip to next item;
+              continue;
           }
         }
       };
