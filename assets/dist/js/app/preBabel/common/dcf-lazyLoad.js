@@ -44,6 +44,10 @@ class LazyLoad {
       return;
     }
 
+    if (image.parentNode.nodeName == 'PICTURE') {
+      this.applyPicture(image.parentNode);
+    }
+
     // Prevent this from being lazy loaded a second time.
     image.classList.add('dcf-lazy-loaded');
     src && (image.src = src);
@@ -93,8 +97,6 @@ class LazyLoad {
    * @param {string} picture: the picture element that we are targeting
    */
   applyPicture(picture) {
-    // Prevent this from being lazy loaded a second time.
-    picture.classList.add('dcf-lazy-loaded');
 
     // update picture source tags
     let pictureSources = picture.getElementsByTagName("SOURCE");
@@ -110,7 +112,6 @@ class LazyLoad {
       srcset && (pictureSources[i].removeAttribute('data-srcset'));
       sizes && (pictureSources[i].sizes = sizes);
       sizes && (pictureSources[i].removeAttribute('data-sizes'));
-      this.classNames.length && this.classNames.forEach(className => picture.classList.add(className));
     }
   };
 
@@ -128,10 +129,6 @@ class LazyLoad {
             this.preloadImage(items[i]);
           }
           this.applyImage(items[i]);
-          break;
-
-        case 'PICTURE':
-          this.applyPicture(items[i]);
           break;
 
         default:
@@ -174,12 +171,6 @@ class LazyLoad {
         } else if (entry.intersectionRatio > observer.thresholds[1]) {
           this.itemsCount--;
           this.applyImage(entry.target);
-          this.observer.unobserve(entry.target);
-        }
-      } else if (entry.target.nodeName == 'PICTURE') {
-        if (entry.intersectionRatio > observer.thresholds[1]) {
-          this.itemsCount--;
-          this.applyPicture(entry.target);
           this.observer.unobserve(entry.target);
         }
       }

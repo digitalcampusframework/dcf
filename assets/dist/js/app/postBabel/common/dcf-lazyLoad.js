@@ -46,12 +46,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this.applyImage(entry.target);
               _this.observer.unobserve(entry.target);
             }
-          } else if (entry.target.nodeName == 'PICTURE') {
-            if (entry.intersectionRatio > observer.thresholds[1]) {
-              _this.itemsCount--;
-              _this.applyPicture(entry.target);
-              _this.observer.unobserve(entry.target);
-            }
           }
         }
       };
@@ -88,6 +82,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (!src) {
           return;
+        }
+
+        if (image.parentNode.nodeName == 'PICTURE') {
+          this.applyPicture(image.parentNode);
         }
 
         // Prevent this from being lazy loaded a second time.
@@ -155,8 +153,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {string} picture: the picture element that we are targeting
        */
       value: function applyPicture(picture) {
-        // Prevent this from being lazy loaded a second time.
-        picture.classList.add('dcf-lazy-loaded');
 
         // update picture source tags
         var pictureSources = picture.getElementsByTagName("SOURCE");
@@ -172,9 +168,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           srcset && pictureSources[i].removeAttribute('data-srcset');
           sizes && (pictureSources[i].sizes = sizes);
           sizes && pictureSources[i].removeAttribute('data-sizes');
-          this.classNames.length && this.classNames.forEach(function (className) {
-            return picture.classList.add(className);
-          });
         }
       }
     }, {
@@ -197,10 +190,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 this.preloadImage(items[i]);
               }
               this.applyImage(items[i]);
-              break;
-
-            case 'PICTURE':
-              this.applyPicture(items[i]);
               break;
 
             default:
