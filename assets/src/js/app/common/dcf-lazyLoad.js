@@ -35,6 +35,7 @@ class LazyLoad {
       return;
     }
 
+    // Process parent picture lazy load if image is child of a picture
     if (image.parentNode.nodeName == 'PICTURE') {
       this.applyPicture(image.parentNode);
     }
