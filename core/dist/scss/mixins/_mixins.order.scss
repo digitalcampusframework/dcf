@@ -1,8 +1,0 @@
-////////////////////////
-// CORE / MIXINS / ORDER
-////////////////////////
-
-
-@mixin order-1st($imp:null) { order: 1 $imp; }
-@mixin order-2nd($imp:null) { order: 2 $imp; }
-@mixin order-3rd($imp:null) { order: 3 $imp; }
