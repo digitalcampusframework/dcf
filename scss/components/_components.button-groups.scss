@@ -8,8 +8,9 @@
 }
 
 
-.dcf-btn-group .dcf-btn:focus {
-  z-index: 1; // Ensure borders, outlines, etc appear above adjacent buttons when focused
+.dcf-btn-group .dcf-btn:focus,
+.dcf-btn-group .dcf-btn:hover {
+  z-index: 1; // Ensure borders, outlines, etc appear above adjacent buttons when focused or hovered
 }
 
 
