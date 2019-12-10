@@ -10,7 +10,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  font-size: $font-size-button;
+  font-size: #{ms(0)}em; // Base font-size for interoperability with links-as-buttons
   line-height: $line-height-button;
   padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
   text-align: center;
