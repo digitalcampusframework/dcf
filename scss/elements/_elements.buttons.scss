@@ -11,7 +11,7 @@ input[type="submit"] {
   display: inline-block;
   font-family: inherit;
   font-size: $font-size-button;
-  @include lh-4;
+  line-height: $line-height-button;
   padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
   text-align: center;
 }
