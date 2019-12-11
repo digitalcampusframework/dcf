@@ -3,21 +3,17 @@
 /////////////////////////////
 
 
-// Check if the caption font-size is not 1em or font-weight is bold
-// Include the selector (and its properties) only if either of the above is true
-@if (to-number($font-size-caption) != to-number(#{ms(0)}em)) or ($font-weight-caption-bold) {
-
-  .dcf-table caption {
-    // If the caption font-size is not 1em, then change the font-size
-    @if (to-number($font-size-caption) != to-number(#{ms(0)}em)) {
-      font-size: $font-size-caption;
-    }
-    // If the $font-weight-caption-bold variable = true, then change the font-weight to bold
-    @if ($font-weight-caption-bold) {
-      font-weight: bold;
-    }
+.dcf-table caption {
+  color: $color-caption;
+  // If the caption font-size is not 1em, then change the font-size
+  @if (to-number($font-size-caption) != to-number(#{ms(0)}em)) {
+    font-size: $font-size-caption;
   }
-
+  // If the $font-weight-caption-bold variable = true, then change the font-weight to bold
+  @if ($font-weight-caption-bold) {
+    font-weight: bold;
+  }
+  padding-bottom: $padding-bottom-caption;
 }
 
 
