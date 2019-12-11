@@ -3,15 +3,39 @@
 //////////////////////////////////////
 
 
-details {
-  margin-bottom: $margin-bottom-details;
+// Check if the details padding-bottom or -top values are greater than zero
+// Include the selector and its properties only if either of the above is true
+@if (to-number($padding-bottom-details) > 0) or (to-number($padding-top-details) > 0) {
+
+  details {
+    @if (to-number($padding-bottom-details) > 0) {
+      padding-bottom: $padding-bottom-details;
+    }
+    @if (to-number($padding-top-details) > 0) {
+      padding-top: $padding-top-details;
+    }
+  }
+
 }
 
 
 summary {
-  font-size: $font-size-summary;
+  cursor: pointer;
+  @if (to-number($font-size-summary) != to-number(#{ms(0)}em)) {
+    font-size: $font-size-summary;
+  }
   @if ($font-weight-summary-bold) {
     font-weight: bold;
   }
-  margin-bottom: $margin-bottom-summary;
+}
+
+
+// Check if the open details summary margin-bottom value is greater than zero
+// Include the selector and its properties only if the above is true
+@if (to-number($margin-bottom-details-open-summary) > 0) {
+
+  details[open] summary {
+    margin-bottom: $margin-bottom-details-open-summary;
+  }
+
 }
