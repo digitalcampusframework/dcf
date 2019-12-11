@@ -78,11 +78,11 @@
   border-style: solid;
   border-width: 0 0 $border-width-checkmark $border-width-checkmark;
   height: to-number($height-width-checkbox-radio) * to-number(#{ms(-8)});
-  top: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
-  width: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
   opacity: 0;
+  top: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
   transform: rotate(-45deg) translate(percentage(to-number(#{ms(-4)})), -(percentage(to-number(#{ms(-2)})))) scale(.5);
   transition: opacity $transition-check-duration $transition-check-timing, transform $transition-check-duration $transition-check-timing;
+  width: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
 }
 
 
