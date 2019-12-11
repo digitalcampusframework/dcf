@@ -19,6 +19,7 @@
   box-sizing: border-box;
   color: $color-select;
   display: block;
+  font-family: inherit;
   @include txt-base; // Font size must be ≥16px to prevent iOS page zoom on focus
   @include lh-4;
   max-width: 100%;
