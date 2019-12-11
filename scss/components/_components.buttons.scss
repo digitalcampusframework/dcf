@@ -18,6 +18,7 @@
   @if ($font-weight-button-bold) {
     font-weight: bold;
   }
+  line-height: $line-height-button;
   padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
   text-align: center;
   @if ($text-transform-button-uppercase) {

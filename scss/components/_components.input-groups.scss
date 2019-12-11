@@ -39,10 +39,19 @@
   align-items: center;
   background-color: $bg-color-input-group-addon;
   border: $border-width-input-group-addon $border-style-input-group-addon $border-color-input-group-addon;
+  color: $color-input-group-addon;
   display: flex;
+  @if (to-number($font-size-input-group-addon) != to-number(#{ms(0)}em)) {
+    font-size: $font-size-input-group-addon;
+  }
   padding: $padding-top-input-group-addon $padding-right-input-group-addon $padding-bottom-input-group-addon $padding-left-input-group-addon;
   text-align: center;
   white-space: nowrap;
+}
+
+
+.dcf-input-group > * + * {
+  margin-left: -#{$border-width-input-group-addon}; // Collapse adjacent borders
 }
 
 
@@ -61,13 +70,11 @@
 
   .dcf-input-group-addon:first-child {
     @include rounded-left;
-    border-right-width: 0;
   }
 
 
   .dcf-input-group-addon:last-child {
     @include rounded-right;
-    border-left-width: 0;
   }
 
 }
