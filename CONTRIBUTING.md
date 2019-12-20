@@ -72,7 +72,7 @@ your compiled CSS file and then minified.
 
 
 ## Gulp Tasks & Build Process
-DCF Core uses Gulp 4.0. Gulp tasks are specified in the `gulpfile.babel.js`. To modularize commonly used variables and 
+DCF Core uses Gulp 4.0. Gulp tasks are specified in the `gulpfile.js`. To modularize commonly used variables and 
 functions, they are specified in the `/build-utils` folder and required in the gulpfile as needed. This also help keep the gulpfile easy to scan and dry.
 
 
