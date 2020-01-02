@@ -4,52 +4,11 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var DCFLazyLoad =
 /*#__PURE__*/
 function () {
-  /**
-   * class constructor
-   * @param {itemList} nodelist of selected lazy loadable nodes
-   * @param {observerConfig} object of intersectionObserver configuration
-   * @param {classNames} array of classes applied
-   */
   function DCFLazyLoad(itemList, observerConfig, classNames) {
-    var _this = this;
-
     _classCallCheck(this, DCFLazyLoad);
-
-    _defineProperty(this, "onIntersection", function (entries, observer) {
-      // Disconnect if we've already loaded all of the images
-      if (_this.itemsCount === 0) {
-        _this.observer.disconnect();
-      } // Loop through the entries
-
-
-      for (var i = 0; i < entries.length; i++) {
-        var entry = entries[i];
-
-        switch (entry.target.nodeName) {
-          case 'IMG':
-            if (entry.intersectionRatio > observer.thresholds[0] && entry.intersectionRatio < observer.thresholds[1]) {
-              _this.preloadImage(entry.target);
-            } else if (entry.intersectionRatio > observer.thresholds[1]) {
-              _this.itemsCount--;
-
-              _this.applyImage(entry.target);
-
-              _this.observer.unobserve(entry.target);
-            }
-
-            break;
-
-          default:
-            // do nothing skip to next item;
-            continue;
-        }
-      }
-    });
 
     this.itemList = itemList;
     this.observerConfig = observerConfig;
@@ -59,21 +18,21 @@ function () {
   _createClass(DCFLazyLoad, [{
     key: "pxTOvw",
     value: function pxTOvw(value) {
-      var w = window,
-          d = document,
-          e = d.documentElement,
-          g = d.getElementsByTagName('body')[0],
-          x = w.innerWidth || e.clientWidth || g.clientWidth;
-      var result = 100 * value / x;
-      return result + 'vw';
+      var zeroIndex = 0;
+      var oneHundred = 100;
+      var docElement = document.documentElement,
+          docBody = document.getElementsByTagName('body')[zeroIndex],
+          windowWidth = window.innerWidth || docElement.clientWidth || docBody.clientWidth;
+      var result = oneHundred * value / windowWidth;
+      return "".concat(result, "vw");
     }
-  }, {
-    key: "applyImage",
-
     /**
      * Apply the image: preloaded image is loaded but not applied to actual image element
      * @param {string} image: the image element that we are targetting
      */
+
+  }, {
+    key: "applyImage",
     value: function applyImage(image) {
       var src = image.dataset.src;
       var srcset = image.dataset.srcset || null;
@@ -84,45 +43,71 @@ function () {
       } // Process parent picture lazy load if image is child of a picture
 
 
-      if (image.parentNode.nodeName == 'PICTURE') {
+      if (image.parentNode.nodeName === 'PICTURE') {
         this.applyPicture(image.parentNode);
       } // Prevent this from being lazy loaded a second time.
 
 
       image.classList.add('dcf-lazy-loaded');
-      src && (image.src = src);
-      src && image.removeAttribute('data-src');
-      srcset && (image.srcset = srcset);
-      srcset && image.removeAttribute('data-srcset');
-      sizes && (image.sizes = sizes);
-      sizes && image.removeAttribute('data-sizes');
-      this.classNames.length && this.classNames.forEach(function (className) {
-        return image.classList.add(className);
-      });
+
+      if (src) {
+        image.src = src;
+        image.removeAttribute('data-src');
+      }
+
+      if (srcset) {
+        image.srcset = srcset;
+        image.removeAttribute('data-srcset');
+      }
+
+      if (sizes) {
+        image.sizes = sizes;
+        image.removeAttribute('data-sizes');
+      }
+
+      if (this.classNames.length) {
+        this.classNames.forEach(function (className) {
+          return image.classList.add(className);
+        });
+      }
     }
+    /**
+     * @param {string}  src     The src of image.
+     * @param {string}  srcset  Defaults to null if not provided.
+     * @param {integer} sizes   Defaults to null if not provided.
+     *
+     * @returns {Promise}
+     */
+
   }, {
     key: "fetchImage",
-
-    /**
-     * Fetches the image for the given source
-     * @param {string} src
-     * @param {string} srcset, defaults to null if not provided
-     */
     value: function fetchImage(src) {
       var srcset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
       var sizes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
       return new Promise(function (resolve, reject) {
         var image = new Image();
-        src && (image.src = src);
-        srcset && (image.srcset = srcset);
-        sizes && (image.sizes = sizes);
+
+        if (src) {
+          image.src = src;
+        }
+
+        if (srcset) {
+          image.srcset = srcset;
+        }
+
+        if (sizes) {
+          image.sizes = sizes;
+        }
+
         image.onload = resolve;
         image.onerror = reject;
       });
     }
     /**
      * Preloads the image
-     * @param {object} image
+     * @param {object} image   An image object.
+     *
+     * @returns {(object|void)} Returns a promise for fetchImage or void.
      */
 
   }, {
@@ -131,67 +116,76 @@ function () {
       var src = image.dataset.src;
       var srcset = image.dataset.srcset;
       var sizes = image.dataset.sizes || null;
+      var fetchImagePromise = null;
 
-      if (!src) {
-        return;
+      if (src) {
+        try {
+          fetchImagePromise = this.fetchImage(src, srcset, sizes);
+        } catch (error) {// do nothing
+        }
       }
 
-      return this.fetchImage(src, srcset, sizes)["catch"](function (err) {
-        return "Image failed to fetch ".concat(err.mes);
-      });
+      return fetchImagePromise;
     }
-  }, {
-    key: "applyPicture",
-
     /**
      * Apply the picture
      * @param {string} picture: the picture element that we are targeting
      */
-    value: function applyPicture(picture) {
-      // update picture source tags
-      var pictureSources = picture.getElementsByTagName("SOURCE");
 
-      for (var i = 0; i < pictureSources.length; i++) {
-        var srcset = pictureSources[i].dataset.srcset || null;
-        var sizes = pictureSources[i].dataset.sizes || this.pxTOvw(picture.parentElement.clientWidth);
+  }, {
+    key: "applyPicture",
+    value: function applyPicture(picture) {
+      var _this = this;
+
+      // update picture source tags
+      var pictureSources = picture.getElementsByTagName('SOURCE');
+      pictureSources.forEach(function (pictureSource) {
+        var srcset = pictureSource.dataset.srcset || null;
+
+        var sizes = pictureSource.dataset.sizes || _this.pxTOvw(picture.parentElement.clientWidth);
 
         if (!srcset) {
-          continue;
+          // skip this pictureSource
+          return;
         }
 
-        srcset && (pictureSources[i].srcset = srcset);
-        srcset && pictureSources[i].removeAttribute('data-srcset');
-        sizes && (pictureSources[i].sizes = sizes);
-        sizes && pictureSources[i].removeAttribute('data-sizes');
-      }
-    }
-  }, {
-    key: "loadItemsImmediately",
+        pictureSource.srcset = srcset;
+        pictureSource.removeAttribute('data-srcset');
 
+        if (sizes) {
+          pictureSource.sizes = sizes;
+          pictureSource.removeAttribute('data-sizes');
+        }
+      });
+    }
     /**
      * Load all of the items immediately
-     * @param {NodeListOf<Element>} items
-     * @param {boolean} preload
+     * @param {NodeListOf<Element>} items     List of node elements.
+     * @param {boolean}             preload   Whether to preload or not.
      */
-    value: function loadItemsImmediately(items) {
-      var preload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-      // foreach() is not supported in IE
-      for (var i = 0; i < items.length; i++) {
-        switch (items[i].nodeName) {
+  }, {
+    key: "loadItemsImmediately",
+    value: function loadItemsImmediately(items) {
+      var _this2 = this;
+
+      var preload = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      items.forEach(function (item) {
+        switch (item.nodeName) {
           case 'IMG':
             if (preload === true) {
-              this.preloadImage(items[i]);
+              _this2.preloadImage(item);
             }
 
-            this.applyImage(items[i]);
+            _this2.applyImage(item);
+
             break;
 
           default:
             // do nothing skip to next item;
-            continue;
+            return;
         }
-      }
+      });
     }
     /**
      * Disconnect the observer
@@ -206,15 +200,59 @@ function () {
 
       this.observer.disconnect();
     }
+    /**
+     * On intersection
+     * @param {array}   entries   Intersection entries.
+     * @param {object}  observer  Intersectoin observer.
+     */
+
+  }, {
+    key: "onIntersection",
+    value: function onIntersection(entries, observer) {
+      var _this3 = this;
+
+      var zero = 0;
+      var zeroIndex = 0;
+      var oneIndex = 1; // Disconnect if we've already loaded all of the images
+
+      if (this.itemsCount === zero) {
+        this.observer.disconnect();
+      } // Loop through the entries
+
+
+      entries.forEach(function (entry) {
+        switch (entry.target.nodeName) {
+          case 'IMG':
+            if (entry.intersectionRatio > observer.thresholds[zeroIndex] && entry.intersectionRatio < observer.thresholds[oneIndex]) {
+              _this3.preloadImage(entry.target);
+            } else if (entry.intersectionRatio > observer.thresholds[oneIndex]) {
+              _this3.itemsCount--;
+
+              _this3.applyImage(entry.target);
+
+              _this3.observer.unobserve(entry.target);
+            }
+
+            break;
+
+          default:
+            // do nothing skip to next item;
+            return;
+        }
+      });
+    }
   }, {
     key: "initialize",
-
-    /* eslint-enable */
     value: function initialize() {
-      if (!this.itemList) return;
+      var _this4 = this;
+
+      if (!this.itemList) {
+        return;
+      }
+
       this.itemsCount = this.itemList.length;
 
-      if ("loading" in HTMLImageElement.prototype) {
+      if ('loading' in HTMLImageElement.prototype) {
         // Native lazy loading IS supported, so set src-data to src
         this.loadItemsImmediately(this.itemList, false);
       } else {
@@ -224,17 +262,15 @@ function () {
           this.loadItemsImmediately(this.itemList);
         } else {
           // It is supported, load the items
-          this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig); // foreach() is not supported in IE
-
-          for (var i = 0; i < this.itemList.length; i++) {
-            var item = this.itemList[i];
-
+          this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
+          this.itemList.forEach(function (item) {
             if (item.classList.contains('dcf-lazy-loaded')) {
-              continue;
+              // skip item
+              return;
             }
 
-            this.observer.observe(item);
-          }
+            _this4.observer.observe(item);
+          });
         }
       }
     }
