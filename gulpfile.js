@@ -9,51 +9,50 @@ const eslint = require('gulp-eslint');
 const scsslint = require('gulp-scss-lint');
 const fs = require('fs');
 
+const config = {
+  scssSrc:            './scss/**/*.scss',
+  jsSrc:              './js/es6/*.js',
+  jsTranspiled:       './js/transpiled',
+  jsES6Vendor:        './js/es6/vendor',
+  jsTranspiledVendor: './js/transpiled/vendor'
+}
+
 function copyJS(cb) {
-    // copy body-scroll-lock
-    src('./node_modules/body-scroll-lock/lib/bodyScrollLock.es6.js')
-      .pipe(rename('bodyScrollLock.js'))
-      .pipe(dest('./js/es6/vendor'));
+  // copy body-scroll-lock
+  const bodyScrollLockSrc = './node_modules/body-scroll-lock/lib/';
+  src(bodyScrollLockSrc + 'bodyScrollLock.es6.js')
+    .pipe(rename('bodyScrollLock.js'))
+    .pipe(dest(config.jsES6Vendor));
 
-    src('./node_modules/body-scroll-lock/lib/bodyScrollLock.js')
-      .pipe(dest('./js/transpiled/vendor'));
-
+  src(bodyScrollLockSrc + 'bodyScrollLock.js')
+    .pipe(dest(config.jsTranspiledVendor));
 
   // copy object-fit-images
-  src('./node_modules/object-fit-images/dist/ofi.es-modules.js')
-    .pipe(rename('ofi.js'))
-    .pipe(dest('./js/es6/vendor'));
+  const objectFitImagesSrc = './node_modules/object-fit-images/dist/';
+  src(objectFitImagesSrc + 'ofi.es-modules.js')
+    .pipe(dest(config.jsES6Vendor));
 
-  src('./node_modules/object-fit-images/dist/ofi.common-js.js')
-    .pipe(rename('ofi.js'))
-    .pipe(dest('./js/transpiled/vendor'));
+  src(objectFitImagesSrc + 'ofi.common-js.js')
+    .pipe(dest(config.jsTranspiledVendor));
 
-  src('./node_modules/object-fit-images/dist/ofi.min.js')
-    .pipe(dest('./js/transpiled/vendor'));
+  src(objectFitImagesSrc + 'ofi.min.js')
+    .pipe(dest(config.jsTranspiledVendor));
 
-    cb();
+  cb();
 }
 
 function lintJS(cb) {
-  src('./js/es6/*.js')
-
-    // eslint() attaches the lint output to the "eslint" property
-    // of the file object so it can be used by other modules.
+  src(config.jsSrc)
     .pipe(eslint())
-    // eslint.format() outputs the lint results to the console.
-    // Alternatively use eslint.formatEach() (see Docs).
     .pipe(eslint.format())
     .pipe(eslint.format('checkstyle', fs.createWriteStream('jsLintReport.xml')))
-
-    // To have the process exit with an error code (1) on
-    // lint error, return the stream and pipe to failAfterError last.
     .pipe(eslint.failAfterError());
 
-    cb();
+  cb();
 }
 
 function transpileJS(cb) {
-  src('./js/es6/*.js')
+  src(config.jsSrc)
 
     .pipe(plumber())
     // Transpile the JS code using Babel's preset-env.
@@ -68,13 +67,13 @@ function transpileJS(cb) {
       ]
     }))
     // Save each component as a separate file in js/transpiled.
-    .pipe(dest('./js/transpiled'));
+    .pipe(dest(config.jsTranspiled));
 
     cb();
 }
 
 function lintSCSS(cb) {
-  src('./scss/**/*.scss')
+  src(config.scssSrc)
     .pipe(scsslint({
       'config': 'scssLint.yml',
       'reporterOutput': 'scssLintReport.json'
@@ -84,12 +83,9 @@ function lintSCSS(cb) {
 }
 
 exports.default = function() {
-  // process JS and lint SCSS
-  series(copyJS, lintJS, transpileJS, lintSCSS);
-
   // Watch SCSS and lint if changes occur
-  watch('./scss/**/*.scss', { ignoreInitial: false }, lintSCSS);
+  watch(config.scssSrc, { ignoreInitial: false }, lintSCSS);
 
   // Watch JS and process if changes occur
-  watch('./js/es6/*.js', { ignoreInitial: false }, series(copyJS, lintJS, transpileJS));
+  watch(config.jsSrc, { ignoreInitial: false }, series(copyJS, lintJS, transpileJS));
 };
