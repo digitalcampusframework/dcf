@@ -1,7 +1,5 @@
 .DS_Store
 /node_modules
 .idea/
-2
-4
-/logs/**/*
-!logs/.gitkeep
+jsLintReport.xml
+scssLintReport.json
