@@ -15,7 +15,7 @@ const config = {
   jsTranspiled:       './js/transpiled',
   jsES6Vendor:        './js/es6/vendor',
   jsTranspiledVendor: './js/transpiled/vendor'
-}
+};
 
 function copyJS(cb) {
   // copy body-scroll-lock
