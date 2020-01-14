@@ -1,7 +1,5 @@
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-
-let DCFModal = class DCFModal {
-  constructor(modals) {
+class DCFModal {
+  constructor(modals, bodyScrollLock) {
     this.modals = modals;
     this.currentModal = null;
     this.currentBtn = null;
@@ -28,14 +26,12 @@ let DCFModal = class DCFModal {
     }
 
     // Body Scroll Lock
-    this.disableBodyScroll = disableBodyScroll;
-    this.enableBodyScroll = enableBodyScroll;
-    this.clearAllBodyScrollLocks = clearAllBodyScrollLocks;
-    /*if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+    this.disableBodyScroll = null;
+    this.enableBodyScroll = null;
+    if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
       this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
       this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
     }
-    */
   }
 
   magicNumbers(magicNumber) {
@@ -455,7 +451,5 @@ let DCFModal = class DCFModal {
       this.btnCloseListen(btnCloseModal, modal);
     }
   }
-};
-
-export { DCFModal as default };
+}
 

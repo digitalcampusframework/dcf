@@ -4,12 +4,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-
 var DCFModal =
 /*#__PURE__*/
 function () {
-  function DCFModal(modals) {
+  function DCFModal(modals, bodyScrollLock) {
     _classCallCheck(this, DCFModal);
 
     this.modals = modals;
@@ -39,14 +37,13 @@ function () {
     } // Body Scroll Lock
 
 
-    this.disableBodyScroll = disableBodyScroll;
-    this.enableBodyScroll = enableBodyScroll;
-    this.clearAllBodyScrollLocks = clearAllBodyScrollLocks;
-    /*if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+    this.disableBodyScroll = null;
+    this.enableBodyScroll = null;
+
+    if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
       this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
       this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
     }
-    */
   }
 
   _createClass(DCFModal, [{
@@ -465,5 +462,3 @@ function () {
 
   return DCFModal;
 }();
-
-export { DCFModal as default };
