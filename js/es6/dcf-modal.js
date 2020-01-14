@@ -1,13 +1,7 @@
-const NUMERIC_0 = 0;
-const NUMERIC_1 = 1;
-const NUMERIC_16 = 16;
-const NUMERIC_1000 = 1000;
-const HEX0x3 = 0x3;
-const HEX0x8 = 0x8;
-const ESC_CODE = 27;
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 class DCFModal {
-  constructor(modals, bodyScrollLock) {
+  constructor(modals) {
     this.modals = modals;
     this.currentModal = null;
     this.currentBtn = null;
@@ -34,12 +28,32 @@ class DCFModal {
     }
 
     // Body Scroll Lock
-    this.disableBodyScroll = null;
-    this.enableBodyScroll = null;
-    if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
+    this.disableBodyScroll = disableBodyScroll;
+    this.enableBodyScroll = enableBodyScroll;
+    this.clearAllBodyScrollLocks = clearAllBodyScrollLocks;
+    /*if (bodyScrollLock && bodyScrollLock.disableBodyScroll && bodyScrollLock.enableBodyScroll) {
       this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
       this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
     }
+    */
+  }
+
+  magicNumbers(magicNumber) {
+    const magicNumbers = {
+      int0: 0,
+      int1: 1,
+      int16: 16,
+      int1000: 1000,
+      hex0x3: 0x3,
+      hex0x8: 0x8,
+      escCode: 27
+    };
+    Object.freeze(magicNumbers);
+
+    if (magicNumber in magicNumbers) {
+      return magicNumbers[magicNumber];
+    }
+    return undefined;
   }
 
   /**
@@ -72,7 +86,7 @@ class DCFModal {
 
     // Set SVG state
     if (btnSVGs.length) {
-      const gTags = btnSVGs[NUMERIC_0].getElementsByTagName('g');
+      const gTags = btnSVGs[this.magicNumbers('int0')].getElementsByTagName('g');
       gTags.foreach((tag) => {
         if (tag.classList.contains('dcf-nav-toggle-icon-open')) {
           if (btnState.toLowerCase() === 'open') {
@@ -93,10 +107,10 @@ class DCFModal {
     // Set Button Label
     if (btnLabels.length) {
       if (btnState.toLowerCase() === 'open') {
-        btnLabels[NUMERIC_0].textContent =
+        btnLabels[this.magicNumbers('int0')].textContent =
           btn.getAttribute('data-nav-toggle-label-open') ? btn.getAttribute('data-nav-toggle-label-open') : 'Open';
       } else {
-        btnLabels[NUMERIC_0].textContent =
+        btnLabels[this.magicNumbers('int0')].textContent =
           btn.getAttribute('data-nav-toggle-label-closed') ? btn.getAttribute('data-nav-toggle-label-closed') : 'Close';
       }
     }
@@ -180,8 +194,8 @@ class DCFModal {
       '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' +
       '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' +
       'video[controls]:not([hidden])');
-    let firstTabFocusEl = tabFocusEls[NUMERIC_0];
-    let lastTabFocusEl = tabFocusEls[tabFocusEls.length - NUMERIC_1];
+    let firstTabFocusEl = tabFocusEls[this.magicNumbers('int0')];
+    let lastTabFocusEl = tabFocusEls[tabFocusEls.length - this.magicNumbers('int1')];
 
     // Send focus to the modal
     thisModal.focus();
@@ -320,7 +334,7 @@ class DCFModal {
     // Listen for when 'esc' key is pressed
     document.addEventListener('keydown', (event) => {
       // Close the currently open modal when 'esc' key is pressed
-      if (event.which === ESC_CODE && this.currentModal) {
+      if (event.which === this.magicNumbers('escCode') && this.currentModal) {
         event.preventDefault();
         this.closeModal(this.currentModal);
       }
@@ -328,18 +342,15 @@ class DCFModal {
   }
 
   generateUUID() {
-    let date = new Date().getTime();
-    let date2 = performance && performance.now && performance.now() * NUMERIC_1000 || NUMERIC_0;
+    const NUMERIC_0 = this.magicNumbers('int0');
+    const NUMERIC_16 = this.magicNumbers('int16');
+    const HEX0x3 = this.magicNumbers('hex0x3');
+    const HEX0x8 = this.magicNumbers('hex0x8');
+
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (uuid) => {
-      let rand = Math.random() * NUMERIC_16;
-      if (date > NUMERIC_0) {
-        rand = (date + rand) % NUMERIC_16 | NUMERIC_0;
-        date = Math.floor(date / NUMERIC_16);
-      } else {
-        rand = (date2 + rand) % NUMERIC_16 | NUMERIC_0;
-        date2 = Math.floor(date2 / NUMERIC_16);
-      }
-      return uuid === 'x' ? rand : (rand & HEX0x3 | HEX0x8).toString(NUMERIC_16);
+      let rand = Math.random() * NUMERIC_16 | NUMERIC_0,
+        uuidv4 = uuid === 'x' ? rand : rand & HEX0x3 | HEX0x8;
+      return uuidv4.toString(NUMERIC_16);
     });
   }
 
@@ -383,7 +394,7 @@ class DCFModal {
       const modalHeadings = modalHeader.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
       // Set ID on the first heading of each modal
-      modalHeadings[NUMERIC_0].id = modalHeadingId;
+      modalHeadings[this.magicNumbers('int0')].id = modalHeadingId;
 
       // Append modals to body so that elements outside of modal can be hidden when modal is open
       this.appendToBody(modal);
@@ -399,7 +410,7 @@ class DCFModal {
       modal.setAttribute('tabindex', '-1');
 
       // Check modal for any additional classes
-      if (modal.classList.length === NUMERIC_1 && modal.classList.contains('dcf-modal')) {
+      if (modal.classList.length === this.magicNumbers('int1') && modal.classList.contains('dcf-modal')) {
         // If no custom classes are present, add default background utility class to modal
         modal.classList.add('dcf-bg-overlay-dark');
       }
@@ -412,25 +423,25 @@ class DCFModal {
       modalWrapper.setAttribute('role', 'document');
 
       // Check modal wrapper for any additional classes
-      if (modalWrapper.classList.length === NUMERIC_1 && modalWrapper.classList.contains('dcf-modal-wrapper')) {
+      if (modalWrapper.classList.length === this.magicNumbers('int1') && modalWrapper.classList.contains('dcf-modal-wrapper')) {
         // If no custom classes are present, add default utility classes to modal wrapper
         modalWrapper.classList.add('dcf-relative', 'dcf-h-auto', 'dcf-overflow-y-auto');
       }
 
       // Check modal header for any additional classes
-      if (modalHeader.classList.length === NUMERIC_1 && modalHeader.classList.contains('dcf-modal-header')) {
+      if (modalHeader.classList.length === this.magicNumbers('int1') && modalHeader.classList.contains('dcf-modal-header')) {
         // If no custom classes are present, add default utility classes to modal header
         modalHeader.classList.add('dcf-wrapper', 'dcf-pt-8', 'dcf-sticky', 'dcf-pin-top');
       }
 
       // Check each 'close' button for any additional classes
-      if (btnCloseModal.classList.length === NUMERIC_1 && btnCloseModal.classList.contains('dcf-btn-close-modal')) {
+      if (btnCloseModal.classList.length === this.magicNumbers('int1') && btnCloseModal.classList.contains('dcf-btn-close-modal')) {
         // If no custom classes are present, add default utility classes to 'close' button
         btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
       }
 
       // Check modal content for any additional classes
-      if (modalContent.classList.length === NUMERIC_1 && modalContent.classList.contains('dcf-modal-content')) {
+      if (modalContent.classList.length === this.magicNumbers('int1') && modalContent.classList.contains('dcf-modal-content')) {
         // If no custom classes are present, add default utility classes to modal content
         modalContent.classList.add('dcf-wrapper', 'dcf-pb-8');
       }
