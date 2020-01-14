@@ -21,10 +21,12 @@ function copyJS(cb) {
   // copy body-scroll-lock
   const bodyScrollLockSrc = './node_modules/body-scroll-lock/lib/';
   src(bodyScrollLockSrc + 'bodyScrollLock.es6.js')
-    .pipe(rename('bodyScrollLock.js'))
     .pipe(dest(config.jsES6Vendor));
 
   src(bodyScrollLockSrc + 'bodyScrollLock.js')
+    .pipe(dest(config.jsTranspiledVendor));
+
+  src(bodyScrollLockSrc + 'bodyScrollLock.min.js')
     .pipe(dest(config.jsTranspiledVendor));
 
   // copy object-fit-images
