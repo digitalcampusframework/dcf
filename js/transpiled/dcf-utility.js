@@ -34,10 +34,10 @@ function () {
   }, {
     key: "uuidv4",
     value: function uuidv4() {
-      var NUMERIC_0 = this.constructor.magicNumbers('int0');
-      var NUMERIC_16 = this.constructor.magicNumbers('int16');
-      var HEX0x3 = this.constructor.magicNumbers('hex0x3');
-      var HEX0x8 = this.constructor.magicNumbers('hex0x8');
+      var NUMERIC_0 = DCFUtility.magicNumbers('int0');
+      var NUMERIC_16 = DCFUtility.magicNumbers('int16');
+      var HEX0x3 = DCFUtility.magicNumbers('hex0x3');
+      var HEX0x8 = DCFUtility.magicNumbers('hex0x8');
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (uuid) {
         var rand = Math.random() * NUMERIC_16 | NUMERIC_0,
             uuidv4 = uuid === 'x' ? rand : rand & HEX0x3 | HEX0x8;

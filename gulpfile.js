@@ -23,9 +23,6 @@ function copyJS(cb) {
   src(bodyScrollLockSrc + 'bodyScrollLock.es6.js')
     .pipe(dest(config.jsES6Vendor));
 
-  src(bodyScrollLockSrc + 'bodyScrollLock.js')
-    .pipe(dest(config.jsTranspiledVendor));
-
   src(bodyScrollLockSrc + 'bodyScrollLock.min.js')
     .pipe(dest(config.jsTranspiledVendor));
 
