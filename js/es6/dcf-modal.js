@@ -1,6 +1,6 @@
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock/lib/bodyScrollLock.es6';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-class DCFModal {
+let DCFModal = class DCFModal {
   constructor(modals) {
     this.modals = modals;
     this.currentModal = null;
@@ -455,4 +455,7 @@ class DCFModal {
       this.btnCloseListen(btnCloseModal, modal);
     }
   }
-}
+};
+
+export { DCFModal as default };
+
