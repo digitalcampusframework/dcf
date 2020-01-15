@@ -384,7 +384,7 @@ function () {
       btnsToggleModal.forEach(function (button) {
         var modalId = button.getAttribute('data-toggles-modal'); // Generate unique ID for each 'open modal' button
 
-        var btnId = _this6.generateUUID();
+        var btnId = DCFUtility.uuidv4(); //this.generateUUID();
 
         button.setAttribute('id', btnId); // Buttons are disabled by default until JavaScript has loaded.
         // Remove the 'disabled' attribute to make them functional.
