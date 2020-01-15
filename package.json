@@ -16,19 +16,9 @@
   },
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/preset-env": "^7.7.7",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
     "gulp-eslint": "^6.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^2.0.0",
     "gulp-scss-lint": "^1.0.0"
-  },
-  "dependencies": {
-    "body-scroll-lock": "^2.6.4",
-    "object-fit-images": "^3.2.4"
   },
   "engines": {
     "node": ">= 0.10.0"
