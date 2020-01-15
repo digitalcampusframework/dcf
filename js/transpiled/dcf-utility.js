@@ -18,7 +18,6 @@ function () {
         int0: 0,
         int1: 1,
         int16: 16,
-        int1000: 1000,
         hex0x3: 0x3,
         hex0x8: 0x8,
         escCode: 27
