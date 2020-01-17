@@ -65,7 +65,7 @@ class DCFModal {
     // Set SVG state
     if (btnSVGs.length) {
       const gTags = btnSVGs[DCFUtility.magicNumbers('int0')].getElementsByTagName('g');
-      gTags.foreach((tag) => {
+      Array.from(gTags).forEach((tag) => {
         if (tag.classList.contains('dcf-nav-toggle-icon-open')) {
           if (btnState.toLowerCase() === 'open') {
             tag.classList.remove('dcf-d-none');
