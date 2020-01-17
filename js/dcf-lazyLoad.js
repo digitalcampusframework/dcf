@@ -1,4 +1,4 @@
-module.exports = class DCFLazyLoad {
+class DCFLazyLoad {
   constructor(itemList, observerConfig, classNames) {
     this.itemList = itemList;
     this.observerConfig = observerConfig;
@@ -223,4 +223,6 @@ module.exports = class DCFLazyLoad {
       }
     }
   }
-};
+}
+
+module.exports = DCFLazyLoad;

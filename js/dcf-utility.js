@@ -1,4 +1,4 @@
-module.exports = class DCFUtility {
+class DCFUtility {
 
   static magicNumbers(magicNumber) {
     const magicNumbers = {
@@ -29,5 +29,6 @@ module.exports = class DCFUtility {
       return uuidv4.toString(NUMERIC_16);
     });
   }
-};
+}
 
+module.exports = DCFUtility;

@@ -1,4 +1,4 @@
-module.exports = class DCFModal {
+class DCFModal {
   constructor(modals, bodyScrollLock) {
     this.modals = modals;
     this.currentModal = null;
@@ -424,5 +424,6 @@ module.exports = class DCFModal {
       this.btnCloseListen(btnCloseModal, modal);
     }
   }
-};
+}
 
+module.exports = DCFModal;
