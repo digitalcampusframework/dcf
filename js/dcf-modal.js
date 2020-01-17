@@ -425,5 +425,3 @@ class DCFModal {
     }
   }
 }
-
-module.exports = DCFModal;

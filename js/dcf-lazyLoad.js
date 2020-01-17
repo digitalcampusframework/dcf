@@ -224,5 +224,3 @@ class DCFLazyLoad {
     }
   }
 }
-
-module.exports = DCFLazyLoad;

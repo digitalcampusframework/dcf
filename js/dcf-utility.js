@@ -30,5 +30,3 @@ class DCFUtility {
     });
   }
 }
-
-module.exports = DCFUtility;
