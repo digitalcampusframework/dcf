@@ -82,7 +82,7 @@ linters:
     enabled: true
 
   ImportantRule:
-    enabled: true
+    enabled: false
 
   ImportPath:
     enabled: true
@@ -100,7 +100,7 @@ linters:
     style: exclude_zero # or 'include_zero'
 
   MergeableSelector:
-    enabled: true
+    enabled: false
     force_nesting: true
 
   NameFormat:
@@ -133,7 +133,11 @@ linters:
 
   PropertySpelling:
     enabled: true
-    extra_properties: []
+    extra_properties: [
+      'grid-column-gap',
+      'grid-row-gap',
+      'grid-template-columns',
+      'justify-items']
     disabled_properties: []
 
   PropertyUnits:
@@ -154,7 +158,7 @@ linters:
     enabled: true
 
   QualifyingElement:
-    enabled: true
+    enabled: false
     allow_element_with_attribute: false
     allow_element_with_class: false
     allow_element_with_id: false
@@ -164,7 +168,7 @@ linters:
     max_depth: 3
 
   SelectorFormat:
-    enabled: true
+    enabled: false
     convention: hyphenated_lowercase # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
