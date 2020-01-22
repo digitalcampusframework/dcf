@@ -4,8 +4,8 @@
 
 
 :root {
-  font-size: #{$font-size-min}em;
   @include lh-4;
+  font-size: #{$font-size-min}em;
 }
 
 @media screen and (min-width: #{$min-width-lerp}em) {

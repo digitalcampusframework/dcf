@@ -5,11 +5,11 @@
 
 // Default badges
 .dcf-badge {
+  @include lh-1;
   background-color: $bg-color-badge;
   color: $color-badge;
   display: inline-block;
   font-size: $font-size-badge;
-  @include lh-1;
   padding: $padding-top-badge $padding-right-badge $padding-bottom-badge $padding-left-badge;
   text-align: center;
   vertical-align: $vertical-align-badge;

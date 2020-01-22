@@ -95,10 +95,10 @@
 
 
 .dcf-wrapper-table-scroll {
+  @include overflow-x-auto;
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  @include overflow-x-auto;
   padding-bottom: $padding-bottom-table-scroll;
   position: relative;
   right: 50%;

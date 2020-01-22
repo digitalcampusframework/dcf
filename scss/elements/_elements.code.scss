@@ -35,9 +35,9 @@ pre {
 
 
 pre code {
+  @include overflow-x-scroll;
   background-color: transparent;
   display: block;
-  @include overflow-x-scroll;
   padding: 0;
   white-space: pre;
 }
