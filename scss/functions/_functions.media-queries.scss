@@ -33,8 +33,7 @@
     }
 
     @return $value;
-  }
-  @else {
+  } @else {
     @error "Invalid breakpoint key. \a"
       + "It must be defined in the `$mq-breakpoints` map.";
   }
