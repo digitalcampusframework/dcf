@@ -37,6 +37,7 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
+  // scss-lint:disable DuplicateProperty
   word-break: break-word;
   hyphens: auto;
 }

@@ -54,6 +54,7 @@
 // Maximum width
 .dcf-w-max-xs { @include w-max-xs(!important); }
 .dcf-w-max-sm { @include w-max-sm(!important); }
+// scss-lint:disable SingleLinePerSelector
 .dcf-measure, .dcf-w-max-md { @include w-max-md(!important); } // TODO: deprecate .dcf-measure
 .dcf-w-max-lg { @include w-max-lg(!important); }
 .dcf-w-max-xl { @include w-max-xl(!important); }
