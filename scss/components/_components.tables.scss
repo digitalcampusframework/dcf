@@ -151,7 +151,7 @@
     @include pr-0;
   }
 
-
+  // scss-lint:disable SelectorDepth
   .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
     @include bb-0;
   }
