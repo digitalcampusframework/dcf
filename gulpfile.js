@@ -15,8 +15,7 @@ function lintJS(cb) {
   src(config.jsSrc)
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.format('checkstyle', fs.createWriteStream('jsLintReport.xml')))
-    .pipe(eslint.failAfterError());
+    .pipe(eslint.format('checkstyle', fs.createWriteStream('jsLintReport.xml')));
 
   cb();
 }
