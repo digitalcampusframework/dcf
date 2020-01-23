@@ -9,7 +9,7 @@ class DCFTabs{
             // Define constants for tabs
             const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
             const tabs = tabList.querySelectorAll('a');
-            const panels = this.tabGroups.querySelectorAll('.dcf-tabs > div, .dcf-tabs > section');
+            const panels = tabGroup.querySelectorAll('.dcf-tabs > div, .dcf-tabs > section');
             const uuid = DCFUtility.uuidv4();
 
             // Prefix each tab group with a unique ID.
