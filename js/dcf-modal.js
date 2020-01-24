@@ -163,7 +163,7 @@ class DCFModal {
 
     // Apply modal with toggle group class if requested
     if (modalWithNavToggleGroup) {
-      thisModal.classList.add('dcf-z-modal-with-nav-toggle-group');
+      thisModal.classList.add('dcf-z-modal-behind-nav-toggle-group');
     }
     const keycodeTab = 9;
     const tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' +
@@ -247,7 +247,7 @@ class DCFModal {
     thisModal.setAttribute('aria-hidden', 'true');
 
     // Add/remove classes to this modal
-    thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto', 'z-modal-with-nav-toggle-group');
+    thisModal.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto', 'dcf-z-modal-behind-nav-toggle-group');
     thisModal.classList.add('dcf-opacity-0', 'dcf-pointer-events-none');
 
     // Modal transition
