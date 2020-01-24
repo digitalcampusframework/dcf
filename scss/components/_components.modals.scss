@@ -3,12 +3,17 @@
 /////////////////////////////
 
 
+// Modal
+.dcf-modal {
+  z-index: $z-modal-fullscreen;
+}
+
+
 // Modal wrapper
 .dcf-modal-wrapper {
   background-color: $bg-color-modal-wrapper;
   max-height: $height-max-modal-wrapper;
   width: $width-modal-wrapper;
-  z-index: $z-modal-fullscreen;
 }
 
 
