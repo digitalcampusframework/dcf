@@ -17,6 +17,8 @@
   border: $border-width-input solid $border-color-input;
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
+  } @else {
+    border-radius: 0;
   }
   box-sizing: border-box;
   color: $color-select;
