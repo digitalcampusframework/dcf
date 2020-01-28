@@ -79,6 +79,8 @@
   border: $border-width-input $border-style-input $border-color-input;
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
+  } @else {
+    border-radius: 0;
   }
 }
 
