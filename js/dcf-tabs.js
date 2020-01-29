@@ -78,8 +78,6 @@ class DCFTabs{
                 panel.setAttribute('tabindex', '-1');
                 // Add class to each tab panel
                 panel.classList.add('dcf-tabs-panel');
-                // Add ID to tab list link
-                panel.setAttribute('id', uuid + '-tab-' + (i + 1));
                 // Declare which tab labels each panel
                 panel.setAttribute('aria-labelledby', tabs[i].id);
                 panel.classList.add('dcf-mb-5');
