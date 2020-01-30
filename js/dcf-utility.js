@@ -1,5 +1,4 @@
 class DCFUtility {
-
   static magicNumbers(magicNumber) {
     const magicNumbers = {
       int0: 0,
@@ -11,10 +10,7 @@ class DCFUtility {
     };
     Object.freeze(magicNumbers);
 
-    if (magicNumber in magicNumbers) {
-      return magicNumbers[magicNumber];
-    }
-    return undefined;
+    return magicNumber in magicNumbers ? magicNumbers[magicNumber] : undefined;
   }
 
   static uuidv4() {
