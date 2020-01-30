@@ -15,7 +15,7 @@ class DCFTabs {
       tabGroup.setAttribute('id', uuid.concat('-tab-group'));
 
       // Tab switching function
-      const switchTab = (oldTab, newTab) => {
+      tabGroup.prototype.switchTab = (oldTab, newTab) => {
         newTab.focus();
         // Make the active tab focusable by the user (Tab key)
         newTab.removeAttribute('tabindex');
@@ -51,7 +51,7 @@ class DCFTabs {
           clickEvent.preventDefault();
           let currentTab = tabList.querySelector('[aria-selected]');
           if (clickEvent.currentTarget !== currentTab) {
-            switchTab(currentTab, clickEvent.currentTarget);
+            this.tabGroups.switchTab(currentTab, clickEvent.currentTarget);
           }
         });
         // Handle keydown events for keyboard users
@@ -76,15 +76,10 @@ class DCFTabs {
             keydownEvent.preventDefault();
             // If the down key is pressed, move focus to the open panel,
             // otherwise switch to the adjacent tab
-            // dir === 'down' ? panels[tabIndex].focus() : tabs[dir] ?
-            //   switchTab(keydownEvent.currentTarget, tabs[dir]) : void DCFUtility.magicNumbers('int0');
-
             if (dir === 'down') {
               panels[tabIndex].focus();
             } else if (tabs[dir]) {
-              switchTab(keydownEvent.currentTarget, tabs[dir]);
-            } else {
-              void DCFUtility.magicNumbers('int0');
+              this.tabGroups.switchTab(keydownEvent.currentTarget, tabs[dir]);
             }
           }
         });
