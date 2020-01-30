@@ -60,18 +60,12 @@ class DCFTabs {
           let index = Array.prototype.indexOf.call(tabs, keydownEvent.currentTarget);
           // Work out which key the user is pressing and
           // Calculate the new tab's index where appropriate
-          const int37 = 37;
-          const int39 = 39;
-          const int40 = 40;
-          // let dir = keydownEvent.which === foo ? index - DCFUtility.magicNumbers('int1') : keydownEvent.which === foo1 ?
-          //   index + DCFUtility.magicNumbers('int1') : keydownEvent.which === foo2 ? 'down' : null;
-
           let dir = 0;
-          if (keydownEvent.which === int37) {
+          if (keydownEvent.which === DCFUtility.magicNumbers('arrowLeftCode')) {
             dir = index - DCFUtility.magicNumbers('int1');
-          } else if (keydownEvent.which === int39) {
+          } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowRightCode')) {
             dir = index + DCFUtility.magicNumbers('int 1');
-          } else if (keydownEvent.which === int40) {
+          } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowDownCode')) {
             dir = 'down';
           } else {
             dir = null;
