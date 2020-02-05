@@ -7,9 +7,8 @@ class DCFTestForWebp {
   }
   initialize() {
     (function ad(document) {
-      'use strict';
       function alreadyTested() {
-        return !!window.sessionStorage && !!window.sessionStorage.getItem('webpSupport');
+        return Boolean(window.sessionStorage) && Boolean(window.sessionStorage.getItem('webpSupport'));
       }
       // Add 'webp' class to html element if not supported.
       // Add 'no-webp' class to html element if not supported.
