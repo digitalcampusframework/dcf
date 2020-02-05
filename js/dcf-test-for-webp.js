@@ -6,7 +6,7 @@ class DCFTestForWebp {
     this.document = document;
   }
   initialize() {
-    (function ad(document) {
+    (function(document) {
       function alreadyTested() {
         return Boolean(window.sessionStorage) && Boolean(window.sessionStorage.getItem('webpSupport'));
       }
