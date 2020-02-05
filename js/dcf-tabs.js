@@ -2,6 +2,22 @@ class DCFTabs {
   constructor(tabGroups) {
     this.tabGroups = tabGroups;
   }
+  // Tab switching function
+  switchTab = (oldTab, newTab, tabs, panels) => {
+    newTab.focus();
+    // Make the active tab focusable by the user (Tab key)
+    newTab.removeAttribute('tabindex');
+    // Set the selected state
+    newTab.setAttribute('aria-selected', 'true');
+    oldTab.removeAttribute('aria-selected');
+    oldTab.setAttribute('tabindex', '-1');
+    // Get the indices of the new and old tabs to find the correct
+    // tab panels to show and hide
+    let index = Array.prototype.indexOf.call(tabs, newTab);
+    let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+    panels[oldIndex].hidden = true;
+    panels[index].hidden = false;
+  };
 
   initialize() {
     Array.prototype.forEach.call(this.tabGroups, (tabGroup) => {
@@ -13,23 +29,6 @@ class DCFTabs {
 
       // Prefix each tab group with a unique ID.
       tabGroup.setAttribute('id', uuid.concat('-tab-group'));
-
-      // Tab switching function
-      tabGroup.prototype.switchTab = (oldTab, newTab) => {
-        newTab.focus();
-        // Make the active tab focusable by the user (Tab key)
-        newTab.removeAttribute('tabindex');
-        // Set the selected state
-        newTab.setAttribute('aria-selected', 'true');
-        oldTab.removeAttribute('aria-selected');
-        oldTab.setAttribute('tabindex', '-1');
-        // Get the indices of the new and old tabs to find the correct
-        // tab panels to show and hide
-        let index = Array.prototype.indexOf.call(tabs, newTab);
-        let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
-        panels[oldIndex].hidden = true;
-        panels[index].hidden = false;
-      };
 
       // Tab styling and functions.
       Array.prototype.forEach.call(tabs, (tab, tabIndex) => {
@@ -51,7 +50,7 @@ class DCFTabs {
           clickEvent.preventDefault();
           let currentTab = tabList.querySelector('[aria-selected]');
           if (clickEvent.currentTarget !== currentTab) {
-            this.tabGroups.switchTab(currentTab, clickEvent.currentTarget);
+            this.switchTab(currentTab, clickEvent.currentTarget, tabs, panels);
           }
         });
         // Handle keydown events for keyboard users
@@ -79,7 +78,7 @@ class DCFTabs {
             if (dir === 'down') {
               panels[tabIndex].focus();
             } else if (tabs[dir]) {
-              this.tabGroups.switchTab(keydownEvent.currentTarget, tabs[dir]);
+              this.switchTab(keydownEvent.currentTarget, tabs[dir], tabs, panels);
             }
           }
         });
