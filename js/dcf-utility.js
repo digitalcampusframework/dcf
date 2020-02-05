@@ -4,6 +4,7 @@ class DCFUtility {
     const magicNumbers = {
       int0: 0,
       int1: 1,
+      int2: 2,
       int16: 16,
       hex0x3: 0x3,
       hex0x8: 0x8,
