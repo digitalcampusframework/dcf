@@ -50,7 +50,7 @@ class DCFUtility {
   }
 
   static flagSupportsWebp(element = document.documentElement) {
-    if (DCFUtility.this.supportsWebp()) {
+    if (DCFUtility.supportsWebp()) {
       if (element.className.indexOf('dcf-no-webp') >= DCFUtility.magicNumbers('int0')) {
         element.className = element.className.replace(/\bdcf-no-webp\b/, 'dcf-webp');
       } else {
