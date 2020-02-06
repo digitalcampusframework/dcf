@@ -58,4 +58,12 @@ class DCFUtility {
       }
     }
   }
+
+  static flagSupportsJavascript(element = document.documentElement) {
+    if (element.className.indexOf('dcf-no-js') >= DCFUtility.magicNumbers('int0')) {
+      element.className = element.className.replace(/\bdcf-no-js\b/, 'dcf-js');
+    } else {
+      element.className.concat(' dcf-js');
+    }
+  }
 }
