@@ -94,7 +94,6 @@ class DCFTabs {
         panel.classList.add('dcf-tabs-panel');
         // Declare which tab labels each panel
         panel.setAttribute('aria-labelledby', tabs[panelIndex].id);
-        panel.classList.add('dcf-mb-5');
         // Hide all tab panels
         panel.hidden = true;
       });
