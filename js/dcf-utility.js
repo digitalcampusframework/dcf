@@ -5,6 +5,7 @@ class DCFUtility {
       int0: 0,
       int1: 1,
       int16: 16,
+      spaceKeyCode: 32,
       arrowLeftCode: 37,
       arrowUpCode: 38,
       arrowRightCode:  39,
