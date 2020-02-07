@@ -67,7 +67,9 @@ class DCFUtility {
 
   static flagSupportsJavascript(element = document.documentElement) {
     if (element.classList.contains('dcf-no-js')) {
-      element.classList.remove('dcf-no-js');
+      element.classList.replace('dcf-no-js', 'dcf-js');
+    } else {
+      element.classList.add('dcf-js');
     }
   }
 }
