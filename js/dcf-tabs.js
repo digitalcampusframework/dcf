@@ -3,7 +3,7 @@ class DCFTabs {
     this.tabGroups = tabGroups;
   }
   // Tab switching function
-  switchTab = (oldTab, newTab, tabs, panels) => {
+  switchTab(oldTab, newTab, tabs, panels) {
     newTab.focus();
     // Make the active tab focusable by the user (Tab key)
     newTab.removeAttribute('tabindex');
@@ -17,7 +17,7 @@ class DCFTabs {
     let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
     panels[oldIndex].hidden = true;
     panels[index].hidden = false;
-  };
+  }
 
   initialize() {
     Array.prototype.forEach.call(this.tabGroups, (tabGroup) => {
