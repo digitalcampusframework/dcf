@@ -27,43 +27,37 @@ class DCFUtility {
     });
   }
 
-  static supportsWebp() {
-    let supports = false;
-    try {
-      const supportCheck = window.sessionStorage.getItem('webpSupport');
-      if (supportCheck !== null) {
-        supports = supportCheck;
-      } else {
-        let WebP = new Image();
-        WebP.src =
-          'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-        WebP.onload = WebP.onerror = () => {
-          supports = WebP.height === DCFUtility.magicNumbers('int2');
-          window.sessionStorage.setItem('webpSupport', supports);
-        };
-      }
-    } catch (err) {
-      // do nothing
+  static testWebp(callback) {
+    const supportsSessionCheck = window.sessionStorage.getItem('webpSupport');
+    if (supportsSessionCheck !== null) {
+      callback(supportsSessionCheck);
+      return;
     }
 
-    return supports;
+    let webP = new Image();
+    webP.onload = webP.onerror = () => {
+      let supports = webP.height === DCFUtility.magicNumbers('int2');
+      window.sessionStorage.setItem('webpSupport', supports);
+      callback(supports);
+    };
+    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
   }
 
   static flagSupportsWebp(element = document.documentElement) {
-    if (DCFUtility.supportsWebp()) {
-      if (element.className.indexOf('dcf-no-webp') >= DCFUtility.magicNumbers('int0')) {
-        element.className = element.className.replace(/\bdcf-no-webp\b/, 'dcf-webp');
-      } else {
-        element.className.concat(' dcf-webp');
+    DCFUtility.testWebp((supported) => {
+      if (supported) {
+        if (element.classList.contains('dcf-no-webp')) {
+          element.classList.replace('dcf-no-webp', 'dcf-webp');
+        } else {
+          element.classList.add('dcf-webp');
+        }
       }
-    }
+    });
   }
 
   static flagSupportsJavascript(element = document.documentElement) {
-    if (element.className.indexOf('dcf-no-js') >= DCFUtility.magicNumbers('int0')) {
-      element.className = element.className.replace(/\bdcf-no-js\b/, 'dcf-js');
-    } else {
-      element.className.concat(' dcf-js');
+    if (element.classList.contains('dcf-no-js')) {
+      element.classList.remove('dcf-no-js');
     }
   }
 }
