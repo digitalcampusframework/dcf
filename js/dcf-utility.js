@@ -53,7 +53,7 @@ class DCFUtility {
     webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
   }
 
-  static flagSupportsWebp(element = document.documentElement) {
+  static flagSupportsWebP(element = document.documentElement) {
     DCFUtility.testWebp((supported) => {
       if (supported) {
         if (element.classList.contains('dcf-no-webp')) {
@@ -65,7 +65,7 @@ class DCFUtility {
     });
   }
 
-  static flagSupportsJavascript(element = document.documentElement) {
+  static flagSupportsJavaScript(element = document.documentElement) {
     if (element.classList.contains('dcf-no-js')) {
       element.classList.replace('dcf-no-js', 'dcf-js');
     } else {
