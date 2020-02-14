@@ -75,6 +75,8 @@ class DCFLazyLoad {
 
       image.onload = resolve;
       image.onerror = reject;
+    }).catch(() => {
+      // do nothing
     });
   }
 
