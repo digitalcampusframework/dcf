@@ -38,16 +38,18 @@ class DCFUtility {
   }
 
   static testWebp(callback) {
-    const supportsSessionCheck = window.sessionStorage.getItem('webpSupport');
+    const supportsSessionCheck = window.sessionStorage ? window.sessionStorage.getItem('webpSupport') : null;
     if (supportsSessionCheck !== null) {
-      callback(supportsSessionCheck);
+      callback(supportsSessionCheck === 'true');
       return;
     }
 
     let webP = new Image();
     webP.onload = webP.onerror = () => {
       let supports = webP.height === DCFUtility.magicNumbers('int2');
-      window.sessionStorage.setItem('webpSupport', supports);
+      if (window.sessionStorage) {
+        window.sessionStorage.setItem('webpSupport', supports);
+      }
       callback(supports);
     };
     webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
@@ -57,26 +59,17 @@ class DCFUtility {
     DCFUtility.testWebp((supported) => {
       if (supported) {
         if (element.classList.contains('dcf-no-webp')) {
-          element.classList.replace('dcf-no-webp', 'dcf-webp');
-        } else {
-          element.classList.add('dcf-webp');
+          element.classList.remove('dcf-no-webp');
         }
+        element.classList.add('dcf-webp');
       }
     });
   }
 
   static flagSupportsJavaScript(element = document.documentElement) {
     if (element.classList.contains('dcf-no-js')) {
-      element.classList.replace('dcf-no-js', 'dcf-js');
-    } else {
-      element.classList.add('dcf-js');
+      element.classList.remove('dcf-no-js');
     }
-  }
-
-  static applyNodeListForeachPolyfill() {
-    // Function to make IE9+ support forEach:
-    if (window.NodeList && !NodeList.prototype.forEach) {
-      NodeList.prototype.forEach = Array.prototype.forEach;
-    }
+    element.classList.add('dcf-js');
   }
 }
