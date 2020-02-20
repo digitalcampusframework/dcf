@@ -34,11 +34,9 @@ class DCFLazyLoad {
       this.applyPicture(image.parentNode);
     }
 
-    // Prevent this from being lazy loaded a second time and trigger fade in.
-    image.classList.add('dcf-lazy-loaded', 'dcf-faded-in');
-
-    // Remove dcf-fade-in class since added dcf-faded-in
-    image.classList.remove('dcf-fade-in');
+    // Prevent this from being lazy loaded a second time.
+    image.classList.add('dcf-lazy-loaded');
+    image.classList.remove('dcf-lazy-load');
 
     if (src) {
       image.src = src;
