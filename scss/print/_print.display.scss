@@ -3,4 +3,16 @@
 /////////////////////////
 
 
-.dcf-d-none\@print { @include d-none(!important); }
+// Hide when printed
+.dcf-d-none\@print {
+  @include d-none(!important);
+}
+
+
+// Display flexbox and grid items as blocks when printed
+.dcf-main .dcf-d-flex,
+.dcf-main .dcf-d-grid,
+.dcf-main [class*=' dcf-grid'],
+.dcf-main [class^='dcf-grid'] {
+  @include d-block(!important);
+}
