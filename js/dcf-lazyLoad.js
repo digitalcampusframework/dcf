@@ -163,41 +163,38 @@ class DCFLazyLoad {
     this.observer.disconnect();
   }
 
-  /**
-   * On intersection
-   * @param {array}   entries   Intersection entries.
-   * @param {object}  observer  Intersectoin observer.
-   */
-  onIntersection(entries, observer) {
-    const zero = 0;
-    const zeroIndex = 0;
-    const oneIndex = 1;
-    // Disconnect if we've already loaded all of the images
-    if (this.itemsCount === zero) {
-      this.observer.disconnect();
-    }
-
-    // Loop through the entries
-    entries.forEach((entry) => {
-      switch (entry.target.nodeName) {
-      case 'IMG':
-        if (entry.intersectionRatio > observer.thresholds[zeroIndex] && entry.intersectionRatio < observer.thresholds[oneIndex]) {
-          this.preloadImage(entry.target);
-        } else if (entry.intersectionRatio > observer.thresholds[oneIndex]) {
-          this.itemsCount--;
-          this.applyImage(entry.target);
-          this.observer.unobserve(entry.target);
-        }
-        break;
-
-      default:
-        // do nothing skip to next item;
-        return;
-      }
-    });
-  }
-
   initialize() {
+    // onIntersection callback function
+    let onIntersection = (entries, observer) => {
+      const zero = 0;
+      const zeroIndex = 0;
+      const oneIndex = 1;
+      // Disconnect if we've already loaded all of the images
+      if (this.itemsCount === zero) {
+        this.observer.disconnect();
+      }
+
+      // Loop through the entries
+      entries.forEach((entry) => {
+        switch (entry.target.nodeName) {
+        case 'IMG':
+          if (entry.intersectionRatio > observer.thresholds[zeroIndex] &&
+              entry.intersectionRatio < observer.thresholds[oneIndex]) {
+            this.preloadImage(entry.target);
+          } else if (entry.intersectionRatio > observer.thresholds[oneIndex]) {
+            this.itemsCount--;
+            this.applyImage(entry.target);
+            this.observer.unobserve(entry.target);
+          }
+          break;
+
+        default:
+          // do nothing skip to next item;
+          return;
+        }
+      });
+    };
+
     if (!this.itemList) {
       return;
     }
@@ -214,7 +211,7 @@ class DCFLazyLoad {
         this.loadItemsImmediately(this.itemList);
       } else {
         // It is supported, load the items
-        this.observer = new IntersectionObserver(this.onIntersection, this.observerConfig);
+        this.observer = new IntersectionObserver(onIntersection, this.observerConfig);
 
         this.itemList.forEach((item) => {
           if (item.classList.contains('dcf-lazy-loaded')) {
