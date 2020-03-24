@@ -6,8 +6,8 @@
 // Default badges
 .dcf-badge {
   @include lh-1;
-  background-color: $bg-color-badge;
-  color: $color-badge;
+  background-color: $bg-color-badge-light-mode;
+  color: $color-badge-light-mode;
   display: inline-block;
   font-size: $font-size-badge;
   padding: $padding-top-badge $padding-right-badge $padding-bottom-badge $padding-left-badge;

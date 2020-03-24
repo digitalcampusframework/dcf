@@ -37,9 +37,9 @@
 // Input group add-on
 .dcf-input-group-addon {
   align-items: center;
-  background-color: $bg-color-input-group-addon;
-  border: $border-width-input-group-addon $border-style-input-group-addon $border-color-input-group-addon;
-  color: $color-input-group-addon;
+  background-color: $bg-color-input-group-addon-light-mode;
+  border: $border-width-input-group-addon $border-style-input-group-addon $border-color-input-group-addon-light-mode;
+  color: $color-input-group-addon-light-mode;
   display: flex;
   @if (to-number($font-size-input-group-addon) != to-number(#{ms(0)}em)) {
     font-size: $font-size-input-group-addon;

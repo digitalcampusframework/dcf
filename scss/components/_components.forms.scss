@@ -5,7 +5,7 @@
 
 // Fieldset
 .dcf-form fieldset {
-  border: $border-width-input $border-style-input $border-color-fieldset;
+  border: $border-width-input $border-style-input $border-color-fieldset-light-mode;
   @if ($border-radius-fieldset-roundrect) {
     border-radius: $roundrect;
   }
@@ -53,7 +53,7 @@
 
 // Required
 .dcf-required {
-  color: $color-required-label;
+  color: $color-required-label-light-mode;
   font-size: $font-size-required;
   @if ($font-style-required-italic) {
     font-style: italic;
@@ -64,7 +64,7 @@
 
 // Form help
 .dcf-form-help {
-  color: $color-form-help;
+  color: $color-form-help-light-mode;
   display: inline-block;
   font-size: $font-size-form-help;
   line-height: $line-height-form-help;
@@ -76,7 +76,7 @@
 .dcf-input-text, // TODO: deprecate .dcf-input-text?
 .dcf-form input:not([type="submit"]),
 .dcf-form textarea {
-  border: $border-width-input $border-style-input $border-color-input;
+  border: $border-width-input $border-style-input $border-color-input-light-mode;
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
   } @else {
@@ -105,7 +105,7 @@
 .dcf-input-text:focus, // TODO: deprecate .dcf-input-text?
 .dcf-form input:not([type="submit"]):focus,
 .dcf-form textarea:focus {
-  border-color: $border-color-input-focus;
+  border-color: $border-color-input-focus-light-mode;
   outline: none;
 }
 
@@ -113,7 +113,7 @@
 .dcf-input-text:enabled:hover, // TODO: deprecate .dcf-input-text?
 .dcf-form input:not([type="submit"]):enabled:hover,
 .dcf-form textarea:enabled:hover {
-  border-color: $border-color-input-hover;
+  border-color: $border-color-input-hover-light-mode;
 }
 
 
