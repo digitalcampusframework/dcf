@@ -57,8 +57,8 @@
 // Style checkbox and radio input
 .dcf-input-checkbox label::before,
 .dcf-input-radio label::before {
-  background-color: $bg-color-checkbox-radio;
-  border: $border-width-input solid $border-color-input;
+  background-color: $bg-color-checkbox-radio-light-mode;
+  border: $border-width-input solid $border-color-input-light-mode;
   height: $height-width-checkbox-radio;
   width: $height-width-checkbox-radio;
 }
@@ -74,7 +74,7 @@
 // Style checkmark
 .dcf-input-checkbox label::after {
   background-color: transparent;
-  border-color: transparent $color-checkmark $color-checkmark;
+  border-color: transparent $color-checkmark-light-mode $color-checkmark-light-mode;
   border-style: solid;
   border-width: 0 0 $border-width-checkmark $border-width-checkmark;
   height: to-number($height-width-checkbox-radio) * to-number(#{ms(-8)});
@@ -95,7 +95,7 @@
 
 // Style radio selection
 .dcf-input-radio label::after {
-  background-color: $color-radio;
+  background-color: $color-radio-light-mode;
   height: $height-width-checkbox-radio;
   opacity: 0;
   top: 0;
@@ -108,14 +108,14 @@
 // Checkbox and radio focus state
 .dcf-input-checkbox input[type="checkbox"]:focus + label::before,
 .dcf-input-radio input[type="radio"]:focus + label::before {
-  border-color: $border-color-input-focus;
+  border-color: $border-color-input-focus-light-mode;
 }
 
 
 // Checkbox and radio checked state
 .dcf-input-checkbox input[type="checkbox"]:checked + label::before,
 .dcf-input-radio input[type="radio"]:checked + label::before {
-  border-color: $border-color-input-checked;
+  border-color: $border-color-input-checked-light-mode;
 }
 
 
@@ -139,5 +139,5 @@
 .dcf-input-radio input[type="radio"]:enabled + label:hover::before,
 .dcf-input-checkbox input[type="checkbox"]:enabled:hover + label::before,
 .dcf-input-radio input[type="radio"]:enabled:hover + label::before {
-  border-color: $border-color-input-hover;
+  border-color: $border-color-input-hover-light-mode;
 }
