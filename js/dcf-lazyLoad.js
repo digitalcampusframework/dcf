@@ -111,7 +111,7 @@ class DCFLazyLoad {
   applyPicture(picture) {
     // update picture source tags
     let pictureSources = picture.getElementsByTagName('SOURCE');
-    pictureSources.forEach((pictureSource) => {
+    Array.from(pictureSources).forEach((pictureSource) => {
       const srcset = pictureSource.dataset.srcset || null;
       const sizes = pictureSource.dataset.sizes || this.pxTOvw(picture.parentElement.clientWidth);
 
