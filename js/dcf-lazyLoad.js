@@ -23,7 +23,7 @@ class DCFLazyLoad {
   applyImage(image) {
     const src = image.dataset.src;
     const srcset = image.dataset.srcset || null;
-    const sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
+    let sizes = null;
 
     if (!src) {
       return;
@@ -32,6 +32,9 @@ class DCFLazyLoad {
     // Process parent picture lazy load if image is child of a picture
     if (image.parentNode.nodeName === 'PICTURE') {
       this.applyPicture(image.parentNode);
+      sizes = image.dataset.sizes || this.pxTOvw(image.parentNode.parentElement.clientWidth);
+    } else {
+      sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
     }
 
     // Prevent this from being lazy loaded a second time.
