@@ -44,6 +44,27 @@ class DCFSlideshow {
     }
   }
 
+  scrollIt(slideToShow, slides, slidedeck) {
+    let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
+    slidedeck.scrollLeft = scrollPos;
+  }
+
+  showSlide(dir, slideshow, slides, slidedeck) {
+    let visible = slideshow.querySelectorAll('[aria-label = "slideshow"] .visible');
+    let index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
+
+    if (visible.length > DCFUtility.magicNumbers('int1')) {
+      this.scrollIt(visible[index], slides, slidedeck);
+    } else {
+      let newSlide = index === DCFUtility.magicNumbers('int0') ?
+        visible[DCFUtility.magicNumbers('int0')].previousElementSibling :
+        visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
+      if (newSlide) {
+        this.scrollIt(newSlide, slides, slidedeck);
+      }
+    }
+  }
+
   initialize() {
     Array.prototype.forEach.call(this.slideshows, (slideshow, slideshowIndex) => {
       let slidedeck = this.uls[slideshowIndex];
@@ -101,9 +122,7 @@ class DCFSlideshow {
       Array.prototype.forEach.call(figures, (figure, figureIndex) => {
         let caption = captions[figureIndex];
 
-        if (typeof caption == 'undefined') {
-          console.log('No Caption');
-        } else if (caption.parentNode === figure) {
+        if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption
           let captionBtn = document.createElement('button');
           // Add classes to each caption toggle button
@@ -136,35 +155,40 @@ class DCFSlideshow {
         rootMargin: '-10px'
       };
       if ('IntersectionObserver' in window) {
-        let scrollIt = function scrollIt(slideToShow) {
-          let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
-          slidedeck.scrollLeft = scrollPos;
-        };
-        let showSlide = function showSlide(dir) {
-          let visible = slideshow.querySelectorAll('[aria-label = "slideshow"] .visible');
-          let index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
+        // let scrollIt = function scrollIt(slideToShow) {
+        //   let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
+        //   slidedeck.scrollLeft = scrollPos;
+        // };
+        this.scrollIt(slideToShow, slides, slidedeck);
 
-          if (visible.length > DCFUtility.magicNumbers('int1')) {
-            scrollIt(visible[index]);
-          } else {
-            let newSlide = index === DCFUtility.magicNumbers('int0') ?
-              visible[DCFUtility.magicNumbers('int0')].previousElementSibling :
-              visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
-            if (newSlide) {
-              scrollIt(newSlide);
-            }
-          }
-        };
+        // let showSlide = function showSlide(dir) {
+        //   let visible = slideshow.querySelectorAll('[aria-label = "slideshow"] .visible');
+        //   let index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
+        //
+        //   if (visible.length > DCFUtility.magicNumbers('int1')) {
+        //     scrollIt(visible[index]);
+        //   } else {
+        //     let newSlide = index === DCFUtility.magicNumbers('int0') ?
+        //       visible[DCFUtility.magicNumbers('int0')].previousElementSibling :
+        //       visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
+        //     if (newSlide) {
+        //       scrollIt(newSlide);
+        //     }
+        //   }
+        // };
 
-        let callback = function callback(slides) {
-          Array.prototype.forEach.call(slides, function (entry) {
+        // CURRENTLY TRYING TO MOVE FUNCTION BEFORE INIT.
+        this.showSlide(dir, slideshow, slides, slidedeck)
+
+        let callback = function callback(slides) { // slides needs to be here
+          Array.prototype.forEach.call(slides, (entry) => {
             entry.target.classList.remove('visible');
-            var slide = entry.target.querySelector('div');
+            let slide = entry.target.querySelector('div');
             slide.setAttribute('tabindex', '-1');
             if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
               return;
             }
-            var img = entry.target.querySelector('img');
+            let img = entry.target.querySelector('img');
             if (img.dataset.src) {
               img.setAttribute('src', img.dataset.src);
               img.removeAttribute('data-src');
@@ -175,19 +199,18 @@ class DCFSlideshow {
         };
 
         let observer = new IntersectionObserver(callback, observerSettings);
-        Array.prototype.forEach.call(slides, function(t) {
-          return observer.observe(t);
+        Array.prototype.forEach.call(slides, (elem) => {
+          return observer.observe(elem);
         });
-
-        ctrlPrevious.addEventListener('click', function() {
+        ctrlPrevious.addEventListener('click', () => {
           showSlide(ctrlPrevious.getAttribute('id'), slides);
         });
-        ctrlNext.addEventListener('click', function() {
+        ctrlNext.addEventListener('click', () => {
           showSlide(ctrlNext.getAttribute('id'), slides);
         });
       } else {
-        Array.prototype.forEach.call(slides, function(e) {
-          var img = e.querySelector('img');
+        Array.prototype.forEach.call(slides, function getImages() {
+          let img = getImages.querySelector('img');
           img.setAttribute('src', img.getAttribute('data-src'));
         });
       }
@@ -195,19 +218,20 @@ class DCFSlideshow {
 
     // Caption toggle buttons
     let buttons = document.querySelectorAll('.dcf-btn-slide-caption');
-    [].forEach.call(buttons, function(button, index) {
+    [].forEach.call(buttons, function addClick(button) {
       let caption = button.previousElementSibling;
-      button.addEventListener('click', function() {
-        this.captionClasses(this, caption);
+      // Handle Click
+      button.addEventListener('click', (onClick) => {
+        this.captionClasses(onClick.currentTarget, caption);
         return false;
       }, false);
 
       // Show caption when the 'space' key is pressed
-      button.addEventListener('keydown', function(event) {
+      button.addEventListener('keydown', (onSpace) => {
         // Handle 'space' key
-        if (event.which === DCFUtility.magicNumbers('spaceKeyCode')) {
-          event.preventDefault();
-          this.captionClasses(this, caption);
+        if (onSpace.which === DCFUtility.magicNumbers('spaceKeyCode')) {
+          onSpace.preventDefault();
+          this.captionClasses(onSpace.currentTarget, caption);
         }
       }, false);
     });
