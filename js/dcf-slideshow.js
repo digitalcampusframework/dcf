@@ -44,6 +44,8 @@ class DCFSlideshow {
     }
   }
 
+  // Functions for intersection observer.
+
   scrollIt(slideToShow, slides, slidedeck) {
     let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
     slidedeck.scrollLeft = scrollPos;
@@ -63,6 +65,24 @@ class DCFSlideshow {
         this.scrollIt(newSlide, slides, slidedeck);
       }
     }
+  }
+
+  callback(slides) {
+    Array.prototype.forEach.call(slides, (entry) => {
+      entry.target.classList.remove('visible');
+      let slide = entry.target.querySelector('div');
+      slide.setAttribute('tabindex', '-1');
+      if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
+        return;
+      }
+      let img = entry.target.querySelector('img');
+      if (img.dataset.src) {
+        img.setAttribute('src', img.dataset.src);
+        img.removeAttribute('data-src');
+      }
+      entry.target.classList.add('visible');
+      slide.removeAttribute('tabindex', '-1');
+    });
   }
 
   initialize() {
@@ -155,62 +175,20 @@ class DCFSlideshow {
         rootMargin: '-10px'
       };
       if ('IntersectionObserver' in window) {
-        // let scrollIt = function scrollIt(slideToShow) {
-        //   let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
-        //   slidedeck.scrollLeft = scrollPos;
-        // };
-        this.scrollIt(slideToShow, slides, slidedeck);
-
-        // let showSlide = function showSlide(dir) {
-        //   let visible = slideshow.querySelectorAll('[aria-label = "slideshow"] .visible');
-        //   let index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
-        //
-        //   if (visible.length > DCFUtility.magicNumbers('int1')) {
-        //     scrollIt(visible[index]);
-        //   } else {
-        //     let newSlide = index === DCFUtility.magicNumbers('int0') ?
-        //       visible[DCFUtility.magicNumbers('int0')].previousElementSibling :
-        //       visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
-        //     if (newSlide) {
-        //       scrollIt(newSlide);
-        //     }
-        //   }
-        // };
-
-        // CURRENTLY TRYING TO MOVE FUNCTION BEFORE INIT.
-        this.showSlide(dir, slideshow, slides, slidedeck)
-
-        let callback = function callback(slides) { // slides needs to be here
-          Array.prototype.forEach.call(slides, (entry) => {
-            entry.target.classList.remove('visible');
-            let slide = entry.target.querySelector('div');
-            slide.setAttribute('tabindex', '-1');
-            if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
-              return;
-            }
-            let img = entry.target.querySelector('img');
-            if (img.dataset.src) {
-              img.setAttribute('src', img.dataset.src);
-              img.removeAttribute('data-src');
-            }
-            entry.target.classList.add('visible');
-            slide.removeAttribute('tabindex', '-1');
-          });
-        };
-
-        let observer = new IntersectionObserver(callback, observerSettings);
+        let observer = new IntersectionObserver(this.callback, observerSettings);
         Array.prototype.forEach.call(slides, (elem) => {
           return observer.observe(elem);
         });
         ctrlPrevious.addEventListener('click', () => {
-          showSlide(ctrlPrevious.getAttribute('id'), slides);
+          this.showSlide(ctrlPrevious.getAttribute('id'), slideshow, slides, slidedeck);
         });
+
         ctrlNext.addEventListener('click', () => {
-          showSlide(ctrlNext.getAttribute('id'), slides);
+          this.showSlide(ctrlNext.getAttribute('id'), slideshow, slides, slidedeck);
         });
       } else {
-        Array.prototype.forEach.call(slides, function getImages() {
-          let img = getImages.querySelector('img');
+        Array.prototype.forEach.call(slides, (slide) => {
+          let img = slide.querySelector('img');
           img.setAttribute('src', img.getAttribute('data-src'));
         });
       }
