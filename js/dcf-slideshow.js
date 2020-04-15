@@ -196,7 +196,7 @@ class DCFSlideshow {
 
     // Caption toggle buttons
     let buttons = document.querySelectorAll('.dcf-btn-slide-caption');
-    [].forEach.call(buttons,  (button) => {
+    [].forEach.call(buttons, (button) => {
       let caption = button.previousElementSibling;
       // Handle Click
       button.addEventListener('click', (onClick) => {
