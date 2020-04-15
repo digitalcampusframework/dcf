@@ -90,7 +90,7 @@ class DCFSlideshow {
       let slidedeck = this.uls[slideshowIndex];
       let slides = slideshow.querySelectorAll('.dcf-slideshow li');
       let figures = slideshow.querySelectorAll('dcf-slideshow figure');
-      let captions = slideshow.querySelectorAll('dcf=slideshow figcaption');
+      let captions = slideshow.querySelectorAll('dcf-slideshow figcaption');
       let uuid = DCFUtility.uuidv4();
 
       // Set a unique ID for each slideshow
