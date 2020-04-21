@@ -59,7 +59,7 @@ class DCFSlideshowTheme {
       Array.prototype.forEach.call(ctrls, (ctrl) => {
         if (ctrl.getAttribute('id') === 'previous') {
           let ctrlButton = ctrl.querySelector('button');
-          ctrlButton.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'unl-cream');
+          ctrlButton.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-inverse');
           ctrlButton.innerHTML =
             '<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">' +
             '<path d="M21.746.064a.504.504 0 0 0-.504.008l-19 11.5a.499.499 0 0 0-.001.856l19' +
@@ -67,7 +67,7 @@ class DCFSlideshowTheme {
             '</svg>';
         } else if (ctrl.getAttribute('id') === 'next') {
           let ctrlButton = ctrl.querySelector('button');
-          ctrlButton.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'unl-cream');
+          ctrlButton.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-inverse');
           ctrlButton.innerHTML =
             '<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">' +
             '<path d="M21.759 11.577L2.786.077a.499.499 0 0 0-.759.428v23a.498.498 ' +
@@ -82,17 +82,17 @@ class DCFSlideshowTheme {
         if (!(typeof captionBtn === 'undefined')) {
           captionBtn.innerHTML = '<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" ' +
             'width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">' +
-            '<path class="unl-icon-slide-caption-open" ' +
+            '<path class="example-icon-slide-caption-open" ' +
             'd="M1,3h19c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1C0.4,1,0,1.4,0,2C0,2.6,0.4,3,1,3z"/>' +
-            '<path class="unl-icon-slide-caption-open" ' +
+            '<path class="example-icon-slide-caption-open" ' +
             'd="M1,8h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1C0.4,6,0,6.4,0,7C0,7.6,0.4,8,1,8z"/>' +
-            '<path class="unl-icon-slide-caption-close-1" ' +
+            '<path class="example-icon-slide-caption-close-1" ' +
             'd="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"/>' +
-            '<path class="unl-icon-slide-caption-close-2" ' +
+            '<path class="example-icon-slide-caption-close-2" ' +
             'd="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"/>' +
-            '<path class="unl-icon-slide-caption-open" ' +
+            '<path class="example-icon-slide-caption-open" ' +
             'd="M1,18h18c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,17.6,0.4,18,1,18z"/>' +
-            '<path class="unl-icon-slide-caption-open" ' +
+            '<path class="example-icon-slide-caption-open" ' +
             'd="M1,23h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,22.6,0.4,23,1,23z"/>' +
             '</svg>';
         }
@@ -100,13 +100,13 @@ class DCFSlideshowTheme {
     });
     let slideBtns = document.querySelectorAll('.dcf-btn-slide');
     Array.prototype.forEach.call(slideBtns, (slideBtn) => {
-      slideBtn.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'unl-cream');
+      slideBtn.classList.add('dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-white');
     });
     let buttons = document.querySelectorAll('.dcf-btn-slide-caption');
     Array.prototype.forEach.call(buttons, (button) => {
       let caption = button.previousElementSibling;
-      let close1 = button.querySelector('.unl-icon-slide-caption-close-1');
-      let close2 = button.querySelector('.unl-icon-slide-caption-close-2');
+      let close1 = button.querySelector('.example-icon-slide-caption-close-1');
+      let close2 = button.querySelector('.example-icon-slide-caption-close-2');
 
       caption.addEventListener('openCaption', () => {
         close1.animate(keyframesClose1, options);
