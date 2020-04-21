@@ -177,7 +177,7 @@ class DCFSlideshow {
       if ('IntersectionObserver' in window) {
         let observer = new IntersectionObserver(this.callback, observerSettings);
         Array.prototype.forEach.call(slides, (elem) => {
-          return observer.observe(elem);
+          observer.observe(elem);
         });
         ctrlPrevious.addEventListener('click', () => {
           this.showSlide(ctrlPrevious.getAttribute('id'), slideshow, slides, slidedeck);
