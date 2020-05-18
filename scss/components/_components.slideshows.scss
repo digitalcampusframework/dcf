@@ -1,0 +1,45 @@
+/////////////////////////////////
+// CORE / COMPONENTS / SLIDESHOWS
+/////////////////////////////////
+
+
+.dcf-slideshow ul {
+  margin-bottom: 0;
+  padding-left: 0; // Remove broswer default padding for list
+}
+
+
+.dcf-slideshow li {
+  margin-bottom: 0;
+}
+
+
+.dcf-slideshow ul:first-child {
+  display: flex;
+  list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.dcf-slideshow ul:first-child li {
+  scroll-snap-align: start;
+}
+
+
+.dcf-slideshow ul:first-child li:not(:last-child) {
+  @include mr-3;
+}
+
+
+// Styles if JavaScript does not load
+.dcf-slideshow ul:first-child li {
+  flex: 0 0 84%; // Make sure some of the next slide appears
+}
+
+
+// Styles after JavaScript loads
+.dcf-slideshow ul:first-child li.dcf-slide {
+  flex: 0 0 100%; // Make each slide fill the full width of the slideshow
+}
