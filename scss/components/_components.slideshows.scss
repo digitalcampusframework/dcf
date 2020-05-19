@@ -17,9 +17,9 @@
 .dcf-slideshow ul:first-child {
   display: flex;
   list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+  -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
 }
 
 
