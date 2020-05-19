@@ -137,7 +137,9 @@ linters:
       'grid-column-gap',
       'grid-row-gap',
       'grid-template-columns',
-      'justify-items']
+      'justify-items',
+      'scroll-snap-align',
+      'scroll-snap-type']
     disabled_properties: []
 
   PropertyUnits:
