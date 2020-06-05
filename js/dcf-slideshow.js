@@ -112,7 +112,7 @@ class DCFSlideshow {
       let ctrlNextButton = document.createElement('button');
 
       // Add classes to slideshow controls group (Keep in DCF)
-      ctrls.classList.add('slide-show-control',
+      ctrls.classList.add('dcf-slideshow-controls',
         'dcf-list-bare',
         'dcf-btn-group',
         'dcf-absolute',
@@ -131,9 +131,9 @@ class DCFSlideshow {
       ctrlNextButton.setAttribute('aria-label', `${slideshowName} next`);
 
       ctrlPrevious.setAttribute('id', uuid.concat('-previous'));
-      ctrlPrevious.classList.add('slide-prev-btn');
+      ctrlPrevious.classList.add('dcf-li-slide-prev');
       ctrlNext.setAttribute('id', uuid.concat('-next'));
-      ctrlNext.classList.add('slide-next-btn');
+      ctrlNext.classList.add('dcf-li-slide-next');
       // Add relative class for absolute positioning of slideshow controls
       slideshow.classList.add('dcf-relative');
       // Append controls (previous/next slide) to slideshow
