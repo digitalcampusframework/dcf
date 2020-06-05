@@ -92,10 +92,10 @@ class DCFSlideshow {
       let figures = slideshow.querySelectorAll('.dcf-slideshow figure');
       let captions = slideshow.querySelectorAll('.dcf-slideshow figcaption');
       let uuid = DCFUtility.uuidv4();
-      let slideShowName = `Slideshow ${slideshowIndex}`;
+      let slideshowName = `Slideshow ${slideshowIndex}`;
       let slideAriaLabel = slideshow.getAttribute('aria-label');
       if (slideAriaLabel) {
-        slideShowName = slideAriaLabel;
+        slideshowName = slideAriaLabel;
       }
 
       // Set a unique ID for each slideshow
@@ -121,14 +121,14 @@ class DCFSlideshow {
         'dcf-z-1');
 
       // Add role and aria-label to controls group
-      ctrls.setAttribute('aria-label', `${slideShowName} controls`);
+      ctrls.setAttribute('aria-label', `${slideshowName} controls`);
       ctrls.setAttribute('role', 'list');
 
       ctrlPreviousButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-button-slide', 'dcf-btn-slide-prev');
-      ctrlPreviousButton.setAttribute('aria-label', `${slideShowName} previous`);
+      ctrlPreviousButton.setAttribute('aria-label', `${slideshowName} previous`);
 
       ctrlNextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
-      ctrlNextButton.setAttribute('aria-label', `${slideShowName} next`);
+      ctrlNextButton.setAttribute('aria-label', `${slideshowName} next`);
 
       ctrlPrevious.setAttribute('id', uuid.concat('-previous'));
       ctrlPrevious.classList.add('slide-prev-btn');
@@ -164,7 +164,7 @@ class DCFSlideshow {
           captionBtn.setAttribute('id', uuid.concat('-button-', figureIndex));
           // Add ARIA attributes to each caption toggle button
           captionBtn.setAttribute('aria-controls', uuid.concat('-caption-', figureIndex));
-          captionBtn.setAttribute('aria-label', `${slideShowName} Show caption`);
+          captionBtn.setAttribute('aria-label', `${slideshowName} Show caption`);
           captionBtn.setAttribute('aria-expanded', 'false');
           // Add class to each figure
           figure.classList.add('dcf-slide-figure');
