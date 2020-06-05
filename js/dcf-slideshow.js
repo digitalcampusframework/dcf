@@ -52,7 +52,7 @@ class DCFSlideshow {
   }
 
   showSlide(dir, slideshow, slides, slidedeck) {
-    let visible = slideshow.querySelectorAll('[aria-label = "slideshow"] .visible');
+    let visible = slideshow.querySelectorAll('.dcf-slideshow .visible');
     let index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
 
     if (visible.length > DCFUtility.magicNumbers('int1')) {
@@ -92,6 +92,11 @@ class DCFSlideshow {
       let figures = slideshow.querySelectorAll('.dcf-slideshow figure');
       let captions = slideshow.querySelectorAll('.dcf-slideshow figcaption');
       let uuid = DCFUtility.uuidv4();
+      let slideShowName = `Slideshow ${slideshowIndex}`;
+      let slideAriaLabel = slideshow.getAttribute('aria-label');
+      if (slideAriaLabel) {
+        slideShowName = slideAriaLabel;
+      }
 
       // Set a unique ID for each slideshow
       slideshow.setAttribute('id', uuid.concat('-slideshow'));
@@ -107,20 +112,28 @@ class DCFSlideshow {
       let ctrlNextButton = document.createElement('button');
 
       // Add classes to slideshow controls group (Keep in DCF)
-      ctrls.classList.add('dcf-list-bare', 'dcf-btn-group', 'dcf-absolute', 'dcf-pin-right', 'dcf-pin-bottom', 'dcf-z-1');
+      ctrls.classList.add('slide-show-control',
+        'dcf-list-bare',
+        'dcf-btn-group',
+        'dcf-absolute',
+        'dcf-pin-right',
+        'dcf-pin-bottom',
+        'dcf-z-1');
 
       // Add role and aria-label to controls group
-      ctrls.setAttribute('role', 'group');
-      ctrls.setAttribute('aria-label', 'slideshow controls');
+      ctrls.setAttribute('aria-label', `${slideShowName} controls`);
+      ctrls.setAttribute('role', 'list');
 
       ctrlPreviousButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-button-slide', 'dcf-btn-slide-prev');
-      ctrlPreviousButton.setAttribute('aria-label', 'previous');
+      ctrlPreviousButton.setAttribute('aria-label', `${slideShowName} previous`);
 
       ctrlNextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
-      ctrlNextButton.setAttribute('aria-label', 'next');
+      ctrlNextButton.setAttribute('aria-label', `${slideShowName} next`);
 
-      ctrlPrevious.setAttribute('id', 'previous');
-      ctrlNext.setAttribute('id', 'next');
+      ctrlPrevious.setAttribute('id', uuid.concat('-previous'));
+      ctrlPrevious.classList.add('slide-prev-btn');
+      ctrlNext.setAttribute('id', uuid.concat('-next'));
+      ctrlNext.classList.add('slide-next-btn');
       // Add relative class for absolute positioning of slideshow controls
       slideshow.classList.add('dcf-relative');
       // Append controls (previous/next slide) to slideshow
@@ -151,7 +164,7 @@ class DCFSlideshow {
           captionBtn.setAttribute('id', uuid.concat('-button-', figureIndex));
           // Add ARIA attributes to each caption toggle button
           captionBtn.setAttribute('aria-controls', uuid.concat('-caption-', figureIndex));
-          captionBtn.setAttribute('aria-label', 'Show caption');
+          captionBtn.setAttribute('aria-label', `${slideShowName} Show caption`);
           captionBtn.setAttribute('aria-expanded', 'false');
           // Add class to each figure
           figure.classList.add('dcf-slide-figure');
@@ -180,11 +193,11 @@ class DCFSlideshow {
           observer.observe(elem);
         });
         ctrlPrevious.addEventListener('click', () => {
-          this.showSlide(ctrlPrevious.getAttribute('id'), slideshow, slides, slidedeck);
+          this.showSlide('previous', slideshow, slides, slidedeck);
         });
 
         ctrlNext.addEventListener('click', () => {
-          this.showSlide(ctrlNext.getAttribute('id'), slideshow, slides, slidedeck);
+          this.showSlide('next', slideshow, slides, slidedeck);
         });
       } else {
         Array.prototype.forEach.call(slides, (slide) => {
