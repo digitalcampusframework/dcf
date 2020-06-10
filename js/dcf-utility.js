@@ -72,4 +72,12 @@ class DCFUtility {
     }
     element.classList.add('dcf-js');
   }
+
+  static loadCSS(file) {
+    let fileref = document.createElement('link');
+    fileref.rel = 'stylesheet';
+    fileref.type = 'text/css';
+    fileref.href = file;
+    document.getElementsByTagName('head')[DCFUtility.magicNumbers('int0')].appendChild(fileref);
+  }
 }
