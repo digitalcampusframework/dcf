@@ -37,50 +37,50 @@ a.dcf-btn-inverse-secondary {
 
 .dcf-btn-primary,
 .dcf-btn-primary:link {
-  background-color: $bg-color-button-primary-light-mode;
-  border-color: $border-color-button-primary-light-mode;
-  color: $color-button-primary-light-mode;
+  background-color: var(--bg-btn-primary);
+  border-color: var(--b-btn-primary);
+  color: var(--btn-primary);
 }
 
 
 .dcf-btn-secondary,
 .dcf-btn-secondary:link {
-  background-color: $bg-color-button-secondary-light-mode;
-  border-color: $border-color-button-secondary-light-mode;
-  color: $color-button-secondary-light-mode;
+  background-color: var(--bg-btn-secondary);
+  border-color: var(--b-btn-secondary);
+  color: var(--btn-secondary);
 }
 
 
 .dcf-btn-tertiary,
 .dcf-btn-tertiary:link {
-  background-color: $bg-color-button-tertiary-light-mode;
-  border-color: $border-color-button-tertiary-light-mode;
-  color: $color-button-tertiary-light-mode;
+  background-color: var(--bg-btn-tertiary);
+  border-color: var(--b-btn-tertiary);
+  color: var(--btn-tertiary);
   text-decoration: underline;
 }
 
 
 .dcf-btn-inverse-primary,
 .dcf-btn-inverse-primary:link {
-  background-color: $bg-color-button-inverse-primary-light-mode;
-  border-color: $border-color-button-inverse-primary-light-mode;
-  color: $color-button-inverse-primary-light-mode;
+  background-color: var(--bg-btn-inverse-primary);
+  border-color: var(--b-btn-inverse-primary);
+  color: var(--btn-inverse-primary);
 }
 
 
 .dcf-btn-inverse-secondary,
 .dcf-btn-inverse-secondary:link {
-  background-color: $bg-color-button-inverse-secondary-light-mode;
-  border-color: $border-color-button-inverse-secondary-light-mode;
-  color: $color-button-inverse-secondary-light-mode;
+  background-color: var(--bg-btn-inverse-secondary);
+  border-color: var(--b-btn-inverse-secondary);
+  color: var(--btn-inverse-secondary);
 }
 
 
 .dcf-btn-inverse-tertiary,
 .dcf-btn-inverse-tertiary:link {
-  background-color: $bg-color-button-inverse-tertiary-light-mode;
-  border-color: $border-color-button-inverse-tertiary-light-mode;
-  color: $color-button-inverse-tertiary-light-mode;
+  background-color: var(--bg-btn-inverse-tertiary);
+  border-color: var(--b-btn-inverse-tertiary);
+  color: var(--btn-inverse-tertiary);
   text-decoration: underline;
 }
 

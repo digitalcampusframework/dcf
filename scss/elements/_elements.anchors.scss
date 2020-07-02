@@ -5,23 +5,23 @@
 
 // Link
 a:link {
-  color: $color-link-light-mode;
+  color: var(--link);
 }
 
 
 // Visited
 a:visited {
-  color: $color-visited-light-mode;
+  color: var(--visited);
 }
 
 
 // Hover
 a:hover {
-  color: $color-hover-light-mode;
+  color: var(--hover);
 }
 
 
 // Active
 a:active {
-  color: $color-active-light-mode;
+  color: var(--active);
 }

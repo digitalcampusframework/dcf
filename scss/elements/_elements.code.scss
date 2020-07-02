@@ -22,8 +22,8 @@ pre {
 
 
 code {
-  background-color: $bg-color-code-light-mode;
-  color: $color-code-light-mode;
+  background-color: var(--bg-code);
+  color: var(--code);
   font-size: $font-size-code;
   padding: $padding-code;
 }
@@ -44,8 +44,8 @@ pre code {
 
 
 kbd {
-  background-color: $bg-color-kbd;
-  color: $color-kbd;
+  background-color: var(--bg-kbd);
+  color: var(--kbd);
   font-size: $font-size-kbd;
   padding: $padding-kbd;
 }
