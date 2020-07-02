@@ -4,8 +4,8 @@
 
 
 body {
-  background-color: $bg-color-body-light-mode;
-  color: $color-body-light-mode;
+  background-color: var(--bg-body);
+  color: var(--body);
   margin: 0;
   overflow-x: hidden;
 }

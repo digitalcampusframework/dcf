@@ -10,18 +10,18 @@
   @include lh-4;
   @include txt-base; // Font size must be ≥16px to prevent iOS page zoom on focus
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='#{encodecolor($color-select-arrow-light-mode)}' d='M23.9 2.3c-.1-.2-.2-.3-.4-.3H.5c-.2 0-.3.1-.4.3-.1.1-.1.3 0 .5l11.5 19c.1.1.3.2.4.2s.3-.1.4-.2l11.5-19c.1-.2.1-.4 0-.5z'/%3E%3C/svg%3E"), linear-gradient($bg-color-select-1-light-mode, $bg-color-select-2-light-mode);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='var(--select)' d='M23.9 2.3c-.1-.2-.2-.3-.4-.3H.5c-.2 0-.3.1-.4.3-.1.1-.1.3 0 .5l11.5 19c.1.1.3.2.4.2s.3-.1.4-.2l11.5-19c.1-.2.1-.4 0-.5z'/%3E%3C/svg%3E"), linear-gradient(var(--bg-select-1), var(--bg-select-2));
   background-position: right $bg-position-arrow top 50%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: $bg-size-arrow-select $bg-size-arrow-select, 100%;
-  border: $border-width-input solid $border-color-input-light-mode;
+  border: $border-width-input solid var(--b-input);
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
   } @else {
     border-radius: 0;
   }
   box-sizing: border-box;
-  color: $color-select-light-mode;
+  color: var(--select);
   display: block;
   font-family: inherit;
   max-width: 100%;
@@ -38,12 +38,12 @@
 
 .dcf-input-select:hover, // TODO: deprecate .dcf-input-select?
 .dcf-form select:hover {
-  border-color: $border-color-input-hover-light-mode;
+  border-color: var(--b-input-hover);
 }
 
 
 .dcf-input-select:focus, // TODO: deprecate .dcf-input-select?
 .dcf-form select:focus {
-  border-color: $border-color-input-focus-light-mode;
+  border-color: var(--b-input-focus);
   outline: none;
 }
