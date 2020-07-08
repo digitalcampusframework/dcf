@@ -57,7 +57,7 @@
 // Style checkbox and radio input
 .dcf-input-checkbox label::before,
 .dcf-input-radio label::before {
-  background-color: var(--bg-checkbox-radio);
+  background-color: var(--bg-input);
   border: $border-width-input solid var(--b-input);
   height: $height-width-checkbox-radio;
   width: $height-width-checkbox-radio;
