@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
+    "acorn": ">=6.4.1",
     "ajv": "^6.5.5",
     "ansi-colors": "^3.2.1",
     "autoprefixer": "^9.3.1",
@@ -56,6 +57,8 @@
     "gulp-uglify-es": "^1.0.4",
     "gulp-umd": "^2.0.0",
     "gulplog": "^1.0.0",
+    "lodash": ">=4.17.19",
+    "minimist": ">=0.2.1",
     "modularscale-sass": "^3.0.8",
     "node-sass": "^4.10.0",
     "postcss-csso": "^3.0.0",
