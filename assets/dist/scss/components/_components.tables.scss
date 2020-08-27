@@ -99,15 +99,16 @@
   }
 
 
-  .dcf-table-responsive tr {
+  .dcf-table-responsive tr,
+  .dcf-table-responsive th {
     display: block;
   }
 
 
   .dcf-table-responsive td {
-    column-gap: $length-vw-1;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
     text-align: left !important;
   }
 
@@ -143,10 +144,11 @@
   }
 
 
-  .dcf-table-responsive tbody td::before {
+  .dcf-table-responsive tbody td[data-label]::before {
     content: attr(data-label);
-    float: left;
     font-weight: bold;
+    display: table-cell;
+    width: 40%;
     @include pr-6;
   }
 
