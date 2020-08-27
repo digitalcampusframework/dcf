@@ -20,7 +20,6 @@ abbr[title] {
   text-decoration: none;
 
   @if (to-number($border-bottom-width-abbr-title) != 0) {
-
     &::after {
       border-bottom: $border-bottom-width-abbr-title $border-bottom-style-abbr-title $border-bottom-color-abbr-title;
       content: '';
@@ -32,5 +31,4 @@ abbr[title] {
       width: 100%;
     }
   }
-
 }
