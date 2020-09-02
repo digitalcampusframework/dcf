@@ -48,7 +48,6 @@ class DCFTabs {
   }
 
   initialize() {
-    let tabHashLookup = {};
     Array.prototype.forEach.call(this.tabGroups, (tabGroup) => {
       // Define constants for tabs
       const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
