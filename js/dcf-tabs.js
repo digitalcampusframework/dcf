@@ -1,6 +1,7 @@
 class DCFTabs {
   constructor(tabGroups) {
     this.tabGroups = tabGroups;
+    this.tabHashLookup = {};
   }
   // Tab switching function
   switchTab(oldTab, newTab, tabs, panels) {
@@ -17,6 +18,8 @@ class DCFTabs {
     let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
     panels[oldIndex].hidden = true;
     panels[index].hidden = false;
+    panels[index].scrollIntoView();
+
     // Set page hash
     this.setPageHash(newTab.getAttribute('href'));
   }
@@ -34,6 +37,13 @@ class DCFTabs {
       history.pushState(null, null, hash);
     } else {
       location.hash = hash;
+    }
+  }
+
+  displayTabByHash() {
+    const hash = window.location.hash;
+    if (hash && this.tabHashLookup[hash]) {
+      this.tabHashLookup[hash].click();
     }
   }
 
@@ -71,7 +81,7 @@ class DCFTabs {
 
         // Add tab to tabHashLookup
         if (this.isHash(tab.getAttribute('href'))) {
-          tabHashLookup[tab.getAttribute('href')] = tab;
+          this.tabHashLookup[tab.getAttribute('href')] = tab;
         }
 
         // Handle clicking of tabs for mouse users
@@ -137,11 +147,12 @@ class DCFTabs {
       panels[DCFUtility.magicNumbers('int0')].hidden = false;
     });
 
+    // Handle hash change
+    window.addEventListener('hashchange', () => {
+      this.displayTabByHash();
+    });
+
     // Open tab on page load if valid
-    const hash = window.location.hash;
-    if (hash && tabHashLookup[hash]) {
-      tabHashLookup[hash].click();
-      tabHashLookup[hash].parentElement.parentElement.parentElement.scrollIntoView();
-    }
+    this.displayTabByHash();
   }
 }
