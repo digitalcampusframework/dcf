@@ -17,9 +17,28 @@ class DCFTabs {
     let oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
     panels[oldIndex].hidden = true;
     panels[index].hidden = false;
+    // Set page hash
+    this.setPageHash(newTab.getAttribute('href'));
+  }
+
+  isHash(hash) {
+    return hash && hash.substr(DCFUtility.magicNumbers('int0'), DCFUtility.magicNumbers('int1')) === '#';
+  }
+
+  setPageHash(testHash) {
+    // use clear hash if not valid hash
+    const hash = this.isHash(testHash) ? testHash : ' ';
+
+    // set hash
+    if (history.pushState) {
+      history.pushState(null, null, hash);
+    } else {
+      location.hash = hash;
+    }
   }
 
   initialize() {
+    let tabHashLookup = {};
     Array.prototype.forEach.call(this.tabGroups, (tabGroup) => {
       // Define constants for tabs
       const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
@@ -37,14 +56,24 @@ class DCFTabs {
         // Prefix each tab within its parent tab group with the corresponding uuid.
         let nextTab = tabIndex + DCFUtility.magicNumbers('int1');
         tab.setAttribute('id', uuid.concat('-tab-', nextTab));
+
         // Add role to each tab
         tab.setAttribute('role', 'tab');
+
         // Add tabindex to each tab
         tab.setAttribute('tabindex', '-1');
+
         // Add class to each tab's parent (list item)
         tab.parentNode.classList.add('dcf-tabs-list-item', 'dcf-mb-0');
+
         // Add role to each tab's parent (list item)
         tab.parentNode.setAttribute('role', 'presentation');
+
+        // Add tab to tabHashLookup
+        if (this.isHash(tab.getAttribute('href'))) {
+          tabHashLookup[tab.getAttribute('href')] = tab;
+        }
+
         // Handle clicking of tabs for mouse users
         tab.addEventListener('click', (clickEvent) => {
           clickEvent.preventDefault();
@@ -53,6 +82,7 @@ class DCFTabs {
             this.switchTab(currentTab, clickEvent.currentTarget, tabs, panels);
           }
         });
+
         // Handle keydown events for keyboard users
         tab.addEventListener('keydown', (keydownEvent) => {
           // Get the index of the current tab in the tabs node list
@@ -69,7 +99,6 @@ class DCFTabs {
           } else {
             dir = null;
           }
-
 
           if (dir !== null) {
             keydownEvent.preventDefault();
@@ -107,5 +136,12 @@ class DCFTabs {
       tabs[DCFUtility.magicNumbers('int0')].setAttribute('aria-selected', 'true');
       panels[DCFUtility.magicNumbers('int0')].hidden = false;
     });
+
+    // Open tab on page load if valid
+    const hash = window.location.hash;
+    if (hash && tabHashLookup[hash]) {
+      tabHashLookup[hash].click();
+      tabHashLookup[hash].parentElement.parentElement.parentElement.scrollIntoView();
+    }
   }
 }
