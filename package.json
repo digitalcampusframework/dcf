@@ -60,7 +60,7 @@
     "lodash": ">=4.17.19",
     "minimist": ">=0.2.1",
     "modularscale-sass": "^3.0.8",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "postcss-csso": "^3.0.0",
     "postcss-normalize": "^7.0.1",
     "postcss-object-fit-images": "^1.1.2",
