@@ -1,0 +1,52 @@
+///////////////////////////////
+// CORE / UTILITIES / ANIMATION
+///////////////////////////////
+
+
+// Fade
+.dcf-js .dcf-fade-in {
+  @if (to-number($animation-delay-fade-in) != 0) {
+    animation-delay: $animation-delay-fade-in;
+  }
+  animation-duration: $animation-duration-fade-in;
+  animation-timing-function: $animation-timing-fn-fade-in;
+  opacity: 0; // Starting opacity
+}
+
+
+// Move
+.dcf-js .dcf-move-left {
+  @if (to-number($animation-delay-move-left) != 0) {
+    animation-delay: $animation-delay-move-left;
+  }
+  animation-duration: $animation-duration-move-left;
+  animation-timing-function: $animation-timing-fn-move-left;
+  transform: translateX($animation-transform-move-left);
+}
+
+
+.dcf-js .dcf-move-right {
+  @if (to-number($animation-delay-move-right) != 0) {
+    animation-delay: $animation-delay-move-right;
+  }
+  animation-duration: $animation-duration-move-right;
+  animation-timing-function: $animation-timing-fn-move-right;
+  transform: translateX($animation-transform-move-right);
+}
+
+
+.dcf-js .dcf-move-up {
+  @if (to-number($animation-delay-move-up) != 0) {
+    animation-delay: $animation-delay-move-up;
+  }
+  animation-duration: $animation-duration-move-up;
+  animation-timing-function: $animation-timing-fn-move-up;
+  transform: translateY($animation-transform-move-up);
+}
+
+
+// Animated
+.dcf-js .dcf-animated {
+  animation-fill-mode: forwards;
+  animation-name: appear;
+}
