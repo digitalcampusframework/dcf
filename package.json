@@ -78,7 +78,8 @@
     "uglify-save-license": "^0.4.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.11.0"
+    "watchify": "^3.11.0",
+    "yargs-parser": ">=13.1.2"
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
