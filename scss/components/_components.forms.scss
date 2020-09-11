@@ -93,16 +93,6 @@
 }
 
 
-.dcf-input-text, // TODO: deprecate .dcf-input-text?
-.dcf-input-file, // TODO: deprecate .dcf-input-file?
-.dcf-form textarea {
-  appearance: none;
-  color: inherit;
-  display: block;
-  font-family: inherit;
-}
-
-
 .dcf-input-text:focus, // TODO: deprecate .dcf-input-text?
 .dcf-form input:not([type="submit"]):focus,
 .dcf-form textarea:focus {
@@ -118,11 +108,21 @@
 }
 
 
-.dcf-form input:not([type="button"]):not([type="color"]):not([type="reset"]):not([type="submit"]) { // not applying display:block to button-type inputs
+.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-file, // TODO: deprecate .dcf-input-file?
+.dcf-form textarea,
+.dcf-form input:not([type="button"]):not([type="color"]):not([type="range"]):not([type="reset"]):not([type="submit"]) {
   appearance: none;
   color: inherit;
-  display: block;
   font-family: inherit;
+}
+
+
+.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-file, // TODO: deprecate .dcf-input-file?
+.dcf-form textarea,
+.dcf-form input:not([type="button"]):not([type="color"]):not([type="reset"]):not([type="submit"]) {
+  display: block;
 }
 
 
