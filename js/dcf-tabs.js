@@ -34,7 +34,7 @@ class DCFTabs {
 
     // set hash
     if (history.pushState) {
-      history.pushState(null, null, hash);
+      history.pushState(null, null, window.location.origin + window.location.pathname + hash);
     } else {
       location.hash = hash;
     }
