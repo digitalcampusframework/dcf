@@ -148,7 +148,25 @@ class DCFModal {
 
     // Prevent body from scrolling
     if (this.disableBodyScroll) {
-      this.disableBodyScroll(thisModal);
+      this.disableBodyScroll(thisModal, {
+        allowTouchMove: (el) => {
+          let currentEl = el;
+          while (currentEl && currentEl !== document.body) {
+            if (currentEl.classList.contains('dcf-modal-content')) {
+              const iOSBodyStyle = {
+                WebkitOverflowScrolling: 'none',
+                overflow: 'hidden',
+              };
+              Object.assign(document.body.style, iOSBodyStyle);
+              return true;
+            }
+            if (currentEl.parentElement) {
+              currentEl = currentEl.parentElement;
+            }
+          }
+          return false;
+        },
+      });
     }
 
     // Add `.dcf-modal-is-open` helper class to body
