@@ -113,16 +113,17 @@
   }
 
 
-  .dcf-table-responsive tr {
+  .dcf-table-responsive tr,
+  .dcf-table-responsive th {
     display: block;
   }
 
 
   .dcf-table-responsive td {
-    column-gap: $grid-col-gap-table-responsive;
-    display: grid;
-    grid-template-columns: $grid-col-1-table-responsive $grid-col-2-table-responsive;
+    border-collapse: separate;
+    display: table;
     text-align: left !important;
+    width: 100%;
   }
 
 
@@ -157,11 +158,12 @@
   }
 
 
-  .dcf-table-responsive tbody td::before {
+  .dcf-table-responsive tbody td[data-label]::before {
     content: attr(data-label);
-    float: left;
+    display: table-cell;
     font-weight: bold;
     padding-right: $padding-right-table-cell;
+    width: $width-table-responsive-data-label;
   }
 
 }
