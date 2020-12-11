@@ -74,7 +74,7 @@
 
 // Inputs
 .dcf-input-text, // TODO: deprecate .dcf-input-text?
-.dcf-form input:not([type="submit"]),
+.dcf-form input:not([type="file"]):not([type="submit"]),
 .dcf-form textarea {
   background-color: var(--bg-input);
   border: $border-width-input $border-style-input var(--b-input);
@@ -87,7 +87,7 @@
 
 
 .dcf-input-text, // TODO: deprecate .dcf-input-text?
-.dcf-form input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]),
+.dcf-form input:not([type="checkbox"]):not([type="file"]):not([type="radio"]):not([type="range"]):not([type="submit"]),
 .dcf-form textarea {
   padding: $padding-top-input $padding-right-input $padding-bottom-input $padding-left-input;
 }
