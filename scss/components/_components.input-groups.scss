@@ -56,24 +56,25 @@
 
 
 // If inputs are roundrects, square off corners internal to input groups
+// .dcf-form is needed to override input styles
 @if ($border-radius-input-roundrect) {
 
-  .dcf-input-group input:not(:first-child) {
+  .dcf-form .dcf-input-group input:not(:first-child) {
     @include sharp-left;
   }
 
 
-  .dcf-input-group input:not(:last-child) {
+  .dcf-form .dcf-input-group input:not(:last-child) {
     @include sharp-right;
   }
 
 
-  .dcf-input-group-addon:first-child {
+  .dcf-form .dcf-input-group-addon:first-child {
     @include rounded-left;
   }
 
 
-  .dcf-input-group-addon:last-child {
+  .dcf-form .dcf-input-group-addon:last-child {
     @include rounded-right;
   }
 
