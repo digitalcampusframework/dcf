@@ -83,3 +83,10 @@ a.dcf-btn-inverse-secondary {
   text-decoration: underline;
 }
 
+
+.dcf-btn-icon {
+  align-items: center;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: $length-em-1;
+}
