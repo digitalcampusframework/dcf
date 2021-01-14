@@ -10,6 +10,7 @@ class DCFTabs {
     newTab.removeAttribute('tabindex');
     // Set the selected state
     newTab.setAttribute('aria-selected', 'true');
+    newTab.setAttribute('tabindex', '0');
     oldTab.removeAttribute('aria-selected');
     oldTab.setAttribute('tabindex', '-1');
     // Get the indices of the new and old tabs to find the correct
@@ -100,9 +101,15 @@ class DCFTabs {
           // Calculate the new tab's index where appropriate
           let dir = 0;
           if (keydownEvent.which === DCFUtility.magicNumbers('arrowLeftCode')) {
-            dir = index - DCFUtility.magicNumbers('int1');
+            if (index > DCFUtility.magicNumbers('int0')) {
+              dir = index - DCFUtility.magicNumbers('int1');
+            } else {
+              dir = tabs.length - DCFUtility.magicNumbers('int1');
+            }
           } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowRightCode')) {
-            dir = index + DCFUtility.magicNumbers('int 1');
+            if (index < tabs.length - DCFUtility.magicNumbers('int1')) {
+              dir = index + DCFUtility.magicNumbers('int1');
+            }
           } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowDownCode')) {
             dir = 'down';
           } else {
@@ -134,6 +141,12 @@ class DCFTabs {
         panel.setAttribute('aria-labelledby', tabs[panelIndex].id);
         // Hide all tab panels
         panel.hidden = true;
+
+        panel.addEventListener('keydown', (keydownEvent) => {
+          if (keydownEvent.which === DCFUtility.magicNumbers('arrowUpCode')) {
+            tabs[panelIndex].focus();
+          }
+        });
       });
 
       // Add classes to tab list
