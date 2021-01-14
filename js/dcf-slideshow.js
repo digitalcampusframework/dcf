@@ -109,6 +109,9 @@ class DCFSlideshow {
       // Set a unique ID for each slideshow
       slideshow.setAttribute('id', uuid.concat('-slideshow'));
 
+      // Add tabindex to give slideshow keyboard :focus
+      slideshow.setAttribute('tabindex', '0');
+
       // Add classes to slideshow unordered lists
       slidedeck.classList.add('dcf-slide-deck');
 
