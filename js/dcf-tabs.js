@@ -6,13 +6,13 @@ class DCFTabs {
   // Tab switching function
   switchTab(oldTab, newTab, tabs, panels) {
     newTab.focus();
-    // Make the active tab focusable by the user (Tab key)
-    newTab.removeAttribute('tabindex');
+
     // Set the selected state
     newTab.setAttribute('aria-selected', 'true');
     newTab.setAttribute('tabindex', '0');
     oldTab.removeAttribute('aria-selected');
     oldTab.setAttribute('tabindex', '-1');
+
     // Get the indices of the new and old tabs to find the correct
     // tab panels to show and hide
     let index = Array.prototype.indexOf.call(tabs, newTab);
@@ -100,17 +100,17 @@ class DCFTabs {
           // Work out which key the user is pressing and
           // Calculate the new tab's index where appropriate
           let dir = 0;
-          if (keydownEvent.which === DCFUtility.magicNumbers('arrowLeftCode')) {
+          if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft'))) {
             if (index > DCFUtility.magicNumbers('int0')) {
               dir = index - DCFUtility.magicNumbers('int1');
             } else {
               dir = tabs.length - DCFUtility.magicNumbers('int1');
             }
-          } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowRightCode')) {
+          } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
             if (index < tabs.length - DCFUtility.magicNumbers('int1')) {
               dir = index + DCFUtility.magicNumbers('int1');
             }
-          } else if (keydownEvent.which === DCFUtility.magicNumbers('arrowDownCode')) {
+          } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
             dir = 'down';
           } else {
             dir = null;
@@ -143,7 +143,7 @@ class DCFTabs {
         panel.hidden = true;
 
         panel.addEventListener('keydown', (keydownEvent) => {
-          if (keydownEvent.which === DCFUtility.magicNumbers('arrowUpCode')) {
+          if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
             tabs[panelIndex].focus();
           }
         });
