@@ -217,8 +217,10 @@ class SlideshowObj {
 
       switch (this.slideTransition) {
       case 'fade':
-      default:
         slide.classList.add('dcf-fade-in');
+        break;
+      default:
+        // do nothing
         break;
       }
 
