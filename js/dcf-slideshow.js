@@ -316,13 +316,10 @@ class SlideshowObj {
 
   // Caption visibility transition
   captionTransition(event) {
-
     // Remove event listener and toggle visibility after caption has closed
     event.removeEventListener('transitionend', this.captionTransition, true);
-
     // Check if caption is already visible
     if (!event.classList.contains('dcf-invisible')) {
-
       // Add class to hide caption
       event.classList.add('dcf-invisible');
     }
@@ -330,26 +327,20 @@ class SlideshowObj {
 
   // Add classes to the caption & button
   captionClasses(button, caption) {
-
     // Check if caption is already visible
     if (!caption.classList.contains('dcf-invisible')) {
-
       // Hide content
       caption.addEventListener('transitionend', this.captionTransition(caption), true);
-
       // Update ARIA attributes
       button.setAttribute('aria-expanded', 'false');
       button.setAttribute('aria-label', 'Show caption');
       caption.setAttribute('aria-hidden', 'true');
       caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
       caption.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
-
       caption.dispatchEvent(this.source.openCaptionEvent);
     } else {
-
       // Remove class to show content
       caption.classList.remove('dcf-invisible');
-
       // Update ARIA attributes
       button.setAttribute('aria-expanded', 'true');
       button.setAttribute('aria-label', 'Hide caption');
