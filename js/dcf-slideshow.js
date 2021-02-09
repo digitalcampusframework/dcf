@@ -60,6 +60,12 @@ class SlideshowObj {
             keydownEvent.preventDefault();
           }
         }
+      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft'))) {
+        keydownEvent.preventDefault();
+        this.showSlide('previous');
+      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
+        keydownEvent.preventDefault();
+        this.showSlide('next');
       }
     }, false);
 
@@ -221,7 +227,7 @@ class SlideshowObj {
       this.showSlide('next');
     }, false);
 
-    this.ctrlPrevious.addEventListener('keydown', (keydownEvent) => {
+    this.ctrlNext.addEventListener('keydown', (keydownEvent) => {
       if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
         keydownEvent.preventDefault();
         this.slideDeck.focus();
