@@ -61,7 +61,7 @@ class SlideshowObj {
           }
         }
       }
-    });
+    }, false);
 
     this.initControls();
     this.slides = this.slideDeck.querySelectorAll('li');
@@ -141,7 +141,14 @@ class SlideshowObj {
           this.userPaused = false;
         }
         this.ctrlPlayToggleButton.innerHTML = this.paused ? this.theme.slidePlayBtnInnerHTML : this.theme.slidePauseBtnInnerHTML;
-      });
+      }, false);
+
+      this.ctrlPlayToggleButton.addEventListener('keydown', (keydownEvent) => {
+        if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
+          keydownEvent.preventDefault();
+          this.slideDeck.focus();
+        }
+      }, false);
     }
 
     // Add classes to slideshow controls group (Keep in DCF)
@@ -201,11 +208,25 @@ class SlideshowObj {
 
     this.ctrlPrevious.addEventListener('click', () => {
       this.showSlide('previous');
-    });
+    }, false);
+
+    this.ctrlPrevious.addEventListener('keydown', (keydownEvent) => {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
+        keydownEvent.preventDefault();
+        this.slideDeck.focus();
+      }
+    }, false);
 
     this.ctrlNext.addEventListener('click', () => {
       this.showSlide('next');
-    });
+    }, false);
+
+    this.ctrlPrevious.addEventListener('keydown', (keydownEvent) => {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
+        keydownEvent.preventDefault();
+        this.slideDeck.focus();
+      }
+    }, false);
   }
 
   initSlides() {
