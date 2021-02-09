@@ -47,12 +47,16 @@ class SlideshowObj {
 
     this.slideDeck.addEventListener('keydown', (keydownEvent) => {
       const slideDeck = keydownEvent.target;
-      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown')) ||
+        DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('keyC'))) {
         const visibleSlide = slideDeck.querySelector('.visible');
         if (visibleSlide) {
           const captionBtn = visibleSlide.querySelector('figure button');
           if (captionBtn) {
             captionBtn.focus();
+            if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('keyC'))) {
+              captionBtn.click();
+            }
             keydownEvent.preventDefault();
           }
         }
@@ -122,7 +126,6 @@ class SlideshowObj {
         this.ctrlPlayToggleButton.innerHTML = this.theme.slidePlayBtnInnerHTML;
       }
       this.ctrlPlayToggleButton.setAttribute('aria-label', `${this.slideshowName} play toggle`);
-      this.ctrlPlayToggleButton.setAttribute('tabindex', '-1');
 
       this.ctrlPlayToggle.setAttribute('id', this.uuid.concat('-play-toggle'));
       this.ctrlPlayToggle.classList.add('dcf-li-slide-play-toggle');
@@ -165,7 +168,6 @@ class SlideshowObj {
       this.ctrlPreviousButton.innerHTML = this.theme.slidePrevBtnInnerHTML;
     }
     this.ctrlPreviousButton.setAttribute('aria-label', `${this.slideshowName} previous`);
-    this.ctrlPreviousButton.setAttribute('tabindex', '-1');
 
     this.ctrlNextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
     if (this.theme.slideNextBtnClassList) {
@@ -178,7 +180,6 @@ class SlideshowObj {
       this.ctrlNextButton.innerHTML = this.theme.slideNextBtnInnerHTML;
     }
     this.ctrlNextButton.setAttribute('aria-label', `${this.slideshowName} next`);
-    this.ctrlNextButton.setAttribute('tabindex', '-1');
 
     this.ctrlPrevious.setAttribute('id', this.uuid.concat('-previous'));
     this.ctrlPrevious.classList.add('dcf-li-slide-prev');
@@ -192,10 +193,10 @@ class SlideshowObj {
     this.ctrlPrevious.appendChild(this.ctrlPreviousButton);
     this.ctrlNext.appendChild(this.ctrlNextButton);
     ctrls.appendChild(this.ctrlPrevious);
-    ctrls.appendChild(this.ctrlNext);
     if (this.allowPlay) {
       ctrls.appendChild(this.ctrlPlayToggleButton);
     }
+    ctrls.appendChild(this.ctrlNext);
     this.slideshow.appendChild(ctrls);
 
     this.ctrlPrevious.addEventListener('click', () => {
@@ -352,7 +353,7 @@ class SlideshowObj {
   }
 
   captionBtnEvents(button) {
-    let caption = button.previousElementSibling;
+    const caption = button.previousElementSibling;
     // Handle Click
     button.addEventListener('click', (onClick) => {
       this.captionClasses(onClick.currentTarget, caption);
@@ -367,6 +368,9 @@ class SlideshowObj {
       } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp')) ||
         DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('tab'))) {
         keydownEvent.preventDefault();
+        if (!caption.classList.contains('dcf-invisible')) {
+          this.captionClasses(keydownEvent.currentTarget, caption);
+        }
         this.slideDeck.focus();
       } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
         keydownEvent.preventDefault();

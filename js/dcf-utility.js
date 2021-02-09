@@ -32,6 +32,7 @@ class DCFUtility {
       arrowRight: { code: 'ArrowRight', key: 'ArrowRight', keyCode: 39 },
       arrowUp: { code: 'ArrowUp', key: 'ArrowUp', keyCode: 38 },
       escape: { code: 'Escape', key: 'Escape', keyCode: 27 },
+      keyC: { code: 'KeyC', key: 'c', keyCode: 67 },
       space: { code: 'Space', key: ' ', keyCode: 32 },
       tab: { code: 'Tab', key: 'Tab', keyCode: 9 }
     };
