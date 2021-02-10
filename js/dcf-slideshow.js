@@ -321,8 +321,12 @@ class SlideshowObj {
       });
     } else {
       Array.prototype.forEach.call(this.slides, (slide) => {
-        const img = slide.querySelector('img');
-        img.setAttribute('src', img.getAttribute('data-src'));
+        let img = slide.querySelector('img');
+        if (img && img.dataset.src) {
+          img.setAttribute('src', img.dataset.src);
+          img.removeAttribute('data-src');
+        }
+        slide.classList.add('visible', 'dcf-animated');
       });
     }
   }
