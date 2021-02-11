@@ -74,6 +74,7 @@ class SlideshowObj {
     if (this.slideshow.hasAttribute('data-shuffle') && this.slideshow.dataset.shuffle.toLowerCase() === 'true') {
       this.shuffleSlides();
     }
+    this.slideObserverInit();
     this.initSlides();
   }
 
@@ -308,42 +309,44 @@ class SlideshowObj {
         }
       }
     });
+  }
+
+  slideObserverInit() {
+    // onIntersection callback function
+    let onIntersection = (entries) => {
+      Array.prototype.forEach.call(entries, (entry) => {
+        entry.target.classList.remove('visible', 'dcf-animated');
+        if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
+          return;
+        }
+        let img = entry.target.querySelector('img');
+        if (img) {
+          this.lazyLoadImage(img);
+        }
+        entry.target.classList.add('visible', 'dcf-animated');
+      });
+    };
 
     // set observer for slides
     const observerSettings = {
       root: this.slideshow,
       rootMargin: '-10px'
     };
+
     if ('IntersectionObserver' in window) {
-      let observer = new IntersectionObserver(this.observerCallback, observerSettings);
+      let observer = new IntersectionObserver(onIntersection, observerSettings);
       Array.prototype.forEach.call(this.slides, (elem) => {
         observer.observe(elem);
       });
     } else {
       Array.prototype.forEach.call(this.slides, (slide) => {
         let img = slide.querySelector('img');
-        if (img && img.dataset.src) {
-          img.setAttribute('src', img.dataset.src);
-          img.removeAttribute('data-src');
+        if (img) {
+          this.lazyLoadImage(img);
         }
         slide.classList.add('visible', 'dcf-animated');
       });
     }
-  }
-
-  observerCallback(slides) {
-    Array.prototype.forEach.call(slides, (entry) => {
-      entry.target.classList.remove('visible', 'dcf-animated');
-      if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
-        return;
-      }
-      let img = entry.target.querySelector('img');
-      if (img && img.dataset.src) {
-        img.setAttribute('src', img.dataset.src);
-        img.removeAttribute('data-src');
-      }
-      entry.target.classList.add('visible', 'dcf-animated');
-    });
   }
 
   // Caption visibility transition
@@ -410,6 +413,52 @@ class SlideshowObj {
         this.slideDeck.focus();
       }
     }, false);
+  }
+
+  pxTOvw(value) {
+    const zeroIndex = 0;
+    const oneHundred = 100;
+    const docElement = document.documentElement,
+      docBody = document.getElementsByTagName('body')[zeroIndex],
+      windowWidth = window.innerWidth || docElement.clientWidth || docBody.clientWidth;
+
+    const result = oneHundred * value / windowWidth;
+    return `${result }vw`;
+  }
+
+  lazyLoadImage(image) {
+    const src = image.dataset.src;
+    const srcset = image.dataset.srcset || null;
+    let sizes = null;
+
+    if (!src) {
+      return;
+    }
+
+    // Process parent picture lazy load if image is child of a picture
+    if (image.parentNode.nodeName === 'PICTURE') {
+      this.applyPicture(image.parentNode);
+      sizes = image.dataset.sizes || this.pxTOvw(image.parentNode.parentElement.clientWidth);
+    } else {
+      sizes = image.dataset.sizes || this.pxTOvw(image.parentElement.clientWidth);
+    }
+
+    // Prevent this from being lazy loaded a second time.
+    image.classList.add('dcf-lazy-loaded');
+    image.classList.remove('dcf-lazy-load');
+
+    if (src) {
+      image.src = src;
+      image.removeAttribute('data-src');
+    }
+    if (srcset) {
+      image.srcset = srcset;
+      image.removeAttribute('data-srcset');
+    }
+    if (sizes) {
+      image.sizes = sizes;
+      image.removeAttribute('data-sizes');
+    }
   }
 
   scrollIt(slideToShow) {
