@@ -93,7 +93,12 @@ class SlideshowObj {
       this.showSlide('next');
     } else {
       this.currentSlide = this.slides[DCFUtility.magicNumbers('int0')];
-      this.scrollIt(this.currentSlide);
+      if (this.slideTransition) {
+        this.currentSlide.dispatchEvent(this.source.hideSlideEvent);
+        this.currentSlide.addEventListener('transitionend', this.doSlideTransition(this.currentSlide), true);
+      } else {
+        this.scrollIt(this.currentSlide);
+      }
     }
   }
 
@@ -118,7 +123,8 @@ class SlideshowObj {
     this.ctrlPreviousButton = document.createElement('button');
     this.ctrlNextButton = document.createElement('button');
 
-    this.allowPlay = this.slideshow.hasAttribute('data-shuffle') && this.slideshow.dataset.shuffle.toLowerCase() === 'true';
+    this.allowPlay = this.slideshow.hasAttribute('data-play') &&
+      (this.slideshow.dataset.play.toLowerCase() === 'true' || this.slideshow.dataset.play.toLowerCase() === 'auto');
     if (this.allowPlay) {
       this.ctrlPlayToggle = document.createElement('li');
       this.ctrlPlayToggleButton = document.createElement('button');
@@ -212,6 +218,10 @@ class SlideshowObj {
     }
     ctrls.appendChild(this.ctrlNext);
     this.slideshow.appendChild(ctrls);
+
+    if (this.allowPlay && this.slideshow.dataset.play.toLowerCase() === 'auto') {
+      this.ctrlPlayToggleButton.click();
+    }
 
     this.ctrlPrevious.addEventListener('click', () => {
       this.showSlide('previous');
@@ -457,6 +467,11 @@ class SlideshowObj {
     }
   }
 
+  doSlideTransition(slide) {
+    this.currentSlide.removeEventListener('transitionend', this.doSlideTransition, true);
+    this.scrollIt(slide);
+  }
+
   scrollIt(slideToShow) {
     const scrollPos = Array.prototype.indexOf.call(this.slides, slideToShow) *
       (this.slideDeck.scrollWidth / this.slides.length);
@@ -464,6 +479,7 @@ class SlideshowObj {
     if (this.slideTransition) {
       slideToShow.dispatchEvent(this.source.showSlideEvent);
     }
+    this.currentSlide = slideToShow;
   }
 
   showSlide(dir) {
@@ -478,10 +494,11 @@ class SlideshowObj {
         visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
       if (newSlide) {
         if (this.slideTransition) {
-          visible[DCFUtility.magicNumbers('int0')].dispatchEvent(this.source.hideSlideEvent);
+          this.currentSlide.dispatchEvent(this.source.hideSlideEvent);
+          this.currentSlide.addEventListener('transitionend', this.doSlideTransition(newSlide), true);
+        } else {
+          this.scrollIt(newSlide);
         }
-        this.scrollIt(newSlide);
-        this.currentSlide = newSlide;
       }
     }
   }
