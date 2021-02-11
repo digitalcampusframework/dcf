@@ -236,17 +236,6 @@ class SlideshowObj {
     }, false);
   }
 
-  setSlideTransition(slide) {
-    switch (this.slideTransition) {
-    case 'fade':
-      slide.classList.add('dcf-fade-in');
-      break;
-    default:
-      // do nothing
-      break;
-    }
-  }
-
   initSlides() {
     Array.prototype.forEach.call(this.slides, (slide, slideIndex) => {
       if (slideIndex === DCFUtility.magicNumbers('int0')) {
@@ -255,9 +244,9 @@ class SlideshowObj {
       slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
       slide.classList.add('dcf-slide', 'dcf-relative');
 
-      // set slide transition, but skip first slide on init for axe purposes
-      if (slideIndex > DCFUtility.magicNumbers('int0')) {
-        this.setSlideTransition(slide);
+      // Add Theme Events to slide
+      if (this.theme.slideToggleTransition) {
+        this.theme.slideToggleTransition(slide);
       }
 
       let figure = slide.querySelector('figure');
@@ -322,7 +311,7 @@ class SlideshowObj {
     // onIntersection callback function
     let onIntersection = (entries) => {
       Array.prototype.forEach.call(entries, (entry) => {
-        entry.target.classList.remove('visible', 'dcf-animated');
+        entry.target.classList.remove('visible');
         if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
           return;
         }
@@ -330,7 +319,7 @@ class SlideshowObj {
         if (img) {
           this.lazyLoadImage(img);
         }
-        entry.target.classList.add('visible', 'dcf-animated');
+        entry.target.classList.add('visible');
       });
     };
 
@@ -469,12 +458,12 @@ class SlideshowObj {
   }
 
   scrollIt(slideToShow) {
-    if (this.slideTransition && !slideToShow.classList.contains(this.slideTransition)) {
-      this.setSlideTransition(slideToShow);
-    }
     const scrollPos = Array.prototype.indexOf.call(this.slides, slideToShow) *
       (this.slideDeck.scrollWidth / this.slides.length);
     this.slideDeck.scrollLeft = scrollPos;
+    if (this.slideTransition) {
+      slideToShow.dispatchEvent(this.source.showSlideEvent);
+    }
   }
 
   showSlide(dir) {
@@ -488,6 +477,9 @@ class SlideshowObj {
         visible[DCFUtility.magicNumbers('int0')].previousElementSibling :
         visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
       if (newSlide) {
+        if (this.slideTransition) {
+          visible[DCFUtility.magicNumbers('int0')].dispatchEvent(this.source.hideSlideEvent);
+        }
         this.scrollIt(newSlide);
         this.currentSlide = newSlide;
       }
@@ -611,6 +603,44 @@ viewBox="0 0 24 24" aria-hidden="true">
         close2.animate(keyframesOpen2, options);
       }, false);
     };
+
+    this.slideToggleTransition = (slide) => {
+      const keyframesShowSlide = [
+        {
+          opacity: 0.25
+        },
+        {
+          opacity: 1
+        }
+      ];
+
+      const keyframesHideSlide = [
+        {
+          opacity: 1
+        },
+        {
+          opacity: 0
+        }
+      ];
+
+      const showOptions = {
+        duration: 1000,
+        fill: 'forwards'
+      };
+
+      const hideOptions = {
+        duration: 200,
+        fill: 'backwards'
+      };
+
+      slide.addEventListener('showSlide', () => {
+        slide.animate(keyframesShowSlide, showOptions);
+      }, false);
+
+      slide.addEventListener('hideSlide', () => {
+        slide.animate(keyframesHideSlide, hideOptions);
+      }, false);
+    };
   }
 
   setThemeVariable(themeVariableName, value) {
@@ -669,6 +699,12 @@ viewBox="0 0 24 24" aria-hidden="true">
       }
       break;
 
+    case 'slideToggleTransition':
+      if (typeof value === 'function') {
+        this.slideToggleTransition = value;
+      }
+      break;
+
     default:
       // Invalid variable so ignore
       break;
@@ -686,12 +722,16 @@ class DCFSlideshow {
     }
     this.openCaptionEvent = new Event(DCFSlideshow.events('openCaption'));
     this.closeCaptionEvent = new Event(DCFSlideshow.events('closeCaption'));
+    this.showSlideEvent = new Event(DCFSlideshow.events('showSlide'));
+    this.hideSlideEvent = new Event(DCFSlideshow.events('hideSlide'));
   }
 
   static events(name) {
     const events = {
       openCaption: 'openCaption',
-      closeCaption: 'closeCaption'
+      closeCaption: 'closeCaption',
+      showSlide: 'showSlide',
+      hideSlide: 'hideSlide'
     };
     Object.freeze(events);
 
