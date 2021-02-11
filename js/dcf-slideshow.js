@@ -92,8 +92,8 @@ class SlideshowObj {
     if (this.currentSlide.nextElementSibling) {
       this.showSlide('next');
     } else {
-      this.slideDeck.scrollLeft = DCFUtility.magicNumbers('int0');
       this.currentSlide = this.slides[DCFUtility.magicNumbers('int0')];
+      this.scrollIt(this.currentSlide);
     }
   }
 
