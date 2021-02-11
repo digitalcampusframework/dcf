@@ -236,6 +236,17 @@ class SlideshowObj {
     }, false);
   }
 
+  setSlideTransition(slide) {
+    switch (this.slideTransition) {
+    case 'fade':
+      slide.classList.add('dcf-fade-in');
+      break;
+    default:
+      // do nothing
+      break;
+    }
+  }
+
   initSlides() {
     Array.prototype.forEach.call(this.slides, (slide, slideIndex) => {
       if (slideIndex === DCFUtility.magicNumbers('int0')) {
@@ -244,13 +255,9 @@ class SlideshowObj {
       slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
       slide.classList.add('dcf-slide', 'dcf-relative');
 
-      switch (this.slideTransition) {
-      case 'fade':
-        slide.classList.add('dcf-fade-in');
-        break;
-      default:
-        // do nothing
-        break;
+      // set slide transition, but skip first slide on init for axe purposes
+      if (slideIndex > DCFUtility.magicNumbers('int0')) {
+        this.setSlideTransition(slide);
       }
 
       let figure = slide.querySelector('figure');
@@ -462,6 +469,9 @@ class SlideshowObj {
   }
 
   scrollIt(slideToShow) {
+    if (this.slideTransition && !slideToShow.classList.contains(this.slideTransition)) {
+      this.setSlideTransition(slideToShow);
+    }
     const scrollPos = Array.prototype.indexOf.call(this.slides, slideToShow) *
       (this.slideDeck.scrollWidth / this.slides.length);
     this.slideDeck.scrollLeft = scrollPos;
