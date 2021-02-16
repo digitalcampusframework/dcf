@@ -351,8 +351,8 @@ class SlideshowObj {
     // onIntersection callback function
     let onIntersection = (entries) => {
       Array.prototype.forEach.call(entries, (entry) => {
-        entry.target.classList.remove('visible');
         if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
+          entry.target.classList.remove('visible');
           return;
         }
         let img = entry.target.querySelector('img');
