@@ -69,6 +69,7 @@ class SlideshowObj {
       }
     }, false);
 
+    this.initTransitionPanel();
     this.initControls();
     this.slides = this.slideDeck.querySelectorAll('li');
     if (this.slideshow.hasAttribute('data-shuffle') && this.slideshow.dataset.shuffle.toLowerCase() === 'true') {
@@ -88,17 +89,27 @@ class SlideshowObj {
     this.scrollInterval = setInterval(this.scroll.bind(this), this.scrollRate);
   }
 
+  firstSlide() {
+    return this.slides[DCFUtility.magicNumbers('int0')];
+  }
+
+  lastSlide() {
+    const index = this.slides.length > DCFUtility.magicNumbers('int1') ?
+      this.slides.length - DCFUtility.magicNumbers('int1') : DCFUtility.magicNumbers('int0');
+    return this.slides[index];
+  }
+
   scroll() {
-    if (this.currentSlide.nextElementSibling) {
+    const visible = this.slideshow.querySelectorAll('.visible');
+    if (visible[DCFUtility.magicNumbers('int0')].nextElementSibling) {
       this.showSlide('next');
     } else {
-      this.currentSlide = this.slides[DCFUtility.magicNumbers('int0')];
+      // At end of slides, so show first
       if (this.slideTransition) {
-        this.currentSlide.dispatchEvent(this.source.hideSlideEvent);
-        this.currentSlide.addEventListener('transitionend', this.doSlideTransition(this.currentSlide), true);
-      } else {
-        this.scrollIt(this.currentSlide);
+        const currentSlide = visible[DCFUtility.magicNumbers('int0')];
+        this.toggleSlideTransition(currentSlide, this.firstSlide());
       }
+      this.scrollIt(this.firstSlide());
     }
   }
 
@@ -113,6 +124,28 @@ class SlideshowObj {
       this.slides[currentIndex].innerHTML = this.slides[randomIndex].innerHTML;
       this.slides[randomIndex].innerHTML = slideContent;
     }
+  }
+
+  initTransitionPanel() {
+    if (!this.slideTransition) {
+      return;
+    }
+    this.panel = document.createElement('div');
+
+    // Add classes to panel
+    this.panel.classList.add('dcf-slideshow-transition-panel',
+      'dcf-invisible',
+      'dcf-absolute',
+      'dcf-vh-100%',
+      'dcf-vw-100%',
+      'dcf-overflow-hidden');
+
+    // Add role and aria-label to controls group
+    this.panel.setAttribute('aria-hidden', 'true');
+    this.panel.setAttribute('style', 'top: 0; left:0');
+
+    this.theme.slideToggleTransition(this.panel);
+    this.slideshow.appendChild(this.panel);
   }
 
   initControls() {
@@ -248,9 +281,6 @@ class SlideshowObj {
 
   initSlides() {
     Array.prototype.forEach.call(this.slides, (slide, slideIndex) => {
-      if (slideIndex === DCFUtility.magicNumbers('int0')) {
-        this.currentSlide = slide;
-      }
       slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
       slide.classList.add('dcf-slide', 'dcf-relative');
 
@@ -467,19 +497,38 @@ class SlideshowObj {
     }
   }
 
-  doSlideTransition(slide) {
-    this.currentSlide.removeEventListener('transitionend', this.doSlideTransition, true);
-    this.scrollIt(slide);
+  setTransitionPanel(hideSlide) {
+    return new Promise((resolve) => {
+      this.panel.innerHTML = hideSlide.innerHTML;
+      this.panel.classList.remove('dcf-invisible');
+      resolve();
+    });
+  }
+
+  performSlideTransition(showSlide) {
+    return new Promise((resolve) => {
+      this.scrollIt(showSlide);
+      this.panel.dispatchEvent(this.source.hideSlideEvent);
+      showSlide.dispatchEvent(this.source.showSlideEvent);
+      setTimeout(() => {
+        resolve();
+      }, this.source.theme.slideToggleTransitionDuration);
+    });
+  }
+
+  clearTransitionPanel() {
+    this.panel.innerHTML = '';
+    this.panel.classList.add('dcf-invisible');
+  }
+
+  toggleSlideTransition(hideSlide, showSlide) {
+    this.setTransitionPanel(hideSlide).then(this.performSlideTransition(showSlide)).then(this.clearTransitionPanel());
   }
 
   scrollIt(slideToShow) {
     const scrollPos = Array.prototype.indexOf.call(this.slides, slideToShow) *
       (this.slideDeck.scrollWidth / this.slides.length);
     this.slideDeck.scrollLeft = scrollPos;
-    if (this.slideTransition) {
-      slideToShow.dispatchEvent(this.source.showSlideEvent);
-    }
-    this.currentSlide = slideToShow;
   }
 
   showSlide(dir) {
@@ -494,8 +543,8 @@ class SlideshowObj {
         visible[DCFUtility.magicNumbers('int0')].nextElementSibling;
       if (newSlide) {
         if (this.slideTransition) {
-          this.currentSlide.dispatchEvent(this.source.hideSlideEvent);
-          this.currentSlide.addEventListener('transitionend', this.doSlideTransition(newSlide), true);
+          const currentSlide = visible[DCFUtility.magicNumbers('int0')];
+          this.toggleSlideTransition(currentSlide, newSlide);
         } else {
           this.scrollIt(newSlide);
         }
@@ -621,10 +670,12 @@ viewBox="0 0 24 24" aria-hidden="true">
       }, false);
     };
 
+    this.slideToggleTransitionDuration = 1000;
+
     this.slideToggleTransition = (slide) => {
       const keyframesShowSlide = [
         {
-          opacity: 0.25
+          opacity: 0
         },
         {
           opacity: 1
@@ -640,22 +691,17 @@ viewBox="0 0 24 24" aria-hidden="true">
         }
       ];
 
-      const showOptions = {
-        duration: 1000,
+      const options = {
+        duration: this.slideToggleTransitionDuration,
         fill: 'forwards'
       };
 
-      const hideOptions = {
-        duration: 200,
-        fill: 'backwards'
-      };
-
       slide.addEventListener('showSlide', () => {
-        slide.animate(keyframesShowSlide, showOptions);
+        slide.animate(keyframesShowSlide, options);
       }, false);
 
       slide.addEventListener('hideSlide', () => {
-        slide.animate(keyframesHideSlide, hideOptions);
+        slide.animate(keyframesHideSlide, options);
       }, false);
     };
   }
@@ -713,6 +759,12 @@ viewBox="0 0 24 24" aria-hidden="true">
     case 'figureCaptionToggleTransition':
       if (typeof value === 'function') {
         this.figureCaptionToggleTransition = value;
+      }
+      break;
+
+    case 'slideToggleTransitionDuration':
+      if (typeof value === 'number') {
+        this.slideToggleTransitionDuration = value;
       }
       break;
 
