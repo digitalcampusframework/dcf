@@ -497,32 +497,24 @@ class SlideshowObj {
     }
   }
 
-  setTransitionPanel(hideSlide) {
+  transitionPromise(hideSlide, showSlide) {
     return new Promise((resolve) => {
       this.panel.innerHTML = hideSlide.innerHTML;
       this.panel.classList.remove('dcf-invisible');
-      resolve();
-    });
-  }
-
-  performSlideTransition(showSlide) {
-    return new Promise((resolve) => {
       this.scrollIt(showSlide);
       this.panel.dispatchEvent(this.source.hideSlideEvent);
       showSlide.dispatchEvent(this.source.showSlideEvent);
       setTimeout(() => {
         resolve();
       }, this.source.theme.slideToggleTransitionDuration);
+    }).then(() => {
+      this.panel.innerHTML = '';
+      this.panel.classList.add('dcf-invisible');
     });
   }
 
-  clearTransitionPanel() {
-    this.panel.innerHTML = '';
-    this.panel.classList.add('dcf-invisible');
-  }
-
   toggleSlideTransition(hideSlide, showSlide) {
-    this.setTransitionPanel(hideSlide).then(this.performSlideTransition(showSlide)).then(this.clearTransitionPanel());
+    this.transitionPromise(hideSlide, showSlide);
   }
 
   scrollIt(slideToShow) {
