@@ -49,7 +49,7 @@ class SlideshowObj {
       const slideDeck = keydownEvent.target;
       if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown')) ||
         DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('keyC'))) {
-        const visibleSlide = slideDeck.querySelector('.visible');
+        const visibleSlide = slideDeck.querySelector('.dcf-visible');
         if (visibleSlide) {
           const captionBtn = visibleSlide.querySelector('figure button');
           if (captionBtn) {
@@ -100,7 +100,7 @@ class SlideshowObj {
   }
 
   scroll() {
-    const visible = this.slideshow.querySelectorAll('.visible');
+    const visible = this.slideshow.querySelectorAll('.dcf-visible');
     if (visible[DCFUtility.magicNumbers('int0')].nextElementSibling) {
       this.showSlide('next');
     } else {
@@ -352,14 +352,14 @@ class SlideshowObj {
     let onIntersection = (entries) => {
       Array.prototype.forEach.call(entries, (entry) => {
         if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
-          entry.target.classList.remove('visible');
+          entry.target.classList.remove('dcf-visible');
           return;
         }
         let img = entry.target.querySelector('img');
         if (img) {
           this.lazyLoadImage(img);
         }
-        entry.target.classList.add('visible');
+        entry.target.classList.add('dcf-visible');
       });
     };
 
@@ -380,7 +380,7 @@ class SlideshowObj {
         if (img) {
           this.lazyLoadImage(img);
         }
-        slide.classList.add('visible', 'dcf-animated');
+        slide.classList.add('dcf-visible');
       });
     }
   }
@@ -524,7 +524,7 @@ class SlideshowObj {
   }
 
   showSlide(dir) {
-    const visible = this.slideshow.querySelectorAll('.visible');
+    const visible = this.slideshow.querySelectorAll('.dcf-visible');
     const index = dir === 'previous' ? DCFUtility.magicNumbers('int0') : DCFUtility.magicNumbers('int1');
 
     if (visible.length > DCFUtility.magicNumbers('int1')) {
