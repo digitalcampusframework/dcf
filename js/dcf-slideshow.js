@@ -8,13 +8,11 @@ class DCFSlideshow {
 
   // Caption visibility transition
   captionTransition(event) {
-
     // Remove event listener and toggle visibility after caption has closed
     event.removeEventListener('transitionend', this.captionTransition, true);
 
     // Check if caption is already visible
     if (!event.classList.contains('dcf-invisible')) {
-
       // Add class to hide caption
       event.classList.add('dcf-invisible');
     }
@@ -22,10 +20,8 @@ class DCFSlideshow {
 
   // Add classes to the caption & button
   captionClasses(button, caption) {
-
     // Check if caption is already visible
     if (!caption.classList.contains('dcf-invisible')) {
-
       // Hide content
       caption.addEventListener('transitionend', this.captionTransition(caption), true);
 
@@ -38,7 +34,6 @@ class DCFSlideshow {
 
       caption.dispatchEvent(this.openCaptionEvent);
     } else {
-
       // Remove class to show content
       caption.classList.remove('dcf-invisible');
 
@@ -53,7 +48,6 @@ class DCFSlideshow {
   }
 
   // Functions for intersection observer.
-
   scrollIt(slideToShow, slides, slidedeck) {
     let scrollPos = Array.prototype.indexOf.call(slides, slideToShow) * (slidedeck.scrollWidth / slides.length);
     slidedeck.scrollLeft = scrollPos;
@@ -158,7 +152,6 @@ class DCFSlideshow {
 
       // Slides
       Array.prototype.forEach.call(slides, (slide, slideIndex) => {
-
         // Set unique ID for each slide
         slide.setAttribute('id', uuid.concat('-slide-', slideIndex));
 
@@ -172,7 +165,6 @@ class DCFSlideshow {
         let caption = captions[figureIndex];
 
         if (!(typeof caption == 'undefined')) {
-
           // Create button to show/hide caption
           let captionBtn = document.createElement('button');
 
@@ -245,7 +237,6 @@ class DCFSlideshow {
 
       // Show caption when the 'space' key is pressed
       button.addEventListener('keydown', (onSpace) => {
-
         // Handle 'space' key
         if (onSpace.which === DCFUtility.magicNumbers('spaceKeyCode')) {
           onSpace.preventDefault();

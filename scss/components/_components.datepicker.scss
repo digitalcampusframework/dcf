@@ -1,0 +1,282 @@
+// Temp variables
+$white: #fff;
+$black: #000;
+$gray: mix($white, $black); // #808080
+$gray2: #eee;
+$blue: #005a9c;
+$blue2: #def;
+
+$hsl1: hsl(216, 89%, 51%);
+$hsl2: hsl(216, 80%, 51%);
+$hsl3: hsl(216, 80%, 92%);
+
+$rgba1: rgba(0, 0, 0, .12);
+$rgba2: rgba(0, 0, 0, .22);
+$rgba3: rgb(100, 100, 100);
+
+.dcf-datepicker {
+  margin-top: 1em;
+  position: relative;
+
+  .group {
+    display: inline-block;
+    position: relative;
+    width: 13em;
+  }
+
+  label {
+    display: block;
+  }
+
+  input {
+    background-color: $white;
+    border: 1px solid $gray;
+    color: $black;
+    height: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  button.icon {
+    background-color: $white;
+    border: 0 solid $blue;
+    border-radius: 5px;
+    margin: 0;
+    padding: 4px;
+    position: relative;
+    top: .25em;
+  }
+
+  .desc {
+    left: 0;
+    position: absolute;
+    top: 2em;
+  }
+
+  .fa-calendar-alt {
+    color: $hsl1;
+  }
+
+  button.icon:focus {
+    background-color: $blue2;
+    border-width: 2px;
+    outline: none;
+    padding: 2px;
+  }
+
+  input:focus {
+    background-color: $blue2;
+    outline: 2px solid $blue;
+    outline-offset: 1px;
+  }
+}
+
+.dcf-datepicker-dialog {
+  background-color: $white;
+  border: 3px solid $hsl2;
+  border-radius: 5px;
+  clear: both;
+  margin-top: .15em;
+  padding: 0;
+  position: absolute;
+  width: 320px;
+
+  [role="alertdialog"],
+  [role="dialog"] {
+    background-color: $white;
+    border: 1px solid $black;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 15px;
+  }
+
+  @media screen and (min-width: 640px) {
+    [role="alertdialog"],
+    [role="dialog"] {
+      box-shadow: 0 19px 38px $rgba1, 0 15px 12px $rgba2;
+      left: 50vw; // move to the middle of the screen (assumes relative parent is the body/viewport)
+      min-height: auto;
+      min-width: calc(640px - (15px * 2)); // == breakpoint - left+right margin
+      position: absolute;
+      top: 2rem;
+      transform: translateX(-50%); // move backwards 50% of this element's width
+    }
+  }
+
+  .header {
+    background-color: $hsl2;
+    color: $white;
+    cursor: default;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-around;
+    padding: 7px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: $white;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: none;
+    width: 80%;
+  }
+
+  button {
+    background: transparent;
+    border-style: none;
+  }
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  .dates {
+    width: 320px;
+  }
+
+  .prev-year,
+  .prev-month,
+  .next-month,
+  .next-year {
+    color: $white;
+    height: 24px;
+    padding: 4px;
+    width: 24px;
+  }
+
+  .prev-year:focus,
+  .prev-month:focus,
+  .next-month:focus,
+  .next-year:focus {
+    border: 2px solid $white;
+    border-radius: 4px;
+    outline: 0;
+    padding: 2px;
+  }
+
+  .prev-year:hover,
+  .prev-month:hover,
+  .next-month:hover,
+  .next-year:hover {
+    border: 1px solid $white;
+    border-radius: 4px;
+    padding: 3px;
+  }
+
+  .dialog-ok-cancel-group {
+    margin-bottom: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    text-align: right;
+  }
+
+  .dialog-ok-cancel-group button {
+    background-color: $hsl3;
+    border-radius: 5px;
+    color: $black;
+    font-size: .85em;
+    margin-left: 1em;
+    outline: none;
+    padding: 6px;
+    width: 5em;
+  }
+
+  .dialog-button:focus {
+    border: 2px solid $black;
+    padding: 4px;
+  }
+
+  .dialog-button:hover {
+    border: 1px solid $black;
+    padding: 5px;
+  }
+
+  .fa-calendar-alt {
+    color: $hsl1;
+  }
+
+  .month-year {
+    display: inline-block;
+    text-align: center;
+    width: 12em;
+  }
+
+  table.dates {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    width: 100%;
+  }
+
+  table.dates th,
+  table.dates td {
+    text-align: center;
+  }
+
+  table.dates tr {
+    border: 1px solid $black;
+  }
+
+  table.dates td {
+    background: $gray2;
+    border-radius: 5px;
+    font-size: 15px;
+    height: 40px;
+    line-height: inherit;
+    margin: 0;
+    padding: 3px;
+    width: 40px;
+  }
+
+  table.dates td.disabled {
+    border: 0;
+    height: 41px;
+    padding: 2px;
+    width: 41px;
+  }
+
+  table.dates td:focus,
+  table.dates td:hover {
+    background-color: $hsl3;
+    padding: 0;
+  }
+
+  table.dates td:focus {
+    border: 2px solid $rgba3;
+    outline: 0;
+    padding: 1px;
+  }
+
+  table.dates td:not(.disabled):hover {
+    border: 1px solid $rgba3;
+    padding: 2px;
+  }
+
+  table.dates td[aria-selected] {
+    border: 2px dotted $rgba3;
+    padding: 1px;
+  }
+
+  table.dates td[aria-selected]:focus {
+    border: 2px solid $rgba3;
+    padding: 1px;
+  }
+
+  table.dates td[tabindex="0"] {
+    background-color: $hsl2;
+    color: $white;
+  }
+
+  .dialog-message {
+    background: $hsl2;
+    color: $white;
+    height: 1.75em;
+    padding-left: 1em;
+    padding-top: .25em;
+  }
+}
