@@ -89,13 +89,13 @@ class DCFDatepicker {
 
     this.prevYearNode = document.createElement('button');
     this.prevYearNode.setAttribute('aria-label', 'previous year');
-    this.prevYearNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'prev-year');
+    this.prevYearNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'prev-year');
     this.prevYearNode.innerHTML = '&laquo;';
     dialogHeader.append(this.prevYearNode);
 
     this.prevMonthNode = document.createElement('button');
     this.prevMonthNode.setAttribute('aria-label', 'previous month');
-    this.prevMonthNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'prev-month');
+    this.prevMonthNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'prev-month');
     this.prevMonthNode.innerHTML = '&lsaquo;';
     dialogHeader.append(this.prevMonthNode);
 
@@ -106,13 +106,13 @@ class DCFDatepicker {
 
     this.nextMonthNode = document.createElement('button');
     this.nextMonthNode.setAttribute('aria-label', 'next month');
-    this.nextMonthNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'next-month');
+    this.nextMonthNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'next-month');
     this.nextMonthNode.innerHTML = '&rsaquo;';
     dialogHeader.append(this.nextMonthNode);
 
     this.nextYearNode = document.createElement('button');
     this.nextYearNode.setAttribute('aria-label', 'next year');
-    this.nextYearNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'next-year');
+    this.nextYearNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'next-year');
     this.nextYearNode.innerHTML = '&raquo;';
     dialogHeader.append(this.nextYearNode);
 
