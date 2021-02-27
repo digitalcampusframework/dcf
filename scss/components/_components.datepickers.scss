@@ -1,3 +1,8 @@
+//////////////////////////////
+// THEME / COMPONENTS / GLOBAL
+//////////////////////////////
+
+
 // Temp variables
 $white: #fff;
 $black: #000;
@@ -14,27 +19,14 @@ $rgba1: rgba(0, 0, 0, .12);
 $rgba2: rgba(0, 0, 0, .22);
 $rgba3: rgb(100, 100, 100);
 
+
 .dcf-datepicker {
-  margin-top: 1em;
   position: relative;
 
   .group {
     display: inline-block;
     position: relative;
     width: 13em;
-  }
-
-  label {
-    display: block;
-  }
-
-  input {
-    background-color: $white;
-    border: 1px solid $gray;
-    color: $black;
-    height: 1.5em;
-    margin: 0;
-    padding: 0;
   }
 
   button.icon {
@@ -71,15 +63,17 @@ $rgba3: rgb(100, 100, 100);
   }
 }
 
+
 .dcf-datepicker-dialog {
   background-color: $white;
-  border: 3px solid $hsl2;
-  border-radius: 5px;
-  clear: both;
-  margin-top: .15em;
-  padding: 0;
-  position: absolute;
-  width: 320px;
+//   border: $border-width-datepicker-dialog $border-style-datepicker-dialog $hsl2;
+  @if ($border-radius-datepicker-dialog-roundrect) {
+    border-radius: $roundrect;
+  }
+  box-shadow: $box-shadow-datepicker-dialog;
+  margin-top: $margin-top-datepicker-dialog;
+  padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
+  width: $width-datepicker-dialog;
 
   [role="alertdialog"],
   [role="dialog"] {
@@ -103,141 +97,8 @@ $rgba3: rgb(100, 100, 100);
     }
   }
 
-  .header {
-    background-color: $hsl2;
-    color: $white;
-    cursor: default;
-    display: flex;
-    font-weight: bold;
-    justify-content: space-around;
-    padding: 7px;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    color: $white;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    text-transform: none;
-    width: 80%;
-  }
-
-  button {
-    background: transparent;
-    border-style: none;
-  }
-
-  button::-moz-focus-inner {
-    border: 0;
-  }
-
-  .dates {
-    width: 320px;
-  }
-
-  .prev-year,
-  .prev-month,
-  .next-month,
-  .next-year {
-    color: $white;
-    height: 24px;
-    padding: 4px;
-    width: 24px;
-  }
-
-  .prev-year:focus,
-  .prev-month:focus,
-  .next-month:focus,
-  .next-year:focus {
-    border: 2px solid $white;
-    border-radius: 4px;
-    outline: 0;
-    padding: 2px;
-  }
-
-  .prev-year:hover,
-  .prev-month:hover,
-  .next-month:hover,
-  .next-year:hover {
-    border: 1px solid $white;
-    border-radius: 4px;
-    padding: 3px;
-  }
-
-  .dialog-ok-cancel-group {
-    margin-bottom: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-    text-align: right;
-  }
-
-  .dialog-ok-cancel-group button {
-    background-color: $hsl3;
-    border-radius: 5px;
-    color: $black;
-    font-size: .85em;
-    margin-left: 1em;
-    outline: none;
-    padding: 6px;
-    width: 5em;
-  }
-
-  .dialog-button:focus {
-    border: 2px solid $black;
-    padding: 4px;
-  }
-
-  .dialog-button:hover {
-    border: 1px solid $black;
-    padding: 5px;
-  }
-
   .fa-calendar-alt {
     color: $hsl1;
-  }
-
-  .month-year {
-    display: inline-block;
-    text-align: center;
-    width: 12em;
-  }
-
-  table.dates {
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 1em;
-    width: 100%;
-  }
-
-  table.dates th,
-  table.dates td {
-    text-align: center;
-  }
-
-  table.dates tr {
-    border: 1px solid $black;
-  }
-
-  table.dates td {
-    background: $gray2;
-    border-radius: 5px;
-    font-size: 15px;
-    height: 40px;
-    line-height: inherit;
-    margin: 0;
-    padding: 3px;
-    width: 40px;
-  }
-
-  table.dates td.disabled {
-    border: 0;
-    height: 41px;
-    padding: 2px;
-    width: 41px;
   }
 
   table.dates td:focus,
@@ -252,14 +113,10 @@ $rgba3: rgb(100, 100, 100);
     padding: 1px;
   }
 
-  table.dates td:not(.disabled):hover {
-    border: 1px solid $rgba3;
-    padding: 2px;
-  }
 
   table.dates td[aria-selected] {
-    border: 2px dotted $rgba3;
-    padding: 1px;
+//     border: 2px dotted $rgba3;
+//     padding: 1px;
   }
 
   table.dates td[aria-selected]:focus {
@@ -267,16 +124,55 @@ $rgba3: rgb(100, 100, 100);
     padding: 1px;
   }
 
-  table.dates td[tabindex="0"] {
-    background-color: $hsl2;
-    color: $white;
-  }
+}
 
-  .dialog-message {
-    background: $hsl2;
-    color: $white;
-    height: 1.75em;
-    padding-left: 1em;
-    padding-top: .25em;
+
+.dcf-datepicker-dialog-header {
+//   background-color: $hsl2;
+  cursor: default;
+  padding: $padding-bottom-datepicker-dialog-header;
+}
+
+
+.dcf-datepicker-dialog-month-year {
+  font-size: $font-size-datepicker-dialog-month-year;
+}
+
+
+.dcf-datepicker-dialog-calendar th,
+.dcf-datepicker-dialog-calendar td {
+  font-size: $font-size-datepicker-dialog-calendar;
+  height: $height-datepicker-dialog-calendar-cell;
+  text-align: center;
+}
+
+
+.dcf-datepicker-dialog-calendar td {
+  @if ($border-radius-datepicker-date-roundrect) {
+    border-radius: $roundrect;
   }
+  color: var(--btn-tertiary);
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):hover {
+  background-color: var(--bg-btn-secondary-tertiary-hover);
+  color: var(--btn-secondary-tertiary-hover);
+}
+
+
+.dcf-datepicker-dialog-calendar td[tabindex="0"] {
+  background-color: $hsl2;
+  color: $white;
+}
+
+
+.dcf-datepicker-dialog-footer {
+  padding: $padding-top-datepicker-dialog-footer;
+}
+
+
+.dcf-datepicker-dialog-message {
+  font-size: $font-size-datepicker-dialog-message;
+  text-align: center;
 }

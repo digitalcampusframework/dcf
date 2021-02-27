@@ -82,45 +82,46 @@ class DCFDatepicker {
     this.dialogNode.setAttribute('role', 'dialog');
     this.dialogNode.setAttribute('aria-modal', 'true');
     this.dialogNode.setAttribute('aria-labelledby', dialogLabelID);
-    this.dialogNode.classList.add('dcf-datepicker-dialog');
+    this.dialogNode.classList.add('dcf-datepicker-dialog', 'dcf-absolute');
 
     let dialogHeader = document.createElement('div');
-    dialogHeader.classList.add('header');
+    dialogHeader.classList.add('dcf-datepicker-dialog-header', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-around');
 
     this.prevYearNode = document.createElement('button');
-    this.prevYearNode.setAttribute('aria-label', 'previous year');
     this.prevYearNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'prev-year');
+    this.prevYearNode.setAttribute('aria-label', 'previous year');
     this.prevYearNode.innerHTML = '&laquo;';
     dialogHeader.append(this.prevYearNode);
 
     this.prevMonthNode = document.createElement('button');
-    this.prevMonthNode.setAttribute('aria-label', 'previous month');
     this.prevMonthNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'prev-month');
+    this.prevMonthNode.setAttribute('aria-label', 'previous month');
     this.prevMonthNode.innerHTML = '&lsaquo;';
     dialogHeader.append(this.prevMonthNode);
 
     this.monthYearNode = document.createElement('h2');
+    this.monthYearNode.classList.add('dcf-datepicker-dialog-month-year', 'dcf-flex-grow-1', 'dcf-mb-0', 'dcf-txt-center');
     this.monthYearNode.setAttribute('id', dialogLabelID);
     this.monthYearNode.setAttribute('aria-live', 'polite');
     dialogHeader.append(this.monthYearNode);
 
     this.nextMonthNode = document.createElement('button');
-    this.nextMonthNode.setAttribute('aria-label', 'next month');
     this.nextMonthNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'next-month');
+    this.nextMonthNode.setAttribute('aria-label', 'next month');
     this.nextMonthNode.innerHTML = '&rsaquo;';
     dialogHeader.append(this.nextMonthNode);
 
     this.nextYearNode = document.createElement('button');
-    this.nextYearNode.setAttribute('aria-label', 'next year');
     this.nextYearNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'next-year');
+    this.nextYearNode.setAttribute('aria-label', 'next year');
     this.nextYearNode.innerHTML = '&raquo;';
     dialogHeader.append(this.nextYearNode);
 
     const calanderTable = document.createElement('table');
+    calanderTable.classList.add('dcf-datepicker-dialog-calendar', 'dcf-w-100%', 'dcf-table-fixed');
     calanderTable.setAttribute('id', dialogGridID);
     calanderTable.setAttribute('role', 'grid');
     calanderTable.setAttribute('aria-labelledby', dialogLabelID);
-    calanderTable.classList.add('dates');
     const thead = document.createElement('thead');
     const theadRow = document.createElement('tr');
     Array.prototype.forEach.call(this.dayLabels, (dayLabel) => {
@@ -136,23 +137,26 @@ class DCFDatepicker {
     calanderTable.append(this.tbodyNode);
 
     const dialogBtnGroup = document.createElement('div');
-    dialogBtnGroup.classList.add('dialog-ok-cancel-group');
+    dialogBtnGroup.classList.add('dcf-datepicker-dialog-ok-cancel-group', 'dcf-flex-shrink-0', 'dcf-mr-4');
     this.okButtonNode = document.createElement('button');
-    this.okButtonNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'dialog-button');
+    this.okButtonNode.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-mr-3', 'dialog-button');
     this.okButtonNode.setAttribute('value', 'ok');
     this.okButtonNode.innerText = 'OK';
     dialogBtnGroup.append(this.okButtonNode);
 
     this.cancelButtonNode = document.createElement('button');
     this.cancelButtonNode = document.createElement('button');
-    this.cancelButtonNode.classList.add('dcf-btn', 'dcf-btn-secondary', 'dialog-button');
+    this.cancelButtonNode.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dialog-button');
     this.cancelButtonNode.setAttribute('value', 'cancel');
     this.cancelButtonNode.innerText = 'Cancel';
     dialogBtnGroup.append(this.cancelButtonNode);
 
     this.messageNode = document.createElement('div');
-    this.messageNode.classList.add('dialog-message');
+    this.messageNode.classList.add('dcf-datepicker-dialog-message', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-center');
     this.messageNode.setAttribute('aria-live', 'polite');
+
+    const dialogFooter = document.createElement('div');
+    dialogBtnGroup.classList.add('dcf-datepicker-dialog-footer', 'dcf-d-flex', 'dcf-flex-nowrap', 'dcf-ai-center');
 
     this.dialogNode.append(dialogHeader);
     this.dialogNode.append(calanderTable);
