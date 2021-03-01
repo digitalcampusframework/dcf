@@ -1,79 +1,14 @@
-//////////////////////////////
-// THEME / COMPONENTS / GLOBAL
-//////////////////////////////
+/////////////////////////////
+// CORE / COMPONENTS / GLOBAL
+/////////////////////////////
 
 
 // Temp variables
-$white: #fff;
-$black: #000;
-$gray: mix($white, $black); // #808080
-$gray2: #eee;
-$blue: #005a9c;
-$blue2: #def;
-
-$hsl1: hsl(216, 89%, 51%);
-$hsl2: hsl(216, 80%, 51%);
-$hsl3: hsl(216, 80%, 92%);
-
 $rgba1: rgba(0, 0, 0, .12);
 $rgba2: rgba(0, 0, 0, .22);
-$rgba3: rgb(100, 100, 100);
-
-
-.dcf-datepicker {
-  position: relative;
-
-  .group {
-    display: inline-block;
-    position: relative;
-    width: 13em;
-  }
-
-  button.icon {
-    background-color: $white;
-    border: 0 solid $blue;
-    border-radius: 5px;
-    margin: 0;
-    padding: 4px;
-    position: relative;
-    top: .25em;
-  }
-
-  .desc {
-    left: 0;
-    position: absolute;
-    top: 2em;
-  }
-
-  .fa-calendar-alt {
-    color: $hsl1;
-  }
-
-  button.icon:focus {
-    background-color: $blue2;
-    border-width: 2px;
-    outline: none;
-    padding: 2px;
-  }
-
-  input:focus {
-    background-color: $blue2;
-    outline: 2px solid $blue;
-    outline-offset: 1px;
-  }
-}
 
 
 .dcf-datepicker-dialog {
-  background-color: $white;
-//   border: $border-width-datepicker-dialog $border-style-datepicker-dialog $hsl2;
-  @if ($border-radius-datepicker-dialog-roundrect) {
-    border-radius: $roundrect;
-  }
-  box-shadow: $box-shadow-datepicker-dialog;
-  margin-top: $margin-top-datepicker-dialog;
-  padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
-  width: $width-datepicker-dialog;
 
   [role="alertdialog"],
   [role="dialog"] {
@@ -97,40 +32,29 @@ $rgba3: rgb(100, 100, 100);
     }
   }
 
-  .fa-calendar-alt {
-    color: $hsl1;
+}
+
+
+.dcf-datepicker {
+  position: relative;
+}
+
+
+.dcf-datepicker-dialog {
+  background-color: $white;
+  @if ($border-radius-datepicker-dialog-roundrect) {
+    border-radius: $roundrect;
   }
-
-  table.dates td:focus,
-  table.dates td:hover {
-    background-color: $hsl3;
-    padding: 0;
-  }
-
-  table.dates td:focus {
-    border: 2px solid $rgba3;
-    outline: 0;
-    padding: 1px;
-  }
-
-
-  table.dates td[aria-selected] {
-//     border: 2px dotted $rgba3;
-//     padding: 1px;
-  }
-
-  table.dates td[aria-selected]:focus {
-    border: 2px solid $rgba3;
-    padding: 1px;
-  }
-
+  box-shadow: $box-shadow-datepicker-dialog;
+  margin-top: $margin-top-datepicker-dialog; // Distance from input
+  padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
+  width: $width-datepicker-dialog;
 }
 
 
 .dcf-datepicker-dialog-header {
-//   background-color: $hsl2;
   cursor: default;
-  padding: $padding-bottom-datepicker-dialog-header;
+  padding-bottom: $padding-bottom-datepicker-dialog-header;
 }
 
 
@@ -142,7 +66,7 @@ $rgba3: rgb(100, 100, 100);
 .dcf-datepicker-dialog-calendar th,
 .dcf-datepicker-dialog-calendar td {
   font-size: $font-size-datepicker-dialog-calendar;
-  height: $height-datepicker-dialog-calendar-cell;
+  height: $height-datepicker-dialog-calendar-th-td;
   text-align: center;
 }
 
@@ -155,20 +79,27 @@ $rgba3: rgb(100, 100, 100);
 }
 
 
-.dcf-datepicker-dialog-calendar td:not(.disabled):hover {
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]) {
+  cursor: pointer;
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]):not([aria-selected]):hover {
   background-color: var(--bg-btn-secondary-tertiary-hover);
   color: var(--btn-secondary-tertiary-hover);
 }
 
 
-.dcf-datepicker-dialog-calendar td[tabindex="0"] {
-  background-color: $hsl2;
-  color: $white;
+.dcf-datepicker-dialog-footer {
+  margin-top: $margin-top-datepicker-dialog-footer;
+  padding-top: $padding-top-datepicker-dialog-footer;
 }
 
 
-.dcf-datepicker-dialog-footer {
-  padding: $padding-top-datepicker-dialog-footer;
+@if (to-number($font-size-datepicker-dialog-btn-footer) != to-number(#{ms(-1)}em)) {
+  .dcf-datepicker-dialog-btn-footer {
+    font-size: $font-size-datepicker-dialog-btn-footer !important; // Important to override theme button styles
+  }
 }
 
 
