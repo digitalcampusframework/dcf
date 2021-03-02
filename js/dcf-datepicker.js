@@ -77,7 +77,6 @@ class DCFDatepicker {
     const dialogGridID = this.uuid.concat('-dialog-grid');
 
     this.dialogNode = document.createElement('div');
-    this.dialogNode.style.display = 'none';
     this.dialogNode.setAttribute('id', this.uuid.concat('-datepicker'));
     this.dialogNode.setAttribute('role', 'dialog');
     this.dialogNode.setAttribute('aria-modal', 'true');
