@@ -1,0 +1,110 @@
+/////////////////////////////
+// CORE / COMPONENTS / GLOBAL
+/////////////////////////////
+
+
+// Temp variables
+$rgba1: rgba(0, 0, 0, .12);
+$rgba2: rgba(0, 0, 0, .22);
+
+
+.dcf-datepicker-dialog {
+
+  [role="alertdialog"],
+  [role="dialog"] {
+    background-color: $white;
+    border: 1px solid $black;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 15px;
+  }
+
+  @media screen and (min-width: 640px) {
+    [role="alertdialog"],
+    [role="dialog"] {
+      box-shadow: 0 19px 38px $rgba1, 0 15px 12px $rgba2;
+      left: 50vw; // move to the middle of the screen (assumes relative parent is the body/viewport)
+      min-height: auto;
+      min-width: calc(640px - (15px * 2)); // == breakpoint - left+right margin
+      position: absolute;
+      top: 2rem;
+      transform: translateX(-50%); // move backwards 50% of this element's width
+    }
+  }
+
+}
+
+
+.dcf-datepicker {
+  position: relative;
+}
+
+
+.dcf-datepicker-dialog {
+  background-color: $white;
+  @if ($border-radius-datepicker-dialog-roundrect) {
+    border-radius: $roundrect;
+  }
+  box-shadow: $box-shadow-datepicker-dialog;
+  margin-top: $margin-top-datepicker-dialog; // Distance from input
+  padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
+  width: $width-datepicker-dialog;
+  z-index: $z-2;
+}
+
+
+.dcf-datepicker-dialog-header {
+  cursor: default;
+  padding-bottom: $padding-bottom-datepicker-dialog-header;
+}
+
+
+.dcf-datepicker-dialog-month-year {
+  font-size: $font-size-datepicker-dialog-month-year;
+}
+
+
+.dcf-datepicker-dialog-calendar th,
+.dcf-datepicker-dialog-calendar td {
+  font-size: $font-size-datepicker-dialog-calendar;
+  height: $height-datepicker-dialog-calendar-th-td;
+  text-align: center;
+}
+
+
+.dcf-datepicker-dialog-calendar td {
+  @if ($border-radius-datepicker-date-roundrect) {
+    border-radius: $roundrect;
+  }
+  color: var(--btn-tertiary);
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]) {
+  cursor: pointer;
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]):not([aria-selected]):hover {
+  background-color: var(--bg-btn-secondary-tertiary-hover);
+  color: var(--btn-secondary-tertiary-hover);
+}
+
+
+.dcf-datepicker-dialog-footer {
+  margin-top: $margin-top-datepicker-dialog-footer;
+  padding-top: $padding-top-datepicker-dialog-footer;
+}
+
+
+@if (to-number($font-size-datepicker-dialog-btn-footer) != to-number(#{ms(-1)}em)) {
+  .dcf-datepicker-dialog-btn-footer {
+    font-size: $font-size-datepicker-dialog-btn-footer !important; // Important to override theme button styles
+  }
+}
+
+
+.dcf-datepicker-dialog-message {
+  font-size: $font-size-datepicker-dialog-message;
+  text-align: center;
+}

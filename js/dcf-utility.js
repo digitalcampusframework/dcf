@@ -5,7 +5,14 @@ class DCFUtility {
       int0: 0,
       int1: 1,
       int2: 2,
+      int3: 3,
+      int4: 4,
+      int5: 5,
+      int6: 6,
+      int7: 7,
       int16: 16,
+
+      intMinus1: -1,
 
       // hex values
       hex0x3: 0x3,
