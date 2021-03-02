@@ -49,6 +49,7 @@ $rgba2: rgba(0, 0, 0, .22);
   margin-top: $margin-top-datepicker-dialog; // Distance from input
   padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
   width: $width-datepicker-dialog;
+  z-index: $z-2;
 }
 
 

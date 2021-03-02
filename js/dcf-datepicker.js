@@ -82,7 +82,7 @@ class DCFDatepicker {
     this.dialogNode.setAttribute('role', 'dialog');
     this.dialogNode.setAttribute('aria-modal', 'true');
     this.dialogNode.setAttribute('aria-labelledby', dialogLabelID);
-    this.dialogNode.classList.add('dcf-datepicker-dialog', 'dcf-absolute');
+    this.dialogNode.classList.add('dcf-datepicker-dialog', 'dcf-absolute', 'dcf-invisible');
 
     let dialogHeader = document.createElement('div');
     dialogHeader.classList.add('dcf-datepicker-dialog-header', 'dcf-d-flex', 'dcf-ai-center', 'dcf-jc-around');
@@ -387,15 +387,19 @@ class DCFDatepicker {
   }
 
   open() {
-    this.dialogNode.style.display = 'block';
-    this.dialogNode.style.zIndex = this.int2;
+    // Set attribute for this modal
+    this.dialogNode.setAttribute('aria-hidden', 'false');
+
+    // Add/remove classes to this modal
+    this.dialogNode.classList.remove('dcf-opacity-0', 'dcf-invisible');
+    this.dialogNode.classList.add('dcf-datepicker-dialog-is-open', 'dcf-opacity-100');
 
     this.getDateFromTextbox();
     this.updateGrid();
   }
 
   isOpen() {
-    return window.getComputedStyle(this.dialogNode).display !== 'none';
+    return this.dialogNode.classList.contains('dcf-datepicker-dialog-is-open');
   }
 
   close(flagParam) {
@@ -406,7 +410,27 @@ class DCFDatepicker {
     }
 
     this.setMessage('');
-    this.dialogNode.style.display = 'none';
+
+    // Set attribute for this modal
+    this.dialogNode.setAttribute('aria-hidden', 'true');
+
+    // Add/remove classes to this modal
+    this.dialogNode.classList.remove('dcf-datepicker-dialog-is-open', 'dcf-opacity-100');
+    this.dialogNode.classList.add('dcf-opacity-0');
+
+    // Dialog transition
+    const dialogTransition = () => {
+      // Remove event listener after the modal transition
+      this.dialogNode.removeEventListener('transitionend', dialogTransition);
+
+      // Add the `.dcf-invisible` class to this modal after the transition
+      if (!this.isOpen() && !this.dialogNode.classList.contains('dcf-invisible')) {
+        this.dialogNode.classList.add('dcf-invisible');
+      }
+    };
+
+    // Add event listener for the end of the modal transition
+    this.dialogNode.addEventListener('transitionend', dialogTransition);
 
     if (flag) {
       this.buttonNode.focus();
