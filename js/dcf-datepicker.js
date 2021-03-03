@@ -37,7 +37,7 @@ class DCFDatepicker {
       'December',
     ];
 
-    this.messageCursorKeys = 'Cursor keys can navigate dates';
+    this.messageCursorKeys = 'Cursor keys can navigate&nbsp;dates';
     this.lastMessage = '';
 
     this.lastRowNode = null;
@@ -574,7 +574,7 @@ class DCFDatepicker {
 
   setMessage(str) {
     let setMessageDelayed = () => {
-      this.messageNode.textContent = str;
+      this.messageNode.innerHTML = str;
     };
 
     if (str !== this.lastMessage) {
