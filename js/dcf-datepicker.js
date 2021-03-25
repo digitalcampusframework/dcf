@@ -519,6 +519,8 @@ class DCFDatepicker {
     }
 
     this.textboxNode.value = `${fd.getMonth() + this.int1}/${fd.getDate()}/${fd.getFullYear()}`;
+    const changeEvent = new Event('change');
+    this.textboxNode.dispatchEvent(changeEvent);
     this.setDateForButtonLabel();
   }
 
