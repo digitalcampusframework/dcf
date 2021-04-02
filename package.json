@@ -17,10 +17,12 @@
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
     "acorn": "^7.3.1",
+    "yargs-parser": ">=5.0.0-security.0",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-scss-lint": "^1.0.0",
-    "minimist": ">=0.2.1 <1.0.0 || >=1.2.3"
+    "minimist": ">=0.2.1 <1.0.0 || >=1.2.3",
+    "y18n": "^5.0.5"
   },
   "engines": {
     "node": ">= 0.10.0"
