@@ -133,6 +133,38 @@ class DCFLazyLoad {
     });
   }
 
+  applyVideo(video) {
+    let videoSources = video.getElementsByTagName('SOURCE');
+    const poster = video.dataset.poster || null;
+
+    Array.from(videoSources).forEach((videoSource) => {
+      const src = videoSource.dataset.src || null;
+
+      if (!src) {
+        // skip this videoSource
+        return;
+      }
+
+      videoSource.src = src;
+      videoSource.removeAttribute('data-src');
+    });
+
+    if (poster) {
+      video.poster = poster;
+      video.removeAttribute('data-poster');
+    }
+
+    // Prevent this from being lazy loaded a second time.
+    video.classList.add('dcf-lazy-loaded');
+    video.classList.remove('dcf-lazy-load');
+
+    if (this.classNames.length) {
+      this.classNames.forEach((className) => video.classList.add(className));
+    }
+
+    video.load();
+  }
+
   /**
    * Load all of the items immediately
    * @param {NodeListOf<Element>} items     List of node elements.
@@ -146,6 +178,10 @@ class DCFLazyLoad {
           this.preloadImage(item);
         }
         this.applyImage(item);
+        break;
+
+      case 'VIDEO':
+        this.applyVideo(item);
         break;
 
       default:
@@ -182,11 +218,19 @@ class DCFLazyLoad {
         switch (entry.target.nodeName) {
         case 'IMG':
           if (entry.intersectionRatio > observer.thresholds[zeroIndex] &&
-              entry.intersectionRatio < observer.thresholds[oneIndex]) {
+            entry.intersectionRatio < observer.thresholds[oneIndex]) {
             this.preloadImage(entry.target);
           } else if (entry.intersectionRatio > observer.thresholds[oneIndex]) {
             this.itemsCount--;
             this.applyImage(entry.target);
+            this.observer.unobserve(entry.target);
+          }
+          break;
+
+        case 'VIDEO':
+          if (entry.intersectionRatio > observer.thresholds[oneIndex]) {
+            this.itemsCount--;
+            this.applyVideo(entry.target);
             this.observer.unobserve(entry.target);
           }
           break;
@@ -204,27 +248,27 @@ class DCFLazyLoad {
 
     this.itemsCount = this.itemList.length;
 
-    if ('loading' in HTMLImageElement.prototype) {
-      // Native lazy loading IS supported, so set src-data to src
-      this.loadItemsImmediately(this.itemList, false);
+    if (!('IntersectionObserver' in window)) {
+      this.loadItemsImmediately(this.itemList, 'loading' in HTMLImageElement.prototype);
     } else {
-      // Native lazy loading NOT supported, so handle via javascript
-      // If browser doesn't support intersection observer, load the items immediately
-      if (!('IntersectionObserver' in window)) {
-        this.loadItemsImmediately(this.itemList);
-      } else {
-        // It is supported, load the items
-        this.observer = new IntersectionObserver(onIntersection, this.observerConfig);
+      // It is supported, load the items
+      this.observer = new IntersectionObserver(onIntersection, this.observerConfig);
 
-        this.itemList.forEach((item) => {
-          if (item.classList.contains('dcf-lazy-loaded')) {
-            // skip item
-            return;
-          }
+      this.itemList.forEach((item) => {
+        if (item.classList.contains('dcf-lazy-loaded')) {
+          // skip item
+          return;
+        }
 
-          this.observer.observe(item);
-        });
-      }
+        // Native image lazy loading IS supported, so set src-data to src
+        if ('loading' in HTMLImageElement.prototype && item.nodeName === 'IMG') {
+          this.itemsCount--;
+          this.applyImage(item);
+          return;
+        }
+
+        this.observer.observe(item);
+      });
     }
   }
 }
