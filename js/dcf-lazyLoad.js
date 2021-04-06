@@ -135,6 +135,8 @@ class DCFLazyLoad {
 
   applyVideo(video) {
     let videoSources = video.getElementsByTagName('SOURCE');
+    const poster = video.dataset.poster || null;
+
     Array.from(videoSources).forEach((videoSource) => {
       const src = videoSource.dataset.src || null;
 
@@ -146,6 +148,11 @@ class DCFLazyLoad {
       videoSource.src = src;
       videoSource.removeAttribute('data-src');
     });
+
+    if (poster) {
+      video.poster = poster;
+      video.removeAttribute('data-poster');
+    }
 
     // Prevent this from being lazy loaded a second time.
     video.classList.add('dcf-lazy-loaded');
