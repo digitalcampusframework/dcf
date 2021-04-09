@@ -16,6 +16,8 @@
 @mixin h-8($imp:null) { height: $length-em-8 $imp; }
 @mixin h-9($imp:null) { height: $length-em-9 $imp; }
 @mixin h-10($imp:null) { height: $length-em-10 $imp; }
+@mixin h-11($imp:null) { height: $length-em-11 $imp; }
+@mixin h-12($imp:null) { height: $length-em-12 $imp; }
 @mixin h-100pc($imp:null) { height: 100% $imp; }
 @mixin h-100vh($imp:null) { height: 100vh $imp; }
 
@@ -43,6 +45,8 @@
 @mixin w-8($imp:null) { width: $length-em-8 $imp; }
 @mixin w-9($imp:null) { width: $length-em-9 $imp; }
 @mixin w-10($imp:null) { width: $length-em-10 $imp; }
+@mixin w-11($imp:null) { width: $length-em-11 $imp; }
+@mixin w-12($imp:null) { width: $length-em-12 $imp; }
 @mixin w-100pc($imp:null) { width: 100% $imp; }
 @mixin w-100vw($imp:null) { width: 100vw $imp; }
 

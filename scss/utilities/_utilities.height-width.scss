@@ -16,6 +16,8 @@
 .dcf-h-8 { @include h-8(!important); }
 .dcf-h-9 { @include h-9(!important); }
 .dcf-h-10 { @include h-10(!important); }
+.dcf-h-11 { @include h-11(!important); }
+.dcf-h-12 { @include h-12(!important); }
 .dcf-h-100\% { @include h-100pc(!important); } // .dcf-h-100%
 .dcf-h-100vh { @include h-100vh(!important); }
 
@@ -43,6 +45,8 @@
 .dcf-w-8 { @include w-8(!important); }
 .dcf-w-9 { @include w-9(!important); }
 .dcf-w-10 { @include w-10(!important); }
+.dcf-w-11 { @include w-11(!important); }
+.dcf-w-12 { @include w-12(!important); }
 .dcf-w-100\% { @include w-100pc(!important); } // .dcf-w-100%
 .dcf-w-100vw { @include w-100vw(!important); }
 
