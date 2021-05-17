@@ -1,0 +1,29 @@
+///////////////////////////
+// CORE / COMPONENTS / APP
+///////////////////////////
+
+@include mq(md, max, width) {
+
+  .unl.app .dcf-app-controls ul:not(:last-child) {
+    flex-direction: column;
+  }
+
+}
+
+@include mq(md, min, width) {
+
+  .unl.app .dcf-app-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .unl.app .dcf-app-controls ul:not(:last-child) {
+    border-left: 1px solid inherit;
+    display: flex;
+  }
+
+  .unl.app .dcf-app-controls li {
+    border-right: 1px solid inherit;
+  }
+
+}
