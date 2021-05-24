@@ -190,8 +190,8 @@ class DCFModal {
       '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' +
       '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' +
       'video[controls]:not([hidden])');
-    let firstTabFocusEl = tabFocusEls[DCFUtility.magicNumbers('int0')];
-    let lastTabFocusEl = tabFocusEls[tabFocusEls.length - DCFUtility.magicNumbers('int1')];
+    const firstTabFocusEl = tabFocusEls[DCFUtility.magicNumbers('int0')];
+    const lastTabFocusEl = tabFocusEls[tabFocusEls.length - DCFUtility.magicNumbers('int1')];
 
     // Send focus to the modal
     thisModal.focus();
@@ -206,7 +206,10 @@ class DCFModal {
 
       if (event.key === 'Tab' || event.keyCode === keycodeTab) {
         if (event.shiftKey) { // Tab backwards (shift + tab)
-          if (document.activeElement === firstTabFocusEl) {
+          if (document.activeElement === thisModal) {
+            event.preventDefault();
+            firstTabFocusEl.focus();
+          } else if (document.activeElement === firstTabFocusEl) {
             event.preventDefault();
             lastTabFocusEl.focus();
           }
@@ -407,28 +410,28 @@ class DCFModal {
 
       // Check modal wrapper for any additional classes
       if (modalWrapper.classList.length === DCFUtility.magicNumbers('int1') &&
-          modalWrapper.classList.contains('dcf-modal-wrapper')) {
+        modalWrapper.classList.contains('dcf-modal-wrapper')) {
         // If no custom classes are present, add default utility classes to modal wrapper
         modalWrapper.classList.add('dcf-relative', 'dcf-h-auto', 'dcf-overflow-y-auto');
       }
 
       // Check modal header for any additional classes
       if (modalHeader.classList.length === DCFUtility.magicNumbers('int1') &&
-          modalHeader.classList.contains('dcf-modal-header')) {
+        modalHeader.classList.contains('dcf-modal-header')) {
         // If no custom classes are present, add default utility classes to modal header
         modalHeader.classList.add('dcf-wrapper', 'dcf-pt-8', 'dcf-sticky', 'dcf-pin-top');
       }
 
       // Check each 'close' button for any additional classes
       if (btnCloseModal.classList.length === DCFUtility.magicNumbers('int1') &&
-          btnCloseModal.classList.contains('dcf-btn-close-modal')) {
+        btnCloseModal.classList.contains('dcf-btn-close-modal')) {
         // If no custom classes are present, add default utility classes to 'close' button
         btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
       }
 
       // Check modal content for any additional classes
       if (modalContent.classList.length === DCFUtility.magicNumbers('int1') &&
-          modalContent.classList.contains('dcf-modal-content')) {
+        modalContent.classList.contains('dcf-modal-content')) {
         // If no custom classes are present, add default utility classes to modal content
         modalContent.classList.add('dcf-wrapper', 'dcf-pb-8');
       }
