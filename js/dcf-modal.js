@@ -130,6 +130,10 @@ class DCFModal {
       return;
     }
 
+    // Trigger open modal event for this modal to allow event listeners to handle
+    const preOpenEventName = `ModalPreOpenEvent_${ modalId}`;
+    document.dispatchEvent(new CustomEvent(preOpenEventName));
+
     if (!this.isNonInertModal(thisModal)) {
       // Set elements outside of modal to be inert and hidden from screen readers
       this.nonModals.forEach((nonModal) => {
@@ -190,21 +194,21 @@ class DCFModal {
     if (modalWithNavToggleGroup) {
       thisModal.classList.add('dcf-z-modal-behind-nav-toggle-group');
     }
-    const keycodeTab = 9;
-    const tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' +
-      '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' +
-      'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' +
-      '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' +
-      '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' +
-      'video[controls]:not([hidden])');
-    const firstTabFocusEl = tabFocusEls[DCFUtility.magicNumbers('int0')];
-    const lastTabFocusEl = tabFocusEls[tabFocusEls.length - DCFUtility.magicNumbers('int1')];
 
     // Send focus to the modal
     thisModal.focus();
 
-    // Trap focus inside the modal content
-    thisModal.addEventListener('keydown', (event) => {
+    /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
+    const handleTrapFocus = (event) => {
+      const keycodeTab = 9;
+      const tabFocusEls = thisModal.querySelectorAll('button:not([hidden]):not([disabled]), ' +
+        '[href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), ' +
+        'select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), ' +
+        '[tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), ' +
+        '[contenteditable]:not([hidden]), audio[controls]:not([hidden]), ' +
+        'video[controls]:not([hidden])');
+      const firstTabFocusEl = tabFocusEls[DCFUtility.magicNumbers('int0')];
+      const lastTabFocusEl = tabFocusEls[tabFocusEls.length - DCFUtility.magicNumbers('int1')];
       let isTabPressed = event.key === 'Tab' || event.keyCode === keycodeTab;
 
       if (!isTabPressed) {
@@ -225,11 +229,14 @@ class DCFModal {
           firstTabFocusEl.focus();
         }
       }
-    });
+    };
+
+    // Trap focus inside the modal content
+    thisModal.addEventListener('keydown', handleTrapFocus);
 
     // Trigger open modal event for this modal to allow event listeners to handle
-    const eventName = `ModalOpenEvent_${ modalId}`;
-    document.dispatchEvent(new CustomEvent(eventName));
+    const openEventName = `ModalOpenEvent_${ modalId}`;
+    document.dispatchEvent(new CustomEvent(openEventName));
   }
 
   // Close modal
