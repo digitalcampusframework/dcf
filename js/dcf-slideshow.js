@@ -349,6 +349,7 @@ class SlideshowObj {
 
   slideObserverInit() {
     // onIntersection callback function
+    /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
     let onIntersection = (entries) => {
       Array.prototype.forEach.call(entries, (entry) => {
         if (!entry.intersectionRatio > DCFUtility.magicNumbers('int0')) {
