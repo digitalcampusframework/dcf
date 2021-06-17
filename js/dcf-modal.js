@@ -239,8 +239,8 @@ class DCFModal {
   }
 
   // Close modal
-  closeModal(modalaaaId) {
-    const navToggleGroup = document.getElementById('dcf-nav-toggle-group');
+  closeModal(modalId) {
+    const navToggleGroup = document.getElementById('dcf-nav-toggle-group')a;
     const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
     const thisModal = document.getElementById(modalId);
     let modalClosed = thisModal.getAttribute('aria-hidden') === 'true';
