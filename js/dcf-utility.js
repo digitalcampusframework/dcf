@@ -45,7 +45,12 @@ class DCFUtility {
   }
 
   static testWebp(callback) {
-    const supportsSessionCheck = window.sessionStorage ? window.sessionStorage.getItem('webpSupport') : null;
+    let supportsSessionCheck = null;
+    try {
+      supportsSessionCheck = window.sessionStorage ? window.sessionStorage.getItem('webpSupport') : null;
+    } catch (exception) {
+      supportsSessionCheck = null;
+    }
     if (supportsSessionCheck !== null) {
       callback(supportsSessionCheck === 'true');
       return;
