@@ -218,23 +218,26 @@ class DCFTabs {
       // Initially activate the first tab and reveal the first tab panel
       this.switchTab(null, tabs[DCFUtility.magicNumbers('int0')], false);
 
-      tabList.addEventListener('resetTabGroup', () => {
-        const newTab = tabs[DCFUtility.magicNumbers('int0')];
-        const oldTab = this.getCurrentTabByTab(newTab);
-        if (oldTab !== newTab) {
-          this.switchTab(oldTab, newTab, false);
-        }
-      });
+      if (this.useHashChange) {
+        // Handle resetTabGroup on tabList
+        tabList.addEventListener('resetTabGroup', () => {
+          const newTab = tabs[DCFUtility.magicNumbers('int0')];
+          const oldTab = this.getCurrentTabByTab(newTab);
+          if (oldTab !== newTab) {
+            this.switchTab(oldTab, newTab, false);
+          }
+        });
 
-      // Handle hash change
-      window.addEventListener('hashchange', () => {
-        const hash = window.location.hash;
-        if (hash) {
-          this.displayTabByHash(hash);
-        } else {
-          tabList.dispatchEvent(new Event('resetTabGroup'));
-        }
-      });
+        // Handle hash change
+        window.addEventListener('hashchange', () => {
+          const hash = window.location.hash;
+          if (hash) {
+            this.displayTabByHash(hash);
+          } else {
+            tabList.dispatchEvent(new Event('resetTabGroup'));
+          }
+        });
+      }
     });
 
     // Open tab on page load if valid
