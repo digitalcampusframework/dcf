@@ -22,15 +22,12 @@ class DCFTabs {
           hidePanel.hidden = true;
         }
       }
+
+      // Focus on new tab
+      newTab.focus();
+      newTab.setAttribute('tabindex', '0');
+      newTab.setAttribute('aria-selected', 'true');
     }
-
-    newTab.focus();
-    // Make the active tab focusable by the user (Tab key)
-    newTab.removeAttribute('tabindex');
-    // Set the selected state
-    newTab.setAttribute('aria-selected', 'true');
-    newTab.setAttribute('tabindex', '0');
-
 
     // show panel for newTab
     const showPanelID = newTab.getAttribute('data-panel-id');
@@ -115,7 +112,13 @@ class DCFTabs {
         tab.setAttribute('role', 'tab');
 
         // Add tabindex to each tab
-        tab.setAttribute('tabindex', '-1');
+        if (tabIndex === DCFUtility.magicNumbers('int0')) {
+          tab.setAttribute('tabindex', '0');
+          tab.setAttribute('aria-selected', 'true');
+        } else {
+          tab.setAttribute('tabindex', '-1');
+          tab.removeAttribute('aria-selected');
+        }
 
         // Add class to each tab's parent (list item)
         tab.parentNode.classList.add('dcf-tabs-list-item', 'dcf-mb-0');
@@ -215,23 +218,23 @@ class DCFTabs {
       // Initially activate the first tab and reveal the first tab panel
       this.switchTab(null, tabs[DCFUtility.magicNumbers('int0')], false);
 
-      window.addEventListener('resetTabGroup', () => {
+      tabList.addEventListener('resetTabGroup', () => {
         const newTab = tabs[DCFUtility.magicNumbers('int0')];
         const oldTab = this.getCurrentTabByTab(newTab);
         if (oldTab !== newTab) {
           this.switchTab(oldTab, newTab, false);
         }
       });
-    });
 
-    // Handle hash change
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash;
-      if (hash) {
-        this.displayTabByHash(hash);
-      } else {
-        window.dispatchEvent(new Event('resetTabGroup'));
-      }
+      // Handle hash change
+      window.addEventListener('hashchange', () => {
+        const hash = window.location.hash;
+        if (hash) {
+          this.displayTabByHash(hash);
+        } else {
+          tabList.dispatchEvent(new Event('resetTabGroup'));
+        }
+      });
     });
 
     // Open tab on page load if valid
