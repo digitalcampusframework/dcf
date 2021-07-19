@@ -1,3 +1,25 @@
+let dcfTabsObjects = [];
+/* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
+const handleDCFTabsHashChange = () => {
+  let resetTabGroupIDsProcessed = [];
+  Array.prototype.forEach.call(dcfTabsObjects, (dcfTabsObject) => {
+    const hash = window.location.hash;
+    if (hash) {
+      dcfTabsObject.displayTabByHash(hash);
+    } else {
+      Array.prototype.forEach.call(dcfTabsObject.tabGroups, (tabGroup) => {
+        const tabGroupID = tabGroup.getAttribute('id');
+        if (!resetTabGroupIDsProcessed.includes(tabGroupID)) {
+          resetTabGroupIDsProcessed.push(tabGroupID);
+          const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
+          tabList.dispatchEvent(new Event('resetTabGroup'));
+        }
+      });
+    }
+  });
+};
+window.addEventListener('hashchange', handleDCFTabsHashChange);
+
 class DCFTabs {
   constructor(tabGroups, options = {}) {
     this.tabGroups = tabGroups;
@@ -6,6 +28,7 @@ class DCFTabs {
     if (options.useHashChange === false) {
       this.useHashChange = false;
     }
+    dcfTabsObjects.push(this);
   }
 
   // Tab switching function
@@ -24,9 +47,7 @@ class DCFTabs {
       }
 
       // Focus on new tab
-      newTab.focus();
-      newTab.setAttribute('tabindex', '0');
-      newTab.setAttribute('aria-selected', 'true');
+      this.focusTab(newTab);
     }
 
     // show panel for newTab
@@ -50,6 +71,12 @@ class DCFTabs {
       // Set page hash
       this.setPageHash(newTab.getAttribute('href'));
     }
+  }
+
+  focusTab(tab) {
+    tab.focus();
+    tab.setAttribute('tabindex', '0');
+    tab.setAttribute('aria-selected', 'true');
   }
 
   getCurrentTabByTab(tab) {
@@ -83,6 +110,8 @@ class DCFTabs {
         const oldTab = this.getCurrentTabByTab(newTab);
         if (oldTab !== newTab) {
           this.switchTab(oldTab, newTab, false);
+        } else {
+          this.focusTab(newTab);
         }
       }
     }
@@ -225,16 +254,6 @@ class DCFTabs {
           const oldTab = this.getCurrentTabByTab(newTab);
           if (oldTab !== newTab) {
             this.switchTab(oldTab, newTab, false);
-          }
-        });
-
-        // Handle hash change
-        window.addEventListener('hashchange', () => {
-          const hash = window.location.hash;
-          if (hash) {
-            this.displayTabByHash(hash);
-          } else {
-            tabList.dispatchEvent(new Event('resetTabGroup'));
           }
         });
       }
