@@ -17,13 +17,13 @@
 }
 
 
-.dcf-blockquote p {
+.dcf-blockquote > p {
   font-size: $font-size-blockquote-p;
   padding-top: $padding-top-blockquote-p;
 }
 
 
-.dcf-blockquote p::after {
+.dcf-blockquote > p::after {
   content: close-quote;
 }
 
