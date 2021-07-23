@@ -1,4 +1,6 @@
-class DCFModal {
+import { DCFUtility } from './dcf-utility';
+
+export class DCFModal {
   constructor(modals, bodyScrollLock) {
     this.modals = modals;
     this.currentModal = null;

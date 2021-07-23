@@ -16,15 +16,15 @@
   },
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
-    "acorn": "^7.3.1",
-    "yargs-parser": ">=5.0.1",
+    "acorn": "^7.4.1",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-scss-lint": "^1.0.0",
     "hosted-git-info": "^2.8.9",
     "lodash": "^4.17.21",
     "minimist": ">=0.2.1 <1.0.0 || >=1.2.3",
-    "y18n": "^5.0.5"
+    "y18n": "^5.0.8",
+    "yargs-parser": "^20.2.9"
   },
   "engines": {
     "node": ">= 0.10.0"

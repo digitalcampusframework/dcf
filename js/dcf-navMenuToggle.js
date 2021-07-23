@@ -1,5 +1,7 @@
-class DCFNavMenuToggle {
-  constructor(bodyScrollLock) {
+import { DCFUtility } from './dcf-utility';
+
+export class DCFNavMenuToggle {
+  constructor(Headroom, bodyScrollLock) {
     this.disableBodyScroll = bodyScrollLock.disableBodyScroll;
     this.enableBodyScroll = bodyScrollLock.enableBodyScroll;
 

@@ -1,4 +1,4 @@
-class DCFUtility {
+export class DCFUtility {
   static magicNumbers(magicNumber) {
     const magicNumbers = {
       // integer values
