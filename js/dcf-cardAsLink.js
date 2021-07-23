@@ -1,6 +1,6 @@
 // Based on https://inclusive-components.design/cards/
 // Using mousedown and mouseup to allow selecting text without trigger click
-export class DCFCardAsLink {
+class DCFCardAsLink {
   constructor(cards) {
     this.cards = cards;
   }

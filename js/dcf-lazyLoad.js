@@ -1,4 +1,4 @@
-export class DCFLazyLoad {
+class DCFLazyLoad {
   constructor(itemList, observerConfig, classNames) {
     this.itemList = itemList;
     this.observerConfig = observerConfig;
