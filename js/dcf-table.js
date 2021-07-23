@@ -1,6 +1,4 @@
-import { DCFUtility } from './dcf-utility';
-
-export class DCFTable {
+class DCFTable {
   constructor(tables) {
     this.tables = tables;
   }

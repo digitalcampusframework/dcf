@@ -1,5 +1,3 @@
-import { DCFUtility } from './dcf-utility';
-
 let dcfTabsObjects = [];
 /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
 const handleDCFTabsHashChange = () => {
@@ -22,7 +20,7 @@ const handleDCFTabsHashChange = () => {
 };
 window.addEventListener('hashchange', handleDCFTabsHashChange);
 
-export class DCFTabs {
+class DCFTabs {
   constructor(tabGroups, options = {}) {
     this.tabGroups = tabGroups;
     this.tabHashLookup = {};
