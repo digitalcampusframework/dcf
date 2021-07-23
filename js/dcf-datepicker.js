@@ -1,4 +1,6 @@
-class DCFDatepicker {
+import { DCFUtility } from './dcf-utility';
+
+export class DCFDatepicker {
   constructor(datepicker) {
     // Define common magic numbers used
     this.int0 = DCFUtility.magicNumbers('int0');
