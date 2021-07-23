@@ -1,0 +1,78 @@
+///////////////////////////////////
+// CORE / COMPONENTS / NAV: TOGGLE
+///////////////////////////////////
+
+
+.dcf-nav-toggle-btn {
+  appearance: none;
+}
+
+@include mq(md, max, width) {
+
+  .dcf-nav-toggle-group {
+    background-color: var(--bg-nav-toggle-group, $default-bg-nav-toggle-group);
+    display: flex;
+    z-index: $z-nav-toggle-group;
+
+    // Browsers which partially support CSS Environment variables (iOS 11.0-11.2)
+    @supports (padding-bottom: constant(safe-area-inset-bottom)) {
+      --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: var(--safe-area-inset-bottom);
+    }
+
+    // Browsers which fully support CSS Environment variables (iOS 11.2+)
+    @supports (padding-bottom: env(safe-area-inset-bottom)) {
+      --safe-area-inset-bottom: env(safe-area-inset-bottom);
+      padding-bottom: var(--safe-area-inset-bottom);
+    }
+  }
+
+
+  .dcf-nav-toggle-btn {
+    flex-basis: 25%;
+  }
+
+
+  .dcf-nav-menu .dcf-nav-toggle-btn-menu {
+    display: none;
+  }
+
+  .headroom {
+    transition: transform 250ms ease-out !important;
+    will-change: transform;
+  }
+
+  //   .headroom--fixed {
+  //   	position: -webkit-fixed;
+  //   	position: fixed;
+  //   	z-index: 10;
+  //   	right: 0;
+  //   	left: 0;
+  //   	bottom: 0vh;
+  //   }
+
+
+  .headroom--pinned {
+    transform: translateY(0%);
+  }
+
+
+  .headroom--unpinned {
+    transform: translateY(100%);
+  }
+
+}
+
+
+@include mq(md, min, width) {
+
+  .dcf-nav-toggle-group {
+    display: none;
+  }
+
+
+  .dcf-nav-menu .dcf-nav-toggle-btn-menu {
+    display: flex;
+  }
+
+}

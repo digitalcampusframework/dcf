@@ -5,9 +5,9 @@
 
 // Color
 @mixin bg-transparent($imp:null) { background-color: transparent $imp; }
-@mixin bg-white($imp:null) { background-color: var(--bg-white) $imp; }
-@mixin bg-overlay-dark($imp:null) { background-color: var(--bg-overlay-dark) $imp; }
-@mixin bg-overlay-light($imp:null) { background-color: var(--bg-overlay-light) $imp; }
+@mixin bg-white($imp:null) { background-color: var(--bg-white, $default-bg-white) $imp; }
+@mixin bg-overlay-dark($imp:null) { background-color: var(--bg-overlay-dark, $default-bg-overlay-dark) $imp; }
+@mixin bg-overlay-light($imp:null) { background-color: var(--bg-overlay-light, $default-bg-overlay-light) $imp; }
 
 
 // Position

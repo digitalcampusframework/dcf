@@ -76,8 +76,8 @@
 .dcf-input-text, // TODO: deprecate .dcf-input-text?
 .dcf-form input:not([type="file"]):not([type="submit"]),
 .dcf-form textarea {
-  background-color: var(--bg-input);
-  border: $border-width-input $border-style-input var(--b-input);
+  background-color: var(--bg-input, $default-bg-input);
+  border: $border-width-input $border-style-input var(--b-input, $default-b-input);
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
   } @else {
