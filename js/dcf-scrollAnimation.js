@@ -1,4 +1,4 @@
-class DCFScrollAnimation {
+export class DCFScrollAnimation {
   constructor(itemList, observerConfig, animationClassNames) {
     this.itemList = itemList;
     this.observerConfig = observerConfig;

@@ -1,4 +1,6 @@
-class DCFSlideshow {
+import { DCFUtility } from './dcf-utility';
+
+export class DCFSlideshow {
   constructor(slideshows, uls, openCaption, closeCaption) {
     this.slideshows = slideshows;
     this.uls = uls;
