@@ -35,14 +35,37 @@ export class DCFScrollAnimation {
         }
       });
     };
+
+    /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
+    let onLoadIntersection = (entries) => {
+      const zero = 0;
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > zero) {
+          // entry is in view port on page load so add animation classes to entry
+          if (this.animationClassNames.length) {
+            this.animationClassNames.forEach((className) => entry.target.classList.add(className));
+          }
+        }
+        this.loadObserver.unobserve(entry.target);
+      });
+    };
+
     if (!this.itemList) {
       return;
     }
     this.itemsCount = this.itemList.length;
+
     if ('IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(onIntersection, this.observerConfig);
       this.itemList.forEach((item) => {
         this.observer.observe(item);
+      });
+
+      window.addEventListener('load', () => {
+        this.loadObserver = new IntersectionObserver(onLoadIntersection);
+        this.itemList.forEach((item) => {
+          this.loadObserver.observe(item);
+        });
       });
     }
   }
