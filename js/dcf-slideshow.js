@@ -539,7 +539,7 @@ class SlideshowObj {
   }
 }
 
-class DCFSlideshowTheme {
+export class DCFSlideshowTheme {
   constructor() {
     // Defaults
     this.slideBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-white' ];
