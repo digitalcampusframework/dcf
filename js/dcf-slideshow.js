@@ -799,8 +799,8 @@ export class DCFSlideshow {
       if (slideShow instanceof SlideshowObj) {
         slideShow.initTransitionPanel();
         slideShow.initControls();
-        slideShow.slides = this.slideDeck.querySelectorAll('li');
-        if (slideShow.slideshow.hasAttribute('data-shuffle') && this.slideshow.dataset.shuffle.toLowerCase() === 'true') {
+        slideShow.slides = slideShow.slideDeck.querySelectorAll('li');
+        if (slideShow.slideshow.hasAttribute('data-shuffle') && slideShow.slideshow.dataset.shuffle.toLowerCase() === 'true') {
           slideShow.shuffleSlides();
         }
         slideShow.slideObserverInit();
