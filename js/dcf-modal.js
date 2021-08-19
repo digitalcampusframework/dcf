@@ -348,7 +348,7 @@ export class DCFModal {
     // Listen for when 'esc' key is pressed
     document.addEventListener('keydown', (event) => {
       // Close the currently open modal when 'esc' key is pressed
-      if (event.which === DCFUtility.magicNumbers('escCode') && this.currentModal) {
+      if (DCFUtility.isKeyEvent(event, DCFUtility.keyEvents('escape')) && this.currentModal) {
         event.preventDefault();
         this.closeModal(this.currentModal);
       }
