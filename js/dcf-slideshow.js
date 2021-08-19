@@ -743,6 +743,12 @@ viewBox="0 0 24 24" aria-hidden="true">
       }
       break;
 
+    case 'figureCaptionBtnInnerHTML':
+      if (typeof value === 'string') {
+        this.figureCaptionBtnInnerHTML = value;
+      }
+      break;
+
     case 'figureCaptionToggleTransition':
       if (typeof value === 'function') {
         this.figureCaptionToggleTransition = value;
