@@ -17,6 +17,7 @@ class SlideshowObj {
     this.slideDeck = this.slideshow.querySelector('ul');
     this.uuid = DCFUtility.uuidv4();
     this.slideTransition = this.slideshow.dataset.transition;
+    this.slideTransition = null; // disable transitions for now
     this.slideshowName = `Slideshow ${this.slideshowIndex}`;
     this.slideAriaLabel = this.slideshow.getAttribute('aria-label');
     if (this.slideAriaLabel) {
