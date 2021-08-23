@@ -53,7 +53,7 @@
 
 // Required
 .dcf-required {
-  color: $color-required-label-light-mode;
+  color: var(--form-required);
   font-size: $font-size-required;
   @if ($font-style-required-italic) {
     font-style: italic;
