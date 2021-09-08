@@ -9,7 +9,7 @@
 
 
 .dcf-datepicker-dialog {
-  background-color: $white;
+  background-color: var(--bg-datepicker-dialog);
   @if ($border-radius-datepicker-dialog-roundrect) {
     border-radius: $roundrect;
   }
