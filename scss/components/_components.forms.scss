@@ -24,6 +24,9 @@
   @if (to-number($font-size-legend) != to-number(#{ms(0)}em)) {
     font-size: $font-size-legend;
   }
+  @if ($font-weight-legend-bold) {
+    font-weight: bold;
+  }
   margin-left: -#{$padding-legend}; // Left align legend with form elements
   padding-left: $padding-legend;
   padding-right: $padding-legend;
