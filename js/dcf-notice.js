@@ -96,7 +96,8 @@ export class DCFNotice {
     }
 
     /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
-    const handleNoticeClose = () => {
+    const handleNoticeClose = (click) => {
+      click.preventDefault();
       notice.remove();
     };
 

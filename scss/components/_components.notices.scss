@@ -1,6 +1,7 @@
 // Temp variables - start
 $cream: #fefdfa;
 @mixin cream($imp:null) { color: $cream $imp; }
+$gray-darkest: #2e2e2e;
 // Temp variables - end
 
 .dcf-notice {
