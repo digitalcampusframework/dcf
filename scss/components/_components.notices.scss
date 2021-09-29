@@ -1,0 +1,82 @@
+// Temp variables - start
+$cream: #fefdfa;
+@mixin cream($imp:null) { color: $cream $imp; }
+// Temp variables - end
+
+.dcf-notice {
+  @include cream;
+  @include mb-4;
+  @include p-4;
+  background-color: $color-info;
+  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/information.svg');
+  background-position: 1em 50%;
+  background-repeat: no-repeat;
+  background-size: $length-em-6;
+  border-radius: $roundrect;
+  box-shadow: 0 1px 1px 0 fade-out($gray-darkest, .5);
+}
+
+.dcf-notice.affirm {
+  background-color: $color-success;
+  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/check-circle-2.svg');
+}
+
+.dcf-notice.negate {
+  background-color: $color-danger;
+  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/cross-bubble.svg');
+}
+
+.dcf-notice.alert {
+  background-color: $color-warning;
+  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/alert-2.svg');
+}
+
+.dcf-notice a,
+.dcf-notice a:hover {
+  @include cream;
+}
+
+.dcf-notice .message {
+  @include pl-8;
+  @include pr-5;
+}
+
+.dcf-notice .message * {
+  color: inherit;
+  margin: 0;
+}
+
+.dcf-notice .message h4,
+.dcf-notice .message .title {
+  @include ls-1;
+  @include lh-3;
+  text-transform: uppercase;
+}
+
+.dcf-notice .close {
+  float: right;
+}
+
+.dcf-notice .close a,
+.dcf-notice .close a:hover {
+  @include h-4;
+  @include w-4;
+  background: transparent url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/delete-1.svg') 50% 50% / contain no-repeat;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  text-indent: -9999em;
+  z-index: 1;
+}
+
+.dcf-notice.overlay {
+  left: $length-vw-2;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: #{ms(28)}em;
+  position: absolute;
+  right: $length-vw-2;
+  text-align: left;
+  top: #{ms(8)}em;
+  z-index: 999; // Ensure that the notice is above all other elements
+}
