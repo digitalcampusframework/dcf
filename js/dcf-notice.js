@@ -34,23 +34,22 @@ export class DCFNotice {
   }
 
   createNotice(title, message, type = '', overlay = '') {
-    let closeLink = document.createElement('A');
-    closeLink.setAttribute('href', '#');
-    closeLink.innerText = 'Close this notice';
+    let closeButton = document.createElement('BUTTOM');
+    closeButton.innerText = 'Close this notice';
 
     let close = document.createElement('DIV');
-    close.classList.add('close');
-    close.append(closeLink);
+    close.classList.add('dcf-notice-close');
+    close.append(closeButton);
 
     let messageTitle = document.createElement('P');
-    messageTitle.classList.add('title');
+    messageTitle.classList.add('dcf-notice-title');
     messageTitle.innerText = title;
 
     let messageMsg = document.createElement('P');
     messageMsg.innerHTML = message;
 
     let messageContainer = document.createElement('DIV');
-    messageContainer.classList.add('message');
+    messageContainer.classList.add('dcf-notice-message');
     messageContainer.append(messageTitle);
     messageContainer.append(messageMsg);
 
@@ -96,13 +95,12 @@ export class DCFNotice {
     }
 
     /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
-    const handleNoticeClose = (click) => {
-      click.preventDefault();
+    const handleNoticeClose = () => {
       notice.remove();
     };
 
     const int0 = 0;
-    const close = notice.getElementsByClassName('close');
+    const close = notice.getElementsByClassName('dcf-notice-close');
     if (close[int0]) {
       close[int0].removeEventListener('click', handleNoticeClose);
       close[int0].addEventListener('click', handleNoticeClose);

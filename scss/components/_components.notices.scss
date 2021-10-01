@@ -1,6 +1,4 @@
 // Temp variables - start
-$cream: #fefdfa;
-@mixin cream($imp:null) { color: $cream $imp; }
 $gray-darkest: #2e2e2e;
 // Temp variables - end
 
@@ -17,49 +15,44 @@ $gray-darkest: #2e2e2e;
   box-shadow: 0 1px 1px 0 fade-out($gray-darkest, .5);
 }
 
-.dcf-notice.affirm {
+.dcf-notice.dcf-notice-affirm {
   background-color: $color-success;
   background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/check-circle-2.svg');
 }
 
-.dcf-notice.negate {
+.dcf-notice.dcf-notice-negate {
   background-color: $color-danger;
   background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/cross-bubble.svg');
 }
 
-.dcf-notice.alert {
+.dcf-notice.dcf-notice-alert {
   background-color: $color-warning;
   background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/alert-2.svg');
 }
 
-.dcf-notice a,
-.dcf-notice a:hover {
-  @include cream;
-}
-
-.dcf-notice .message {
+.dcf-notice .dcf-notice-message {
   @include pl-8;
   @include pr-5;
 }
 
-.dcf-notice .message * {
+.dcf-notice .dcf-notice-message * {
   color: inherit;
   margin: 0;
 }
 
-.dcf-notice .message h4,
-.dcf-notice .message .title {
+.dcf-notice .dcf-notice-message h4,
+.dcf-notice .dcf-notice-message .dcf-notice-title {
   @include ls-1;
   @include lh-3;
   text-transform: uppercase;
 }
 
-.dcf-notice .close {
+.dcf-notice .dcf-notice-close {
   float: right;
 }
 
-.dcf-notice .close a,
-.dcf-notice .close a:hover {
+.dcf-notice .dcf-notice-close a,
+.dcf-notice .dcf-notice-close a:hover {
   @include h-4;
   @include w-4;
   background: transparent url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/delete-1.svg') 50% 50% / contain no-repeat;
