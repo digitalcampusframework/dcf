@@ -34,7 +34,7 @@ export class DCFTabs {
   }
 
   // Tab switching function
-  switchTab(oldTab, newTab, setPageHash = false) {
+  switchTab(oldTab, newTab, setPageHash = false, scrollToPanel = false) {
     if (oldTab) {
       oldTab.removeAttribute('aria-selected');
       oldTab.setAttribute('tabindex', '-1');
@@ -58,7 +58,9 @@ export class DCFTabs {
       const showPanel = document.getElementById(showPanelID);
       if (showPanel) {
         showPanel.hidden = false;
-        showPanel.scrollIntoView();
+        if (scrollToPanel) {
+          showPanel.scrollIntoView();
+        }
       } else {
         // eslint-disable-next-line no-console
         console.error(`DCF Tabs: The tab panel with id ${showPanelID} is not associated with a tab.`);
@@ -111,7 +113,7 @@ export class DCFTabs {
         const newTab = this.tabHashLookup[hash];
         const oldTab = this.getCurrentTabByTab(newTab);
         if (oldTab !== newTab) {
-          this.switchTab(oldTab, newTab, false);
+          this.switchTab(oldTab, newTab, false, true);
         } else {
           this.focusTab(newTab);
         }
