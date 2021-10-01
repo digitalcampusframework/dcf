@@ -3,7 +3,6 @@ $gray-darkest: #2e2e2e;
 // Temp variables - end
 
 .dcf-notice {
-  @include cream;
   @include mb-4;
   @include p-4;
   background-color: $color-info;
