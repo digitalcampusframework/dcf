@@ -46,22 +46,6 @@ $gray-darkest: #2e2e2e;
   text-transform: uppercase;
 }
 
-.dcf-notice .dcf-notice-close {
-  float: right;
-}
-
-.dcf-notice .dcf-notice-close a,
-.dcf-notice .dcf-notice-close a:hover {
-  @include h-4;
-  @include w-4;
-  background: transparent url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/delete-1.svg') 50% 50% / contain no-repeat;
-  display: block;
-  position: relative;
-  text-decoration: none;
-  text-indent: -9999em;
-  z-index: 1;
-}
-
 .dcf-notice.overlay {
   left: $length-vw-2;
   margin-left: auto;
