@@ -56,7 +56,7 @@
 
 // Required
 .dcf-required {
-  color: var(--form-required);
+  color: var(--required);
   font-size: $font-size-required;
   @if ($font-style-required-italic) {
     font-style: italic;
