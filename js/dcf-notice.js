@@ -9,38 +9,61 @@ const typeNegate = 'dcf-notice-negate';
 const overlayHeaderElement = document.getElementById(overlayHeader);
 const overlayMaincontentElement = document.getElementById(overlayMaincontent);
 
-const getCloseButton = (notice) => {
-  /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
-  const handleNoticeClose = () => {
-    notice.remove();
-  };
+export class DCFNoticeTheme {
+  constructor() {
+    // Defaults
+    this.noticeContainerClassList = [ 'dcf-relative' ];
+    this.closeNoticeContainerClassList = [ 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1' ];
+    this.closeNoticeBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-white' ];
+    this.closeNoticeBtnInnerHTML = `<span class="dcf-sr-only">Close this notice</span>
+<svg class="dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+    <path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>
+    <path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>
+</svg>`;
+  }
 
-  let closeSROnly = document.createElement('span');
-  closeSROnly.classList.add('dcf-sr-only');
-  closeSROnly.innerText = 'Close this notice';
+  setThemeVariable(themeVariableName, value) {
+    switch (themeVariableName) {
+    case 'noticeContainerClassList':
+      if (Array.isArray(value)) {
+        this.noticeContainerClassList = value;
+      }
+      break;
 
-  let closeSVG = document.createElement('svg');
-  closeSVG.classList.add('dcf-fill-current');
-  closeSVG.setAttribute('aria-hidden', 'true');
-  closeSVG.setAttribute('focusable', 'false');
-  closeSVG.setAttribute('height', '16');
-  closeSVG.setAttribute('width', '16');
-  closeSVG.setAttribute('viewBox', '0 0 24 24');
-  const path1 = '<path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>';
-  const path2 = '<path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>';
-  closeSVG.innerHTML = `${path1}${path2}`;
+    case 'closeNoticeContainerClassList':
+      if (Array.isArray(value)) {
+        this.closeNoticeContainerClassList = value;
+      }
+      break;
 
-  let closeButton = document.createElement('button');
-  closeButton.classList.add('dcf-btn', 'dcf-btn-tertiary');
-  closeButton.removeEventListener('click', handleNoticeClose);
-  closeButton.addEventListener('click', handleNoticeClose);
-  closeButton.append(closeSROnly);
-  closeButton.append(closeSVG);
+    case 'closeNoticeBtnClassList':
+      if (Array.isArray(value)) {
+        this.closeNoticeBtnClassList = value;
+      }
+      break;
 
-  return closeButton;
-};
+    case 'closeNoticeBtnInnerHTML':
+      if (typeof value === 'string') {
+        this.closeNoticeBtnInnerHTML = value;
+      }
+      break;
+
+    default:
+      // Invalid variable so ignore
+      break;
+    }
+  }
+}
 
 export class DCFNotice {
+  constructor(theme) {
+    if (theme instanceof DCFNoticeTheme) {
+      this.theme = theme;
+    } else {
+      this.theme = new DCFNoticeTheme();
+    }
+  }
+
   initialize() {
     const notices = document.getElementsByClassName('dcf-notice');
     Array.prototype.forEach.call(notices, (notice) => {
@@ -108,6 +131,10 @@ export class DCFNotice {
     notice.setAttribute('role', 'alertdialog');
     notice.setAttribute('aria-labelledby', titleId);
 
+    if (this.theme.noticeContainerClassList) {
+      notice.classList.add(...this.theme.noticeContainerClassList);
+    }
+
     // set notice title
     const titles = notice.getElementsByTagName('h2');
     const title = titles[int0] || document.createElement('h2');
@@ -146,9 +173,28 @@ export class DCFNotice {
       overlayMaincontentElement.prepend(notice);
     }
 
+    /* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
+    const handleNoticeClose = () => {
+      notice.remove();
+    };
+
+    let closeButton = document.createElement('button');
+    closeButton.classList.add('dcf-btn', 'dcf-btn-tertiary');
+    if (this.theme.closeNoticeBtnClassList) {
+      closeButton.classList.add(...this.theme.closeNoticeBtnClassList);
+    }
+    if (this.theme.closeNoticeBtnInnerHTML) {
+      closeButton.innerHTML = this.theme.closeNoticeBtnInnerHTML;
+    }
+    closeButton.removeEventListener('click', handleNoticeClose);
+    closeButton.addEventListener('click', handleNoticeClose);
+
     let closeNotice = document.createElement('div');
     closeNotice.classList.add('dcf-notice-close');
-    closeNotice.append(getCloseButton(notice));
+    if (this.theme.closeNoticeContainerClassList) {
+      closeNotice.classList.add(...this.theme.closeNoticeContainerClassList);
+    }
+    closeNotice.append(closeButton);
     notice.append(closeNotice);
   }
 }
