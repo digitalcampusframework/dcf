@@ -56,12 +56,13 @@
 
 // Required
 .dcf-required {
-  color: var(--form-required);
+  color: var(--required);
   font-size: $font-size-required;
   @if ($font-style-required-italic) {
     font-style: italic;
   }
-  padding-left: $padding-left-required;
+  margin-left: $margin-left-required;
+  padding: $padding-top-required $padding-right-required $padding-bottom-required $padding-left-required;
 }
 
 
