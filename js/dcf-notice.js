@@ -12,13 +12,14 @@ const overlayMaincontentElement = document.getElementById(overlayMaincontent);
 export class DCFNoticeTheme {
   constructor() {
     // Defaults
-    this.noticeContainerClassList = [ 'dcf-relative' ];
-    this.closeNoticeContainerClassList = [ 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1' ];
-    this.closeNoticeBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-white' ];
+    this.noticeContainerClassList = [ 'dcf-relative', 'dcf-w-max-xl', 'dcf-ml-auto', 'dcf-mr-auto', 'dcf-mb-6', 'dcf-rounded' ];
+    this.closeNoticeContainerClassList = [ 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right' ];
+    this.closeNoticeBtnClassList = [ 'dcf-btn', 'dcf-btn-inverse-tertiary', 'dcf-lh-1' ];
     this.closeNoticeBtnInnerHTML = `<span class="dcf-sr-only">Close this notice</span>
 <svg class="dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
-    <path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>
-    <path d="M1,13h22c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,12.6,0.4,13,1,13z"></path>
+   <path d="M23.707 22.293L13.414 12 23.706 1.707A.999.999 0 1022.292.293L12 10.586 1.706.292A1 1 0 00.292
+         1.706L10.586 12 .292 22.294a1 1 0 101.414 1.414L12 13.414l10.293 10.292a.999.999 0 101.414-1.413z"/>
+   <path fill="none" d="M0 0h24v24H0z"/>
 </svg>`;
   }
 
@@ -71,27 +72,27 @@ export class DCFNotice {
     });
   }
 
-  appendNotice(parent, title, message, type = '', overlay = '') {
+  appendNotice(parent, heading, message, type = '', overlay = '') {
     let notice = false;
     if (parent instanceof Element) {
-      notice = this.createNotice(title, message, type, overlay);
+      notice = this.createNotice(heading, message, type, overlay);
       parent.append(notice);
     }
     return notice;
   }
 
-  prependNotice(parent, title, message, type = '', overlay = '') {
+  prependNotice(parent, heading, message, type = '', overlay = '') {
     let notice = false;
     if (parent instanceof Element) {
-      notice = this.createNotice(title, message, type, overlay);
+      notice = this.createNotice(heading, message, type, overlay);
       parent.prepend(notice);
     }
     return notice;
   }
 
-  createNotice(title, message, type = '', overlay = '') {
-    let noticeTitle = document.createElement('h2');
-    noticeTitle.innerText = title;
+  createNotice(heading, message, type = '', overlay = '') {
+    let noticeHeading = document.createElement('h2');
+    noticeHeading.innerText = heading;
 
     let noticeMsg = document.createElement('P');
     noticeMsg.innerHTML = message;
@@ -107,7 +108,7 @@ export class DCFNotice {
       notice.setAttribute('data-overlay', overlay);
     }
 
-    notice.append(noticeTitle);
+    notice.append(noticeHeading);
     notice.append(noticeMsg);
 
     this.initNotice(notice);
@@ -125,31 +126,31 @@ export class DCFNotice {
     // Get or Set notice id info
     const idPrefix = 'dcf-notice-';
     notice.setAttribute('id', DCFUtility.checkSetElementId(notice, idPrefix.concat(DCFUtility.uuidv4())));
-    const titleId = `${notice.getAttribute('id')}-title`;
+    const headingId = `${notice.getAttribute('id')}-heading`;
 
     // Add other notice attributes
     notice.setAttribute('role', 'alertdialog');
-    notice.setAttribute('aria-labelledby', titleId);
+    notice.setAttribute('aria-labelledby', headingId);
 
     if (this.theme.noticeContainerClassList) {
       notice.classList.add(...this.theme.noticeContainerClassList);
     }
 
-    // set notice title
-    const titles = notice.getElementsByTagName('h2');
-    const title = titles[int0] || document.createElement('h2');
-    title.setAttribute('id', titleId);
-    title.classList.add('dcf-notice-title');
+    // set notice heading
+    const headings = notice.getElementsByTagName('h2');
+    const heading = headings[int0] || document.createElement('h2');
+    heading.classList.add('dcf-notice-heading', 'dcf-txt-h6', 'dcf-mb-0');
+    heading.setAttribute('id', headingId);
 
     // set notice message
     const messages = notice.getElementsByTagName('p');
     const message = messages[int0] || document.createElement('p');
-    message.classList.add('dcf-notice-message');
+    message.classList.add('dcf-notice-message', 'dcf-txt-sm');
 
     // build notice body
     const noticeBody = document.createElement('div');
     noticeBody.classList.add('dcf-notice-body');
-    noticeBody.append(title);
+    noticeBody.append(heading);
     noticeBody.append(message);
 
     // set notice body
@@ -179,7 +180,6 @@ export class DCFNotice {
     };
 
     let closeButton = document.createElement('button');
-    closeButton.classList.add('dcf-btn', 'dcf-btn-tertiary');
     if (this.theme.closeNoticeBtnClassList) {
       closeButton.classList.add(...this.theme.closeNoticeBtnClassList);
     }
