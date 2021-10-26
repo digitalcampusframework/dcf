@@ -165,6 +165,11 @@ export class DCFNotice {
     notice.setAttribute('role', 'alertdialog');
     notice.setAttribute('aria-labelledby', headingId);
 
+    if (!notice.classList.contains(typeInfo) && !notice.classList.contains(typeSuccess) &&
+      !notice.classList.contains(typeWarning) && !notice.classList.contains(typeDanger)) {
+      notice.classList.add(typeInfo);
+    }
+
     if (this.theme.noticeContainerClassList) {
       notice.classList.add(...this.theme.noticeContainerClassList);
     }
