@@ -1,59 +1,104 @@
-// Temp variables - start
-$gray-darkest: #2e2e2e;
-// Temp variables - end
+/////////////////////////////
+// CORE / COMPONENTS / NOTICE
+/////////////////////////////
 
-.dcf-notice {
-  @include mb-4;
-  @include p-4;
-  background-color: $color-info;
-  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/information.svg');
-  background-position: 1em 50%;
-  background-repeat: no-repeat;
-  background-size: $length-em-6;
-  border-radius: $roundrect;
-  box-shadow: 0 1px 1px 0 fade-out($gray-darkest, .5);
+
+// Remove margin-bottom from the last child of the notice message (e.g., a paragraph)
+.dcf-notice-message > :last-child {
+  @include mb-0;
 }
 
-.dcf-notice.dcf-notice-affirm {
-  background-color: $color-success;
-  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/check-circle-2.svg');
+.dcf-notice-icon {
+  grid-area: 2 / 2 / 3 / 3;
 }
 
-.dcf-notice.dcf-notice-negate {
-  background-color: $color-danger;
-  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/cross-bubble.svg');
+.dcf-notice-close {
+  padding-right: #{ms(-10)}em;
 }
 
-.dcf-notice.dcf-notice-alert {
-  background-color: $color-warning;
-  background-image: url('https://unlcms.unl.edu/wdn/templates_5.3/js/js-css/img/alert-2.svg');
+
+@media (max-width: #{ms(24)}em) {
+
+  .dcf-notice {
+    grid-template-columns: $length-em-5 $length-em-6 1fr auto $length-em-5;
+    grid-template-rows: $length-em-5 $length-em-6 $length-em-3 auto $length-em-2 $length-em-5;
+  }
+
+  .dcf-notice-body {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+  .dcf-notice-close {
+    @include pt-3;
+    grid-area: 1 / -3 / 3 / -1;
+  }
+
 }
 
-.dcf-notice .dcf-notice-message {
-  @include pl-8;
-  @include pr-5;
+
+@media (min-width: #{ms(24)}em) {
+
+  .dcf-notice {
+    grid-template-columns: $length-em-5 $length-em-7 $length-em-4 1fr $length-em-4 auto;
+    grid-template-rows: $length-em-5 auto $length-em-5;
+  }
+
+  .dcf-notice-body {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+
+  .dcf-notice-close {
+    grid-area: 1 / -2 / 3 / -1;
+    padding-top: #{ms(-10)}em;
+  }
+
 }
 
-.dcf-notice .dcf-notice-message * {
-  color: inherit;
-  margin: 0;
+
+// Info
+.dcf-notice-info {
+  background-color: var(--bg-notice-info);
 }
 
-.dcf-notice .dcf-notice-message h4,
-.dcf-notice .dcf-notice-message .dcf-notice-title {
-  @include ls-1;
-  @include lh-3;
-  text-transform: uppercase;
+.dcf-notice-info .dcf-notice-message {
+  color: var(--notice-info);
 }
 
-.dcf-notice.overlay {
-  left: $length-vw-2;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: #{ms(28)}em;
-  position: absolute;
-  right: $length-vw-2;
-  text-align: left;
-  top: #{ms(8)}em;
-  z-index: 999; // Ensure that the notice is above all other elements
+
+// Success
+.dcf-notice-success {
+  background-color: var(--bg-notice-success);
+}
+
+.dcf-notice-success .dcf-notice-message {
+  color: var(--notice-success);
+}
+
+
+// Warning
+.dcf-notice-warning {
+  background-color: var(--bg-notice-warning);
+}
+
+.dcf-notice-warning .dcf-notice-message {
+  color: var(--notice-warning);
+}
+
+
+// Danger
+.dcf-notice-danger {
+  background-color: var(--bg-notice-danger);
+}
+
+.dcf-notice-danger .dcf-notice-message {
+  color: var(--notice-danger);
+}
+
+
+// Overlay
+.dcf-notice-overlay {
+  left: $left-notices-overlay;
+  right: $right-notices-overlay;
+  top: $top-notices-overlay;
+  z-index: $z-modal-behind-nav-toggle-group;
 }
