@@ -1,0 +1,104 @@
+/////////////////////////////
+// CORE / COMPONENTS / NOTICE
+/////////////////////////////
+
+
+// Remove margin-bottom from the last child of the notice message (e.g., a paragraph)
+.dcf-notice-message > :last-child {
+  @include mb-0;
+}
+
+.dcf-notice-icon {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.dcf-notice-close {
+  padding-right: #{ms(-10)}em;
+}
+
+
+@media (max-width: #{ms(24)}em) {
+
+  .dcf-notice {
+    grid-template-columns: $length-em-5 $length-em-6 1fr auto $length-em-5;
+    grid-template-rows: $length-em-5 $length-em-6 $length-em-3 auto $length-em-2 $length-em-5;
+  }
+
+  .dcf-notice-body {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+  .dcf-notice-close {
+    @include pt-3;
+    grid-area: 1 / -3 / 3 / -1;
+  }
+
+}
+
+
+@media (min-width: #{ms(24)}em) {
+
+  .dcf-notice {
+    grid-template-columns: $length-em-5 $length-em-7 $length-em-4 1fr $length-em-4 auto;
+    grid-template-rows: $length-em-5 auto $length-em-5;
+  }
+
+  .dcf-notice-body {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+
+  .dcf-notice-close {
+    grid-area: 1 / -2 / 3 / -1;
+    padding-top: #{ms(-10)}em;
+  }
+
+}
+
+
+// Info
+.dcf-notice-info {
+  background-color: var(--bg-notice-info);
+}
+
+.dcf-notice-info .dcf-notice-message {
+  color: var(--notice-info);
+}
+
+
+// Success
+.dcf-notice-success {
+  background-color: var(--bg-notice-success);
+}
+
+.dcf-notice-success .dcf-notice-message {
+  color: var(--notice-success);
+}
+
+
+// Warning
+.dcf-notice-warning {
+  background-color: var(--bg-notice-warning);
+}
+
+.dcf-notice-warning .dcf-notice-message {
+  color: var(--notice-warning);
+}
+
+
+// Danger
+.dcf-notice-danger {
+  background-color: var(--bg-notice-danger);
+}
+
+.dcf-notice-danger .dcf-notice-message {
+  color: var(--notice-danger);
+}
+
+
+// Overlay
+.dcf-notice-overlay {
+  left: $left-notices-overlay;
+  right: $right-notices-overlay;
+  top: $top-notices-overlay;
+  z-index: $z-modal-behind-nav-toggle-group;
+}
