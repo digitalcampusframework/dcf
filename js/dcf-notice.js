@@ -1,6 +1,6 @@
 import { DCFUtility } from './dcf-utility';
 
-const overlayMatch = 'overlay';
+const overlayMatch = 'dcf-notice-overlay';
 const overlayHeader = 'dcf-header';
 const overlayMaincontent = 'dcf-main';
 const typeInfo = 'dcf-notice-info';
@@ -207,6 +207,7 @@ export class DCFNotice {
     let overlayClass = `${overlayMatch}-${overlayHeader}`;
     if (notice.dataset.overlay === overlayHeader || notice.classList.contains(overlayClass)) {
       isOverlay = true;
+      notice.classList.add('dcf-absolute');
       notice.classList.add(overlayMatch);
       notice.classList.remove(overlayClass);
       overlayHeaderElement.append(notice);
@@ -215,6 +216,7 @@ export class DCFNotice {
     overlayClass = `${overlayMatch}-${overlayMaincontent}`;
     if (!isOverlay && (notice.dataset.overlay === overlayMaincontent || notice.classList.contains(overlayClass))) {
       isOverlay = true;
+      notice.classList.add('dcf-absolute');
       notice.classList.add(overlayMatch);
       notice.classList.remove(overlayClass);
       overlayMaincontentElement.prepend(notice);
