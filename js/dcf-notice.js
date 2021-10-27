@@ -91,7 +91,7 @@ export class DCFNotice {
     });
   }
 
-  appendNotice(parent, heading, message, type = '', overlay = '') {
+  appendNotice(parent, heading, message, type = typeInfo, overlay = '') {
     let notice = false;
     if (parent instanceof Element) {
       notice = this.createNotice(heading, message, type, overlay);
@@ -100,7 +100,7 @@ export class DCFNotice {
     return notice;
   }
 
-  prependNotice(parent, heading, message, type = '', overlay = '') {
+  prependNotice(parent, heading, message, type = typeInfo, overlay = '') {
     let notice = false;
     if (parent instanceof Element) {
       notice = this.createNotice(heading, message, type, overlay);
@@ -109,7 +109,7 @@ export class DCFNotice {
     return notice;
   }
 
-  createNotice(heading, message, type = '', overlay = '') {
+  createNotice(heading, message, type = typeInfo, overlay = '') {
     let noticeHeading = document.createElement('h2');
     noticeHeading.innerText = heading;
 
