@@ -150,7 +150,7 @@ export class DCFNotice {
   }
 
   initNotice(notice) {
-    if (!notice.classList.contains('dcf-notice')) {
+    if (!notice.classList.contains('dcf-notice') || notice.classList.contains('dcf-notice-initialized')) {
       return;
     }
 
@@ -242,5 +242,8 @@ export class DCFNotice {
     closeNotice.append(closeButton);
 
     notice.append(closeNotice);
+
+    notice.classList.add('dcf-notice-initialized');
+    notice.removeAttribute('hidden');
   }
 }
