@@ -113,10 +113,10 @@ export class DCFNotice {
     let noticeHeading = document.createElement('h2');
     noticeHeading.innerText = heading;
 
-    let noticeMsg = document.createElement('P');
+    let noticeMsg = document.createElement('div');
     noticeMsg.innerHTML = message;
 
-    let notice = document.createElement('DIV');
+    let notice = document.createElement('div');
     notice.classList.add('dcf-notice');
 
     if (type === typeInfo || type === typeSuccess || type === typeWarning || type === typeDanger) {
@@ -186,11 +186,12 @@ export class DCFNotice {
     heading.setAttribute('id', headingId);
 
     // set notice message
-    const messages = notice.getElementsByTagName('p');
-    const message = document.createElement('div');
-    const messageContent = messages[int0] || document.createElement('p');
+    const messages = notice.getElementsByTagName('div');
+    let message = document.createElement('div');
+    if (messages[int0]) {
+      message = messages[int0].cloneNode(true);
+    }
     message.classList.add('dcf-notice-message', 'dcf-txt-sm');
-    message.append(messageContent);
 
     // build notice body
     const noticeBody = document.createElement('div');
@@ -227,21 +228,24 @@ export class DCFNotice {
       notice.remove();
     };
 
-    let closeButton = document.createElement('button');
-    if (this.theme.closeNoticeBtnClassList) {
-      closeButton.classList.add(...this.theme.closeNoticeBtnClassList);
-    }
-    if (this.theme.closeNoticeBtnInnerHTML) {
-      closeButton.innerHTML = this.theme.closeNoticeBtnInnerHTML;
-    }
-    closeButton.removeEventListener('click', handleNoticeClose);
-    closeButton.addEventListener('click', handleNoticeClose);
+    // Add close button unless data-no-close-button exists
+    if (notice.dataset.noCloseButton === undefined) {
+      let closeButton = document.createElement('button');
+      if (this.theme.closeNoticeBtnClassList) {
+        closeButton.classList.add(...this.theme.closeNoticeBtnClassList);
+      }
+      if (this.theme.closeNoticeBtnInnerHTML) {
+        closeButton.innerHTML = this.theme.closeNoticeBtnInnerHTML;
+      }
+      closeButton.removeEventListener('click', handleNoticeClose);
+      closeButton.addEventListener('click', handleNoticeClose);
 
-    let closeNotice = document.createElement('div');
-    closeNotice.classList.add('dcf-notice-close');
-    closeNotice.append(closeButton);
+      let closeNotice = document.createElement('div');
+      closeNotice.classList.add('dcf-notice-close');
+      closeNotice.append(closeButton);
 
-    notice.append(closeNotice);
+      notice.append(closeNotice);
+    }
 
     notice.classList.add('dcf-notice-initialized');
     notice.removeAttribute('hidden');
