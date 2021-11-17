@@ -1,0 +1,54 @@
+//////////////////////////////////
+// CORE / COMPONENTS / PAGINATION
+/////////////////////////////////
+
+.dcf-pagination {
+
+  li {
+    @include p-2;
+    border: 1px solid var(--b, $default-b);
+    display: inline-block;
+    font-size: $font-size-pagination;
+    transition: border ease-out .2s;
+    vertical-align: middle;
+
+    &:hover {
+      border: 1px solid var(--active, $default-active);
+      color: var(--active, $default-active);
+    }
+
+    a {
+      color: var(--link, $default-link);
+      display: block;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+      color: var(--active, $default-active);
+    }
+
+    &.prev a::before {
+      content: '\2190\00a0';
+    }
+
+    &.next a::after {
+      content: '\00a0\2192';
+    }
+
+    &.ellipsis {
+      @include p-0;
+      border: 0;
+    }
+
+    &.ellipsis::before {
+      content: '\2026';
+    }
+
+    &.selected {
+      background-color: var(--darker-gray, $default-darker-gray);
+      border: 1px solid  var(--darker-gray, $default-darker-gray);
+      color: var(--bg-white, $default-bg-white);
+    }
+  }
+}
