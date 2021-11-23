@@ -4,11 +4,20 @@ export class DCFPagination {
   }
 
   initialize() {
+    const int1 = 1;
+    const int0 = 0;
+
     Array.prototype.forEach.call(this.PaginationNavs, (nav) => {
       nav.setAttribute('role', 'navigation');
       nav.setAttribute('aria-label', 'Pagination Navigation');
 
-      const list = nav.getElementsByTagName('ol');
+      const lists = nav.getElementsByTagName('ol');
+      if (lists.length !== int1) {
+        // invalid format so bail
+        return;
+      }
+
+      let list = lists[int0];
       list.classList.remove('dcf-list-inline');
       list.classList.add('dcf-list-bare', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-ai-center', 'cf-col-gap-2', 'dcf-row-gap-2');
 
