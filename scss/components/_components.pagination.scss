@@ -2,53 +2,40 @@
 // CORE / COMPONENTS / PAGINATION
 /////////////////////////////////
 
-.dcf-pagination {
+.dcf-pagination-selected .dcf-btn {
+  cursor: not-allowed !important;
+}
 
-  li {
-    @include p-2;
-    border: 1px solid var(--b, $default-b);
-    display: inline-block;
-    font-size: $font-size-pagination;
-    transition: border ease-out .2s;
-    vertical-align: middle;
+.dcf-pagination span {
+  padding: .75em .43em;
+}
 
-    &:hover {
-      border: 1px solid var(--active, $default-active);
-      color: var(--active, $default-active);
-    }
+.dcf-pagination li {
+  margin: 0;
+}
 
-    a {
-      color: var(--link, $default-link);
-      display: block;
-      text-decoration: none;
-    }
+.dcf-pagination-first::before,
+.dcf-pagination-prev::before {
+  margin-right: .18em;
+}
 
-    a:hover,
-    a:active {
-      color: var(--active, $default-active);
-    }
+.dcf-pagination-first::before {
+  content: '\21E4';
+}
 
-    &.prev a::before {
-      content: '\2190\00a0';
-    }
+.dcf-pagination-prev::before {
+  content: '\2190';
+}
 
-    &.next a::after {
-      content: '\00a0\2192';
-    }
+.dcf-pagination-next::after,
+.dcf-pagination-last::after {
+  margin-left: .18em;
+}
 
-    &.ellipsis {
-      @include p-0;
-      border: 0;
-    }
+.dcf-pagination-next::after {
+  content: '\2192';
+}
 
-    &.ellipsis::before {
-      content: '\2026';
-    }
-
-    &.selected {
-      background-color: var(--darker-gray, $default-darker-gray);
-      border: 1px solid  var(--darker-gray, $default-darker-gray);
-      color: var(--bg-white, $default-bg-white);
-    }
-  }
+.dcf-pagination-last::after {
+  content: '\21E5';
 }

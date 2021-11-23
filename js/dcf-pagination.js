@@ -1,40 +1,41 @@
 export class DCFPagination {
-  constructor(Paginationlists) {
-    this.Paginationlists = Paginationlists;
+  constructor(PaginationNavs) {
+    this.PaginationNavs = PaginationNavs;
   }
 
   initialize() {
-    Array.prototype.forEach.call(this.Paginationlists, (list) => {
-      if (list.classList.contains('dcf-pagination-complete')) {
-        return;
-      }
-      list.classList.add('dcf-pagination-complete');
-
-      const nav = document.createElement('nav');
+    Array.prototype.forEach.call(this.PaginationNavs, (nav) => {
       nav.setAttribute('role', 'navigation');
       nav.setAttribute('aria-label', 'Pagination Navigation');
 
-      const listItems = list.getElementsByTagName('li');
-      Array.prototype.forEach.call(listItems, (item) => {
-        if (item.classList.contains('prev')) {
-          item.setAttribute('aria-label', 'Go to the previous page.');
-        } else if (item.classList.contains('next')) {
-          item.setAttribute('aria-label', 'Go to the next page.');
-        } else if (item.classList.contains('selected')) {
-          item.setAttribute('aria-current', true);
-          item.setAttribute('aria-label', 'The current page.');
-        } else if (item.classList.contains('ellipsis')) {
-          item.setAttribute('aria-hidden', true);
-        } else {
-          item.setAttribute('aria-label', 'Go to this page.');
+      const list = nav.getElementsByTagName('ol');
+      list.classList.remove('dcf-list-inline');
+      list.classList.add('dcf-list-bare', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-ai-center', 'cf-col-gap-2', 'dcf-row-gap-2');
+
+      const listAnchors = list.getElementsByTagName('a');
+      Array.prototype.forEach.call(listAnchors, (anchor) => {
+        anchor.classList.add('dcf-btn', 'dcf-btn-secondary');
+        if (anchor.classList.contains('dcf-pagination-first')) {
+          anchor.setAttribute('aria-label', 'First page.');
+        } else if (anchor.classList.contains('dcf-pagination-prev')) {
+          anchor.setAttribute('aria-label', 'Previous page.');
+        } else if (anchor.classList.contains('dcf-pagination-next')) {
+          anchor.setAttribute('aria-label', 'Next page.');
+        } else if (anchor.classList.contains('dcf-pagination-last')) {
+          anchor.setAttribute('aria-label', 'Last page.');
         }
       });
 
-      // Add nav after list
-      list.after(nav);
-
-      // Move list into nav
-      nav.append(list);
+      const listSpans = list.getElementsByTagName('span');
+      Array.prototype.forEach.call(listSpans, (span) => {
+        if (span.classList.contains('dcf-pagination-selected')) {
+          span.classList.add('dcf-txt-sm', 'dcf-bold');
+          span.setAttribute('aria-current', true);
+          span.setAttribute('aria-label', 'Current page.');
+        } else if (span.classList.contains('dcf-pagination-ellipsis')) {
+          span.setAttribute('aria-hidden', true);
+        }
+      });
     });
   }
 }
