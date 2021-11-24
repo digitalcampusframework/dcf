@@ -23,7 +23,7 @@ export class DCFPagination {
 
       const listAnchors = list.getElementsByTagName('a');
       Array.prototype.forEach.call(listAnchors, (anchor) => {
-        anchor.classList.add('dcf-btn', 'dcf-btn-secondary');
+        anchor.classList.add('dcf-btn', 'dcf-btn-secondary', 'dcf-txt-xs');
         if (anchor.classList.contains('dcf-pagination-first')) {
           anchor.setAttribute('aria-label', 'First page.');
         } else if (anchor.classList.contains('dcf-pagination-prev')) {
@@ -38,10 +38,11 @@ export class DCFPagination {
       const listSpans = list.getElementsByTagName('span');
       Array.prototype.forEach.call(listSpans, (span) => {
         if (span.classList.contains('dcf-pagination-selected')) {
-          span.classList.add('dcf-txt-sm', 'dcf-bold');
+          span.classList.add('dcf-txt-xs', 'dcf-bold');
           span.setAttribute('aria-current', true);
           span.setAttribute('aria-label', 'Current page.');
         } else if (span.classList.contains('dcf-pagination-ellipsis')) {
+          span.classList.add('dcf-txt-xs');
           span.setAttribute('aria-hidden', true);
         }
       });
