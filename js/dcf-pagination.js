@@ -19,7 +19,7 @@ export class DCFPagination {
 
       let list = lists[int0];
       list.classList.remove('dcf-list-inline');
-      list.classList.add('dcf-list-bare', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-ai-center', 'cf-col-gap-2', 'dcf-row-gap-2');
+      list.classList.add('dcf-list-bare', 'dcf-d-flex', 'dcf-flex-wrap', 'dcf-ai-center', 'dcf-col-gap-2', 'dcf-row-gap-2');
 
       const listAnchors = list.getElementsByTagName('a');
       Array.prototype.forEach.call(listAnchors, (anchor) => {
