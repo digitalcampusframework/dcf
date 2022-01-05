@@ -392,7 +392,7 @@ export class DCFDatepicker {
     this.dialogNode.setAttribute('aria-hidden', 'false');
 
     // Add/remove classes to this modal
-    this.dialogNode.classList.remove('dcf-opacity-0', 'dcf-invisible');
+    this.dialogNode.classList.remove('dcf-opacity-0', 'dcf-invisible', 'dcf-d-none');
     this.dialogNode.classList.add('dcf-datepicker-dialog-is-open', 'dcf-opacity-100');
 
     this.getDateFromTextbox();
@@ -426,7 +426,7 @@ export class DCFDatepicker {
 
       // Add the `.dcf-invisible` class to this modal after the transition
       if (!this.isOpen() && !this.dialogNode.classList.contains('dcf-invisible')) {
-        this.dialogNode.classList.add('dcf-invisible');
+        this.dialogNode.classList.add('dcf-invisible', 'dcf-d-none');
       }
     };
 
