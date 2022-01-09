@@ -11,7 +11,7 @@
 
 // Modal wrapper
 .dcf-modal-wrapper {
-  background-color: var(--bg-modal-wrapper);
+  background-color: $bg-color-modal-wrapper;
   max-height: $height-max-modal-wrapper;
   width: $width-modal-wrapper;
 }
@@ -19,7 +19,7 @@
 
 // Modal header
 .dcf-modal-header {
-  background-color: var(--bg-modal-header);
+  background-color: $bg-color-modal-header;
 }
 
 

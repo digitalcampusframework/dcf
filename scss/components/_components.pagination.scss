@@ -2,39 +2,48 @@
 // CORE / COMPONENTS / PAGINATION
 /////////////////////////////////
 
+
 .dcf-pagination-selected .dcf-btn {
   cursor: not-allowed !important;
 }
+
 
 .dcf-pagination span {
   padding: $length-em-3 $length-em-1;
 }
 
+
 .dcf-pagination li {
   margin: 0;
 }
+
 
 .dcf-pagination-first::before,
 .dcf-pagination-prev::before {
   margin-right: #{ms(-12)}em;
 }
 
+
 .dcf-pagination-first::before {
   content: '\21E4';
 }
 
+
 .dcf-pagination-prev::before {
   content: '\2190';
 }
+
 
 .dcf-pagination-next::after,
 .dcf-pagination-last::after {
   margin-left: #{ms(-12)}em;
 }
 
+
 .dcf-pagination-next::after {
   content: '\2192';
 }
+
 
 .dcf-pagination-last::after {
   content: '\21E5';

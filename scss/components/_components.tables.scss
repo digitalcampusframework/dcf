@@ -4,7 +4,7 @@
 
 
 .dcf-table caption {
-  color: var(--caption);
+  color: $color-caption;
   // If the caption font-size is not 1em, then change the font-size
   @if (to-number($font-size-caption) != to-number(#{ms(0)}em)) {
     font-size: $font-size-caption;
@@ -23,8 +23,8 @@
 
 
 .dcf-table tbody {
-  border-bottom: $border-width-table $border-style-table var(--b-table);
-  border-top: $border-width-table $border-style-table var(--b-table);
+  border-bottom: $border-width-table $border-style-table $border-color-table;
+  border-top: $border-width-table $border-style-table $border-color-table;
   font-size: $font-size-tbody;
 }
 
@@ -43,7 +43,7 @@
 .dcf-table-bordered,
 .dcf-table-bordered td,
 .dcf-table-bordered th {
-  border: $border-width-table $border-style-table var(--b-table);
+  border: $border-width-table $border-style-table $border-color-table;
 }
 
 
@@ -58,12 +58,12 @@
 
 .dcf-table-bordered tr:not(:last-child),
 .dcf-table-striped tr:not(:last-child) {
-  border-bottom: $border-width-table $border-style-table var(--b-table);
+  border-bottom: $border-width-table $border-style-table $border-color-table;
 }
 
 
 .dcf-table-striped tbody tr:nth-of-type(even) {
-  background-color: var(--bg-table-stripe);
+  background-color: $bg-color-table-stripe;
 }
 
 

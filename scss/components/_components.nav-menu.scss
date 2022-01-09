@@ -10,9 +10,11 @@
   padding-left: 0;
 }
 
+
 .dcf-nav-menu li {
   margin-bottom: 0;
 }
+
 
 .dcf-nav-menu-child a,
 .dcf-nav-menu-child button {
@@ -21,10 +23,11 @@
   padding: #{ms(0)}em #{ms(0)}rem;
 }
 
+
 @include mq(md, max, width) {
 
   .dcf-nav-menu {
-    background-color: var(--nav-menu-bg-color, $default-nav-menu-bg-color);
+    background-color: $bg-color-nav-menu;
     bottom: #{ms(10)}em;
     height: 100vh;
     opacity: 0;
@@ -35,6 +38,7 @@
     width: 100%;
     z-index: 998; // Ensure that the z-index is below the modal and nav-toggle-group z-indices
   }
+
 
   // Open when parent model is open
   .dcf-nav-menu.dcf-modal-open {
@@ -55,13 +59,16 @@
     position: fixed;
   }
 
+
   .dcf-nav-menu-child > *:first-child {
     @include mt-6;
   }
 
+
   .dcf-nav-menu-child > *:last-child {
     @include mb-7;
   }
+
 
   .dcf-nav-menu-child::before,
   .dcf-nav-menu-child::after {
@@ -72,6 +79,7 @@
     width: 100%;
     z-index: 999;
   }
+
 
   .dcf-nav-menu a,
   .dcf-nav-menu button {
@@ -84,6 +92,7 @@
   }
 
 }
+
 
 @include mq(md, min, width) {
 

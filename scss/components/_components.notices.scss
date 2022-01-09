@@ -57,41 +57,41 @@
 
 // Info
 .dcf-notice-info {
-  background-color: var(--bg-notice-info);
+  background-color: $bg-color-notice-info;
 }
 
 .dcf-notice-info .dcf-notice-message {
-  color: var(--notice-info);
+  color: $color-notice-info;
 }
 
 
 // Success
 .dcf-notice-success {
-  background-color: var(--bg-notice-success);
+  background-color: $bg-color-notice-success;
 }
 
 .dcf-notice-success .dcf-notice-message {
-  color: var(--notice-success);
+  color: $bg-color-notice-success;
 }
 
 
 // Warning
 .dcf-notice-warning {
-  background-color: var(--bg-notice-warning);
+  background-color: $bg-color-notice-warning;
 }
 
 .dcf-notice-warning .dcf-notice-message {
-  color: var(--notice-warning);
+  color: $bg-color-notice-warning;
 }
 
 
 // Danger
 .dcf-notice-danger {
-  background-color: var(--bg-notice-danger);
+  background-color: $bg-color-notice-danger;
 }
 
 .dcf-notice-danger .dcf-notice-message {
-  color: var(--notice-danger);
+  color: $bg-color-notice-danger;
 }
 
 

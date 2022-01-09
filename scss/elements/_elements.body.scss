@@ -4,8 +4,8 @@
 
 
 body {
-  background-color: var(--bg-body);
-  color: var(--body);
+  background-color: $bg-color-body;
+  color: $color-body;
   margin: 0;
   overflow-x: hidden;
 }

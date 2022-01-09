@@ -37,49 +37,49 @@ a.dcf-btn-inverse-secondary {
 
 .dcf-btn-primary,
 .dcf-btn-primary:link {
-  background-color: var(--bg-btn-primary);
-  border-color: var(--b-btn-primary);
-  color: var(--btn-primary);
+  background-color: $bg-color-button-primary;
+  border-color: $border-color-button-primary;
+  color: $color-button-primary;
 }
 
 
 .dcf-btn-secondary,
 .dcf-btn-secondary:link {
-  background-color: var(--bg-btn-secondary);
-  border-color: var(--b-btn-secondary);
-  color: var(--btn-secondary);
+  background-color: $bg-color-button-secondary;
+  border-color: $border-color-button-secondary;
+  color: $color-button-secondary;
 }
 
 
 .dcf-btn-tertiary,
 .dcf-btn-tertiary:link {
-  background-color: var(--bg-btn-tertiary);
-  border-color: var(--b-btn-tertiary);
-  color: var(--btn-tertiary);
+  background-color: $bg-color-button-tertiary;
+  border-color: $border-color-button-tertiary;
+  color: $color-button-tertiary;
 }
 
 
 .dcf-btn-inverse-primary,
 .dcf-btn-inverse-primary:link {
-  background-color: var(--bg-btn-inverse-primary);
-  border-color: var(--b-btn-inverse-primary);
-  color: var(--btn-inverse-primary);
+  background-color: $bg-color-button-inverse-primary;
+  border-color: $border-color-button-inverse-primary;
+  color: $color-button-inverse-primary;
 }
 
 
 .dcf-btn-inverse-secondary,
 .dcf-btn-inverse-secondary:link {
-  background-color: var(--bg-btn-inverse-secondary);
-  border-color: var(--b-btn-inverse-secondary);
-  color: var(--btn-inverse-secondary);
+  background-color: $bg-color-button-inverse-secondary;
+  border-color: $border-color-button-inverse-secondary;
+  color: $color-button-inverse-secondary;
 }
 
 
 .dcf-btn-inverse-tertiary,
 .dcf-btn-inverse-tertiary:link {
-  background-color: var(--bg-btn-inverse-tertiary);
-  border-color: var(--b-btn-inverse-tertiary);
-  color: var(--btn-inverse-tertiary);
+  background-color: $bg-color-button-inverse-tertiary;
+  border-color: $border-color-button-inverse-tertiary;
+  color: $color-button-inverse-tertiary;
   text-decoration: underline;
 }
 

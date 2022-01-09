@@ -5,23 +5,23 @@
 
 // Link
 a:link {
-  color: var(--link);
+  color: $color-link;
 }
 
 
 // Visited
 a:visited {
-  color: var(--visited);
+  color: $color-visited;
 }
 
 
 // Hover
 a:hover {
-  color: var(--hover);
+  color: $color-hover;
 }
 
 
 // Active
 a:active {
-  color: var(--active);
+  color: $color-active;
 }
