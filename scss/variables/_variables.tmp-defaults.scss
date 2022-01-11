@@ -3,15 +3,19 @@
 ///////////////////////////////
 
 
+$black: #000;
+$white: #fff;
+
+
 // Background color
-$default-bg-white: #fff;
-$default-bg-overlay-dark: fade-out(#000, .06);
-$default-bg-overlay-light: fade-out(#fff, .06);
-$default-bg-input: #fff;
-$default-bg-nav-menu: #fff;
-$default-bg-nav-toggle-group: #fff;
+$default-bg-white: $white;
+$default-bg-overlay-dark: fade-out($black, .06);
+$default-bg-overlay-light: fade-out($white, .06);
+$default-bg-input: $white;
+$default-bg-nav-menu: $white;
+$default-bg-nav-toggle-group: $white;
 
 
 // Border color
 $default-b-input: #ccc;
-$default-b-app-control: #000;
+$default-b-app-control: $black;
