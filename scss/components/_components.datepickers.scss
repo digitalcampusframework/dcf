@@ -9,7 +9,7 @@
 
 
 .dcf-datepicker-dialog {
-  background-color: var(--bg-dialog);
+  background-color: $bg-color-datepicker-dialog;
   @if ($border-radius-datepicker-dialog-roundrect) {
     border-radius: $roundrect;
   }
@@ -44,7 +44,7 @@
   @if ($border-radius-datepicker-date-roundrect) {
     border-radius: $roundrect;
   }
-  color: var(--btn-tertiary);
+  color: $color-datepicker-dialog-calendar-td;
 }
 
 
@@ -54,8 +54,8 @@
 
 
 .dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]):not([aria-selected]):hover {
-  background-color: var(--bg-btn-secondary-tertiary-hover);
-  color: var(--btn-secondary-tertiary-hover);
+  background-color: $bg-color-datepicker-dialog-calendar-td-hover;
+  color: $color-datepicker-dialog-calendar-td-hover;
 }
 
 

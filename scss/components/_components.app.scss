@@ -2,6 +2,7 @@
 // CORE / COMPONENTS / APP
 ///////////////////////////
 
+
 @include mq(md, max, width) {
 
   .app .dcf-app-controls ul:not(:last-child) {
@@ -10,6 +11,7 @@
 
 }
 
+
 @include mq(md, min, width) {
 
   .app .dcf-app-controls {
@@ -17,16 +19,19 @@
     justify-content: space-between;
   }
 
+
   .app .dcf-app-controls ul:not(:last-child) {
-    border-left: 1px solid var(--app-control-border-color, $default-app-control-border-color);
+    border-left: 1px solid $border-color-app-control;
     display: flex;
   }
 
+
   .app .dcf-app-controls li {
-    border-right: 1px solid var(--app-control-border-color, $default-app-control-border-color);
+    border-right: 1px solid $border-color-app-control;
   }
 
 }
+
 
 @include mq(md, max, width) {
 
@@ -42,6 +47,7 @@
     z-index: 998; // Ensure that the z-index is below the modal and nav-toggle-group z-indices
   }
 
+
   // Open when parent model is open
   .dcf-nav-menu.dcf-modal-open {
     opacity: 1;
@@ -49,6 +55,7 @@
     transition: opacity $transition-duration-fade-in $transition-timing-fn-fade-in;
     visibility: visible;
   }
+
 
   .dcf-nav-menu-child {
     @include overflow-y-auto;
@@ -59,13 +66,16 @@
     position: fixed;
   }
 
+
   .dcf-nav-menu-child > *:first-child {
     @include mt-6;
   }
 
+
   .dcf-nav-menu-child > *:last-child {
     @include mb-7;
   }
+
 
   .dcf-nav-menu-child::before,
   .dcf-nav-menu-child::after {
@@ -77,16 +87,19 @@
     z-index: 999;
   }
 
+
   .dcf-nav-menu a,
   .dcf-nav-menu button {
     margin-left: -#{ms(0)}rem;
   }
+
 
   .dcf-nav-menu ul ul {
     @include txt-xs;
   }
 
 }
+
 
 @include mq(md, min, width) {
 
@@ -97,9 +110,11 @@
     padding-right: $length-vw-2;
   }
 
+
   .dcf-nav-menu ul ul {
     @include txt-sm;
   }
+
 
   .dcf-nav-menu a,
   .dcf-nav-menu button {

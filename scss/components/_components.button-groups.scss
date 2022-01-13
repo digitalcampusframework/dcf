@@ -16,13 +16,13 @@
 
 .dcf-btn-group li:not(:first-child) .dcf-btn-primary,
 .dcf-btn-group .dcf-btn-primary + .dcf-btn-primary {
-  margin-left: $spacing-button-group; // Provide spacing in between button group buttons
+  margin-left: $margin-button-group; // Provide spacing in between button group buttons
 }
 
 
 .dcf-btn-group li:not(:first-child) .dcf-btn-secondary,
 .dcf-btn-group .dcf-btn-secondary + .dcf-btn-secondary {
-  margin-left: -$spacing-button-group; // Collapse internal shared borders
+  margin-left: -$margin-button-group; // Collapse internal shared borders
 }
 
 

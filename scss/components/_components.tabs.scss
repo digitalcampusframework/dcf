@@ -22,17 +22,17 @@
 
 
 .dcf-tab[aria-selected] {
-  background-color: var(--bg-tab-selected);
-  color: var(--tab-selected);
+  background-color: $bg-color-tab-selected;
+  color: $color-tab-selected;
   text-decoration: none;
 }
 
 
 .dcf-tabs-panel {
-  background-color: var(--bg-tabs-panel);
+  background-color: $bg-color-tabs-panel;
   // If tab panel border-width is greater than zero, then add border styles
   @if (to-number($border-width-tabs-panel) > 0) {
-    border: $border-width-tabs-panel $border-style-tabs-panel var(--b-tabs-panel);
+    border: $border-width-tabs-panel $border-style-tabs-panel $border-color-tabs-panel;
   }
   padding: $padding-top-tabs-panel $padding-right-tabs-panel $padding-bottom-tabs-panel $padding-left-tabs-panel;
 }

@@ -11,6 +11,6 @@ figure {
 
 // Figure caption
 figcaption {
-  color: var(--figcaption);
+  color: $color-figcaption;
   font-size: $font-size-figcaption;
 }

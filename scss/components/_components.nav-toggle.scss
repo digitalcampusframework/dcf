@@ -1,16 +1,17 @@
-///////////////////////////////////
+//////////////////////////////////
 // CORE / COMPONENTS / NAV: TOGGLE
-///////////////////////////////////
+//////////////////////////////////
 
 
 .dcf-nav-toggle-btn {
   appearance: none;
 }
 
+
 @include mq(md, max, width) {
 
   .dcf-nav-toggle-group {
-    background-color: var(--bg-nav-toggle-group, $default-bg-nav-toggle-group);
+    background-color: $bg-color-nav-toggle-group;
     display: flex;
     z-index: $z-nav-toggle-group;
 
@@ -36,6 +37,7 @@
   .dcf-nav-menu .dcf-nav-toggle-btn-menu {
     display: none;
   }
+
 
   .headroom {
     transition: transform 250ms ease-out !important;

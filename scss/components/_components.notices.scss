@@ -8,9 +8,11 @@
   @include mb-0;
 }
 
+
 .dcf-notice-icon {
   grid-area: 2 / 2 / 3 / 3;
 }
+
 
 .dcf-notice-close {
   padding-right: #{ms(-10)}em;
@@ -24,9 +26,11 @@
     grid-template-rows: $length-em-5 $length-em-6 $length-em-3 auto $length-em-2 $length-em-5;
   }
 
+
   .dcf-notice-body {
     grid-area: 4 / 2 / 5 / 5;
   }
+
 
   .dcf-notice-close {
     @include pt-3;
@@ -43,9 +47,11 @@
     grid-template-rows: $length-em-5 auto $length-em-5;
   }
 
+
   .dcf-notice-body {
     grid-area: 2 / 4 / 3 / 5;
   }
+
 
   .dcf-notice-close {
     grid-area: 1 / -2 / 3 / -1;
@@ -57,41 +63,45 @@
 
 // Info
 .dcf-notice-info {
-  background-color: var(--bg-notice-info);
+  background-color: $bg-color-notice-info;
 }
 
+
 .dcf-notice-info .dcf-notice-message {
-  color: var(--notice-info);
+  color: $color-notice-info;
 }
 
 
 // Success
 .dcf-notice-success {
-  background-color: var(--bg-notice-success);
+  background-color: $bg-color-notice-success;
 }
 
+
 .dcf-notice-success .dcf-notice-message {
-  color: var(--notice-success);
+  color: $color-notice-success;
 }
 
 
 // Warning
 .dcf-notice-warning {
-  background-color: var(--bg-notice-warning);
+  background-color: $bg-color-notice-warning;
 }
 
+
 .dcf-notice-warning .dcf-notice-message {
-  color: var(--notice-warning);
+  color: $color-notice-warning;
 }
 
 
 // Danger
 .dcf-notice-danger {
-  background-color: var(--bg-notice-danger);
+  background-color: $bg-color-notice-danger;
 }
 
+
 .dcf-notice-danger .dcf-notice-message {
-  color: var(--notice-danger);
+  color: $color-notice-danger;
 }
 
 
