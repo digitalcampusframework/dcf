@@ -15,7 +15,7 @@
   background-position: right $bg-position-arrow top 50%, 0 0;
   background-repeat: no-repeat, repeat;
   background-size: $bg-size-arrow-select $bg-size-arrow-select, 100%;
-  border: $border-width-input solid $bg-color-input;
+  border: $border-width-input solid $border-color-input;
   @if ($border-radius-input-roundrect) {
     border-radius: $roundrect;
   } @else {
