@@ -547,7 +547,7 @@ export class DCFSlideshowTheme {
 
     this.slidePrevBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-inverse' ];
     this.slidePrevBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24"
-height="24" viewBox="0 0 24 24" aria-hidden="true">
+height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path d="M23.509
     9.856c-.38-.55-.928-.852-1.542-.852H9.74l4.311-4.151c.995-.994.961-2.646-.074-3.682-1.001-1-2.722-1.033-3.68-.077L.148
     11.144a.5.5 0 00-.003.707l9.978 10.079a2.445 2.445 0 001.737.705c.707 0 1.407-.294 1.92-.806a2.737 2.737 0 00.807-1.923
@@ -557,7 +557,7 @@ height="24" viewBox="0 0 24 24" aria-hidden="true">
 
     this.slideNextBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-inverse' ];
     this.slideNextBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24"
-height="24" viewBox="0 0 24 24" aria-hidden="true">
+height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path d="M23.852 11.144L13.703 1.096c-.96-.96-2.678-.924-3.68.075-1.036 1.035-1.07 2.687-.069 3.69l4.321
     4.143H2.03c-1.27 0-2.03 1.272-2.03 2.5 0 .617.168 1.207.472 1.659.369.549.913.851 1.53.851h12.276l-4.156 4.16a2.425
     2.425 0 00-.708 1.734c0 .708.293 1.409.807 1.922a2.738 2.738 0 001.919.806c.664 0 1.28-.251
@@ -566,18 +566,18 @@ height="24" viewBox="0 0 24 24" aria-hidden="true">
 
     this.slidePlayToggleBtnClassList = [ 'dcf-d-flex', 'dcf-ai-center', 'dcf-pt-4', 'dcf-pb-4', 'dcf-inverse' ];
     this.slidePlayBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24"
-height="24" viewBox="0 0 24 24" aria-hidden="true">
+height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path d="M21.759 11.577L2.786.077a.499.499 0 0 0-.759.428v23a.498.498
       0 0 0 .5.5c.09 0 .18-.024.259-.072l18.973-11.5a.5.5 0 0 0 0-.856z"></path>
 </svg>`;
     this.slidePauseBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current" width="24" height="24"
-viewBox="0 0 24 24" aria-hidden="true">
+viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path d="M10.5 0h-5C5.224 0 5 .224 5 .5v23C5 23.776 5.224 24 5.5 24h5c.276 0 .5-.224.5-.5v-23C11 .224 10.776 0 10.5
     0zM18.5 0h-5C13.224 0 13 .224 13 .5v23c0 .276.224.5.5.5h5c.276 0 .5-.224.5-.5v-23C19 .224 18.776 0 18.5 0z"></path>
 </svg>`;
 
     this.figureCaptionBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current"
-      width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path class="theme-icon-slide-caption-open"
       d="M1,3h19c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1C0.4,1,0,1.4,0,2C0,2.6,0.4,3,1,3z"/>
       '<path class="theme-icon-slide-caption-open"
