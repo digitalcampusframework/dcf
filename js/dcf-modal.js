@@ -127,7 +127,7 @@ export class DCFModal {
       return;
     }
 
-    // Trigger open modal event for this modal to allow event listeners to handle
+    // Trigger pre-open modal event for this modal to allow event listeners to handle
     const preOpenEventName = `ModalPreOpenEvent_${modalId}`;
     document.dispatchEvent(new CustomEvent(preOpenEventName));
 
@@ -245,6 +245,7 @@ export class DCFModal {
     const navToggleGroup = document.getElementById('dcf-nav-toggle-group');
     const navToggleGroupParent = navToggleGroup && navToggleGroup.parentElement ? navToggleGroup.parentElement : null;
     const thisModal = document.getElementById(modalId);
+    const confirmClose = thisModal.dataset.confirmClose;
     let modalClosed = thisModal.getAttribute('aria-hidden') === 'true';
     this.currentModal = null;
 
@@ -252,6 +253,16 @@ export class DCFModal {
     if (modalClosed) {
       return;
     }
+
+    // Trigger pre-close modal event for this modal to allow event listeners to handle
+    const preCloseEventName = `ModalPreCloseEvent_${modalId}`;
+    document.dispatchEvent(new CustomEvent(preCloseEventName));
+
+    /* eslint-disable */  // Allow non-custom confirm
+    if (confirmClose && !window.confirm(confirmClose)) {
+      return;
+    }
+    /* eslint-enable */
 
     // Remove `.dcf-modal-is-open` helper class from body
     this.body.classList.remove('dcf-modal-is-open');
@@ -390,6 +401,8 @@ export class DCFModal {
       const btnCloseModal = btnsCloseModal[modalIndex];
       const modalId = modal.id;
       const modalHeadingId = `${modalId }-heading`;
+      const deliberateCloseOnly = typeof modal.dataset.deliberateCloseOnly !== 'undefined' &&
+        modal.dataset.deliberateCloseOnly.toLowerCase() !== 'false';
 
       // Get all headings in each modal header
       const modalHeadings = modalHeader.querySelectorAll('h1, h2, h3, h4, h5, h6');
@@ -456,7 +469,9 @@ export class DCFModal {
       btnCloseModal.setAttribute('aria-label', 'Close');
 
       this.escListen();
-      this.overlayListen(modal, modalWrapper);
+      if (!deliberateCloseOnly) {
+        this.overlayListen(modal, modalWrapper);
+      }
       this.btnCloseListen(btnCloseModal, modal);
     }
   }
