@@ -17,6 +17,7 @@
   "homepage": "https://github.com/d-c-n/dcf#readme",
   "devDependencies": {
     "acorn": "^7.4.1",
+    "ajv": "^6.12.6",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-scss-lint": "^1.0.0",
