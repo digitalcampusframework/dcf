@@ -1,9 +1,19 @@
-//////////////////////////
-// CORE / UTILITIES / GRID
-//////////////////////////
+/////////////////////////
+// CORE / UTILITIES / GAP
+/////////////////////////
 
 
-// Grid display rules located in _utilities.display
+// Gap (Flexbox & Grid)
+.dcf-gap-1 { @include gap-1(!important); }
+.dcf-gap-2 { @include gap-2(!important); }
+.dcf-gap-3 { @include gap-3(!important); }
+.dcf-gap-4 { @include gap-4(!important); }
+.dcf-gap-5 { @include gap-5(!important); }
+.dcf-gap-6 { @include gap-6(!important); }
+.dcf-gap-7 { @include gap-7(!important); }
+.dcf-gap-8 { @include gap-8(!important); }
+.dcf-gap-9 { @include gap-9(!important); }
+.dcf-gap-10 { @include gap-10(!important); }
 
 
 // Grid column gap

@@ -1,9 +1,19 @@
-////////////////////////
-// CORE / MIXINS / GRID
-////////////////////////
+//////////////////////
+// CORE / MIXINS / GAP
+//////////////////////
 
 
-// Grid display rules located in _mixins.display
+// Gap (Flexbox & Grid)
+@mixin gap-1($imp:null) { gap: $length-em-1 $imp; }
+@mixin gap-2($imp:null) { gap: $length-em-2 $imp; }
+@mixin gap-3($imp:null) { gap: $length-em-3 $imp; }
+@mixin gap-4($imp:null) { gap: $length-em-4 $imp; }
+@mixin gap-5($imp:null) { gap: $length-em-5 $imp; }
+@mixin gap-6($imp:null) { gap: $length-em-6 $imp; }
+@mixin gap-7($imp:null) { gap: $length-em-7 $imp; }
+@mixin gap-8($imp:null) { gap: $length-em-8 $imp; }
+@mixin gap-9($imp:null) { gap: $length-em-9 $imp; }
+@mixin gap-10($imp:null) { gap: $length-em-10 $imp; }
 
 
 // Grid column gap

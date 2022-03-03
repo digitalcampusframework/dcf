@@ -134,10 +134,12 @@ linters:
   PropertySpelling:
     enabled: true
     extra_properties: [
+      'gap',
       'grid-column-gap',
       'grid-row-gap',
       'grid-template-columns',
       'justify-items',
+      'scroll-margin-top',
       'scroll-snap-align',
       'scroll-snap-type']
     disabled_properties: []
