@@ -415,7 +415,7 @@ class SlideshowObj {
       button.setAttribute('aria-label', 'Show caption');
       // Move the button to the bottom instead
       caption.setAttribute('aria-hidden', 'true');
-      caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto', 'dcf-relative');
+      caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
       caption.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
       caption.dispatchEvent(this.source.openCaptionEvent);
     } else {
@@ -428,7 +428,7 @@ class SlideshowObj {
 
       caption.setAttribute('aria-hidden', 'false');
       caption.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
-      caption.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto','dcf-relative');
+      caption.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
       caption.dispatchEvent(this.source.closeCaptionEvent);
     }
   }
