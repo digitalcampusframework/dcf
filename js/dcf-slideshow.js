@@ -200,8 +200,8 @@ class SlideshowObj {
       'dcf-pin-right',
       'dcf-z-1');
       
-    //If slideshow-visible attribute appear then move it to the top
-    if(this.slideshow.hasAttribute('data-slideshow-caption-visible')){
+    //If data-toggle-caption is false then move it to the top
+    if(!(this.slideshow.hasAttribute('data-toggle-caption'))){
         ctrls.classList.add('dcf-pin-top');
     }else{
         ctrls.classList.add('dcf-pin-bottom');
@@ -297,8 +297,8 @@ class SlideshowObj {
       if (figure) {
         let caption = figure.querySelector('figcaption');
         if (!(typeof caption == 'undefined')) {
-          // Create button to show/hide caption if data-slideshow-caption-visible isn't appear
-          if(!(this.slideshow.hasAttribute('data-slideshow-caption-visible'))){
+          // Create button to show/hide caption if data-toggle-caption is true
+          if(this.slideshow.hasAttribute('data-toggle-caption')){
               let captionBtn = document.createElement('button');
               if (this.theme.figureCaptionBtnInnerHTML) {
                 captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
