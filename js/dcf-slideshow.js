@@ -1,5 +1,4 @@
 import { DCFUtility } from './dcf-utility';
-
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
     this.slideshow = slideshow;
