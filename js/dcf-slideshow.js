@@ -22,7 +22,6 @@ class SlideshowObj {
     if (this.slideAriaLabel) {
       this.slideshowName = this.slideAriaLabel;
     }
-    this.captionVisible = false;
 
     // Set a unique ID for each slideshow
     this.slideshow.setAttribute('id', this.uuid.concat('-slideshow'));
@@ -198,7 +197,7 @@ class SlideshowObj {
       'dcf-absolute',
       'dcf-pin-right',
       'dcf-z-1');
-      
+    
     //If data-toggle-caption is false then move it to the top
     if(this.slideshow.hasAttribute('data-toggle-caption')){
         ctrls.classList.add('dcf-pin-top');
@@ -208,8 +207,7 @@ class SlideshowObj {
 
     // Add role and aria-label to controls group
     ctrls.setAttribute('aria-label', `${this.slideshowName} controls`);
-    ctrls.setAttribute('role', 'list');
-    
+    ctrls.setAttribute('role', 'list'); 
 
     this.ctrlPreviousButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
     if (this.theme.slidePrevBtnClassList) {
@@ -278,8 +276,6 @@ class SlideshowObj {
         this.slideDeck.focus();
       }
     }, false);
-
-
   }
 
   initSlides() {
@@ -363,8 +359,6 @@ class SlideshowObj {
           return;
         }
         let img = entry.target.querySelector('img');
-        //Fetch
-        //img.setAttribute('fetchpriority', 'low');
         if (img) {
           this.lazyLoadImage(img);
         }
@@ -416,7 +410,6 @@ class SlideshowObj {
       // Update ARIA attributes
       button.setAttribute('aria-expanded', 'false');
       button.setAttribute('aria-label', 'Show caption');
-      // Move the button to the bottom instead
       caption.setAttribute('aria-hidden', 'true');
       caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
       caption.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
@@ -427,8 +420,6 @@ class SlideshowObj {
       // Update ARIA attributes
       button.setAttribute('aria-expanded', 'true');
       button.setAttribute('aria-label', 'Hide caption');
-      // Move the button to the top instead
-
       caption.setAttribute('aria-hidden', 'false');
       caption.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
       caption.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
@@ -495,8 +486,6 @@ class SlideshowObj {
 
     // Prevent this from being lazy loaded a second time.
     image.classList.add('dcf-lazy-loaded');
-    //Fetch
-    image.setAttribute('fetchpriority', 'low');
     image.classList.remove('dcf-lazy-load');
 
     if (src) {
