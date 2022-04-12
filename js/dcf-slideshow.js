@@ -1,5 +1,4 @@
 import { DCFUtility } from './dcf-utility';
-
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
     this.slideshow = slideshow;
@@ -197,12 +196,18 @@ class SlideshowObj {
       'dcf-btn-group',
       'dcf-absolute',
       'dcf-pin-right',
-      'dcf-pin-bottom',
       'dcf-z-1');
+    
+    //If data-toggle-caption is false then move it to the top
+    if(this.slideshow.getAttribute('data-toggle-caption') == 'false'){
+        ctrls.classList.add('dcf-pin-top');
+    }else{
+        ctrls.classList.add('dcf-pin-bottom');
+    }
 
     // Add role and aria-label to controls group
     ctrls.setAttribute('aria-label', `${this.slideshowName} controls`);
-    ctrls.setAttribute('role', 'list');
+    ctrls.setAttribute('role', 'list'); 
 
     this.ctrlPreviousButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
     if (this.theme.slidePrevBtnClassList) {
@@ -287,55 +292,58 @@ class SlideshowObj {
       if (figure) {
         let caption = figure.querySelector('figcaption');
         if (!(typeof caption == 'undefined')) {
-          // Create button to show/hide caption
-          let captionBtn = document.createElement('button');
-          if (this.theme.figureCaptionBtnInnerHTML) {
-            captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+          // Create button to show/hide caption if data-toggle-caption is true
+          if(!(this.slideshow.getAttribute('data-toggle-caption') == 'false')){
+              let captionBtn = document.createElement('button');
+              if (this.theme.figureCaptionBtnInnerHTML) {
+                captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+              }
+
+              // Add classes to each caption toggle button
+              captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
+              if (this.theme.slideBtnClassList) {
+                captionBtn.classList.add(...this.theme.slideBtnClassList);
+              }
+
+              // Create a unique ID for each caption toggle button
+              captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
+              captionBtn.setAttribute('tabindex', '-1');
+
+              // Add ARIA attributes to each caption toggle button
+              captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
+              captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
+              captionBtn.setAttribute('aria-expanded', 'false');
+
+              // Add class to each figure
+              figure.classList.add('dcf-slide-figure');
+
+              // Append caption toggle button to each figure
+              figure.appendChild(captionBtn);
+
+              // Add Events to caption toggle button
+              this.captionBtnEvents(captionBtn);
+
+              // Add Theme Events to caption toggle button
+              if (this.theme.figureCaptionToggleTransition) {
+                this.theme.figureCaptionToggleTransition(captionBtn);
+              }
+
+              // Style each caption
+            // Might be something here!!!!!
+            caption.classList.add('dcf-opacity-0',
+                'dcf-pointer-events-none',
+                'dcf-invisible',
+                'dcf-slide-caption',
+                'dcf-figcaption');
+
+              // Create a unique ID for each caption
+              caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
+
+              // Add ARIA attributes to each caption
+              caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
+              caption.setAttribute('aria-hidden', 'true');
           }
 
-          // Add classes to each caption toggle button
-          captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
-          if (this.theme.slideBtnClassList) {
-            captionBtn.classList.add(...this.theme.slideBtnClassList);
-          }
-
-          // Create a unique ID for each caption toggle button
-          captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
-          captionBtn.setAttribute('tabindex', '-1');
-
-          // Add ARIA attributes to each caption toggle button
-          captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
-          captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
-          captionBtn.setAttribute('aria-expanded', 'false');
-
-          // Add class to each figure
-          figure.classList.add('dcf-slide-figure');
-
-          // Append caption toggle button to each figure
-          figure.appendChild(captionBtn);
-
-          // Add Events to caption toggle button
-          this.captionBtnEvents(captionBtn);
-
-          // Add Theme Events to caption toggle button
-          if (this.theme.figureCaptionToggleTransition) {
-            this.theme.figureCaptionToggleTransition(captionBtn);
-          }
-
-          // Style each caption
-          // Might be something here!!!!!
-          caption.classList.add('dcf-opacity-0',
-            'dcf-pointer-events-none',
-            'dcf-invisible',
-            'dcf-slide-caption',
-            'dcf-figcaption');
-
-          // Create a unique ID for each caption
-          caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
-
-          // Add ARIA attributes to each caption
-          caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
-          caption.setAttribute('aria-hidden', 'true');
         }
       }
     });
@@ -372,6 +380,8 @@ class SlideshowObj {
     } else {
       Array.prototype.forEach.call(this.slides, (slide) => {
         let img = slide.querySelector('img');
+        //Fetch
+        //img.setAttribute('fetchpriority', 'low');
         if (img) {
           this.lazyLoadImage(img);
         }
