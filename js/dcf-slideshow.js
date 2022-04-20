@@ -282,41 +282,41 @@ class SlideshowObj {
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
           if(!(this.slideshow.getAttribute('data-toggle-caption') == 'false')){
-              let captionBtn = document.createElement('button');
-              if (this.theme.figureCaptionBtnInnerHTML) {
-                captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
-              }
+            let captionBtn = document.createElement('button');
+            if (this.theme.figureCaptionBtnInnerHTML) {
+              captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+            }
 
-              // Add classes to each caption toggle button
-              captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
-              if (this.theme.slideBtnClassList) {
-                captionBtn.classList.add(...this.theme.slideBtnClassList);
-              }
+            // Add classes to each caption toggle button
+            captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
+            if (this.theme.slideBtnClassList) {
+              captionBtn.classList.add(...this.theme.slideBtnClassList);
+            }
 
-              // Create a unique ID for each caption toggle button
-              captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
-              captionBtn.setAttribute('tabindex', '-1');
+            // Create a unique ID for each caption toggle button
+            captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
+            captionBtn.setAttribute('tabindex', '-1');
 
-              // Add ARIA attributes to each caption toggle button
-              captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
-              captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
-              captionBtn.setAttribute('aria-expanded', 'false');
+            // Add ARIA attributes to each caption toggle button
+            captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
+            captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
+            captionBtn.setAttribute('aria-expanded', 'false');
 
-              // Add class to each figure
-              figure.classList.add('dcf-slide-figure');
+            // Add class to each figure
+            figure.classList.add('dcf-slide-figure');
 
-              // Append caption toggle button to each figure
-              figure.appendChild(captionBtn);
+            // Append caption toggle button to each figure
+            figure.appendChild(captionBtn);
 
-              // Add Events to caption toggle button
-              this.captionBtnEvents(captionBtn);
+            // Add Events to caption toggle button
+            this.captionBtnEvents(captionBtn);
 
-              // Add Theme Events to caption toggle button
-              if (this.theme.figureCaptionToggleTransition) {
-                this.theme.figureCaptionToggleTransition(captionBtn);
-              }
+            // Add Theme Events to caption toggle button
+            if (this.theme.figureCaptionToggleTransition) {
+              this.theme.figureCaptionToggleTransition(captionBtn);
+            }
 
-              // Style each caption
+            // Style each caption
             // Might be something here!!!!!
             caption.classList.add('dcf-opacity-0',
                 'dcf-pointer-events-none',
@@ -324,12 +324,12 @@ class SlideshowObj {
                 'dcf-slide-caption',
                 'dcf-figcaption');
 
-              // Create a unique ID for each caption
-              caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
+            // Create a unique ID for each caption
+            caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
-              // Add ARIA attributes to each caption
-              caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
-              caption.setAttribute('aria-hidden', 'true');
+            // Add ARIA attributes to each caption
+            caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
+            caption.setAttribute('aria-hidden', 'true');
           }
 
         }
