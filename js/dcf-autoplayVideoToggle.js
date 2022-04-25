@@ -132,6 +132,6 @@ export class DCFAutoplayVideoToggle {
   }
 
   isAutoplayVideo(video) {
-    return video.hasAttribute('autoplay') && video.hasAttribute('muted');
+    return video.hasAttribute('autoplay') && video.hasAttribute('muted') && video.hasAttribute('playsinline');
   }
 }
