@@ -159,11 +159,6 @@ export class DCFModal {
           let currentEl = el;
           while (currentEl && currentEl !== document.body) {
             if (currentEl.classList.contains('dcf-modal-content')) {
-              const iOSBodyStyle = {
-                WebkitOverflowScrolling: 'none',
-                overflow: 'hidden',
-              };
-              Object.assign(document.body.style, iOSBodyStyle);
               return true;
             }
             if (currentEl.parentElement) {
