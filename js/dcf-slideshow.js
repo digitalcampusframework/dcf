@@ -143,35 +143,29 @@ class SlideshowObj {
 
   initControls() {
     // Create slideshow controls (previous/next slide buttons)
-    let ctrls = document.createElement('ul');
-    this.ctrlPrevious = document.createElement('li');
-    this.ctrlNext = document.createElement('li');
-    this.ctrlPreviousButton = document.createElement('button');
-    this.ctrlNextButton = document.createElement('button');
+    let ctrls = document.createElement('div');
+    this.ctrlPrevBtn = document.createElement('button');
+    this.ctrlNextBtn = document.createElement('button');
 
     this.allowPlay = this.slideshow.hasAttribute('data-play') &&
       (this.slideshow.dataset.play.toLowerCase() === 'true' || this.slideshow.dataset.play.toLowerCase() === 'auto');
     if (this.allowPlay) {
-      this.ctrlPlayToggle = document.createElement('li');
-      this.ctrlPlayToggleButton = document.createElement('button');
-      this.ctrlPlayToggleButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+      this.ctrlPlayToggleBtn = document.createElement('button');
+      this.ctrlPlayToggleBtn.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
       if (this.theme.slidePlayToggleBtnClassList) {
-        this.ctrlPlayToggleButton.classList.add(...this.theme.slidePlayToggleBtnClassList);
+        this.ctrlPlayToggleBtn.classList.add(...this.theme.slidePlayToggleBtnClassList);
       }
       if (this.theme.slideBtnClassList) {
-        this.ctrlPlayToggleButton.classList.add(...this.theme.slideBtnClassList);
+        this.ctrlPlayToggleBtn.classList.add(...this.theme.slideBtnClassList);
       }
       if (this.theme.slidePlayBtnInnerHTML) {
-        this.ctrlPlayToggleButton.innerHTML = this.theme.slidePlayBtnInnerHTML;
+        this.ctrlPlayToggleBtn.innerHTML = this.theme.slidePlayBtnInnerHTML;
       }
-      this.ctrlPlayToggleButton.setAttribute('aria-label', `${this.slideshowName} play toggle`);
+      this.ctrlPlayToggleBtn.setAttribute('aria-label', `${this.slideshowName} play toggle`);
 
-      this.ctrlPlayToggle.setAttribute('id', this.uuid.concat('-play-toggle'));
-      this.ctrlPlayToggle.classList.add('dcf-li-slide-play-toggle');
+      this.ctrlPlayToggleBtn.setAttribute('id', this.uuid.concat('-play-toggle'));
 
-      this.ctrlPlayToggle.appendChild(this.ctrlPlayToggleButton);
-
-      this.ctrlPlayToggleButton.addEventListener('click', () => {
+      this.ctrlPlayToggleBtn.addEventListener('click', () => {
         if (!this.paused) {
           this.pause();
           this.userPaused = true;
@@ -179,10 +173,10 @@ class SlideshowObj {
           this.play();
           this.userPaused = false;
         }
-        this.ctrlPlayToggleButton.innerHTML = this.paused ? this.theme.slidePlayBtnInnerHTML : this.theme.slidePauseBtnInnerHTML;
+        this.ctrlPlayToggleBtn.innerHTML = this.paused ? this.theme.slidePlayBtnInnerHTML : this.theme.slidePauseBtnInnerHTML;
       }, false);
 
-      this.ctrlPlayToggleButton.addEventListener('keydown', (keydownEvent) => {
+      this.ctrlPlayToggleBtn.addEventListener('keydown', (keydownEvent) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
           keydownEvent.preventDefault();
           this.slideDeck.focus();
@@ -192,85 +186,79 @@ class SlideshowObj {
 
     // Add classes to slideshow controls group (Keep in DCF)
     ctrls.classList.add('dcf-slideshow-controls',
-      'dcf-list-bare',
       'dcf-btn-group',
       'dcf-absolute',
       'dcf-pin-right',
       'dcf-z-1');
-    
-    //If data-toggle-caption is false then move it to the top
-    if(this.slideshow.getAttribute('data-toggle-caption') == 'false'){
-        ctrls.classList.add('dcf-pin-top');
-    }else{
-        ctrls.classList.add('dcf-pin-bottom');
+
+    // If data-toggle-caption is false then move it to the top
+    if (this.slideshow.getAttribute('data-toggle-caption') == 'false') {
+      ctrls.classList.add('dcf-pin-top');
+    } else {
+      ctrls.classList.add('dcf-pin-bottom');
     }
 
     // Add role and aria-label to controls group
     ctrls.setAttribute('aria-label', `${this.slideshowName} controls`);
-    ctrls.setAttribute('role', 'list'); 
+    ctrls.setAttribute('role', 'group');
 
-    this.ctrlPreviousButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+    this.ctrlPrevBtn.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
     if (this.theme.slidePrevBtnClassList) {
-      this.ctrlPreviousButton.classList.add(...this.theme.slidePrevBtnClassList);
+      this.ctrlPrevBtn.classList.add(...this.theme.slidePrevBtnClassList);
     }
     if (this.theme.slideBtnClassList) {
-      this.ctrlPreviousButton.classList.add(...this.theme.slideBtnClassList);
+      this.ctrlPrevBtn.classList.add(...this.theme.slideBtnClassList);
     }
     if (this.theme.slidePrevBtnInnerHTML) {
-      this.ctrlPreviousButton.innerHTML = this.theme.slidePrevBtnInnerHTML;
+      this.ctrlPrevBtn.innerHTML = this.theme.slidePrevBtnInnerHTML;
     }
-    this.ctrlPreviousButton.setAttribute('aria-label', `${this.slideshowName} previous`);
+    this.ctrlPrevBtn.setAttribute('id', this.uuid.concat('-previous'));
+    this.ctrlPrevBtn.setAttribute('aria-label', `${this.slideshowName} previous`);
 
-    this.ctrlNextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
+    this.ctrlNextBtn.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
     if (this.theme.slideNextBtnClassList) {
-      this.ctrlNextButton.classList.add(...this.theme.slideNextBtnClassList);
+      this.ctrlNextBtn.classList.add(...this.theme.slideNextBtnClassList);
     }
     if (this.theme.slideBtnClassList) {
-      this.ctrlNextButton.classList.add(...this.theme.slideBtnClassList);
+      this.ctrlNextBtn.classList.add(...this.theme.slideBtnClassList);
     }
     if (this.theme.slideNextBtnInnerHTML) {
-      this.ctrlNextButton.innerHTML = this.theme.slideNextBtnInnerHTML;
+      this.ctrlNextBtn.innerHTML = this.theme.slideNextBtnInnerHTML;
     }
-    this.ctrlNextButton.setAttribute('aria-label', `${this.slideshowName} next`);
-
-    this.ctrlPrevious.setAttribute('id', this.uuid.concat('-previous'));
-    this.ctrlPrevious.classList.add('dcf-li-slide-prev');
-    this.ctrlNext.setAttribute('id', this.uuid.concat('-next'));
-    this.ctrlNext.classList.add('dcf-li-slide-next');
+    this.ctrlNextBtn.setAttribute('id', this.uuid.concat('-next'));
+    this.ctrlNextBtn.setAttribute('aria-label', `${this.slideshowName} next`);
 
     // Add relative class for absolute positioning of slideshow controls
     this.slideshow.classList.add('dcf-relative');
 
     // Append controls (previous/next slide) to slideshow
-    this.ctrlPrevious.appendChild(this.ctrlPreviousButton);
-    this.ctrlNext.appendChild(this.ctrlNextButton);
-    ctrls.appendChild(this.ctrlPrevious);
+    ctrls.appendChild(this.ctrlPrevBtn);
     if (this.allowPlay) {
-      ctrls.appendChild(this.ctrlPlayToggle);
+      ctrls.appendChild(this.ctrlPlayToggleBtn);
     }
-    ctrls.appendChild(this.ctrlNext);
+    ctrls.appendChild(this.ctrlNextBtn);
     this.slideshow.appendChild(ctrls);
 
     if (this.allowPlay && this.slideshow.dataset.play.toLowerCase() === 'auto') {
-      this.ctrlPlayToggleButton.click();
+      this.ctrlPlayToggleBtn.click();
     }
 
-    this.ctrlPrevious.addEventListener('click', () => {
+    this.ctrlPrevBtn.addEventListener('click', () => {
       this.showSlide('previous');
     }, false);
 
-    this.ctrlPrevious.addEventListener('keydown', (keydownEvent) => {
+    this.ctrlPrevBtn.addEventListener('keydown', (keydownEvent) => {
       if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
         keydownEvent.preventDefault();
         this.slideDeck.focus();
       }
     }, false);
 
-    this.ctrlNext.addEventListener('click', () => {
+    this.ctrlNextBtn.addEventListener('click', () => {
       this.showSlide('next');
     }, false);
 
-    this.ctrlNext.addEventListener('keydown', (keydownEvent) => {
+    this.ctrlNextBtn.addEventListener('keydown', (keydownEvent) => {
       if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
         keydownEvent.preventDefault();
         this.slideDeck.focus();
@@ -294,41 +282,41 @@ class SlideshowObj {
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
           if(!(this.slideshow.getAttribute('data-toggle-caption') == 'false')){
-              let captionBtn = document.createElement('button');
-              if (this.theme.figureCaptionBtnInnerHTML) {
-                captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
-              }
+            let captionBtn = document.createElement('button');
+            if (this.theme.figureCaptionBtnInnerHTML) {
+              captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+            }
 
-              // Add classes to each caption toggle button
-              captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
-              if (this.theme.slideBtnClassList) {
-                captionBtn.classList.add(...this.theme.slideBtnClassList);
-              }
+            // Add classes to each caption toggle button
+            captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
+            if (this.theme.slideBtnClassList) {
+              captionBtn.classList.add(...this.theme.slideBtnClassList);
+            }
 
-              // Create a unique ID for each caption toggle button
-              captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
-              captionBtn.setAttribute('tabindex', '-1');
+            // Create a unique ID for each caption toggle button
+            captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
+            captionBtn.setAttribute('tabindex', '-1');
 
-              // Add ARIA attributes to each caption toggle button
-              captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
-              captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
-              captionBtn.setAttribute('aria-expanded', 'false');
+            // Add ARIA attributes to each caption toggle button
+            captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
+            captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
+            captionBtn.setAttribute('aria-expanded', 'false');
 
-              // Add class to each figure
-              figure.classList.add('dcf-slide-figure');
+            // Add class to each figure
+            figure.classList.add('dcf-slide-figure');
 
-              // Append caption toggle button to each figure
-              figure.appendChild(captionBtn);
+            // Append caption toggle button to each figure
+            figure.appendChild(captionBtn);
 
-              // Add Events to caption toggle button
-              this.captionBtnEvents(captionBtn);
+            // Add Events to caption toggle button
+            this.captionBtnEvents(captionBtn);
 
-              // Add Theme Events to caption toggle button
-              if (this.theme.figureCaptionToggleTransition) {
-                this.theme.figureCaptionToggleTransition(captionBtn);
-              }
+            // Add Theme Events to caption toggle button
+            if (this.theme.figureCaptionToggleTransition) {
+              this.theme.figureCaptionToggleTransition(captionBtn);
+            }
 
-              // Style each caption
+            // Style each caption
             // Might be something here!!!!!
             caption.classList.add('dcf-opacity-0',
                 'dcf-pointer-events-none',
@@ -336,12 +324,12 @@ class SlideshowObj {
                 'dcf-slide-caption',
                 'dcf-figcaption');
 
-              // Create a unique ID for each caption
-              caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
+            // Create a unique ID for each caption
+            caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
-              // Add ARIA attributes to each caption
-              caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
-              caption.setAttribute('aria-hidden', 'true');
+            // Add ARIA attributes to each caption
+            caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
+            caption.setAttribute('aria-hidden', 'true');
           }
 
         }
