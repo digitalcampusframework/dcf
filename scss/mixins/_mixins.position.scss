@@ -8,13 +8,7 @@
 @mixin relative($imp:null) { position: relative $imp; } // Relative
 @mixin absolute($imp:null) { position: absolute $imp; } // Absolute
 @mixin fixed($imp:null) { position: fixed $imp; }       // Fixed
-@mixin sticky($imp:null) {                              // Sticky
-
-  @supports (position: sticky) {
-    position: sticky $imp;
-  }
-
-}
+@mixin sticky($imp:null) { position: sticky $imp; }     // Sticky
 
 
 // Coordinates
