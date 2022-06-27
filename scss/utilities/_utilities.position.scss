@@ -12,7 +12,41 @@
 
 
 // Coordinates
-.dcf-pin-top { @include pin-top(!important); }        // Pin To Top
-.dcf-pin-right { @include pin-right(!important); }    // Pin To Right
-.dcf-pin-bottom { @include pin-bottom(!important); }  // Pin To Bottom
-.dcf-pin-left { @include pin-left(!important); }      // Pin To Left
+.dcf-pin-top, // Deprecate .dcf-pin-top
+.dcf-top-0 {
+  @include top-0(!important);
+}
+
+.dcf-top-100% {
+  @include top-100pc(!important);
+}
+
+
+.dcf-pin-right, // Deprecate .dcf-pin-right
+.dcf-right-0 {
+  @include right-0(!important);
+}
+
+.dcf-right-100% {
+  @include right-100pc(!important);
+}
+
+
+.dcf-pin-bottom, // Deprecate .dcf-pin-bottom
+.dcf-bottom-0 {
+  @include bottom-0(!important);
+}
+
+.dcf-bottom-100% {
+  @include bottom-100pc(!important);
+}
+
+
+.dcf-pin-left, // Deprecate .dcf-pin-left
+.dcf-left-0 {
+  @include left-0(!important);
+}
+
+.dcf-left-100% {
+  @include left-100pc(!important);
+}
