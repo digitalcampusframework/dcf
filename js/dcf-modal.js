@@ -425,7 +425,7 @@ export class DCFModal {
       }
 
       // Add default utility classes to each modal
-      modal.classList.add('dcf-fixed', 'dcf-pin-top', 'dcf-pin-left', 'dcf-h-100%', 'dcf-w-100%', 'dcf-d-flex', 'dcf-ai-center',
+      modal.classList.add('dcf-fixed', 'dcf-top-0', 'dcf-left-0', 'dcf-h-100%', 'dcf-w-100%', 'dcf-d-flex', 'dcf-ai-center',
         'dcf-jc-center', 'dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
 
       // Set attribute for modal wrapper
@@ -442,14 +442,14 @@ export class DCFModal {
       if (modalHeader.classList.length === DCFUtility.magicNumbers('int1') &&
         modalHeader.classList.contains('dcf-modal-header')) {
         // If no custom classes are present, add default utility classes to modal header
-        modalHeader.classList.add('dcf-wrapper', 'dcf-pt-8', 'dcf-sticky', 'dcf-pin-top');
+        modalHeader.classList.add('dcf-wrapper', 'dcf-pt-8', 'dcf-sticky', 'dcf-top-0');
       }
 
       // Check each 'close' button for any additional classes
       if (btnCloseModal.classList.length === DCFUtility.magicNumbers('int1') &&
         btnCloseModal.classList.contains('dcf-btn-close-modal')) {
         // If no custom classes are present, add default utility classes to 'close' button
-        btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-pin-top', 'dcf-pin-right', 'dcf-z-1');
+        btnCloseModal.classList.add('dcf-btn', 'dcf-btn-tertiary', 'dcf-absolute', 'dcf-top-0', 'dcf-right-0', 'dcf-z-1');
       }
 
       // Check modal content for any additional classes

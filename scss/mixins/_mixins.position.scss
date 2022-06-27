@@ -8,17 +8,18 @@
 @mixin relative($imp:null) { position: relative $imp; } // Relative
 @mixin absolute($imp:null) { position: absolute $imp; } // Absolute
 @mixin fixed($imp:null) { position: fixed $imp; }       // Fixed
-@mixin sticky($imp:null) {                              // Sticky
-
-  @supports (position: sticky) {
-    position: sticky $imp;
-  }
-
-}
+@mixin sticky($imp:null) { position: sticky $imp; }     // Sticky
 
 
 // Coordinates
-@mixin pin-top($imp:null) { top: 0 $imp; }        // Pin To Top
-@mixin pin-right($imp:null) { right: 0 $imp; }    // Pin To Right
-@mixin pin-bottom($imp:null) { bottom: 0 $imp; }  // Pin To Bottom
-@mixin pin-left($imp:null) { left: 0 $imp; }      // Pin To Left
+@mixin top-0($imp:null) { top: 0 $imp; }
+@mixin top-100pc($imp:null) { top: 100% $imp; }
+
+@mixin right-0($imp:null) { right: 0 $imp; }
+@mixin right-100pc($imp:null) { right: 100% $imp; }
+
+@mixin bottom-0($imp:null) { bottom: 0 $imp; }
+@mixin bottom-100pc($imp:null) { bottom: 100% $imp; }
+
+@mixin left-0($imp:null) { left: 0 $imp; }
+@mixin left-100pc($imp:null) { left: 100% $imp; }

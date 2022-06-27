@@ -188,14 +188,14 @@ class SlideshowObj {
     ctrls.classList.add('dcf-slideshow-controls',
       'dcf-btn-group',
       'dcf-absolute',
-      'dcf-pin-right',
+      'dcf-right-0',
       'dcf-z-1');
 
     // If data-toggle-caption is false then move it to the top
     if (this.slideshow.getAttribute('data-toggle-caption') === 'false') {
-      ctrls.classList.add('dcf-pin-top');
+      ctrls.classList.add('dcf-top-0');
     } else {
-      ctrls.classList.add('dcf-pin-bottom');
+      ctrls.classList.add('dcf-bottom-0');
     }
 
     // Add role and aria-label to controls group
