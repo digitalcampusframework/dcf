@@ -192,7 +192,7 @@ class SlideshowObj {
       'dcf-z-1');
 
     // If data-toggle-caption is false then move it to the top
-    if (this.slideshow.getAttribute('data-toggle-caption') == 'false') {
+    if (this.slideshow.getAttribute('data-toggle-caption') === 'false') {
       ctrls.classList.add('dcf-pin-top');
     } else {
       ctrls.classList.add('dcf-pin-bottom');
@@ -281,7 +281,7 @@ class SlideshowObj {
         let caption = figure.querySelector('figcaption');
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
-          if(!(this.slideshow.getAttribute('data-toggle-caption') == 'false')){
+          if (!(this.slideshow.getAttribute('data-toggle-caption') === 'false')) {
             let captionBtn = document.createElement('button');
             if (this.theme.figureCaptionBtnInnerHTML) {
               captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
@@ -319,10 +319,10 @@ class SlideshowObj {
             // Style each caption
             // Might be something here!!!!!
             caption.classList.add('dcf-opacity-0',
-                'dcf-pointer-events-none',
-                'dcf-invisible',
-                'dcf-slide-caption',
-                'dcf-figcaption');
+              'dcf-pointer-events-none',
+              'dcf-invisible',
+              'dcf-slide-caption',
+              'dcf-figcaption');
 
             // Create a unique ID for each caption
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
@@ -331,7 +331,6 @@ class SlideshowObj {
             caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
             caption.setAttribute('aria-hidden', 'true');
           }
-
         }
       }
     });
@@ -368,8 +367,8 @@ class SlideshowObj {
     } else {
       Array.prototype.forEach.call(this.slides, (slide) => {
         let img = slide.querySelector('img');
-        //Fetch
-        //img.setAttribute('fetchpriority', 'low');
+        // Fetch
+        // img.setAttribute('fetchpriority', 'low');
         if (img) {
           this.lazyLoadImage(img);
         }
