@@ -9,13 +9,21 @@
 .dcf-input-checkbox,
 .dcf-input-radio {
   margin-bottom: $margin-bottom-checkbox-radio;
+}
+
+
+// Relatively position the containers (parents) so the inputs (children) can be absolutely positioned
+.dcf-input-checkbox,
+.dcf-input-radio,
+.dcf-input-switch {
   position: relative;
 }
 
 
 // Hide the actual input, toggled by label instead
 .dcf-input-checkbox input[type="checkbox"],
-.dcf-input-radio input[type="radio"] {
+.dcf-input-radio input[type="radio"],
+.dcf-input-switch input[type="radio"] {
   cursor: pointer;
   height: 1px;
   left: 0;
@@ -28,17 +36,71 @@
 }
 
 
-// Style label for checkboxes and radios
+// Style label for checkboxes, radios and switches
+.dcf-input-checkbox label,
+.dcf-input-radio label,
+.dcf-input-switch label {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+
 .dcf-input-checkbox label,
 .dcf-input-radio label {
-  cursor: pointer;
   padding-left: $padding-left-checkbox-radio;
-  touch-action: manipulation;
   @if (to-number($height-width-checkbox-radio) < to-number(#{ms(4)}em)) {
     vertical-align: top;
   } @else {
     vertical-align: text-top;
   }
+}
+
+
+.dcf-input-switch label {
+  border-style: $border-style-button;
+  border-width: $border-width-button;
+  @if (to-number($font-size-button) != to-number(#{ms(0)}em)) {
+    font-size: $font-size-button;
+  }
+  @if ($font-weight-button-bold) {
+    font-weight: bold;
+  }
+  line-height: $line-height-button;
+  padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
+  text-align: center;
+  @if ($text-transform-button-uppercase) {
+    text-transform: uppercase;
+  }
+}
+
+
+@if ($border-radius-button-roundrect) {
+
+  .dcf-input-switch:first-child label {
+    @include sharp-right;
+  }
+
+
+  .dcf-input-switch:last-child label {
+    @include sharp-left;
+  }
+
+}
+
+
+// Checked or "active" switch
+.dcf-input-switch input[type="radio"]:checked + label {
+  background-color: $bg-color-button-primary;
+  border-color: $border-color-button-primary;
+  color: $color-button-primary;
+}
+
+
+// Unchecked or "inactive" switch
+.dcf-input-switch input[type="radio"]:not(:checked) + label {
+  background-color: $bg-color-button-tertiary;
+  border-color: $border-color-button-tertiary;
+  color: $color-button-tertiary;
 }
 
 
