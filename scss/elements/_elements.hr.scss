@@ -1,0 +1,12 @@
+/////////////////////////////////////////
+// CORE / ELEMENTS / HR (HORIZONTAL RULE)
+/////////////////////////////////////////
+
+
+hr {
+  border-color: $border-color-hr;
+  border-style: $border-style-hr;
+  border-bottom-width: $border-bottom-width-hr;
+  border-top-width: $border-top-width-hr;
+  margin: $margin-top-hr 0 $margin-bottom-hr;
+}
