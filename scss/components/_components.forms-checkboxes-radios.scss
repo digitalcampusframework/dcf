@@ -77,12 +77,12 @@
 @if ($border-radius-button-roundrect) {
 
   .dcf-input-switch:first-child label {
-    @include sharp-right;
+    border-radius: $roundrect 0 0 $roundrect;
   }
 
 
   .dcf-input-switch:last-child label {
-    @include sharp-left;
+    border-radius: 0 $roundrect $roundrect 0;
   }
 
 }
