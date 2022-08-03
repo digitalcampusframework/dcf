@@ -21,7 +21,6 @@
     "copy-props": "^2.0.5",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
-    "gulp-scss-lint": "^1.0.0",
     "hosted-git-info": "^2.8.9",
     "lodash": "^4.17.21",
     "minimist": "^1.2.6",
