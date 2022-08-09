@@ -59,12 +59,14 @@
 // .dcf-form is needed to override input styles
 @if ($border-radius-input-roundrect) {
 
-  .dcf-form .dcf-input-group input:not(:first-child) {
+  .dcf-form .dcf-input-group input:not(:first-child),
+  .dcf-form .dcf-input-group select:not(:first-child) {
     @include sharp-left;
   }
 
 
-  .dcf-form .dcf-input-group input:not(:last-child) {
+  .dcf-form .dcf-input-group input:not(:last-child),
+  .dcf-form .dcf-input-group select:not(:last-child) {
     @include sharp-right;
   }
 
