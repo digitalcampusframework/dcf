@@ -1,0 +1,34 @@
+//////////////////////
+// CORE / PRINT / BASE
+//////////////////////
+
+
+// Define page margins
+@page {
+  margin-inline: .5in;
+}
+
+
+// Do not let elements extend to the edge of the page when printed
+.dcf-bleed {
+  left: unset;
+  margin-inline: 0;
+  position: static;
+  right: unset;
+  width: auto;
+}
+
+
+// Remove page wrapper padding
+.dcf-wrapper {
+  padding-inline: 0;
+}
+
+
+// Display Flexbox and CSS Grid items as blocks when printed
+.dcf-main .dcf-d-flex,
+.dcf-main .dcf-d-grid,
+.dcf-main [class*=' dcf-grid'],
+.dcf-main [class^='dcf-grid'] {
+  @include d-block(!important);
+}
