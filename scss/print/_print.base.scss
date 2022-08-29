@@ -9,6 +9,12 @@
 }
 
 
+// Set font-size for print
+:root {
+  font-size: $font-size-print;
+}
+
+
 // Do not let elements extend to the edge of the page when printed
 .dcf-bleed {
   left: initial;
