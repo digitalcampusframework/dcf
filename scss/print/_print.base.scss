@@ -5,16 +5,16 @@
 
 // Define page margins
 @page {
-  margin-inline: .5in;
+  margin: $margin-top-print-page $margin-right-print-page $margin-bottom-print-page $margin-left-print-page;
 }
 
 
 // Do not let elements extend to the edge of the page when printed
 .dcf-bleed {
-  left: unset;
+  left: initial;
   margin-inline: 0;
   position: static;
-  right: unset;
+  right: initial;
   width: auto;
 }
 
