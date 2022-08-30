@@ -1,0 +1,11 @@
+////////////////////////
+// CORE / PRINT / IMAGES
+////////////////////////
+
+
+// Convert images to grayscale for print
+@if ($filter-grayscale-images-print) {
+  img {
+    filter: grayscale(1);
+  }
+}
