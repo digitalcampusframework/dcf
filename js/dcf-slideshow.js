@@ -1,4 +1,6 @@
 import { DCFUtility } from './dcf-utility';
+import { DCFToggleButtonTheme, DCFToggleButton } from './dcf-toggleButton';
+
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
     this.slideshow = slideshow;
@@ -282,40 +284,6 @@ class SlideshowObj {
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
           if (!(this.slideshow.getAttribute('data-toggle-caption') === 'false')) {
-            let captionBtn = document.createElement('button');
-            if (this.theme.figureCaptionBtnInnerHTML) {
-              captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
-            }
-
-            // Add classes to each caption toggle button
-            captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
-            if (this.theme.slideBtnClassList) {
-              captionBtn.classList.add(...this.theme.slideBtnClassList);
-            }
-
-            // Create a unique ID for each caption toggle button
-            captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
-            captionBtn.setAttribute('tabindex', '-1');
-
-            // Add ARIA attributes to each caption toggle button
-            captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
-            captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
-            captionBtn.setAttribute('aria-expanded', 'false');
-
-            // Add class to each figure
-            figure.classList.add('dcf-slide-figure');
-
-            // Append caption toggle button to each figure
-            figure.appendChild(captionBtn);
-
-            // Add Events to caption toggle button
-            this.captionBtnEvents(captionBtn);
-
-            // Add Theme Events to caption toggle button
-            if (this.theme.figureCaptionToggleTransition) {
-              this.theme.figureCaptionToggleTransition(captionBtn);
-            }
-
             // Style each caption
             // Might be something here!!!!!
             caption.classList.add('dcf-opacity-0',
@@ -330,6 +298,43 @@ class SlideshowObj {
             // Add ARIA attributes to each caption
             caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
             caption.setAttribute('aria-hidden', 'true');
+
+            const toggleButtonTheme = new DCFToggleButtonTheme();
+            toggleButtonTheme.setThemeVariable('toggleButtonInnerHTML', this.theme.figureCaptionBtnInnerHTML);
+            toggleButtonTheme.setThemeVariable('toggleButtonAnimation', this.theme.figureCaptionToggleTransition);
+            toggleButtonTheme.setThemeVariable('toggleElementAnimation', this.theme.slideToggleTransition);
+            toggleButtonTheme.setThemeVariable('toggleButtonClasses', [
+              'dcf-btn',
+              'dcf-inverse-tertiary',
+              'dcf-d-flex',
+              'dcf-ai-center',
+              'dcf-pt-4',
+              'dcf-pb-4',
+              'dcf-white',
+              'dcf-btn-slide',
+              'dcf-btn-slide-caption'
+            ]);
+
+            let captionBtn = document.createElement('button');
+            captionBtn.dataset.controls = this.uuid.concat('-caption-', slideIndex);
+            captionBtn.dataset.labelOn = `${this.slideshowName} Show caption`;
+            captionBtn.dataset.labelOff = `${this.slideshowName} Hide caption`;
+            captionBtn.dataset.postfix = slideIndex;
+            captionBtn.setAttribute('tabindex', '-1');
+
+            const toggleButtonObj = new DCFToggleButton(captionBtn, toggleButtonTheme, {
+              offkeys: [ 'arrowUp', 'tab' ]
+            });
+            toggleButtonObj.initialize();
+
+            // Append caption toggle button to each figure
+            figure.appendChild(captionBtn);
+
+            // Add class to each figure
+            figure.classList.add('dcf-slide-figure');
+
+            // Add Events to caption toggle button
+            this.captionBtnEvents(captionBtn);
           }
         }
       }
@@ -415,26 +420,8 @@ class SlideshowObj {
   }
 
   captionBtnEvents(button) {
-    const caption = button.previousElementSibling;
-    // Handle Click
-    button.addEventListener('click', (onClick) => {
-      this.captionClasses(onClick.currentTarget, caption);
-      onClick.preventDefault();
-    }, false);
-
-    // Show caption when the 'space' key is pressed
     button.addEventListener('keydown', (keydownEvent) => {
-      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('space'))) {
-        keydownEvent.preventDefault();
-        this.captionClasses(keydownEvent.currentTarget, caption);
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp')) ||
-        DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('tab'))) {
-        keydownEvent.preventDefault();
-        if (!caption.classList.contains('dcf-invisible')) {
-          this.captionClasses(keydownEvent.currentTarget, caption);
-        }
-        this.slideDeck.focus();
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
         keydownEvent.preventDefault();
       } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft')) ||
         DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
@@ -589,7 +576,7 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       'd="M1,23h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,22.6,0.4,23,1,23z"/>
 </svg>`;
 
-    this.figureCaptionToggleTransition = (button) => {
+    this.figureCaptionToggleTransition = (toggleButton) => {
       const keyframesClose1 = [
         {
           transform: 'rotate(45deg)',
@@ -639,23 +626,21 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         fill: 'forwards'
       };
 
-      let caption = button.previousElementSibling;
-      let close1 = button.querySelector('.theme-icon-slide-caption-close-1');
-      let close2 = button.querySelector('.theme-icon-slide-caption-close-2');
+      let close1 = toggleButton.querySelector('.theme-icon-slide-caption-close-1');
+      let close2 = toggleButton.querySelector('.theme-icon-slide-caption-close-2');
 
-      caption.addEventListener('openCaption', () => {
+      toggleButton.addEventListener(DCFToggleButton.events('toggleButtonOff'), () => {
         close1.animate(keyframesClose1, options);
         close2.animate(keyframesClose2, options);
       }, false);
 
-      caption.addEventListener('closeCaption', () => {
+      toggleButton.addEventListener(DCFToggleButton.events('toggleButtonOn'), () => {
         close1.animate(keyframesOpen1, options);
         close2.animate(keyframesOpen2, options);
       }, false);
     };
 
     this.slideToggleTransitionDuration = 1000;
-
     this.slideToggleTransition = (slide) => {
       const keyframesShowSlide = [
         {
@@ -680,11 +665,11 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         fill: 'forwards'
       };
 
-      slide.addEventListener('showSlide', () => {
+      slide.addEventListener(DCFToggleButton.events('toggleElementOn'), () => {
         slide.animate(keyframesShowSlide, options);
       }, false);
 
-      slide.addEventListener('hideSlide', () => {
+      slide.addEventListener(DCFToggleButton.events('toggleElementOff'), () => {
         slide.animate(keyframesHideSlide, options);
       }, false);
     };
@@ -790,9 +775,13 @@ export class DCFSlideshow {
       openCaption: 'openCaption',
       closeCaption: 'closeCaption',
       showSlide: 'showSlide',
-      hideSlide: 'hideSlide'
+      hideSlide: 'hideSlide',
     };
     Object.freeze(events);
+
+    if (DCFToggleButton.events(name) !== undefined) {
+      return DCFToggleButton.events(name);
+    }
 
     return name in events ? events[name] : undefined;
   }
