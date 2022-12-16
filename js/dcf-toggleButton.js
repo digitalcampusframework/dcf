@@ -123,7 +123,7 @@ export class DCFToggleButtonTheme{
 
     setThemeVariable(themeVariableName, value) {
         if (themeVariableName in this && typeof value == typeof this[themeVariableName]) {
-            this[themeVariableName] = value
+            this[themeVariableName] = value;
         }
     }
 }
@@ -262,6 +262,7 @@ export class DCFToggleButton{
     }
 
     // Handles the logic for the button
+    // This will only call the animations
     toggleSwitched(toggleButton, toggleElement, state=""){
 
         // Gets the labels for the button
@@ -270,7 +271,6 @@ export class DCFToggleButton{
 
         // Toggled On
         if (toggleButton.ariaExpanded === "false" && (state === "open" || state === "")) {
-
             toggleButton.setAttribute('aria-expanded', 'true');
             toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
             toggleButton.dispatchEvent(this.toggleButtonOn);
@@ -279,19 +279,18 @@ export class DCFToggleButton{
             toggleElement.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
             toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
             toggleElement.dispatchEvent(this.toggleElementOn);
-
             toggleElement.focus();
 
         // Toggle Off
         } else if (toggleButton.ariaExpanded === "true" && (state === "close" || state === "")) {
-
             toggleButton.setAttribute('aria-expanded', 'false');
             toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
             toggleButton.dispatchEvent(this.toggleButtonOff);
 
             toggleElement.setAttribute('aria-hidden', 'true');
             toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-            toggleElement.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
+            toggleElement.classList.add('dcf-pointer-events-none');
+            // toggleElement.classList.add('dcf-opacity-0', 'dcf-invisible');
             toggleElement.dispatchEvent(this.toggleElementOff);
         }
     }
