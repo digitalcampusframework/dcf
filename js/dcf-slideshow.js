@@ -382,43 +382,6 @@ class SlideshowObj {
     }
   }
 
-  // Caption visibility transition
-  captionTransition(event) {
-    // Remove event listener and toggle visibility after caption has closed
-    event.removeEventListener('transitionend', this.captionTransition, true);
-    // Check if caption is already visible
-    if (!event.classList.contains('dcf-invisible')) {
-      // Add class to hide caption
-      event.classList.add('dcf-invisible');
-    }
-  }
-
-  // Add classes to the caption & button
-  captionClasses(button, caption) {
-    // Check if caption is already visible
-    if (!caption.classList.contains('dcf-invisible')) {
-      // Hide content
-      caption.addEventListener('transitionend', this.captionTransition(caption), true);
-      // Update ARIA attributes
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-label', 'Show caption');
-      caption.setAttribute('aria-hidden', 'true');
-      caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-      caption.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
-      caption.dispatchEvent(this.source.openCaptionEvent);
-    } else {
-      // Remove class to show content
-      caption.classList.remove('dcf-invisible');
-      // Update ARIA attributes
-      button.setAttribute('aria-expanded', 'true');
-      button.setAttribute('aria-label', 'Hide caption');
-      caption.setAttribute('aria-hidden', 'false');
-      caption.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
-      caption.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
-      caption.dispatchEvent(this.source.closeCaptionEvent);
-    }
-  }
-
   captionBtnEvents(button) {
     button.addEventListener('keydown', (keydownEvent) => {
       if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
@@ -676,82 +639,8 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
   }
 
   setThemeVariable(themeVariableName, value) {
-    switch (themeVariableName) {
-    case 'slideBtnClassList':
-      if (Array.isArray(value)) {
-        this.slideBtnClassList = value;
-      }
-      break;
-
-    case 'slidePrevBtnClassList':
-      if (Array.isArray(value)) {
-        this.slidePrevBtnClassList = value;
-      }
-      break;
-
-    case 'slidePrevBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePrevBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slideNextBtnClassList':
-      if (Array.isArray(value)) {
-        this.slideNextBtnClassList = value;
-      }
-      break;
-
-    case 'slideNextvBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slideNextBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slidePlayToggleBtnClassList':
-      if (Array.isArray(value)) {
-        this.slidePlayToggleBtnClassList = value;
-      }
-      break;
-
-    case 'slidePlayBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePlayBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slidePauseBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePauseBtnInnerHTML = value;
-      }
-      break;
-
-    case 'figureCaptionBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.figureCaptionBtnInnerHTML = value;
-      }
-      break;
-
-    case 'figureCaptionToggleTransition':
-      if (typeof value === 'function') {
-        this.figureCaptionToggleTransition = value;
-      }
-      break;
-
-    case 'slideToggleTransitionDuration':
-      if (typeof value === 'number') {
-        this.slideToggleTransitionDuration = value;
-      }
-      break;
-
-    case 'slideToggleTransition':
-      if (typeof value === 'function') {
-        this.slideToggleTransition = value;
-      }
-      break;
-
-    default:
-      // Invalid variable so ignore
-      break;
+    if (themeVariableName in this && typeof value == typeof this[themeVariableName]) {
+      this[themeVariableName] = value;
     }
   }
 }
