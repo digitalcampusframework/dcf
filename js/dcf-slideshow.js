@@ -295,10 +295,6 @@ class SlideshowObj {
             // Create a unique ID for each caption
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
-            // Add ARIA attributes to each caption
-            // caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
-            // caption.setAttribute('aria-hidden', 'true');
-
             const toggleButtonTheme = new DCFToggleButtonTheme();
             toggleButtonTheme.setThemeVariable('toggleButtonInnerHTML', this.theme.figureCaptionBtnInnerHTML);
             toggleButtonTheme.setThemeVariable('toggleButtonAnimation', this.theme.figureCaptionToggleTransition);
