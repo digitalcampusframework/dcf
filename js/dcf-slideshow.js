@@ -1,5 +1,5 @@
 import { DCFUtility } from './dcf-utility';
-import { DCFToggleButtonTheme, DCFToggleButton } from './dcf-toggleButton';
+import { DCFToggleButton } from './dcf-toggleButton';
 
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
@@ -295,30 +295,21 @@ class SlideshowObj {
             // Create a unique ID for each caption
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
-            const toggleButtonTheme = new DCFToggleButtonTheme();
-            toggleButtonTheme.setThemeVariable('toggleButtonInnerHTML', this.theme.figureCaptionBtnInnerHTML);
-            toggleButtonTheme.setThemeVariable('toggleButtonAnimation', this.theme.figureCaptionToggleTransition);
-            toggleButtonTheme.setThemeVariable('toggleElementAnimation', this.theme.slideToggleTransition);
-            toggleButtonTheme.setThemeVariable('toggleButtonClasses', [
-              'dcf-btn',
-              'dcf-btn-inverse-tertiary',
-              'dcf-d-flex',
-              'dcf-ai-center',
-              'dcf-pt-4',
-              'dcf-pb-4',
-              'dcf-white',
-              'dcf-btn-slide',
-              'dcf-btn-slide-caption'
-            ]);
-
             let captionBtn = document.createElement('button');
             captionBtn.dataset.controls = this.uuid.concat('-caption-', slideIndex);
             captionBtn.dataset.labelOn = `${this.slideshowName} Show caption`;
             captionBtn.dataset.labelOff = `${this.slideshowName} Hide caption`;
             captionBtn.dataset.postfix = slideIndex;
             captionBtn.setAttribute('tabindex', '-1');
+            captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+            this.theme.figureCaptionBtnClassList.forEach((cssClass) => {
+              captionBtn.classList.add(cssClass);
+            });
 
-            const toggleButtonObj = new DCFToggleButton(captionBtn, toggleButtonTheme, {
+            this.theme.figureCaptionToggleTransition(captionBtn);
+            this.theme.slideToggleTransition(caption);
+
+            const toggleButtonObj = new DCFToggleButton(captionBtn, {
               offKeys: [ 'arrowUp', 'tab' ]
             });
             toggleButtonObj.initialize();
@@ -519,6 +510,15 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     0zM18.5 0h-5C13.224 0 13 .224 13 .5v23c0 .276.224.5.5.5h5c.276 0 .5-.224.5-.5v-23C19 .224 18.776 0 18.5 0z"></path>
 </svg>`;
 
+    this.figureCaptionBtnClassList = [ 'dcf-btn',
+      'dcf-btn-inverse-tertiary',
+      'dcf-d-flex',
+      'dcf-ai-center',
+      'dcf-pt-4',
+      'dcf-pb-4',
+      'dcf-white',
+      'dcf-btn-slide',
+      'dcf-btn-slide-caption' ];
     this.figureCaptionBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current"
       width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path class="theme-icon-slide-caption-open"
@@ -629,6 +629,9 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       }, false);
 
       slide.addEventListener(DCFToggleButton.events('toggleElementOff'), () => {
+        // These are added from the toggle button
+        // but will not allow us to use our animation so we will remove them before
+        slide.classList.remove('dcf-opacity-0', 'dcf-invisible');
         slide.animate(keyframesHideSlide, options);
       }, false);
     };
