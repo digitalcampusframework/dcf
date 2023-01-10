@@ -1,4 +1,6 @@
 import { DCFUtility } from './dcf-utility';
+import { DCFToggleButton } from './dcf-toggleButton';
+
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
     this.slideshow = slideshow;
@@ -282,40 +284,6 @@ class SlideshowObj {
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
           if (!(this.slideshow.getAttribute('data-toggle-caption') === 'false')) {
-            let captionBtn = document.createElement('button');
-            if (this.theme.figureCaptionBtnInnerHTML) {
-              captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
-            }
-
-            // Add classes to each caption toggle button
-            captionBtn.classList.add('dcf-btn', 'dcf-btn-slide', 'dcf-btn-slide-caption');
-            if (this.theme.slideBtnClassList) {
-              captionBtn.classList.add(...this.theme.slideBtnClassList);
-            }
-
-            // Create a unique ID for each caption toggle button
-            captionBtn.setAttribute('id', this.uuid.concat('-button-', slideIndex));
-            captionBtn.setAttribute('tabindex', '-1');
-
-            // Add ARIA attributes to each caption toggle button
-            captionBtn.setAttribute('aria-controls', this.uuid.concat('-caption-', slideIndex));
-            captionBtn.setAttribute('aria-label', `${this.slideshowName} Show caption`);
-            captionBtn.setAttribute('aria-expanded', 'false');
-
-            // Add class to each figure
-            figure.classList.add('dcf-slide-figure');
-
-            // Append caption toggle button to each figure
-            figure.appendChild(captionBtn);
-
-            // Add Events to caption toggle button
-            this.captionBtnEvents(captionBtn);
-
-            // Add Theme Events to caption toggle button
-            if (this.theme.figureCaptionToggleTransition) {
-              this.theme.figureCaptionToggleTransition(captionBtn);
-            }
-
             // Style each caption
             // Might be something here!!!!!
             caption.classList.add('dcf-opacity-0',
@@ -327,9 +295,33 @@ class SlideshowObj {
             // Create a unique ID for each caption
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
-            // Add ARIA attributes to each caption
-            caption.setAttribute('aria-labelledby', this.uuid.concat('-button-', slideIndex));
-            caption.setAttribute('aria-hidden', 'true');
+            let captionBtn = document.createElement('button');
+            captionBtn.dataset.controls = this.uuid.concat('-caption-', slideIndex);
+            captionBtn.dataset.labelOn = `${this.slideshowName} Show caption`;
+            captionBtn.dataset.labelOff = `${this.slideshowName} Hide caption`;
+            captionBtn.dataset.postfix = slideIndex;
+            captionBtn.setAttribute('tabindex', '-1');
+            captionBtn.innerHTML = this.theme.figureCaptionBtnInnerHTML;
+            this.theme.figureCaptionBtnClassList.forEach((cssClass) => {
+              captionBtn.classList.add(cssClass);
+            });
+
+            this.theme.figureCaptionToggleTransition(captionBtn);
+            this.theme.slideToggleTransition(caption);
+
+            const toggleButtonObj = new DCFToggleButton(captionBtn, {
+              offKeys: [ 'arrowUp', 'tab' ]
+            });
+            toggleButtonObj.initialize();
+
+            // Append caption toggle button to each figure
+            figure.appendChild(captionBtn);
+
+            // Add class to each figure
+            figure.classList.add('dcf-slide-figure');
+
+            // Add Events to caption toggle button
+            this.captionBtnEvents(captionBtn);
           }
         }
       }
@@ -377,64 +369,9 @@ class SlideshowObj {
     }
   }
 
-  // Caption visibility transition
-  captionTransition(event) {
-    // Remove event listener and toggle visibility after caption has closed
-    event.removeEventListener('transitionend', this.captionTransition, true);
-    // Check if caption is already visible
-    if (!event.classList.contains('dcf-invisible')) {
-      // Add class to hide caption
-      event.classList.add('dcf-invisible');
-    }
-  }
-
-  // Add classes to the caption & button
-  captionClasses(button, caption) {
-    // Check if caption is already visible
-    if (!caption.classList.contains('dcf-invisible')) {
-      // Hide content
-      caption.addEventListener('transitionend', this.captionTransition(caption), true);
-      // Update ARIA attributes
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-label', 'Show caption');
-      caption.setAttribute('aria-hidden', 'true');
-      caption.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-      caption.classList.add('dcf-opacity-0', 'dcf-pointer-events-none', 'dcf-invisible');
-      caption.dispatchEvent(this.source.openCaptionEvent);
-    } else {
-      // Remove class to show content
-      caption.classList.remove('dcf-invisible');
-      // Update ARIA attributes
-      button.setAttribute('aria-expanded', 'true');
-      button.setAttribute('aria-label', 'Hide caption');
-      caption.setAttribute('aria-hidden', 'false');
-      caption.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
-      caption.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
-      caption.dispatchEvent(this.source.closeCaptionEvent);
-    }
-  }
-
   captionBtnEvents(button) {
-    const caption = button.previousElementSibling;
-    // Handle Click
-    button.addEventListener('click', (onClick) => {
-      this.captionClasses(onClick.currentTarget, caption);
-      onClick.preventDefault();
-    }, false);
-
-    // Show caption when the 'space' key is pressed
     button.addEventListener('keydown', (keydownEvent) => {
-      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('space'))) {
-        keydownEvent.preventDefault();
-        this.captionClasses(keydownEvent.currentTarget, caption);
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp')) ||
-        DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('tab'))) {
-        keydownEvent.preventDefault();
-        if (!caption.classList.contains('dcf-invisible')) {
-          this.captionClasses(keydownEvent.currentTarget, caption);
-        }
-        this.slideDeck.focus();
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
         keydownEvent.preventDefault();
       } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft')) ||
         DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
@@ -573,6 +510,15 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     0zM18.5 0h-5C13.224 0 13 .224 13 .5v23c0 .276.224.5.5.5h5c.276 0 .5-.224.5-.5v-23C19 .224 18.776 0 18.5 0z"></path>
 </svg>`;
 
+    this.figureCaptionBtnClassList = [ 'dcf-btn',
+      'dcf-btn-inverse-tertiary',
+      'dcf-d-flex',
+      'dcf-ai-center',
+      'dcf-pt-4',
+      'dcf-pb-4',
+      'dcf-white',
+      'dcf-btn-slide',
+      'dcf-btn-slide-caption' ];
     this.figureCaptionBtnInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current"
       width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path class="theme-icon-slide-caption-open"
@@ -589,7 +535,7 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       'd="M1,23h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,22.6,0.4,23,1,23z"/>
 </svg>`;
 
-    this.figureCaptionToggleTransition = (button) => {
+    this.figureCaptionToggleTransition = (toggleButton) => {
       const keyframesClose1 = [
         {
           transform: 'rotate(45deg)',
@@ -639,23 +585,21 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         fill: 'forwards'
       };
 
-      let caption = button.previousElementSibling;
-      let close1 = button.querySelector('.theme-icon-slide-caption-close-1');
-      let close2 = button.querySelector('.theme-icon-slide-caption-close-2');
+      let close1 = toggleButton.querySelector('.theme-icon-slide-caption-close-1');
+      let close2 = toggleButton.querySelector('.theme-icon-slide-caption-close-2');
 
-      caption.addEventListener('openCaption', () => {
+      toggleButton.addEventListener(DCFToggleButton.events('toggleButtonOff'), () => {
         close1.animate(keyframesClose1, options);
         close2.animate(keyframesClose2, options);
       }, false);
 
-      caption.addEventListener('closeCaption', () => {
+      toggleButton.addEventListener(DCFToggleButton.events('toggleButtonOn'), () => {
         close1.animate(keyframesOpen1, options);
         close2.animate(keyframesOpen2, options);
       }, false);
     };
 
     this.slideToggleTransitionDuration = 1000;
-
     this.slideToggleTransition = (slide) => {
       const keyframesShowSlide = [
         {
@@ -680,93 +624,22 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         fill: 'forwards'
       };
 
-      slide.addEventListener('showSlide', () => {
+      slide.addEventListener(DCFToggleButton.events('toggleElementOn'), () => {
         slide.animate(keyframesShowSlide, options);
       }, false);
 
-      slide.addEventListener('hideSlide', () => {
+      slide.addEventListener(DCFToggleButton.events('toggleElementOff'), () => {
+        // These are added from the toggle button
+        // but will not allow us to use our animation so we will remove them before
+        slide.classList.remove('dcf-opacity-0', 'dcf-invisible');
         slide.animate(keyframesHideSlide, options);
       }, false);
     };
   }
 
   setThemeVariable(themeVariableName, value) {
-    switch (themeVariableName) {
-    case 'slideBtnClassList':
-      if (Array.isArray(value)) {
-        this.slideBtnClassList = value;
-      }
-      break;
-
-    case 'slidePrevBtnClassList':
-      if (Array.isArray(value)) {
-        this.slidePrevBtnClassList = value;
-      }
-      break;
-
-    case 'slidePrevBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePrevBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slideNextBtnClassList':
-      if (Array.isArray(value)) {
-        this.slideNextBtnClassList = value;
-      }
-      break;
-
-    case 'slideNextvBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slideNextBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slidePlayToggleBtnClassList':
-      if (Array.isArray(value)) {
-        this.slidePlayToggleBtnClassList = value;
-      }
-      break;
-
-    case 'slidePlayBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePlayBtnInnerHTML = value;
-      }
-      break;
-
-    case 'slidePauseBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.slidePauseBtnInnerHTML = value;
-      }
-      break;
-
-    case 'figureCaptionBtnInnerHTML':
-      if (typeof value === 'string') {
-        this.figureCaptionBtnInnerHTML = value;
-      }
-      break;
-
-    case 'figureCaptionToggleTransition':
-      if (typeof value === 'function') {
-        this.figureCaptionToggleTransition = value;
-      }
-      break;
-
-    case 'slideToggleTransitionDuration':
-      if (typeof value === 'number') {
-        this.slideToggleTransitionDuration = value;
-      }
-      break;
-
-    case 'slideToggleTransition':
-      if (typeof value === 'function') {
-        this.slideToggleTransition = value;
-      }
-      break;
-
-    default:
-      // Invalid variable so ignore
-      break;
+    if (themeVariableName in this && typeof value == typeof this[themeVariableName]) {
+      this[themeVariableName] = value;
     }
   }
 }
@@ -790,9 +663,13 @@ export class DCFSlideshow {
       openCaption: 'openCaption',
       closeCaption: 'closeCaption',
       showSlide: 'showSlide',
-      hideSlide: 'hideSlide'
+      hideSlide: 'hideSlide',
     };
     Object.freeze(events);
+
+    if (DCFToggleButton.events(name) !== undefined) {
+      return DCFToggleButton.events(name);
+    }
 
     return name in events ? events[name] : undefined;
   }
