@@ -273,11 +273,6 @@ class SlideshowObj {
       slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
       slide.classList.add('dcf-slide', 'dcf-relative');
 
-      // Add Theme Events to slide
-      if (this.theme.slideToggleTransition) {
-        this.theme.slideToggleTransition(slide);
-      }
-
       let figure = slide.querySelector('figure');
       if (figure) {
         let caption = figure.querySelector('figcaption');
@@ -295,6 +290,7 @@ class SlideshowObj {
             // Create a unique ID for each caption
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
 
+            // Set up the caption button
             let captionBtn = document.createElement('button');
             captionBtn.dataset.controls = this.uuid.concat('-caption-', slideIndex);
             captionBtn.dataset.labelOn = `${this.slideshowName} Show caption`;
@@ -306,13 +302,19 @@ class SlideshowObj {
               captionBtn.classList.add(cssClass);
             });
 
-            this.theme.figureCaptionToggleTransition(captionBtn);
-            this.theme.slideToggleTransition(caption);
-
+            // Initialize the toggle button
             const toggleButtonObj = new DCFToggleButton(captionBtn, {
               offKeys: [ 'arrowUp', 'tab' ]
             });
             toggleButtonObj.initialize();
+
+            // Set up the animations/transitions for the slides and caption button
+            if (this.theme.slideToggleTransition) {
+              this.theme.slideToggleTransition(caption);
+            }
+            if (this.theme.figureCaptionToggleTransition) {
+              this.theme.figureCaptionToggleTransition(captionBtn);
+            }
 
             // Append caption toggle button to each figure
             figure.appendChild(captionBtn);
@@ -652,18 +654,11 @@ export class DCFSlideshow {
     } else {
       this.theme = new DCFSlideshowTheme();
     }
-    this.openCaptionEvent = new Event(DCFSlideshow.events('openCaption'));
-    this.closeCaptionEvent = new Event(DCFSlideshow.events('closeCaption'));
-    this.showSlideEvent = new Event(DCFSlideshow.events('showSlide'));
-    this.hideSlideEvent = new Event(DCFSlideshow.events('hideSlide'));
   }
 
   static events(name) {
     const events = {
-      openCaption: 'openCaption',
-      closeCaption: 'closeCaption',
-      showSlide: 'showSlide',
-      hideSlide: 'hideSlide',
+
     };
     Object.freeze(events);
 
