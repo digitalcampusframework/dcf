@@ -1,5 +1,5 @@
 import { DCFUtility } from './dcf-utility';
-import { DCFToggleButton } from './dcf-toggleButton';
+import { DCFToggleButton } from './dcf-toggle-button';
 
 class SlideshowObj {
   constructor(slideshow, slideshowIndex, source) {
@@ -534,8 +534,8 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path class="theme-icon-slide-caption-open"
       d="M1,18h18c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,17.6,0.4,18,1,18z"/>
     <path class="theme-icon-slide-caption-open"
-      'd="M1,23h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,22.6,0.4,23,1,23z"/>
-</svg>`;
+      d="M1,23h15c0.6,0,1-0.4,1-1c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1C0,22.6,0.4,23,1,23z"/>
+    </svg>`;
 
     this.figureCaptionToggleTransition = (toggleButton) => {
       const keyframesClose1 = [
