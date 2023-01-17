@@ -42,11 +42,24 @@ export class DCFFigcaptionToggleTheme {
 
 export class DCFFigcaptionToggle {
   // Set up the button
-  constructor(figcaptions, theme) {
+  constructor(figcaptions, theme, options = {}) {
     if (theme instanceof DCFFigcaptionToggleTheme) {
       this.theme = theme;
     } else {
       this.theme = new DCFFigcaptionToggleTheme();
+    }
+
+    this.toggleKeys = options.toggleKeys;
+    if (this.toggleKeys === undefined) {
+      this.toggleKeys = [];
+    }
+    this.onKeys = options.onKeys;
+    if (this.onKeys === undefined) {
+      this.onKeys = [];
+    }
+    this.offKeys = options.offKeys;
+    if (this.offKeys === undefined) {
+      this.offKeys = [];
     }
 
     // Create a random ID for the button
@@ -96,7 +109,7 @@ export class DCFFigcaptionToggle {
 
       // Set up the caption button
       let toggleButton = document.createElement('button');
-      toggleButton.dataset.controls = this.uuid.concat('-figcaption-toggle-', index);
+      toggleButton.dataset.controls = figcaption.id;
       toggleButton.dataset.labelOn = 'Show caption';
       toggleButton.dataset.labelOff = 'Hide caption';
       toggleButton.dataset.postfix = index;
@@ -112,7 +125,11 @@ export class DCFFigcaptionToggle {
 
       // Append the button and initialize it
       figure.appendChild(toggleButton);
-      const toggleButtonObj = new DCFToggleButton(toggleButton);
+      const toggleButtonObj = new DCFToggleButton(toggleButton, {
+        toggleKeys: this.toggleKeys,
+        onKeys:     this.onKeys,
+        offKeys:    this.offKeys,
+      });
       toggleButtonObj.initialize();
     });
   }

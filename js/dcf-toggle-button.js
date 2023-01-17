@@ -91,13 +91,12 @@ export class DCFToggleButton {
       // Init toggleElement Styles
       if (toggleButtonStartExpanded === 'true') {
         toggleElement.setAttribute('aria-hidden', 'false');
-        toggleElement.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
+        toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
         toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
       } else if (toggleButtonStartExpanded === 'false') {
         toggleElement.setAttribute('aria-hidden', 'true');
         toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-        toggleElement.classList.add('dcf-pointer-events-none');
-        toggleElement.classList.add('dcf-opacity-0', 'dcf-invisible');
+        toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       }
 
       // set up the event listeners for the button and element
@@ -151,7 +150,7 @@ export class DCFToggleButton {
       toggleButton.dispatchEvent(this.toggleButtonOn);
 
       toggleElement.setAttribute('aria-hidden', 'false');
-      toggleElement.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
+      toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
       toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
       toggleElement.dispatchEvent(this.toggleElementOn);
       toggleElement.focus();
@@ -164,8 +163,7 @@ export class DCFToggleButton {
 
       toggleElement.setAttribute('aria-hidden', 'true');
       toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-      toggleElement.classList.add('dcf-pointer-events-none');
-      toggleElement.classList.add('dcf-opacity-0', 'dcf-invisible');
+      toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       toggleElement.dispatchEvent(this.toggleElementOff);
     }
   }
