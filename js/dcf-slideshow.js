@@ -279,14 +279,14 @@ class SlideshowObj {
         if (!(typeof caption == 'undefined')) {
           // Create button to show/hide caption if data-toggle-caption is true
           if (!(this.slideshow.getAttribute('data-toggle-caption') === 'false')) {
-            // Set caption values
+            // Set caption id
             caption.setAttribute('id', this.uuid.concat('-caption-', slideIndex));
-            caption.classList.add('dcf-figcaption-toggle-slideshow');
 
             // Create an customize theme
             const figcaptionToggleTheme = new DCFFigcaptionToggleTheme();
             figcaptionToggleTheme.setThemeVariable('toggleButtonInnerHTML', this.theme.figureCaptionBtnInnerHTML);
             figcaptionToggleTheme.setThemeVariable('toggleButtonClassList', this.theme.figureCaptionBtnClassList);
+            figcaptionToggleTheme.setThemeVariable('figcaptionClassList', this.theme.captionClassList);
 
             // Initialize figcaption
             const figcaptionToggleObj = new DCFFigcaptionToggle(caption, figcaptionToggleTheme, {
@@ -491,9 +491,21 @@ viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     0zM18.5 0h-5C13.224 0 13 .224 13 .5v23c0 .276.224.5.5.5h5c.276 0 .5-.224.5-.5v-23C19 .224 18.776 0 18.5 0z"></path>
 </svg>`;
 
+    this.captionClassList = [
+      'dcf-absolute',
+      'dcf-left-0',
+      'dcf-top-0',
+      'dcf-h-100%',
+      'dcf-w-100%',
+      'dcf-z-1',
+      'dcf-slide-caption'
+    ];
+
     this.figureCaptionBtnClassList = [
       'dcf-btn',
       'dcf-btn-inverse-tertiary',
+      'dcf-absolute',
+      'dcf-z-1',
       'dcf-d-flex',
       'dcf-ai-center',
       'dcf-pt-4',

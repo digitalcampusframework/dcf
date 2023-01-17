@@ -23,12 +23,24 @@ export class DCFFigcaptionToggleTheme {
     this.toggleButtonClassList = [
       'dcf-btn',
       'dcf-btn-inverse-tertiary',
+      'dcf-absolute',
+      'dcf-z-1',
       'dcf-d-flex',
       'dcf-ai-center',
       'dcf-pt-4',
       'dcf-pb-4',
       'dcf-white',
       'dcf-btn-toggle-figcaption'
+    ];
+
+    this.figcaptionClassList = [
+      'dcf-absolute',
+      'dcf-left-0',
+      'dcf-top-0',
+      'dcf-h-100%',
+      'dcf-w-100%',
+      'dcf-z-1',
+      'dcf-figcaption-toggle'
     ];
   }
 
@@ -105,6 +117,11 @@ export class DCFFigcaptionToggle {
 
       if (figcaption.id === '') {
         figcaption.id = this.uuid.concat('-figcaption-toggle-', index);
+      }
+      if (this.theme.figcaptionClassList) {
+        this.theme.figcaptionClassList.forEach((cssClass) => {
+          figcaption.classList.add(cssClass);
+        });
       }
 
       // Set up the caption button
