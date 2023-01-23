@@ -19,6 +19,10 @@
 
 .dcf-blockquote > p {
   font-size: $font-size-blockquote-p;
+}
+
+
+.dcf-blockquote > p:first-child {
   padding-top: $padding-top-blockquote-p;
 }
 
