@@ -27,7 +27,7 @@
 }
 
 
-.dcf-blockquote > p::after {
+.dcf-blockquote > p:last-of-type::after {
   content: close-quote;
 }
 
