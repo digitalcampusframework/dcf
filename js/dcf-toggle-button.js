@@ -9,6 +9,7 @@ export class DCFToggleButton {
     this.toggleElementOn = new Event(DCFToggleButton.events('toggleElementOn'));
     this.toggleElementOff = new Event(DCFToggleButton.events('toggleElementOff'));
 
+    // Set up key that toggle, open, and close
     this.toggleKeys = options.toggleKeys;
     if (this.toggleKeys === undefined) {
       this.toggleKeys = [];
@@ -22,6 +23,7 @@ export class DCFToggleButton {
       this.offKeys = [];
     }
 
+    // These keys will always work
     this.toggleKeys.push('space');
     this.offKeys.push('escape');
 
@@ -57,10 +59,11 @@ export class DCFToggleButton {
       // Gets the info for the thing the button is toggling
       const toggleElementId = toggleButton.dataset.controls;
       const toggleElement = document.getElementById(toggleElementId);
+      if (toggleElement === null) {
+        throw new Error('Missing Toggle Element');
+      }
 
       // Gets the info for setting up the button
-      const toggleButtonLabelOn = toggleButton.dataset.labelOn;
-      const toggleButtonLabelOff = toggleButton.dataset.labelOff;
       let toggleButtonIdPostfix = toggleButton.dataset.postfix;
       if (toggleButtonIdPostfix === undefined) {
         toggleButtonIdPostfix = '';
@@ -77,9 +80,6 @@ export class DCFToggleButton {
 
       // set the attributes for the button
       toggleButton.setAttribute('aria-controls', toggleElementId);
-      toggleButton.setAttribute('aria-label', toggleButtonStartExpanded === 'true' ?
-        toggleButtonLabelOff : toggleButtonLabelOn);
-      toggleButton.setAttribute('aria-expanded', toggleButtonStartExpanded);
 
       // set the attributes for the thing being toggled
       if (toggleElement.getAttribute('aria-labelledby') !== null &&
@@ -88,17 +88,9 @@ export class DCFToggleButton {
       }
       toggleElement.setAttribute('aria-labelledby', toggleButton.id);
 
-      // Init toggleElement Styles
-      if (toggleButtonStartExpanded === 'true') {
-        toggleElement.setAttribute('aria-hidden', 'false');
-        toggleElement.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
-        toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
-      } else if (toggleButtonStartExpanded === 'false') {
-        toggleElement.setAttribute('aria-hidden', 'true');
-        toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-        toggleElement.classList.add('dcf-pointer-events-none');
-        toggleElement.classList.add('dcf-opacity-0', 'dcf-invisible');
-      }
+      // ToggleSwitched will set many of the other attributes and styles
+      const expandedState = toggleButtonStartExpanded === 'true' ? 'open' : 'close';
+      this.toggleSwitched(toggleButton, toggleElement, expandedState);
 
       // set up the event listeners for the button and element
       this.eventListeners(toggleButton, toggleElement);
@@ -145,27 +137,28 @@ export class DCFToggleButton {
     const toggleButtonLabelOff = toggleButton.dataset.labelOff;
 
     // Toggled On
-    if (toggleButton.ariaExpanded === 'false' && (state === 'open' || state === '')) {
+    if ((toggleButton.ariaExpanded === 'false' || toggleButton.ariaExpanded === null) &&
+      (state === 'open' || state === '')) {
       toggleButton.setAttribute('aria-expanded', 'true');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
       toggleButton.dispatchEvent(this.toggleButtonOn);
 
       toggleElement.setAttribute('aria-hidden', 'false');
-      toggleElement.classList.remove('dcf-invisible', 'dcf-opacity-0', 'dcf-pointer-events-none');
+      toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
       toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
       toggleElement.dispatchEvent(this.toggleElementOn);
       toggleElement.focus();
 
     // Toggle Off
-    } else if (toggleButton.ariaExpanded === 'true' && (state === 'close' || state === '')) {
+    } else if ((toggleButton.ariaExpanded === 'true' || toggleButton.ariaExpanded === null) &&
+      (state === 'close' || state === '')) {
       toggleButton.setAttribute('aria-expanded', 'false');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
       toggleButton.dispatchEvent(this.toggleButtonOff);
 
       toggleElement.setAttribute('aria-hidden', 'true');
       toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
-      toggleElement.classList.add('dcf-pointer-events-none');
-      toggleElement.classList.add('dcf-opacity-0', 'dcf-invisible');
+      toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       toggleElement.dispatchEvent(this.toggleElementOff);
     }
   }
