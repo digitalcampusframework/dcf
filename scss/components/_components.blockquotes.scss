@@ -19,11 +19,15 @@
 
 .dcf-blockquote > p {
   font-size: $font-size-blockquote-p;
+}
+
+
+.dcf-blockquote > p:first-child {
   padding-top: $padding-top-blockquote-p;
 }
 
 
-.dcf-blockquote > p::after {
+.dcf-blockquote > p:last-of-type::after {
   content: close-quote;
 }
 
