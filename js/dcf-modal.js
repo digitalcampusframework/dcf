@@ -378,7 +378,10 @@ export class DCFModal {
       const modalId = button.getAttribute('data-toggles-modal');
 
       // Generate unique ID for each 'open modal' button
-      const btnId = DCFUtility.uuidv4();
+      let btnId = DCFUtility.uuidv4();
+      if (button.id != undefined || button.id != "") {
+        btnId = button.id;
+      }
       button.setAttribute('id', btnId);
 
       // Buttons are disabled by default until JavaScript has loaded.
