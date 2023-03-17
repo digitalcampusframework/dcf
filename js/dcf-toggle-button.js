@@ -137,7 +137,7 @@ export class DCFToggleButton {
     const toggleButtonLabelOff = toggleButton.dataset.labelOff;
 
     // Toggled On
-    if ((toggleButton.ariaExpanded === 'false' || toggleButton.ariaExpanded === null) &&
+    if ((toggleButton.getAttribute('aria-expanded') === 'false' || toggleButton.getAttribute('aria-expanded') === null || toggleButton.getAttribute('aria-expanded') === "") &&
       (state === 'open' || state === '')) {
       toggleButton.setAttribute('aria-expanded', 'true');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
@@ -150,7 +150,7 @@ export class DCFToggleButton {
       toggleElement.focus();
 
     // Toggle Off
-    } else if ((toggleButton.ariaExpanded === 'true' || toggleButton.ariaExpanded === null) &&
+    } else if ((toggleButton.getAttribute('aria-expanded') === 'true' || toggleButton.getAttribute('aria-expanded') === null || toggleButton.getAttribute('aria-expanded') === "") &&
       (state === 'close' || state === '')) {
       toggleButton.setAttribute('aria-expanded', 'false');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
