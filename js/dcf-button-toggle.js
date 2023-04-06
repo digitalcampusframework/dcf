@@ -45,7 +45,10 @@ export class DCFToggleButton {
       toggleButtonOn: 'toggleButtonOn',
       toggleButtonOff: 'toggleButtonOff',
       toggleElementOn: 'toggleElementOn',
-      toggleElementOff: 'toggleElementOff'
+      toggleElementOff: 'toggleElementOff',
+      commandClose: 'commandClose',
+      commandOpen: 'commandOpen',
+      commandToggle: 'commandToggle',
     };
     Object.freeze(events);
 
@@ -127,6 +130,26 @@ export class DCFToggleButton {
         }
       });
     }, false);
+
+    toggleButton.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'open');
+    });
+    toggleButton.addEventListener(DCFToggleButton.events('commandClose'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'close');
+    });
+    toggleButton.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+      this.toggleSwitched(toggleButton, toggleElement);
+    });
+
+    toggleElement.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'open');
+    });
+    toggleElement.addEventListener(DCFToggleButton.events('commandClose'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'close');
+    });
+    toggleElement.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+      this.toggleSwitched(toggleButton, toggleElement);
+    });
   }
 
   // Handles the logic for the button
