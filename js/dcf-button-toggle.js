@@ -104,8 +104,10 @@ export class DCFToggleButton {
   eventListeners(toggleButton, toggleElement) {
     // Toggle the element when button is clicked
     toggleButton.addEventListener('click', (clickEvent) => {
-      this.toggleSwitched(toggleButton, toggleElement);
-      clickEvent.preventDefault();
+      const switched = this.toggleSwitched(toggleButton, toggleElement);
+      if (switched) {
+        clickEvent.preventDefault();
+      }
     }, false);
 
     // Show/hide element when the 'space' key is pressed
@@ -113,20 +115,26 @@ export class DCFToggleButton {
     toggleButton.addEventListener('keydown', (keydownEvent) => {
       this.toggleKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement);
+          const switched = this.toggleSwitched(toggleButton, toggleElement);
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
       this.onKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement, 'open');
+          const switched = this.toggleSwitched(toggleButton, toggleElement, 'open');
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
       this.offKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement, 'close');
+          const switched = this.toggleSwitched(toggleButton, toggleElement, 'close');
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
     }, false);
@@ -174,6 +182,7 @@ export class DCFToggleButton {
       toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
       toggleElement.dispatchEvent(this.toggleElementOn);
       toggleElement.focus();
+      return true;
 
     // Toggle Off
     } else if ((toggleButton.getAttribute('aria-expanded') === 'true' ||
@@ -189,6 +198,9 @@ export class DCFToggleButton {
       toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
       toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       toggleElement.dispatchEvent(this.toggleElementOff);
+      return true;
     }
+
+    return false;
   }
 }
