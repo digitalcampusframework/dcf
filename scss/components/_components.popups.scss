@@ -1,0 +1,18 @@
+/////////////////////////////////
+// CORE / COMPONENTS / SLIDESHOWS
+/////////////////////////////////
+
+
+.dcf-popup {
+  width: fit-content;
+}
+
+.dcf-popup[data-alignment="center"][data-position="top"] .dcf-popup-content,
+.dcf-popup[data-alignment="center"][data-position="bottom"] .dcf-popup-content {
+  transform: translateX(-50%);
+}
+
+.dcf-popup[data-alignment="center"][data-position="left"] .dcf-popup-content,
+.dcf-popup[data-alignment="center"][data-position="right"] .dcf-popup-content {
+  transform: translateY(-50%);
+}
