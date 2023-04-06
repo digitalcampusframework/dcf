@@ -299,6 +299,7 @@ class SlideshowObj {
 
             // Get the toggle button and add events to it
             const captionBtn = figure.querySelector('.dcf-btn-slide-caption');
+            captionBtn.setAttribute('tabindex', '-1');
             if (captionBtn === null) {
               throw new Error('Error Initializing Toggle Caption, Missing Button');
             }
