@@ -14,7 +14,11 @@ export class DCFPopupTheme {
     this.popupContentClassList = [
       'dcf-absolute',
       'dcf-z-2',
+      'dcf-txt-sm'
     ];
+
+    this.pointSize = '1rem';
+    this.pointMarginSize = '4';
   }
 
   // Allows us to set the theme variables if they are defined and we match the types
@@ -130,6 +134,8 @@ export class DCFPopup {
       popupBtn.dataset.controls = popupContent.id;
       popupBtn.dataset.startExpanded = 'false';
 
+      popup.style.setProperty('--point_size', this.theme.pointSize);
+
       // Sets up position classes
       this.addPositionClasses(popup, popupContent);
 
@@ -174,22 +180,22 @@ export class DCFPopup {
     if (position === 'top') {
       popupContent.classList.add('dcf-bottom-100%');
       if (point) {
-        popupContent.classList.add('dcf-mb-4');
+        popupContent.classList.add(`dcf-mb-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'bottom') {
       popupContent.classList.add('dcf-top-100%');
       if (point) {
-        popupContent.classList.add('dcf-mt-4');
+        popupContent.classList.add(`dcf-mt-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'left') {
       popupContent.classList.add('dcf-right-100%');
       if (point) {
-        popupContent.classList.add('dcf-mr-4');
+        popupContent.classList.add(`dcf-mr-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'right') {
       popupContent.classList.add('dcf-left-100%');
       if (point) {
-        popupContent.classList.add('dcf-ml-4');
+        popupContent.classList.add(`dcf-ml-${this.theme.pointMarginSize}`);
       }
     }
 
