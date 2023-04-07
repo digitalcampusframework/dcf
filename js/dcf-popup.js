@@ -151,21 +151,37 @@ export class DCFPopup {
     }
     let alignment = popup.dataset.alignment;
     if (alignment === undefined) {
-      alignment = 'start';
+      alignment = 'center';
     } else if (!this.alignments.includes(alignment)) {
       throw new Error('Invalid Alignment On Popup');
     }
 
+    let point = popup.dataset.point === 'true';
+
+    // Set up position specific classes
     if (position === 'top') {
       popupContent.classList.add('dcf-bottom-100%');
+      if (point) {
+        popupContent.classList.add('dcf-mb-4');
+      }
     } else if (position === 'bottom') {
       popupContent.classList.add('dcf-top-100%');
+      if (point) {
+        popupContent.classList.add('dcf-mt-4');
+      }
     } else if (position === 'left') {
       popupContent.classList.add('dcf-right-100%');
+      if (point) {
+        popupContent.classList.add('dcf-mr-4');
+      }
     } else if (position === 'right') {
       popupContent.classList.add('dcf-left-100%');
+      if (point) {
+        popupContent.classList.add('dcf-ml-4');
+      }
     }
 
+    // Set up alignment classes
     if (position === 'top' || position === 'bottom') {
       if (alignment === 'start') {
         popupContent.classList.add('dcf-left-0');
@@ -180,7 +196,7 @@ export class DCFPopup {
       } else if (alignment === 'end') {
         popupContent.classList.add('dcf-bottom-0');
       } else if (alignment === 'center') {
-        popupContent.classList.add('dcf-top-50%');
+        popupContent.classList.add('dcf-top-0'); // Not sure why this should be 0 instead of 50%
       }
     }
   }
