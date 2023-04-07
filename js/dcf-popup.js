@@ -104,6 +104,9 @@ export class DCFPopup {
       }
 
       // Sets the IDs for the btn and content if they aren't already set
+      if (popup.id === '') {
+        popup.id = this.uuid.concat(`-popup-${index}`);
+      }
       if (popupBtn.id === '') {
         popupBtn.id = this.uuid.concat(`-popup-btn-${index}`);
       }
@@ -134,11 +137,20 @@ export class DCFPopup {
       const toggleButtonObj = new DCFToggleButton(popupBtn);
       toggleButtonObj.initialize();
 
+      // if there is a close button and its clicked close the popup
       if (closeButton !== null) {
         closeButton.addEventListener('click', () => {
           popupBtn.dispatchEvent(this.commandClose);
         });
       }
+
+      // If we click outside the popup close the popup
+      document.body.addEventListener('click', (event) => {
+        const closestPopup = event.target.closest('.dcf-popup');
+        if (closestPopup === null || closestPopup.id !== popup.id) {
+          popupBtn.dispatchEvent(this.commandClose);
+        }
+      }, true);
     });
   }
 
