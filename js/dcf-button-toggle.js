@@ -179,7 +179,7 @@ export class DCFToggleButton {
 
       toggleElement.setAttribute('aria-hidden', 'false');
       toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
-      toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
+      toggleElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.dispatchEvent(this.toggleElementOn);
       toggleElement.focus();
       return true;
@@ -195,7 +195,7 @@ export class DCFToggleButton {
       toggleButton.dispatchEvent(this.toggleButtonOff);
 
       toggleElement.setAttribute('aria-hidden', 'true');
-      toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
+      toggleElement.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       toggleElement.dispatchEvent(this.toggleElementOff);
       return true;
