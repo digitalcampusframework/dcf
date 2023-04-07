@@ -54,13 +54,13 @@
 
   // Left Center
   &[data-position="left"] .dcf-popup-content::before {
-    top: calc(50% + var(--point_size));
+    top: calc(50% - var(--point_size) / 2);
     left: calc(100% - var(--point_size) / 2);
   }
 
   // Right Center
   &[data-position="right"] .dcf-popup-content::before {
-    top: calc(50% + var(--point_size));
+    top: calc(50% - var(--point_size) / 2);
     left: calc(-1 * var(--point_size) / 2);
   }
 

@@ -214,7 +214,7 @@ export class DCFPopup {
       } else if (alignment === 'end') {
         popupContent.classList.add('dcf-bottom-0');
       } else if (alignment === 'center') {
-        popupContent.classList.add('dcf-top-0'); // Not sure why this should be 0 instead of 50%
+        popupContent.classList.add('dcf-top-50%');
       }
     }
   }
