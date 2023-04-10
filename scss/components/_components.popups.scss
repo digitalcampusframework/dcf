@@ -35,7 +35,7 @@
   --point_size: 1rem;
 
   // Bottom & Center
-  & .dcf-popup-content:before {
+  & .dcf-popup-content::before {
     content: "";
     height: var(--point_size);
     width: var(--point_size);
@@ -66,31 +66,31 @@
 
   // Bottom Start
   // Top Start
-  &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content:before,
-  &[data-position="bottom"][data-alignment="start"] .dcf-popup-content:before,
-  &[data-position="top"][data-alignment="start"] .dcf-popup-content:before {
+  &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
+  &[data-position="bottom"][data-alignment="start"] .dcf-popup-content::before,
+  &[data-position="top"][data-alignment="start"] .dcf-popup-content::before {
     left: var(--point_size);
   }
 
   // Bottom End
   // Top End
-  &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content:before,
-  &[data-position="bottom"][data-alignment="end"] .dcf-popup-content:before,
-  &[data-position="top"][data-alignment="end"] .dcf-popup-content:before {
+  &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
+  &[data-position="bottom"][data-alignment="end"] .dcf-popup-content::before,
+  &[data-position="top"][data-alignment="end"] .dcf-popup-content::before {
     left: calc(100% - var(--point_size) * 2);
   }
 
   // left start
   // right start
-  &[data-position="left"][data-alignment="start"] .dcf-popup-content:before,
-  &[data-position="right"][data-alignment="start"] .dcf-popup-content:before {
+  &[data-position="left"][data-alignment="start"] .dcf-popup-content::before,
+  &[data-position="right"][data-alignment="start"] .dcf-popup-content::before {
     top: var(--point_size);
   }
 
   // left end
   // right end
-  &[data-position="left"][data-alignment="end"] .dcf-popup-content:before,
-  &[data-position="right"][data-alignment="end"] .dcf-popup-content:before {
+  &[data-position="left"][data-alignment="end"] .dcf-popup-content::before,
+  &[data-position="right"][data-alignment="end"] .dcf-popup-content::before {
     top: calc(100% - var(--point_size) * 2);
   }
 }
