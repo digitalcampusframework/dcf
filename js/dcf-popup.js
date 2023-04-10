@@ -17,8 +17,13 @@ export class DCFPopupTheme {
       'dcf-txt-sm'
     ];
 
-    this.pointSize = '1rem';
+    // Sets up data for the point and the margin around it
+    this.pointSize = '1rem'; // This goes to a css variable
     this.pointMarginSize = '4';
+
+    // This is for when we our mouse leaves and comes back
+    // This is helpful for the point option for the popup
+    this.hoverTimeoutDuration = 250;
   }
 
   // Allows us to set the theme variables if they are defined and we match the types
@@ -31,7 +36,7 @@ export class DCFPopupTheme {
 
 export class DCFPopup {
   // Set up the button
-  constructor(popups, theme, options = {}) {
+  constructor(popups, theme) {
     if (theme instanceof DCFPopupTheme) {
       this.theme = theme;
     } else {
@@ -74,7 +79,7 @@ export class DCFPopup {
     return name in events ? events[name] : undefined;
   }
 
-  // Initialize the buttons that were inputted in the constructor
+  // Initialize the popup that were inputted in the constructor
   initialize() {
     // Loops through each one
     this.popups.forEach((popup, index) => {
@@ -151,50 +156,95 @@ export class DCFPopup {
       }
 
       // If we click outside the popup close the popup
+      // Event listener is on body since we want to check if we click anywhere but element
       document.body.addEventListener('click', (event) => {
+        // We then check if where we clicked has any ancestor element that is out popup
         const closestPopup = event.target.closest('.dcf-popup');
         if (closestPopup === null || closestPopup.id !== popup.id) {
+          // If the ids match we can use the secret toggle button to close the popup
           popupBtn.dispatchEvent(this.commandClose);
         }
       }, true);
+
+
+      // if the popup has a data attribute hover it will set up the hover event listeners
+      if (popup.dataset.hover === 'true') {
+        // Set up the mouse leave event listener
+        // (This will not fire when moving from one child to the next)
+        popup.addEventListener('mouseleave', () => {
+          // If there is a point it will have a gap so we want to make sure they are definitely gone
+          // If they enter again it will cancel out this timeout
+          // Stores the timeout value in the data attribute on the element since it is element specific
+          popup.dataset.hoverTimeout = setTimeout(() => {
+            popup.removeAttribute('data-hover-timeout');
+
+            // This button is a toggle button secretly so we can control it via its event listeners
+            popupBtn.dispatchEvent(this.commandClose);
+          }, this.theme.hoverTimeoutDuration);
+        });
+
+        // Sets up the mouse enter event listener
+        // this is more normal than the leave one
+        popup.addEventListener('mouseenter', () => {
+          // If we come back before the timeout is over then we can cancel it and remove it
+          clearTimeout(popup.dataset.hoverTimeout);
+          popup.removeAttribute('data-hover-timeout');
+
+          // This button is a toggle button secretly so we can control it via its event listeners
+          popupBtn.dispatchEvent(this.commandOpen);
+        });
+      }
     });
   }
 
+  /**
+   * Sets up the DCF classes for the popup content based on the popup data attributes
+   * @param {HTMLDivElement} popup Popup Div
+   * @param {HTMLDivElement} popupContent Popups content Div
+   */
   addPositionClasses(popup, popupContent) {
+    // Gets the position data attribute and checks it
     let position = popup.dataset.position;
     if (position === undefined) {
-      position = 'bottom';
+      position = 'bottom'; // Set default value
     } else if (!this.positions.includes(position)) {
-      throw new Error('Invalid Position On Popup');
-    }
-    let alignment = popup.dataset.alignment;
-    if (alignment === undefined) {
-      alignment = 'center';
-    } else if (!this.alignments.includes(alignment)) {
-      throw new Error('Invalid Alignment On Popup');
+      throw new Error('Invalid Position On Popup'); // error is if it is invalid
     }
 
+    // Gets the alignment data attribute and checks it
+    let alignment = popup.dataset.alignment;
+    if (alignment === undefined) {
+      alignment = 'center'; // Sets default value
+    } else if (!this.alignments.includes(alignment)) {
+      throw new Error('Invalid Alignment On Popup'); // Error if it is not set
+    }
+
+    // Gets the point data attribute (bool)
     let point = popup.dataset.point === 'true';
 
     // Set up position specific classes
     if (position === 'top') {
       popupContent.classList.add('dcf-bottom-100%');
       if (point) {
+        // If the point is set we need a margin for it
         popupContent.classList.add(`dcf-mb-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'bottom') {
       popupContent.classList.add('dcf-top-100%');
       if (point) {
+        // If the point is set we need a margin for it
         popupContent.classList.add(`dcf-mt-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'left') {
       popupContent.classList.add('dcf-right-100%');
       if (point) {
+        // If the point is set we need a margin for it
         popupContent.classList.add(`dcf-mr-${this.theme.pointMarginSize}`);
       }
     } else if (position === 'right') {
       popupContent.classList.add('dcf-left-100%');
       if (point) {
+        // If the point is set we need a margin for it
         popupContent.classList.add(`dcf-ml-${this.theme.pointMarginSize}`);
       }
     }
