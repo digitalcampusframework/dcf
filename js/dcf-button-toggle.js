@@ -45,7 +45,10 @@ export class DCFToggleButton {
       toggleButtonOn: 'toggleButtonOn',
       toggleButtonOff: 'toggleButtonOff',
       toggleElementOn: 'toggleElementOn',
-      toggleElementOff: 'toggleElementOff'
+      toggleElementOff: 'toggleElementOff',
+      commandClose: 'commandClose',
+      commandOpen: 'commandOpen',
+      commandToggle: 'commandToggle',
     };
     Object.freeze(events);
 
@@ -101,8 +104,10 @@ export class DCFToggleButton {
   eventListeners(toggleButton, toggleElement) {
     // Toggle the element when button is clicked
     toggleButton.addEventListener('click', (clickEvent) => {
-      this.toggleSwitched(toggleButton, toggleElement);
-      clickEvent.preventDefault();
+      const switched = this.toggleSwitched(toggleButton, toggleElement);
+      if (switched) {
+        clickEvent.preventDefault();
+      }
     }, false);
 
     // Show/hide element when the 'space' key is pressed
@@ -110,23 +115,49 @@ export class DCFToggleButton {
     toggleButton.addEventListener('keydown', (keydownEvent) => {
       this.toggleKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement);
+          const switched = this.toggleSwitched(toggleButton, toggleElement);
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
       this.onKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement, 'open');
+          const switched = this.toggleSwitched(toggleButton, toggleElement, 'open');
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
       this.offKeys.forEach((key) => {
         if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents(key))) {
-          keydownEvent.preventDefault();
-          this.toggleSwitched(toggleButton, toggleElement, 'close');
+          const switched = this.toggleSwitched(toggleButton, toggleElement, 'close');
+          if (switched) {
+            keydownEvent.preventDefault();
+          }
         }
       });
     }, false);
+
+    toggleButton.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'open');
+    });
+    toggleButton.addEventListener(DCFToggleButton.events('commandClose'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'close');
+    });
+    toggleButton.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+      this.toggleSwitched(toggleButton, toggleElement);
+    });
+
+    toggleElement.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'open');
+    });
+    toggleElement.addEventListener(DCFToggleButton.events('commandClose'), () => {
+      this.toggleSwitched(toggleButton, toggleElement, 'close');
+    });
+    toggleElement.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+      this.toggleSwitched(toggleButton, toggleElement);
+    });
   }
 
   // Handles the logic for the button
@@ -137,29 +168,39 @@ export class DCFToggleButton {
     const toggleButtonLabelOff = toggleButton.dataset.labelOff;
 
     // Toggled On
-    if ((toggleButton.getAttribute('aria-expanded') === 'false' || toggleButton.getAttribute('aria-expanded') === null || toggleButton.getAttribute('aria-expanded') === "") &&
-      (state === 'open' || state === '')) {
+    if ((toggleButton.getAttribute('aria-expanded') === 'false' ||
+      toggleButton.getAttribute('aria-expanded') === null ||
+      toggleButton.getAttribute('aria-expanded') === '') &&
+      (state === 'open' || state === '')
+    ) {
       toggleButton.setAttribute('aria-expanded', 'true');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
       toggleButton.dispatchEvent(this.toggleButtonOn);
 
       toggleElement.setAttribute('aria-hidden', 'false');
       toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
-      toggleElement.classList.add('dcf-opacity-1', 'dcf-pointer-events-auto');
+      toggleElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.dispatchEvent(this.toggleElementOn);
       toggleElement.focus();
+      return true;
 
     // Toggle Off
-    } else if ((toggleButton.getAttribute('aria-expanded') === 'true' || toggleButton.getAttribute('aria-expanded') === null || toggleButton.getAttribute('aria-expanded') === "") &&
-      (state === 'close' || state === '')) {
+    } else if ((toggleButton.getAttribute('aria-expanded') === 'true' ||
+      toggleButton.getAttribute('aria-expanded') === null ||
+      toggleButton.getAttribute('aria-expanded') === '') &&
+      (state === 'close' || state === '')
+    ) {
       toggleButton.setAttribute('aria-expanded', 'false');
       toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
       toggleButton.dispatchEvent(this.toggleButtonOff);
 
       toggleElement.setAttribute('aria-hidden', 'true');
-      toggleElement.classList.remove('dcf-opacity-1', 'dcf-pointer-events-auto');
+      toggleElement.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
       toggleElement.dispatchEvent(this.toggleElementOff);
+      return true;
     }
+
+    return false;
   }
 }

@@ -17,6 +17,10 @@
   @include top-0(!important);
 }
 
+.dcf-top-50\% {
+  @include top-50pc(!important);
+}
+
 .dcf-top-100\% {
   @include top-100pc(!important);
 }
@@ -25,6 +29,10 @@
 .dcf-pin-right, // Deprecate .dcf-pin-right
 .dcf-right-0 {
   @include right-0(!important);
+}
+
+.dcf-right-50\% {
+  @include right-50pc(!important);
 }
 
 .dcf-right-100\% {
@@ -37,6 +45,10 @@
   @include bottom-0(!important);
 }
 
+.dcf-bottom-50\% {
+  @include bottom-50pc(!important);
+}
+
 .dcf-bottom-100\% {
   @include bottom-100pc(!important);
 }
@@ -45,6 +57,10 @@
 .dcf-pin-left, // Deprecate .dcf-pin-left
 .dcf-left-0 {
   @include left-0(!important);
+}
+
+.dcf-left-50\% {
+  @include left-50pc(!important);
 }
 
 .dcf-left-100\% {

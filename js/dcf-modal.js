@@ -379,7 +379,7 @@ export class DCFModal {
 
       // Generate unique ID for each 'open modal' button
       let btnId = DCFUtility.uuidv4();
-      if (button.id != undefined || button.id != "") {
+      if (button.id !== undefined || button.id !== '') {
         btnId = button.id;
       }
       button.setAttribute('id', btnId);

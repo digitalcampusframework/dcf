@@ -1,5 +1,5 @@
 import { DCFUtility } from './dcf-utility';
-import { DCFToggleButton } from './dcf-toggle-button';
+import { DCFToggleButton } from './dcf-button-toggle';
 
 export class DCFFigcaptionToggleTheme {
   // Sets up the theme

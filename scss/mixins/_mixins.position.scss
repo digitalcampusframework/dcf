@@ -13,13 +13,17 @@
 
 // Coordinates
 @mixin top-0($imp:null) { top: 0 $imp; }
+@mixin top-50pc($imp:null) { top: 50% $imp; }
 @mixin top-100pc($imp:null) { top: 100% $imp; }
 
 @mixin right-0($imp:null) { right: 0 $imp; }
+@mixin right-50pc($imp:null) { right: 50% $imp; }
 @mixin right-100pc($imp:null) { right: 100% $imp; }
 
 @mixin bottom-0($imp:null) { bottom: 0 $imp; }
+@mixin bottom-50pc($imp:null) { bottom: 50% $imp; }
 @mixin bottom-100pc($imp:null) { bottom: 100% $imp; }
 
 @mixin left-0($imp:null) { left: 0 $imp; }
+@mixin left-50pc($imp:null) { left: 50% $imp; }
 @mixin left-100pc($imp:null) { left: 100% $imp; }
