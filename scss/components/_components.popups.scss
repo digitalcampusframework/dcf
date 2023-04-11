@@ -32,36 +32,53 @@
 // Point/arrow guy
 .dcf-popup[data-point="true"] {
 
-  --point_size: 1rem;
-
   // Bottom & Center
-  & .dcf-popup-content::before {
-    content: "";
-    height: var(--point_size);
-    width: var(--point_size);
-    position: absolute;
-    top: calc(-1 * var(--point_size) / 2);
-    left: calc(50% - var(--point_size) / 2);
-    z-index: -1;
-    background: inherit;
-    transform: rotateZ(45deg);
+  & .dcf-popup-content {
+    margin-top: $popup-toggle-margin;
+
+    &::before {
+      content: "";
+      height: $popup-toggle-point-size;
+      width: $popup-toggle-point-size;
+      position: absolute;
+      top: calc(-1 * $popup-toggle-point-size / 2);
+      left: calc(50% - $popup-toggle-point-size / 2);
+      z-index: -1;
+      background: inherit;
+      transform: rotateZ(45deg);
+    }
   }
 
   // Top Center
-  &[data-position="top"] .dcf-popup-content::before {
-    top: calc(100% - var(--point_size) / 2);
+  &[data-position="top"] .dcf-popup-content {
+    margin-top: 0;
+    margin-bottom: $popup-toggle-margin;
+
+    &::before {
+      top: calc(100% - $popup-toggle-point-size / 2);
+    }
   }
 
   // Left Center
-  &[data-position="left"] .dcf-popup-content::before {
-    top: calc(50% - var(--point_size) / 2);
-    left: calc(100% - var(--point_size) / 2);
+  &[data-position="left"] .dcf-popup-content {
+    margin-top: 0;
+    margin-right: $popup-toggle-margin;
+
+    &::before {
+      top: calc(50% - $popup-toggle-point-size / 2);
+      left: calc(100% - $popup-toggle-point-size / 2);
+    }
   }
 
   // Right Center
-  &[data-position="right"] .dcf-popup-content::before {
-    top: calc(50% - var(--point_size) / 2);
-    left: calc(-1 * var(--point_size) / 2);
+  &[data-position="right"] .dcf-popup-content {
+    margin-top: 0;
+    margin-left: $popup-toggle-margin;
+
+    &::before {
+      top: calc(50% - $popup-toggle-point-size / 2);
+      left: calc(-1 * $popup-toggle-point-size / 2);
+    }
   }
 
   // Bottom Start
@@ -69,7 +86,7 @@
   &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
   &[data-position="bottom"][data-alignment="start"] .dcf-popup-content::before,
   &[data-position="top"][data-alignment="start"] .dcf-popup-content::before {
-    left: var(--point_size);
+    left: $popup-toggle-point-size;
   }
 
   // Bottom End
@@ -77,21 +94,21 @@
   &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
   &[data-position="bottom"][data-alignment="end"] .dcf-popup-content::before,
   &[data-position="top"][data-alignment="end"] .dcf-popup-content::before {
-    left: calc(100% - var(--point_size) * 2);
+    left: calc(100% - $popup-toggle-point-size * 2);
   }
 
   // left start
   // right start
   &[data-position="left"][data-alignment="start"] .dcf-popup-content::before,
   &[data-position="right"][data-alignment="start"] .dcf-popup-content::before {
-    top: var(--point_size);
+    top: $popup-toggle-point-size;
   }
 
   // left end
   // right end
   &[data-position="left"][data-alignment="end"] .dcf-popup-content::before,
   &[data-position="right"][data-alignment="end"] .dcf-popup-content::before {
-    top: calc(100% - var(--point_size) * 2);
+    top: calc(100% - $popup-toggle-point-size * 2);
   }
 }
 
