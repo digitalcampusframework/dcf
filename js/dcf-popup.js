@@ -17,10 +17,6 @@ export class DCFPopupTheme {
       'dcf-txt-sm'
     ];
 
-    // Sets up data for the point and the margin around it
-    this.pointSize = '1rem'; // This goes to a css variable
-    this.pointMarginSize = '4';
-
     // This is for when we our mouse leaves and comes back
     // This is helpful for the point option for the popup
     this.hoverTimeoutDuration = 250;
@@ -139,8 +135,6 @@ export class DCFPopup {
       popupBtn.dataset.controls = popupContent.id;
       popupBtn.dataset.startExpanded = 'false';
 
-      popup.style.setProperty('--point_size', this.theme.pointSize);
-
       // Sets up position classes
       this.addPositionClasses(popup, popupContent);
 
@@ -219,34 +213,15 @@ export class DCFPopup {
       throw new Error('Invalid Alignment On Popup'); // Error if it is not set
     }
 
-    // Gets the point data attribute (bool)
-    let point = popup.dataset.point === 'true';
-
     // Set up position specific classes
     if (position === 'top') {
       popupContent.classList.add('dcf-bottom-100%');
-      if (point) {
-        // If the point is set we need a margin for it
-        popupContent.classList.add(`dcf-mb-${this.theme.pointMarginSize}`);
-      }
     } else if (position === 'bottom') {
       popupContent.classList.add('dcf-top-100%');
-      if (point) {
-        // If the point is set we need a margin for it
-        popupContent.classList.add(`dcf-mt-${this.theme.pointMarginSize}`);
-      }
     } else if (position === 'left') {
       popupContent.classList.add('dcf-right-100%');
-      if (point) {
-        // If the point is set we need a margin for it
-        popupContent.classList.add(`dcf-mr-${this.theme.pointMarginSize}`);
-      }
     } else if (position === 'right') {
       popupContent.classList.add('dcf-left-100%');
-      if (point) {
-        // If the point is set we need a margin for it
-        popupContent.classList.add(`dcf-ml-${this.theme.pointMarginSize}`);
-      }
     }
 
     // Set up alignment classes
