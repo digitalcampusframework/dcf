@@ -13,11 +13,6 @@
   opacity: 0;
 }
 
-// We set up the transition after since we do not want to fade out during load up
-.dcf-popup-content {
-  transition: opacity $popup-toggle-animation-duration $animation-timing-fn-fade-in;
-}
-
 .dcf-popup:not([data-alignment="start"]):not([data-alignment="end"]) {
   & .dcf-popup-content {
     transform: translateX(-50%);
