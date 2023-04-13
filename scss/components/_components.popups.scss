@@ -13,11 +13,6 @@
   opacity: 0;
 }
 
-// We set up the transition after since we do not want to fade out during load up
-.dcf-popup-content {
-  transition: opacity $popup-toggle-animation-duration $animation-timing-fn-fade-in;
-}
-
 .dcf-popup:not([data-alignment="start"]):not([data-alignment="end"]) {
   & .dcf-popup-content {
     transform: translateX(-50%);
@@ -34,15 +29,15 @@
 
   // Bottom & Center
   & .dcf-popup-content {
-    margin-top: $popup-toggle-margin;
+    margin-top: $margin-point-popup;
 
     &::before {
       content: "";
-      height: $popup-toggle-point-size;
-      width: $popup-toggle-point-size;
+      height: $point-size-popup;
+      width: $point-size-popup;
       position: absolute;
-      top: calc(-1 * $popup-toggle-point-size / 2);
-      left: calc(50% - $popup-toggle-point-size / 2);
+      top: calc(-1 * #{$point-size-popup} / 2);
+      left: calc(50% - #{$point-size-popup} / 2);
       z-index: -1;
       background: inherit;
       transform: rotateZ(45deg);
@@ -52,32 +47,32 @@
   // Top Center
   &[data-position="top"] .dcf-popup-content {
     margin-top: 0;
-    margin-bottom: $popup-toggle-margin;
+    margin-bottom: $margin-point-popup;
 
     &::before {
-      top: calc(100% - $popup-toggle-point-size / 2);
+      top: calc(100% - #{$point-size-popup} / 2);
     }
   }
 
   // Left Center
   &[data-position="left"] .dcf-popup-content {
     margin-top: 0;
-    margin-right: $popup-toggle-margin;
+    margin-right: $margin-point-popup;
 
     &::before {
-      top: calc(50% - $popup-toggle-point-size / 2);
-      left: calc(100% - $popup-toggle-point-size / 2);
+      top: calc(50% - #{$point-size-popup} / 2);
+      left: calc(100% - #{$point-size-popup} / 2);
     }
   }
 
   // Right Center
   &[data-position="right"] .dcf-popup-content {
     margin-top: 0;
-    margin-left: $popup-toggle-margin;
+    margin-left: $margin-point-popup;
 
     &::before {
-      top: calc(50% - $popup-toggle-point-size / 2);
-      left: calc(-1 * $popup-toggle-point-size / 2);
+      top: calc(50% - #{$point-size-popup} / 2);
+      left: calc(-1 * #{$point-size-popup} / 2);
     }
   }
 
@@ -86,7 +81,7 @@
   &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
   &[data-position="bottom"][data-alignment="start"] .dcf-popup-content::before,
   &[data-position="top"][data-alignment="start"] .dcf-popup-content::before {
-    left: $popup-toggle-point-size;
+    left: $point-size-popup;
   }
 
   // Bottom End
@@ -94,21 +89,21 @@
   &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before,
   &[data-position="bottom"][data-alignment="end"] .dcf-popup-content::before,
   &[data-position="top"][data-alignment="end"] .dcf-popup-content::before {
-    left: calc(100% - $popup-toggle-point-size * 2);
+    left: calc(100% - #{$point-size-popup} * 2);
   }
 
   // left start
   // right start
   &[data-position="left"][data-alignment="start"] .dcf-popup-content::before,
   &[data-position="right"][data-alignment="start"] .dcf-popup-content::before {
-    top: $popup-toggle-point-size;
+    top: $point-size-popup;
   }
 
   // left end
   // right end
   &[data-position="left"][data-alignment="end"] .dcf-popup-content::before,
   &[data-position="right"][data-alignment="end"] .dcf-popup-content::before {
-    top: calc(100% - $popup-toggle-point-size * 2);
+    top: calc(100% - #{$point-size-popup} * 2);
   }
 }
 
