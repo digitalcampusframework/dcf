@@ -29,7 +29,7 @@
 
   // Bottom & Center
   & .dcf-popup-content {
-    margin-top: $point-margin-popup;
+    margin-top: $margin-point-popup;
 
     &::before {
       content: "";
@@ -47,7 +47,7 @@
   // Top Center
   &[data-position="top"] .dcf-popup-content {
     margin-top: 0;
-    margin-bottom: $point-margin-popup;
+    margin-bottom: $margin-point-popup;
 
     &::before {
       top: calc(100% - #{$point-size-popup} / 2);
@@ -57,7 +57,7 @@
   // Left Center
   &[data-position="left"] .dcf-popup-content {
     margin-top: 0;
-    margin-right: $point-margin-popup;
+    margin-right: $margin-point-popup;
 
     &::before {
       top: calc(50% - #{$point-size-popup} / 2);
@@ -68,7 +68,7 @@
   // Right Center
   &[data-position="right"] .dcf-popup-content {
     margin-top: 0;
-    margin-left: $point-margin-popup;
+    margin-left: $margin-point-popup;
 
     &::before {
       top: calc(50% - #{$point-size-popup} / 2);
