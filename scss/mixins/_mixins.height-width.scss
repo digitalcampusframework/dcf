@@ -28,8 +28,10 @@
 
 
 // Maximum height
+@mixin h-max-0($imp:null) { max-height: 0 $imp; }
 @mixin h-max-100pc($imp:null) { max-height: 100% $imp; }
 @mixin h-max-100vh($imp:null) { max-height: 100vh $imp; }
+@mixin h-max-inf($imp:null) { max-height: 900vh $imp; }
 
 
 // Width

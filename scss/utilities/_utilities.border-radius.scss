@@ -6,6 +6,8 @@
 // Circle
 .dcf-circle { @include circle(!important); }
 
+// Sharp, all sides
+.dcf-sharp { @include sharp(!important); }
 
 // Rounded, all sides
 .dcf-rounded { @include rounded(!important); }

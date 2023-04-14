@@ -28,8 +28,10 @@
 
 
 // Maximum height
+.dcf-h-max-0 { @include h-max-0(!important); }
 .dcf-h-max-100\% { @include h-max-100pc(!important); } // .dcf-h-max-100%
 .dcf-h-max-100vh { @include h-max-100vh(!important); }
+.dcf-h-max-inf { @include h-max-inf(!important); }
 
 
 // Width
