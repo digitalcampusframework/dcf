@@ -180,7 +180,42 @@ export class DCFToggleButton {
       toggleElement.setAttribute('aria-hidden', 'false');
       toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
       toggleElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
+
+      // Make everything inside toggle element use old tab index and old disabled value if it had one
+      toggleElement.querySelectorAll('*').forEach((elem) => {
+        if ('oldTabIndex' in elem.dataset && elem.dataset.oldTabIndex !== 'false') {
+          elem.setAttribute('tabindex', elem.dataset.oldTabIndex);
+        } else if ('oldTabIndex' in elem.dataset && elem.dataset.oldTabIndex === 'false') {
+          elem.removeAttribute('tabindex');
+        }
+        delete elem.dataset.oldTabIndex;
+
+        if ('oldDisabled' in elem.dataset && elem.dataset.oldDisabled === 'false') {
+          elem.removeAttribute('disabled');
+        }
+        delete elem.dataset.oldDisabled;
+      });
+
+      // Make toggle element use old tab index if it had one
+      if (toggleElement.dataset.oldTabIndex && toggleElement.dataset.oldTabIndex !== 'false') {
+        toggleElement.setAttribute('tabindex', '-1');
+      } else {
+        toggleElement.removeAttribute('tabindex');
+      }
+      delete toggleElement.dataset.oldTabIndex;
+
+      // Make toggle element use disabled value if it had one
+      if (toggleElement.dataset.oldDisabled && toggleElement.dataset.oldDisabled !== 'false') {
+        toggleElement.disabled = true;
+      } else {
+        toggleElement.removeAttribute('disabled');
+      }
+      delete toggleElement.dataset.oldDisabled;
+
+      // Dispatch event incase something else is using it
       toggleElement.dispatchEvent(this.toggleElementOn);
+
+      // Focus on newly opened thing
       toggleElement.focus();
       return true;
 
@@ -197,6 +232,22 @@ export class DCFToggleButton {
       toggleElement.setAttribute('aria-hidden', 'true');
       toggleElement.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
+
+      // Make everything inside toggle element not tabbable and disabled plus saving old values if it had one
+      toggleElement.querySelectorAll('*').forEach((elem) => {
+        elem.dataset.oldTabIndex = elem.getAttribute('tabindex') || 'false';
+        elem.dataset.oldDisabled = elem.disabled;
+        elem.setAttribute('tabindex', '-1');
+        elem.disabled = true;
+      });
+
+      // Make toggle element not tabbable and disabled plus saving old values if it had one
+      toggleElement.dataset.oldTabIndex = toggleElement.getAttribute('tabindex') || 'false';
+      toggleElement.dataset.oldDisabled = toggleElement.disabled;
+      toggleElement.setAttribute('tabindex', '-1');
+      toggleElement.disabled = true;
+
+      // Dispatch event incase something else is using it
       toggleElement.dispatchEvent(this.toggleElementOff);
       return true;
     }
