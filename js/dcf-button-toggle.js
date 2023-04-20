@@ -9,23 +9,34 @@ export class DCFToggleButton {
     this.toggleElementOn = new Event(DCFToggleButton.events('toggleElementOn'));
     this.toggleElementOff = new Event(DCFToggleButton.events('toggleElementOff'));
 
-    // Set up key that toggle, open, and close
-    this.toggleKeys = options.toggleKeys;
-    if (this.toggleKeys === undefined) {
-      this.toggleKeys = [];
+    // Copy the Keys without copying the references
+    // Objects plus their properties and arrays are pass by reference
+    this.toggleKeys = [];
+    if (Array.isArray(options.toggleKeys)) {
+      this.toggleKeys = [ ...options.toggleKeys ];
+    } else if (options.toggleKeys !== null && options.toggleKeys !== undefined && options.toggleKeys !== '') {
+      this.toggleKeys.push(options.toggleKeys);
     }
-    this.onKeys = options.onKeys;
-    if (this.onKeys === undefined) {
-      this.onKeys = [];
+    this.onKeys = [];
+    if (Array.isArray(options.onKeys)) {
+      this.onKeys = [ ...options.onKeys ];
+    } else if (options.onKeys !== null && options.onKeys !== undefined && options.onKeys !== '') {
+      this.onKeys.push(options.onKeys);
     }
-    this.offKeys = options.offKeys;
-    if (this.offKeys === undefined) {
-      this.offKeys = [];
+    this.offKeys = [];
+    if (Array.isArray(options.offKeys)) {
+      this.offKeys = [ ...options.offKeys ];
+    } else if (options.offKeys !== null && options.offKeys !== undefined && options.offKeys !== '') {
+      this.offKeys.push(options.offKeys);
     }
 
     // These keys will always work
-    this.toggleKeys.push('space');
-    this.offKeys.push('escape');
+    if (!this.toggleKeys.includes('space')) {
+      this.toggleKeys.push('space');
+    }
+    if (!this.offKeys.includes('escape')) {
+      this.offKeys.push('escape');
+    }
 
     // Create a random ID for the button
     this.uuid = DCFUtility.uuidv4();
