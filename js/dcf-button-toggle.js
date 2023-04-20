@@ -31,6 +31,7 @@ export class DCFToggleButton {
     }
 
     // These keys will always work
+    // Do not care about case due to the implementation of DCFUtility.keyEvents
     if (!this.toggleKeys.includes('space')) {
       this.toggleKeys.push('space');
     }
