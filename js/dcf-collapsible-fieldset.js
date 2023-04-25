@@ -107,6 +107,11 @@ export class DCFFieldsetCollapsible {
     // Loops through each one
     this.fieldsets.forEach((fieldset, index) => {
 
+      let fieldsetStartExpanded = fieldset.dataset.startExpanded;
+      if (fieldsetStartExpanded === undefined) {
+        fieldsetStartExpanded = 'true';
+      }
+
       const legend = fieldset.querySelector('legend');
       if (legend === null) {
         throw new Error('Missing Legend In Fieldset');
@@ -146,7 +151,7 @@ export class DCFFieldsetCollapsible {
       button.dataset.labelOn = 'Expand Fieldset';
       button.dataset.labelOff = 'Collapse Fieldset';
       button.dataset.postfix = index;
-      button.dataset.startExpanded = 'true';
+      button.dataset.startExpanded = fieldsetStartExpanded;
 
       // Append the button and initialize it
       legendCopy.prepend(button);
