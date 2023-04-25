@@ -142,14 +142,15 @@ export class DCFFieldsetCollapsible {
 
       // Append the button and initialize it
       legendCopy.prepend(button);
+
+      this.eventListeners(fieldset, newGuts, button);
+
       const toggleButtonObj = new DCFToggleButton(button, {
         toggleKeys: this.toggleKeys,
         onKeys:     this.onKeys,
         offKeys:    this.offKeys,
       });
       toggleButtonObj.initialize();
-
-      this.eventListeners(fieldset, newGuts, button);
     });
   }
 
@@ -168,25 +169,6 @@ export class DCFFieldsetCollapsible {
       this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
         fieldset.classList.add(fieldsetClass);
       });
-
-      //   fieldset.classList.remove('dcf-opacity-100');
-      //   fieldset.classList.remove('dcf-opacity-0');
-      //   fieldset.classList.remove('dcf-pointer-events-none');
-      //   fieldset.classList.add('dcf-pointer-events-auto');
-      //   this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
-      //     fieldset.classList.remove(fieldsetClass);
-      //   });
-      //   this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
-      //     fieldset.classList.add(fieldsetClass);
-      //   });
-      //   fieldset.querySelectorAll(':not(legend)').forEach((elem) => {
-      //     if (elem.dataset.tempCollField && elem.dataset.tempCollField !== 'false') {
-      //       elem.setAttribute('tabindex', elem.dataset.tempCollField);
-      //     } else {
-      //       elem.removeAttribute('tabindex');
-      //     }
-      //     delete elem.dataset.tempCollField;
-      //   });
     });
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOff'), () => {
       this.theme.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
@@ -202,21 +184,14 @@ export class DCFFieldsetCollapsible {
       this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
         fieldset.classList.add(fieldsetClass);
       });
-      //   fieldset.classList.remove('dcf-opacity-100');
-      //   fieldset.classList.remove('dcf-opacity-0');
-      //   fieldset.classList.remove('dcf-pointer-events-none');
-      //   fieldset.classList.add('dcf-pointer-events-auto');
-      //   this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
-      //     fieldset.classList.remove(fieldsetClass);
-      //   });
-      //   this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
-      //     fieldset.classList.add(fieldsetClass);
-      //   });
+    });
 
-      //   fieldset.querySelectorAll(':not(legend)').forEach((elem) => {
-      //     elem.dataset.tempCollField = elem.getAttribute('tabIndex') || 'false';
-      //     elem.setAttribute('tabindex', '-1');
-      //   });
+    button.addEventListener(DCFFieldsetCollapsible.events('toggleButtonOn'), () => {
+      button.innerHTML = this.theme.legendButtonInnerHTMLOn;
+    });
+
+    button.addEventListener(DCFFieldsetCollapsible.events('toggleButtonOff'), () => {
+      button.innerHTML = this.theme.legendButtonInnerHTMLOff;
     });
   }
 }
