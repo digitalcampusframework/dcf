@@ -12,7 +12,7 @@ export class DCFFieldsetCollapsibleTheme {
       'dcf-pb-0',
       'dcf-pl-1',
       'dcf-pr-1',
-      'dcf-mr-4',
+      'dcf-mr-2',
     ];
 
     this.legendButtonInnerHTMLOn = '-';
