@@ -18,9 +18,7 @@ export class DCFFieldsetCollapsibleTheme {
     this.legendButtonInnerHTMLOn = '-';
     this.legendButtonInnerHTMLOff = '+';
 
-    this.fieldsetContentsClassList = [
-      'dcf-overflow-y-hidden',
-    ];
+    this.fieldsetContentsClassList = [];
 
     this.fieldsetContentsClassListOn = [
       'dcf-h-auto',
@@ -28,6 +26,7 @@ export class DCFFieldsetCollapsibleTheme {
 
     this.fieldsetContentsClassListOff = [
       'dcf-h-0',
+      'dcf-overflow-y-hidden',
     ];
 
     this.fieldsetClassList = [];
