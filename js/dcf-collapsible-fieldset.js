@@ -107,23 +107,31 @@ export class DCFFieldsetCollapsible {
   initialize() {
     // Loops through each one
     this.fieldsets.forEach((fieldset, index) => {
+      // We want to put everything inside the fieldset into a div
+      // That div is what will toggle and not the fieldset
+      // If we toggle the fieldset then we will also toggle the legend which holds the button
 
+      // Gets value for if it starts expanded or not
       let fieldsetStartExpanded = fieldset.dataset.startExpanded;
       if (fieldsetStartExpanded === undefined) {
         fieldsetStartExpanded = 'true';
       }
 
+      // Checks for legend
       const legend = fieldset.querySelector('legend');
       if (legend === null) {
         throw new Error('Missing Legend In Fieldset');
       }
 
+      // Removed the legend and saves it
       const legendCopy = legend.cloneNode(true);
       legend.remove();
 
+      // Creates a new div and we copy everything left in the fieldset into it
       const newGuts = document.createElement('div');
       newGuts.id = this.uuid.concat('-collapsible-fieldset-contents-', index);
       newGuts.innerHTML = fieldset.innerHTML;
+      // We will also add any styles
       this.theme.fieldsetContentsClassList.forEach((divClass) => {
         newGuts.classList.add(divClass);
       });
@@ -131,9 +139,11 @@ export class DCFFieldsetCollapsible {
         newGuts.classList.add(divClass);
       });
 
+      // We can then add the new div and legend back into the fieldset
       fieldset.innerHTML = '';
       fieldset.append(legendCopy);
       fieldset.append(newGuts);
+      // We can also add any styles
       this.theme.fieldsetClassList.forEach((fieldsetClass) => {
         fieldset.classList.add(fieldsetClass);
       });
@@ -141,6 +151,7 @@ export class DCFFieldsetCollapsible {
         fieldset.classList.add(fieldsetClass);
       });
 
+      // We then make the button to be put into the legend
       const button = document.createElement('button');
       this.theme.legendButtonClassList.forEach((btnClass) => {
         button.classList.add(btnClass);
@@ -148,6 +159,7 @@ export class DCFFieldsetCollapsible {
       button.innerHTML = this.theme.legendButtonInnerHTMLOn;
       button.setAttribute('type', 'button');
 
+      // We set up the toggle button values
       button.dataset.controls = newGuts.id;
       button.dataset.labelOn = 'Expand Fieldset';
       button.dataset.labelOff = 'Collapse Fieldset';
@@ -157,8 +169,12 @@ export class DCFFieldsetCollapsible {
       // Append the button and initialize it
       legendCopy.prepend(button);
 
+      // We can then add the event listeners
+      // We want to do this before the toggle button is initialized
+      // Since we have to change the styles for if it starts expanded or not
       this.eventListeners(fieldset, newGuts, button);
 
+      // Initialize the toggle button
       const toggleButtonObj = new DCFToggleButton(button, {
         toggleKeys: this.toggleKeys,
         onKeys:     this.onKeys,
@@ -168,8 +184,17 @@ export class DCFFieldsetCollapsible {
     });
   }
 
+  /**
+   * This function will update the styles and HTML for the fieldset, fieldset contents, and the button
+   * These events we are listening for come from the DCFToggleButton
+   * @param {HTMLElement} fieldset Fieldset that holds the button and toggle element
+   * @param {HTMLElement} toggleElement The new div that was made inside the fieldset
+   * @param {HTMLElement} button The button that was added to the legend
+   */
   eventListeners(fieldset, toggleElement, button) {
+    // We listen for when the toggle element is turned on
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOn'), () => {
+      // When it is we will remove the off styles and add the on styles
       this.theme.fieldsetContentsClassListOff.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
       });
@@ -177,6 +202,7 @@ export class DCFFieldsetCollapsible {
         toggleElement.classList.add(toggleElementClass);
       });
 
+      // When it is we will remove the off styles and add the on styles
       this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
         fieldset.classList.remove(fieldsetClass);
       });
@@ -184,7 +210,10 @@ export class DCFFieldsetCollapsible {
         fieldset.classList.add(fieldsetClass);
       });
     });
+
+    // We listen for when the toggle element is turned off
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOff'), () => {
+      // When it is we will remove the on styles and add the off styles
       this.theme.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
       });
@@ -192,6 +221,7 @@ export class DCFFieldsetCollapsible {
         toggleElement.classList.add(toggleElementClass);
       });
 
+      // When it is we will remove the on styles and add the off styles
       this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
         fieldset.classList.remove(fieldsetClass);
       });
@@ -200,10 +230,12 @@ export class DCFFieldsetCollapsible {
       });
     });
 
+    // We listen for when the toggle button is turned on and update the HTML
     button.addEventListener(DCFFieldsetCollapsible.events('toggleButtonOn'), () => {
       button.innerHTML = this.theme.legendButtonInnerHTMLOn;
     });
 
+    // We listen for when the toggle button is turned off and update the HTML
     button.addEventListener(DCFFieldsetCollapsible.events('toggleButtonOff'), () => {
       button.innerHTML = this.theme.legendButtonInnerHTMLOff;
     });
