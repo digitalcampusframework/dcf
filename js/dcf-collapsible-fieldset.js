@@ -7,7 +7,7 @@ export class DCFFieldsetCollapsibleTheme {
     this.legendButtonClassList = [
       'dcf-btn',
       'dcf-btn-tertiary',
-      'dcf-d-block-inline',
+      'dcf-d-inline-block',
       'dcf-pt-0',
       'dcf-pb-0',
       'dcf-pl-1',
