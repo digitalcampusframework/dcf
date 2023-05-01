@@ -1,0 +1,26 @@
+///////////////////////////////
+// CORE / COMPONENTS / PROGRESS
+///////////////////////////////
+
+
+// Spinner
+.dcf-progress-spinner {
+  animation: rotation $animation-duration-spinner $animation-timing-spinner $animation-iteration-count-spinner;
+  border: $border-width-spinner $border-style-spinner $border-color-spinner;
+  @if ($border-right-color-spinner) {
+    border-right-color: $border-right-color-spinner;
+  }
+  border-radius: 50%;
+  height: $height-spinner;
+  width: $width-spinner;
+  will-change: transform;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
