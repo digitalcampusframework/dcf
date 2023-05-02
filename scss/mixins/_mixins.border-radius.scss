@@ -44,8 +44,8 @@
 
 
 // Sharp, all sides
-@mixin sharp {
-  border-radius: 0;
+@mixin sharp($imp:null) {
+  border-radius: 0 $imp;
 }
 
 
