@@ -53,6 +53,8 @@ export class DCFFieldsetCollapsible {
       this.theme = new DCFFieldsetCollapsibleTheme();
     }
 
+    this.fieldsetReadyEvent = new Event(DCFFieldsetCollapsible.events('fieldsetReady'));
+
     // Copy the Keys without copying the references
     // Objects plus their properties and arrays are pass by reference
     this.toggleKeys = [];
@@ -90,6 +92,7 @@ export class DCFFieldsetCollapsible {
   static events(name) {
     // Define any new events
     const events = {
+      fieldsetReady: 'ready',
     };
     Object.freeze(events);
 
@@ -180,6 +183,8 @@ export class DCFFieldsetCollapsible {
         offKeys:    this.offKeys,
       });
       toggleButtonObj.initialize();
+
+      fieldset.dispatchEvent(this.fieldsetReadyEvent);
     });
   }
 
