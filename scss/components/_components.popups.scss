@@ -32,22 +32,22 @@
     margin-top: $margin-point-popup;
 
     &::before {
+      background: inherit;
       content: "";
       height: $point-size-popup;
-      width: $point-size-popup;
+      left: calc(50% - #{$point-size-popup} / 2);
       position: absolute;
       top: calc(-1 * #{$point-size-popup} / 2);
-      left: calc(50% - #{$point-size-popup} / 2);
-      z-index: -1;
-      background: inherit;
       transform: rotateZ(45deg);
+      width: $point-size-popup;
+      z-index: -1;
     }
   }
 
   // Top Center
   &[data-position="top"] .dcf-popup-content {
-    margin-top: 0;
     margin-bottom: $margin-point-popup;
+    margin-top: 0;
 
     &::before {
       top: calc(100% - #{$point-size-popup} / 2);
@@ -56,23 +56,23 @@
 
   // Left Center
   &[data-position="left"] .dcf-popup-content {
-    margin-top: 0;
     margin-right: $margin-point-popup;
+    margin-top: 0;
 
     &::before {
-      top: calc(50% - #{$point-size-popup} / 2);
       left: calc(100% - #{$point-size-popup} / 2);
+      top: calc(50% - #{$point-size-popup} / 2);
     }
   }
 
   // Right Center
   &[data-position="right"] .dcf-popup-content {
-    margin-top: 0;
     margin-left: $margin-point-popup;
+    margin-top: 0;
 
     &::before {
-      top: calc(50% - #{$point-size-popup} / 2);
       left: calc(-1 * #{$point-size-popup} / 2);
+      top: calc(50% - #{$point-size-popup} / 2);
     }
   }
 
@@ -106,4 +106,3 @@
     top: calc(100% - #{$point-size-popup} * 2);
   }
 }
-
