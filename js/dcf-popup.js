@@ -79,11 +79,6 @@ export class DCFPopup {
   initialize() {
     // Loops through each one
     this.popups.forEach((popup, index) => {
-      // Validate popup is a div
-      if (popup.tagName !== 'DIV') {
-        throw new Error('Popup Must Be Of Tag DIV');
-      }
-
       // Adds any classes from the theme to the popup
       if (this.theme.popupClassList) {
         this.theme.popupClassList.forEach((cssClass) => {
