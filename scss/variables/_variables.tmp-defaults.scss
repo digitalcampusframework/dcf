@@ -20,6 +20,11 @@ $default-bg-nav-toggle-group: $white;
 $default-b-input: #ccc;
 $default-b-app-control: $black;
 
-// Popup Sizing
-$point-size-popup: 0.75em;
-$margin-point-popup: 1em;
+
+// Margin
+$margin-popup-point: $length-em-4;
+
+
+// Size of popup arrow/point
+$size-block-popup-point: $length-em-3;
+$size-inline-popup-point: $length-em-4;
