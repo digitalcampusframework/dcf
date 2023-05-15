@@ -13,8 +13,7 @@ export class DCFPopupTheme {
 
     this.popupContentClassList = [
       'dcf-absolute',
-      'dcf-z-2',
-      'dcf-txt-sm'
+      'dcf-z-modal-fullscreen'
     ];
 
     // This is for when we our mouse leaves and comes back
