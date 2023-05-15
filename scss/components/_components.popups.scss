@@ -52,7 +52,7 @@
   // Bottom Center
   &[data-position="bottom"] .dcf-popup-content,
   &:not([data-position="top"]):not([data-position="right"]):not([data-position="left"]) .dcf-popup-content {
-    margin-top: $margin-point-popup;
+    margin-top: $margin-popup-point;
 
     &::before {
       clip-path: polygon(50% 0, 0 100%, 100% 100%);
@@ -62,7 +62,7 @@
 
   // Top Center
   &[data-position="top"] .dcf-popup-content {
-    margin-bottom: $margin-point-popup;
+    margin-bottom: $margin-popup-point;
 
     &::before {
       clip-path: polygon(100% 0, 0 0, 50% 100%);
@@ -72,7 +72,7 @@
 
   // Left Center
   &[data-position="left"] .dcf-popup-content {
-    margin-right: $margin-point-popup;
+    margin-right: $margin-popup-point;
 
     &::before {
       clip-path: polygon(0 0, 0 100%, 100% 50%);
@@ -82,7 +82,7 @@
 
   // Right Center
   &[data-position="right"] .dcf-popup-content {
-    margin-left: $margin-point-popup;
+    margin-left: $margin-popup-point;
 
     &::before {
       clip-path: polygon(100% 100%, 100% 0, 0 50%);
