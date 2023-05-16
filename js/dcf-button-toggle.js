@@ -186,7 +186,9 @@ export class DCFToggleButton {
       (state === 'open' || state === '')
     ) {
       toggleButton.setAttribute('aria-expanded', 'true');
-      toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
+      if ('labelOff' in toggleButton.dataset) {
+        toggleButton.setAttribute('aria-label', toggleButtonLabelOff);
+      }
       toggleButton.dispatchEvent(this.toggleButtonOn);
 
       toggleElement.setAttribute('aria-hidden', 'false');
@@ -238,7 +240,9 @@ export class DCFToggleButton {
       (state === 'close' || state === '')
     ) {
       toggleButton.setAttribute('aria-expanded', 'false');
-      toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
+      if ('labelOn' in toggleButton.dataset) {
+        toggleButton.setAttribute('aria-label', toggleButtonLabelOn);
+      }
       toggleButton.dispatchEvent(this.toggleButtonOff);
 
       toggleElement.setAttribute('aria-hidden', 'true');
