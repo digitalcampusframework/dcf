@@ -110,7 +110,8 @@
 
   // Left Center
   // Right Center
-  &:not([data-position="bottom"]):not([data-position="top"]):not([data-alignment="start"]):not([data-alignment="end"]) .dcf-popup-content::before {
+  &[data-position="left"]:not([data-alignment="start"]):not([data-alignment="end"]) .dcf-popup-content::before,
+  &[data-position="right"]:not([data-alignment="start"]):not([data-alignment="end"]) .dcf-popup-content::before {
     top: calc(50% - #{$size-inline-popup-point} / 2);
   }
 
