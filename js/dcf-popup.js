@@ -38,6 +38,9 @@ export class DCFPopup {
       this.theme = new DCFPopupTheme();
     }
 
+    // Event intended for closing any open popups
+    this.popupOpenEvent = new Event(DCFPopup.events('popupOpen'));
+
     // Events for controlling toggle button
     this.commandOpen = new Event(DCFToggleButton.events('commandOpen'));
     this.commandClose = new Event(DCFToggleButton.events('commandClose'));
@@ -62,6 +65,7 @@ export class DCFPopup {
   static events(name) {
     // Define any new events
     const events = {
+      popupOpen: 'popupOpen',
     };
     Object.freeze(events);
 
@@ -142,6 +146,18 @@ export class DCFPopup {
           popupBtn.dispatchEvent(this.commandClose);
         });
       }
+
+      // When a popup is toggled open it will dispatch an event
+      popupContent.addEventListener(DCFToggleButton.events('toggleElementOn'), () => {
+        popup.dispatchEvent(this.popupOpenEvent);
+      });
+
+      // If any popup on the document opens and it doesn't match we will close
+      document.addEventListener(DCFPopup.events('popupOpen'), (e) => {
+        if (e.target.id !== popup.id) {
+          popupBtn.dispatchEvent(this.commandClose);
+        }
+      }, true);
 
       // If we click outside the popup close the popup
       // Event listener is on body since we want to check if we click anywhere but element
