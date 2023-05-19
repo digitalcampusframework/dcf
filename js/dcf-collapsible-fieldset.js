@@ -34,6 +34,9 @@ export class DCFFieldsetCollapsibleTheme {
     this.fieldsetClassListOn = [];
 
     this.fieldsetClassListOff = [];
+
+    this.animationBlockWaitTime = 250;
+    this.animationBlockClassList = [ 'dcf-block-transition', 'dcf-block-animation' ];
   }
 
   // Allows us to set the theme variables if they are defined and we match the types
@@ -137,21 +140,40 @@ export class DCFFieldsetCollapsible {
       this.theme.fieldsetContentsClassList.forEach((divClass) => {
         newGuts.classList.add(divClass);
       });
-      this.theme.fieldsetContentsClassListOn.forEach((divClass) => {
-        newGuts.classList.add(divClass);
-      });
+      if (fieldsetStartExpanded === 'true') {
+        this.theme.fieldsetContentsClassListOn.forEach((divClass) => {
+          newGuts.classList.add(divClass);
+        });
+      } else {
+        this.theme.fieldsetContentsClassListOff.forEach((divClass) => {
+          newGuts.classList.add(divClass);
+        });
+      }
 
       // We can then add the new div and legend back into the fieldset
       fieldset.innerHTML = '';
       fieldset.append(legendCopy);
       fieldset.append(newGuts);
+
+      // Block any animations from running on load
+      // These get removed during first event listener
+      this.theme.animationBlockClassList.forEach((fieldsetClass) => {
+        fieldset.classList.add(fieldsetClass);
+      });
+
       // We can also add any styles
       this.theme.fieldsetClassList.forEach((fieldsetClass) => {
         fieldset.classList.add(fieldsetClass);
       });
-      this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
-        fieldset.classList.add(fieldsetClass);
-      });
+      if (fieldsetStartExpanded === 'true') {
+        this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
+          fieldset.classList.add(fieldsetClass);
+        });
+      } else {
+        this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
+          fieldset.classList.add(fieldsetClass);
+        });
+      }
 
       // We then make the button to be put into the legend
       const button = document.createElement('button');
@@ -185,6 +207,12 @@ export class DCFFieldsetCollapsible {
       toggleButtonObj.initialize();
 
       fieldset.dispatchEvent(this.fieldsetReadyEvent);
+
+      setTimeout(() => {
+        this.theme.animationBlockClassList.forEach((fieldsetClass) => {
+          fieldset.classList.remove(fieldsetClass);
+        });
+      }, this.theme.animationBlockWaitTime);
     });
   }
 
@@ -198,6 +226,7 @@ export class DCFFieldsetCollapsible {
   eventListeners(fieldset, toggleElement, button) {
     // We listen for when the toggle element is turned on
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOn'), () => {
+      console.log(fieldset, 'on');
       // When it is we will remove the off styles and add the on styles
       this.theme.fieldsetContentsClassListOff.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
@@ -217,6 +246,7 @@ export class DCFFieldsetCollapsible {
 
     // We listen for when the toggle element is turned off
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOff'), () => {
+      console.log(fieldset, 'off');
       // When it is we will remove the on styles and add the off styles
       this.theme.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
