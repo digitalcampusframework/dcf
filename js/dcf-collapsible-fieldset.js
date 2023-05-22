@@ -35,7 +35,6 @@ export class DCFFieldsetCollapsibleTheme {
 
     this.fieldsetClassListOff = [];
 
-    this.animationBlockWaitTime = 250;
     this.animationBlockClassList = [ 'dcf-motion-none' ];
   }
 
@@ -208,11 +207,14 @@ export class DCFFieldsetCollapsible {
 
       fieldset.dispatchEvent(this.fieldsetReadyEvent);
 
-      setTimeout(() => {
+      let removeAnimationBlock = () => {
         this.theme.animationBlockClassList.forEach((fieldsetClass) => {
           fieldset.classList.remove(fieldsetClass);
         });
-      }, this.theme.animationBlockWaitTime);
+        fieldset.removeEventListener('transitionend', removeAnimationBlock);
+      };
+
+      fieldset.addEventListener('transitionend', removeAnimationBlock);
     });
   }
 
