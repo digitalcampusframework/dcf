@@ -36,7 +36,7 @@ export class DCFFieldsetCollapsibleTheme {
     this.fieldsetClassListOff = [];
 
     this.animationBlockWaitTime = 250;
-    this.animationBlockClassList = [ 'dcf-block-transition', 'dcf-block-animation' ];
+    this.animationBlockClassList = [ 'dcf-motion-none' ];
   }
 
   // Allows us to set the theme variables if they are defined and we match the types

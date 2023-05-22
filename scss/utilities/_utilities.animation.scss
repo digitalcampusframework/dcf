@@ -2,12 +2,9 @@
 // CORE / UTILITIES / ANIMATION
 ///////////////////////////////
 
-.dcf-block-animation {
+.dcf-motion-none {
   animation-duration: .001ms !important;
   animation-iteration-count: 1 !important;
-}
-
-.dcf-block-transition {
   transition-duration: .001ms !important;
   transition-delay: .001ms !important;
 }
