@@ -226,7 +226,6 @@ export class DCFFieldsetCollapsible {
   eventListeners(fieldset, toggleElement, button) {
     // We listen for when the toggle element is turned on
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOn'), () => {
-      console.log(fieldset, 'on');
       // When it is we will remove the off styles and add the on styles
       this.theme.fieldsetContentsClassListOff.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
@@ -246,7 +245,6 @@ export class DCFFieldsetCollapsible {
 
     // We listen for when the toggle element is turned off
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOff'), () => {
-      console.log(fieldset, 'off');
       // When it is we will remove the on styles and add the off styles
       this.theme.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
         toggleElement.classList.remove(toggleElementClass);
