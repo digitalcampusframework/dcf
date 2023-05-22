@@ -34,6 +34,8 @@ export class DCFFieldsetCollapsibleTheme {
     this.fieldsetClassListOn = [];
 
     this.fieldsetClassListOff = [];
+
+    this.animationBlockClassList = [ 'dcf-motion-none' ];
   }
 
   // Allows us to set the theme variables if they are defined and we match the types
@@ -137,21 +139,40 @@ export class DCFFieldsetCollapsible {
       this.theme.fieldsetContentsClassList.forEach((divClass) => {
         newGuts.classList.add(divClass);
       });
-      this.theme.fieldsetContentsClassListOn.forEach((divClass) => {
-        newGuts.classList.add(divClass);
-      });
+      if (fieldsetStartExpanded === 'true') {
+        this.theme.fieldsetContentsClassListOn.forEach((divClass) => {
+          newGuts.classList.add(divClass);
+        });
+      } else {
+        this.theme.fieldsetContentsClassListOff.forEach((divClass) => {
+          newGuts.classList.add(divClass);
+        });
+      }
 
       // We can then add the new div and legend back into the fieldset
       fieldset.innerHTML = '';
       fieldset.append(legendCopy);
       fieldset.append(newGuts);
+
+      // Block any animations from running on load
+      // These get removed during first event listener
+      this.theme.animationBlockClassList.forEach((fieldsetClass) => {
+        fieldset.classList.add(fieldsetClass);
+      });
+
       // We can also add any styles
       this.theme.fieldsetClassList.forEach((fieldsetClass) => {
         fieldset.classList.add(fieldsetClass);
       });
-      this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
-        fieldset.classList.add(fieldsetClass);
-      });
+      if (fieldsetStartExpanded === 'true') {
+        this.theme.fieldsetClassListOn.forEach((fieldsetClass) => {
+          fieldset.classList.add(fieldsetClass);
+        });
+      } else {
+        this.theme.fieldsetClassListOff.forEach((fieldsetClass) => {
+          fieldset.classList.add(fieldsetClass);
+        });
+      }
 
       // We then make the button to be put into the legend
       const button = document.createElement('button');
@@ -184,7 +205,20 @@ export class DCFFieldsetCollapsible {
       });
       toggleButtonObj.initialize();
 
+      // This lets any outside js that needs to interact with elements inside the fieldset
+      // to know that its safe to create references to these elements
       fieldset.dispatchEvent(this.fieldsetReadyEvent);
+
+      // Remove the classes related to block any animation
+      let removeAnimationBlock = () => {
+        this.theme.animationBlockClassList.forEach((fieldsetClass) => {
+          fieldset.classList.remove(fieldsetClass);
+        });
+        fieldset.removeEventListener('transitionend', removeAnimationBlock);
+      };
+
+      // We want to wait for the css classes to finish changing before removing the classes
+      fieldset.addEventListener('transitionend', removeAnimationBlock);
     });
   }
 

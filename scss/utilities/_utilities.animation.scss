@@ -2,6 +2,12 @@
 // CORE / UTILITIES / ANIMATION
 ///////////////////////////////
 
+.dcf-motion-none {
+  animation-duration: .001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .001ms !important;
+  transition-delay: .001ms !important;
+}
 
 // Fade
 .dcf-js .dcf-fade-in {
