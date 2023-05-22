@@ -205,8 +205,11 @@ export class DCFFieldsetCollapsible {
       });
       toggleButtonObj.initialize();
 
+      // This lets any outside js that needs to interact with elements inside the fieldset
+      // to know that its safe to create references to these elements
       fieldset.dispatchEvent(this.fieldsetReadyEvent);
 
+      // Remove the classes related to block any animation
       let removeAnimationBlock = () => {
         this.theme.animationBlockClassList.forEach((fieldsetClass) => {
           fieldset.classList.remove(fieldsetClass);
@@ -214,6 +217,7 @@ export class DCFFieldsetCollapsible {
         fieldset.removeEventListener('transitionend', removeAnimationBlock);
       };
 
+      // We want to wait for the css classes to finish changing before removing the classes
       fieldset.addEventListener('transitionend', removeAnimationBlock);
     });
   }
