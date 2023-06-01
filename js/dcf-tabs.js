@@ -129,6 +129,15 @@ export class DCFTabs {
         this.setTabEventListeners(tab);
       });
     });
+
+    window.addEventListener('hashchange', () => {
+      let tab = document.querySelector(`.dcf-tab[href="${location.hash}`);
+      if (tab === null) {
+        return;
+      }
+      this.switchTab(tab);
+      document.getElementById(location.hash.replace('#', '')).scrollIntoView();
+    });
   }
 
   checkPanelInURL(panelID) {
@@ -297,6 +306,11 @@ export class DCFTabs {
     return newTab;
   }
 
+  /**
+   * Switched tabs to new tab
+   * @param {HTMLElement} newTab Tab to switch to
+   * @returns { void }
+   */
   switchTab(newTab) {
     const tabGroup = newTab.closest('.dcf-tabs');
     const tabList = newTab.closest('.dcf-tabs-list');
