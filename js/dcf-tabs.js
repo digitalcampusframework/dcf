@@ -1,139 +1,96 @@
 import { DCFUtility } from './dcf-utility';
 
-let dcfTabsObjects = [];
-/* eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }] */
-const handleDCFTabsHashChange = () => {
-  let resetTabGroupIDsProcessed = [];
-  Array.prototype.forEach.call(dcfTabsObjects, (dcfTabsObject) => {
-    const hash = window.location.hash;
-    if (hash) {
-      dcfTabsObject.displayTabByHash(hash);
-    } else {
-      Array.prototype.forEach.call(dcfTabsObject.tabGroups, (tabGroup) => {
-        const tabGroupID = tabGroup.getAttribute('id');
-        if (!resetTabGroupIDsProcessed.includes(tabGroupID)) {
-          resetTabGroupIDsProcessed.push(tabGroupID);
-          const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
-          tabList.dispatchEvent(new Event('resetTabGroup'));
-        }
-      });
-    }
-  });
-};
-window.addEventListener('hashchange', handleDCFTabsHashChange);
-
 export class DCFTabs {
+  // Set up the button
   constructor(tabGroups, options = {}) {
+    // Store the button inputted (always will be an array)
     this.tabGroups = tabGroups;
-    this.tabHashLookup = {};
-    this.useHashChange = true;
-    if (options.useHashChange === false) {
-      this.useHashChange = false;
-    }
-    dcfTabsObjects.push(this);
-  }
-
-  // Tab switching function
-  switchTab(oldTab, newTab, setPageHash = false, scrollToPanel = false) {
-    if (oldTab) {
-      oldTab.removeAttribute('aria-selected');
-      oldTab.setAttribute('tabindex', '-1');
-
-      // hide panel for oldTab
-      const hidePanelID = oldTab.getAttribute('data-panel-id');
-      if (hidePanelID) {
-        const hidePanel = document.getElementById(hidePanelID);
-        if (hidePanel) {
-          hidePanel.hidden = true;
-        }
-      }
-
-      // Focus on new tab
-      this.focusTab(newTab);
-    }
-
-    // show panel for newTab
-    const showPanelID = newTab.getAttribute('data-panel-id');
-    if (showPanelID) {
-      const showPanel = document.getElementById(showPanelID);
-      if (showPanel) {
-        showPanel.hidden = false;
-        if (scrollToPanel) {
-          showPanel.scrollIntoView();
-        }
-      } else {
-        // eslint-disable-next-line no-console
-        console.error(`DCF Tabs: The tab panel with id ${showPanelID} is not associated with a tab.`);
-      }
-    } else {
-      const tabId = newTab.getAttribute('id');
-      // eslint-disable-next-line no-console
-      console.error(`DCF Tabs: The tab with id ${tabId} is missing panel href to map to panel.`);
-    }
-
-    if (setPageHash) {
-      // Set page hash
-      this.setPageHash(newTab.getAttribute('href'));
+    if (NodeList.prototype.isPrototypeOf(this.tabGroups)) {
+      this.tabGroups = Array.from(this.tabGroups);
+    } else if (!Array.isArray(this.tabGroups)) {
+      this.tabGroups = [ this.tabGroups ];
     }
   }
 
-  focusTab(tab) {
-    tab.focus();
-    tab.setAttribute('tabindex', '0');
-    tab.setAttribute('aria-selected', 'true');
+  // The names of the events to be used easily
+  static events(name) {
+    const events = {
+    };
+    Object.freeze(events);
+
+    return name in events ? events[name] : undefined;
   }
 
-  getCurrentTabByTab(tab) {
-    const tabList = tab.parentNode.parentNode;
-    let currentTab = null;
-    if (tabList.tagName === 'OL' || tabList.tagName === 'UL') {
-      currentTab = tabList.querySelector('[aria-selected]');
-    }
-    return currentTab;
-  }
-
-  isHash(hash) {
-    return hash && hash.substr(DCFUtility.magicNumbers('int0'), DCFUtility.magicNumbers('int1')) === '#';
-  }
-
-  setPageHash(testHash) {
-    // use clear hash if not valid hash
-    const hash = this.isHash(testHash) ? testHash : '';
-    // set hash
-    if (hash && history.pushState) {
-      history.pushState(null, null, window.location.origin + window.location.pathname + hash);
-    } else {
-      location.hash = hash;
-    }
-  }
-
-  displayTabByHash(hash) {
-    if (this.useHashChange && this.isHash(hash)) {
-      if (hash && this.tabHashLookup[hash]) {
-        const newTab = this.tabHashLookup[hash];
-        const oldTab = this.getCurrentTabByTab(newTab);
-        if (oldTab !== newTab) {
-          this.switchTab(oldTab, newTab, false, true);
-        } else {
-          this.focusTab(newTab);
-        }
-      }
-    }
-  }
-
+  // Initialize the buttons that were inputted in the constructor
   initialize() {
-    Array.prototype.forEach.call(this.tabGroups, (tabGroup) => {
-      // Define constants for tabs
-      const tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
-      const tabs = tabList.querySelectorAll('a');
-      const panels = tabGroup.querySelectorAll('.dcf-tabs > div, .dcf-tabs > section');
+    // loops through each one
+    this.tabGroups.forEach((tabGroup) => {
+      // Create a random ID for the button
       const uuid = DCFUtility.uuidv4();
 
-      // Prefix each tab group with a unique ID.
-      tabGroup.setAttribute('id', DCFUtility.checkSetElementId(tabGroup, uuid.concat('-tab-group')));
+      let tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
+      const panels = Array.from(tabGroup.querySelectorAll('.dcf-tabs > div, .dcf-tabs > section'));
+
+      if (tabGroup.getAttribute('id') === null) {
+        tabGroup.setAttribute('id', DCFUtility.checkSetElementId(tabGroup, uuid.concat('-tab-group')));
+      }
+
+      if (panels.length === DCFUtility.magicNumbers('int0')) {
+        throw new Error('No Panels Found', { cause: tabGroup });
+      }
+      const panelsWithNoIds = panels.filter((panel) => panel.getAttribute('id') === null);
+      if (panelsWithNoIds.length !== DCFUtility.magicNumbers('int0')) {
+        throw new Error('Panels Missing Ids', { cause: panelsWithNoIds });
+      }
+
+      // Build the tablist from the titles of the panels
+      if (tabList === null) {
+        tabList = document.createElement('ul');
+        panels.forEach((singlePanel) => {
+          const tabTextElem = singlePanel.querySelector('.dcf-tabs-panel-title');
+          let tabText = tabTextElem !== null ? tabTextElem.innerText : 'Untitled';
+
+          let newTabLinkElem = document.createElement('a');
+          newTabLinkElem.innerText = tabText;
+          newTabLinkElem.href = `#${singlePanel.id}`;
+
+          let newTabElem = document.createElement('li');
+          newTabElem.append(newTabLinkElem);
+          tabList.append(newTabElem);
+        });
+
+        tabGroup.insertBefore(tabList, panels[DCFUtility.magicNumbers('int0')]);
+      }
+
+      tabList.classList.add('dcf-tabs-list', 'dcf-list-bare', 'dcf-mb-0');
+      tabList.setAttribute('role', 'tablist');
+
+      let selectedPanel = location.hash !== '' ? tabGroup.querySelector(location.hash) : null;
+      // Add tab panel semantics and hide them all in each tab group.
+      panels.forEach((panel) => {
+        // Set role to each tab panel
+        panel.setAttribute('role', 'tabpanel');
+        // Set tabindex to let panel be focused
+        panel.setAttribute('tabindex', '0');
+        // Add class to each tab panel
+        panel.classList.add('dcf-tabs-panel');
+        // Hide all tab panels
+        panel.setAttribute('hidden', '');
+
+        if (selectedPanel === null && this.checkPanelInURL(panel.getAttribute('id'))) {
+          selectedPanel = panel;
+        }
+      });
+      if (selectedPanel === null) {
+        selectedPanel = tabGroup.querySelector('[data-default="true"]');
+        if (selectedPanel === null) {
+          selectedPanel = panels[DCFUtility.magicNumbers('int0')];
+        }
+      }
 
       // Tab styling and functions.
-      Array.prototype.forEach.call(tabs, (tab, tabIndex) => {
+      const tabs = tabList.querySelectorAll('a');
+      tabs.forEach((tab, tabIndex) => {
         // Add class to each tab
         tab.classList.add('dcf-tab', 'dcf-d-block');
 
@@ -144,14 +101,8 @@ export class DCFTabs {
         // Add role to each tab
         tab.setAttribute('role', 'tab');
 
-        // Add tabindex to each tab
-        if (tabIndex === DCFUtility.magicNumbers('int0')) {
-          tab.setAttribute('tabindex', '0');
-          tab.setAttribute('aria-selected', 'true');
-        } else {
-          tab.setAttribute('tabindex', '-1');
-          tab.removeAttribute('aria-selected');
-        }
+        tab.setAttribute('tabindex', '-1');
+        tab.removeAttribute('aria-selected');
 
         // Add class to each tab's parent (list item)
         tab.parentNode.classList.add('dcf-tabs-list-item', 'dcf-mb-0');
@@ -159,113 +110,220 @@ export class DCFTabs {
         // Add role to each tab's parent (list item)
         tab.parentNode.setAttribute('role', 'presentation');
 
-        const tabHref = tab.getAttribute('href');
-        // Add tab to tabHashLookup
-        if (this.isHash(tabHref)) {
-          tab.setAttribute('data-panel-id', tabHref.substring(DCFUtility.magicNumbers('int1')));
-          this.tabHashLookup[tabHref] = tab;
+        if (tab.getAttribute('href') === null || tab.getAttribute('href') === '' || !tab.getAttribute('href').startsWith('#')) {
+          throw new Error('Invalid Tab href', { cause: tab });
         }
 
-        // Handle clicking of tabs for mouse users
-        tab.addEventListener('click', (clickEvent) => {
-          clickEvent.preventDefault();
-          let currentTab = tabList.querySelector('[aria-selected]');
-          if (clickEvent.currentTarget !== currentTab) {
-            this.switchTab(currentTab, clickEvent.currentTarget, this.useHashChange);
-          }
-        });
-
-        // Handle keydown events for keyboard users
-        tab.addEventListener('keydown', (keydownEvent) => {
-          // Get the index of the current tab in the tabs node list
-          let index = Array.prototype.indexOf.call(tabs, keydownEvent.currentTarget);
-          // Work out which key the user is pressing and
-          // Calculate the new tab's index where appropriate
-          let dir = 0;
-          if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft'))) {
-            if (index > DCFUtility.magicNumbers('int0')) {
-              dir = index - DCFUtility.magicNumbers('int1');
-            } else {
-              dir = tabs.length - DCFUtility.magicNumbers('int1');
-            }
-          } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
-            if (index < tabs.length - DCFUtility.magicNumbers('int1')) {
-              dir = index + DCFUtility.magicNumbers('int1');
-            }
-          } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowDown'))) {
-            dir = 'down';
-          } else {
-            dir = null;
-          }
-
-          if (dir !== null) {
-            keydownEvent.preventDefault();
-            // If the down key is pressed, move focus to the open panel,
-            // otherwise switch to the adjacent tab
-            if (dir === 'down') {
-              const tabPanelID = tab.getAttribute('data-panel-id');
-              if (tabPanelID) {
-                const tabPanel = document.getElementById(tabPanelID);
-                if (tabPanel) {
-                  tabPanel.focus();
-                }
-              }
-            } else if (tabs[dir]) {
-              this.switchTab(keydownEvent.currentTarget, tabs[dir], false);
-            }
-          }
-        }, false);
-      });
-
-      // Add tab panel semantics and hide them all in each tab group.
-      Array.prototype.forEach.call(panels, (panel) => {
-        // Set role to each tab panel
-        panel.setAttribute('role', 'tabpanel');
-        // Set tabindex to let panel be focused
-        panel.setAttribute('tabindex', '-1');
-        // Add class to each tab panel
-        panel.classList.add('dcf-tabs-panel');
-        // Hide all tab panels
-        panel.hidden = true;
-
-        const panelID = panel.getAttribute('id');
-        if (panelID) {
-          const panelTab = this.tabHashLookup[`#${panelID}`];
-          if (panelTab) {
-            // Declare which tab labels each panel
-            panel.setAttribute('aria-labelledby', panelTab.getAttribute('id'));
-            panel.addEventListener('keydown', (keydownEvent) => {
-              if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowUp'))) {
-                panelTab.focus();
-                keydownEvent.stopPropagation();
-              }
-            });
-          }
+        let matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+        if (matchingPanel === null) {
+          throw new Error('Invalid Tab href reference', { cause: tab });
         }
+        matchingPanel.setAttribute('aria-labelledby', tab.getAttribute('id'));
+
+        if (matchingPanel.isEqualNode(selectedPanel)) {
+          tab.setAttribute('tabindex', '0');
+          tab.setAttribute('aria-selected', 'true');
+          matchingPanel.removeAttribute('hidden');
+        }
+
+        this.setTabEventListeners(tab);
       });
+    });
+  }
 
-      // Add classes to tab list
-      tabList.classList.add('dcf-tabs-list', 'dcf-list-bare', 'dcf-mb-0');
-      // Add role to the tab list
-      tabList.setAttribute('role', 'tablist');
-      // Initially activate the first tab and reveal the first tab panel
-      this.switchTab(null, tabs[DCFUtility.magicNumbers('int0')], false);
+  checkPanelInURL(panelID) {
+    const url = new URL(location.href);
+    const tabsParam = url.searchParams.get('tabs');
 
-      if (this.useHashChange) {
-        // Handle resetTabGroup on tabList
-        tabList.addEventListener('resetTabGroup', () => {
-          const newTab = tabs[DCFUtility.magicNumbers('int0')];
-          const oldTab = this.getCurrentTabByTab(newTab);
-          if (oldTab !== newTab) {
-            this.switchTab(oldTab, newTab, false);
-          }
-        });
+    if (tabsParam === null) {
+      return false;
+    }
+
+    return tabsParam.split(' ').includes(panelID);
+  }
+
+  updateURLHash(tabGroup) {
+    const url = new URL(location.href);
+    const panel = tabGroup.querySelector('.dcf-tabs-panel:not([hidden])');
+
+    if (panel === null) {
+      throw new Error('Invalid tabGroup');
+    }
+
+    url.hash = panel.getAttribute('id');
+    history.replaceState('', '', url.toString());
+  }
+
+  updateURLParam(tabGroup) {
+    const url = new URL(location.href);
+    const tabsParam = url.searchParams.get('tabs');
+
+    const panel = tabGroup.querySelector('.dcf-tabs-panel:not([hidden])');
+    if (panel === null) {
+      throw new Error('Invalid tabGroup');
+    }
+
+    if (tabsParam === null) {
+      url.searchParams.set('tabs', panel.getAttribute('id'));
+      history.replaceState('', '', url.toString());
+      return;
+    }
+    const panelList = tabsParam.split(' ');
+
+    const newPanelList = panelList
+      .filter((panelToCheck) => tabGroup.querySelector(`#${panelToCheck}`) === null);
+
+    newPanelList.push(panel.getAttribute('id'));
+
+    url.searchParams.set('tabs', newPanelList.join(' '));
+    history.replaceState('', '', url.toString());
+  }
+
+  /**
+   * Set event listeners on inputted tab element
+   * - Left Arrow for previous tab
+   * - Right Arrow for next tab
+   * - Home for first tab
+   * - End for last tab
+   * - Click to switch to the inputted tab
+   *
+   * @param {HTMLElement} tab Tab to set event listeners for
+   * @returns { void }
+   */
+  setTabEventListeners(tab) {
+    const tabGroup = tab.closest('.dcf-tabs');
+    tab.addEventListener('keydown', (keydownEvent) => {
+      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft'))) {
+        let newTab = this.switchToPreviousTab(tabGroup);
+        if (newTab === null) {
+          return;
+        }
+        newTab.focus();
+        keydownEvent.preventDefault();
+        this.updateURLHash(tabGroup);
+      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
+        let newTab = this.switchToNextTab(tabGroup);
+        if (newTab === null) {
+          return;
+        }
+        newTab.focus();
+        keydownEvent.preventDefault();
+        this.updateURLHash(tabGroup);
+      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('home'))) {
+        let newTab = this.switchToFirstTab(tabGroup);
+        if (newTab === null) {
+          return;
+        }
+        newTab.focus();
+        keydownEvent.preventDefault();
+        this.updateURLHash(tabGroup);
+      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('end'))) {
+        let newTab = this.switchToLastTab(tabGroup);
+        if (newTab === null) {
+          return;
+        }
+        newTab.focus();
+        keydownEvent.preventDefault();
+        this.updateURLHash(tabGroup);
       }
     });
 
-    // Open tab on page load if valid
-    if (this.useHashChange && window.location.hash) {
-      this.displayTabByHash(window.location.hash);
+    tab.addEventListener('click', () => {
+      this.switchTab(tab);
+    });
+  }
+
+  /**
+   * This function will switch to the next tab
+   * @param {HTMLElement} tabGroup Tab currently selected
+   * @returns {HTMLElement | null}
+   */
+  switchToNextTab(tabGroup) {
+    const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
+    const nextTabsListItem = selectedTab.parentElement.nextElementSibling;
+    if (nextTabsListItem === null) {
+      return null;
     }
+    const newTab = nextTabsListItem.querySelector('.dcf-tab');
+    this.switchTab(newTab);
+    return newTab;
+  }
+
+  /**
+   * This function will switch to the previous tab
+   * @param {HTMLElement} tabGroup Tab currently selected
+   * @returns {HTMLElement | null}
+   */
+  switchToPreviousTab(tabGroup) {
+    const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
+    const previousTabsListItem = selectedTab.parentElement.previousElementSibling;
+    if (previousTabsListItem === null) {
+      return null;
+    }
+    const newTab = previousTabsListItem.querySelector('.dcf-tab');
+    this.switchTab(newTab);
+    return newTab;
+  }
+
+  /**
+   * This function will switch to the previous tab
+   * @param {HTMLElement} tabGroup Tab currently selected
+   * @returns {HTMLElement | null}
+   */
+  switchToFirstTab(tabGroup) {
+    const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
+    const firstTabsListItem = selectedTab.closest('.dcf-tabs-list').firstElementChild;
+    if (firstTabsListItem === null) {
+      return null;
+    }
+    const newTab = firstTabsListItem.querySelector('.dcf-tab');
+    this.switchTab(newTab);
+    return newTab;
+  }
+
+  /**
+   * This function will switch to the previous tab
+   * @param {HTMLElement} tabGroup Tab currently selected
+   * @returns {HTMLElement | null}
+   */
+  switchToLastTab(tabGroup) {
+    const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
+    const lastTabsListItem = selectedTab.closest('.dcf-tabs-list').lastElementChild;
+    if (lastTabsListItem === null) {
+      return null;
+    }
+    const newTab = lastTabsListItem.querySelector('.dcf-tab');
+    this.switchTab(newTab);
+    return newTab;
+  }
+
+  switchTab(newTab) {
+    const tabGroup = newTab.closest('.dcf-tabs');
+    const tabList = newTab.closest('.dcf-tabs-list');
+
+    if (tabList === null) {
+      throw new Error('Invalid Tab');
+    }
+
+    const tabs = tabList.querySelectorAll('.dcf-tab');
+    tabs.forEach((tab) => {
+      const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+      if (matchingPanel === null) {
+        throw new Error('Invalid Tab href reference', { cause: tab });
+      }
+      if (tab.isEqualNode(newTab)) {
+        tab.setAttribute('tabindex', '0');
+        tab.setAttribute('aria-selected', true);
+        matchingPanel.removeAttribute('hidden');
+
+        if (tabGroup.dataset.urlTracking === 'true') {
+          this.updateURLParam(tabGroup);
+        }
+      } else {
+        tab.setAttribute('tabindex', '-1');
+        tab.removeAttribute('aria-selected');
+        matchingPanel.setAttribute('hidden', '');
+      }
+    });
   }
 }
