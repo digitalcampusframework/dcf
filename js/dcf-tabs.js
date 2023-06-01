@@ -129,6 +129,14 @@ export class DCFTabs {
         this.setTabEventListeners(tab);
       });
     });
+
+    window.addEventListener('hashchange', () => {
+      let panel = document.getElementById(location.hash.replace('#', ''));
+      if (panel === null || !panel.classList.contains('.dcf-tabs-panel')) {
+        return;
+      }
+      this.switchTab(panel);
+    });
   }
 
   checkPanelInURL(panelID) {
