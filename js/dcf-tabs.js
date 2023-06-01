@@ -297,9 +297,14 @@ export class DCFTabs {
     return newTab;
   }
 
-  switchTab(newTab) {
-    const tabGroup = newTab.closest('.dcf-tabs');
-    const tabList = newTab.closest('.dcf-tabs-list');
+  /**
+   * Switched tabs to new panel
+   * @param {HTMLElement} newPanel Panel to switch to
+   * @returns { void }
+   */
+  switchTab(newPanel) {
+    const tabGroup = newPanel.closest('.dcf-tabs');
+    const tabList = newPanel.closest('.dcf-tabs-list');
 
     if (tabList === null) {
       throw new Error('Invalid Tab');
@@ -311,7 +316,7 @@ export class DCFTabs {
       if (matchingPanel === null) {
         throw new Error('Invalid Tab href reference', { cause: tab });
       }
-      if (tab.isEqualNode(newTab)) {
+      if (tab.isEqualNode(newPanel)) {
         tab.setAttribute('tabindex', '0');
         tab.setAttribute('aria-selected', true);
         matchingPanel.removeAttribute('hidden');
