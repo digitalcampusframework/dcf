@@ -3,6 +3,8 @@ import { DCFUtility } from './dcf-utility';
 export class DCFTabs {
   // Set up the button
   constructor(tabGroups, options = {}) {
+    this.tabSwitchedEvent = new Event(DCFTabs.events('tabSwitched'));
+
     // Store the button inputted (always will be an array)
     this.tabGroups = tabGroups;
     if (NodeList.prototype.isPrototypeOf(this.tabGroups)) {
@@ -15,6 +17,12 @@ export class DCFTabs {
   // The names of the events to be used easily
   static events(name) {
     const events = {
+      tabSwitched: 'tabSwitched',
+      commandSwitch: 'commandSwitch',
+      commandPrev: 'commandPrev',
+      commandNext: 'commandNext',
+      commandHome: 'commandHome',
+      commandEnd: 'commandEnd',
     };
     Object.freeze(events);
 
@@ -128,6 +136,8 @@ export class DCFTabs {
 
         this.setTabEventListeners(tab);
       });
+
+      this.setTabGroupEventListeners(tabGroup);
     });
 
     window.addEventListener('hashchange', () => {
@@ -188,6 +198,21 @@ export class DCFTabs {
     history.replaceState('', '', url.toString());
   }
 
+  setTabGroupEventListeners(tabGroup) {
+    tabGroup.addEventListener(DCFTabs.events('commandPrev'), () => {
+      this.switchToPreviousTab(tabGroup);
+    }, true);
+    tabGroup.addEventListener(DCFTabs.events('commandNext'), () => {
+      this.switchToNextTab(tabGroup);
+    }, true);
+    tabGroup.addEventListener(DCFTabs.events('commandHome'), () => {
+      this.switchToFirstTab(tabGroup);
+    }, true);
+    tabGroup.addEventListener(DCFTabs.events('commandEnd'), () => {
+      this.switchToEndTab(tabGroup);
+    }, true);
+  }
+
   /**
    * Set event listeners on inputted tab element
    * - Left Arrow for previous tab
@@ -238,6 +263,10 @@ export class DCFTabs {
     });
 
     tab.addEventListener('click', () => {
+      this.switchTab(tab);
+    });
+
+    tab.addEventListener(DCFTabs.events('commandSwitch'), () => {
       this.switchTab(tab);
     });
   }
@@ -314,9 +343,14 @@ export class DCFTabs {
   switchTab(newTab) {
     const tabGroup = newTab.closest('.dcf-tabs');
     const tabList = newTab.closest('.dcf-tabs-list');
+    const selectedTab = tabList.querySelector('.dcf-tab[aria-selected="true"]');
 
-    if (tabList === null) {
+    if (tabList === null || tabGroup === null) {
       throw new Error('Invalid Tab');
+    }
+
+    if (selectedTab !== null && selectedTab.isEqualNode(newTab)) {
+      return;
     }
 
     const tabs = tabList.querySelectorAll('.dcf-tab');
@@ -339,5 +373,7 @@ export class DCFTabs {
         matchingPanel.setAttribute('hidden', '');
       }
     });
+
+    tabGroup.dispatchEvent(this.tabSwitchedEvent);
   }
 }
