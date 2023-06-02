@@ -3,6 +3,7 @@ import { DCFUtility } from './dcf-utility';
 export class DCFTabs {
   // Set up the button
   constructor(tabGroups, options = {}) {
+    this.tabsReadyEvent = new Event(DCFTabs.events('tabsReady'));
     this.tabSwitchedEvent = new Event(DCFTabs.events('tabSwitched'));
 
     // Store the button inputted (always will be an array)
@@ -17,6 +18,7 @@ export class DCFTabs {
   // The names of the events to be used easily
   static events(name) {
     const events = {
+      tabsReady: 'ready',
       tabSwitched: 'tabSwitched',
       commandSwitch: 'commandSwitch',
       commandPrev: 'commandPrev',
@@ -138,6 +140,7 @@ export class DCFTabs {
       });
 
       this.setTabGroupEventListeners(tabGroup);
+      tabGroup.dispatchEvent(this.tabsReadyEvent);
     });
 
     window.addEventListener('hashchange', () => {
