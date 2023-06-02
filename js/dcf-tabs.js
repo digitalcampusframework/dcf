@@ -75,7 +75,6 @@ export class DCFTabs {
       tabList.classList.add('dcf-tabs-list', 'dcf-list-bare', 'dcf-mb-0');
       tabList.setAttribute('role', 'tablist');
 
-      let selectedPanel = location.hash !== '' ? tabGroup.querySelector(location.hash) : null;
       // Add tab panel semantics and hide them all in each tab group.
       panels.forEach((panel) => {
         // Set role to each tab panel
@@ -86,20 +85,17 @@ export class DCFTabs {
         panel.classList.add('dcf-tabs-panel');
         // Hide all tab panels
         panel.setAttribute('hidden', '');
-
-        if (selectedPanel === null && this.checkPanelInURL(panel.getAttribute('id'))) {
-          selectedPanel = panel;
-        }
       });
-      if (selectedPanel === null) {
-        selectedPanel = tabGroup.querySelector('[data-default="true"]');
-        if (selectedPanel === null) {
-          selectedPanel = panels[DCFUtility.magicNumbers('int0')];
-        }
-      }
+
 
       // Tab styling and functions.
-      const tabs = tabList.querySelectorAll('a');
+      const tabs = Array.from(tabList.querySelectorAll('a'));
+
+      const tabsNotHidden = tabs.filter((tab) => tab.getAttribute('hidden') === null);
+      if (tabsNotHidden.length === DCFUtility.magicNumbers('int0')) {
+        throw new Error('All Tabs Hidden');
+      }
+
       tabs.forEach((tab, tabIndex) => {
         // Add class to each tab
         tab.classList.add('dcf-tab', 'dcf-d-block');
@@ -130,14 +126,36 @@ export class DCFTabs {
         }
         matchingPanel.setAttribute('aria-labelledby', tab.getAttribute('id'));
 
-        if (matchingPanel.isEqualNode(selectedPanel)) {
-          tab.setAttribute('tabindex', '0');
-          tab.setAttribute('aria-selected', 'true');
-          matchingPanel.removeAttribute('hidden');
-        }
-
         this.setTabEventListeners(tab);
       });
+
+      let selectedTab = null;
+      if (location.hash !== '') {
+        selectedTab = tabGroup.querySelector(`.dcf-tab[href="${location.hash}"]:not([hidden])`);
+      }
+
+      if (selectedTab === null) {
+        const allNonHiddenTabs = Array.from(tabGroup.querySelectorAll('.dcf-tab:not([hidden])'));
+        allNonHiddenTabs.forEach((tab) => {
+          const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+          if (this.checkPanelInURL(matchingPanel.getAttribute('id'))) {
+            selectedTab = tab;
+          }
+        });
+
+        if (selectedTab === null) {
+          allNonHiddenTabs.forEach((tab) => {
+            const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+            if ('default' in matchingPanel.dataset && matchingPanel.dataset.default === 'true') {
+              selectedTab = tab;
+            }
+          });
+          if (selectedTab === null) {
+            selectedTab = allNonHiddenTabs[DCFUtility.magicNumbers('int0')];
+          }
+        }
+      }
+      this.switchTab(selectedTab, false);
 
       this.setTabGroupEventListeners(tabGroup);
       tabGroup.dispatchEvent(this.tabsReadyEvent);
