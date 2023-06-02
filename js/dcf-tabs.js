@@ -281,11 +281,13 @@ export class DCFTabs {
    */
   switchToNextTab(tabGroup) {
     const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
-    const nextTabsListItem = selectedTab.parentElement.nextElementSibling;
-    if (nextTabsListItem === null) {
+    const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
+    const selectedTabIndex = nonHiddenTabs.findIndex((tab) => tab.isEqualNode(selectedTab));
+    const nextIndex = selectedTabIndex + DCFUtility.magicNumbers('int1');
+    if (nextIndex >= nonHiddenTabs.length) {
       return null;
     }
-    const newTab = nextTabsListItem.querySelector('.dcf-tab');
+    const newTab = nonHiddenTabs[nextIndex];
     this.switchTab(newTab);
     return newTab;
   }
@@ -297,11 +299,13 @@ export class DCFTabs {
    */
   switchToPreviousTab(tabGroup) {
     const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
-    const previousTabsListItem = selectedTab.parentElement.previousElementSibling;
-    if (previousTabsListItem === null) {
+    const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
+    const selectedTabIndex = nonHiddenTabs.findIndex((tab) => tab.isEqualNode(selectedTab));
+    const nextIndex = selectedTabIndex - DCFUtility.magicNumbers('int1');
+    if (nextIndex < DCFUtility.magicNumbers('int0')) {
       return null;
     }
-    const newTab = previousTabsListItem.querySelector('.dcf-tab');
+    const newTab = nonHiddenTabs[nextIndex];
     this.switchTab(newTab);
     return newTab;
   }
@@ -313,11 +317,8 @@ export class DCFTabs {
    */
   switchToFirstTab(tabGroup) {
     const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
-    const firstTabsListItem = selectedTab.closest('.dcf-tabs-list').firstElementChild;
-    if (firstTabsListItem === null) {
-      return null;
-    }
-    const newTab = firstTabsListItem.querySelector('.dcf-tab');
+    const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
+    const newTab = nonHiddenTabs[DCFUtility.magicNumbers('int0')];
     this.switchTab(newTab);
     return newTab;
   }
@@ -329,11 +330,8 @@ export class DCFTabs {
    */
   switchToLastTab(tabGroup) {
     const selectedTab = tabGroup.querySelector('.dcf-tab[aria-selected="true"]');
-    const lastTabsListItem = selectedTab.closest('.dcf-tabs-list').lastElementChild;
-    if (lastTabsListItem === null) {
-      return null;
-    }
-    const newTab = lastTabsListItem.querySelector('.dcf-tab');
+    const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
+    const newTab = nonHiddenTabs[nonHiddenTabs.length - DCFUtility.magicNumbers('int1')];
     this.switchTab(newTab);
     return newTab;
   }
