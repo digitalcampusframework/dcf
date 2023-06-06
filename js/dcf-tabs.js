@@ -5,8 +5,8 @@ export class DCFTabs {
   /**
    * Sets up events to be used and reconfigures tabGroups input to correct form
    * @constructor
-   * @param {HTMLCollectionOf<HTMLElement> | HTMLElement[] | HTMLElement } tabGroups Array, Collection, or single tab group element
-   * @param { Object } options Unused
+   * @param {HTMLCollectionOf<HTMLElement> | HTMLElement[] | HTMLElement } tabGroups - Array, Collection, or single tab group element
+   * @param { Object } options - Unused
    * @returns { void }
    */
   constructor(tabGroups, options = {}) {
@@ -26,7 +26,7 @@ export class DCFTabs {
   /**
    * Validates and returns standardized name of events for tabs
    * @static
-   * @param { string } name name of the event to be returned
+   * @param { string } name - Name of the event to be returned
    * @returns { string } Standard name of the event
    */
   static events(name) {
@@ -223,7 +223,7 @@ export class DCFTabs {
 
   /**
    * Parses url and determines if the panel id is in it
-   * @param { string } panelID id of the panel element to check
+   * @param { string } panelID - Id of the panel element to check
    * @returns { bool }
    */
   checkPanelInURL(panelID) {
@@ -239,7 +239,7 @@ export class DCFTabs {
 
   /**
    * Parses url and modifies the hash value in it
-   * @param { HTMLElement } tabGroup tabGroup to pull new hash from
+   * @param { HTMLElement } tabGroup - TabGroup to pull new hash from
    * @returns { void }
    */
   updateURLHash(tabGroup) {
@@ -256,7 +256,7 @@ export class DCFTabs {
 
   /**
    * Parses url and removes any non-selected tabs from that tabGroup and adds any selected tabs
-   * @param { HTMLElement } tabGroup tabGroup to pull selected tab from
+   * @param { HTMLElement } tabGroup - TabGroup to pull selected tab from
    * @returns { void }
    */
   updateURLParam(tabGroup) {
@@ -295,7 +295,8 @@ export class DCFTabs {
    * - commandNext to go to next tab
    * - commandHome to go to first tab
    * - commandEnd to go to last tab
-   * @param {HTMLElement} tabGroup tabGroup to set event listeners on
+   *
+   * @param {HTMLElement} tabGroup - TabGroup to set event listeners on
    * @returns { void }
    */
   setTabGroupEventListeners(tabGroup) {
@@ -322,7 +323,7 @@ export class DCFTabs {
    * - Click to switch to the inputted tab
    * - commandSwitch to switch to the inputted tab
    *
-   * @param {HTMLElement} tab Tab to set event listeners for
+   * @param {HTMLElement} tab - Tab to set event listeners for
    * @returns { void }
    */
   setTabEventListeners(tab) {
@@ -388,7 +389,7 @@ export class DCFTabs {
 
   /**
    * This function will switch to the next tab
-   * @param {HTMLElement} tabGroup Tab currently selected
+   * @param {HTMLElement} tabGroup - TabGroup to be switched
    * @returns {HTMLElement | null}
    */
   switchToNextTab(tabGroup) {
@@ -418,7 +419,7 @@ export class DCFTabs {
 
   /**
    * This function will switch to the previous tab
-   * @param {HTMLElement} tabGroup Tab currently selected
+   * @param {HTMLElement} tabGroup - TabGroup to be switched
    * @returns {HTMLElement | null}
    */
   switchToPreviousTab(tabGroup) {
@@ -448,7 +449,7 @@ export class DCFTabs {
 
   /**
    * This function will switch to the first tab
-   * @param {HTMLElement} tabGroup Tab currently selected
+   * @param {HTMLElement} tabGroup - TabGroup to be switched
    * @returns {HTMLElement | null}
    */
   switchToFirstTab(tabGroup) {
@@ -466,7 +467,7 @@ export class DCFTabs {
 
   /**
    * This function will switch to the last tab
-   * @param {HTMLElement} tabGroup Tab currently selected
+   * @param {HTMLElement} tabGroup - TabGroup to be switched
    * @returns {HTMLElement | null}
    */
   switchToLastTab(tabGroup) {
@@ -484,8 +485,8 @@ export class DCFTabs {
 
   /**
    * Switched tabs to new tab
-   * @param {HTMLElement} newTab Tab to switch to
-   * @param {bool} urlTracking Weather to track tab changes in URL
+   * @param {HTMLElement} newTab - Tab to switch to
+   * @param {bool} urlTracking - Whether to track tab changes in URL
    * @returns { void }
    */
   switchTab(newTab, urlTracking = true) {
