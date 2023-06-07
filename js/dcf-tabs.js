@@ -209,6 +209,8 @@ export class DCFTabs {
       tabGroup.dispatchEvent(this.tabsReadyEvent);
     });
 
+    this.scrollToHash();
+
     // We can set up an event listener on the window for when the hash changes to a tab
     window.addEventListener('hashchange', () => {
       // If the hash is an dcf-tab then we can switch to the tab and scroll down to it
@@ -217,8 +219,17 @@ export class DCFTabs {
         return;
       }
       this.switchTab(tab);
-      document.getElementById(location.hash.replace('#', '')).scrollIntoView();
+      this.scrollToHash();
     });
+  }
+
+  scrollToHash() {
+    // If the hash is an dcf-tab then we can switch to the tab and scroll down to it
+    let tab = document.querySelector(`.dcf-tab[href="${location.hash}`);
+    if (tab === null) {
+      return;
+    }
+    document.getElementById(location.hash.replace('#', '')).scrollIntoView();
   }
 
   /**
@@ -486,10 +497,10 @@ export class DCFTabs {
   /**
    * Switched tabs to new tab
    * @param {HTMLElement} newTab - Tab to switch to
-   * @param {bool} urlTracking - Whether to track tab changes in URL
+   * @param {bool} AfterPageLoad - Whether the page has loaded yet
    * @returns { void }
    */
-  switchTab(newTab, urlTracking = true) {
+  switchTab(newTab, AfterPageLoad = true) {
     // Get and validate the tabGroup and List
     const tabGroup = newTab.closest('.dcf-tabs');
     const tabList = newTab.closest('.dcf-tabs-list');
@@ -501,6 +512,10 @@ export class DCFTabs {
     const selectedTab = tabList.querySelector('.dcf-tab[aria-selected="true"]');
     if (selectedTab !== null && selectedTab.isEqualNode(newTab)) {
       return;
+    }
+
+    if (tabGroup.classList.contains('dcf-tabs-scroll') && AfterPageLoad) {
+      newTab.scrollIntoView();
     }
 
     // We can then get a list of the tabs and loop through them
@@ -519,7 +534,7 @@ export class DCFTabs {
         matchingPanel.removeAttribute('hidden');
 
         // If we have url tracking enabled we can update the url tabs param
-        if (tabGroup.dataset.urlTracking === 'true' && urlTracking) {
+        if (tabGroup.dataset.urlTracking === 'true' && AfterPageLoad) {
           this.updateURLParam(tabGroup);
         }
       } else {
