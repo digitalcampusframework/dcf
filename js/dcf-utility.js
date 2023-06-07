@@ -41,7 +41,9 @@ export class DCFUtility {
       escape: { code: 'Escape', key: 'Escape', keyCode: 27 },
       keyC: { code: 'KeyC', key: 'c', keyCode: 67 },
       space: { code: 'Space', key: ' ', keyCode: 32 },
-      tab: { code: 'Tab', key: 'Tab', keyCode: 9 }
+      tab: { code: 'Tab', key: 'Tab', keyCode: 9 },
+      home: { code: 'Home', key: 'Home', keyCode: 36 },
+      end: { code: 'End', key: 'End', keyCode: 35 }
     };
     Object.freeze(keyEvents);
 
