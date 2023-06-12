@@ -2,9 +2,23 @@
 // CORE / COMPONENTS / TABS
 ///////////////////////////
 
-
 .dcf-tabs-list-item {
   display: inline-block;
+}
+
+.dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list-item {
+  scroll-snap-stop: normal;
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 
