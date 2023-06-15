@@ -388,8 +388,10 @@ export class DCFTabs {
     });
 
     // If we click the tab we can switch to it
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (clickEvent) => {
       this.switchTab(tab);
+      this.updateURLHash(tabGroup);
+      clickEvent.preventDefault();
     });
 
     // If the command comes in we can switch the tabs
