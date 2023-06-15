@@ -41,6 +41,13 @@
   text-decoration: none;
 }
 
+.dcf-tab:not([aria-selected]) {
+  background-color: inherit;
+  border: none;
+  color: var(--link);
+  text-decoration: underline;
+}
+
 
 .dcf-tabs-panel {
   background-color: $bg-color-tabs-panel;

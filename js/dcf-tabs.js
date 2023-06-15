@@ -87,9 +87,9 @@ export class DCFTabs {
           let tabHidden = singlePanel.dataset.tabHidden === 'true';
 
           // Creates a new link element with the href pointing to panel
-          let newTabLinkElem = document.createElement('a');
+          let newTabLinkElem = document.createElement('button');
           newTabLinkElem.innerText = tabText;
-          newTabLinkElem.href = `#${singlePanel.id}`;
+          newTabLinkElem.setAttribute('href', `#${singlePanel.id}`);
           if (tabHidden) {
             newTabLinkElem.setAttribute('hidden', '');
           }
@@ -119,7 +119,7 @@ export class DCFTabs {
 
 
       // Tab styling and functions.
-      const tabs = Array.from(tabList.querySelectorAll('a'));
+      const tabs = Array.from(tabList.querySelectorAll('a, button'));
 
       // Checks if there are any tabs not hidden, if not there will be an error
       const tabsNotHidden = tabs.filter((tab) => tab.getAttribute('hidden') === null);
