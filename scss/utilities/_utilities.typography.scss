@@ -31,6 +31,7 @@
 
 // Text wrap
 .dcf-txt-nowrap { @include txt-nowrap(!important); }
+.dcf-url-wrap { @include word-wrap(!important); }
 .dcf-word-wrap { @include word-wrap(!important); }
 .dcf-truncate { @include truncate(!important); }
 
