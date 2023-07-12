@@ -33,6 +33,14 @@
 // Text wrap
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
 
+@mixin url-wrap($imp:null) {
+  overflow-wrap: break-word $imp;
+  word-wrap: break-word $imp;
+  word-break: break-all $imp;
+  // scss-lint:disable DuplicateProperty
+  word-break: break-word $imp;
+}
+
 @mixin word-wrap($imp:null) {
   overflow-wrap: break-word;
   word-wrap: break-word;
