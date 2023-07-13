@@ -8,6 +8,7 @@
 @mixin bg-white($imp:null) { background-color: $bg-color-white $imp; }
 @mixin bg-overlay-dark($imp:null) { background-color: $bg-color-overlay-dark $imp; }
 @mixin bg-overlay-light($imp:null) { background-color: $bg-color-overlay-light $imp; }
+@mixin bg-overlay-light-at-dark($imp:null) { background-color: $bg-color-overlay-light-light-mode $imp; }
 
 
 // Position
