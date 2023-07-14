@@ -8,6 +8,11 @@
 }
 
 
+.dcf-tabs-list-item:has(.dcf-tab[hidden]) {
+  display: none;
+}
+
+
 .dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list {
   display: flex;
   flex-flow: row nowrap;
