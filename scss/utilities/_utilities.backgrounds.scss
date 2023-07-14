@@ -9,6 +9,12 @@
 .dcf-bg-overlay-dark { @include bg-overlay-dark(!important); }
 .dcf-bg-overlay-light { @include bg-overlay-light(!important); }
 
+@media screen and (prefers-color-scheme: dark) {
+
+  .dcf-bg-overlay-light\@dark { @include bg-overlay-light-at-dark(!important); }
+
+}
+
 
 // Position
 .dcf-bg-center { @include bg-center(!important); }
