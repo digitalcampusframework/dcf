@@ -59,7 +59,7 @@ export class DCFTabs {
 
       // Get the tablist and an array of the panels
       let tabList = tabGroup.querySelector('.dcf-tabs > ol, .dcf-tabs > ul');
-      const panels = Array.from(tabGroup.querySelectorAll('.dcf-tabs > div, .dcf-tabs > section'));
+      const panels = Array.from(tabGroup.querySelectorAll('.dcf-tabs > div:not(:empty), .dcf-tabs > section:not(:empty)'));
 
       // If the tabGroup has no ID then it will set it
       if (tabGroup.getAttribute('id') === null) {
