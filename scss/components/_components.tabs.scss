@@ -2,9 +2,16 @@
 // CORE / COMPONENTS / TABS
 ///////////////////////////
 
+
 .dcf-tabs-list-item {
   display: inline-block;
 }
+
+
+.dcf-tabs-list-item:has(.dcf-tab[hidden]) {
+  display: none;
+}
+
 
 .dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list {
   display: flex;
@@ -14,6 +21,7 @@
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
 }
+
 
 .dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list-item {
   scroll-snap-stop: normal;
@@ -40,6 +48,7 @@
   color: $color-tab-selected;
   text-decoration: none;
 }
+
 
 .dcf-tab:not([aria-selected]) {
   background-color: inherit;
