@@ -90,3 +90,28 @@ a.dcf-btn-inverse-secondary {
   grid-auto-flow: column;
   grid-gap: $length-em-2;
 }
+
+
+@media screen and (prefers-color-scheme: dark) {
+
+  .dcf-btn-primary\@dark,
+  .dcf-btn-primary\@dark:link {
+    background-color: $bg-color-button-primary-light-mode;
+    border-color: $border-color-button-primary-light-mode;
+    color: $color-button-primary-light-mode;
+  }
+
+
+  .dcf-btn-secondary\@dark,
+  .dcf-btn-secondary\@dark:link {
+    background-color: $bg-color-button-secondary-light-mode;
+    color: $color-button-secondary-light-mode;
+  }
+
+
+  .dcf-btn-tertiary\@dark,
+  .dcf-btn-tertiary\@dark:link {
+    color: $color-button-tertiary-light-mode;
+  }
+
+}
