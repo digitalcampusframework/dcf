@@ -75,11 +75,6 @@
     margin-left: -#{ms(0)}rem;
   }
 
-
-  .dcf-nav-menu ul ul {
-    @include txt-xs;
-  }
-
 }
 
 
@@ -93,15 +88,5 @@
     padding-right: $length-vw-2;
   }
 
-
-  .dcf-nav-menu ul ul {
-    @include txt-sm;
-  }
-
-
-  .dcf-nav-menu a,
-  .dcf-nav-menu button {
-    @include txt-xs;
-  }
 
 }
