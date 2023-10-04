@@ -44,6 +44,7 @@
 // Font weight
 .dcf-regular { @include regular(!important); }
 .dcf-bold { @include bold(!important); }
+.dcf-bolder { @include bolder(!important); }
 
 
 // Line height
