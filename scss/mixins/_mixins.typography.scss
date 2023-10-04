@@ -63,8 +63,9 @@
 
 
 // Font weight
-@mixin regular($imp:null) { font-weight: normal $imp; }
-@mixin bold($imp:null) { font-weight: bold $imp; }
+@mixin regular($imp:null) { font-weight: $font-weight-normal $imp; }
+@mixin bold($imp:null) { font-weight: $font-weight-bold $imp; }
+@mixin bolder($imp:null) { font-weight: $font-weight-bolder $imp; }
 
 
 // Line height
