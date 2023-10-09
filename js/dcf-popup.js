@@ -90,7 +90,7 @@ export class DCFPopup {
       }
 
       // Gets the button and validates it
-      const popupBtn = popup.querySelector('.dcf-btn-popup');
+      const popupBtn = popup.querySelector('.dcf-btn-toggle-popup, .dcf-btn-popup');
       if (popupBtn === null || popupBtn.tagName !== 'BUTTON') {
         throw new Error('Popup Button Is Missing Or Not A Button Tag');
       }
@@ -101,7 +101,7 @@ export class DCFPopup {
         throw new Error('Popup Content Is Missing');
       }
 
-      const closeButton = popup.querySelector('.dcf-btn-popup-close');
+      const closeButton = popup.querySelector('.dcf-btn-close-popup, .dcf-btn-popup-close');
       if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
         throw new Error('Close Button is Not a Button Tag');
       }
