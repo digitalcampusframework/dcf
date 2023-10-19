@@ -229,12 +229,12 @@
     grid-column: 7 / -1;
   }
 
-  .dcf-col-33\%-center\@md {
-    grid-column: 5 / -5;
-  }
-
   .dcf-col-33\%-start\@md {
     grid-column: 1 / 5;
+  }
+
+  .dcf-col-33\%-center\@md {
+    grid-column: 5 / -5;
   }
 
   .dcf-col-33\%-end\@md {
