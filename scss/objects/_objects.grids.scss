@@ -54,11 +54,11 @@
 }
 
 .dcf-col-100\% {
-  grid-column: 1 / span 12;
+  grid-column: 1 / -1;
 }
 
 .dcf-col-50\%-start {
-  grid-column: 1 / span 6;
+  grid-column: 1 / 7;
 }
 
 .dcf-col-50\%-center {
@@ -66,11 +66,11 @@
 }
 
 .dcf-col-50\%-end {
-  grid-column: span 6 / -1;
+  grid-column: 7 / -1;
 }
 
 .dcf-col-33\%-start {
-  grid-column: 1 / span 4;
+  grid-column: 1 / 5;
 }
 
 .dcf-col-33\%-center {
@@ -78,11 +78,11 @@
 }
 
 .dcf-col-33\%-end {
-  grid-column: span 4 / -1;
+  grid-column: 9 / -1;
 }
 
 .dcf-col-67\%-start {
-  grid-column: 1 / span 8;
+  grid-column: 1 / 9;
 }
 
 .dcf-col-67\%-center {
@@ -90,27 +90,27 @@
 }
 
 .dcf-col-67\%-end {
-  grid-column: span 8 / -1;
+  grid-column: 5 / -1;
 }
 
 .dcf-col-25\%-start {
-  grid-column: 1 / span 3;
+  grid-column: 1 / 4;
 }
 
 .dcf-col-25\%-end {
-  grid-column: span 3 / -1;
+  grid-column: 10 / -1;
 }
 
 .dcf-col-75\%-start {
-  grid-column: 1 / span 9;
+  grid-column: 1 / 10;
 }
 
 .dcf-col-75\%-end {
-  grid-column: span 9 / -1;
+  grid-column: 4 / -1;
 }
 
 .dcf-col-75\%-end {
-  grid-column: span 9 / -1;
+  grid-column: 4 / -1;
 }
 
 
@@ -133,11 +133,11 @@
   }
 
   .dcf-col-100\%\@sm {
-    grid-column: 1 / span 12;
+    grid-column: 1 / -1;
   }
 
   .dcf-col-50\%-start\@sm {
-    grid-column: 1 / span 6;
+    grid-column: 1 / 7;
   }
 
   .dcf-col-50\%-center\@sm {
@@ -145,11 +145,11 @@
   }
 
   .dcf-col-50\%-end\@sm {
-    grid-column: span 6 / -1;
+    grid-column: 7 / -1;
   }
 
   .dcf-col-33\%-start\@sm {
-    grid-column: 1 / span 4;
+    grid-column: 1 / 5;
   }
 
   .dcf-col-33\%-center\@sm {
@@ -157,11 +157,11 @@
   }
 
   .dcf-col-33\%-end\@sm {
-    grid-column: span 4 / -1;
+    grid-column: 9 / -1;
   }
 
   .dcf-col-67\%-start\@sm {
-    grid-column: 1 / span 8;
+    grid-column: 1 / 9;
   }
 
   .dcf-col-67\%-center\@sm {
@@ -169,23 +169,23 @@
   }
 
   .dcf-col-67\%-end\@sm {
-    grid-column: span 8 / -1;
+    grid-column: 5 / -1;
   }
 
   .dcf-col-25\%-start\@sm {
-    grid-column: 1 / span 3;
+    grid-column: 1 / 4;
   }
 
   .dcf-col-25\%-end\@sm {
-    grid-column: span 3 / -1;
+    grid-column: 10 / -1;
   }
 
   .dcf-col-75\%-start\@sm {
-    grid-column: 1 / span 9;
+    grid-column: 1 / 10;
   }
 
   .dcf-col-75\%-end\@sm {
-    grid-column: span 9 / -1;
+    grid-column: 4 / -1;
   }
 
 }
@@ -218,11 +218,11 @@
   }
 
   .dcf-col-100\%\@md {
-    grid-column: 1 / span 12;
+    grid-column: 1 / -1;
   }
 
   .dcf-col-50\%-start\@md {
-    grid-column: 1 / span 6;
+    grid-column: 1 / 7;
   }
 
   .dcf-col-50\%-center\@md {
@@ -230,7 +230,7 @@
   }
 
   .dcf-col-50\%-end\@md {
-    grid-column: span 6 / -1;
+    grid-column: 7 / -1;
   }
 
   .dcf-col-33\%-center\@md {
@@ -238,15 +238,15 @@
   }
 
   .dcf-col-33\%-start\@md {
-    grid-column: 1 / span 4;
+    grid-column: 1 / 5;
   }
 
   .dcf-col-33\%-end\@md {
-    grid-column: span 4 / -1;
+    grid-column: 9 / -1;
   }
 
   .dcf-col-67\%-start\@md {
-    grid-column: 1 / span 8;
+    grid-column: 1 / 9;
   }
 
   .dcf-col-67\%-center\@md {
@@ -254,23 +254,23 @@
   }
 
   .dcf-col-67\%-end\@md {
-    grid-column: span 8 / -1;
+    grid-column: 5 / -1;
   }
 
   .dcf-col-25\%-start\@md {
-    grid-column: 1 / span 3;
+    grid-column: 1 / 4;
   }
 
   .dcf-col-25\%-end\@md {
-    grid-column: span 3 / -1;
+    grid-column: 10 / -1;
   }
 
   .dcf-col-75\%-start\@md {
-    grid-column: 1 / span 9;
+    grid-column: 1 / 10;
   }
 
   .dcf-col-75\%-end\@md {
-    grid-column: span 9 / -1;
+    grid-column: 4 / -1;
   }
 
 }
@@ -303,11 +303,11 @@
   }
 
   .dcf-col-100\%\@lg {
-    grid-column: 1 / span 12;
+    grid-column: 1 / -1;
   }
 
   .dcf-col-50\%-start\@lg {
-    grid-column: 1 / span 6;
+    grid-column: 1 / 7;
   }
 
   .dcf-col-50\%-center\@lg {
@@ -315,11 +315,11 @@
   }
 
   .dcf-col-50\%-end\@lg {
-    grid-column: span 6 / -1;
+    grid-column: 7 / -1;
   }
 
   .dcf-col-33\%-start\@lg {
-    grid-column: 1 / span 4;
+    grid-column: 1 / 5;
   }
 
   .dcf-col-33\%-center\@lg {
@@ -327,11 +327,11 @@
   }
 
   .dcf-col-33\%-end\@lg {
-    grid-column: span 4 / -1;
+    grid-column: 9 / -1;
   }
 
   .dcf-col-67\%-start\@lg {
-    grid-column: 1 / span 8;
+    grid-column: 1 / 9;
   }
 
   .dcf-col-67\%-center\@lg {
@@ -339,23 +339,23 @@
   }
 
   .dcf-col-67\%-end\@lg {
-    grid-column: span 8 / -1;
+    grid-column: 5 / -1;
   }
 
   .dcf-col-25\%-start\@lg {
-    grid-column: 1 / span 3;
+    grid-column: 1 / 4;
   }
 
   .dcf-col-25\%-end\@lg {
-    grid-column: span 3 / -1;
+    grid-column: 10 / -1;
   }
 
   .dcf-col-75\%-start\@lg {
-    grid-column: 1 / span 9;
+    grid-column: 1 / 10;
   }
 
   .dcf-col-75\%-end\@lg {
-    grid-column: span 9 / -1;
+    grid-column: 4 / -1;
   }
 
 }
@@ -388,11 +388,11 @@
   }
 
   .dcf-col-100\%\@xl {
-    grid-column: 1 / span 12;
+    grid-column: 1 / -1;
   }
 
   .dcf-col-50\%-start\@xl {
-    grid-column: 1 / span 6;
+    grid-column: 1 / 7;
   }
 
   .dcf-col-50\%-center\@xl {
@@ -400,11 +400,11 @@
   }
 
   .dcf-col-50\%-end\@xl {
-    grid-column: span 6 / -1;
+    grid-column: 7 / -1;
   }
 
   .dcf-col-33\%-start\@xl {
-    grid-column: 1 / span 4;
+    grid-column: 1 / 5;
   }
 
   .dcf-col-33\%-center\@xl {
@@ -412,11 +412,11 @@
   }
 
   .dcf-col-33\%-end\@xl {
-    grid-column: span 4 / -1;
+    grid-column: 9 / -1;
   }
 
   .dcf-col-67\%-start\@xl {
-    grid-column: 1 / span 8;
+    grid-column: 1 / 9;
   }
 
   .dcf-col-67\%-center\@xl {
@@ -424,23 +424,23 @@
   }
 
   .dcf-col-67\%-end\@xl {
-    grid-column: span 8 / -1;
+    grid-column: 5 / -1;
   }
 
   .dcf-col-25\%-start\@xl {
-    grid-column: 1 / span 3;
+    grid-column: 1 / 4;
   }
 
   .dcf-col-25\%-end\@xl {
-    grid-column: span 3 / -1;
+    grid-column: 10 / -1;
   }
 
   .dcf-col-75\%-start\@xl {
-    grid-column: 1 / span 9;
+    grid-column: 1 / 10;
   }
 
   .dcf-col-75\%-end\@xl {
-    grid-column: span 9 / -1;
+    grid-column: 4 / -1;
   }
 
 }
