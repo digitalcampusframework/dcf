@@ -97,6 +97,14 @@
   grid-column: 1 / 4;
 }
 
+.dcf-col-25\%-center-start {
+  grid-column: 4 / 7;
+}
+
+.dcf-col-25\%-center-end {
+  grid-column: 7 / 10;
+}
+
 .dcf-col-25\%-end {
   grid-column: 10 / -1;
 }
@@ -170,6 +178,14 @@
 
   .dcf-col-25\%-start\@sm {
     grid-column: 1 / 4;
+  }
+
+  .dcf-col-25\%-center-start\@sm {
+    grid-column: 4 / 7;
+  }
+
+  .dcf-col-25\%-center-end\@sm {
+    grid-column: 7 / 10;
   }
 
   .dcf-col-25\%-end\@sm {
@@ -257,6 +273,14 @@
     grid-column: 1 / 4;
   }
 
+  .dcf-col-25\%-center-start\@md {
+    grid-column: 4 / 7;
+  }
+
+  .dcf-col-25\%-center-end\@md {
+    grid-column: 7 / 10;
+  }
+
   .dcf-col-25\%-end\@md {
     grid-column: 10 / -1;
   }
@@ -342,6 +366,14 @@
     grid-column: 1 / 4;
   }
 
+  .dcf-col-25\%-center-start\@lg {
+    grid-column: 4 / 7;
+  }
+
+  .dcf-col-25\%-center-end\@lg {
+    grid-column: 7 / 10;
+  }
+
   .dcf-col-25\%-end\@lg {
     grid-column: 10 / -1;
   }
@@ -425,6 +457,14 @@
 
   .dcf-col-25\%-start\@xl {
     grid-column: 1 / 4;
+  }
+
+  .dcf-col-25\%-center-start\@xl {
+    grid-column: 4 / 7;
+  }
+
+  .dcf-col-25\%-center-end\@xl {
+    grid-column: 7 / 10;
   }
 
   .dcf-col-25\%-end\@xl {
