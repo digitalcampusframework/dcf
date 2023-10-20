@@ -57,6 +57,10 @@
   grid-column: 1 / -1;
 }
 
+.dcf-col-50\% {
+  grid-column: span 6;
+}
+
 .dcf-col-50\%-start {
   grid-column: 1 / 7;
 }
@@ -67,6 +71,10 @@
 
 .dcf-col-50\%-end {
   grid-column: 7 / -1;
+}
+
+.dcf-col-33\% {
+  grid-column: span 4;
 }
 
 .dcf-col-33\%-start {
@@ -81,6 +89,10 @@
   grid-column: 9 / -1;
 }
 
+.dcf-col-67\% {
+  grid-column: span 8;
+}
+
 .dcf-col-67\%-start {
   grid-column: 1 / 9;
 }
@@ -91,6 +103,10 @@
 
 .dcf-col-67\%-end {
   grid-column: 5 / -1;
+}
+
+.dcf-col-25\% {
+  grid-column: span 3;
 }
 
 .dcf-col-25\%-start {
@@ -107,6 +123,10 @@
 
 .dcf-col-25\%-end {
   grid-column: 10 / -1;
+}
+
+.dcf-col-75\% {
+  grid-column: span 9;
 }
 
 .dcf-col-75\%-start {
@@ -140,6 +160,10 @@
     grid-column: 1 / -1;
   }
 
+  .dcf-col-50\%\@sm {
+    grid-column: span 6;
+  }
+
   .dcf-col-50\%-start\@sm {
     grid-column: 1 / 7;
   }
@@ -150,6 +174,10 @@
 
   .dcf-col-50\%-end\@sm {
     grid-column: 7 / -1;
+  }
+
+  .dcf-col-33\%\@sm {
+    grid-column: span 4;
   }
 
   .dcf-col-33\%-start\@sm {
@@ -164,6 +192,10 @@
     grid-column: 9 / -1;
   }
 
+  .dcf-col-67\%\@sm {
+    grid-column: span 8;
+  }
+
   .dcf-col-67\%-start\@sm {
     grid-column: 1 / 9;
   }
@@ -174,6 +206,10 @@
 
   .dcf-col-67\%-end\@sm {
     grid-column: 5 / -1;
+  }
+
+  .dcf-col-25\%\@sm {
+    grid-column: span 3;
   }
 
   .dcf-col-25\%-start\@sm {
@@ -190,6 +226,10 @@
 
   .dcf-col-25\%-end\@sm {
     grid-column: 10 / -1;
+  }
+
+  .dcf-col-75\%\@sm {
+    grid-column: span 9;
   }
 
   .dcf-col-75\%-start\@sm {
@@ -233,6 +273,10 @@
     grid-column: 1 / -1;
   }
 
+  .dcf-col-50\%\@md {
+    grid-column: span 6;
+  }
+
   .dcf-col-50\%-start\@md {
     grid-column: 1 / 7;
   }
@@ -243,6 +287,10 @@
 
   .dcf-col-50\%-end\@md {
     grid-column: 7 / -1;
+  }
+
+  .dcf-col-33\%\@md {
+    grid-column: span 4;
   }
 
   .dcf-col-33\%-start\@md {
@@ -257,6 +305,10 @@
     grid-column: 9 / -1;
   }
 
+  .dcf-col-67\%\@md {
+    grid-column: span 8;
+  }
+
   .dcf-col-67\%-start\@md {
     grid-column: 1 / 9;
   }
@@ -267,6 +319,10 @@
 
   .dcf-col-67\%-end\@md {
     grid-column: 5 / -1;
+  }
+
+  .dcf-col-25\%\@md {
+    grid-column: span 3;
   }
 
   .dcf-col-25\%-start\@md {
@@ -283,6 +339,10 @@
 
   .dcf-col-25\%-end\@md {
     grid-column: 10 / -1;
+  }
+
+  .dcf-col-75\%\@md {
+    grid-column: span 9;
   }
 
   .dcf-col-75\%-start\@md {
@@ -326,6 +386,10 @@
     grid-column: 1 / -1;
   }
 
+  .dcf-col-50\%\@lg {
+    grid-column: span 6;
+  }
+
   .dcf-col-50\%-start\@lg {
     grid-column: 1 / 7;
   }
@@ -336,6 +400,10 @@
 
   .dcf-col-50\%-end\@lg {
     grid-column: 7 / -1;
+  }
+
+  .dcf-col-33\%\@lg {
+    grid-column: span 4;
   }
 
   .dcf-col-33\%-start\@lg {
@@ -350,6 +418,10 @@
     grid-column: 9 / -1;
   }
 
+  .dcf-col-67\%\@lg {
+    grid-column: span 8;
+  }
+
   .dcf-col-67\%-start\@lg {
     grid-column: 1 / 9;
   }
@@ -360,6 +432,10 @@
 
   .dcf-col-67\%-end\@lg {
     grid-column: 5 / -1;
+  }
+
+  .dcf-col-25\%\@lg {
+    grid-column: span 3;
   }
 
   .dcf-col-25\%-start\@lg {
@@ -376,6 +452,10 @@
 
   .dcf-col-25\%-end\@lg {
     grid-column: 10 / -1;
+  }
+
+  .dcf-col-75\%\@lg {
+    grid-column: span 9;
   }
 
   .dcf-col-75\%-start\@lg {
@@ -419,6 +499,10 @@
     grid-column: 1 / -1;
   }
 
+  .dcf-col-50\%\@xl {
+    grid-column: span 6;
+  }
+
   .dcf-col-50\%-start\@xl {
     grid-column: 1 / 7;
   }
@@ -429,6 +513,10 @@
 
   .dcf-col-50\%-end\@xl {
     grid-column: 7 / -1;
+  }
+
+  .dcf-col-33\%\@xl {
+    grid-column: span 4;
   }
 
   .dcf-col-33\%-start\@xl {
@@ -443,6 +531,10 @@
     grid-column: 9 / -1;
   }
 
+  .dcf-col-67\%\@xl {
+    grid-column: span 8;
+  }
+
   .dcf-col-67\%-start\@xl {
     grid-column: 1 / 9;
   }
@@ -453,6 +545,10 @@
 
   .dcf-col-67\%-end\@xl {
     grid-column: 5 / -1;
+  }
+
+  .dcf-col-25\%\@xl {
+    grid-column: span 3;
   }
 
   .dcf-col-25\%-start\@xl {
@@ -469,6 +565,10 @@
 
   .dcf-col-25\%-end\@xl {
     grid-column: 10 / -1;
+  }
+
+  .dcf-col-75\%\@xl {
+    grid-column: span 9;
   }
 
   .dcf-col-75\%-start\@xl {
