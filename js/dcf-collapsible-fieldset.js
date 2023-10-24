@@ -56,6 +56,7 @@ export class DCFFieldsetCollapsible {
     }
 
     this.fieldsetReadyEvent = new Event(DCFFieldsetCollapsible.events('fieldsetReady'));
+    this.commandToggle = new Event(DCFToggleButton.events('commandToggle'));
 
     // Copy the Keys without copying the references
     // Objects plus their properties and arrays are pass by reference
@@ -130,6 +131,7 @@ export class DCFFieldsetCollapsible {
       // Removed the legend and saves it
       const legendCopy = legend.cloneNode(true);
       legend.remove();
+      legendCopy.style.cursor = 'pointer';
 
       // Creates a new div and we copy everything left in the fieldset into it
       const newGuts = document.createElement('div');
@@ -195,7 +197,7 @@ export class DCFFieldsetCollapsible {
       // We can then add the event listeners
       // We want to do this before the toggle button is initialized
       // Since we have to change the styles for if it starts expanded or not
-      this.eventListeners(fieldset, newGuts, button);
+      this.eventListeners(fieldset, newGuts, button, legendCopy);
 
       // Initialize the toggle button
       const toggleButtonObj = new DCFToggleButton(button, {
@@ -228,8 +230,19 @@ export class DCFFieldsetCollapsible {
    * @param {HTMLElement} fieldset Fieldset that holds the button and toggle element
    * @param {HTMLElement} toggleElement The new div that was made inside the fieldset
    * @param {HTMLElement} button The button that was added to the legend
+   * @param {HTMLElement} legend The legend that holds the button
    */
-  eventListeners(fieldset, toggleElement, button) {
+  eventListeners(fieldset, toggleElement, button, legend) {
+    // If we click the legend and not the button we want to toggle the fieldset
+    legend.addEventListener('click', (event) => {
+      // If the legend does not contain it then we clicked the SVG and the SVG has changed
+      // If e.target is the button we do not want to toggle
+      // If the button contains e.target then we do not want to toggle
+      if (legend.contains(event.target) && !button.isEqualNode(event.target) && !button.contains(event.target)) {
+        button.dispatchEvent(this.commandToggle);
+      }
+    });
+
     // We listen for when the toggle element is turned on
     toggleElement.addEventListener(DCFFieldsetCollapsible.events('toggleElementOn'), () => {
       // When it is we will remove the off styles and add the on styles
