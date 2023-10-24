@@ -156,8 +156,17 @@ export class DCFPopup {
       });
 
       // If any popup on the document opens and it doesn't match we will close
-      document.addEventListener(DCFPopup.events('popupOpen'), (e) => {
-        if (e.target.id !== popup.id) {
+      document.addEventListener(DCFPopup.events('popupOpen'), (event) => {
+        // Check if event is coming from a child popup
+        let eventIsFromTheInside = false;
+        popup.querySelectorAll('.dcf-popup').forEach((innerPopup) => {
+          if (innerPopup.id === event.target.id) {
+            eventIsFromTheInside = true;
+          }
+        });
+
+        // If it is not coming from child and it is not this popup then close the popup
+        if (!eventIsFromTheInside && event.target.id !== popup.id) {
           popupBtn.dispatchEvent(this.commandClose);
         }
       }, true);
@@ -165,10 +174,7 @@ export class DCFPopup {
       // If we click outside the popup close the popup
       // Event listener is on body since we want to check if we click anywhere but element
       document.body.addEventListener('click', (event) => {
-        // We then check if where we clicked has any ancestor element that is out popup
-        const closestPopup = event.target.closest('.dcf-popup');
-        if (closestPopup === null || closestPopup.id !== popup.id) {
-          // If the ids match we can use the secret toggle button to close the popup
+        if (!popup.contains(event.target)) {
           popupBtn.dispatchEvent(this.commandClose);
         }
       }, true);
