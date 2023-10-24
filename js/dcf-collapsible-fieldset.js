@@ -27,6 +27,7 @@ export class DCFFieldsetCollapsibleTheme {
     this.fieldsetContentsClassListOff = [
       'dcf-h-0',
       'dcf-overflow-y-hidden',
+      'dcf-overflow-x-hidden',
     ];
 
     this.fieldsetClassList = [];
