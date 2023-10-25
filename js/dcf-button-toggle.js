@@ -109,6 +109,10 @@ export class DCFToggleButton {
 
       // set up the event listeners for the button and element
       this.eventListeners(toggleButton, toggleElement);
+
+      if (toggleElement.getAttribute('hidden') !== null) {
+        toggleElement.removeAttribute('hidden');
+      }
     });
   }
 

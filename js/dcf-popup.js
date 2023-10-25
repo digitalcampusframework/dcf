@@ -207,6 +207,10 @@ export class DCFPopup {
           popupBtn.dispatchEvent(this.commandOpen);
         });
       }
+
+      if (popup.getAttribute('hidden') !== null) {
+        popup.removeAttribute('hidden');
+      }
     });
   }
 

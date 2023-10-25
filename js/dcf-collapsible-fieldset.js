@@ -212,6 +212,10 @@ export class DCFFieldsetCollapsible {
       // to know that its safe to create references to these elements
       fieldset.dispatchEvent(this.fieldsetReadyEvent);
 
+      if (fieldset.getAttribute('hidden') !== null) {
+        fieldset.removeAttribute('hidden');
+      }
+
       // Remove the classes related to block any animation
       let removeAnimationBlock = () => {
         this.theme.animationBlockClassList.forEach((fieldsetClass) => {
