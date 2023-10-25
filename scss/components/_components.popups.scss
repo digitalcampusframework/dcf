@@ -15,12 +15,12 @@
 
 .dcf-popup:not([data-alignment="start"]):not([data-alignment="end"]) {
 
-  & .dcf-popup-content {
+  & > .dcf-popup-content {
     transform: translateX(-50%);
   }
 
-  &[data-position="left"] .dcf-popup-content,
-  &[data-position="right"] .dcf-popup-content {
+  &[data-position="left"] > .dcf-popup-content,
+  &[data-position="right"] > .dcf-popup-content {
     transform: translateY(-50%);
   }
 }
@@ -29,7 +29,7 @@
 .dcf-popup[data-point="true"] {
 
   // All points
-  & .dcf-popup-content::before {
+  & > .dcf-popup-content::before {
     background-color: inherit;
     content: "";
     left: calc(50% - #{$size-inline-popup-point} / 2);
@@ -38,21 +38,21 @@
   }
 
   // Top & bottom point height & width
-  &:not([data-position="right"]):not([data-position="left"]) .dcf-popup-content::before {
+  &:not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content::before {
     height: $size-block-popup-point;
     width: $size-inline-popup-point;
   }
 
   // Left & right point height & width
-  &[data-position="left"] .dcf-popup-content::before,
-  &[data-position="right"] .dcf-popup-content::before {
+  &[data-position="left"] > .dcf-popup-content::before,
+  &[data-position="right"] > .dcf-popup-content::before {
     height: $size-inline-popup-point;
     width: $size-block-popup-point;
   }
 
   // Bottom Center
-  &[data-position="bottom"] .dcf-popup-content,
-  &:not([data-position="top"]):not([data-position="right"]):not([data-position="left"]) .dcf-popup-content {
+  &[data-position="bottom"] > .dcf-popup-content,
+  &:not([data-position="top"]):not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content {
     margin-top: $margin-popup-point;
 
     &::before {
@@ -62,7 +62,7 @@
   }
 
   // Top Center
-  &[data-position="top"] .dcf-popup-content {
+  &[data-position="top"] > .dcf-popup-content {
     margin-bottom: $margin-popup-point;
 
     &::before {
@@ -72,7 +72,7 @@
   }
 
   // Left Center
-  &[data-position="left"] .dcf-popup-content {
+  &[data-position="left"] > .dcf-popup-content {
     margin-right: $margin-popup-point;
 
     &::before {
@@ -82,7 +82,7 @@
   }
 
   // Right Center
-  &[data-position="right"] .dcf-popup-content {
+  &[data-position="right"] > .dcf-popup-content {
     margin-left: $margin-popup-point;
 
     &::before {
@@ -93,34 +93,34 @@
 
   // Bottom Start
   // Top Start
-  &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before {
+  &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
     left: $size-block-popup-point;
   }
 
   // Bottom End
   // Top End
-  &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) .dcf-popup-content::before {
+  &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
     left: calc(100% - #{$size-block-popup-point} * 2);
   }
 
   // Left Center
   // Right Center
-  &[data-position="left"]:not([data-alignment="start"]):not([data-alignment="end"]) .dcf-popup-content::before,
-  &[data-position="right"]:not([data-alignment="start"]):not([data-alignment="end"]) .dcf-popup-content::before {
+  &[data-position="left"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before,
+  &[data-position="right"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before {
     top: calc(50% - #{$size-inline-popup-point} / 2);
   }
 
   // Left Start
   // Right Start
-  &[data-alignment="start"][data-position="left"] .dcf-popup-content::before,
-  &[data-alignment="start"][data-position="right"] .dcf-popup-content::before {
+  &[data-alignment="start"][data-position="left"] > .dcf-popup-content::before,
+  &[data-alignment="start"][data-position="right"] > .dcf-popup-content::before {
     top: $size-block-popup-point;
   }
 
   // Left End
   // Right End
-  &[data-alignment="end"][data-position="left"] .dcf-popup-content::before,
-  &[data-alignment="end"][data-position="right"] .dcf-popup-content::before {
+  &[data-alignment="end"][data-position="left"] > .dcf-popup-content::before,
+  &[data-alignment="end"][data-position="right"] > .dcf-popup-content::before {
     top: calc(100% - #{$size-block-popup-point} * 2);
   }
 }
