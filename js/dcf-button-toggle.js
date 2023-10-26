@@ -253,7 +253,7 @@ export class DCFToggleButton {
    * @param {Event} event The event which holds the event target which we will remove the dcf-d-none from
    */
   removeDisplayNone(event) {
-    event.target.classList.add('dcf-d-none');
-    event.target.removeEventListener('transitionend', this.removeDisplayNone);
+    event.currentTarget.classList.add('dcf-d-none');
+    event.currentTarget.removeEventListener('transitionend', this.removeDisplayNone);
   }
 }
