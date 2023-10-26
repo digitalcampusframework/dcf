@@ -102,12 +102,18 @@ export class DCFPopup {
       }
 
       // We need do do some funky stuff to get the correct close button and not the nested one
-      const closeButton = popup.querySelector(
-        ':scope > .dcf-popup-content > .dcf-btn-close-popup, :scope > .dcf-popup-content > .dcf-btn-popup-close'
+      const closeButtons = popup.querySelectorAll(
+        ':scope > .dcf-popup-content > .dcf-btn-close-popup' +
+        ', :scope > .dcf-popup-content > .dcf-btn-popup-close' +
+        `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${popup.id}"]` +
+        `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${popup.id}"]`
       );
-      if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
-        throw new Error('Close Button is Not a Button Tag');
-      }
+
+      closeButtons.forEach((closeButton) => {
+        if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
+          throw new Error('Close Button is Not a Button Tag');
+        }
+      });
 
       // Sets the IDs for the btn and content if they aren't already set
       if (popup.id === '') {
@@ -144,11 +150,11 @@ export class DCFPopup {
       toggleButtonObj.initialize();
 
       // if there is a close button and its clicked close the popup
-      if (closeButton !== null) {
+      closeButtons.forEach((closeButton) => {
         closeButton.addEventListener('click', () => {
           popupBtn.dispatchEvent(this.commandClose);
         });
-      }
+      });
 
       // When a popup is toggled open it will dispatch an event
       popupContent.addEventListener(DCFToggleButton.events('toggleElementOn'), () => {
