@@ -3,12 +3,13 @@
 /////////////////////////////
 
 
-.dcf-opacity-0 { 
+.dcf-opacity-0 {
   @include opacity-0(!important);
 }
 
 
+// .dcf-opacity-100%
 .dcf-opacity-100, // TODO: deprecate `.dcf-opacity-100`
-.dcf-opacity-100\% { 
+.dcf-opacity-100\% {
   @include opacity-100pc(!important);
 }
