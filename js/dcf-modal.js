@@ -129,16 +129,18 @@ export class DCFModal {
 
     // Trigger pre-open modal event for this modal to allow event listeners to handle
     const preOpenEventName = `ModalPreOpenEvent_${modalId}`;
+    // Getting the button from dom which button got clicked
     const openButtonElement = document.getElementById(openBtnId);
-    let myevent = new CustomEvent(preOpenEventName);
+    let preOpenEvent = new CustomEvent(preOpenEventName);
+    // If there is a button then it's ID gets passed as a arguemnt in the CustomEvent
     if(openButtonElement){
-      myevent = new CustomEvent(preOpenEventName, {
+      preOpenEvent = new CustomEvent(preOpenEventName, {
         detail : {
           btn: openButtonElement
         },
       });
     }
-    document.dispatchEvent(myevent);
+    document.dispatchEvent(preOpenEvent);
 
     // Set elements outside of modal to be inert and hidden from screen readers
     this.nonModals.forEach((nonModal) => {
