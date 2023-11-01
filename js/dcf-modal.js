@@ -129,13 +129,13 @@ export class DCFModal {
 
     // Trigger pre-open modal event for this modal to allow event listeners to handle
     const preOpenEventName = `ModalPreOpenEvent_${modalId}`;
-    
+
     // Getting the button from dom which button got clicked
     const openButtonElement = document.getElementById(openBtnId);
     let preOpenEvent = new CustomEvent(preOpenEventName);
   
     // If there is a button then it's ID gets passed as an arguemnt in the CustomEvent
-    if(openButtonElement !== null){
+    if (openButtonElement !== null) {
       preOpenEvent = new CustomEvent(preOpenEventName, {
         detail : {
           btn: openButtonElement
