@@ -105,10 +105,14 @@ export class DCFToggleButton {
 
       // ToggleSwitched will set many of the other attributes and styles
       const expandedState = toggleButtonStartExpanded === 'true' ? 'open' : 'close';
-      this.toggleSwitched(toggleButton, toggleElement, expandedState);
+      this.toggleSwitched(toggleButton, toggleElement, expandedState, true);
 
       // set up the event listeners for the button and element
       this.eventListeners(toggleButton, toggleElement);
+
+      if (toggleElement.getAttribute('hidden') !== null) {
+        toggleElement.removeAttribute('hidden');
+      }
     });
   }
 
@@ -174,10 +178,11 @@ export class DCFToggleButton {
 
   // Handles the logic for the button
   // This will only call the animations
-  toggleSwitched(toggleButton, toggleElement, state = '') {
+  toggleSwitched(toggleButton, toggleElement, state = '', onload = false) {
     // Gets the labels for the button
     const toggleButtonLabelOn = toggleButton.dataset.labelOn;
     const toggleButtonLabelOff = toggleButton.dataset.labelOff;
+    const timeoutTime = 10;
 
     // Toggled On
     if ((toggleButton.getAttribute('aria-expanded') === 'false' ||
@@ -191,40 +196,17 @@ export class DCFToggleButton {
       }
       toggleButton.dispatchEvent(this.toggleButtonOn);
 
+      // Removed transitionend if it was there
+      toggleElement.removeEventListener('transitionend', this.removeDisplayNone);
+
+      // Unhide the stuff now so animations can run after
       toggleElement.setAttribute('aria-hidden', 'false');
-      toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
-      toggleElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
-
-      // Make everything inside toggle element use old tab index and old disabled value if it had one
-      toggleElement.querySelectorAll('*').forEach((elem) => {
-        if ('oldTabIndex' in elem.dataset && elem.dataset.oldTabIndex !== 'false') {
-          elem.setAttribute('tabindex', elem.dataset.oldTabIndex);
-        } else if ('oldTabIndex' in elem.dataset && elem.dataset.oldTabIndex === 'false') {
-          elem.removeAttribute('tabindex');
-        }
-        delete elem.dataset.oldTabIndex;
-
-        if ('oldDisabled' in elem.dataset && elem.dataset.oldDisabled === 'false') {
-          elem.removeAttribute('disabled');
-        }
-        delete elem.dataset.oldDisabled;
-      });
-
-      // Make toggle element use old tab index if it had one
-      if (toggleElement.dataset.oldTabIndex && toggleElement.dataset.oldTabIndex !== 'false') {
-        toggleElement.setAttribute('tabindex', '-1');
-      } else {
-        toggleElement.removeAttribute('tabindex');
-      }
-      delete toggleElement.dataset.oldTabIndex;
-
-      // Make toggle element use disabled value if it had one
-      if (toggleElement.dataset.oldDisabled && toggleElement.dataset.oldDisabled !== 'false') {
-        toggleElement.disabled = true;
-      } else {
-        toggleElement.removeAttribute('disabled');
-      }
-      delete toggleElement.dataset.oldDisabled;
+      toggleElement.classList.remove('dcf-d-none');
+      // If we do not have this the transition will not run on our toggled elements for some reason
+      setTimeout(() => {
+        toggleElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
+        toggleElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
+      }, timeoutTime);
 
       // Dispatch event incase something else is using it
       toggleElement.dispatchEvent(this.toggleElementOn);
@@ -245,23 +227,18 @@ export class DCFToggleButton {
       }
       toggleButton.dispatchEvent(this.toggleButtonOff);
 
+      // Set it to hidden
       toggleElement.setAttribute('aria-hidden', 'true');
       toggleElement.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
       toggleElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
 
-      // Make everything inside toggle element not tabbable and disabled plus saving old values if it had one
-      toggleElement.querySelectorAll('*').forEach((elem) => {
-        elem.dataset.oldTabIndex = elem.getAttribute('tabindex') || 'false';
-        elem.dataset.oldDisabled = elem.disabled;
-        elem.setAttribute('tabindex', '-1');
-        elem.disabled = true;
-      });
-
-      // Make toggle element not tabbable and disabled plus saving old values if it had one
-      toggleElement.dataset.oldTabIndex = toggleElement.getAttribute('tabindex') || 'false';
-      toggleElement.dataset.oldDisabled = toggleElement.disabled;
-      toggleElement.setAttribute('tabindex', '-1');
-      toggleElement.disabled = true;
+      // If it has a transition wait for it to finish before removing display none
+      // If not just remove the class
+      if (onload || window.getComputedStyle(toggleElement, null).getPropertyValue('transition') === '') {
+        toggleElement.classList.add('dcf-d-none');
+      } else {
+        toggleElement.addEventListener('transitionend', this.removeDisplayNone);
+      }
 
       // Dispatch event incase something else is using it
       toggleElement.dispatchEvent(this.toggleElementOff);
@@ -269,5 +246,14 @@ export class DCFToggleButton {
     }
 
     return false;
+  }
+
+  /**
+   * We only have this so we can easily add and remove the transitionend event listeners
+   * @param {Event} event The event which holds the event target which we will remove the dcf-d-none from
+   */
+  removeDisplayNone(event) {
+    event.currentTarget.classList.add('dcf-d-none');
+    event.currentTarget.removeEventListener('transitionend', this.removeDisplayNone);
   }
 }

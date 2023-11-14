@@ -90,21 +90,30 @@ export class DCFPopup {
       }
 
       // Gets the button and validates it
-      const popupBtn = popup.querySelector('.dcf-btn-toggle-popup, .dcf-btn-popup');
+      const popupBtn = popup.querySelector(':scope > .dcf-btn-toggle-popup, :scope > .dcf-btn-popup');
       if (popupBtn === null || popupBtn.tagName !== 'BUTTON') {
         throw new Error('Popup Button Is Missing Or Not A Button Tag');
       }
 
       // Gets the content and validates it
-      const popupContent = popup.querySelector('.dcf-popup-content');
+      const popupContent = popup.querySelector(':scope > .dcf-popup-content');
       if (popupContent === null) {
         throw new Error('Popup Content Is Missing');
       }
 
-      const closeButton = popup.querySelector('.dcf-btn-close-popup, .dcf-btn-popup-close');
-      if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
-        throw new Error('Close Button is Not a Button Tag');
-      }
+      // We need do do some funky stuff to get the correct close button and not the nested one
+      const closeButtons = popup.querySelectorAll(
+        ':scope > .dcf-popup-content > .dcf-btn-close-popup' +
+        ', :scope > .dcf-popup-content > .dcf-btn-popup-close' +
+        `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${popup.id}"]` +
+        `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${popup.id}"]`
+      );
+
+      closeButtons.forEach((closeButton) => {
+        if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
+          throw new Error('Close Button is Not a Button Tag');
+        }
+      });
 
       // Sets the IDs for the btn and content if they aren't already set
       if (popup.id === '') {
@@ -141,11 +150,11 @@ export class DCFPopup {
       toggleButtonObj.initialize();
 
       // if there is a close button and its clicked close the popup
-      if (closeButton !== null) {
+      closeButtons.forEach((closeButton) => {
         closeButton.addEventListener('click', () => {
           popupBtn.dispatchEvent(this.commandClose);
         });
-      }
+      });
 
       // When a popup is toggled open it will dispatch an event
       popupContent.addEventListener(DCFToggleButton.events('toggleElementOn'), () => {
@@ -153,8 +162,17 @@ export class DCFPopup {
       });
 
       // If any popup on the document opens and it doesn't match we will close
-      document.addEventListener(DCFPopup.events('popupOpen'), (e) => {
-        if (e.target.id !== popup.id) {
+      document.addEventListener(DCFPopup.events('popupOpen'), (event) => {
+        // Check if event is coming from a child popup
+        let eventIsFromTheInside = false;
+        popup.querySelectorAll('.dcf-popup').forEach((innerPopup) => {
+          if (innerPopup.id === event.target.id) {
+            eventIsFromTheInside = true;
+          }
+        });
+
+        // If it is not coming from child and it is not this popup then close the popup
+        if (!eventIsFromTheInside && event.target.id !== popup.id) {
           popupBtn.dispatchEvent(this.commandClose);
         }
       }, true);
@@ -162,10 +180,7 @@ export class DCFPopup {
       // If we click outside the popup close the popup
       // Event listener is on body since we want to check if we click anywhere but element
       document.body.addEventListener('click', (event) => {
-        // We then check if where we clicked has any ancestor element that is out popup
-        const closestPopup = event.target.closest('.dcf-popup');
-        if (closestPopup === null || closestPopup.id !== popup.id) {
-          // If the ids match we can use the secret toggle button to close the popup
+        if (!popup.contains(event.target)) {
           popupBtn.dispatchEvent(this.commandClose);
         }
       }, true);
@@ -197,6 +212,10 @@ export class DCFPopup {
           // This button is a toggle button secretly so we can control it via its event listeners
           popupBtn.dispatchEvent(this.commandOpen);
         });
+      }
+
+      if (popup.getAttribute('hidden') !== null) {
+        popup.removeAttribute('hidden');
       }
     });
   }
