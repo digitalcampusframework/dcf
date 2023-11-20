@@ -21,3 +21,10 @@
   display: block !important;
   visibility: hidden !important;
 }
+
+
+// Fix list-style: none in VoiceOver and Safari: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+[role="list"] {
+  list-style: none;
+  padding-left: 0;
+}
