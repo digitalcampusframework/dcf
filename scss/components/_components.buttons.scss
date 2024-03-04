@@ -36,6 +36,10 @@
   background-color: transparent;
   border: 0;
   color: $color-link;
+  display: inline;
+  line-height: unset;
+  padding: unset;
+  text-align: unset;
   text-decoration: underline;
 }
 
