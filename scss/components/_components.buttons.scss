@@ -3,14 +3,19 @@
 //////////////////////////////
 
 
-.dcf-btn {
+.dcf-btn,
+.dcf-btn-as-link {
   appearance: none;
+  cursor: pointer;
+}
+
+
+.dcf-btn {
   @if ($border-radius-button-roundrect) {
     border-radius: $roundrect;
   }
   border-style: $border-style-button;
   border-width: $border-width-button;
-  cursor: pointer;
   display: inline-block;
   @if (to-number($font-size-button) != to-number(#{ms(0)}em)) {
     font-size: $font-size-button;
@@ -24,6 +29,18 @@
   @if ($text-transform-button-uppercase) {
     text-transform: uppercase;
   }
+}
+
+
+.dcf-btn-as-link {
+  background-color: transparent;
+  border: 0;
+  color: $color-link;
+  display: inline;
+  line-height: unset;
+  padding: unset;
+  text-align: unset;
+  text-decoration: underline;
 }
 
 
