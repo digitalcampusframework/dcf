@@ -6,4 +6,7 @@
 p {
   margin-bottom: $margin-bottom-paragraph;
   margin-top: $margin-top-paragraph;
+  @if ($text-wrap-pretty-paragraph == true) {
+    text-wrap: pretty;
+  }
 }
