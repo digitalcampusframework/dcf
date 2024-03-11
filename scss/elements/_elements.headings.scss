@@ -21,6 +21,9 @@ h6 {
   line-height: $line-height-heading;
   margin-bottom: $margin-bottom-heading;
   margin-top: $margin-top-heading;
+  @if ($text-wrap-balance == true) {
+    text-wrap: balance;
+  }
 
   dl + &,
   ol + &,
