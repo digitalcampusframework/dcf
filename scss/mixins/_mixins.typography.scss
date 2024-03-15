@@ -32,6 +32,7 @@
 
 // Text wrap
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
+@mixin txt-wrap-unset($imp:null) { text-wrap: unset $imp; }
 
 @mixin url-wrap($imp:null) {
   overflow-wrap: break-word $imp;
