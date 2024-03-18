@@ -14,6 +14,9 @@ ol,
 ul {
   margin-bottom: $margin-bottom-dl-ol-ul;
   margin-top: $margin-top-dl-ol-ul;
+  @if ($text-wrap-pretty-dl-ol-ul == true) {
+    text-wrap: pretty;
+  }
 
   dl,
   ol,

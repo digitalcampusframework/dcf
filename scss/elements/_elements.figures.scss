@@ -13,4 +13,7 @@ figure {
 figcaption {
   color: $color-figcaption;
   font-size: $font-size-figcaption;
+  @if ($text-wrap-pretty-figcaption == true) {
+    text-wrap: pretty;
+  }
 }

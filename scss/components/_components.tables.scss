@@ -14,6 +14,9 @@
     font-weight: bold;
   }
   padding-bottom: $padding-bottom-caption;
+  @if ($text-wrap-balance-caption == true) {
+    text-wrap: balance;
+  }
 }
 
 
