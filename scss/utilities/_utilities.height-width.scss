@@ -23,6 +23,9 @@
 .dcf-h-75\% { @include h-75pc(!important); }    // .dcf-h-75%
 .dcf-h-100\% { @include h-100pc(!important); }  // .dcf-h-100%
 .dcf-h-100vh { @include h-100vh(!important); }
+.dcf-h-fit-content { @include h-fit-content(!important); }
+.dcf-h-max-content { @include h-max-content(!important); }
+.dcf-h-min-content { @include h-min-content(!important); }
 
 
 // Minimum height
@@ -57,6 +60,9 @@
 .dcf-w-75\% { @include w-75pc(!important); }    // .dcf-w-75%
 .dcf-w-100\% { @include w-100pc(!important); }  // .dcf-w-100%
 .dcf-w-100vw { @include w-100vw(!important); }
+.dcf-w-fit-content { @include w-fit-content(!important); }
+.dcf-w-max-content { @include w-max-content(!important); }
+.dcf-w-min-content { @include w-min-content(!important); }
 
 
 // Minimum width
