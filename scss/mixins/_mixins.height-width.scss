@@ -23,6 +23,9 @@
 @mixin h-75pc($imp:null) { height: 75% $imp; }
 @mixin h-100pc($imp:null) { height: 100% $imp; }
 @mixin h-100vh($imp:null) { height: 100vh $imp; }
+@mixin h-fit-content($imp:null) { height: fit-content $imp; }
+@mixin h-max-content($imp:null) { height: max-content $imp; }
+@mixin h-min-content($imp:null) { height: min-content $imp; }
 
 
 // Minimum height
@@ -57,6 +60,9 @@
 @mixin w-75pc($imp:null) { width: 75% $imp; }
 @mixin w-100pc($imp:null) { width: 100% $imp; }
 @mixin w-100vw($imp:null) { width: 100vw $imp; }
+@mixin w-fit-content($imp:null) { width: fit-content $imp; }
+@mixin w-max-content($imp:null) { width: max-content $imp; }
+@mixin w-min-content($imp:null) { width: min-content $imp; }
 
 
 // Minimum width
