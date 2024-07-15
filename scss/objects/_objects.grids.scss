@@ -34,23 +34,23 @@
 }
 
 .dcf-grid {
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(1px, 1fr));
 }
 
 .dcf-grid-full {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(1px, 1fr);
 }
 
 .dcf-grid-halves {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(1px, 1fr));
 }
 
 .dcf-grid-thirds {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(1px, 1fr));
 }
 
 .dcf-grid-fourths {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(1px, 1fr));
 }
 
 .dcf-col-100\% {
@@ -133,19 +133,19 @@
 @include mq(sm, min, width) {
 
   .dcf-grid-full\@sm {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(1px, 1fr);
   }
 
   .dcf-grid-halves\@sm {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(1px, 1fr));
   }
 
   .dcf-grid-thirds\@sm {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(1px, 1fr));
   }
 
   .dcf-grid-fourths\@sm {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(1px, 1fr));
   }
 
   .dcf-col-100\%\@sm {
@@ -230,27 +230,27 @@
 @include mq(md, min, width) {
 
   .dcf-grid-full\@md {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(1px, 1fr);
   }
 
   .dcf-grid-halves\@md {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(1px, 1fr));
   }
 
   .dcf-grid-thirds\@md {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(1px, 1fr));
   }
 
   .dcf-grid-fourths\@md {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(1px, 1fr));
   }
 
   .dcf-grid-fifths\@md {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(1px, 1fr));
   }
 
   .dcf-grid-sixths\@md {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(1px, 1fr));
   }
 
   .dcf-col-100\%\@md {
@@ -335,27 +335,27 @@
 @include mq(lg, min, width) {
 
   .dcf-grid-full\@lg {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(1px, 1fr);
   }
 
   .dcf-grid-halves\@lg {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(1px, 1fr));
   }
 
   .dcf-grid-thirds\@lg {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(1px, 1fr));
   }
 
   .dcf-grid-fourths\@lg {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(1px, 1fr));
   }
 
   .dcf-grid-fifths\@lg {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(1px, 1fr));
   }
 
   .dcf-grid-sixths\@lg {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(1px, 1fr));
   }
 
   .dcf-col-100\%\@lg {
@@ -440,27 +440,27 @@
 @include mq(xl, min, width) {
 
   .dcf-grid-full\@xl {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(1px, 1fr);
   }
 
   .dcf-grid-halves\@xl {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(1px, 1fr));
   }
 
   .dcf-grid-thirds\@xl {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(1px, 1fr));
   }
 
   .dcf-grid-fourths\@xl {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(1px, 1fr));
   }
 
   .dcf-grid-fifths\@xl {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(1px, 1fr));
   }
 
   .dcf-grid-sixths\@xl {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(1px, 1fr));
   }
 
   .dcf-col-100\%\@xl {
