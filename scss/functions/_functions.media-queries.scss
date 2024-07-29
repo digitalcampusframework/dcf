@@ -3,10 +3,12 @@
 ///////////////////////////////////
 
 
+@use 'sass:math';
+
+
 // Strip units
-// Derived from Bourbon by thoughtbot (http://bourbon.io)
-@function _mq-strip-units($val) {
-  @return ($val / ($val * 0 + 1));
+@function _mq-strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
 }
 
 
@@ -19,7 +21,7 @@
   @if not unitless($base) {
     $base: _mq-strip-units($base);
   }
-  @return ($pxval / $base) * 1em;
+  @return math.div($pxval, $base) * 1em;
 }
 
 
