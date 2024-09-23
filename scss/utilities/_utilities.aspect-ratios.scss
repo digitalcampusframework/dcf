@@ -3,53 +3,45 @@
 ///////////////////////////////////
 
 
-// Maintain aspect ratio
-.dcf-ratio { @include ratio(!important); }
-
-
-// Child
-.dcf-ratio-child { @include ratio-child(!important); }
-
-
 // Aspect ratios
-.dcf-ratio-16x9::before { @include ratio-16x9(!important); }        // 16×9 Landscape
-.dcf-ratio-9x16::before { @include ratio-9x16(!important); }        // 9×16 Portrait
-.dcf-ratio-4x3::before { @include ratio-4x3(!important); }          // 4×3  Landscape
-.dcf-ratio-3x4::before { @include ratio-3x4(!important); }          // 3×4  Portrait
-.dcf-ratio-1x1::before { @include ratio-1x1(!important); }          // 1×1  Square
+.dcf-16x9 { @include ratio-16x9(!important); }        // 16:9 Landscape
+.dcf-9x16 { @include ratio-9x16(!important); }        // 9:16 Portrait
+.dcf-4x3  { @include ratio-4x3(!important); }         // 4:3  Landscape
+.dcf-3x4  { @include ratio-3x4(!important); }         // 3:4  Portrait
+.dcf-1x1  { @include ratio-1x1(!important); }         // 1:1  Square
 
 
 @include mq(sm, min, width) {
-  .dcf-ratio-16x9\@sm::before { @include ratio-16x9(!important); }  // 16×9 Landscape
-  .dcf-ratio-9x16\@sm::before { @include ratio-9x16(!important); }  // 9×16 Portrait
-  .dcf-ratio-4x3\@sm::before { @include ratio-4x3(!important); }    // 4×3  Landscape
-  .dcf-ratio-3x4\@sm::before { @include ratio-3x4(!important); }    // 3×4  Portrait
-  .dcf-ratio-1x1\@sm::before { @include ratio-1x1(!important); }    // 1×1  Square
+  .dcf-16x9\@sm { @include ratio-16x9(!important); }  // 16:9 Landscape
+  .dcf-9x16\@sm { @include ratio-9x16(!important); }  // 9:16 Portrait
+  .dcf-4x3\@sm  { @include ratio-4x3(!important); }   // 4:3  Landscape
+  .dcf-3x4\@sm  { @include ratio-3x4(!important); }   // 3:4  Portrait
+  .dcf-1x1\@sm  { @include ratio-1x1(!important); }   // 1:1  Square
 }
 
 
 @include mq(md, min, width) {
-  .dcf-ratio-16x9\@md::before { @include ratio-16x9(!important); }  // 16×9 Landscape
-  .dcf-ratio-9x16\@md::before { @include ratio-9x16(!important); }  // 9×16 Portrait
-  .dcf-ratio-4x3\@md::before { @include ratio-4x3(!important); }    // 4×3  Landscape
-  .dcf-ratio-3x4\@md::before { @include ratio-3x4(!important); }    // 3×4  Portrait
-  .dcf-ratio-1x1\@md::before { @include ratio-1x1(!important); }    // 1×1  Square
+  .dcf-16x9\@md { @include ratio-16x9(!important); }  // 16:9 Landscape
+  .dcf-9x16\@md { @include ratio-9x16(!important); }  // 9:16 Portrait
+  .dcf-4x3\@md  { @include ratio-4x3(!important); }   // 4:3  Landscape
+  .dcf-3x4\@md  { @include ratio-3x4(!important); }   // 3:4  Portrait
+  .dcf-1x1\@md  { @include ratio-1x1(!important); }   // 1:1  Square
 }
 
 
 @include mq(lg, min, width) {
-  .dcf-ratio-16x9\@lg::before { @include ratio-16x9(!important); }  // 16×9 Landscape
-  .dcf-ratio-9x16\@lg::before { @include ratio-9x16(!important); }  // 9×16 Portrait
-  .dcf-ratio-4x3\@lg::before { @include ratio-4x3(!important); }    // 4×3  Landscape
-  .dcf-ratio-3x4\@lg::before { @include ratio-3x4(!important); }    // 3×4  Portrait
-  .dcf-ratio-1x1\@lg::before { @include ratio-1x1(!important); }    // 1×1  Square
+  .dcf-16x9\@lg { @include ratio-16x9(!important); }  // 16:9 Landscape
+  .dcf-9x16\@lg { @include ratio-9x16(!important); }  // 9:16 Portrait
+  .dcf-4x3\@lg  { @include ratio-4x3(!important); }   // 4:3  Landscape
+  .dcf-3x4\@lg  { @include ratio-3x4(!important); }   // 3:4  Portrait
+  .dcf-1x1\@lg  { @include ratio-1x1(!important); }   // 1:1  Square
 }
 
 
 @include mq(xl, min, width) {
-  .dcf-ratio-16x9\@xl::before { @include ratio-16x9(!important); }  // 16×9 Landscape
-  .dcf-ratio-9x16\@xl::before { @include ratio-9x16(!important); }  // 9×16 Portrait
-  .dcf-ratio-4x3\@xl::before { @include ratio-4x3(!important); }    // 4×3  Landscape
-  .dcf-ratio-3x4\@xl::before { @include ratio-3x4(!important); }    // 3×4  Portrait
-  .dcf-ratio-1x1\@xl::before { @include ratio-1x1(!important); }    // 1×1  Square
+  .dcf-16x9\@xl { @include ratio-16x9(!important); }  // 16:9 Landscape
+  .dcf-9x16\@xl { @include ratio-9x16(!important); }  // 9:16 Portrait
+  .dcf-4x3\@xl  { @include ratio-4x3(!important); }   // 4:3  Landscape
+  .dcf-3x4\@xl  { @include ratio-3x4(!important); }   // 3:4  Portrait
+  .dcf-1x1\@xl  { @include ratio-1x1(!important); }   // 1:1  Square
 }
