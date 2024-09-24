@@ -60,3 +60,30 @@
 @mixin js-center($imp:null) { justify-self: center $imp; }
 @mixin js-end($imp:null) { justify-self: end $imp; }
 @mixin js-stretch($imp:null) { justify-self: stretch $imp; }
+
+
+// Place content
+@mixin pc-center($imp:null) { place-content: center $imp; }
+@mixin pc-start($imp:null) { place-content: start $imp; }
+@mixin pc-end($imp:null) { place-content: end $imp; }
+@mixin pc-between($imp:null) { place-content: space-between $imp; }
+@mixin pc-around($imp:null) { place-content: space-around $imp; }
+@mixin pc-evenly($imp:null) { place-content: space-evenly $imp; }
+@mixin pc-baseline($imp:null) { place-content: baseline $imp; }
+@mixin pc-stretch($imp:null) { place-content: stretch $imp; }
+
+
+// Place items
+@mixin pi-center($imp:null) { place-items: center $imp; }
+@mixin pi-start($imp:null) { place-items: start $imp; }
+@mixin pi-end($imp:null) { place-items: end $imp; }
+@mixin pi-baseline($imp:null) { place-items: baseline $imp; }
+@mixin pi-stretch($imp:null) { place-items: stretch $imp; }
+
+
+// Place self
+@mixin ps-auto($imp:null) { place-self: auto $imp; }
+@mixin ps-center($imp:null) { place-self: center $imp; }
+@mixin ps-start($imp:null) { place-self: start $imp; }
+@mixin ps-end($imp:null) { place-self: end $imp; }
+@mixin ps-stretch($imp:null) { place-self: stretch $imp; }

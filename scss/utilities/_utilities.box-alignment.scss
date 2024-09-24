@@ -60,3 +60,30 @@
 .dcf-js-center { @include js-center(!important); }
 .dcf-js-end { @include js-end(!important); }
 .dcf-js-stretch { @include js-stretch(!important); }
+
+
+// Place content
+.dcf-pc-center($imp:null) { @include pc-center(!important); }
+.dcf-pc-start($imp:null) { @include pc-start(!important); }
+.dcf-pc-end($imp:null) { @include pc-end(!important); }
+.dcf-pc-between($imp:null) { @include pc-between(!important); }
+.dcf-pc-around($imp:null) { @include pc-around(!important); }
+.dcf-pc-evenly($imp:null) { @include pc-evenly(!important); }
+.dcf-pc-baseline($imp:null) { @include pc-baseline(!important); }
+.dcf-pc-stretch($imp:null) { @include pc-stretch(!important); }
+
+
+// Place items
+.dcf-pi-center($imp:null) { @include pi-center(!important); }
+.dcf-pi-start($imp:null) { @include pi-start(!important); }
+.dcf-pi-end($imp:null) { @include pi-end(!important); }
+.dcf-pi-baseline($imp:null) { @include pi-baseline(!important); }
+.dcf-pi-stretch($imp:null) { @include pi-stretch(!important); }
+
+
+// Place self
+.dcf-ps-auto($imp:null) { @include pi-auto(!important); }
+.dcf-ps-center($imp:null) { @include pi-center(!important); }
+.dcf-ps-start($imp:null) { @include pi-start(!important); }
+.dcf-ps-end($imp:null) { @include pi-end(!important); }
+.dcf-ps-stretch($imp:null) { @include pi-stretch(!important); }
