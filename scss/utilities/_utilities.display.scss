@@ -46,20 +46,8 @@
 
 
 // Grid
-.dcf-d-grid {
-
-  @supports (display: grid) {
-    @include d-grid(!important);
-  }
-
-}
+.dcf-d-grid { @include d-grid(!important); }
 
 
 // Inline grid
-.dcf-d-inline-grid {
-
-  @supports (display: inline-grid) {
-    @include d-inline-grid(!important);
-  }
-
-}
+.dcf-d-inline-grid { @include d-inline-grid(!important); }
