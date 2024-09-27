@@ -36,5 +36,5 @@
 .dcf-main .dcf-d-grid,
 .dcf-main [class*=' dcf-grid'],
 .dcf-main [class^='dcf-grid'] {
-  @include d-block(!important);
+  display: block !important;
 }

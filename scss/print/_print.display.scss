@@ -5,5 +5,5 @@
 
 // Hide when printed
 .dcf-d-none\@print {
-  @include d-none(!important);
+  display: block !important;
 }
