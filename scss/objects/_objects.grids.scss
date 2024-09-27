@@ -12,6 +12,11 @@
 
 
 // Columns
+.dcf-auto-cols-auto       { grid-auto-columns: auto; }
+.dcf-auto-cols-min        { grid-auto-columns: min-content; }
+.dcf-auto-cols-max        { grid-auto-columns: max-content; }
+.dcf-auto-cols-fr         { grid-auto-columns: minmax(0, 1fr); }
+
 .dcf-grid-cols-none       { grid-template-columns: none; }
 .dcf-grid-cols-1          { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .dcf-grid-cols-2          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -131,6 +136,11 @@
 
 
   // Columns
+  .dcf-auto-cols-auto\@sm       { grid-auto-columns: auto; }
+  .dcf-auto-cols-min\@sm        { grid-auto-columns: min-content; }
+  .dcf-auto-cols-max\@sm        { grid-auto-columns: max-content; }
+  .dcf-auto-cols-fr\@sm         { grid-auto-columns: minmax(0, 1fr); }
+
   .dcf-grid-cols-none\@sm       { grid-template-columns: none; }
   .dcf-grid-cols-1\@sm          { grid-template-columns: repeat(1, minmax(0, 1fr)); }
   .dcf-grid-cols-2\@sm          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -252,6 +262,11 @@
 
 
   // Columns
+  .dcf-auto-cols-auto\@md       { grid-auto-columns: auto; }
+  .dcf-auto-cols-min\@md        { grid-auto-columns: min-content; }
+  .dcf-auto-cols-max\@md        { grid-auto-columns: max-content; }
+  .dcf-auto-cols-fr\@md         { grid-auto-columns: minmax(0, 1fr); }
+
   .dcf-grid-cols-none\@md       { grid-template-columns: none; }
   .dcf-grid-cols-1\@md          { grid-template-columns: repeat(1, minmax(0, 1fr)); }
   .dcf-grid-cols-2\@md          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -373,6 +388,11 @@
 
 
   // Columns
+  .dcf-auto-cols-auto\@lg       { grid-auto-columns: auto; }
+  .dcf-auto-cols-min\@lg        { grid-auto-columns: min-content; }
+  .dcf-auto-cols-max\@lg        { grid-auto-columns: max-content; }
+  .dcf-auto-cols-fr\@lg         { grid-auto-columns: minmax(0, 1fr); }
+
   .dcf-grid-cols-none\@lg       { grid-template-columns: none; }
   .dcf-grid-cols-1\@lg          { grid-template-columns: repeat(1, minmax(0, 1fr)); }
   .dcf-grid-cols-2\@lg          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -494,6 +514,11 @@
 
 
   // Columns
+  .dcf-auto-cols-auto\@xl       { grid-auto-columns: auto; }
+  .dcf-auto-cols-min\@xl        { grid-auto-columns: min-content; }
+  .dcf-auto-cols-max\@xl        { grid-auto-columns: max-content; }
+  .dcf-auto-cols-fr\@xl         { grid-auto-columns: minmax(0, 1fr); }
+
   .dcf-grid-cols-none\@xl       { grid-template-columns: none; }
   .dcf-grid-cols-1\@xl          { grid-template-columns: repeat(1, minmax(0, 1fr)); }
   .dcf-grid-cols-2\@xl          { grid-template-columns: repeat(2, minmax(0, 1fr)); }
