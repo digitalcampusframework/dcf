@@ -13,5 +13,7 @@ input[type="submit"] {
   font-size: #{ms(0)}em; // Base font-size for interoperability with links-as-buttons
   line-height: $line-height-button;
   padding: $padding-top-button $padding-right-button $padding-bottom-button $padding-left-button;
-  text-align: center;
+  @if ($text-align-button-center) {
+    text-align: center;
+  }
 }

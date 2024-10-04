@@ -4,6 +4,8 @@
 
 
 address {
-  font-style: normal;
-  margin-top: 0;
+  @if ($font-style-address-normal) {
+    font-style: normal;
+  }
+  margin-top: $margin-top-address;
 }

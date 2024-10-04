@@ -6,15 +6,13 @@
 form,
 input,
 textarea {
-  @include txt-md;
-  @include lh-4;
+  font-size: $font-size-form;
+  line-height: $line-height-form;
 }
 
 
 fieldset {
-  // Reset browser defaults
-  margin-left: 0;
-  margin-right: 0;
+  margin-inline: $margin-inline-fieldset; // Reset browser defaults
 }
 
 
