@@ -12,6 +12,10 @@ $font-size-blockquote-open-quote: #{ms(16)}em;  // Open quote font-size: 9.97em
 $font-size-blockquote-p: #{ms(2)}em;            // Blockquote paragraph font-size: 1.33em
 
 
+// Line height
+$line-height-blockquote-open-quote: 1;          // Blockquote line-height
+
+
 // Margin
 $margin-bottom-blockquote: $length-em-7;        // Blockquote margin-bottom: 2.37em
 $margin-left-blockquote: 0;                     // Blockquote margin-left: 0

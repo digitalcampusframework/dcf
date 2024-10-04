@@ -4,8 +4,9 @@
 
 
 .dcf-slideshow ul {
+  column-gap: $column-gap-slideshow-ul;
   margin-bottom: 0;
-  padding-left: 0; // Remove broswer default padding for list
+  padding-left: 0; // Remove browser default padding for list
 }
 
 
@@ -28,14 +29,9 @@
 }
 
 
-.dcf-slideshow ul:first-child li:not(:last-child) {
-  @include mr-3;
-}
-
-
 // Styles if JavaScript does not load
 .dcf-slideshow ul:first-child li {
-  flex: 0 0 84%; // Make sure some of the next slide appears
+  flex: 0 0 $flex-basis-slideshow-ul-first-child-li-no-js; // Make sure some of the next slide appears
 }
 
 

@@ -1,0 +1,24 @@
+/////////////////////////////////
+// CORE / VARIABLES / PAGAINATION
+/////////////////////////////////
+
+
+@import '_variables.modular-scale';
+@import '_variables.sizing';
+
+
+// Content
+$content-pagination-first-before: '\21E4';                  // Pagination 'first' icon
+$content-pagination-prev-before: '\2190';                   // Pagination 'previous' icon
+$content-pagination-next-after: '\2192';                    // Pagination 'next' icon
+$content-pagination-last-after: '\21E5';                    // Pagination 'last' icon
+
+
+// Margin
+$margin-left-pagination-next-last-after: #{ms(-12)}em;      // Pagination next and last ::after margin-left
+$margin-right-pagination-first-prev-before: #{ms(-12)}em;   // Pagination first and previous ::before margin-right
+
+
+// Padding
+$padding-block-pagination-span:  $length-em-3;              // Pagination span padding block: .75em
+$padding-inline-pagination-span: $length-em-1;              // Pagination span padding inline: .42em

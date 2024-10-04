@@ -10,9 +10,9 @@
 
 
 .dcf-blockquote::before {
-  @include lh-1;
   content: open-quote;
   font-size: $font-size-blockquote-open-quote;
+  line-height: $line-height-blockquote-open-quote;
   position: absolute;
 }
 

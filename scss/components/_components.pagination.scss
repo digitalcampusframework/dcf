@@ -9,7 +9,7 @@
 
 
 .dcf-pagination span {
-  padding: $length-em-3 $length-em-1;
+  padding: $padding-block-pagination-span $padding-inline-pagination-span;
 }
 
 
@@ -20,31 +20,31 @@
 
 .dcf-pagination-first::before,
 .dcf-pagination-prev::before {
-  margin-right: #{ms(-12)}em;
+  margin-right: $margin-right-pagination-first-prev-before;
 }
 
 
 .dcf-pagination-first::before {
-  content: '\21E4';
+  content: $content-pagination-first-before;
 }
 
 
 .dcf-pagination-prev::before {
-  content: '\2190';
+  content: $content-pagination-prev-before;
 }
 
 
 .dcf-pagination-next::after,
 .dcf-pagination-last::after {
-  margin-left: #{ms(-12)}em;
+  margin-left: $margin-left-pagination-next-last-after;
 }
 
 
 .dcf-pagination-next::after {
-  content: '\2192';
+  content: $content-pagination-next-after;
 }
 
 
 .dcf-pagination-last::after {
-  content: '\21E5';
+  content: $content-pagination-last-after;
 }

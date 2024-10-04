@@ -34,5 +34,13 @@ $color-select-arrow-light-mode: $color-body-light-mode;     // <select> arrow co
 $color-select-arrow-dark-mode: $color-body-dark-mode;       // <select> arrow color in dark mode
 
 
+// Font size
+$font-size-select: #{ms(0)}rem;                             // <select> font size: 1rem
+
+
+// Line height
+$line-height-select: #{ms(3)};                              // <select> line height: 1.5
+
+
 // Padding
 $padding-right-select: $length-em-7;                        // <select> padding-right is larger to allow for arrow
