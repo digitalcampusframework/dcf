@@ -1,3 +1,7 @@
+@use 'sass:math';
+
+
+
 // Defaults and variables
 
 // Ratios
@@ -69,9 +73,6 @@ $modularscale     : ()        !default;
 }
 
 
-@use 'sass:math';
-
-
 // Sass does not have native pow() support so this needs to be added.
 // Compass and other libs implement this more extensively.
 // In order to keep this simple, use those when they are avalible.
@@ -112,8 +113,6 @@ $modularscale     : ()        !default;
   @return $ms-return;
 }
 
-
-@use 'sass:math';
 
 // Stripping units is not a best practice
 // This function should not be used elsewhere
@@ -192,6 +191,7 @@ $modularscale     : ()        !default;
   @return $r;
 }
 
+
 // Find a ratio based on a target value
 @function ms-target($t, $b) {
   // Convert to string
@@ -209,9 +209,6 @@ $modularscale     : ()        !default;
   // Solve the modular scale function for the ratio.
   @return ms-pow(($v / $b), (1 / $t));
 }
-
-
-@use 'sass:math';
 
 
 @function ms-function($v: 0, $base: false, $ratio: false, $thread: false, $settings: $modularscale) {
