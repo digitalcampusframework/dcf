@@ -31,6 +31,8 @@
 
 
 // Text wrap
+@mixin txt-balance($imp:null) { text-wrap: balance $imp; }
+@mixin txt-pretty($imp:null) { text-wrap: pretty $imp; }
 @mixin txt-nowrap($imp:null) { white-space: nowrap $imp; }
 @mixin txt-wrap-unset($imp:null) { text-wrap: unset $imp; }
 
