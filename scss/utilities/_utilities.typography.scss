@@ -30,6 +30,8 @@
 
 
 // Text wrap
+.dcf-txt-balance { @include txt-balance(!important); }
+.dcf-txt-pretty { @include txt-pretty(!important); }
 .dcf-txt-nowrap { @include txt-nowrap(!important); }
 .dcf-txt-wrap-unset { @include txt-wrap-unset(!important); }
 .dcf-url-wrap { @include url-wrap(!important); }
