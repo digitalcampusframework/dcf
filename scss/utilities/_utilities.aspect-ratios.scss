@@ -12,6 +12,7 @@
 
 
 // Aspect ratios
+.dcf-ratio-21x5::before { @include ratio-21x5(!important); }        // 21×5 Landscape
 .dcf-ratio-16x9::before { @include ratio-16x9(!important); }        // 16×9 Landscape
 .dcf-ratio-9x16::before { @include ratio-9x16(!important); }        // 9×16 Portrait
 .dcf-ratio-4x3::before { @include ratio-4x3(!important); }          // 4×3  Landscape
@@ -20,6 +21,7 @@
 
 
 @include mq(sm, min, width) {
+  .dcf-ratio-21x5\@sm::before { @include ratio-21x5(!important); }  // 16×9 Landscape
   .dcf-ratio-16x9\@sm::before { @include ratio-16x9(!important); }  // 16×9 Landscape
   .dcf-ratio-9x16\@sm::before { @include ratio-9x16(!important); }  // 9×16 Portrait
   .dcf-ratio-4x3\@sm::before { @include ratio-4x3(!important); }    // 4×3  Landscape
@@ -29,6 +31,7 @@
 
 
 @include mq(md, min, width) {
+  .dcf-ratio-21x5\@md::before { @include ratio-21x5(!important); }  // 16×9 Landscape
   .dcf-ratio-16x9\@md::before { @include ratio-16x9(!important); }  // 16×9 Landscape
   .dcf-ratio-9x16\@md::before { @include ratio-9x16(!important); }  // 9×16 Portrait
   .dcf-ratio-4x3\@md::before { @include ratio-4x3(!important); }    // 4×3  Landscape
@@ -38,6 +41,7 @@
 
 
 @include mq(lg, min, width) {
+  .dcf-ratio-21x5\@lg::before { @include ratio-21x5(!important); }  // 16×9 Landscape
   .dcf-ratio-16x9\@lg::before { @include ratio-16x9(!important); }  // 16×9 Landscape
   .dcf-ratio-9x16\@lg::before { @include ratio-9x16(!important); }  // 9×16 Portrait
   .dcf-ratio-4x3\@lg::before { @include ratio-4x3(!important); }    // 4×3  Landscape
@@ -47,6 +51,7 @@
 
 
 @include mq(xl, min, width) {
+  .dcf-ratio-21x5\@xl::before { @include ratio-21x5(!important); }  // 16×9 Landscape
   .dcf-ratio-16x9\@xl::before { @include ratio-16x9(!important); }  // 16×9 Landscape
   .dcf-ratio-9x16\@xl::before { @include ratio-9x16(!important); }  // 9×16 Portrait
   .dcf-ratio-4x3\@xl::before { @include ratio-4x3(!important); }    // 4×3  Landscape

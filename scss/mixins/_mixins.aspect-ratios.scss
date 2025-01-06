@@ -28,6 +28,7 @@
 
 
 // Aspect ratios
+@mixin ratio-21x5($imp:null) { padding-top: 23.81% $imp; }  // 21x5  Landscape
 @mixin ratio-16x9($imp:null) { padding-top: 56.25% $imp; }  // 16×9  Landscape
 @mixin ratio-9x16($imp:null) { padding-top: 177.77% $imp; } // 9×16  Portrait
 @mixin ratio-4x3($imp:null) { padding-top: 75% $imp; }      // 4×3   Landscape
