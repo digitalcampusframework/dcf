@@ -28,6 +28,7 @@ details {
 
 summary {
   cursor: pointer;
+  display: list-item;
   @if (to-number($font-size-summary) != to-number(#{ms(0)}em)) {
     font-size: $font-size-summary;
   }

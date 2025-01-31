@@ -15,6 +15,13 @@
 
 
 code,
+kbd,
+pre {
+  @include font-mono;
+}
+
+
+code,
 pre {
   hyphens: none;
   word-break: normal;
