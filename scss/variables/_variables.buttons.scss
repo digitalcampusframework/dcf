@@ -111,11 +111,22 @@ $font-weight-button-bold: true;           // Bold button text? True/false
 $line-height-button: #{ms(3)};            // Button line-height
 
 
+// Margin
+$margin-bottom-button: 0;                 // Margin-bottom of button: 0
+$margin-left-button: 0;                   // Margin-left of button: 0
+$margin-right-button: 0;                  // Margin-right of button: 0
+$margin-top-button: 0;                    // Margin-top of button: 0
+
+
 // Padding
 $padding-bottom-button: $length-em-3;     // Padding-bottom of button: .75em
 $padding-left-button: $length-em-4;       // Padding-left of button: 1em
 $padding-right-button: $length-em-4;      // Padding-right of button: 1em
 $padding-top-button: $length-em-3;        // Padding-top of button: .75em
+
+
+// Text alignment
+$text-align-button-center: true;          // Center align button text? True/false
 
 
 // Text transform
