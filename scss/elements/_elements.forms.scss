@@ -21,8 +21,17 @@ label {
 }
 
 
+input,
+optgroup,
+select,
+textarea {
+  margin: $margin-top-input $margin-right-input $margin-bottom-input $margin-left-input; // Reset browser defaults
+}
+
+
 select {
   display: block;
+  text-transform: $text-transform-select;
 }
 
 
