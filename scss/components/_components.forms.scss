@@ -21,7 +21,7 @@
 // Legend
 .dcf-legend, // TODO: deprecate .dcf-legend?
 .dcf-form legend {
-  @if (to-number($font-size-legend) != to-number(#{ms(0)}em)) {
+  @if (to-number($font-size-legend) != to-number(#{$ms00}em)) {
     font-size: $font-size-legend;
   }
   @if ($font-weight-legend-bold) {
@@ -34,7 +34,7 @@
 
 
 // Label
-@if (to-number($font-size-label) != to-number(#{ms(0)}em)) {
+@if (to-number($font-size-label) != to-number(#{$ms00}em)) {
   .dcf-label, // TODO: deprecate .dcf-label?
   .dcf-form label {
     font-size: $font-size-label;
@@ -175,7 +175,7 @@
 .dcf-input-checkbox label,
 .dcf-input-radio label {
   padding-left: $padding-left-checkbox-radio;
-  @if (to-number($height-width-checkbox-radio) < to-number(#{ms(4)}em)) {
+  @if (to-number($height-width-checkbox-radio) < to-number(#{$ms04}em)) {
     vertical-align: top;
   } @else {
     vertical-align: text-top;
@@ -186,7 +186,7 @@
 .dcf-input-switch label {
   border-style: $border-style-button;
   border-width: $border-width-button;
-  @if (to-number($font-size-button) != to-number(#{ms(0)}em)) {
+  @if (to-number($font-size-button) != to-number(#{$ms00}em)) {
     font-size: $font-size-button;
   }
   @if ($font-weight-button-bold) {
@@ -266,12 +266,12 @@
   border-color: transparent $border-color-checkmark $border-color-checkmark;
   border-style: solid;
   border-width: 0 0 $border-width-checkmark $border-width-checkmark;
-  height: to-number($height-width-checkbox-radio) * to-number(#{ms(-8)});
+  height: to-number($height-width-checkbox-radio) * to-number(#{$ms-8});
   opacity: 0;
-  top: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
-  transform: rotate(-45deg) translate(percentage(to-number(#{ms(-4)})), -(percentage(to-number(#{ms(-2)})))) scale(.5);
+  top: to-number($height-width-checkbox-radio) * to-number(#{$ms-2});
+  transform: rotate(-45deg) translate(percentage(to-number(#{$ms-4})), -(percentage(to-number(#{$ms-2})))) scale(.5);
   transition: opacity $transition-check-duration $transition-check-timing, transform $transition-check-duration $transition-check-timing;
-  width: to-number($height-width-checkbox-radio) * to-number(#{ms(-2)});
+  width: to-number($height-width-checkbox-radio) * to-number(#{$ms-2});
 }
 
 
@@ -311,7 +311,7 @@
 // Show checkmark when checkbox is checked
 .dcf-input-checkbox input[type="checkbox"]:checked + label::after {
   opacity: 1;
-  transform: rotate(-45deg) translate(percentage(to-number(#{ms(-4)})), -(percentage(to-number(#{ms(-2)})))) scale(1);
+  transform: rotate(-45deg) translate(percentage(to-number(#{$ms-4})), -(percentage(to-number(#{$ms-2})))) scale(1);
 }
 
 

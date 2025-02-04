@@ -15,11 +15,11 @@
 
 
 .dcf-notice-close {
-  padding-right: #{ms(-10)}em;
+  padding-right: #{$ms-10}em;
 }
 
 
-@media (max-width: #{ms(24)}em) {
+@media (max-width: #{$ms24}em) {
 
   .dcf-notice {
     grid-template-columns: $length-em-5 $length-em-6 1fr auto $length-em-5;
@@ -40,7 +40,7 @@
 }
 
 
-@media (min-width: #{ms(24)}em) {
+@media (min-width: #{$ms24}em) {
 
   .dcf-notice {
     grid-template-columns: $length-em-5 $length-em-7 $length-em-4 1fr $length-em-4 auto;
@@ -55,7 +55,7 @@
 
   .dcf-notice-close {
     grid-area: 1 / -2 / 3 / -1;
-    padding-top: #{ms(-10)}em;
+    padding-top: #{$ms-10}em;
   }
 
 }

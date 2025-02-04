@@ -20,7 +20,7 @@
 .dcf-nav-menu-child button {
   @include lh-3;
   display: block;
-  padding: #{ms(0)}em #{ms(0)}rem;
+  padding: #{$ms00}em #{$ms00}rem;
 }
 
 
@@ -28,7 +28,7 @@
 
   .dcf-nav-menu {
     background-color: $bg-color-nav-menu;
-    bottom: #{ms(10)}em;
+    bottom: #{$ms10}em;
     height: 100vh;
     opacity: 0;
     pointer-events: none;
@@ -52,7 +52,7 @@
   .dcf-nav-menu-child {
     //@include bg-scarlet;
     @include overflow-y-auto;
-    bottom: #{ms(10)}em;
+    bottom: #{$ms10}em;
     height: 43vh;
     padding-left: $length-vw-2;
     padding-right: $length-vw-2;
@@ -72,7 +72,7 @@
 
   .dcf-nav-menu a,
   .dcf-nav-menu button {
-    margin-left: -#{ms(0)}rem;
+    margin-left: -#{$ms00}rem;
   }
 
 }

@@ -203,7 +203,7 @@
     border-right: $border-width-search-and-select-selected-item-label $border-style-search-and-select-selected-item-label $border-color-search-and-select-selected-item-label;
     border-top: $border-width-search-and-select-selected-item-label $border-style-search-and-select-selected-item-label $border-color-search-and-select-selected-item-label;
   }
-  @if (to-number($font-size-search-and-select-selected-item-label) != to-number(#{ms(4)}em)) {
+  @if (to-number($font-size-search-and-select-selected-item-label) != to-number(#{$ms04}em)) {
     font-size: $font-size-search-and-select-selected-item-label;
   }
   padding: $padding-top-search-and-select-selected-item-label $padding-right-search-and-select-selected-item-label $padding-bottom-search-and-select-selected-item-label $padding-left-search-and-select-selected-item-label;

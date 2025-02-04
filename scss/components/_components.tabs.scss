@@ -32,7 +32,7 @@
 
 .dcf-tab {
   // If the tab font-size is not 1em, then change the font-size
-  @if (to-number($font-size-tab) != to-number(#{ms(0)}em)) {
+  @if (to-number($font-size-tab) != to-number(#{$ms00}em)) {
     font-size: $font-size-tab;
   }
   // If the $font-weight-tab-bold variable = true, then change the font-weight to bold

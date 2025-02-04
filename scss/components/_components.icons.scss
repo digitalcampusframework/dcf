@@ -10,14 +10,14 @@ button .dcf-icon {
 
 
 .dcf-icon-inline {
-  height: #{ms(0)}em; // 1em
-  width: #{ms(0)}em; // 1em
+  height: #{$ms00}em; // 1em
+  width: #{$ms00}em;  // 1em
 }
 
 
 .dcf-icon-x {
   position: relative;
-  top: #{ms(-14)}em; // .13em
+  top: #{$ms-14}em    // .13em
 }
 
 
