@@ -79,7 +79,7 @@ $border-style-input: solid;                                     // Input field b
 
 // Border width
 $border-width-input: 1px;                                       // Input field border-width
-$border-width-checkmark: #{ms(-12)}em;                          // Border-width of border used to create checkmark
+$border-width-checkmark: #{$ms-12}em;                           // Border-width of border used to create checkmark
 
 
 // Color
@@ -97,12 +97,12 @@ $color-select-arrow-dark-mode: $color-body-dark-mode;           // Select arrow 
 
 
 // Font size
-$font-size-form: #{ms(0)}em;                                    // Form font-size: 1em
-$font-size-label: #{ms(-1)}em;                                  // Label font-size: .84em
-$font-size-legend: #{ms(-1)}em;                                 // Legend font-size: .84em
-$font-size-form-help: #{ms(-2)}em;                              // Form help font-size: .75em
+$font-size-form: #{$ms00}em;                                    // Form font-size: 1em
+$font-size-label: #{$ms-1}em;                                   // Label font-size: .84em
+$font-size-legend: #{$ms-1}em;                                  // Legend font-size: .84em
+$font-size-form-help: #{$ms-2}em;                               // Form help font-size: .75em
 $font-size-required: $font-size-badge;                          // Required label font-size: .56rem
-$font-size-select: #{ms(0)}rem;                                 // Select font size: 1rem
+$font-size-select: #{$ms00}rem;                                 // Select font size: 1rem
 
 
 // Font style
@@ -118,9 +118,9 @@ $height-width-checkbox-radio: $length-em-6;                     // Height & widt
 
 
 // Line height
-$line-height-form: #{ms(3)};                                    // Form line-height
-$line-height-form-help: #{ms(2)};                               // Form help line-height
-$line-height-select: #{ms(3)};                                  // Select line height: 1.5
+$line-height-form: #{$ms03};                                    // Form line-height
+$line-height-form-help: #{$ms02};                               // Form help line-height
+$line-height-select: #{$ms03};                                  // Select line height: 1.5
 
 
 // Margin
@@ -174,8 +174,8 @@ $text-transform-select: none;                                   // Text-transfor
 
 
 // Transform
-$scale-radio-start: #{ms(-8)};                                  // Checked radio scale value start: .32em
-$scale-radio-end: #{ms(-4)};                                    // Checked radio scale value end: .56em
+$scale-radio-start: #{$ms-8};                                   // Checked radio scale value start: .32em
+$scale-radio-end: #{$ms-4};                                     // Checked radio scale value end: .56em
 
 
 // Transition

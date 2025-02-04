@@ -15,8 +15,8 @@ $content-pagination-last-after: '\21E5';                    // Pagination 'last'
 
 
 // Margin
-$margin-left-pagination-next-last-after: #{ms(-12)}em;      // Pagination next and last ::after margin-left
-$margin-right-pagination-first-prev-before: #{ms(-12)}em;   // Pagination first and previous ::before margin-right
+$margin-left-pagination-next-last-after: #{$ms-12}em;       // Pagination next and last ::after margin-left
+$margin-right-pagination-first-prev-before: #{$ms-12}em;    // Pagination first and previous ::before margin-right
 
 
 // Padding

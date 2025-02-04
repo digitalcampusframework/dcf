@@ -7,10 +7,10 @@
 
 
 // Font size
-$font-size-min: ms(0);      // 1em
-$font-size-max: ms(2);      // 1.33em
+$font-size-min: $ms00;    // 1em
+$font-size-max: $ms02;    // 1.33em
 
 
 // Linear inetrpolation
-$min-width-lerp: ms(24);    //  31.57em ~  505.12px
-$max-width-lerp: ms(36);    // 177.38em ~ 2838.08px
+$min-width-lerp: $ms24;   //  31.57em ~  505.12px
+$max-width-lerp: $ms36;   // 177.38em ~ 2838.08px
