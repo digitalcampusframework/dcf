@@ -4,7 +4,7 @@
 
 
 // Font size
-@mixin txt-base($imp:null) { font-size: #{ms(0)}rem $imp; }
+@mixin txt-base($imp:null) { font-size: #{$ms0}rem $imp; }
 // Base font-size should act as a reset and always be 1rem
 // Remaining font sizes should be configured in theme _mixins.typography
 
@@ -72,10 +72,10 @@
 
 
 // Line height
-@mixin lh-1($imp:null) { line-height: #{ms(0)} $imp; }
-@mixin lh-2($imp:null) { line-height: #{ms(1)} $imp; }
-@mixin lh-3($imp:null) { line-height: #{ms(2)} $imp; }
-@mixin lh-4($imp:null) { line-height: #{ms(3)} $imp; }
+@mixin lh-1($imp:null) { line-height: #{$ms0} $imp; }
+@mixin lh-2($imp:null) { line-height: #{$ms1} $imp; }
+@mixin lh-3($imp:null) { line-height: #{$ms2} $imp; }
+@mixin lh-4($imp:null) { line-height: #{$ms3} $imp; }
 
 
 // Text transform
