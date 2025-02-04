@@ -4,8 +4,8 @@
 
 
 :root {
-  @include lh-4;
   font-size: #{$font-size-min}em;
+  line-height: $line-height-root;
 }
 
 // If minimum font-size does not equal maximum font-size, apply linear interpolation to font-size
