@@ -122,18 +122,4 @@ export class DCFUtility {
     }
     element.classList.add('dcf-js');
   }
-
-  static loadStyleSheet(styleSheetSrc) {
-    return new Promise((resolve, reject) => {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = styleSheetSrc;
-
-      // Handle load and error events
-      link.onload = () => resolve();
-      link.onerror = () => reject(new Error(`Failed to load stylesheet: ${styleSheetSrc}`));
-
-      document.head.appendChild(link);
-    });
-  }
 }
