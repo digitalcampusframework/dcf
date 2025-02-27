@@ -1,10 +1,9 @@
-import { DCFUtility } from '../dcf-utility.js';
+import { uuidv4, checkSetElementId, isKeyEvent, keyEvents} from '../dcf-utility.js';
 
 export default class DCF_Tabs {
 
-  uuid = DCFUtility.uuidv4();
+  uuid = uuidv4();
   options = {};
-
 
   /** @type { HTMLElement|null } tabs_group */
   tabs_group = null;
@@ -35,17 +34,17 @@ export default class DCF_Tabs {
 
     // If the tabGroup has no ID then it will set it
     if (this.tabs_group.getAttribute('id') === null) {
-      this.tabs_group.setAttribute('id', DCFUtility.checkSetElementId(this.tabs_group, uuid.concat('-tab-group')));
+      this.tabs_group.setAttribute('id', checkSetElementId(this.tabs_group, this.uuid.concat('-tab-group')));
     }
 
     // TabGroup needs to have some panels for it to work
-    if (this.tabs_panel_list.length === DCFUtility.magicNumbers('int0')) {
+    if (this.tabs_panel_list.length === 0) {
       throw new Error('No Panels Found', { cause: this.tabs_group });
     }
 
     // Every panel needs to have an ID set
     const panelsWithNoIds = this.tabs_panel_list.filter((panel) => panel.getAttribute('id') === null);
-    if (panelsWithNoIds.length !== DCFUtility.magicNumbers('int0')) {
+    if (panelsWithNoIds.length !== 0) {
       throw new Error('Panels Missing Ids', { cause: panelsWithNoIds });
     }
 
@@ -73,7 +72,7 @@ export default class DCF_Tabs {
       });
 
       // Adds new tablist to the tabGroup before any panels
-      this.tabs_group.insertBefore(this.tabs_list, panels[DCFUtility.magicNumbers('int0')]);
+      this.tabs_group.insertBefore(this.tabs_list, this.tabs_panel_list[0]);
     }
 
     // Adds classes to the tabList and sets role
@@ -90,11 +89,11 @@ export default class DCF_Tabs {
     });
 
     // Tab styling and functions.
-    const tabs = Array.from(this.tabs_panel_list.querySelectorAll('a, button'));
+    const tabs = Array.from(this.tabs_list.querySelectorAll('a, button'));
 
     // Checks if there are any tabs not hidden, if not there will be an error
     const tabsNotHidden = tabs.filter((tab) => tab.getAttribute('hidden') === null);
-    if (tabsNotHidden.length === DCFUtility.magicNumbers('int0')) {
+    if (tabsNotHidden.length === 0) {
       throw new Error('All Tabs Hidden');
     }
 
@@ -107,8 +106,8 @@ export default class DCF_Tabs {
       tab.removeAttribute('aria-selected');
 
       // Prefix each tab within its parent tab group with the corresponding uuid.
-      let nextTab = tabIndex + DCFUtility.magicNumbers('int1');
-      tab.setAttribute('id', DCFUtility.checkSetElementId(tab, uuid.concat('-tab-', nextTab)));
+      let nextTab = tabIndex + 1;
+      tab.setAttribute('id', checkSetElementId(tab, this.uuid.concat('-tab-', nextTab)));
 
       // Add class and role to each tab's parent (list item)
       tab.parentNode.classList.add('dcf-tabs-list-item', 'dcf-mb-0');
@@ -168,7 +167,7 @@ export default class DCF_Tabs {
 
         // If the tab is still null then just use the first non-hidden tab
         if (selectedTab === null) {
-          selectedTab = allNonHiddenTabs[DCFUtility.magicNumbers('int0')];
+          selectedTab = allNonHiddenTabs[0];
         }
       }
     }
@@ -328,7 +327,7 @@ export default class DCF_Tabs {
    */
   #setTabEventListeners(tab) {
     tab.addEventListener('keydown', (keydownEvent) => {
-      if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowLeft'))) {
+      if (isKeyEvent(keydownEvent, keyEvents('arrowLeft'))) {
         // We can switch to the tab
         let newTab = this.switchToPreviousTab();
         if (newTab === null) {
@@ -339,7 +338,7 @@ export default class DCF_Tabs {
         newTab.focus();
         keydownEvent.preventDefault();
         this.#updateURLHash();
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('arrowRight'))) {
+      } else if (isKeyEvent(keydownEvent, keyEvents('arrowRight'))) {
         // We can switch to the tab
         let newTab = this.switchToNextTab();
         if (newTab === null) {
@@ -350,7 +349,7 @@ export default class DCF_Tabs {
         newTab.focus();
         keydownEvent.preventDefault();
         this.#updateURLHash();
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('home'))) {
+      } else if (isKeyEvent(keydownEvent, keyEvents('home'))) {
         // We can switch to the tab
         let newTab = this.switchToFirstTab();
         if (newTab === null) {
@@ -361,7 +360,7 @@ export default class DCF_Tabs {
         newTab.focus();
         keydownEvent.preventDefault();
         this.#updateURLHash();
-      } else if (DCFUtility.isKeyEvent(keydownEvent, DCFUtility.keyEvents('end'))) {
+      } else if (isKeyEvent(keydownEvent, keyEvents('end'))) {
         // We can switch to the tab
         let newTab = this.switchToLastTab();
         if (newTab === null) {
@@ -401,12 +400,12 @@ export default class DCF_Tabs {
 
     // Find the index of the selected tab and if it hidden we can set it to 0
     let selectedTabIndex = nonHiddenTabs.findIndex((tab) => tab.isEqualNode(selectedTab));
-    if (selectedTabIndex === DCFUtility.magicNumbers('intMinus1')) {
-      selectedTabIndex = DCFUtility.magicNumbers('int0');
+    if (selectedTabIndex === -1) {
+      selectedTabIndex = 0;
     }
 
     // We can then calculate and validate the next index
-    const nextIndex = selectedTabIndex + DCFUtility.magicNumbers('int1');
+    const nextIndex = selectedTabIndex + 1;
     if (nextIndex >= nonHiddenTabs.length) {
       return null;
     }
@@ -430,13 +429,13 @@ export default class DCF_Tabs {
 
     // Find the index of the selected tab and if it hidden we can set it to 0
     let selectedTabIndex = nonHiddenTabs.findIndex((tab) => tab.isEqualNode(selectedTab));
-    if (selectedTabIndex === DCFUtility.magicNumbers('intMinus1')) {
-      selectedTabIndex = DCFUtility.magicNumbers('int0');
+    if (selectedTabIndex === -1) {
+      selectedTabIndex = 0;
     }
 
     // We can then calculate and validate the next index
-    const nextIndex = selectedTabIndex - DCFUtility.magicNumbers('int1');
-    if (nextIndex < DCFUtility.magicNumbers('int0')) {
+    const nextIndex = selectedTabIndex - 1;
+    if (nextIndex < 0) {
       return null;
     }
 
@@ -458,7 +457,7 @@ export default class DCF_Tabs {
     const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
 
     // We then get the first item in the list and switch to it
-    const newTab = nonHiddenTabs[DCFUtility.magicNumbers('int0')];
+    const newTab = nonHiddenTabs[0];
     this.switchTab(newTab);
     return newTab;
   }
@@ -475,7 +474,7 @@ export default class DCF_Tabs {
     const nonHiddenTabs = Array.from(selectedTab.closest('.dcf-tabs-list').querySelectorAll('.dcf-tab:not([hidden])'));
 
     // We then get the last item in the list and switch to it
-    const newTab = nonHiddenTabs[nonHiddenTabs.length - DCFUtility.magicNumbers('int1')];
+    const newTab = nonHiddenTabs[nonHiddenTabs.length - 1];
     this.switchTab(newTab);
     return newTab;
   }
@@ -488,7 +487,7 @@ export default class DCF_Tabs {
    */
   switchTab(newTab, AfterPageLoad = true) {
     // Get and validate the currently selected tab and it is the new one as well we can just return
-    const selectedTab = this.tabs_panel_list.querySelector('.dcf-tab[aria-selected="true"]');
+    const selectedTab = this.tabs_list.querySelector('.dcf-tab[aria-selected="true"]');
     if (selectedTab !== null && selectedTab.isEqualNode(newTab)) {
       return;
     }
@@ -498,7 +497,7 @@ export default class DCF_Tabs {
     }
 
     // We can then get a list of the tabs and loop through them
-    const tabs = this.tabs_panel_list.querySelectorAll('.dcf-tab');
+    const tabs = this.tabs_list.querySelectorAll('.dcf-tab');
     tabs.forEach((tab) => {
       // We can then find the matching panel and validate it
       const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
