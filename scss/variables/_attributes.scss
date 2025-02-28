@@ -1,0 +1,10 @@
+////////////////////////////////
+// CORE / VARIABLES / ATTRIBUTES
+////////////////////////////////
+
+
+@use './modular-scale' as ms;
+
+
+// Scroll margin top
+$scroll-margin-top-id: #{ms.$ms08}rem;

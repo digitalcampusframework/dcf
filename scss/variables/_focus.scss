@@ -1,0 +1,12 @@
+///////////////////////////
+// CORE / VARIABLES / FOCUS
+///////////////////////////
+
+
+@use './color-palette' as color_palette;
+
+
+// Outline color
+$color-focus-outline-light-mode: color_palette.$blue;     // :focus outline color in light mode
+$color-focus-outline-dark-mode: color_palette.$cerulean;  // :focus outline color in dark mode
+$color-focus-outline: var(--focus-outline);

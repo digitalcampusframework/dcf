@@ -1,0 +1,19 @@
+////////////////////////////
+// CORE / VARIABLES / POPUPS
+////////////////////////////
+
+
+@use './sizing' as s;
+
+
+// Duration
+$animation-duration-popup: 125ms;
+
+
+// Margin
+$margin-popup-point: s.$length-em-4;
+
+
+// Size of arrow/point
+$size-block-popup-point: s.$length-em-3;
+$size-inline-popup-point: s.$length-em-4;

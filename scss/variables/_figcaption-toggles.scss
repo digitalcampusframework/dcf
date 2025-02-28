@@ -1,0 +1,14 @@
+////////////////////////////////////////
+// CORE / VARIABLES / FIGCAPTION TOGGLES
+////////////////////////////////////////
+
+
+
+@use './modular-scale' as ms;
+@use './sizing' as s;
+
+
+// Animation duration
+// TODO: update variable names with property first
+$figcaption-toggle-animation-duration: 500ms;
+$figcaption-toggle-icon-animation-duration: 250ms;

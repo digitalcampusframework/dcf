@@ -1,0 +1,50 @@
+/////////////////////////////
+// CORE / VARIABLES / GALLERY
+/////////////////////////////
+
+
+@use './sizing' as s;
+
+
+// Border color
+$border-color-gallery-selected-image: var(--bg-brand-alpha);
+$border-color-figure: var(--b);
+
+
+// Border style
+$border-style-gallery-selected-image: solid;
+$border-style-figure: solid;
+
+
+// Border width
+$border-width-gallery-selected-image: 2px;
+$border-width-figure: 1px;
+
+
+// Column gap
+$column-gap-gallery-thumbnails-list: s.$length-em-3;
+
+
+// Height and width
+$width-gallery-figcaption: 100%;
+
+
+// Margin
+$margin-left-gallery-thumbnails-list-li-first-child-div: s.$length-em-6;
+$margin-right-gallery-thumbnails-list-li-last-child-div: s.$length-em-6;
+
+
+// Padding
+$padding-bottom-gallery-modal-header: s.$length-em-1;
+$padding-left-gallery-modal-header: s.$length-em-1;
+$padding-right-gallery-modal-header: s.$length-em-1;
+$padding-top-gallery-modal-header: s.$length-em-1;
+$padding-left-gallery-prev: s.$length-em-4;
+$padding-right-gallery-prev: s.$length-em-4;
+$padding-left-gallery-next: s.$length-em-4;
+$padding-right-gallery-next: s.$length-em-4;
+$padding-top-gallery-thumbnails: s.$length-em-4;
+$padding-bottom-gallery-thumbnails: s.$length-em-5;
+$padding-bottom-gallery-figure: s.$length-em-4;
+$padding-top-gallery-figcaption: s.$length-em-5;
+

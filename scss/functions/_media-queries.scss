@@ -1,0 +1,44 @@
+///////////////////////////////////
+// CORE / FUNCTIONS / MEDIA QUERIES
+///////////////////////////////////
+
+
+@use 'sass:math';
+@use "sass:map";
+@use "../variables" as var;
+
+
+// Strip units
+@function mq-strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+
+// Pixels to ems
+// Derived from Bourbon by thoughtbot (http://bourbon.io)
+@function mq-em($pxval, $base: $mq-em-base) {
+  @if not math.is-unitless($pxval) {
+    $pxval: mq-strip-units($pxval);
+  }
+  @if not math.is-unitless($base) {
+    $base: mq-strip-units($base);
+  }
+  @return math.div($pxval, $base) * 1em;
+}
+
+
+// mq-get function
+@function mq-get($breakpoint, $ems: false) {
+  @if map.has-key(var.$mq-breakpoints, $breakpoint) {
+    $value: map.get(var.$mq-breakpoints, $breakpoint);
+
+    @if $ems == true {
+      $value: _mq-em($value, $mq-em-base);
+    }
+
+    @return $value;
+  } @else {
+    @error "Invalid breakpoint key. \a"
+      + "It must be defined in the `$mq-breakpoints` map.";
+  }
+}

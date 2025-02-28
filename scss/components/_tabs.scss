@@ -1,0 +1,80 @@
+///////////////////////////
+// CORE / COMPONENTS / TABS
+///////////////////////////
+
+@use "../variables" as var;
+@use "../functions" as func;
+@use "../mixins" as mixins;
+
+.dcf-tabs-list-item {
+  display: inline-block;
+}
+
+
+.dcf-tabs-list-item:has(.dcf-tab[hidden]) {
+  display: none;
+}
+
+
+.dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+
+.dcf-tabs-scroll:not(.dcf-tabs-responsive) .dcf-tabs-list-item {
+  scroll-snap-stop: normal;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+
+.dcf-tab {
+  // If the tab font-size is not 1em, then change the font-size
+  @if (func.to-number(var.$font-size-tab) != func.to-number(#{var.$ms00}em)) {
+    font-size: var.$font-size-tab;
+  }
+  // If the $font-weight-tab-bold variable = true, then change the font-weight to bold
+  @if (var.$font-weight-tab-bold) {
+    font-weight: bold;
+  }
+  padding: var.$padding-top-tab var.$padding-right-tab var.$padding-bottom-tab var.$padding-left-tab;
+}
+
+
+.dcf-tab[aria-selected] {
+  background-color: var.$bg-color-tab-selected;
+  color: var.$color-tab-selected;
+  text-decoration: none;
+}
+
+
+.dcf-tab:not([aria-selected]) {
+  background-color: inherit;
+  border: none;
+  color: var(--link);
+  text-decoration: underline;
+}
+
+
+.dcf-tabs-panel {
+  background-color: var.$bg-color-tabs-panel;
+  // If tab panel border-width is greater than zero, then add border styles
+  @if (func.to-number(var.$border-width-tabs-panel) > 0) {
+    border: var.$border-width-tabs-panel var.$border-style-tabs-panel var.$border-color-tabs-panel;
+  }
+  padding: var.$padding-top-tabs-panel var.$padding-right-tabs-panel var.$padding-bottom-tabs-panel var.$padding-left-tabs-panel;
+}
+
+
+@include mixins.mq(md, max, width) {
+
+  .dcf-tabs-responsive .dcf-tabs-list-item {
+    display: block;
+  }
+
+}

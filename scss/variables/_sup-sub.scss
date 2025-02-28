@@ -1,0 +1,20 @@
+///////////////////////////////
+// CORE / VARIABLES / SUP & SUB
+///////////////////////////////
+
+
+@use './modular-scale' as ms;
+@use './sizing' as s;
+
+
+// Bottom
+$bottom-sub: -#{ms.$ms-4}ex;           // Subscript bottom position based on x-height: -.56ex
+$bottom-sup: #{ms.$ms02}ex;            // Superscript bottom position based on x-height: 1.33ex
+
+
+// Font size
+$font-size-sub-sup: #{ms.$ms-3}em;     // Subscript & superscript font-size: .63em;
+
+
+// Vertical alignment
+$vertical-align-sub-sup: baseline;  // Subscript & superscript vertical-align

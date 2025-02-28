@@ -1,0 +1,10 @@
+/////////////////////////
+// CORE / VARIABLES / APP
+/////////////////////////
+
+
+@use './color-palette' as color_palette;
+
+
+// Border color
+$border-color-app-control: color_palette.$scarlet-shade;

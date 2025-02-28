@@ -1,0 +1,11 @@
+////////////////////////////////
+// CORE / VARIABLES / NAVIGATION
+////////////////////////////////
+
+
+@use "./tmp-defaults" as tmp_defaults;
+
+
+// Background color
+$bg-color-nav-menu: var(--bg-nav-menu, tmp_defaults.$default-bg-nav-menu);
+$bg-color-nav-toggle-group: var(--bg-nav-toggle-group, tmp_defaults.$default-bg-nav-toggle-group);

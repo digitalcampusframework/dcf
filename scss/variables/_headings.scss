@@ -1,0 +1,38 @@
+//////////////////////////////
+// CORE / VARIABLES / HEADINGS
+//////////////////////////////
+
+
+@use './color-palette' as color_palette;
+@use './modular-scale' as ms;
+@use './sizing' as s;
+
+
+// Color -- strive for WCAG AAA (minimum contrast ratio of 7.0) for heading text
+$color-heading-light-mode: color_palette.$darkest-gray;     // Heading color in light mode
+$color-heading-dark-mode: color_palette.$cream;             // Heading color in dark mode
+$color-heading: var(--heading);
+
+
+// Font size
+$font-size-subhead: #{ms.$ms-2}rem;              // Subhead font-size: .75rem
+
+
+// Line height
+$line-height-heading: #{ms.$ms01};               // Heading line-height
+
+
+// Margin
+$margin-bottom-heading: #{ms.$ms00}rem;          // Heading margin-bottom: 1rem
+$margin-top-heading: 0;                       // Heading margin-top: 0
+$margin-top-heading-after-els: s.$length-em-5;  // Heading margin-top after elements: 1.33em
+
+$margin-bottom-subhead: s.$length-em-4;         // Subhead margin-bottom: 1em
+
+
+// Text transform
+$text-transform-subhead: true;                // Uppercase subhead? True/false
+
+
+// Text wrap
+$text-wrap-balance-heading: true;             // Balance line lengths across broken headings? True/false

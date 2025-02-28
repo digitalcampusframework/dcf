@@ -1,0 +1,10 @@
+/////////////////////////////
+// CORE / VARIABLES / WRAPPER
+/////////////////////////////
+
+
+@use "./sizing" as s;
+
+
+// Padding
+$padding-inline-wrapper: s.$length-vw-2;

@@ -1,0 +1,23 @@
+///////////////////////////////////////////
+// CORE / VARIABLES / HR (HORIZONTAL RULES)
+///////////////////////////////////////////
+
+
+@use './sizing' as s;
+
+// Border color
+$border-color-hr: var(--b-light-gray);
+
+
+// Border style
+$border-style-hr: solid;
+
+
+// Border width
+$border-bottom-width-hr: 1px;
+$border-top-width-hr: 0;
+
+
+// Margin
+$margin-bottom-hr: s.$length-em-6;
+$margin-top-hr: s.$length-em-6;
