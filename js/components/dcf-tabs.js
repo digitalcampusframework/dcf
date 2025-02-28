@@ -1,6 +1,6 @@
 import { uuidv4, checkSetElementId, isKeyEvent, keyEvents} from '../dcf-utility.js';
 
-export default class DCF_Tabs {
+export default class DCFTabs {
 
   uuid = uuidv4();
   options = {};
@@ -14,8 +14,8 @@ export default class DCF_Tabs {
   /** @type { HTMLElement[]|null } tabs_panel_list */
   tabs_panel_list = null;
 
-  tabsReadyEvent = new Event(DCF_Tabs.events('tabsReady'));
-  tabSwitchedEvent = new Event(DCF_Tabs.events('tabSwitched'));
+  tabsReadyEvent = new Event(DCFTabs.events('tabsReady'));
+  tabSwitchedEvent = new Event(DCFTabs.events('tabSwitched'));
 
   /**
    * Sets up events to be used and reconfigures tabGroups input to correct form
@@ -299,16 +299,16 @@ export default class DCF_Tabs {
    * @returns { void }
    */
   #setTabGroupEventListeners() {
-    this.tabs_group.addEventListener(DCF_Tabs.events('commandPrev'), () => {
+    this.tabs_group.addEventListener(DCFTabs.events('commandPrev'), () => {
       this.switchToPreviousTab();
     }, true);
-    this.tabs_group.addEventListener(DCF_Tabs.events('commandNext'), () => {
+    this.tabs_group.addEventListener(DCFTabs.events('commandNext'), () => {
       this.switchToNextTab();
     }, true);
-    this.tabs_group.addEventListener(DCF_Tabs.events('commandHome'), () => {
+    this.tabs_group.addEventListener(DCFTabs.events('commandHome'), () => {
       this.switchToFirstTab();
     }, true);
-    this.tabs_group.addEventListener(DCF_Tabs.events('commandEnd'), () => {
+    this.tabs_group.addEventListener(DCFTabs.events('commandEnd'), () => {
       this.switchToEndTab();
     }, true);
   }
@@ -382,7 +382,7 @@ export default class DCF_Tabs {
     });
 
     // If the command comes in we can switch the tabs
-    tab.addEventListener(DCF_Tabs.events('commandSwitch'), () => {
+    tab.addEventListener(DCFTabs.events('commandSwitch'), () => {
       this.switchTab(tab);
     });
   }
