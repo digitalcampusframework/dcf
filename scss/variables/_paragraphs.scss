@@ -7,25 +7,25 @@
 
 
 // Font size
-$font-size-drop-cap: #{ms.$ms11}em;        // Drop cap font-size: 4.74em
+$font-size-drop-cap: #{ms.$ms11}em !default;        // Drop cap font-size: 4.74em
 
 
 // Line height
 // Adjust line-height for Chrome & Safari after first adjusting margin-top for Firefox
-$line-height-drop-cap: #{ms.$ms-3};        // Drop cap line-height: .63
+$line-height-drop-cap: #{ms.$ms-3} !default;        // Drop cap line-height: .63
 
 
 // Margin
-$margin-bottom-paragraph: #{ms.$ms00}rem;  // Paragraph margin-bottom: 1rem
-$margin-top-paragraph: 0;               // Paragraph margin-top: 0
+$margin-bottom-paragraph: #{ms.$ms00}rem !default;  // Paragraph margin-bottom: 1rem
+$margin-top-paragraph: 0 !default;               // Paragraph margin-top: 0
 // Adjust margin-top for Firefox, then adjust line-height
-$margin-top-drop-cap: #{ms.$ms-1}rem;      // Drop cap margin-top: .84rem
+$margin-top-drop-cap: #{ms.$ms-1}rem !default;      // Drop cap margin-top: .84rem
 
 
 // Padding
-$padding-left-drop-cap: #{ms.$ms-20}rem;   // Padding-left for drop cap: .06rem
-$padding-right-drop-cap: #{ms.$ms-4}rem;   // Padding-right for drop cap: .56rem
+$padding-left-drop-cap: #{ms.$ms-20}rem !default;   // Padding-left for drop cap: .06rem
+$padding-right-drop-cap: #{ms.$ms-4}rem !default;   // Padding-right for drop cap: .56rem
 
 
 // Text wrap
-$text-wrap-pretty-paragraph: true;      // Prevent orphans in paragraphs? True/false
+$text-wrap-pretty-paragraph: true !default;      // Prevent orphans in paragraphs? True/false

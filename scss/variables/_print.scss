@@ -4,15 +4,15 @@
 
 
 // Filter
-$filter-grayscale-images-print: false;    // Print images in grayscale? True/false
+$filter-grayscale-images-print: false !default;    // Print images in grayscale? True/false
 
 
 // Font size
-$font-size-print: 12px;
+$font-size-print: 12px !default;
 
 
 // Margin
-$margin-bottom-print-page: .5in;
-$margin-left-print-page: .75in;
-$margin-right-print-page: .75in;
-$margin-top-print-page: .5in;
+$margin-bottom-print-page: .5in !default;
+$margin-left-print-page: .75in !default;
+$margin-right-print-page: .75in !default;
+$margin-top-print-page: .5in !default;

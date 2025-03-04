@@ -7,27 +7,27 @@
 
 
 // Delay
-$animation-delay-fade-in: 0;
-$animation-delay-move-left: 500ms;
-$animation-delay-move-right: 500ms;
-$animation-delay-move-up: 500ms;
+$animation-delay-fade-in: 0 !default;
+$animation-delay-move-left: 500ms !default;
+$animation-delay-move-right: 500ms !default;
+$animation-delay-move-up: 500ms !default;
 
 
 // Duration
-$animation-duration-fade-in: 500ms;
-$animation-duration-move-left: 250ms;
-$animation-duration-move-right: 250ms;
-$animation-duration-move-up: 250ms;
+$animation-duration-fade-in: 500ms !default;
+$animation-duration-move-left: 250ms !default;
+$animation-duration-move-right: 250ms !default;
+$animation-duration-move-up: 250ms !default;
 
 
 // Timing Function (Easing)
-$animation-timing-fn-fade-in: cubic-bezier(.25, .46, .45, .94);
-$animation-timing-fn-move-left: cubic-bezier(.25, .46, .45, .94);
-$animation-timing-fn-move-right: cubic-bezier(.25, .46, .45, .94);
-$animation-timing-fn-move-up: cubic-bezier(.25, .46, .45, .94);
+$animation-timing-fn-fade-in: cubic-bezier(.25, .46, .45, .94) !default;
+$animation-timing-fn-move-left: cubic-bezier(.25, .46, .45, .94) !default;
+$animation-timing-fn-move-right: cubic-bezier(.25, .46, .45, .94) !default;
+$animation-timing-fn-move-up: cubic-bezier(.25, .46, .45, .94) !default;
 
 
 // Transforms
-$animation-transform-move-left: #{ms.$ms08}em;
-$animation-transform-move-right: -#{ms.$ms08}em;
-$animation-transform-move-up: #{ms.$ms08}em;
+$animation-transform-move-left: #{ms.$ms08}em !default;
+$animation-transform-move-right: -#{ms.$ms08}em !default;
+$animation-transform-move-up: #{ms.$ms08}em !default;

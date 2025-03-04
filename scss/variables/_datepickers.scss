@@ -8,50 +8,50 @@
 
 
 // Background color
-$bg-color-datepicker-dialog: var(--bg-dialog);                                          // Background color datepicker dialog
-$bg-color-datepicker-dialog-calendar-td-hover: var(--bg-btn-secondary-tertiary-hover);  // Background color datepicker dialog calendar date on hover
+$bg-color-datepicker-dialog: var(--bg-dialog) !default;                                          // Background color datepicker dialog
+$bg-color-datepicker-dialog-calendar-td-hover: var(--bg-btn-secondary-tertiary-hover) !default;  // Background color datepicker dialog calendar date on hover
 
 
 // Border radius
-$border-radius-datepicker-dialog-roundrect: true;         // Datepicker dialog border-radius roundrect? True/false
-$border-radius-datepicker-date-roundrect: true;           // Datepicker date border-radius roundrect? True/false
+$border-radius-datepicker-dialog-roundrect: true !default;         // Datepicker dialog border-radius roundrect? True/false
+$border-radius-datepicker-date-roundrect: true !default;           // Datepicker date border-radius roundrect? True/false
 
 
 // Box shadow
-$box-shadow-datepicker-dialog: 1px 1px 5px rgba(0,0,0,.1), 1px 1px 30px rgba(0,0,0,.1); // Datepicker dialog box-shadow
+$box-shadow-datepicker-dialog: 1px 1px 5px rgba(0,0,0,.1), 1px 1px 30px rgba(0,0,0,.1) !default; // Datepicker dialog box-shadow
 
 
 // Color
-$color-datepicker-dialog-calendar-td: var(--btn-tertiary);                        // Color datepicker dialog calendar date
-$color-datepicker-dialog-calendar-td-hover: var(--btn-secondary-tertiary-hover);  // Color datepicker dialog calendar date on hover
+$color-datepicker-dialog-calendar-td: var(--btn-tertiary) !default;                        // Color datepicker dialog calendar date
+$color-datepicker-dialog-calendar-td-hover: var(--btn-secondary-tertiary-hover) !default;  // Color datepicker dialog calendar date on hover
 
 
 // Font size
-$font-size-datepicker-dialog-month-year: #{ms.$ms-1}em;      // Datepicker dialog month/year font-size: .84em
-$font-size-datepicker-dialog-calendar: #{ms.$ms-2}em;        // Datepicker dialog calendar font-size: .75em
-$font-size-datepicker-dialog-btn-footer: #{ms.$ms-2}rem;     // Datepicker dialog footer button font-size: .75rem
-$font-size-datepicker-dialog-message: #{ms.$ms-3}em;         // Datepicker dialog message font-size: .63em
+$font-size-datepicker-dialog-month-year: #{ms.$ms-1}em !default;      // Datepicker dialog month/year font-size: .84em
+$font-size-datepicker-dialog-calendar: #{ms.$ms-2}em !default;        // Datepicker dialog calendar font-size: .75em
+$font-size-datepicker-dialog-btn-footer: #{ms.$ms-2}rem !default;     // Datepicker dialog footer button font-size: .75rem
+$font-size-datepicker-dialog-message: #{ms.$ms-3}em !default;         // Datepicker dialog message font-size: .63em
 
 
 // Height
-$height-datepicker-dialog-calendar-th-td: #{ms.$ms06}rem;    // Datepicker dialog calendar cell (th/td) height: 2.37rem
+$height-datepicker-dialog-calendar-th-td: #{ms.$ms06}rem !default;    // Datepicker dialog calendar cell (th/td) height: 2.37rem
 
 
 // Margin
-$margin-top-datepicker-dialog: #{ms.$ms-12}em;               // Margin-top datepicker dialog: .18em
-$margin-top-datepicker-dialog-footer: #{ms.$ms-10}em;        // Margin-top datepicker dialog footer: .24em
+$margin-top-datepicker-dialog: #{ms.$ms-12}em !default;               // Margin-top datepicker dialog: .18em
+$margin-top-datepicker-dialog-footer: #{ms.$ms-10}em !default;        // Margin-top datepicker dialog footer: .24em
 
 
 // Padding
-$padding-bottom-datepicker-dialog: s.$length-em-3;          // Padding-bottom datepicker dialog header: .75em
-$padding-left-datepicker-dialog: s.$length-em-4;            // Padding-left datepicker dialog header: 1em
-$padding-right-datepicker-dialog: s.$length-em-4;           // Padding-right datepicker dialog header: 1em
-$padding-top-datepicker-dialog: s.$length-em-2;             // Padding-top datepicker dialog header: .56em
+$padding-bottom-datepicker-dialog: s.$length-em-3 !default;          // Padding-bottom datepicker dialog header: .75em
+$padding-left-datepicker-dialog: s.$length-em-4 !default;            // Padding-left datepicker dialog header: 1em
+$padding-right-datepicker-dialog: s.$length-em-4 !default;           // Padding-right datepicker dialog header: 1em
+$padding-top-datepicker-dialog: s.$length-em-2 !default;             // Padding-top datepicker dialog header: .56em
 
-$padding-bottom-datepicker-dialog-header: #{ms.$ms-10}em;    // Padding-bottom datepicker dialog header: .24em
+$padding-bottom-datepicker-dialog-header: #{ms.$ms-10}em !default;    // Padding-bottom datepicker dialog header: .24em
 
-$padding-top-datepicker-dialog-footer: s.$length-em-2;      // Padding-top datepicker dialog footer: .56em
+$padding-top-datepicker-dialog-footer: s.$length-em-2 !default;      // Padding-top datepicker dialog footer: .56em
 
 
 // Width
-$width-datepicker-dialog: #{ms.$ms21}rem;                    // Datepicker dialog width: 19.98rem (~320px)
+$width-datepicker-dialog: #{ms.$ms21}rem !default;                    // Datepicker dialog width: 19.98rem (~320px)

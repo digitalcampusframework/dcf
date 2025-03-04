@@ -8,33 +8,33 @@
 
 
 // Border color
-$border-color-spinner: currentColor;            // Spinner border color
-$border-right-color-spinner: transparent;       // Spinner border right color
+$border-color-spinner: currentColor !default;            // Spinner border color
+$border-right-color-spinner: transparent !default;       // Spinner border right color
 
 
 // Border style
-$border-style-spinner: solid;                   // Spinner border style
+$border-style-spinner: solid !default;                   // Spinner border style
 
 
 // Border width
-$border-width-spinner: .2em;                    // Spinner border width
+$border-width-spinner: .2em !default;                    // Spinner border width
 
 
 // Duration
-$animation-duration-spinner: #{ms.$ms02}s;         // Spinner animation duration: 1.33s
+$animation-duration-spinner: #{ms.$ms02}s !default;         // Spinner animation duration: 1.33s
 
 
 // Height
-$height-spinner: s.$length-em-4;                  // Height of spinner: 1em
+$height-spinner: s.$length-em-4 !default;                  // Height of spinner: 1em
 
 
 // Iteration count
-$animation-iteration-count-spinner: infinite;   // Spinner iteration count
+$animation-iteration-count-spinner: infinite !default;   // Spinner iteration count
 
 
 // Timing Function
-$animation-timing-spinner: linear;              // Spinner animation timing function
+$animation-timing-spinner: linear !default;              // Spinner animation timing function
 
 
 // Width
-$width-spinner: s.$length-em-4;                   // Width of spinner: 1em
+$width-spinner: s.$length-em-4 !default;                   // Width of spinner: 1em

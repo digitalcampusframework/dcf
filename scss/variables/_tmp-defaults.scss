@@ -8,20 +8,20 @@
 
 
 // Background color
-$default-bg-white: color_palette.$white;
-$default-bg-overlay-dark: color.adjust(color_palette.$black, $alpha: -0.06);
-$default-bg-overlay-light: color.adjust(color_palette.$white, $alpha: -0.06);
-$default-bg-input: color_palette.$white;
-$default-bg-nav-menu: color_palette.$white;
-$default-bg-nav-toggle-group: color_palette.$white;
+$default-bg-white: color_palette.$white !default;
+$default-bg-overlay-dark: color.adjust(color_palette.$black, $alpha: -0.06) !default;
+$default-bg-overlay-light: color.adjust(color_palette.$white, $alpha: -0.06) !default;
+$default-bg-input: color_palette.$white !default;
+$default-bg-nav-menu: color_palette.$white !default;
+$default-bg-nav-toggle-group: color_palette.$white !default;
 
 
 // Border color
-$default-b-input: #ccc;
-$default-b-app-control: color_palette.$black;
+$default-b-input: #ccc !default;
+$default-b-app-control: color_palette.$black !default;
 
 
 // Font weight
-$font-weight-bold: bold;
-$font-weight-bolder: bolder;
-$font-weight-normal: normal;
+$font-weight-bold: bold !default;
+$font-weight-bolder: bolder !default;
+$font-weight-normal: normal !default;

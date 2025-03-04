@@ -8,34 +8,34 @@
 
 
 // Color
-$color-link-light-mode: color_palette.$scarlet;                        // Link color in light mode
-$color-link-dark-mode: color_palette.$light-cerulean;                  // Link color in dark mode
-$color-link: var(--link);
+$color-link-light-mode: color_palette.$scarlet !default;                        // Link color in light mode
+$color-link-dark-mode: color_palette.$light-cerulean !default;                  // Link color in dark mode
+$color-link: var(--link) !default;
 
-$color-visited-light-mode: color.adjust($color-link-light-mode, $lightness: -10%);        // Visited color in light mode
-$color-visited-dark-mode: color_palette.$lighter-cerulean;             // Visited color in dark mode
-$color-visited: var(--visited);
+$color-visited-light-mode: color.adjust($color-link-light-mode, $lightness: -10%) !default;        // Visited color in light mode
+$color-visited-dark-mode: color_palette.$lighter-cerulean !default;             // Visited color in dark mode
+$color-visited: var(--visited) !default;
 
-$color-hover-light-mode: color.adjust($color-link-light-mode, $lightness: -10%);          // Hover color in light mode
-$color-hover-dark-mode: color_palette.$lighter-cerulean;               // Hover color in dark mode
-$color-hover: var(--hover);
+$color-hover-light-mode: color.adjust($color-link-light-mode, $lightness: -10%) !default;          // Hover color in light mode
+$color-hover-dark-mode: color_palette.$lighter-cerulean !default;               // Hover color in dark mode
+$color-hover: var(--hover) !default;
 
-$color-active-light-mode: color.adjust($color-link-light-mode, $lightness: -10%);         // Active color in light mode
-$color-active-dark-mode: color_palette.$lighter-cerulean;              // Active color in dark mode
-$color-active: var(--active);
+$color-active-light-mode: color.adjust($color-link-light-mode, $lightness: -10%) !default;         // Active color in light mode
+$color-active-dark-mode: color_palette.$lighter-cerulean !default;              // Active color in dark mode
+$color-active: var(--active) !default;
 
-$color-inverse-link-light-mode: body.$bg-color-body-light-mode;        // Inverse link color in light mode
-$color-inverse-link-dark-mode: body.$bg-color-body-dark-mode;          // Inverse link color in dark mode
-$color-inverse-link: var(--inverse-link);
+$color-inverse-link-light-mode: body.$bg-color-body-light-mode !default;        // Inverse link color in light mode
+$color-inverse-link-dark-mode: body.$bg-color-body-dark-mode !default;          // Inverse link color in dark mode
+$color-inverse-link: var(--inverse-link) !default;
 
-$color-inverse-visited-light-mode: body.$bg-color-body-light-mode;     // Inverse visited color in light mode
-$color-inverse-visited-dark-mode: body.$bg-color-body-dark-mode;       // Inverse visited color in dark mode
-$color-inverse-visited: var(--inverse-visited);
+$color-inverse-visited-light-mode: body.$bg-color-body-light-mode !default;     // Inverse visited color in light mode
+$color-inverse-visited-dark-mode: body.$bg-color-body-dark-mode !default;       // Inverse visited color in dark mode
+$color-inverse-visited: var(--inverse-visited) !default;
 
-$color-inverse-hover-light-mode: body.$bg-color-body-light-mode;       // Inverse hover color in light mode
-$color-inverse-hover-dark-mode: body.$bg-color-body-dark-mode;         // Inverse hover color in dark mode
-$color-inverse-hover: var(--inverse-hover);
+$color-inverse-hover-light-mode: body.$bg-color-body-light-mode !default;       // Inverse hover color in light mode
+$color-inverse-hover-dark-mode: body.$bg-color-body-dark-mode !default;         // Inverse hover color in dark mode
+$color-inverse-hover: var(--inverse-hover) !default;
 
-$color-inverse-active-light-mode: body.$bg-color-body-light-mode;      // Inverse active color in light mode
-$color-inverse-active-dark-mode: body.$bg-color-body-dark-mode;        // Inverse active color in dark mode
-$color-inverse-active: var(--inverse-active);
+$color-inverse-active-light-mode: body.$bg-color-body-light-mode !default;      // Inverse active color in light mode
+$color-inverse-active-dark-mode: body.$bg-color-body-dark-mode !default;        // Inverse active color in dark mode
+$color-inverse-active: var(--inverse-active) !default;

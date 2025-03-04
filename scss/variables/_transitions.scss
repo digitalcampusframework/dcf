@@ -4,14 +4,14 @@
 
 
 // Duration
-$transition-duration-fade-in: 200ms;
-$transition-duration-fade-out: 400ms;
-$transition-duration-hover-on: 200ms;
-$transition-duration-hover-off: 400ms;
+$transition-duration-fade-in: 200ms !default;
+$transition-duration-fade-out: 400ms !default;
+$transition-duration-hover-on: 200ms !default;
+$transition-duration-hover-off: 400ms !default;
 
 
 // Timing Function (Easing)
-$transition-timing-fn-fade-in: cubic-bezier(.25, .46, .45, .94);
-$transition-timing-fn-fade-out: cubic-bezier(.25, .46, .45, .94);
-$transition-timing-fn-hover-on: ease-out;
-$transition-timing-fn-hover-off: ease-out;
+$transition-timing-fn-fade-in: cubic-bezier(.25, .46, .45, .94) !default;
+$transition-timing-fn-fade-out: cubic-bezier(.25, .46, .45, .94) !default;
+$transition-timing-fn-hover-on: ease-out !default;
+$transition-timing-fn-hover-off: ease-out !default;

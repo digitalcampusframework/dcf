@@ -7,95 +7,95 @@
 
 
 // PRIMARY BRAND
-$brand-alpha: #d00000;    // Scarlet
-$brand-beta: #fefdfa;     // Cream
-$brand-gamma: #c7c8ca;    // Gray
+$brand-alpha: #d00000 !default;    // Scarlet
+$brand-beta: #fefdfa !default;     // Cream
+$brand-gamma: #c7c8ca !default;    // Gray
 
-$scarlet: $brand-alpha;
-$cream: $brand-beta;
-$gray: $brand-gamma;
+$scarlet: $brand-alpha !default;
+$cream: $brand-beta !default;
+$gray: $brand-gamma !default;
 
-$scarlet-shade: color.scale($scarlet, $saturation: 10%, $lightness: -24%);
-$scarlet-tint: #f6e6e3;
+$scarlet-shade: color.scale($scarlet, $saturation: 10%, $lightness: -24%) !default;
+$scarlet-tint: #f6e6e3 !default;
 
 
 // SECONDARY BRAND
-$brand-delta: #001738;    // Navy
-$brand-epsilon: #42a7c6;  // Cerulean
+$brand-delta: #001738 !default;    // Navy
+$brand-epsilon: #42a7c6 !default;  // Cerulean
 
-$navy: $brand-delta;
-$cerulean: $brand-epsilon;
+$navy: $brand-delta !default;
+$cerulean: $brand-epsilon !default;
 
-$light-cerulean: color.mix($cream, $cerulean, 25%);     // #71bdd3
-$lighter-cerulean: color.mix($cream, $cerulean, 50%);   // #a0d2e0
+$light-cerulean: color.mix($cream, $cerulean, 25%) !default;     // #71bdd3
+$lighter-cerulean: color.mix($cream, $cerulean, 50%) !default;   // #a0d2e0
 
 
 // TERTIARY / SCREEN
-$brand-zeta: #00784e;     // Green
-$brand-eta: #007197;      // Blue
-$brand-theta: #b32d9c;    // Purple
-$brand-iota: #ffd74e;     // Yellow
-$brand-kappa: #f58a1f;     // Orange
+$brand-zeta: #00784e !default;     // Green
+$brand-eta: #007197 !default;      // Blue
+$brand-theta: #b32d9c !default;    // Purple
+$brand-iota: #ffd74e !default;     // Yellow
+$brand-kappa: #f58a1f !default;     // Orange
 
-$green: $brand-zeta;
-$blue: $brand-eta;
-$purple: $brand-theta;
-$yellow: $brand-iota;
-$orange: $brand-kappa;
+$green: $brand-zeta !default;
+$blue: $brand-eta !default;
+$purple: $brand-theta !default;
+$yellow: $brand-iota !default;
+$orange: $brand-kappa !default;
 
-$lighter-green: #e7f1ea;
-$lighter-blue: #e7f0f0;
-$lighter-purple: #f7eaf1;
+$lighter-green: #e7f1ea !default;
+$lighter-blue: #e7f0f0 !default;
+$lighter-purple: #f7eaf1 !default;
 
-$light-green: #9fdfc5;
-$light-blue: #aadeee;
-$light-purple: #fad1f1;
+$light-green: #9fdfc5 !default;
+$light-blue: #aadeee !default;
+$light-purple: #fad1f1 !default;
 
-$dark-green: #0d593e;
-$dark-blue: #0d556d;
-$dark-purple: #7f2a70;
+$dark-green: #0d593e !default;
+$dark-blue: #0d556d !default;
+$dark-purple: #7f2a70 !default;
 
 
 // NEUTRALS
-$white: #fff;
-$black: #000;
+$white: #fff !default;
+$black: #000 !default;
 
 // Mix cream and gray brand colors for base color
-$mix-cream-gray: color.mix($cream, $gray);            // #e3e3e2
+$mix-cream-gray: color.mix($cream, $gray) !default;            // #e3e3e2
 
-$lightest-gray: color.adjust($mix-cream-gray, $lightness: 7.5%); // #f6f6f5;
-$lighter-gray: color.adjust($mix-cream-gray, $lightness: 3.2%);  // #ebebea
-$light-gray: $mix-cream-gray;                   // #e3e3e2
+$lightest-gray: color.adjust($mix-cream-gray, $lightness: 7.5%) !default; // #f6f6f5 !default;
+$lighter-gray: color.adjust($mix-cream-gray, $lightness: 3.2%) !default;  // #ebebea
+$light-gray: $mix-cream-gray !default;                   // #e3e3e2
 
-$gray-s1: color.adjust($mix-cream-gray, $lightness: -25%);         // #a4a4a1
+$gray-s1: color.adjust($mix-cream-gray, $lightness: -25%) !default;         // #a4a4a1
 
-$dark-gray: color.adjust($mix-cream-gray, $lightness: -47.5%);     // #6b6b68
+$dark-gray: color.adjust($mix-cream-gray, $lightness: -47.5%) !default;     // #6b6b68
 
-$darker-gray: color.adjust($mix-cream-gray, $lightness: -63.3%);   // #424240
-$darker-gray-s1: color.adjust($mix-cream-gray, $lightness: -67%);  // #393937
-$darker-gray-s2: color.adjust($mix-cream-gray, $lightness: -69%);  // #333332
-$darker-gray-s3: color.adjust($mix-cream-gray, $lightness: -71%);  // #2e2e2d
-$darker-gray-s4: color.adjust($mix-cream-gray, $lightness: -73%);  // #292928
+$darker-gray: color.adjust($mix-cream-gray, $lightness: -63.3%) !default;   // #424240
+$darker-gray-s1: color.adjust($mix-cream-gray, $lightness: -67%) !default;  // #393937
+$darker-gray-s2: color.adjust($mix-cream-gray, $lightness: -69%) !default;  // #333332
+$darker-gray-s3: color.adjust($mix-cream-gray, $lightness: -71%) !default;  // #2e2e2d
+$darker-gray-s4: color.adjust($mix-cream-gray, $lightness: -73%) !default;  // #292928
 
-$darkest-gray: color.adjust($mix-cream-gray, $lightness: -75%);    // #242423
-$darkest-gray-s1: color.adjust($mix-cream-gray, $lightness: -77%); // #1f1f1e
+$darkest-gray: color.adjust($mix-cream-gray, $lightness: -75%) !default;    // #242423
+$darkest-gray-s1: color.adjust($mix-cream-gray, $lightness: -77%) !default; // #1f1f1e
 
 
 // CONTEXTUAL COLORS
-$info: $blue;
-$success: $green;
-$warning: #d53f25;
-$danger: $scarlet-shade;
+$info: $blue !default;
+$success: $green !default;
+$warning: #d53f25 !default;
+$danger: $scarlet-shade !default;
 
-$highlight: #ff0;
-$kbd: #0f0;
+$highlight: #ff0 !default;
+$kbd: #0f0 !default;
 
 
 // SOCIAL MEDIA COLORS
-$facebook: #3b5998;   // Facebook
-$instagram: #c13584;  // Instagram
-$linkedin: #0077b5;   // LinkedIn
-$pinterest: #bd081c;  // Pinterest
-$snapchat: #fffc00;   // SnapChat
-$twitter: #1da1f2;    // Twitter
-$youtube: #cd201f;    // YouTube
+$facebook: #3b5998 !default;   // Facebook
+$instagram: #c13584 !default;  // Instagram
+$linkedin: #0077b5 !default;   // LinkedIn
+$pinterest: #bd081c !default;  // Pinterest
+$snapchat: #fffc00 !default;   // SnapChat
+$twitter: #1da1f2 !default;    // Twitter
+$youtube: #cd201f !default;    // YouTube

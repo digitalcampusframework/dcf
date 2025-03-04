@@ -8,22 +8,22 @@
 
 
 // Font size
-$font-size-blockquote-open-quote: #{ms.$ms16}em;   // Open quote font-size: 9.97em
-$font-size-blockquote-p: #{ms.$ms02}em;            // Blockquote paragraph font-size: 1.33em
+$font-size-blockquote-open-quote: #{ms.$ms16}em !default;   // Open quote font-size: 9.97em
+$font-size-blockquote-p: #{ms.$ms02}em !default;            // Blockquote paragraph font-size: 1.33em
 
 
 // Line height
-$line-height-blockquote-open-quote: 1;          // Blockquote line-height
+$line-height-blockquote-open-quote: 1 !default;          // Blockquote line-height
 
 
 // Margin
-$margin-bottom-blockquote: s.$length-em-7;        // Blockquote margin-bottom: 2.37em
-$margin-left-blockquote: 0;                     // Blockquote margin-left: 0
-$margin-right-blockquote: 0;                    // Blockquote margin-right: 0
-$margin-top-blockquote: s.$length-em-4;           // Blockquote margin-top: 1em
+$margin-bottom-blockquote: s.$length-em-7 !default;        // Blockquote margin-bottom: 2.37em
+$margin-left-blockquote: 0 !default;                     // Blockquote margin-left: 0
+$margin-right-blockquote: 0 !default;                    // Blockquote margin-right: 0
+$margin-top-blockquote: s.$length-em-4 !default;           // Blockquote margin-top: 1em
 
-$margin-top-attribution: s.$length-em-4;          // Attribution margin-top: 1em
+$margin-top-attribution: s.$length-em-4 !default;          // Attribution margin-top: 1em
 
 
 // Padding
-$padding-top-blockquote-p: #{ms.$ms09}em;          // Blockquote paragraph padding-top: 3.56em
+$padding-top-blockquote-p: #{ms.$ms09}em !default;          // Blockquote paragraph padding-top: 3.56em

@@ -11,85 +11,85 @@
 
 
 // Background color
-$bg-color-search-and-select-search-area: forms.$bg-color-input;                                 // Search area background-color
-$bg-color-search-and-select-available-items: forms.$bg-color-input;                             // Available items background-color
-$bg-color-search-and-select-selected-item-label: var(--bg-lightest-gray);                 // Selected item label background-color
-$bg-color-search-and-select-selected-item-label-hover: var(--bg-lighter-gray);            // Selected item label hover background-color
-$bg-color-search-and-select-visual-hover: var(--bg-brand-eta);                            // Visual hover background-color
-$bg-color-search-and-select-disabled: forms.$bg-color-input-disabled;                           // Disabled background-color
+$bg-color-search-and-select-search-area: forms.$bg-color-input !default;                                 // Search area background-color
+$bg-color-search-and-select-available-items: forms.$bg-color-input !default;                             // Available items background-color
+$bg-color-search-and-select-selected-item-label: var(--bg-lightest-gray) !default;                 // Selected item label background-color
+$bg-color-search-and-select-selected-item-label-hover: var(--bg-lighter-gray) !default;            // Selected item label hover background-color
+$bg-color-search-and-select-visual-hover: var(--bg-brand-eta) !default;                            // Visual hover background-color
+$bg-color-search-and-select-disabled: forms.$bg-color-input-disabled !default;                           // Disabled background-color
 
 
 // Border color
-$border-color-search-and-select-area: forms.$border-color-input;                                // Search area border-color
-$border-color-search-and-select-hover: forms.$border-color-input-hover;                         // Search-and-select items :hover border-color
-$border-color-search-and-select-visual-focus: forms.$border-color-input-focus;                  // Search-and-select items visual focus border-color
-$border-color-search-and-select-available-items: var(--b-lighter-gray);                   // Available items border-color
-$border-color-search-and-select-available-items-group: var(--b-lighter-gray);             // Available items group border-color
-$border-color-search-and-select-available-items-li: var(--b-lighter-gray);                // Available items list item border-color
-$border-color-search-and-select-selected-item-label: var(--b-input);                      // Selected item label border-color
+$border-color-search-and-select-area: forms.$border-color-input !default;                                // Search area border-color
+$border-color-search-and-select-hover: forms.$border-color-input-hover !default;                         // Search-and-select items :hover border-color
+$border-color-search-and-select-visual-focus: forms.$border-color-input-focus !default;                  // Search-and-select items visual focus border-color
+$border-color-search-and-select-available-items: var(--b-lighter-gray) !default;                   // Available items border-color
+$border-color-search-and-select-available-items-group: var(--b-lighter-gray) !default;             // Available items group border-color
+$border-color-search-and-select-available-items-li: var(--b-lighter-gray) !default;                // Available items list item border-color
+$border-color-search-and-select-selected-item-label: var(--b-input) !default;                      // Selected item label border-color
 
 
 // Border style
-$border-style-search-and-select-area: solid;                                              // Search area border-style
-$border-style-search-and-select-available-items: solid;                                   // Available items border-style
-$border-style-search-and-select-available-items-group: solid;                             // Available items group border-style
-$border-style-search-and-select-available-items-li: solid;                                // Available items list item border-style
-$border-style-search-and-select-selected-item-label: solid;                               // Selected item label border-style
+$border-style-search-and-select-area: solid !default;                                              // Search area border-style
+$border-style-search-and-select-available-items: solid !default;                                   // Available items border-style
+$border-style-search-and-select-available-items-group: solid !default;                             // Available items group border-style
+$border-style-search-and-select-available-items-li: solid !default;                                // Available items list item border-style
+$border-style-search-and-select-selected-item-label: solid !default;                               // Selected item label border-style
 
 
 // Border width
-$border-width-search-and-select-area: 1px;                                                // Search area border-width
-$border-width-search-and-select-available-items: 1px;                                     // Available items border-width
-$border-width-search-and-select-available-items-group: 2px;                               // Available items group border-width
-$border-width-search-and-select-available-items-li: 1px;                                  // Available items list item border-width
-$border-width-search-and-select-selected-item-label: buttons.$border-width-button;                // Selected item label border-width
+$border-width-search-and-select-area: 1px !default;                                                // Search area border-width
+$border-width-search-and-select-available-items: 1px !default;                                     // Available items border-width
+$border-width-search-and-select-available-items-group: 2px !default;                               // Available items group border-width
+$border-width-search-and-select-available-items-li: 1px !default;                                  // Available items list item border-width
+$border-width-search-and-select-selected-item-label: buttons.$border-width-button !default;                // Selected item label border-width
 
 
 // Color
-$color-search-and-select-visual-hover: color_palette.$cream;                                            // Visual hover color
+$color-search-and-select-visual-hover: color_palette.$cream !default;                                            // Visual hover color
 
 
 // Flex basis
-$flex-basis-search-and-select-search-area-multiple-input: 25%;                            // Search area multiple input flex basis
+$flex-basis-search-and-select-search-area-multiple-input: 25% !default;                            // Search area multiple input flex basis
 
 
 // Font size
-$font-size-search-and-select-selected-item-label: #{ms.$ms-1}em;                             // Selected item label font-size: .84em
+$font-size-search-and-select-selected-item-label: #{ms.$ms-1}em !default;                             // Selected item label font-size: .84em
 
 
 // Font weight
-$font-weight-search-and-select-available-item-group-heading-bold: true;                   // Bold available item group heading? True/false
+$font-weight-search-and-select-available-item-group-heading-bold: true !default;                   // Bold available item group heading? True/false
 
 
 // Gap
-$column-gap-search-and-select-selected-items: s.$length-em-3;                               // Column-gap search-and-select selected items: .75em
-$row-gap-search-and-select-selected-items: s.$length-em-3;                                  // Row-gap search-and-select selected items: .75em
+$column-gap-search-and-select-selected-items: s.$length-em-3 !default;                               // Column-gap search-and-select selected items: .75em
+$row-gap-search-and-select-selected-items: s.$length-em-3 !default;                                  // Row-gap search-and-select selected items: .75em
 
 
 // Height & width
-$height-search-and-select-available-items: clamp(#{ms.$ms14}em, 32vh, #{ms.$ms19}em);           // Height search-and-select available items: min - 7.49em, ideal - 32vh, max - 19.98em
-$max-height-search-and-select-search-area: s.$length-em-12;                                 // Max-height search-and-select search area: 9.99em
-$min-width-search-and-select-input: 12ch;                                                 // Min-width search-and-select input
+$height-search-and-select-available-items: clamp(#{ms.$ms14}em, 32vh, #{ms.$ms19}em) !default;           // Height search-and-select available items: min - 7.49em, ideal - 32vh, max - 19.98em
+$max-height-search-and-select-search-area: s.$length-em-12 !default;                                 // Max-height search-and-select search area: 9.99em
+$min-width-search-and-select-input: 12ch !default;                                                 // Min-width search-and-select input
 
 
 // Opacity
-$opacity-search-and-select-disabled: .75;                                                 // Disabled search-and-select opacity
+$opacity-search-and-select-disabled: .75 !default;                                                 // Disabled search-and-select opacity
 
 
 // Padding
-$padding-bottom-search-and-select-selected-items: forms.$padding-bottom-input;                  // Padding-bottom of selected items: .56em
-$padding-left-search-and-select-selected-items: forms.$padding-left-input;                      // Padding-left of selected items: .75em
-$padding-right-search-and-select-selected-items: s.$length-em-4;                            // Padding-right of selected items: 1em
-$padding-top-search-and-select-selected-items: forms.$padding-top-input;                        // Padding-top of selected items: .56em
+$padding-bottom-search-and-select-selected-items: forms.$padding-bottom-input !default;                  // Padding-bottom of selected items: .56em
+$padding-left-search-and-select-selected-items: forms.$padding-left-input !default;                      // Padding-left of selected items: .75em
+$padding-right-search-and-select-selected-items: s.$length-em-4 !default;                            // Padding-right of selected items: 1em
+$padding-top-search-and-select-selected-items: forms.$padding-top-input !default;                        // Padding-top of selected items: .56em
 
-$padding-bottom-search-and-select-available-items-li: s.$length-em-2;                       // Padding-bottom of available items list item: .56em
-$padding-left-search-and-select-available-items-li: s.$length-em-4;                         // Padding-left of available items list item: 1em
-$padding-right-search-and-select-available-items-li: s.$length-em-7;                        // Padding-right of available items list item: 2.67em
-$padding-top-search-and-select-available-items-li: s.$length-em-2;                          // Padding-top of available items list item: .56em
+$padding-bottom-search-and-select-available-items-li: s.$length-em-2 !default;                       // Padding-bottom of available items list item: .56em
+$padding-left-search-and-select-available-items-li: s.$length-em-4 !default;                         // Padding-left of available items list item: 1em
+$padding-right-search-and-select-available-items-li: s.$length-em-7 !default;                        // Padding-right of available items list item: 2.67em
+$padding-top-search-and-select-available-items-li: s.$length-em-2 !default;                          // Padding-top of available items list item: .56em
 
-$padding-left-search-and-select-available-items-li-presentation-sibling: s.$length-em-6;    // Padding-left of available items list item (sibling of presentation item): 1.78em
+$padding-left-search-and-select-available-items-li-presentation-sibling: s.$length-em-6 !default;    // Padding-left of available items list item (sibling of presentation item): 1.78em
 
-$padding-bottom-search-and-select-selected-item-label: #{ms.$ms-6}rem;                       // Padding-bottom of selected item label: .32rem
-$padding-left-search-and-select-selected-item-label: #{ms.$ms-2}rem;                         // Padding-left of selected item label: .75rem
-$padding-right-search-and-select-selected-item-label: #{ms.$ms-2}rem;                        // Padding-right of selected item label: .75rem
-$padding-top-search-and-select-selected-item-label: #{ms.$ms-6}rem;                          // Padding-top of selected item label: .32rem
+$padding-bottom-search-and-select-selected-item-label: #{ms.$ms-6}rem !default;                       // Padding-bottom of selected item label: .32rem
+$padding-left-search-and-select-selected-item-label: #{ms.$ms-2}rem !default;                         // Padding-left of selected item label: .75rem
+$padding-right-search-and-select-selected-item-label: #{ms.$ms-2}rem !default;                        // Padding-right of selected item label: .75rem
+$padding-top-search-and-select-selected-item-label: #{ms.$ms-6}rem !default;                          // Padding-top of selected item label: .32rem

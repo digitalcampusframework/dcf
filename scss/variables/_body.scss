@@ -7,12 +7,12 @@
 
 
 // Background color
-$bg-color-body-light-mode: color_palette.$cream;                      // Body background-color in light mode -- usually white, off-white, or very light gray
-$bg-color-body-dark-mode: color_palette.$darkest-gray;                // Body background-color in dark mode -- usually black or very dark gray
-$bg-color-body: var(--bg-body);
+$bg-color-body-light-mode: color_palette.$cream !default;                      // Body background-color in light mode -- usually white, off-white, or very light gray
+$bg-color-body-dark-mode: color_palette.$darkest-gray !default;                // Body background-color in dark mode -- usually black or very dark gray
+$bg-color-body: var(--bg-body) !default;
 
 
 // Color
-$color-body-light-mode: color_palette.$darker-gray;                   // Body text color in light mode -- strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
-$color-body-dark-mode: color_palette.$gray;                           // Body text color in dark mode -- strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
-$color-body: var(--body);
+$color-body-light-mode: color_palette.$darker-gray !default;                   // Body text color in light mode -- strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
+$color-body-dark-mode: color_palette.$gray !default;                           // Body text color in dark mode -- strive for WCAG AAA (minimum contrast ratio of 7.0) for body text
+$color-body: var(--body) !default;

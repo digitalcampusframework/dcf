@@ -11,37 +11,37 @@
 
 
 // Background color
-$bg-color-code-light-mode: color.adjust(color_palette.$black, $alpha: -0.95);               // <code> background-color in light mode
-$bg-color-code-dark-mode: color.adjust(color_palette.$white, $alpha: -0.9);                 // <code> background-color in dark mode
-$bg-color-code: var(--bg-code);
+$bg-color-code-light-mode: color.adjust(color_palette.$black, $alpha: -0.95) !default;               // <code> background-color in light mode
+$bg-color-code-dark-mode: color.adjust(color_palette.$white, $alpha: -0.9) !default;                 // <code> background-color in dark mode
+$bg-color-code: var(--bg-code) !default;
 
-$bg-color-kbd: color_palette.$black;                                          // <kbd> background-color
+$bg-color-kbd: color_palette.$black !default;                                          // <kbd> background-color
 
-$bg-color-pre: var(--bg-code);                                  // .dcf-pre background-color
+$bg-color-pre: var(--bg-code) !default;                                  // .dcf-pre background-color
 
 
 // Border radius
-$border-radius-code: true;                                      // Roundrect border-radius for <code>, <kbd> and <pre>? True/false
+$border-radius-code: true !default;                                      // Roundrect border-radius for <code>, <kbd> and <pre>? True/false
 
 
 // Color
-$color-code-light-mode: color.adjust(body.$color-body-light-mode, $lightness: 10%);   // <code> color in light mode
-$color-code-dark-mode: color.adjust(body.$color-body-dark-mode, $lightness: 10%);     // <code> color in dark mode
-$color-code: var(--code);
+$color-code-light-mode: color.adjust(body.$color-body-light-mode, $lightness: 10%) !default;   // <code> color in light mode
+$color-code-dark-mode: color.adjust(body.$color-body-dark-mode, $lightness: 10%) !default;     // <code> color in dark mode
+$color-code: var(--code) !default;
 
-$color-kbd: color_palette.$kbd;                                               // <kbd> color
+$color-kbd: color_palette.$kbd !default;                                               // <kbd> color
 
 
 // Font size
-$font-size-code: #{ms.$ms-1}em;                                    // <code> font-size: .84em
-$font-size-kbd: #{ms.$ms-1}em;                                     // <kbd> font-size: .84em
+$font-size-code: #{ms.$ms-1}em !default;                                    // <code> font-size: .84em
+$font-size-kbd: #{ms.$ms-1}em !default;                                     // <kbd> font-size: .84em
 
 
 // Padding
-$padding-code: #{ms.$ms-14}rem #{ms.$ms-10}rem;                       // <code> padding: .13rem .24rem
-$padding-kbd: #{ms.$ms-14}rem #{ms.$ms-10}rem;                        // <kbd> padding: .13rem .24rem
-$padding-pre: s.$length-em-4;                                     // <pre> padding: 1em
+$padding-code: #{ms.$ms-14}rem #{ms.$ms-10}rem !default;                       // <code> padding: .13rem .24rem
+$padding-kbd: #{ms.$ms-14}rem #{ms.$ms-10}rem !default;                        // <kbd> padding: .13rem .24rem
+$padding-pre: s.$length-em-4 !default;                                     // <pre> padding: 1em
 
 
 // Tab size
-$tab-size-pre: 2;                                               // <pre> tab size
+$tab-size-pre: 2 !default;                                               // <pre> tab size

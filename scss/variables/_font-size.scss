@@ -7,14 +7,14 @@
 
 
 // Font size
-$font-size-min-root: ms.$ms00;   // 1em
-$font-size-max-root: ms.$ms02;   // 1.33em
+$font-size-min-root: ms.$ms00 !default;   // 1em
+$font-size-max-root: ms.$ms02 !default;   // 1.33em
 
 
 // Linear interpolation
-$min-width-lerp: ms.$ms24;       //  31.57em ~  505.12px
-$max-width-lerp: ms.$ms36;       // 177.38em ~ 2838.08px
+$min-width-lerp: ms.$ms24 !default;       //  31.57em ~  505.12px
+$max-width-lerp: ms.$ms36 !default;       // 177.38em ~ 2838.08px
 
 
 // Line height
-$line-height-root: ms.$ms03;     // 1.5
+$line-height-root: ms.$ms03 !default;     // 1.5

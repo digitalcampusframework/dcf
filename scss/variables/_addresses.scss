@@ -4,8 +4,8 @@
 
 
 // Font style
-$font-style-address-normal: true;   // Address font-style normal? True/false (Browser default is italic)
+$font-style-address-normal: true !default;   // Address font-style normal? True/false (Browser default is italic)
 
 
 // Margin
-$margin-top-address: 0;             // Address margin-top
+$margin-top-address: 0 !default;             // Address margin-top

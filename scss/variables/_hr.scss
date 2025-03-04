@@ -6,18 +6,18 @@
 @use './sizing' as s;
 
 // Border color
-$border-color-hr: var(--b-light-gray);
+$border-color-hr: var(--b-light-gray) !default;
 
 
 // Border style
-$border-style-hr: solid;
+$border-style-hr: solid !default;
 
 
 // Border width
-$border-bottom-width-hr: 1px;
-$border-top-width-hr: 0;
+$border-bottom-width-hr: 1px !default;
+$border-top-width-hr: 0 !default;
 
 
 // Margin
-$margin-bottom-hr: s.$length-em-6;
-$margin-top-hr: s.$length-em-6;
+$margin-bottom-hr: s.$length-em-6 !default;
+$margin-top-hr: s.$length-em-6 !default;

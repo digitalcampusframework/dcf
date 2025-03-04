@@ -7,13 +7,13 @@
 
 
 // Duration
-$animation-duration-popup: 125ms;
+$animation-duration-popup: 125ms !default;
 
 
 // Margin
-$margin-popup-point: s.$length-em-4;
+$margin-popup-point: s.$length-em-4 !default;
 
 
 // Size of arrow/point
-$size-block-popup-point: s.$length-em-3;
-$size-inline-popup-point: s.$length-em-4;
+$size-block-popup-point: s.$length-em-3 !default;
+$size-inline-popup-point: s.$length-em-4 !default;

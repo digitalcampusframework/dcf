@@ -4,9 +4,9 @@
 
 
 // Animation duration
-$animation-duration-fieldset: 100ms;
-$animation-duration-fieldset-contents: 250ms;
+$animation-duration-fieldset: 100ms !default;
+$animation-duration-fieldset-contents: 250ms !default;
 
 
 // Animation timing
-$animation-timing-fieldset: ease-in-out;
+$animation-timing-fieldset: ease-in-out !default;

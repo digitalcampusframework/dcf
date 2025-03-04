@@ -9,12 +9,12 @@
 
 
 // Border color
-$border-color-breadcrumb-arrow: color_palette.$gray;     // Color of breadcrumb arrows
+$border-color-breadcrumb-arrow: color_palette.$gray !default;     // Color of breadcrumb arrows
 
 
 // Border width
-$border-width-breadcrumb-arrow: #{ms.$ms-8}em;           // Border width of breadcrumbs arrows: .32em
+$border-width-breadcrumb-arrow: #{ms.$ms-8}em !default;           // Border width of breadcrumbs arrows: .32em
 
 
 // Margin
-$margin-breadcrumbs: s.$length-em-3;                     // Margin (spacing) between breadcrumbs: .75em
+$margin-breadcrumbs: s.$length-em-3 !default;                     // Margin (spacing) between breadcrumbs: .75em

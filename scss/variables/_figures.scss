@@ -8,14 +8,14 @@
 
 
 // Color
-$color-figcaption-light-mode: colors_text.$color-light-text-light-mode;   // Color of figcaption in light mode
-$color-figcaption-dark-mode: colors_text.$color-light-text-dark-mode;     // Color of figcaption in dark mode
-$color-figcaption: var(--figcaption);
+$color-figcaption-light-mode: colors_text.$color-light-text-light-mode !default;   // Color of figcaption in light mode
+$color-figcaption-dark-mode: colors_text.$color-light-text-dark-mode !default;     // Color of figcaption in dark mode
+$color-figcaption: var(--figcaption) !default;
 
 
 // Font size
-$font-size-figcaption: #{ms.$ms-2}em;                            // Font-size of figcaption: .75em
+$font-size-figcaption: #{ms.$ms-2}em !default;                            // Font-size of figcaption: .75em
 
 
 // Text wrap
-$text-wrap-pretty-figcaption: true;                           // Prevent orphans in figcaptions? True/false
+$text-wrap-pretty-figcaption: true !default;                           // Prevent orphans in figcaptions? True/false

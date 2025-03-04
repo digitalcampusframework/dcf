@@ -8,50 +8,50 @@
 
 
 // Colors
-$color-brand-alpha-light-mode: color_palette.$scarlet;                // Alpha brand text color (scarlet) in light mode
-$color-brand-alpha-dark-mode: color_palette.$lightest-gray;           // Alpha brand text color (scarlet) in dark mode
-$color-brand-alpha: var(--brand-alpha);
+$color-brand-alpha-light-mode: color_palette.$scarlet !default;                // Alpha brand text color (scarlet) in light mode
+$color-brand-alpha-dark-mode: color_palette.$lightest-gray !default;           // Alpha brand text color (scarlet) in dark mode
+$color-brand-alpha: var(--brand-alpha) !default;
 
-$color-brand-zeta-light-mode: color_palette.$green;                   // Zeta brand text color (green) in light mode
-$color-brand-zeta-dark-mode: color_palette.$light-green;              // Zeta brand text color (green) in dark mode
-$color-brand-zeta: var(--brand-zeta);
+$color-brand-zeta-light-mode: color_palette.$green !default;                   // Zeta brand text color (green) in light mode
+$color-brand-zeta-dark-mode: color_palette.$light-green !default;              // Zeta brand text color (green) in dark mode
+$color-brand-zeta: var(--brand-zeta) !default;
 
-$color-brand-eta-light-mode: color_palette.$blue;                     // Eta brand text color (blue) in light mode
-$color-brand-eta-dark-mode: color_palette.$light-blue;                // Eta brand text color (blue) in dark mode
-$color-brand-eta: var(--brand-eta);
+$color-brand-eta-light-mode: color_palette.$blue !default;                     // Eta brand text color (blue) in light mode
+$color-brand-eta-dark-mode: color_palette.$light-blue !default;                // Eta brand text color (blue) in dark mode
+$color-brand-eta: var(--brand-eta) !default;
 
-$color-brand-theta-light-mode: color_palette.$purple;                 // Theta brand text color (purple) in light mode
-$color-brand-theta-dark-mode: color_palette.$light-purple;            // Theta brand text color (purple) in dark mode
-$color-brand-theta: var(--brand-theta);
+$color-brand-theta-light-mode: color_palette.$purple !default;                 // Theta brand text color (purple) in light mode
+$color-brand-theta-dark-mode: color_palette.$light-purple !default;            // Theta brand text color (purple) in dark mode
+$color-brand-theta: var(--brand-theta) !default;
 
-$color-brand-light-zeta-light-mode:color_palette.$lighter-green;     // Light zeta brand text color (green) in light mode
-$color-brand-light-zeta-dark-mode: color_palette.$light-green;        // Light zeta brand text color (green) in dark mode
-$color-brand-light-zeta: var(--brand-light-zeta);
+$color-brand-light-zeta-light-mode:color_palette.$lighter-green !default;     // Light zeta brand text color (green) in light mode
+$color-brand-light-zeta-dark-mode: color_palette.$light-green !default;        // Light zeta brand text color (green) in dark mode
+$color-brand-light-zeta: var(--brand-light-zeta) !default;
 
-$color-brand-light-eta-light-mode: color_palette.$lighter-blue;       // Light eta brand text color (blue) in light mode
-$color-brand-light-eta-dark-mode: color_palette.$light-blue;          // Light eta brand text color (blue) in dark mode
-$color-brand-light-eta: var(--brand-light-eta);
+$color-brand-light-eta-light-mode: color_palette.$lighter-blue !default;       // Light eta brand text color (blue) in light mode
+$color-brand-light-eta-dark-mode: color_palette.$light-blue !default;          // Light eta brand text color (blue) in dark mode
+$color-brand-light-eta: var(--brand-light-eta) !default;
 
-$color-brand-light-theta-light-mode: color_palette.$lighter-purple;   // Light theta brand text color (purple) in light mode
-$color-brand-light-theta-dark-mode: color_palette.$light-purple;      // Light theta brand text color (purple) in dark mode
-$color-brand-light-theta: var(--brand-light-theta);
+$color-brand-light-theta-light-mode: color_palette.$lighter-purple !default;   // Light theta brand text color (purple) in light mode
+$color-brand-light-theta-dark-mode: color_palette.$light-purple !default;      // Light theta brand text color (purple) in dark mode
+$color-brand-light-theta: var(--brand-light-theta) !default;
 
-$color-gray-dark-light-mode: color_palette.$dark-gray;                // Dark text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-dark-dark-mode: color_palette.$light-gray;                // Dark text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-dark: var(--dark-gray);
+$color-gray-dark-light-mode: color_palette.$dark-gray !default;                // Dark text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-dark-dark-mode: color_palette.$light-gray !default;                // Dark text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-dark: var(--dark-gray) !default;
 
-$color-gray-darker-light-mode: color_palette.$darker-gray;            // Darker text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-darker-dark-mode: color_palette.$lighter-gray;            // Darker text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-darker: var(--darker-gray);
+$color-gray-darker-light-mode: color_palette.$darker-gray !default;            // Darker text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-darker-dark-mode: color_palette.$lighter-gray !default;            // Darker text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-darker: var(--darker-gray) !default;
 
-$color-gray-darkest-light-mode: color_palette.$darkest-gray;          // Darkest text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-darkest-dark-mode: color_palette.$lightest-gray;          // Darkest text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-gray-darkest: var(--darkest-gray);
+$color-gray-darkest-light-mode: color_palette.$darkest-gray !default;          // Darkest text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-darkest-dark-mode: color_palette.$lightest-gray !default;          // Darkest text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-gray-darkest: var(--darkest-gray) !default;
 
-$color-light-text-light-mode: color_palette.$dark-gray;               // Light text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-light-text-dark-mode: color_palette.$gray-s1;                  // Light text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
-$color-light-text: var(--dark-gray);
+$color-light-text-light-mode: color_palette.$dark-gray !default;               // Light text color in light mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-light-text-dark-mode: color_palette.$gray-s1 !default;                  // Light text color in dark mode -- must meet WCAG AA (minimum contrast ratio of 4.5)
+$color-light-text: var(--dark-gray) !default;
 
-$color-inverse-light-mode: body.$bg-color-body-light-mode;   // Inverse text color in light mode
-$color-inverse-dark-mode: body.$bg-color-body-dark-mode;     // Inverse text color in dark mode
-$color-inverse: var(--inverse);
+$color-inverse-light-mode: body.$bg-color-body-light-mode !default;   // Inverse text color in light mode
+$color-inverse-dark-mode: body.$bg-color-body-dark-mode !default;     // Inverse text color in dark mode
+$color-inverse: var(--inverse) !default;

@@ -7,5 +7,5 @@
 
 
 // Background color
-$bg-color-nav-menu: var(--bg-nav-menu, tmp_defaults.$default-bg-nav-menu);
-$bg-color-nav-toggle-group: var(--bg-nav-toggle-group, tmp_defaults.$default-bg-nav-toggle-group);
+$bg-color-nav-menu: var(--bg-nav-menu, tmp_defaults.$default-bg-nav-menu) !default;
+$bg-color-nav-toggle-group: var(--bg-nav-toggle-group, tmp_defaults.$default-bg-nav-toggle-group) !default;

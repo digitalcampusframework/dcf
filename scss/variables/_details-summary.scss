@@ -8,30 +8,30 @@
 
 
 // Border color
-$border-color-details: var(--b);                    // Border color of details
+$border-color-details: var(--b) !default;                    // Border color of details
 
 
 // Color
-$color-summary: var(--heading);                     // Color of summary
+$color-summary: var(--heading) !default;                     // Color of summary
 
 
 // Font size
-$font-size-summary: #{ms.$ms01}em;                     // Summary font-size: 1.13em
+$font-size-summary: #{ms.$ms01}em !default;                     // Summary font-size: 1.13em
 
 
 // Font weight
-$font-weight-summary-bold: true;                    // Summary font-weight bold? True/false
+$font-weight-summary-bold: true !default;                    // Summary font-weight bold? True/false
 
 
 // Margin
-$margin-bottom-details-open-summary: #{ms.$ms-4}rem;   // Margin-bottom of details
+$margin-bottom-details-open-summary: #{ms.$ms-4}rem !default;   // Margin-bottom of details
 
 
 // Padding
-$padding-bottom-details: s.$length-em-3;              // Padding-bottom of details
-$padding-top-details: s.$length-em-3;                 // Padding-top of details
+$padding-bottom-details: s.$length-em-3 !default;              // Padding-bottom of details
+$padding-top-details: s.$length-em-3 !default;                 // Padding-top of details
 
 
 // Text wrap
-$text-wrap-pretty-details: true;                    // Prevent orphans in details? True/false
+$text-wrap-pretty-details: true !default;                    // Prevent orphans in details? True/false
 
