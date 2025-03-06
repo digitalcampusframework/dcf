@@ -74,6 +74,7 @@
 
 
 // Place items
+@mixin pi-auto($imp:null) { place-items: auto $imp; }
 @mixin pi-center($imp:null) { place-items: center $imp; }
 @mixin pi-start($imp:null) { place-items: start $imp; }
 @mixin pi-end($imp:null) { place-items: end $imp; }
