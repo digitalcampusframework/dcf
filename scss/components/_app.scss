@@ -1,0 +1,37 @@
+///////////////////////////
+// CORE / COMPONENTS / APP
+///////////////////////////
+
+
+@use "../variables/" as var;
+@use "../mixins/" as mixins;
+
+
+@include mixins.mq(md, max, width) {
+
+  .app .dcf-app-controls ul:not(:last-child) {
+    flex-direction: column;
+  }
+
+}
+
+
+@include mixins.mq(md, min, width) {
+
+  .app .dcf-app-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .app .dcf-app-controls ul:not(:last-child) {
+    border-left: 1px solid var.$border-color-app-control;
+    display: flex;
+  }
+
+
+  .app .dcf-app-controls li {
+    border-right: 1px solid var.$border-color-app-control;
+  }
+
+}

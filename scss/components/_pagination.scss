@@ -1,0 +1,53 @@
+//////////////////////////////////
+// CORE / COMPONENTS / PAGINATION
+/////////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-pagination-selected .dcf-btn {
+  cursor: not-allowed !important;
+}
+
+
+.dcf-pagination span {
+  padding: var.$padding-block-pagination-span var.$padding-inline-pagination-span;
+}
+
+
+.dcf-pagination li {
+  margin: 0;
+}
+
+
+.dcf-pagination-first::before,
+.dcf-pagination-prev::before {
+  margin-right: var.$margin-right-pagination-first-prev-before;
+}
+
+
+.dcf-pagination-first::before {
+  content: var.$content-pagination-first-before;
+}
+
+
+.dcf-pagination-prev::before {
+  content: var.$content-pagination-prev-before;
+}
+
+
+.dcf-pagination-next::after,
+.dcf-pagination-last::after {
+  margin-left: var.$margin-left-pagination-next-last-after;
+}
+
+
+.dcf-pagination-next::after {
+  content: var.$content-pagination-next-after;
+}
+
+
+.dcf-pagination-last::after {
+  content: var.$content-pagination-last-after;
+}

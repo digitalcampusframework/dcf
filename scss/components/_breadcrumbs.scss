@@ -1,0 +1,28 @@
+//////////////////////////////////
+// CORE / COMPONENTS / BREADCRUMBS
+//////////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-breadcrumbs li {
+  align-items: center;
+  display: flex;
+}
+
+
+.dcf-breadcrumbs li:not(:last-child) {
+  margin-right: var.$margin-breadcrumbs;
+}
+
+
+.dcf-breadcrumbs li:not(:last-child)::after {
+  border-bottom: var.$border-width-breadcrumb-arrow solid transparent;
+  border-left: var.$border-width-breadcrumb-arrow solid var.$border-color-breadcrumb-arrow;
+  border-top: var.$border-width-breadcrumb-arrow solid transparent;
+  content: '';
+  height: 0;
+  margin-left: var.$margin-breadcrumbs;
+  width: 0;
+}

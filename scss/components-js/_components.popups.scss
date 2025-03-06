@@ -1,0 +1,126 @@
+/////////////////////////////
+// CORE / COMPONENTS / POPUPS
+/////////////////////////////
+
+
+.dcf-popup {
+  width: fit-content;
+}
+
+// This is to hide the popup on load
+// `:not` is used since aria-hidden="true" might not be set yet
+.dcf-popup-content:not([aria-hidden="false"]) {
+  opacity: 0;
+}
+
+.dcf-popup:not([data-alignment="start"]):not([data-alignment="end"]) {
+
+  & > .dcf-popup-content {
+    transform: translateX(-50%);
+  }
+
+  &[data-position="left"] > .dcf-popup-content,
+  &[data-position="right"] > .dcf-popup-content {
+    transform: translateY(-50%);
+  }
+}
+
+// Point (arrow)
+.dcf-popup[data-point="true"] {
+
+  // All points
+  & > .dcf-popup-content::before {
+    background-color: inherit;
+    content: "";
+    left: calc(50% - #{$size-inline-popup-point} / 2);
+    position: absolute;
+    z-index: -1;
+  }
+
+  // Top & bottom point height & width
+  &:not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content::before {
+    height: $size-block-popup-point;
+    width: $size-inline-popup-point;
+  }
+
+  // Left & right point height & width
+  &[data-position="left"] > .dcf-popup-content::before,
+  &[data-position="right"] > .dcf-popup-content::before {
+    height: $size-inline-popup-point;
+    width: $size-block-popup-point;
+  }
+
+  // Bottom Center
+  &[data-position="bottom"] > .dcf-popup-content,
+  &:not([data-position="top"]):not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content {
+    margin-top: $margin-popup-point;
+
+    &::before {
+      clip-path: polygon(50% 0, 0 100%, 100% 100%);
+      top: calc(calc(-1 * #{$size-block-popup-point}) + .5px);
+    }
+  }
+
+  // Top Center
+  &[data-position="top"] > .dcf-popup-content {
+    margin-bottom: $margin-popup-point;
+
+    &::before {
+      clip-path: polygon(100% 0, 0 0, 50% 100%);
+      top: calc(100% - .5px);
+    }
+  }
+
+  // Left Center
+  &[data-position="left"] > .dcf-popup-content {
+    margin-right: $margin-popup-point;
+
+    &::before {
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+      left: calc(100% - .5px);
+    }
+  }
+
+  // Right Center
+  &[data-position="right"] > .dcf-popup-content {
+    margin-left: $margin-popup-point;
+
+    &::before {
+      clip-path: polygon(100% 100%, 100% 0, 0 50%);
+      left: calc(calc(-1 * #{$size-block-popup-point}) + .5px);
+    }
+  }
+
+  // Bottom Start
+  // Top Start
+  &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
+    left: $size-block-popup-point;
+  }
+
+  // Bottom End
+  // Top End
+  &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
+    left: calc(100% - #{$size-block-popup-point} * 2);
+  }
+
+  // Left Center
+  // Right Center
+  &[data-position="left"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before,
+  &[data-position="right"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before {
+    top: calc(50% - #{$size-inline-popup-point} / 2);
+  }
+
+  // Left Start
+  // Right Start
+  &[data-alignment="start"][data-position="left"] > .dcf-popup-content::before,
+  &[data-alignment="start"][data-position="right"] > .dcf-popup-content::before {
+    top: $size-block-popup-point;
+  }
+
+  // Left End
+  // Right End
+  &[data-alignment="end"][data-position="left"] > .dcf-popup-content::before,
+  &[data-alignment="end"][data-position="right"] > .dcf-popup-content::before {
+    top: calc(100% - #{$size-block-popup-point} * 2);
+  }
+}

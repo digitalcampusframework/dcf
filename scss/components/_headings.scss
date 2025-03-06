@@ -1,0 +1,39 @@
+///////////////////////////////
+// CORE / COMPONENTS / HEADINGS
+///////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+
+// Headings
+.dcf-h1,
+.dcf-h2,
+.dcf-h3,
+.dcf-h4,
+.dcf-h5,
+.dcf-h6 {
+  line-height: var.$line-height-heading;
+  margin-bottom: var.$margin-bottom-heading;
+  margin-top: var.$margin-top-heading;
+
+  dl + &,
+  ol + &,
+  ul + &,
+  & + &,
+  p:not(.dcf-subhead) + & {
+    margin-top: var.$margin-top-heading-after-els;
+  }
+
+}
+
+
+// Subheads
+.dcf-subhead {
+  font-size: var.$font-size-subhead;
+  margin-bottom: var.$margin-bottom-subhead;
+  @if (var.$text-transform-subhead == true) {
+    text-transform: uppercase;
+  }
+}

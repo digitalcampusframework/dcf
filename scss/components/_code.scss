@@ -1,0 +1,12 @@
+///////////////////////////
+// CORE / COMPONENTS / CODE
+///////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-pre {
+  background-color: var.$bg-color-pre;
+  padding: var.$padding-pre;
+}

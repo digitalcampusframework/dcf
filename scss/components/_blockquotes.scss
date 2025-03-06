@@ -1,0 +1,46 @@
+//////////////////////////////////
+// CORE / COMPONENTS / BLOCKQUOTES
+//////////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-blockquote {
+  margin: var.$margin-top-blockquote var.$margin-right-blockquote var.$margin-bottom-blockquote var.$margin-left-blockquote;
+  position: relative;
+}
+
+
+.dcf-blockquote::before {
+  content: open-quote;
+  font-size: var.$font-size-blockquote-open-quote;
+  line-height: var.$line-height-blockquote-open-quote;
+  position: absolute;
+}
+
+
+.dcf-blockquote > p {
+  font-size: var.$font-size-blockquote-p;
+}
+
+
+.dcf-blockquote > p:first-child {
+  padding-top: var.$padding-top-blockquote-p;
+}
+
+
+.dcf-blockquote > p:last-of-type::after {
+  content: close-quote;
+}
+
+
+// Attribution
+.dcf-attribution {
+  margin-top: var.$margin-top-attribution;
+}
+
+
+.dcf-attribution::before {
+  content: '— '; // em dash (&mdash;) followed by a thin space (&thinsp;)
+}

@@ -1,0 +1,103 @@
+//////////////////////////////
+// CORE / COMPONENTS / GALLERY
+//////////////////////////////
+
+
+.dcf-gallery-img,
+.dcf-gallery-thumbnails li {
+  appearance: none;
+  cursor: pointer;
+}
+
+
+.dcf-modal-header-gallery {
+  padding: $padding-top-gallery-modal-header $padding-right-gallery-modal-header $padding-bottom-gallery-modal-header $padding-left-gallery-modal-header;
+}
+
+
+.dcf-modal-content-gallery {
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+}
+
+
+.dcf-gallery-prev  {
+  grid-area: 1 / 1 / 2 / 2;
+  padding-left: $padding-left-gallery-prev;
+  padding-right: $padding-right-gallery-prev;
+}
+
+
+.dcf-gallery-next {
+  grid-area: 1 / 3 / 2 / 4;
+  padding-left: $padding-left-gallery-next;
+  padding-right: $padding-right-gallery-next;
+}
+
+
+.dcf-gallery-figure {
+  @if (to-number($border-width-figure) != to-number(0)) {
+    border-bottom: $border-width-figure $border-style-figure $border-color-figure;
+  }
+  grid-area: 1 / 2 / 2 / 3;
+  padding-bottom: $padding-bottom-gallery-figure;
+}
+
+
+.dcf-gallery-img-box {
+  flex: 1 1 0;
+}
+
+
+.dcf-gallery-thumbnails {
+  grid-area: 2 / 1 / 3 / -1;
+  padding-bottom: $padding-bottom-gallery-thumbnails;
+  padding-top: $padding-top-gallery-thumbnails;
+}
+
+
+.dcf-gallery-thumbnails-list {
+  list-style: none;
+}
+
+
+.dcf-gallery-figure img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+.dcf-gallery-figcaption {
+  padding-top: $padding-top-gallery-figcaption;
+  width: $width-gallery-figcaption;
+}
+
+
+.dcf-modal-content-gallery li[aria-selected="true"] div {
+  border: $border-width-gallery-selected-image $border-style-gallery-selected-image $border-color-gallery-selected-image;
+}
+
+
+.dcf-modal-content-gallery li:first-child {
+  margin-left: auto;
+}
+
+
+.dcf-modal-content-gallery li:last-child {
+  margin-right: auto;
+}
+
+
+.dcf-modal-content-gallery li:first-child div {
+  margin-left: $margin-left-gallery-thumbnails-list-li-first-child-div;
+}
+
+
+.dcf-modal-content-gallery li:last-child div {
+  margin-right: $margin-right-gallery-thumbnails-list-li-last-child-div;
+}
+
+
+.dcf-gallery-thumbnails-list {
+  column-gap: $column-gap-gallery-thumbnails-list;
+}

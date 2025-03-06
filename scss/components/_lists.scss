@@ -1,0 +1,17 @@
+////////////////////////////
+// CORE / COMPONENTS / LISTS
+////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+// Inline list
+.dcf-list-inline li {
+  display: inline-block;
+}
+
+
+.dcf-list-inline li:not(:last-child) {
+  margin-right: var.$margin-right-li-inline;
+}

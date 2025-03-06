@@ -1,0 +1,78 @@
+/////////////////////////////
+// CORE / COMPONENTS / GLOBAL
+/////////////////////////////
+
+
+.dcf-datepicker {
+  position: relative;
+}
+
+
+.dcf-datepicker-dialog {
+  background-color: $bg-color-datepicker-dialog;
+  @if ($border-radius-datepicker-dialog-roundrect) {
+    border-radius: $roundrect;
+  }
+  box-shadow: $box-shadow-datepicker-dialog;
+  margin-top: $margin-top-datepicker-dialog; // Distance from input
+  padding: $padding-top-datepicker-dialog $padding-right-datepicker-dialog $padding-bottom-datepicker-dialog $padding-left-datepicker-dialog;
+  width: $width-datepicker-dialog;
+  z-index: $z-2;
+}
+
+
+.dcf-datepicker-dialog-header {
+  cursor: default;
+  padding-bottom: $padding-bottom-datepicker-dialog-header;
+}
+
+
+.dcf-datepicker-dialog-month-year {
+  font-size: $font-size-datepicker-dialog-month-year;
+}
+
+
+.dcf-datepicker-dialog-calendar th,
+.dcf-datepicker-dialog-calendar td {
+  font-size: $font-size-datepicker-dialog-calendar;
+  height: $height-datepicker-dialog-calendar-th-td;
+  text-align: center;
+}
+
+
+.dcf-datepicker-dialog-calendar td {
+  @if ($border-radius-datepicker-date-roundrect) {
+    border-radius: $roundrect;
+  }
+  color: $color-datepicker-dialog-calendar-td;
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]) {
+  cursor: pointer;
+}
+
+
+.dcf-datepicker-dialog-calendar td:not(.disabled):not([tabindex="0"]):not([aria-selected]):hover {
+  background-color: $bg-color-datepicker-dialog-calendar-td-hover;
+  color: $color-datepicker-dialog-calendar-td-hover;
+}
+
+
+.dcf-datepicker-dialog-footer {
+  margin-top: $margin-top-datepicker-dialog-footer;
+  padding-top: $padding-top-datepicker-dialog-footer;
+}
+
+
+@if (to-number($font-size-datepicker-dialog-btn-footer) != to-number(#{ms(-1)}em)) {
+  .dcf-datepicker-dialog-btn-footer {
+    font-size: $font-size-datepicker-dialog-btn-footer !important; // Important to override theme button styles
+  }
+}
+
+
+.dcf-datepicker-dialog-message {
+  font-size: $font-size-datepicker-dialog-message;
+  text-align: center;
+}

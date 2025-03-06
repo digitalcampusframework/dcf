@@ -1,0 +1,177 @@
+/////////////////////////////
+// CORE / COMPONENTS / TABLES
+/////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../functions/" as func;
+@use "../mixins/" as mixins;
+
+
+.dcf-table caption {
+  color: var.$color-caption;
+  // If the caption font-size is not 1em, then change the font-size
+  @if (func.to-number(var.$font-size-caption) != func.to-number(#{var.$ms00}em)) {
+    font-size: var.$font-size-caption;
+  }
+  // If the var.$font-weight-caption-bold variable = true, then change the font-weight to bold
+  @if (var.$font-weight-caption-bold) {
+    font-weight: bold;
+  }
+  padding-bottom: var.$padding-bottom-caption;
+  @if (var.$text-wrap-balance-caption == true) {
+    text-wrap: balance;
+  }
+}
+
+
+.dcf-table thead {
+  font-size: var.$font-size-thead;
+}
+
+
+.dcf-table tbody {
+  border-bottom: var.$border-width-table var.$border-style-table var.$border-color-table;
+  border-top: var.$border-width-table var.$border-style-table var.$border-color-table;
+  font-size: var.$font-size-tbody;
+}
+
+
+.dcf-table tfoot {
+  font-size: var.$font-size-tfoot;
+}
+
+
+.dcf-table th,
+.dcf-table td {
+  padding-right: var.$padding-right-table-cell;
+}
+
+
+.dcf-table-bordered,
+.dcf-table-bordered td,
+.dcf-table-bordered th {
+  border: var.$border-width-table var.$border-style-table var.$border-color-table;
+}
+
+
+.dcf-table-bordered td,
+.dcf-table-bordered th,
+.dcf-table-striped td,
+.dcf-table-striped th {
+  padding-left: var.$padding-left-table-bordered-striped-cell;
+  padding-right: var.$padding-right-table-bordered-striped-cell;
+}
+
+
+.dcf-table-bordered tr:not(:last-child),
+.dcf-table-striped tr:not(:last-child) {
+  border-bottom: var.$border-width-table var.$border-style-table var.$border-color-table;
+}
+
+
+.dcf-table-striped tbody tr:nth-of-type(even) {
+  background-color: var.$bg-color-table-stripe;
+}
+
+
+.dcf-table thead th,
+.dcf-table thead td {
+  padding-bottom: var.$padding-bottom-thead-cell;
+  vertical-align: bottom;
+}
+
+
+.dcf-table tbody th,
+.dcf-table tbody td,
+.dcf-table tfoot th,
+.dcf-table tfoot td {
+  padding-top: var.$padding-top-tbody-tfoot-cell;
+  vertical-align: top;
+}
+
+
+.dcf-table tbody th,
+.dcf-table tbody td {
+  padding-bottom: var.$padding-bottom-tbody-cell;
+}
+
+
+.dcf-table-bordered thead th {
+  padding-top: var.$padding-top-table-bordered-thead-cell;
+}
+
+
+.dcf-wrapper-table-scroll {
+  @include mixins.overflow-x-auto;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-bottom: var.$padding-bottom-table-scroll;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+
+@include mixins.mq(sm, max, width) {
+
+  .dcf-table-responsive thead {
+    @include mixins.sr-only;
+  }
+
+
+  .dcf-table-responsive tr,
+  .dcf-table-responsive th {
+    display: block;
+  }
+
+
+  .dcf-table-responsive td {
+    border-collapse: separate;
+    display: table;
+    text-align: left !important;
+    width: 100%;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered,
+  .dcf-table-responsive.dcf-table-bordered thead th {
+    @include mixins.b-0;
+  }
+
+
+  .dcf-table-responsive.dcf-table-bordered tbody td {
+    @include mixins.bt-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody tr {
+    padding-bottom: var.$padding-bottom-table-responsive-tbody-tr;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered) tbody td {
+    @include mixins.pb-0;
+  }
+
+
+  .dcf-table-responsive:not(.dcf-table-bordered):not(.dcf-table-striped) tbody td {
+    @include mixins.pr-0;
+  }
+
+  // scss-lint:disable SelectorDepth
+  .dcf-table-responsive.dcf-table-bordered tbody tr:last-child td:last-child {
+    @include mixins.bb-0;
+  }
+
+
+  .dcf-table-responsive tbody td[data-label]::before {
+    content: attr(data-label);
+    display: table-cell;
+    font-weight: bold;
+    padding-right: var.$padding-right-table-cell;
+    width: var.$width-table-responsive-data-label;
+  }
+
+}

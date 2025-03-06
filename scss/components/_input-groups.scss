@@ -1,0 +1,88 @@
+///////////////////////////////////
+// CORE / COMPONENTS / INPUT GROUPS
+///////////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../functions/" as func;
+@use "../mixins/" as mixins;
+
+
+// Input group = input field + button or add-on
+.dcf-input-group {
+  display: flex;
+  flex: 1 1 50%; // Grow/shrink as needed, 50% flex-basis
+}
+
+
+//  Child input field of input group
+.dcf-input-group input {
+  flex: 1 1 auto; // Grow/shrink as needed, with auto width
+  z-index: 1; // Place :focus and :hover states (e.g., borders, outlines) above input group add-ons
+}
+
+
+// Input group and child input field
+.dcf-input-group,
+.dcf-input-group input {
+  min-width: 0;
+}
+
+
+// Input group button
+.dcf-input-group .dcf-btn {
+  align-items: center;
+  @if (var.$border-radius-input-roundrect) {
+    @include mixins.sharp-left;
+  }
+  display: flex;
+}
+
+
+// Input group add-on
+.dcf-input-group-addon {
+  align-items: center;
+  background-color: var.$bg-color-input-group-addon;
+  border: var.$border-width-input-group-addon var.$border-style-input-group-addon var.$border-color-input-group-addon;
+  color: var.$color-input-group-addon;
+  display: flex;
+  @if (func.to-number(var.$font-size-input-group-addon) != func.to-number(#{var.$ms00}em)) {
+    font-size: var.$font-size-input-group-addon;
+  }
+  padding: var.$padding-top-input-group-addon var.$padding-right-input-group-addon var.$padding-bottom-input-group-addon var.$padding-left-input-group-addon;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+.dcf-input-group > * + * {
+  margin-left: -#{var.$border-width-input-group-addon}; // Collapse adjacent borders
+}
+
+
+// If inputs are roundrects, square off corners internal to input groups
+// .dcf-form is needed to override input styles
+@if (var.$border-radius-input-roundrect) {
+
+  .dcf-form .dcf-input-group input:not(:first-child),
+  .dcf-form .dcf-input-group select:not(:first-child) {
+    @include mixins.sharp-left;
+  }
+
+
+  .dcf-form .dcf-input-group input:not(:last-child),
+  .dcf-form .dcf-input-group select:not(:last-child) {
+    @include mixins.sharp-right;
+  }
+
+
+  .dcf-form .dcf-input-group-addon:first-child {
+    @include mixins.rounded-left;
+  }
+
+
+  .dcf-form .dcf-input-group-addon:last-child {
+    @include mixins.rounded-right;
+  }
+
+}
