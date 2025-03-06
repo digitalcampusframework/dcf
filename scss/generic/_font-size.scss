@@ -1,0 +1,34 @@
+/////////////////////////////
+// CORE / GENERIC / FONT-SIZE
+/////////////////////////////
+
+
+@use "../variables" as var;
+@use "../functions" as func;
+
+
+:root {
+  font-size: #{var.$font-size-min-root}em;
+  line-height: var.$line-height-root;
+}
+
+// If minimum font-size does not equal maximum font-size, apply linear interpolation to font-size
+@if (func.to-number(var.$font-size-min-root) != func.to-number(var.$font-size-max-root)) {
+
+  @media screen and (min-width: #{var.$min-width-lerp}em) {
+
+    :root {
+      font-size: calc(#{var.$font-size-min-root}em + (#{var.$font-size-max-root} - #{var.$font-size-min-root}) * ((100vw - #{var.$min-width-lerp}em) / (#{var.$max-width-lerp} - #{var.$min-width-lerp})));
+    }
+
+  }
+
+  @media screen and (min-width: #{var.$max-width-lerp}em) {
+
+    :root {
+      font-size: #{var.$font-size-max-root}em;
+    }
+
+  }
+
+}
