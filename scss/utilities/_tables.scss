@@ -1,0 +1,9 @@
+////////////////////////////
+// CORE / UTILITIES / TABLES
+////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+.dcf-table-fixed { @include mixins.table-fixed(!important); }

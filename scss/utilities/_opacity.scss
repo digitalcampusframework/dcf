@@ -1,0 +1,18 @@
+/////////////////////////////
+// CORE / UTILITIES / OPACITY
+/////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+.dcf-opacity-0 {
+  @include mixins.opacity-0(!important);
+}
+
+
+// .dcf-opacity-100%
+.dcf-opacity-100, // TODO: deprecate `.dcf-opacity-100`
+.dcf-opacity-100\% {
+  @include mixins.opacity-100pc(!important);
+}

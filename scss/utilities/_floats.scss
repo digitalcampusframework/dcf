@@ -1,0 +1,30 @@
+////////////////////////////
+// CORE / UTILITIES / FLOATS
+////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Float right
+.dcf-float-right { @include mixins.float-right(!important); }
+
+
+// Float left
+.dcf-float-left { @include mixins.float-left(!important); }
+
+
+// Clear right
+.dcf-clear-right { @include mixins.clear-right(!important); }
+
+
+// Clear left
+.dcf-clear-left { @include mixins.clear-left(!important); }
+
+
+// Clear both
+.dcf-clear-both { @include mixins.clear-both(!important); }
+
+
+// Clearfix
+.dcf-clearfix { @include mixins.clearfix(!important); }

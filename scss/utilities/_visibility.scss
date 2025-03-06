@@ -1,0 +1,22 @@
+////////////////////////////////
+// CORE / UTILITIES / VISIBILITY
+////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Invisible
+.dcf-invisible { @include mixins.invisible(!important); }
+
+
+// Visible
+.dcf-visible { @include mixins.visible(!important); }
+
+
+// Screen reader only
+.dcf-sr-only { @include mixins.sr-only(!important); }
+
+
+// Show on focus
+.dcf-show-on-focus:not(:focus):not(:active) { @include mixins.sr-only(!important); }

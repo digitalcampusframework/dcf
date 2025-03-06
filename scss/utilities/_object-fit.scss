@@ -1,0 +1,18 @@
+////////////////////////////////
+// CORE / UTILITIES / OBJECT-FIT
+////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Contain
+.dcf-obj-fit-contain { @include mixins.obj-fit-contain(!important); }
+
+
+// Cover
+.dcf-obj-fit-cover { @include mixins.obj-fit-cover(!important); }
+
+
+// None
+.dcf-obj-fit-none { @include mixins.obj-fit-none(!important); }

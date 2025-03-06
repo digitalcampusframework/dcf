@@ -1,0 +1,30 @@
+//////////////////////////////
+// CORE / UTILITIES / OVERFLOW
+//////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Visible
+.dcf-overflow-visible { @include mixins.overflow-visible(!important); }
+.dcf-overflow-x-visible { @include mixins.overflow-x-visible(!important); }  // -x
+.dcf-overflow-y-visible { @include mixins.overflow-y-visible(!important); }  // -y
+
+
+// Hidden
+.dcf-overflow-hidden { @include mixins.overflow-hidden(!important); }
+.dcf-overflow-x-hidden { @include mixins.overflow-x-hidden(!important); }    // -x
+.dcf-overflow-y-hidden { @include mixins.overflow-y-hidden(!important); }    // -y
+
+
+// Auto
+.dcf-overflow-auto { @include mixins.overflow-auto(!important); }
+.dcf-overflow-x-auto { @include mixins.overflow-x-auto(!important); }        // -x
+.dcf-overflow-y-auto { @include mixins.overflow-y-auto(!important); }        // -y
+
+
+// Scroll
+.dcf-overflow-scroll { @include mixins.overflow-scroll(!important); }
+.dcf-overflow-x-scroll { @include mixins.overflow-x-scroll(!important); }    // -x
+.dcf-overflow-y-scroll { @include mixins.overflow-y-scroll(!important); }    // -y

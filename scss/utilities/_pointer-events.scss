@@ -1,0 +1,10 @@
+////////////////////////////////////
+// CORE / UTILITIES / POINTER EVENTS
+////////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+.dcf-pointer-events-auto { @include mixins.pointer-events-auto(!important); }
+.dcf-pointer-events-none { @include mixins.pointer-events-none(!important); }

@@ -1,0 +1,22 @@
+//////////////////////////////////
+// CORE / UTILITIES / BORDER-COLOR
+//////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// currentColor
+.dcf-b-current { @include mixins.b-current(!important); }            // All sides
+.dcf-bt-current { @include mixins.bt-current(!important); }          // Top
+.dcf-br-current { @include mixins.br-current(!important); }          // Right
+.dcf-bb-current { @include mixins.bb-current(!important); }          // Bottom
+.dcf-bl-current { @include mixins.bl-current(!important); }          // Left
+
+
+// Transparent
+.dcf-b-transparent { @include mixins.b-transparent(!important); }    // All sides
+.dcf-bt-transparent { @include mixins.bt-transparent(!important); }  // Top
+.dcf-br-transparent { @include mixins.br-transparent(!important); }  // Right
+.dcf-bb-transparent { @include mixins.bb-transparent(!important); }  // Bottom
+.dcf-bl-transparent { @include mixins.bl-transparent(!important); }  // Left

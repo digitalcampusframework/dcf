@@ -1,0 +1,86 @@
+/////////////////////////////
+// CORE / UTILITIES / PADDING
+/////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// All sides
+.dcf-p-0 { @include mixins.p-0(!important); }
+.dcf-p-1 { @include mixins.p-1(!important); }
+.dcf-p-2 { @include mixins.p-2(!important); }
+.dcf-p-3 { @include mixins.p-3(!important); }
+.dcf-p-4 { @include mixins.p-4(!important); }
+.dcf-p-5 { @include mixins.p-5(!important); }
+.dcf-p-6 { @include mixins.p-6(!important); }
+.dcf-p-7 { @include mixins.p-7(!important); }
+.dcf-p-8 { @include mixins.p-8(!important); }
+.dcf-p-9 { @include mixins.p-9(!important); }
+.dcf-p-10 { @include mixins.p-10(!important); }
+.dcf-p-11 { @include mixins.p-11(!important); }
+.dcf-p-12 { @include mixins.p-12(!important); }
+
+
+// Top
+.dcf-pt-0 { @include mixins.pt-0(!important); }
+.dcf-pt-1 { @include mixins.pt-1(!important); }
+.dcf-pt-2 { @include mixins.pt-2(!important); }
+.dcf-pt-3 { @include mixins.pt-3(!important); }
+.dcf-pt-4 { @include mixins.pt-4(!important); }
+.dcf-pt-5 { @include mixins.pt-5(!important); }
+.dcf-pt-6 { @include mixins.pt-6(!important); }
+.dcf-pt-7 { @include mixins.pt-7(!important); }
+.dcf-pt-8 { @include mixins.pt-8(!important); }
+.dcf-pt-9 { @include mixins.pt-9(!important); }
+.dcf-pt-10 { @include mixins.pt-10(!important); }
+.dcf-pt-11 { @include mixins.pt-11(!important); }
+.dcf-pt-12 { @include mixins.pt-12(!important); }
+
+
+// Right
+.dcf-pr-0 { @include mixins.pr-0(!important); }
+.dcf-pr-1 { @include mixins.pr-1(!important); }
+.dcf-pr-2 { @include mixins.pr-2(!important); }
+.dcf-pr-3 { @include mixins.pr-3(!important); }
+.dcf-pr-4 { @include mixins.pr-4(!important); }
+.dcf-pr-5 { @include mixins.pr-5(!important); }
+.dcf-pr-6 { @include mixins.pr-6(!important); }
+.dcf-pr-7 { @include mixins.pr-7(!important); }
+.dcf-pr-8 { @include mixins.pr-8(!important); }
+.dcf-pr-9 { @include mixins.pr-9(!important); }
+.dcf-pr-10 { @include mixins.pr-10(!important); }
+.dcf-pr-11 { @include mixins.pr-11(!important); }
+.dcf-pr-12 { @include mixins.pr-12(!important); }
+
+
+// Bottom
+.dcf-pb-0 { @include mixins.pb-0(!important); }
+.dcf-pb-1 { @include mixins.pb-1(!important); }
+.dcf-pb-2 { @include mixins.pb-2(!important); }
+.dcf-pb-3 { @include mixins.pb-3(!important); }
+.dcf-pb-4 { @include mixins.pb-4(!important); }
+.dcf-pb-5 { @include mixins.pb-5(!important); }
+.dcf-pb-6 { @include mixins.pb-6(!important); }
+.dcf-pb-7 { @include mixins.pb-7(!important); }
+.dcf-pb-8 { @include mixins.pb-8(!important); }
+.dcf-pb-9 { @include mixins.pb-9(!important); }
+.dcf-pb-10 { @include mixins.pb-10(!important); }
+.dcf-pb-11 { @include mixins.pb-11(!important); }
+.dcf-pb-12 { @include mixins.pb-12(!important); }
+
+
+// Left
+.dcf-pl-0 { @include mixins.pl-0(!important); }
+.dcf-pl-1 { @include mixins.pl-1(!important); }
+.dcf-pl-2 { @include mixins.pl-2(!important); }
+.dcf-pl-3 { @include mixins.pl-3(!important); }
+.dcf-pl-4 { @include mixins.pl-4(!important); }
+.dcf-pl-5 { @include mixins.pl-5(!important); }
+.dcf-pl-6 { @include mixins.pl-6(!important); }
+.dcf-pl-7 { @include mixins.pl-7(!important); }
+.dcf-pl-8 { @include mixins.pl-8(!important); }
+.dcf-pl-9 { @include mixins.pl-9(!important); }
+.dcf-pl-10 { @include mixins.pl-10(!important); }
+.dcf-pl-11 { @include mixins.pl-11(!important); }
+.dcf-pl-12 { @include mixins.pl-12(!important); }

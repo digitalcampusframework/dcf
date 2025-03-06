@@ -1,0 +1,22 @@
+//////////////////////////////////
+// CORE / UTILITIES / BORDER-STYLE
+//////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Dotted
+.dcf-b-dotted { @include mixins.b-dotted(!important); }    // All sides
+.dcf-bt-dotted { @include mixins.bt-dotted(!important); }  // Top
+.dcf-br-dotted { @include mixins.br-dotted(!important); }  // Right
+.dcf-bb-dotted { @include mixins.bb-dotted(!important); }  // Bottom
+.dcf-bl-dotted { @include mixins.bl-dotted(!important); }  // Left
+
+
+// Solid
+.dcf-b-solid { @include mixins.b-solid(!important); }      // All sides
+.dcf-bt-solid { @include mixins.bt-solid(!important); }    // Top
+.dcf-br-solid { @include mixins.br-solid(!important); }    // Right
+.dcf-bb-solid { @include mixins.bb-solid(!important); }    // Bottom
+.dcf-bl-solid { @include mixins.bl-solid(!important); }    // Left

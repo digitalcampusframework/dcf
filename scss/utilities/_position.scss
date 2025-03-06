@@ -1,0 +1,51 @@
+//////////////////////////////
+// CORE / UTILITIES / POSITION
+//////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Flow
+.dcf-static { @include mixins.static(!important); }          // Static
+.dcf-relative { @include mixins.relative(!important); }      // Relative
+.dcf-absolute { @include mixins.absolute(!important); }      // Absolute
+.dcf-fixed { @include mixins.fixed(!important); }            // Fixed
+.dcf-sticky { @include mixins.sticky(!important); }          // Sticky
+
+
+// Coordinates
+.dcf-pin-top, // Deprecate .dcf-pin-top
+.dcf-top-0 {
+  @include mixins.top-0(!important);
+}
+
+.dcf-top-50\% { @include mixins.top-50pc(!important); }    // .dcf-top-50%
+.dcf-top-100\% { @include mixins.top-100pc(!important); }  // .dcf-top-100%
+
+
+.dcf-pin-right, // Deprecate .dcf-pin-right
+.dcf-right-0 {
+  @include mixins.right-0(!important);
+}
+
+.dcf-right-50\% { @include mixins.right-50pc(!important); }    // .dcf-right-50%
+.dcf-right-100\% { @include mixins.right-100pc(!important); }  // .dcf-right-100%
+
+
+.dcf-pin-bottom, // Deprecate .dcf-pin-bottom
+.dcf-bottom-0 {
+  @include mixins.bottom-0(!important);
+}
+
+.dcf-bottom-50\% { @include mixins.bottom-50pc(!important); }    // .dcf-bottom-50%
+.dcf-bottom-100\% { @include mixins.bottom-100pc(!important); }  // .dcf-bottom-100%
+
+
+.dcf-pin-left, // Deprecate .dcf-pin-left
+.dcf-left-0 {
+  @include mixins.left-0(!important);
+}
+
+.dcf-left-50\% { @include mixins.left-50pc(!important); }    // .dcf-left-50%
+.dcf-left-100\% { @include mixins.left-100pc(!important); }  // .dcf-left-100%

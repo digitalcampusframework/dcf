@@ -1,0 +1,57 @@
+/////////////////////////////
+// CORE / UTILITIES / DISPLAY
+/////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+
+// None
+.dcf-d-none { @include mixins.d-none(!important); }
+
+
+// None (screen, show when printed)
+.dcf-d-none\@screen {
+
+  @media only screen {
+    @include mixins.d-none(!important);
+  }
+
+}
+
+
+// Block
+.dcf-d-block { @include mixins.d-block(!important); }
+
+
+// Inline
+.dcf-d-inline { @include mixins.d-inline(!important); }
+
+
+// Inline block
+.dcf-d-inline-block { @include mixins.d-inline-block(!important); }
+
+
+// Table
+.dcf-d-table { @include mixins.d-table(!important); }
+
+
+// Table cell
+.dcf-d-table-cell { @include mixins.d-table-cell(!important); }
+
+
+// Flex
+.dcf-d-flex { @include mixins.d-flex(!important); }
+
+
+// Inline flex
+.dcf-d-inline-flex { @include mixins.d-inline-flex(!important); }
+
+
+// Grid
+.dcf-d-grid { @include mixins.d-grid(!important); }
+
+
+// Inline grid
+.dcf-d-inline-grid { @include mixins.d-inline-grid(!important); }

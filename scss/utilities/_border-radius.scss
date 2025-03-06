@@ -1,0 +1,32 @@
+///////////////////////////////////
+// CORE / UTILITIES / BORDER-RADIUS
+///////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Circle
+.dcf-circle { @include mixins.circle(!important); }
+
+// Sharp, all sides
+.dcf-sharp { @include mixins.sharp(!important); }
+
+// Rounded, all sides
+.dcf-rounded { @include mixins.rounded(!important); }
+
+
+// Rounded top (top right, top left)
+.dcf-rounded-top { @include mixins.rounded-top(!important); }
+
+
+// Rounded right (top right, bottom right)
+.dcf-rounded-right { @include mixins.rounded-right(!important); }
+
+
+// Rounded bottom (bottom right, bottom left)
+.dcf-rounded-bottom { @include mixins.rounded-bottom(!important); }
+
+
+// Rounded left (bottom left, top left)
+.dcf-rounded-left { @include mixins.rounded-left(!important); }

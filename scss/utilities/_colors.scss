@@ -1,0 +1,14 @@
+////////////////////////////
+// CORE / UTILITIES / COLORS
+////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+// Inverse (light text for dark backgrounds)
+.dcf-inverse { @include mixins.inverse(!important); }
+a.dcf-inverse:link { @include mixins.inverse-link(!important); }       // Link
+a.dcf-inverse:visited { @include mixins.inverse-visited(!important); } // Visited
+a.dcf-inverse:hover { @include mixins.inverse-hover(!important); }     // Hover
+a.dcf-inverse:active { @include mixins.inverse-active(!important); }   // Active

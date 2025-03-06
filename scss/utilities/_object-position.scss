@@ -1,0 +1,16 @@
+/////////////////////////////////////
+// CORE / UTILITIES / OBJECT-POSITION
+/////////////////////////////////////
+
+
+@use "../mixins" as mixins;
+
+
+.dcf-obj-top { @include mixins.obj-top(!important); }
+.dcf-obj-right { @include mixins.obj-right(!important); }
+.dcf-obj-bottom { @include mixins.obj-bottom(!important); }
+.dcf-obj-left { @include mixins.obj-left(!important); }
+.dcf-obj-right-top { @include mixins.obj-right-top(!important); }
+.dcf-obj-right-bottom { @include mixins.obj-right-bottom(!important); }
+.dcf-obj-left-bottom { @include mixins.obj-left-bottom(!important); }
+.dcf-obj-left-top { @include mixins.obj-left-top(!important); }
