@@ -1,0 +1,12 @@
+//////////////////////////
+// CORE / MIXINS / FONTS
+//////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Monospace
+@mixin font-mono($imp:null) {
+    font-family: var.$font-family-mono $imp;
+}
