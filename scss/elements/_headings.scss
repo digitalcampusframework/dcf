@@ -1,0 +1,40 @@
+/////////////////////////////
+// CORE / ELEMENTS / HEADINGS
+/////////////////////////////
+
+
+@use "../variables" as var;
+@use "../mixins" as mixins;
+
+
+h1 { @include mixins.txt-h1; }
+h2 { @include mixins.txt-h2; }
+h3 { @include mixins.txt-h3; }
+h4 { @include mixins.txt-h4; }
+h5 { @include mixins.txt-h5; }
+h6 { @include mixins.txt-h6; }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var.$color-heading;
+  line-height: var.$line-height-heading;
+  margin-bottom: var.$margin-bottom-heading;
+  margin-top: var.$margin-top-heading;
+  @if (var.$text-wrap-balance-heading == true) {
+    text-wrap: balance;
+  }
+
+  dl + &,
+  ol + &,
+  ul + &,
+  & + &,
+  p:not(.dcf-subhead) + & {
+    margin-top: var.$margin-top-heading-after-els;
+  }
+
+}

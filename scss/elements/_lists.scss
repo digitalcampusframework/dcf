@@ -1,0 +1,67 @@
+//////////////////////////
+// CORE / ELEMENTS / LISTS
+//////////////////////////
+
+
+@use "../variables" as var;
+
+
+ol,
+ul {
+  padding-left: var.$padding-left-ol-ul;
+}
+
+
+dl,
+ol,
+ul {
+  margin-bottom: var.$margin-bottom-dl-ol-ul;
+  margin-top: var.$margin-top-dl-ol-ul;
+  @if (var.$text-wrap-pretty-dl-ol-ul == true) {
+    text-wrap: pretty;
+  }
+
+  dl,
+  ol,
+  ul {
+    margin-top: var.$margin-top-nested-dl-ol-ul;
+  }
+
+}
+
+
+li,
+dt,
+dd {
+  margin-top: var.$margin-top-li-dt-dd;
+}
+
+
+li {
+  margin-bottom: var.$margin-bottom-li;
+}
+
+
+@if (var.$font-weight-dt-bold) {
+
+  dt {
+    font-weight: bold;
+  }
+
+}
+
+
+dd {
+  margin-left: var.$margin-left-dd;
+}
+
+
+dt,
+dd {
+  margin-bottom: var.$margin-bottom-dt-dd;
+}
+
+
+dd + dt {
+  margin-top: var.$margin-top-dd-plus-dt;
+}

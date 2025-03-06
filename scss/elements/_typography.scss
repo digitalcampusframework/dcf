@@ -1,0 +1,12 @@
+///////////////////////////////
+// CORE / ELEMENTS / TYPOGRAPHY
+///////////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Bold, strong
+b, strong {
+  font-weight: var.$font-weight-bold;
+}

@@ -1,0 +1,38 @@
+//////////////////////////////////
+// CORE / ELEMENTS / ABBREVIATIONS
+//////////////////////////////////
+
+
+@use "../variables" as var;
+@use "../functions" as func;
+
+
+// Abbreviation
+abbr {
+  @if (func.to-number(var.$font-size-abbr) != func.to-number(#{var.$ms00}em)) {
+    font-size: var.$font-size-abbr;
+  }
+  letter-spacing: var.$letter-spacing-abbr;
+}
+
+
+// Abbreviation title
+abbr[title] {
+  @if (func.to-number(var.$border-bottom-width-abbr-title) != 0) {
+    position: relative;
+  }
+  text-decoration: none;
+
+  @if (func.to-number(var.$border-bottom-width-abbr-title) != 0) {
+    &::after {
+      border-bottom: var.$border-bottom-width-abbr-title var.$border-bottom-style-abbr-title var.$border-bottom-color-abbr-title;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: var.$opacity-abbr-title;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

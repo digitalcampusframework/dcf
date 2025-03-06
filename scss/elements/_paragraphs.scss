@@ -1,0 +1,15 @@
+///////////////////////////////
+// CORE / ELEMENTS / PARAGRAPHS
+///////////////////////////////
+
+
+@use "../variables" as var;
+
+
+p {
+  margin-bottom: var.$margin-bottom-paragraph;
+  margin-top: var.$margin-top-paragraph;
+  @if (var.$text-wrap-pretty-paragraph == true) {
+    text-wrap: pretty;
+  }
+}

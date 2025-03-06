@@ -1,0 +1,14 @@
+//////////////////////////////
+// CORE / ELEMENTS / ADDRESSES
+//////////////////////////////
+
+
+@use "../variables" as var;
+
+
+address {
+  @if (var.$font-style-address-normal) {
+    font-style: normal;
+  }
+  margin-top: var.$margin-top-address;
+}

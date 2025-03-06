@@ -1,0 +1,30 @@
+////////////////////////////
+// CORE / ELEMENTS / ANCHORS
+////////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Link
+a:link {
+  color: var.$color-link;
+}
+
+
+// Visited
+a:visited {
+  color: var.$color-visited;
+}
+
+
+// Hover
+a:hover {
+  color: var.$color-hover;
+}
+
+
+// Active
+a:active {
+  color: var.$color-active;
+}

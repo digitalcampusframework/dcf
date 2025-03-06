@@ -1,0 +1,27 @@
+//////////////////////////////
+// CORE / ELEMENTS / SUB & SUP
+//////////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Subscript & superscript
+sub,
+sup {
+  font-size: var.$font-size-sub-sup;
+  position: relative;
+  vertical-align: var.$vertical-align-sub-sup;
+}
+
+
+// Subscript
+sub {
+  bottom: var.$bottom-sub;
+}
+
+
+// Superscript
+sup {
+  bottom: var.$bottom-sup;
+}

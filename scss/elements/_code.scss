@@ -1,0 +1,68 @@
+/////////////////////////
+// CORE / ELEMENTS / CODE
+/////////////////////////
+
+
+@use "../variables" as var;
+@use "../mixins" as mixins;
+
+
+@if (var.$border-radius-code == true) {
+
+  code,
+  kbd,
+  pre {
+    border-radius: var.$roundrect;
+  }
+
+}
+
+
+code,
+kbd,
+pre {
+  @include mixins.font-mono;
+}
+
+
+code,
+pre {
+  hyphens: none;
+  word-break: normal;
+}
+
+
+code {
+  background-color: var.$bg-color-code;
+  color: var.$color-code;
+  font-size: var.$font-size-code;
+  padding: var.$padding-code;
+}
+
+
+pre {
+  tab-size: var.$tab-size-pre;
+}
+
+
+pre code {
+  @include mixins.overflow-x-scroll;
+  background-color: transparent;
+  display: block;
+  padding: 0;
+  white-space: pre;
+}
+
+
+kbd {
+  background-color: var.$bg-color-kbd;
+  color: var.$color-kbd;
+  font-size: var.$font-size-kbd;
+  padding: var.$padding-kbd;
+}
+
+
+kbd kbd {
+  font-size: 100%;
+  padding: 0;
+}

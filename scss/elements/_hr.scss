@@ -1,0 +1,15 @@
+/////////////////////////////////////////
+// CORE / ELEMENTS / HR (HORIZONTAL RULE)
+/////////////////////////////////////////
+
+
+@use "../variables" as var;
+
+
+hr {
+  border-color: var.$border-color-hr;
+  border-style: var.$border-style-hr;
+  border-bottom-width: var.$border-bottom-width-hr;
+  border-top-width: var.$border-top-width-hr;
+  margin: var.$margin-top-hr 0 var.$margin-bottom-hr;
+}

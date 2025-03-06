@@ -1,0 +1,13 @@
+//////////////////////////
+// CORE / ELEMENTS / MARKS
+//////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Marked (highlighted) text
+mark {
+  background-color: var.$bg-color-mark;
+  padding: var.$padding-top-mark var.$padding-right-mark var.$padding-bottom-mark var.$padding-left-mark;
+}

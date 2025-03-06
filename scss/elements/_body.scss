@@ -1,0 +1,15 @@
+/////////////////////////
+// CORE / ELEMENTS / BODY
+/////////////////////////
+
+
+@use "../variables" as var;
+
+
+body {
+  background-color: var.$bg-color-body;
+  color: var.$color-body;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}

@@ -1,0 +1,53 @@
+//////////////////////////////////////
+// CORE / ELEMENTS / DETAILS & SUMMARY
+//////////////////////////////////////
+
+
+@use "../variables" as var;
+@use "../functions/" as func;
+
+
+// Check if the details padding-bottom or -top values are greater than zero
+// Include the selector and its properties only if either of the above is true
+@if (func.to-number(var.$padding-bottom-details) > 0) or (func.to-number(var.$padding-top-details) > 0) {
+
+  details {
+    @if (func.to-number(var.$padding-bottom-details) > 0) {
+      padding-bottom: var.$padding-bottom-details;
+    }
+    @if (func.to-number(var.$padding-top-details) > 0) {
+      padding-top: var.$padding-top-details;
+    }
+  }
+
+}
+
+
+details {
+  @if (var.$text-wrap-pretty-details == true) {
+    text-wrap: pretty;
+  }
+}
+
+
+summary {
+  cursor: pointer;
+  display: list-item;
+  @if (func.to-number(var.$font-size-summary) != func.to-number(#{var.$ms00}em)) {
+    font-size: var.$font-size-summary;
+  }
+  @if (var.$font-weight-summary-bold) {
+    font-weight: bold;
+  }
+}
+
+
+// Check if the open details summary margin-bottom value is greater than zero
+// Include the selector and its properties only if the above is true
+@if (func.to-number(var.$margin-bottom-details-open-summary) > 0) {
+
+  details[open] summary {
+    margin-bottom: var.$margin-bottom-details-open-summary;
+  }
+
+}
