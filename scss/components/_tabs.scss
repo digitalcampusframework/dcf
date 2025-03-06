@@ -2,9 +2,11 @@
 // CORE / COMPONENTS / TABS
 ///////////////////////////
 
+
 @use "../variables" as var;
 @use "../functions" as func;
 @use "../mixins" as mixins;
+
 
 .dcf-tabs-list-item {
   display: inline-block;
