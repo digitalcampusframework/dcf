@@ -1,0 +1,10 @@
+///////////////////////////
+// CORE / OBJECTS / WRAPPER
+///////////////////////////
+
+
+@use "../variables" as var;
+
+.dcf-wrapper {
+  padding-inline: var.$padding-inline-wrapper;
+}
