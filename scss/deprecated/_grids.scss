@@ -3,6 +3,9 @@
 ////////////////////////////
 
 
+@use "../mixins/" as mixins;
+
+
 .dcf-grid,
 .dcf-grid-full,
 .dcf-grid-full\@sm,
@@ -130,7 +133,7 @@
 }
 
 
-@include mq(sm, min, width) {
+@include mixins.mq(sm, min, width) {
 
   .dcf-grid-full\@sm {
     grid-template-columns: minmax(10px, 1fr);
@@ -227,7 +230,7 @@
 }
 
 
-@include mq(md, min, width) {
+@include mixins.mq(md, min, width) {
 
   .dcf-grid-full\@md {
     grid-template-columns: minmax(10px, 1fr);
@@ -332,7 +335,7 @@
 }
 
 
-@include mq(lg, min, width) {
+@include mixins.mq(lg, min, width) {
 
   .dcf-grid-full\@lg {
     grid-template-columns: minmax(10px, 1fr);
@@ -437,7 +440,7 @@
 }
 
 
-@include mq(xl, min, width) {
+@include mixins.mq(xl, min, width) {
 
   .dcf-grid-full\@xl {
     grid-template-columns: minmax(10px, 1fr);
