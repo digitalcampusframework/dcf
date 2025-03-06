@@ -1,0 +1,86 @@
+//////////////////////////
+// CORE / MIXINS / PADDING
+//////////////////////////
+
+
+@use "../variables" as var;
+
+
+// All sides
+@mixin p-0($imp:null) { padding: 0 $imp; }
+@mixin p-1($imp:null) { padding: var.$length-em-1 $imp; }
+@mixin p-2($imp:null) { padding: var.$length-em-2 $imp; }
+@mixin p-3($imp:null) { padding: var.$length-em-3 $imp; }
+@mixin p-4($imp:null) { padding: var.$length-em-4 $imp; }
+@mixin p-5($imp:null) { padding: var.$length-em-5 $imp; }
+@mixin p-6($imp:null) { padding: var.$length-em-6 $imp; }
+@mixin p-7($imp:null) { padding: var.$length-em-7 $imp; }
+@mixin p-8($imp:null) { padding: var.$length-em-8 $imp; }
+@mixin p-9($imp:null) { padding: var.$length-em-9 $imp; }
+@mixin p-10($imp:null) { padding: var.$length-em-10 $imp; }
+@mixin p-11($imp:null) { padding: var.$length-em-11 $imp; }
+@mixin p-12($imp:null) { padding: var.$length-em-12 $imp; }
+
+
+// Top
+@mixin pt-0($imp:null) { padding-top: 0 $imp; }
+@mixin pt-1($imp:null) { padding-top: var.$length-em-1 $imp; }
+@mixin pt-2($imp:null) { padding-top: var.$length-em-2 $imp; }
+@mixin pt-3($imp:null) { padding-top: var.$length-em-3 $imp; }
+@mixin pt-4($imp:null) { padding-top: var.$length-em-4 $imp; }
+@mixin pt-5($imp:null) { padding-top: var.$length-em-5 $imp; }
+@mixin pt-6($imp:null) { padding-top: var.$length-em-6 $imp; }
+@mixin pt-7($imp:null) { padding-top: var.$length-em-7 $imp; }
+@mixin pt-8($imp:null) { padding-top: var.$length-em-8 $imp; }
+@mixin pt-9($imp:null) { padding-top: var.$length-em-9 $imp; }
+@mixin pt-10($imp:null) { padding-top: var.$length-em-10 $imp; }
+@mixin pt-11($imp:null) { padding-top: var.$length-em-11 $imp; }
+@mixin pt-12($imp:null) { padding-top: var.$length-em-12 $imp; }
+
+
+// Right
+@mixin pr-0($imp:null) { padding-right: 0 $imp; }
+@mixin pr-1($imp:null) { padding-right: var.$length-em-1 $imp; }
+@mixin pr-2($imp:null) { padding-right: var.$length-em-2 $imp; }
+@mixin pr-3($imp:null) { padding-right: var.$length-em-3 $imp; }
+@mixin pr-4($imp:null) { padding-right: var.$length-em-4 $imp; }
+@mixin pr-5($imp:null) { padding-right: var.$length-em-5 $imp; }
+@mixin pr-6($imp:null) { padding-right: var.$length-em-6 $imp; }
+@mixin pr-7($imp:null) { padding-right: var.$length-em-7 $imp; }
+@mixin pr-8($imp:null) { padding-right: var.$length-em-8 $imp; }
+@mixin pr-9($imp:null) { padding-right: var.$length-em-9 $imp; }
+@mixin pr-10($imp:null) { padding-right: var.$length-em-10 $imp; }
+@mixin pr-11($imp:null) { padding-right: var.$length-em-11 $imp; }
+@mixin pr-12($imp:null) { padding-right: var.$length-em-12 $imp; }
+
+
+// Bottom
+@mixin pb-0($imp:null) { padding-bottom: 0 $imp; }
+@mixin pb-1($imp:null) { padding-bottom: var.$length-em-1 $imp; }
+@mixin pb-2($imp:null) { padding-bottom: var.$length-em-2 $imp; }
+@mixin pb-3($imp:null) { padding-bottom: var.$length-em-3 $imp; }
+@mixin pb-4($imp:null) { padding-bottom: var.$length-em-4 $imp; }
+@mixin pb-5($imp:null) { padding-bottom: var.$length-em-5 $imp; }
+@mixin pb-6($imp:null) { padding-bottom: var.$length-em-6 $imp; }
+@mixin pb-7($imp:null) { padding-bottom: var.$length-em-7 $imp; }
+@mixin pb-8($imp:null) { padding-bottom: var.$length-em-8 $imp; }
+@mixin pb-9($imp:null) { padding-bottom: var.$length-em-9 $imp; }
+@mixin pb-10($imp:null) { padding-bottom: var.$length-em-10 $imp; }
+@mixin pb-11($imp:null) { padding-bottom: var.$length-em-11 $imp; }
+@mixin pb-12($imp:null) { padding-bottom: var.$length-em-12 $imp; }
+
+
+// Left
+@mixin pl-0($imp:null) { padding-left: 0 $imp; }
+@mixin pl-1($imp:null) { padding-left: var.$length-em-1 $imp; }
+@mixin pl-2($imp:null) { padding-left: var.$length-em-2 $imp; }
+@mixin pl-3($imp:null) { padding-left: var.$length-em-3 $imp; }
+@mixin pl-4($imp:null) { padding-left: var.$length-em-4 $imp; }
+@mixin pl-5($imp:null) { padding-left: var.$length-em-5 $imp; }
+@mixin pl-6($imp:null) { padding-left: var.$length-em-6 $imp; }
+@mixin pl-7($imp:null) { padding-left: var.$length-em-7 $imp; }
+@mixin pl-8($imp:null) { padding-left: var.$length-em-8 $imp; }
+@mixin pl-9($imp:null) { padding-left: var.$length-em-9 $imp; }
+@mixin pl-10($imp:null) { padding-left: var.$length-em-10 $imp; }
+@mixin pl-11($imp:null) { padding-left: var.$length-em-11 $imp; }
+@mixin pl-12($imp:null) { padding-left: var.$length-em-12 $imp; }

@@ -1,0 +1,12 @@
+//////////////////////////////
+// CORE / MIXINS / CSS COLUMNS
+//////////////////////////////
+
+
+@use "../variables" as var;
+
+
+@mixin columns-1($imp:null) { columns: 1 $imp; }
+@mixin columns-2($imp:null) { columns: 2 $imp; }
+@mixin columns-3($imp:null) { columns: 3 $imp; }
+@mixin columns-auto($imp:null) { columns: #{var.$ms20}em $imp; }

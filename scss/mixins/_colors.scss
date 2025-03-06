@@ -1,0 +1,14 @@
+/////////////////////////
+// CORE / MIXINS / COLORS
+/////////////////////////
+
+
+@use "../variables" as var;
+
+
+// Inverse (light text for dark backgrounds)
+@mixin inverse($imp:null) { color: var.$color-inverse $imp; }
+@mixin inverse-link($imp:null) { color: var.$color-inverse-link $imp; }         // Link
+@mixin inverse-visited($imp:null) { color: var.$color-inverse-visited $imp; }   // Visited
+@mixin inverse-hover($imp:null) { color: var.$color-inverse-hover $imp; }       // Hover
+@mixin inverse-active($imp:null) { color: var.$color-inverse-active $imp; }     // Active
