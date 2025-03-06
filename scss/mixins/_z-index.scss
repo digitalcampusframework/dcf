@@ -3,7 +3,7 @@
 //////////////////////////
 
 
-@use "../variables" as var;
+@use "../variables/" as var;
 
 
 @mixin z-0($imp:null) { z-index: var.$z-0 $imp; }

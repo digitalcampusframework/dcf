@@ -3,7 +3,7 @@
 /////////////////////////////////////
 
 
-@use "../mixins" as mixins;
+@use "../mixins/" as mixins;
 
 
 .dcf-obj-top { @include mixins.obj-top(!important); }

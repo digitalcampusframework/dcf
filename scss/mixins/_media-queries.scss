@@ -3,8 +3,8 @@
 ////////////////////////////////
 
 @use "sass:map";
-@use "../variables" as var;
-@use "../functions" as func;
+@use "../variables/" as var;
+@use "../functions/" as func;
 
 //  mq-sass, https://github.com/jonsuh/mq-sass
 @mixin mq($breakpoint, $minmax: min, $widthheight: width) {

@@ -2,7 +2,7 @@
 // CORE / MIXINS / BORDER-RADIUS
 ////////////////////////////////
 
-@use "../variables" as var;
+@use "../variables/" as var;
 
 // Circle
 @mixin circle($imp:null) {
