@@ -1,0 +1,214 @@
+/////////////////////////////////////////
+// CORE / COMPONENTS / SEARCH-AND-SELECTS
+/////////////////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../mixins/" as mixins;
+
+
+.dcf-search-and-select-search-area-multiple:hover,
+.dcf-search-and-select-search-area-single:hover,
+.dcf-search-and-select-selected-item:hover .dcf-search-and-select-selected-item-label,
+.dcf-search-and-select-selected-item.dcf-search-and-select-visual-hover .dcf-search-and-select-selected-item-label {
+  border-color: var.$border-color-search-and-select-hover;
+}
+
+
+.dcf-search-and-select-selected-item.dcf-search-and-select-visual-hover .dcf-search-and-select-selected-item-label {
+  background-color: var.$bg-color-search-and-select-selected-item-label-hover;
+}
+
+
+.dcf-search-and-select-available-item.dcf-search-and-select-visual-hover:not([aria-disabled="true"]) {
+  background-color: var.$bg-color-search-and-select-visual-hover;
+  color: var.$color-search-and-select-visual-hover;
+}
+
+
+.dcf-search-and-select input:focus,
+.dcf-search-and-select-selected-items:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+.dcf-search-and-select button[aria-expanded="true"] svg {
+  rotate: 180deg;
+}
+
+
+.dcf-search-and-select-clickable {
+  appearance: none;
+  cursor: pointer;
+}
+
+
+.dcf-search-and-select-search-area-single,
+.dcf-search-and-select-search-area-multiple {
+  background-color: var.$bg-color-search-and-select-search-area;
+  border: var.$border-width-search-and-select-area var.$border-style-search-and-select-area var.$border-color-search-and-select-area;
+  @if (var.$border-radius-input-roundrect) {
+    border-radius: var.$roundrect;
+  } @else {
+    border-radius: 0;
+  }
+  grid-template-columns: 1fr auto;
+  max-height: var.$max-height-search-and-select-search-area;
+}
+
+
+.dcf-search-and-select-search-area-multiple.dcf-search-and-select-visual-focus,
+.dcf-search-and-select-search-area-multiple:has(.dcf-search-and-select-visual-focus) {
+  border-color: var.$border-color-search-and-select-visual-focus;
+}
+
+
+.dcf-search-and-select-disabled,
+.dcf-search-and-select-disabled .dcf-search-and-select-search-area-single,
+.dcf-search-and-select-disabled .dcf-search-and-select-search-area-multiple,
+.dcf-search-and-select-disabled .dcf-search-and-select-clickable,
+.dcf-search-and-select-clickable[aria-disabled="true"] {
+  appearance: none;
+  cursor: not-allowed !important;
+}
+
+
+.dcf-search-and-select-disabled,
+.dcf-search-and-select-disabled .dcf-search-and-select-search-area-single,
+.dcf-search-and-select-disabled .dcf-search-and-select-search-area-multiple,
+.dcf-search-and-select-clickable[aria-disabled="true"] {
+  background-color: var.$bg-color-search-and-select-disabled;
+  opacity: var.$opacity-search-and-select-disabled;
+}
+
+
+.dcf-search-and-select-search-area-multiple input {
+  flex-basis: var.$flex-basis-search-and-select-search-area-multiple-input;
+  min-width: var.$min-width-search-and-select-input;
+}
+
+
+.dcf-search-and-select-selected-items {
+  column-gap: var.$column-gap-search-and-select-selected-items;
+  row-gap: var.$row-gap-search-and-select-selected-items;
+  padding: var.$padding-top-search-and-select-selected-items var.$padding-right-search-and-select-selected-items var.$padding-bottom-search-and-select-selected-items var.$padding-left-search-and-select-selected-items;
+}
+
+
+.dcf-search-and-select-selected-items:empty {
+  padding: 0 !important;
+}
+
+
+.dcf-search-and-select-available-items,
+.dcf-search-and-select-available-items ul,
+.dcf-search-and-select-selected-items {
+  list-style: none;
+}
+
+
+.dcf-search-and-select-open-btn {
+  grid-row: span 2 / span 2;
+}
+
+
+.dcf-search-and-select-open-btn button {
+  transform: translateY(-50%);
+}
+
+
+.dcf-search-and-select-available-items {
+  background-color: var.$bg-color-search-and-select-available-items;
+  border: var.$border-width-search-and-select-available-items var.$border-style-search-and-select-available-items var.$border-color-search-and-select-available-items;
+  @if (var.$border-radius-input-roundrect) {
+    border-radius: var.$roundrect;
+  } @else {
+    border-radius: 0;
+  }
+  height: var.$height-search-and-select-available-items;
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+
+.dcf-search-and-select-available-items li {
+  padding: var.$padding-top-search-and-select-available-items-li var.$padding-right-search-and-select-available-items-li var.$padding-bottom-search-and-select-available-items-li var.$padding-left-search-and-select-available-items-li;
+}
+
+
+.dcf-search-and-select-available-items li {
+  border-bottom: var.$border-width-search-and-select-available-items-li var.$border-style-search-and-select-available-items-li var.$border-color-search-and-select-available-items-li;
+}
+
+
+.dcf-search-and-select-available-items ul:last-child li:last-child {
+  border-bottom: none;
+}
+
+
+.dcf-search-and-select-available-items-group:not(:first-child) {
+  border-top: var.$border-width-search-and-select-available-items-li var.$border-style-search-and-select-available-items-group var.$border-color-search-and-select-available-items-li;
+}
+
+
+.dcf-search-and-select-available-items li[role="presentation"] {
+  @if (var.$font-weight-search-and-select-available-item-group-heading-bold) {
+    @include mixins.bold;
+  }
+}
+
+
+.dcf-search-and-select-available-items li[role="presentation"] ~ li {
+  padding-left: var.$padding-left-search-and-select-available-items-li-presentation-sibling;
+}
+
+
+.dcf-search-and-select-available-items li .dcf-search-and-select-available-item-indicator {
+  display: none;
+}
+
+
+.dcf-search-and-select-available-items li[aria-selected="true"] .dcf-search-and-select-available-item-indicator {
+  display: block;
+}
+
+
+.dcf-search-and-select-selected-item {
+  @if (var.$border-radius-input-roundrect) {
+    @include mixins.rounded;
+  } @else {
+    border-radius: 0;
+  }
+}
+
+
+.dcf-search-and-select-selected-item-remove-btn {
+  @if (var.$border-radius-input-roundrect) {
+    @include mixins.rounded-left;
+    @include mixins.sharp-right;
+  } @else {
+    border-radius: 0;
+  }
+}
+
+
+.dcf-search-and-select-selected-item-label {
+  background-color: var.$bg-color-search-and-select-selected-item-label;
+  @if (var.$border-radius-input-roundrect) {
+    @include mixins.rounded-right;
+    @include mixins.sharp-left;
+  } @else {
+    border-radius: 0;
+  }
+  @if (to-number(var.$border-width-search-and-select-selected-item-label) != to-number(0)) {
+    border-bottom: var.$border-width-search-and-select-selected-item-label var.$border-style-search-and-select-selected-item-label var.$border-color-search-and-select-selected-item-label;
+    border-right: var.$border-width-search-and-select-selected-item-label var.$border-style-search-and-select-selected-item-label var.$border-color-search-and-select-selected-item-label;
+    border-top: var.$border-width-search-and-select-selected-item-label var.$border-style-search-and-select-selected-item-label var.$border-color-search-and-select-selected-item-label;
+  }
+  @if (to-number(var.$font-size-search-and-select-selected-item-label) != to-number(#{var.$ms04}em)) {
+    font-size: var.$font-size-search-and-select-selected-item-label;
+  }
+  padding: var.$padding-top-search-and-select-selected-item-label var.$padding-right-search-and-select-selected-item-label var.$padding-bottom-search-and-select-selected-item-label var.$padding-left-search-and-select-selected-item-label;
+}

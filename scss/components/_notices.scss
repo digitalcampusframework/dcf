@@ -1,0 +1,118 @@
+/////////////////////////////
+// CORE / COMPONENTS / NOTICE
+/////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../mixins/" as mixins;
+
+
+// Remove margin-bottom from the last child of the notice message (e.g., a paragraph)
+.dcf-notice-message > :last-child {
+  @include mixins.mb-0;
+}
+
+
+.dcf-notice-icon {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+
+.dcf-notice-close {
+  padding-right: #{var.$ms-10}em;
+}
+
+
+@media (max-width: #{var.$ms24}em) {
+
+  .dcf-notice {
+    grid-template-columns: var.$length-em-5 var.$length-em-6 1fr auto var.$length-em-5;
+    grid-template-rows: var.$length-em-5 var.$length-em-6 var.$length-em-3 auto var.$length-em-2 var.$length-em-5;
+  }
+
+
+  .dcf-notice-body {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+
+  .dcf-notice-close {
+    @include mixins.pt-3;
+    grid-area: 1 / -3 / 3 / -1;
+  }
+
+}
+
+
+@media (min-width: #{var.$ms24}em) {
+
+  .dcf-notice {
+    grid-template-columns: var.$length-em-5 var.$length-em-7 var.$length-em-4 1fr var.$length-em-4 auto;
+    grid-template-rows: var.$length-em-5 auto var.$length-em-5;
+  }
+
+
+  .dcf-notice-body {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+
+
+  .dcf-notice-close {
+    grid-area: 1 / -2 / 3 / -1;
+    padding-top: #{var.$ms-10}em;
+  }
+
+}
+
+
+// Info
+.dcf-notice-info {
+  background-color: var.$bg-color-notice-info;
+}
+
+
+.dcf-notice-info .dcf-notice-message {
+  color: var.$color-notice-info;
+}
+
+
+// Success
+.dcf-notice-success {
+  background-color: var.$bg-color-notice-success;
+}
+
+
+.dcf-notice-success .dcf-notice-message {
+  color: var.$color-notice-success;
+}
+
+
+// Warning
+.dcf-notice-warning {
+  background-color: var.$bg-color-notice-warning;
+}
+
+
+.dcf-notice-warning .dcf-notice-message {
+  color: var.$color-notice-warning;
+}
+
+
+// Danger
+.dcf-notice-danger {
+  background-color: var.$bg-color-notice-danger;
+}
+
+
+.dcf-notice-danger .dcf-notice-message {
+  color: var.$color-notice-danger;
+}
+
+
+// Overlay
+.dcf-notice-overlay {
+  left: var.$left-notices-overlay;
+  right: var.$right-notices-overlay;
+  top: var.$top-notices-overlay;
+  z-index: var.$z-modal-behind-nav-toggle-group;
+}

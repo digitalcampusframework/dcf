@@ -3,8 +3,11 @@
 /////////////////////////////////
 
 
+@use "../variables/" as var;
+
+
 .dcf-slideshow ul {
-  column-gap: $column-gap-slideshow-ul;
+  column-gap: var.$column-gap-slideshow-ul;
   margin-bottom: 0;
   padding-left: 0; // Remove browser default padding for list
 }
@@ -31,7 +34,7 @@
 
 // Styles if JavaScript does not load
 .dcf-slideshow ul:first-child li {
-  flex: 0 0 $flex-basis-slideshow-ul-first-child-li-no-js; // Make sure some of the next slide appears
+  flex: 0 0 var.$flex-basis-slideshow-ul-first-child-li-no-js; // Make sure some of the next slide appears
 }
 
 

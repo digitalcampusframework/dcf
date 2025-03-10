@@ -3,6 +3,9 @@
 /////////////////////////////
 
 
+@use "../variables/" as var;
+
+
 .dcf-popup {
   width: fit-content;
 }
@@ -32,38 +35,38 @@
   & > .dcf-popup-content::before {
     background-color: inherit;
     content: "";
-    left: calc(50% - #{$size-inline-popup-point} / 2);
+    left: calc(50% - #{var.$size-inline-popup-point} / 2);
     position: absolute;
     z-index: -1;
   }
 
   // Top & bottom point height & width
   &:not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content::before {
-    height: $size-block-popup-point;
-    width: $size-inline-popup-point;
+    height: var.$size-block-popup-point;
+    width: var.$size-inline-popup-point;
   }
 
   // Left & right point height & width
   &[data-position="left"] > .dcf-popup-content::before,
   &[data-position="right"] > .dcf-popup-content::before {
-    height: $size-inline-popup-point;
-    width: $size-block-popup-point;
+    height: var.$size-inline-popup-point;
+    width: var.$size-block-popup-point;
   }
 
   // Bottom Center
   &[data-position="bottom"] > .dcf-popup-content,
   &:not([data-position="top"]):not([data-position="right"]):not([data-position="left"]) > .dcf-popup-content {
-    margin-top: $margin-popup-point;
+    margin-top: var.$margin-popup-point;
 
     &::before {
       clip-path: polygon(50% 0, 0 100%, 100% 100%);
-      top: calc(calc(-1 * #{$size-block-popup-point}) + .5px);
+      top: calc(calc(-1 * #{var.$size-block-popup-point}) + .5px);
     }
   }
 
   // Top Center
   &[data-position="top"] > .dcf-popup-content {
-    margin-bottom: $margin-popup-point;
+    margin-bottom: var.$margin-popup-point;
 
     &::before {
       clip-path: polygon(100% 0, 0 0, 50% 100%);
@@ -73,7 +76,7 @@
 
   // Left Center
   &[data-position="left"] > .dcf-popup-content {
-    margin-right: $margin-popup-point;
+    margin-right: var.$margin-popup-point;
 
     &::before {
       clip-path: polygon(0 0, 0 100%, 100% 50%);
@@ -83,44 +86,44 @@
 
   // Right Center
   &[data-position="right"] > .dcf-popup-content {
-    margin-left: $margin-popup-point;
+    margin-left: var.$margin-popup-point;
 
     &::before {
       clip-path: polygon(100% 100%, 100% 0, 0 50%);
-      left: calc(calc(-1 * #{$size-block-popup-point}) + .5px);
+      left: calc(calc(-1 * #{var.$size-block-popup-point}) + .5px);
     }
   }
 
   // Bottom Start
   // Top Start
   &[data-alignment="start"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
-    left: $size-block-popup-point;
+    left: var.$size-block-popup-point;
   }
 
   // Bottom End
   // Top End
   &[data-alignment="end"]:not([data-position="left"]):not([data-position="right"]) > .dcf-popup-content::before {
-    left: calc(100% - #{$size-block-popup-point} * 2);
+    left: calc(100% - #{var.$size-block-popup-point} * 2);
   }
 
   // Left Center
   // Right Center
   &[data-position="left"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before,
   &[data-position="right"]:not([data-alignment="start"]):not([data-alignment="end"]) > .dcf-popup-content::before {
-    top: calc(50% - #{$size-inline-popup-point} / 2);
+    top: calc(50% - #{var.$size-inline-popup-point} / 2);
   }
 
   // Left Start
   // Right Start
   &[data-alignment="start"][data-position="left"] > .dcf-popup-content::before,
   &[data-alignment="start"][data-position="right"] > .dcf-popup-content::before {
-    top: $size-block-popup-point;
+    top: var.$size-block-popup-point;
   }
 
   // Left End
   // Right End
   &[data-alignment="end"][data-position="left"] > .dcf-popup-content::before,
   &[data-alignment="end"][data-position="right"] > .dcf-popup-content::before {
-    top: calc(100% - #{$size-block-popup-point} * 2);
+    top: calc(100% - #{var.$size-block-popup-point} * 2);
   }
 }

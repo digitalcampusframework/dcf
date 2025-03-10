@@ -3,23 +3,26 @@
 /////////////////////////////
 
 
+@use "../variables/" as var;
+
+
 // Modal
 .dcf-modal {
-  z-index: $z-modal-fullscreen;
+  z-index: var.$z-modal-fullscreen;
 }
 
 
 // Modal wrapper
 .dcf-modal-wrapper {
-  background-color: $bg-color-modal-wrapper;
-  max-height: $height-max-modal-wrapper;
-  width: $width-modal-wrapper;
+  background-color: var.$bg-color-modal-wrapper;
+  max-height: var.$height-max-modal-wrapper;
+  width: var.$width-modal-wrapper;
 }
 
 
 // Modal header
 .dcf-modal-header {
-  background-color: $bg-color-modal-header;
+  background-color: var.$bg-color-modal-header;
 }
 
 
