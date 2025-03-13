@@ -83,6 +83,8 @@ export function checkSetElementId(element, id = null) {
 
 export function loadStyleSheet(styleSheetSrc) {
   return new Promise((resolve, reject) => {
+    const link_already_there = document.querySelector(`link[rel="stylesheet"][href="${styleSheetSrc}"]`);
+    if (link_already_there !== null) { resolve(); return; }
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = styleSheetSrc;
