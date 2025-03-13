@@ -3,9 +3,11 @@
 ////////////////////////////////
 
 
+// Font family
+$font-family-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+
+
 // Font weight
 $font-weight-normal: 300 !default;
 $font-weight-bold: 600 !default;
 $font-weight-bolder: 700 !default;
-
-$font-family-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
