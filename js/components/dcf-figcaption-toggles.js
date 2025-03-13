@@ -97,6 +97,7 @@ export default class DCFFigcaptionToggles {
       this.figcaption.id = this.uuid.concat('-figcaption-toggle',);
     }
     if (this.figcaptionClassList) {
+      //TODO: Fix these to use spread operator
       this.figcaptionClassList.forEach((cssClass) => {
         this.figcaption.classList.add(cssClass);
       });
