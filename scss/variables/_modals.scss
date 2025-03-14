@@ -9,15 +9,15 @@
 
 
 // Background color
-$bg-color-modal-wrapper-light-mode: body.$bg-color-body-light-mode !default;  // Modal wrapper background-color in light mode
-$bg-color-modal-wrapper-dark-mode: body.$bg-color-body-dark-mode !default;    // Modal wrapper background-color in dark mode
+$bg-color-modal-wrapper-light-mode: body.$bg-color-body-light-mode !default;    // Modal wrapper background-color in light mode
+$bg-color-modal-wrapper-dark-mode: body.$bg-color-body-dark-mode !default;      // Modal wrapper background-color in dark mode
 $bg-color-modal-wrapper: var(--bg-body) !default;
 
-$bg-color-modal-header-light-mode: body.$bg-color-body-light-mode !default;   // Modal header background-color in light mode
-$bg-color-modal-header-dark-mode: body.$bg-color-body-dark-mode !default;     // Modal header background-color in dark mode
+$bg-color-modal-header-light-mode: body.$bg-color-body-light-mode !default;     // Modal header background-color in light mode
+$bg-color-modal-header-dark-mode: body.$bg-color-body-dark-mode !default;       // Modal header background-color in dark mode
 $bg-color-modal-header: var(--bg-body) !default;
 
 
 // Height & width
-$height-max-modal-wrapper: calc(100vh - (2 * #{s.$length-em-4})) !default; // Max-height modal wrapper
-$width-modal-wrapper: calc(100% - (2 * #{ms.$ms12}vw)) !default;            // Match width of .dcf-wrapper
+$height-max-modal-wrapper: calc(100vh - (2 * #{s.$length-em-4})) !default;      // Max-height modal wrapper
+$width-modal-wrapper: calc(100% - (2 * #{ms.$ms12}vw)) !default;                // Match width of .dcf-wrapper
