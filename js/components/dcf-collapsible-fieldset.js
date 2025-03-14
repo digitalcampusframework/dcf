@@ -1,5 +1,5 @@
 import { uuidv4 } from '../dcf-utility.js';
-import DCFButtonToggles from './dcf-button-toggles.js';
+import DCFButtonToggles from './dcf-button-toggle.js';
 
 export default class DCFCollapsibleFieldsets {
 
