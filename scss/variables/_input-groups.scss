@@ -9,35 +9,35 @@
 
 
 // Background color
-$bg-color-input-group-addon-light-mode: color_palette.$lightest-gray !default;                       // Input group add-on background-color in light mode
-$bg-color-input-group-addon-dark-mode: color_palette.$darker-gray-s1 !default;                       // Input group add-on background-color in dark mode
+$bg-color-input-group-addon-light-mode: color_palette.$gray-04 !default;    // Input group add-on background-color in light mode
+$bg-color-input-group-addon-dark-mode: color_palette.$gray-96 !default;     // Input group add-on background-color in dark mode
 $bg-color-input-group-addon: var(--bg-input-group-addon) !default;
 
 
 // Border color
-$border-color-input-group-addon: var(--b-input) !default;                              // Input group add-on border-color
+$border-color-input-group-addon: var(--b-input) !default;                   // Input group add-on border-color
 
 
 // Border style
-$border-style-input-group-addon: forms.$border-style-input !default;                         // Input group add-on border-style
+$border-style-input-group-addon: forms.$border-style-input !default;        // Input group add-on border-style
 
 
 // Border width
-$border-width-input-group-addon: forms.$border-width-input !default;                         // Input group add-on border-width
+$border-width-input-group-addon: forms.$border-width-input !default;        // Input group add-on border-width
 
 
 // Color
-$color-input-group-addon-light-mode: color_palette.$dark-gray !default;                              // Input group add-on color in light mode
-$color-input-group-addon-dark-mode: color_palette.$gray-s1 !default;                                 // Input group add-on color in dark mode
+$color-input-group-addon-light-mode: color_palette.$gray-80 !default;       // Input group add-on color in light mode
+$color-input-group-addon-dark-mode: color_palette.$gray-50 !default;        // Input group add-on color in dark mode
 $color-input-group-addon: var(--input-group-addon) !default;
 
 
 // Font size
-$font-size-input-group-addon: #{ms.$ms-1}em !default;                                     // Input group add-on font-size: .84em !default;
+$font-size-input-group-addon: #{ms.$ms-1}em !default;                       // Input group add-on font-size: .84em !default;
 
 
 // Padding
-$padding-bottom-input-group-addon: forms.$padding-bottom-input !default;                     // Input group add-on padding-bottom
-$padding-left-input-group-addon: forms.$padding-left-input !default;                         // Input group add-on padding-left
-$padding-right-input-group-addon: forms.$padding-right-input !default;                       // Input group add-on padding-right
-$padding-top-input-group-addon: forms.$padding-top-input !default;                           // Input group add-on padding-top
+$padding-bottom-input-group-addon: forms.$padding-bottom-input !default;    // Input group add-on padding-bottom
+$padding-left-input-group-addon: forms.$padding-left-input !default;        // Input group add-on padding-left
+$padding-right-input-group-addon: forms.$padding-right-input !default;      // Input group add-on padding-right
+$padding-top-input-group-addon: forms.$padding-top-input !default;          // Input group add-on padding-top

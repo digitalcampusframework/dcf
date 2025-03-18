@@ -6,96 +6,45 @@
 @use "sass:color";
 
 
-// PRIMARY BRAND
-$brand-alpha: #d00000 !default;    // Scarlet
-$brand-beta: #fefdfa !default;     // Cream
-$brand-gamma: #c7c8ca !default;    // Gray
-
-$scarlet: $brand-alpha !default;
-$cream: $brand-beta !default;
-$gray: $brand-gamma !default;
-
-$scarlet-shade: color.scale($scarlet, $saturation: 10%, $lightness: -24%) !default;
-$scarlet-tint: #f6e6e3 !default;
-
-
-// SECONDARY BRAND
-$brand-delta: #001738 !default;    // Navy
-$brand-epsilon: #42a7c6 !default;  // Cerulean
-
-$navy: $brand-delta !default;
-$cerulean: $brand-epsilon !default;
-
-$light-cerulean: color.mix($cream, $cerulean, 25%) !default;     // #71bdd3
-$lighter-cerulean: color.mix($cream, $cerulean, 50%) !default;   // #a0d2e0
-
-
-// TERTIARY / SCREEN
-$brand-zeta: #00784e !default;     // Green
-$brand-eta: #007197 !default;      // Blue
-$brand-theta: #b32d9c !default;    // Purple
-$brand-iota: #ffd74e !default;     // Yellow
-$brand-kappa: #f58a1f !default;     // Orange
-
-$green: $brand-zeta !default;
-$blue: $brand-eta !default;
-$purple: $brand-theta !default;
-$yellow: $brand-iota !default;
-$orange: $brand-kappa !default;
-
-$lighter-green: #e7f1ea !default;
-$lighter-blue: #e7f0f0 !default;
-$lighter-purple: #f7eaf1 !default;
-
-$light-green: #9fdfc5 !default;
-$light-blue: #aadeee !default;
-$light-purple: #fad1f1 !default;
-
-$dark-green: #0d593e !default;
-$dark-blue: #0d556d !default;
-$dark-purple: #7f2a70 !default;
-
-
 // NEUTRALS
 $white: #fff !default;
 $black: #000 !default;
 
-// Mix cream and gray brand colors for base color
-$mix-cream-gray: color.mix($cream, $gray) !default;            // #e3e3e2
+$gray-04: color.mix($black, $white, $weight: 4%, $method: null) !default;
+$gray-08: color.mix($black, $white, $weight: 8%, $method: null) !default;
+$gray-12: color.mix($black, $white, $weight: 12%, $method: null) !default;
+$gray-16: color.mix($black, $white, $weight: 16%, $method: null) !default;
+$gray-20: color.mix($black, $white, $weight: 20%, $method: null) !default;
+$gray-24: color.mix($black, $white, $weight: 24%, $method: null) !default;
 
-$lightest-gray: color.adjust($mix-cream-gray, $lightness: 7.5%) !default; // #f6f6f5 !default;
-$lighter-gray: color.adjust($mix-cream-gray, $lightness: 3.2%) !default;  // #ebebea
-$light-gray: $mix-cream-gray !default;                   // #e3e3e2
+$gray-50: color.mix($white, $black, $weight: 50%, $method: null) !default;
 
-$gray-s1: color.adjust($mix-cream-gray, $lightness: -25%) !default;         // #a4a4a1
-
-$dark-gray: color.adjust($mix-cream-gray, $lightness: -47.5%) !default;     // #6b6b68
-
-$darker-gray: color.adjust($mix-cream-gray, $lightness: -63.3%) !default;   // #424240
-$darker-gray-s1: color.adjust($mix-cream-gray, $lightness: -67%) !default;  // #393937
-$darker-gray-s2: color.adjust($mix-cream-gray, $lightness: -69%) !default;  // #333332
-$darker-gray-s3: color.adjust($mix-cream-gray, $lightness: -71%) !default;  // #2e2e2d
-$darker-gray-s4: color.adjust($mix-cream-gray, $lightness: -73%) !default;  // #292928
-
-$darkest-gray: color.adjust($mix-cream-gray, $lightness: -75%) !default;    // #242423
-$darkest-gray-s1: color.adjust($mix-cream-gray, $lightness: -77%) !default; // #1f1f1e
+$gray-76: color.mix($black, $white, $weight: 76%, $method: null) !default;
+$gray-80: color.mix($black, $white, $weight: 80%, $method: null) !default;
+$gray-84: color.mix($black, $white, $weight: 84%, $method: null) !default;
+$gray-88: color.mix($black, $white, $weight: 88%, $method: null) !default;
+$gray-92: color.mix($black, $white, $weight: 92%, $method: null) !default;
+$gray-96: color.mix($black, $white, $weight: 96%, $method: null) !default;
 
 
 // CONTEXTUAL COLORS
-$info: $blue !default;
-$success: $green !default;
-$warning: #d53f25 !default;
-$danger: $scarlet-shade !default;
+$info: blue !default;
+$success: green !default;
+$warning: orange !default;
+$danger: red !default;
 
 $highlight: #ff0 !default;
 $kbd: #0f0 !default;
 
 
 // SOCIAL MEDIA COLORS
-$facebook: #3b5998 !default;   // Facebook
-$instagram: #c13584 !default;  // Instagram
-$linkedin: #0077b5 !default;   // LinkedIn
-$pinterest: #bd081c !default;  // Pinterest
-$snapchat: #fffc00 !default;   // SnapChat
-$twitter: #1da1f2 !default;    // Twitter
-$youtube: #cd201f !default;    // YouTube
+$bluesky: #1185fe !default;
+$facebook: #0866ff !default;
+$instagram: #ff0069 !default;
+$linkedin: #0073b1 !default;
+$pinterest: #e60023 !default;
+$snapchat: #fffc00 !default;
+$spotify: #1ed760 !default;
+$tiktok: #010101 !default;
+$x-twitter: $black !default;
+$youtube: #f00 !default;

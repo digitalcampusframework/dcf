@@ -8,19 +8,19 @@
 
 
 // Border color
-$border-color-gray-light-light-mode: color_palette.$light-gray !default;       // Light gray border-color in light mode
-$border-color-gray-light-dark-mode: color_palette.$darker-gray !default;       // Light gray border-color in dark mode
-$border-color-gray-light: var(--b-light-gray) !default;
+$border-color-light-gray-light-mode: color_palette.$gray-20 !default;       // Light gray border-color in light mode
+$border-color-light-gray-dark-mode: color_palette.$gray-80 !default;        // Light gray border-color in dark mode
+$border-color-light-gray: var(--b-light-gray) !default;
 
-$border-color-gray-lighter-light-mode: color_palette.$lighter-gray !default;   // Lighter gray border-color in light mode
-$border-color-gray-lighter-dark-mode: color_palette.$darker-gray !default;     // Lighter gray border-color in dark mode
-$border-color-gray-lighter: var(--b-lighter-gray) !default;
+$border-color-lighter-gray-light-mode: color_palette.$gray-12 !default;     // Lighter gray border-color in light mode
+$border-color-lighter-gray-dark-mode: color_palette.$gray-88 !default;      // Lighter gray border-color in dark mode
+$border-color-lighter-gray: var(--b-lighter-gray) !default;
 
-$border-color-gray-lightest-light-mode: color_palette.$lightest-gray !default; // Lightest gray border-color in light mode
-$border-color-gray-lightest-dark-mode: color_palette.$darker-gray !default;    // Lightest gray border-color in dark mode
-$border-color-gray-lightest: var(--b-lightest-gray) !default;
+$border-color-lightest-gray-light-mode: color_palette.$gray-04 !default;    // Lightest gray border-color in light mode
+$border-color-lightest-gray-dark-mode: color_palette.$gray-96 !default;     // Lightest gray border-color in dark mode
+$border-color-lightest-gray: var(--b-lightest-gray) !default;
 
-$border-color: var(--b-light-gray) !default;                     // Legacy variable
+$border-color: var(--b-light-gray) !default;    // Legacy variable
 
 
 // Border radius

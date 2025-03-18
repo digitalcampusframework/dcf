@@ -5,182 +5,183 @@
 
 @use "./badges" as badges;
 @use "./body" as body;
+@use "./borders" as borders;
 @use './color-palette' as color_palette;
 @use './colors-text' as colors_text;
-@use './tmp-defaults' as tmp_defaults;
+@use './focus' as focus;
 @use './modular-scale' as ms;
 @use './sizing' as s;
 
 
 // Background color
-$bg-color-input-light-mode: color_palette.$white !default;                             // Field background color in light mode
-$bg-color-input-dark-mode: color_palette.$darkest-gray-s1 !default;                    // Field background color in dark mode
-$bg-color-input: var(--bg-input, tmp_defaults.$default-bg-input) !default;
+$bg-color-input-light-mode: color_palette.$white !default;              // Field background color in light mode
+$bg-color-input-dark-mode: color_palette.$gray-96 !default;             // Field background color in dark mode
+$bg-color-input: var(--bg-input) !default;
 
-$bg-color-input-disabled-light-mode: color_palette.$lighter-gray !default;             // Disabled input background color in light mode
-$bg-color-input-disabled-dark-mode: color_palette.$darker-gray !default;               // Disabled input background color in dark mode
+$bg-color-input-disabled-light-mode: color_palette.$gray-12 !default;   // Disabled input background color in light mode
+$bg-color-input-disabled-dark-mode: color_palette.$gray-88 !default;    // Disabled input background color in dark mode
 $bg-color-input-disabled: var(--bg-input-disabled) !default;
 
-$bg-color-required-light-mode: transparent !default;                     // Required background color in light mode
-$bg-color-required-dark-mode: rgba(157,0,0,.25) !default;              // Required background color in dark mode
+$bg-color-required-light-mode: transparent !default;                    // Required background color in light mode
+$bg-color-required-dark-mode: color_palette.$danger !default;           // Required background color in dark mode
 $bg-color-required: var(--bg-required) !default;
 
-$bg-color-radio-dot: var(--body) !default;                               // Radio "dot" color (created using background-color)
+$bg-color-radio-dot: var(--body) !default;                              // Radio "dot" color (created using background-color)
 
-$bg-color-select-1-light-mode: $bg-color-input-light-mode !default;      // Select top linear-gradient background-color in light mode
-$bg-color-select-1-dark-mode: $bg-color-input-dark-mode !default;        // Select top linear-gradient background-color in dark mode
+$bg-color-select-1-light-mode: $bg-color-input-light-mode !default;     // Select top linear-gradient background-color in light mode
+$bg-color-select-1-dark-mode: $bg-color-input-dark-mode !default;       // Select top linear-gradient background-color in dark mode
 $bg-color-select-1: var(--bg-select-1) !default;
 
-$bg-color-select-2-light-mode: $bg-color-input-light-mode !default;      // Select bottom linear-gradient background-color in light mode
-$bg-color-select-2-dark-mode: $bg-color-input-dark-mode !default;        // Select bottom linear-gradient background-color in dark mode
+$bg-color-select-2-light-mode: $bg-color-input-light-mode !default;     // Select bottom linear-gradient background-color in light mode
+$bg-color-select-2-dark-mode: $bg-color-input-dark-mode !default;       // Select bottom linear-gradient background-color in dark mode
 $bg-color-select-2: var(--bg-select-2) !default;
 
 
 // Background position
-$bg-position-arrow: s.$length-em-4 !default;                               // Position of arrow from right edge of select
+$bg-position-arrow: s.$length-em-4 !default;                            // Position of arrow from right edge of select
 
 
 // Background size
-$bg-size-arrow-select: s.$length-em-2 !default;                            // Size of select arrow
+$bg-size-arrow-select: s.$length-em-2 !default;                         // Size of select arrow
 
 
 // Border color
-$border-color-fieldset-light-mode: color_palette.$light-gray !default;                 // Fieldset border-color in light mode
-$border-color-fieldset-dark-mode: color_palette.$darker-gray !default;                 // Fieldset border-color in dark mode
+$border-color-fieldset-light-mode: borders.$border-color-light-gray-light-mode !default;    // Fieldset border-color in light mode
+$border-color-fieldset-dark-mode: borders.$border-color-light-gray-dark-mode !default;      // Fieldset border-color in dark mode
 $border-color-fieldset: var(--b-fieldset) !default;
 
-$border-color-input-light-mode: color_palette.$gray !default;                          // Input field border-color in light mode
-$border-color-input-dark-mode: color_palette.$dark-gray !default;                      // Input field border-color in dark mode
-$border-color-input: var(--b-input, tmp_defaults.$default-b-input) !default;
+$border-color-input-light-mode: color_palette.$gray-50 !default;                            // Input field border-color in light mode
+$border-color-input-dark-mode: color_palette.$gray-80 !default;                             // Input field border-color in dark mode
+$border-color-input: var(--b-input) !default;
 
-$border-color-input-hover-light-mode: color_palette.$dark-gray !default;               // Input field border-color when hovered in light mode
-$border-color-input-hover-dark-mode: color_palette.$gray !default;                     // Input field border-color when hovered in dark mode
+$border-color-input-hover-light-mode: color_palette.$gray-80 !default;                      // Input field border-color when hovered in light mode
+$border-color-input-hover-dark-mode: color_palette.$gray-50 !default;                       // Input field border-color when hovered in dark mode
 $border-color-input-hover: var(--b-input-hover) !default;
 
-$border-color-input-focus-light-mode: color_palette.$blue !default;                    // Input field border-color when focused in light mode
-$border-color-input-focus-dark-mode: color_palette.$cerulean !default;                 // Input field border-color when focused in dark mode
+$border-color-input-focus-light-mode: focus.$color-focus-outline-light-mode !default;       // Input field border-color when focused in light mode
+$border-color-input-focus-dark-mode: focus.$color-focus-outline-dark-mode !default;         // Input field border-color when focused in dark mode
 $border-color-input-focus: var(--b-input-focus) !default;
 
-$border-color-required-light-mode: transparent !default;                 // Required border-color in light mode
-$border-color-required-dark-mode: color_palette.$scarlet-shade !default;               // Required border-color in dark mode
+$border-color-required-light-mode: transparent !default;                                    // Required border-color in light mode
+$border-color-required-dark-mode: color_palette.$danger !default;                           // Required border-color in dark mode
 $border-color-required: var(--b-required) !default;
 
-$border-color-checkmark: var(--body) !default;                           // Checkmark color (created using borders)
-$border-color-input-checked: var(--body) !default;                       // Border-color of input when checked
+$border-color-checkmark: var(--body) !default;                                              // Checkmark color (created using borders)
+$border-color-input-checked: var(--body) !default;                                          // Border-color of input when checked
 
 
 // Border radius
-$border-radius-input-roundrect: true !default;                           // Input field border-radius roundrect? True/false
-$border-radius-fieldset-roundrect: true !default;                        // Fieldset border-radius roundrect? True/false
+$border-radius-input-roundrect: true !default;                                              // Input field border-radius roundrect? True/false
+$border-radius-fieldset-roundrect: true !default;                                           // Fieldset border-radius roundrect? True/false
 
 
 // Border style
-$border-style-input: solid !default;                                     // Input field border-style
+$border-style-input: solid !default;                                                        // Input field border-style
 
 
 // Border width
-$border-width-input: 1px !default;                                       // Input field border-width
-$border-width-checkmark: #{ms.$ms-12}em !default;                           // Border-width of border used to create checkmark
+$border-width-input: 1px !default;                                                          // Input field border-width
+$border-width-checkmark: #{ms.$ms-12}em !default;                                           // Border-width of border used to create checkmark
 
 
 // Color
-$color-form-help-light-mode: colors_text.$color-light-text-light-mode !default;      // Form help text color in light mode
-$color-form-help-dark-mode: colors_text.$color-light-text-dark-mode !default;        // Form help text color in dark mode
+$color-form-help-light-mode: colors_text.$color-dark-gray-light-mode !default;              // Form help text color in light mode
+$color-form-help-dark-mode: colors_text.$color-dark-gray-dark-mode !default;                // Form help text color in dark mode
 $color-form-help: var(--form-help) !default;
 
-$color-required-label-light-mode: color_palette.$scarlet !default;                     // Required label text color in light mode
-$color-required-label-dark-mode: color_palette.$cream !default;                        // Required label text color in dark mode
+$color-required-label-light-mode: color_palette.$danger !default;       // Required label text color in light mode
+$color-required-label-dark-mode: color_palette.$white !default;         // Required label text color in dark mode
 $color-required-label: var(--required) !default;
 
 $color-select: var(--body) !default;
-$color-select-arrow-light-mode: body.$color-body-light-mode !default;         // Select arrow color in light mode
-$color-select-arrow-dark-mode: body.$color-body-dark-mode !default;           // Select arrow color in dark mode
+$color-select-arrow-light-mode: body.$color-body-light-mode !default;   // Select arrow color in light mode
+$color-select-arrow-dark-mode: body.$color-body-dark-mode !default;     // Select arrow color in dark mode
 
 
 // Font size
-$font-size-form: #{ms.$ms00}em !default;                                    // Form font-size: 1em
-$font-size-label: #{ms.$ms-1}em !default;                                   // Label font-size: .84em
-$font-size-legend: #{ms.$ms-1}em !default;                                  // Legend font-size: .84em
-$font-size-form-help: #{ms.$ms-2}em !default;                               // Form help font-size: .75em
-$font-size-required: badges.$font-size-badge !default;                          // Required label font-size: .56rem
-$font-size-select: #{ms.$ms00}rem !default;                                 // Select font size: 1rem
+$font-size-form: #{ms.$ms00}em !default;                                // Form font-size: 1em
+$font-size-label: #{ms.$ms-1}em !default;                               // Label font-size: .84em
+$font-size-legend: #{ms.$ms-1}em !default;                              // Legend font-size: .84em
+$font-size-form-help: #{ms.$ms-2}em !default;                           // Form help font-size: .75em
+$font-size-required: badges.$font-size-badge !default;                  // Required label font-size: .56rem
+$font-size-select: #{ms.$ms00}rem !default;                             // Select font size: 1rem
 
 
 // Font style
-$font-style-required-italic: false !default;                             // Italic font-style for required label? True/false
+$font-style-required-italic: false !default;                            // Italic font-style for required label? True/false
 
 
 // Font weight
-$font-weight-legend-bold: true !default;                                 // Bold legend? True/false
+$font-weight-legend-bold: true !default;                                // Bold legend? True/false
 
 
 // Height & width
-$height-width-checkbox-radio: s.$length-em-6 !default;                     // Height & width for checkboxes and radios
+$height-width-checkbox-radio: s.$length-em-6 !default;                  // Height & width for checkboxes and radios
 
 
 // Line height
-$line-height-form: #{ms.$ms03} !default;                                    // Form line-height
-$line-height-form-help: #{ms.$ms02} !default;                               // Form help line-height
-$line-height-select: #{ms.$ms03} !default;                                  // Select line height: 1.5
+$line-height-form: #{ms.$ms03} !default;                                // Form line-height
+$line-height-form-help: #{ms.$ms02} !default;                           // Form help line-height
+$line-height-select: #{ms.$ms03} !default;                              // Select line height: 1.5
 
 
 // Margin
-$margin-bottom-fieldset: s.$length-em-4 !default;                          // Fieldset margin-bottom: 1em
-$margin-inline-fieldset: 0 !default;                                     // Fieldset margin-inline: 0
+$margin-bottom-fieldset: s.$length-em-4 !default;                       // Fieldset margin-bottom: 1em
+$margin-inline-fieldset: 0 !default;                                    // Fieldset margin-inline: 0
 
-$margin-top-input: 0 !default;                                           // Margin-top of inputs: 0
-$margin-right-input: 0 !default;                                         // Margin-right of inputs: 0
-$margin-bottom-input: 0 !default;                                        // Margin-bottom of inputs: 0
-$margin-left-input: 0 !default;                                          // Margin-left of inputs: 0
+$margin-top-input: 0 !default;                                          // Margin-top of inputs: 0
+$margin-right-input: 0 !default;                                        // Margin-right of inputs: 0
+$margin-bottom-input: 0 !default;                                       // Margin-bottom of inputs: 0
+$margin-left-input: 0 !default;                                         // Margin-left of inputs: 0
 
-$margin-left-required: s.$length-em-1 !default;                            // Margin-left of required label: .42em
-$margin-bottom-form-group: s.$length-em-4 !default;                        // Form group margin-bottom: 1em
-$margin-top-form-help: s.$length-em-1 !default;                            // Form help margin-top: .42em
-$margin-right-form-controls-inline-label: s.$length-em-4 !default;         // Form controls inline label margin-right: 1em
-$margin-bottom-checkbox-radio: s.$length-em-2 !default;                    // Margin-bottom for checkboxes and radios
+$margin-left-required: s.$length-em-1 !default;                         // Margin-left of required label: .42em
+$margin-bottom-form-group: s.$length-em-4 !default;                     // Form group margin-bottom: 1em
+$margin-top-form-help: s.$length-em-1 !default;                         // Form help margin-top: .42em
+$margin-right-form-controls-inline-label: s.$length-em-4 !default;      // Form controls inline label margin-right: 1em
+$margin-bottom-checkbox-radio: s.$length-em-2 !default;                 // Margin-bottom for checkboxes and radios
 
-$margin-top-select: 0 !default;                                          // Margin-top of select: 0
-$margin-right-select: 0 !default;                                        // Margin-right of select: 0
-$margin-bottom-select: 0 !default;                                       // Margin-bottom of select: 0
-$margin-left-select: 0 !default;                                         // Margin-left of select: 0
+$margin-top-select: 0 !default;                                         // Margin-top of select: 0
+$margin-right-select: 0 !default;                                       // Margin-right of select: 0
+$margin-bottom-select: 0 !default;                                      // Margin-bottom of select: 0
+$margin-left-select: 0 !default;                                        // Margin-left of select: 0
 
 
 // Opacity
-$opacity-disabled: .75 !default;                                         // Opacity for disabled elements
+$opacity-disabled: .75 !default;                                        // Opacity for disabled elements
 
 
 // Padding
-$padding-bottom-fieldset: s.$length-em-4 !default;                         // Padding-bottom of fieldset: 1em
-$padding-left-fieldset: s.$length-vw-1 !default;                           // Padding-left of fieldset: 3.16vw
-$padding-right-fieldset: s.$length-vw-1 !default;                          // Padding-right of fieldset: 3.16vw
-$padding-top-fieldset: s.$length-em-4 !default;                            // Padding-top of fieldset: 1em
+$padding-bottom-fieldset: s.$length-em-4 !default;                      // Padding-bottom of fieldset: 1em
+$padding-left-fieldset: s.$length-vw-1 !default;                        // Padding-left of fieldset: 3.16vw
+$padding-right-fieldset: s.$length-vw-1 !default;                       // Padding-right of fieldset: 3.16vw
+$padding-top-fieldset: s.$length-em-4 !default;                         // Padding-top of fieldset: 1em
 
-$padding-bottom-required: badges.$padding-bottom-badge !default;                // Padding-bottom of required label: .42em
-$padding-left-required: badges.$padding-left-badge-pill !default;               // Padding-left of required label: .75em
-$padding-right-required: badges.$padding-right-badge-pill !default;             // Padding-right of required label: .75em
-$padding-top-required: badges.$padding-top-badge !default;                      // Padding-top of required label: .42em
+$padding-bottom-required: badges.$padding-bottom-badge !default;        // Padding-bottom of required label: .42em
+$padding-left-required: badges.$padding-left-badge-pill !default;       // Padding-left of required label: .75em
+$padding-right-required: badges.$padding-right-badge-pill !default;     // Padding-right of required label: .75em
+$padding-top-required: badges.$padding-top-badge !default;              // Padding-top of required label: .42em
 
-$padding-bottom-input: s.$length-em-2 !default;                            // Padding-bottom of input field: .56em
-$padding-left-input: s.$length-em-3 !default;                              // Padding-left of input field: .75em
-$padding-right-input: s.$length-em-3 !default;                             // Padding-right of input field: .75em
-$padding-top-input: s.$length-em-2 !default;                               // Padding-top of input field: .56em
+$padding-bottom-input: s.$length-em-2 !default;                         // Padding-bottom of input field: .56em
+$padding-left-input: s.$length-em-3 !default;                           // Padding-left of input field: .75em
+$padding-right-input: s.$length-em-3 !default;                          // Padding-right of input field: .75em
+$padding-top-input: s.$length-em-2 !default;                            // Padding-top of input field: .56em
 
-$padding-legend: s.$length-em-2 !default;                                  // Padding around legend
-$padding-left-checkbox-radio: s.$length-em-7 !default;                     // Padding-left for checkboxes and radios
-$padding-right-select: s.$length-em-7 !default;                            // Select padding-right is larger to allow for arrow
+$padding-legend: s.$length-em-2 !default;                               // Padding around legend
+$padding-left-checkbox-radio: s.$length-em-7 !default;                  // Padding-left for checkboxes and radios
+$padding-right-select: s.$length-em-7 !default;                         // Select padding-right is larger to allow for arrow
 
 
 // Text transform
-$text-transform-select: none !default;                                   // Text-transform select text
+$text-transform-select: none !default;                                  // Text-transform select text
 
 
 // Transform
-$scale-radio-start: #{ms.$ms-8} !default;                                   // Checked radio scale value start: .32em
-$scale-radio-end: #{ms.$ms-4} !default;                                     // Checked radio scale value end: .56em
+$scale-radio-start: #{ms.$ms-8} !default;                               // Checked radio scale value start: .32em
+$scale-radio-end: #{ms.$ms-4} !default;                                 // Checked radio scale value end: .56em
 
 
 // Transition
-$transition-check-duration: .05s !default;                               // Duration of scale transition when checkbox is checked
-$transition-check-timing: ease-out !default;                             // Timing function of scale transition when checkbox is checked
-$transition-radio-duration: .05s !default;                               // Duration of scale transition when radio is checked
-$transition-radio-timing: ease-out !default;                             // Timing function of scale transition when radio is checked
+$transition-check-duration: .05s !default;                              // Duration of scale transition when checkbox is checked
+$transition-check-timing: ease-out !default;                            // Timing function of scale transition when checkbox is checked
+$transition-radio-duration: .05s !default;                              // Duration of scale transition when radio is checked
+$transition-radio-timing: ease-out !default;                            // Timing function of scale transition when radio is checked

@@ -8,20 +8,20 @@
 
 
 // Background color
-$bg-color-notice-info: color_palette.$info !default;           // Info notice background-color
-$bg-color-notice-success: color_palette.$success !default;     // Success notice background-color
-$bg-color-notice-warning: color_palette.$warning !default;     // Warning notice background-color
-$bg-color-notice-danger: color_palette.$danger !default;       // Danger notice background-color
+$bg-color-notice-info: color_palette.$info !default;          // Info notice background-color
+$bg-color-notice-success: color_palette.$success !default;    // Success notice background-color
+$bg-color-notice-warning: color_palette.$warning !default;    // Warning notice background-color
+$bg-color-notice-danger: color_palette.$danger !default;      // Danger notice background-color
 
 
 // Color
-$color-notice-info: color_palette.$lighter-blue !default;      // Info notice color
-$color-notice-success: color_palette.$lighter-green !default;  // Success notice color
-$color-notice-warning: color_palette.$cream !default;          // Warning notice color
-$color-notice-danger: color_palette.$scarlet-tint !default;    // Danger notice color
+$color-notice-info: color_palette.$white !default;            // Info notice color
+$color-notice-success: color_palette.$white !default;         // Success notice color
+$color-notice-warning: color_palette.$white !default;         // Warning notice color
+$color-notice-danger: color_palette.$white !default;          // Danger notice color
 
 
 // Position
-$left-notices-overlay: s.$length-vw-2 !default;    // Left position of overlay notice
-$right-notices-overlay: s.$length-vw-2 !default;   // Right position of overlay notice
-$top-notices-overlay: s.$length-em-8 !default;     // Top position of overlay notice
+$left-notices-overlay: s.$length-vw-2 !default;               // Left position of overlay notice
+$right-notices-overlay: s.$length-vw-2 !default;              // Right position of overlay notice
+$top-notices-overlay: s.$length-em-8 !default;                // Top position of overlay notice

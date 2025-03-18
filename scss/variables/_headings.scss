@@ -9,30 +9,30 @@
 
 
 // Color -- strive for WCAG AAA (minimum contrast ratio of 7.0) for heading text
-$color-heading-light-mode: color_palette.$darkest-gray !default;     // Heading color in light mode
-$color-heading-dark-mode: color_palette.$cream !default;             // Heading color in dark mode
+$color-heading-light-mode: color_palette.$gray-92 !default;   // Heading color in light mode
+$color-heading-dark-mode: color_palette.$gray-04 !default;    // Heading color in dark mode
 $color-heading: var(--heading) !default;
 
 
 // Font size
-$font-size-subhead: #{ms.$ms-2}rem !default;              // Subhead font-size: .75rem
+$font-size-subhead: #{ms.$ms-2}rem !default;                  // Subhead font-size: .75rem
 
 
 // Line height
-$line-height-heading: #{ms.$ms01} !default;               // Heading line-height
+$line-height-heading: #{ms.$ms01} !default;                   // Heading line-height
 
 
 // Margin
-$margin-bottom-heading: #{ms.$ms00}rem !default;          // Heading margin-bottom: 1rem
-$margin-top-heading: 0 !default;                       // Heading margin-top: 0
-$margin-top-heading-after-els: s.$length-em-5 !default;  // Heading margin-top after elements: 1.33em
+$margin-bottom-heading: #{ms.$ms00}rem !default;              // Heading margin-bottom: 1rem
+$margin-top-heading: 0 !default;                              // Heading margin-top: 0
+$margin-top-heading-after-els: s.$length-em-5 !default;       // Heading margin-top after elements: 1.33em
 
-$margin-bottom-subhead: s.$length-em-4 !default;         // Subhead margin-bottom: 1em
+$margin-bottom-subhead: s.$length-em-4 !default;              // Subhead margin-bottom: 1em
 
 
 // Text transform
-$text-transform-subhead: true !default;                // Uppercase subhead? True/false
+$text-transform-subhead: true !default;                       // Uppercase subhead? True/false
 
 
 // Text wrap
-$text-wrap-balance-heading: true !default;             // Balance line lengths across broken headings? True/false
+$text-wrap-balance-heading: true !default;                    // Balance line lengths across broken headings? True/false

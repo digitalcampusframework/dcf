@@ -9,17 +9,17 @@
 
 
 // Background color
-$bg-color-card-light-mode: color_palette.$cream !default;          // Card background-color in light mode
-$bg-color-card-dark-mode: color_palette.$darker-gray !default;     // Card background-color in dark mode
+$bg-color-card-light-mode: color_palette.$white !default;     // Card background-color in light mode
+$bg-color-card-dark-mode: color_palette.$gray-80 !default;    // Card background-color in dark mode
 $bg-color-card: var(--bg-card) !default;
 
 
 // Font size
-$font-size-card: #{ms.$ms-1}em !default;                // Card font-size: .84em
+$font-size-card: #{ms.$ms-1}em !default;                      // Card font-size: .84em
 
 
 // Padding
-$padding-bottom-card-block: s.$length-em-7 !default;   // Padding-bottom of card block: 2.37em
-$padding-left-card-block: s.$length-em-6 !default;     // Padding-left of card block: 1.77em
-$padding-right-card-block: s.$length-em-6 !default;    // Padding-right of card block: 1.77em
-$padding-top-card-block: s.$length-em-7 !default;      // Padding-bottom of card block: 2.37em
+$padding-bottom-card-block: s.$length-em-7 !default;          // Padding-bottom of card block: 2.37em
+$padding-left-card-block: s.$length-em-6 !default;            // Padding-left of card block: 1.77em
+$padding-right-card-block: s.$length-em-6 !default;           // Padding-right of card block: 1.77em
+$padding-top-card-block: s.$length-em-7 !default;             // Padding-bottom of card block: 2.37em

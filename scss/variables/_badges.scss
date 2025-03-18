@@ -9,33 +9,33 @@
 
 
 // Background color
-$bg-color-badge-light-mode: color_palette.$dark-gray !default;   // Background-color of badge in light mode
-$bg-color-badge-dark-mode: color_palette.$light-gray !default;   // Background-color of badge in dark mode
+$bg-color-badge-light-mode: color_palette.$gray-80 !default;    // Background-color of badge in light mode
+$bg-color-badge-dark-mode: color_palette.$gray-20 !default;     // Background-color of badge in dark mode
 $bg-color-badge: var(--bg-badge) !default;
 
 
 // Color
-$color-badge-light-mode: color_palette.$cream !default;          // Color of badge text in light mode
-$color-badge-dark-mode: color_palette.$darkest-gray !default;    // Color of badge text in dark mode
+$color-badge-light-mode: color_palette.$white !default;         // Color of badge text in light mode
+$color-badge-dark-mode: color_palette.$gray-92 !default;        // Color of badge text in dark mode
 $color-badge: var(--badge) !default;
 
 
 // Font size
-$font-size-badge: #{ms.$ms-4}rem !default;           // Font-size of badge: .56rem
+$font-size-badge: #{ms.$ms-4}rem !default;                      // Font-size of badge: .56rem
 
 
 // Line height
-$line-height-badge: 1 !default;                      // Line-height of badge
+$line-height-badge: 1 !default;                                 // Line-height of badge
 
 // Padding
-$padding-bottom-badge: s.$length-em-1 !default;      // Padding-bottom of badge: .42em
-$padding-left-badge: s.$length-em-2 !default;        // Padding-left of badge: .56em
-$padding-right-badge: s.$length-em-2 !default;       // Padding-right of badge: .56em
-$padding-top-badge: s.$length-em-1 !default;         // Padding-top of badge: .42em
+$padding-bottom-badge: s.$length-em-1 !default;                 // Padding-bottom of badge: .42em
+$padding-left-badge: s.$length-em-2 !default;                   // Padding-left of badge: .56em
+$padding-right-badge: s.$length-em-2 !default;                  // Padding-right of badge: .56em
+$padding-top-badge: s.$length-em-1 !default;                    // Padding-top of badge: .42em
 
-$padding-left-badge-pill: s.$length-em-3 !default;   // Increase horizontal padding to account for increased border-radius: .75em
-$padding-right-badge-pill: s.$length-em-3 !default;  // Increase horizontal padding to account for increased border-radius: .75em
+$padding-left-badge-pill: s.$length-em-3 !default;              // Increase horizontal padding to account for increased border-radius: .75em
+$padding-right-badge-pill: s.$length-em-3 !default;             // Increase horizontal padding to account for increased border-radius: .75em
 
 
 // Vertical alignment
-$vertical-align-badge: text-top !default;            // Vertical-align of badge
+$vertical-align-badge: text-top !default;                       // Vertical-align of badge
