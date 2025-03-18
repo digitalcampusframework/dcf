@@ -69,7 +69,7 @@
 }
 
 
-@if (func.to-number(var.$font-size-datepicker-dialog-btn-footer) != func.to-number(#{ms(-1)}em)) {
+@if (func.to-number(var.$font-size-datepicker-dialog-btn-footer) != func.to-number(#{var.$ms-1}em)) {
   .dcf-datepicker-dialog-btn-footer {
     font-size: var.$font-size-datepicker-dialog-btn-footer !important; // Important to override theme button styles
   }

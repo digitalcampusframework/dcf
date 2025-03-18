@@ -1,16 +1,16 @@
 import { uuidv4, isKeyEvent, keyEvents} from '../dcf-utility.js';
 
-export default class DCFToggleButton {
+export default class DCFButtonToggles {
 
     uuid = uuidv4();
 
     toggleButtonElement = null;
     toggleTargetElement = null;
 
-    toggleButtonOn = new Event(DCFToggleButton.events('toggleButtonOn'));
-    toggleButtonOff = new Event(DCFToggleButton.events('toggleButtonOff'));
-    toggleElementOn = new Event(DCFToggleButton.events('toggleElementOn'));
-    toggleElementOff = new Event(DCFToggleButton.events('toggleElementOff'));
+    toggleButtonOn = new Event(DCFButtonToggles.events('toggleButtonOn'));
+    toggleButtonOff = new Event(DCFButtonToggles.events('toggleButtonOff'));
+    toggleElementOn = new Event(DCFButtonToggles.events('toggleElementOn'));
+    toggleElementOff = new Event(DCFButtonToggles.events('toggleElementOff'));
 
     toggleKeys = [];
     onKeys = [];
@@ -145,23 +145,23 @@ export default class DCFToggleButton {
             });
         }, false);
 
-        this.toggleButtonElement.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+        this.toggleButtonElement.addEventListener(DCFButtonToggles.events('commandOpen'), () => {
             this.toggleSwitched('open');
         });
-        this.toggleButtonElement.addEventListener(DCFToggleButton.events('commandClose'), () => {
+        this.toggleButtonElement.addEventListener(DCFButtonToggles.events('commandClose'), () => {
             this.toggleSwitched('close');
         });
-        this.toggleButtonElement.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+        this.toggleButtonElement.addEventListener(DCFButtonToggles.events('commandToggle'), () => {
             this.toggleSwitched();
         });
 
-        this.toggleTargetElement.addEventListener(DCFToggleButton.events('commandOpen'), () => {
+        this.toggleTargetElement.addEventListener(DCFButtonToggles.events('commandOpen'), () => {
             this.toggleSwitched('open');
         });
-        this.toggleTargetElement.addEventListener(DCFToggleButton.events('commandClose'), () => {
+        this.toggleTargetElement.addEventListener(DCFButtonToggles.events('commandClose'), () => {
             this.toggleSwitched('close');
         });
-        this.toggleTargetElement.addEventListener(DCFToggleButton.events('commandToggle'), () => {
+        this.toggleTargetElement.addEventListener(DCFButtonToggles.events('commandToggle'), () => {
             this.toggleSwitched();
         });
     }
@@ -191,7 +191,9 @@ export default class DCFToggleButton {
             this.toggleButtonElement.dispatchEvent(this.toggleButtonOn);
 
             // Removed transitionend if it was there
-            this.toggleTargetElement.removeEventListener('transitionend', this.#removeDisplayNone);
+            this.toggleTargetElement.removeEventListener('transitionend', function() {
+                this.#removeDisplayNone
+            }.bind(this));
 
             // Unhide the stuff now so animations can run after
             this.toggleTargetElement.setAttribute('aria-hidden', 'false');
@@ -235,7 +237,9 @@ export default class DCFToggleButton {
             if (onload || window.getComputedStyle(this.toggleTargetElement, null).getPropertyValue('transition') === '') {
                 this.toggleTargetElement.classList.add('dcf-d-none');
             } else {
-                this.toggleTargetElement.addEventListener('transitionend', this.#removeDisplayNone);
+                this.toggleTargetElement.addEventListener('transitionend', function() {
+                    this.#removeDisplayNone
+                }.bind(this));
             }
 
             // Dispatch event incase something else is using it
