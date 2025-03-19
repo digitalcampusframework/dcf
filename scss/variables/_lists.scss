@@ -7,25 +7,25 @@
 
 
 // Font weight
-$font-weight-dt-bold: true !default;                 // Bold <dt>? True/false
+$font-weight-dt-bold: true !default;                    // Bold <dt>? True/false
 
 
 // Margin
-$margin-bottom-dl-ol-ul: s.$length-em-4 !default;      // Margin-bottom for description, ordered and unordered lists: 1em
-$margin-top-dl-ol-ul: 0 !default;                    // Margin-top for description, ordered and unordered lists: 0
-$margin-top-nested-dl-ol-ul: s.$length-em-3 !default;  // Margin-top for nested description, ordered and unordered lists: .75em
-$margin-top-li-dt-dd: 0 !default;                    // Margin-top for list items <li>, terms <dt> and descriptions <dd>: 0
-$margin-bottom-li: s.$length-em-2 !default;            // Margin-bottom for <li>: .56em
-$margin-left-dd: 0 !default;                         // Margin-left for <dd>: 0
-$margin-bottom-dt-dd: s.$length-em-1 !default;         // Margin-bottom for <dt> and <dd>: .42em
-$margin-top-dd-plus-dt: s.$length-em-4 !default;       // Margin-top for <dd> + <dt>: 1em
-$margin-right-li-inline: s.$length-em-2 !default;      // Margin-right for inline list items: .56em
+$margin-bottom-dl-ol-ul: s.$length-em-4 !default;       // Margin-bottom for description, ordered and unordered lists: 1em
+$margin-top-dl-ol-ul: 0 !default;                       // Margin-top for description, ordered and unordered lists: 0
+$margin-top-nested-dl-ol-ul: s.$length-em-3 !default;   // Margin-top for nested description, ordered and unordered lists: .75em
+$margin-top-li-dt-dd: 0 !default;                       // Margin-top for list items <li>, terms <dt> and descriptions <dd>: 0
+$margin-bottom-li: s.$length-em-2 !default;             // Margin-bottom for <li>: .56em
+$margin-left-dd: 0 !default;                            // Margin-left for <dd>: 0
+$margin-bottom-dt-dd: s.$length-em-1 !default;          // Margin-bottom for <dt> and <dd>: .42em
+$margin-top-dd-plus-dt: s.$length-em-4 !default;        // Margin-top for <dd> + <dt>: 1em
+$margin-right-li-inline: s.$length-em-2 !default;       // Margin-right for inline list items: .56em
 
 
 // Padding
-$padding-left-ol-ul: s.$length-em-6 !default;          // Padding-left for ordered and unordered lists: 1.78em
+$padding-left-ol-ul: s.$length-em-6 !default;           // Padding-left for ordered and unordered lists: 1.78em
 
 
 // Text wrap
-$text-wrap-pretty-dl-ol-ul: true !default;           // Prevent orphans in lists? True/false
+$text-wrap-pretty-dl-ol-ul: true !default;              // Prevent orphans in lists? True/false
 
