@@ -17,17 +17,17 @@ $bg-color-white-light-mode: color_palette.$white !default;              // White
 $bg-color-white-dark-mode: color_palette.$black !default;               // White background-color in dark mode
 $bg-color-white: var(--bg-white) !default;
 
-$bg-color-gray-light-light-mode: color_palette.$gray-20 !default;       // Light gray background-color in light mode
-$bg-color-gray-light-dark-mode: color_palette.$gray-88 !default;        // Light gray background-color in dark mode
-$bg-color-gray-light: var(--bg-light-gray) !default;
+$bg-color-light-gray-light-mode: color_palette.$gray-20 !default;       // Light gray background-color in light mode
+$bg-color-light-gray-dark-mode: color_palette.$gray-88 !default;        // Light gray background-color in dark mode
+$bg-color-light-gray: var(--bg-light-gray) !default;
 
-$bg-color-gray-lighter-light-mode: color_palette.$gray-12 !default;     // Lighter gray background-color in light mode
-$bg-color-gray-lighter-dark-mode: color_palette.$gray-84 !default;      // Lighter gray background-color in dark mode
-$bg-color-gray-lighter: var(--bg-lighter-gray) !default;
+$bg-color-lighter-gray-light-mode: color_palette.$gray-12 !default;     // Lighter gray background-color in light mode
+$bg-color-lighter-gray-dark-mode: color_palette.$gray-84 !default;      // Lighter gray background-color in dark mode
+$bg-color-lighter-gray: var(--bg-lighter-gray) !default;
 
-$bg-color-gray-lightest-light-mode: color_palette.$gray-04 !default;    // Lightest gray background-color in light mode
-$bg-color-gray-lightest-dark-mode: color_palette.$gray-80 !default;     // Lightest gray background-color in dark mode
-$bg-color-gray-lightest: var(--bg-lightest-gray) !default;
+$bg-color-lightest-gray-light-mode: color_palette.$gray-04 !default;    // Lightest gray background-color in light mode
+$bg-color-lightest-gray-dark-mode: color_palette.$gray-80 !default;     // Lightest gray background-color in dark mode
+$bg-color-lightest-gray: var(--bg-lightest-gray) !default;
 
 $bg-color-inverse-light-mode: body.$color-body-light-mode !default;     // Inverse background-color in light mode
 $bg-color-inverse-dark-mode: body.$color-body-dark-mode !default;       // Inverse background-color in dark mode
