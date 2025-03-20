@@ -25,7 +25,7 @@ export default class DCFSlideshow
   ];
 
   slideDeckClassList = [
-    'dcf-grid',
+    'dcf-d-grid',
     'dcf-ai-center',
     'dcf-jc-center',
     'dcf-mb-0',
