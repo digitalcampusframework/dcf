@@ -1,0 +1,43 @@
+/////////////////////////////////
+// CORE / COMPONENTS / SLIDESHOWS
+/////////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-slideshow:not(.dcf-slideshow-initialized) ul {
+    column-gap: var.$column-gap-slideshow-ul;
+    margin-bottom: 0;
+    padding-left: 0; // Remove browser default padding for list
+}
+
+
+.dcf-slideshow:not(.dcf-slideshow-initialized) li {
+    margin-bottom: 0;
+}
+
+
+.dcf-slideshow:not(.dcf-slideshow-initialized) ul:first-child {
+    display: flex;
+    list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+
+.dcf-slideshow:not(.dcf-slideshow-initialized) ul:first-child li {
+    scroll-snap-align: start;
+}
+
+
+.dcf-slideshow:not(.dcf-slideshow-initialized) ul:first-child li {
+    flex: 0 0 var.$flex-basis-slideshow-ul-first-child-li-no-js; // Make sure some of the next slide appears
+}
+
+// Styles after JavaScript loads
+.dcf-slideshow:not(.dcf-slideshow-initialized) ul:first-child li.dcf-slide {
+    flex: 0 0 100%; // Make each slide fill the full width of the slideshow
+}

@@ -5,40 +5,35 @@
 
 @use "../variables/" as var;
 
-
-.dcf-slideshow ul {
-  column-gap: var.$column-gap-slideshow-ul;
-  margin-bottom: 0;
-  padding-left: 0; // Remove browser default padding for list
+.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck {
+  list-style: none;
+  padding-left: 0;
 }
 
-
-.dcf-slideshow li {
-  margin-bottom: 0;
+.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck li {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-
-.dcf-slideshow ul:first-child {
-  display: flex;
-  list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck {
+  clip-path: polygon(
+    0 0,
+    calc(100% - (#{var.$size-btn-x} * 2) - (#{var.$border-width-button} * 5) - #{var.$size-clip-path}) 0,
+    calc(100% - (#{var.$size-btn-x} * 2) - (#{var.$border-width-button} * 5) - #{var.$size-clip-path}) calc(#{var.$size-btn-y} + (#{var.$border-width-button} * 2) + #{var.$size-clip-path}),
+    100% calc(#{var.$size-btn-y} + (#{var.$border-width-button} * 2) + #{var.$size-clip-path}),
+    100% 100%,
+    0 100%
+  );
 }
 
-
-.dcf-slideshow ul:first-child li {
-  scroll-snap-align: start;
-}
-
-
-// Styles if JavaScript does not load
-.dcf-slideshow ul:first-child li {
-  flex: 0 0 var.$flex-basis-slideshow-ul-first-child-li-no-js; // Make sure some of the next slide appears
-}
-
-
-// Styles after JavaScript loads
-.dcf-slideshow ul:first-child li.dcf-slide {
-  flex: 0 0 100%; // Make each slide fill the full width of the slideshow
+.dcf-slideshow.dcf-slideshow-initialized[data-play="true"] .dcf-slide-deck,
+.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"] .dcf-slide-deck {
+  clip-path: polygon(
+    0 0,
+    calc(100% - (#{var.$size-btn-x} * 3) - (#{var.$border-width-button} * 8) - #{var.$size-clip-path}) 0,
+    calc(100% - (#{var.$size-btn-x} * 3) - (#{var.$border-width-button} * 8) - #{var.$size-clip-path}) calc(#{var.$size-btn-y} + (#{var.$border-width-button} * 2) + #{var.$size-clip-path}),
+    100% calc(#{var.$size-btn-y} + (#{var.$border-width-button} * 2) + #{var.$size-clip-path}),
+    100% 100%,
+    0 100%
+  );
 }
