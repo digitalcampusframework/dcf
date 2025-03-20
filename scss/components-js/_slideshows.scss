@@ -37,3 +37,11 @@
     0 100%
   );
 }
+
+.dcf-slideshow.dcf-slideshow-initialized .dcf-slideshow-fade-out {
+  animation-fill-mode: forwards;
+  animation-name: disappear;
+  animation-duration: var.$animation-duration-fade-in;
+  animation-timing-function: var.$animation-timing-fn-fade-in;
+  opacity: 1; // Starting opacity
+}

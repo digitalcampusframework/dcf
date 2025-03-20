@@ -14,6 +14,9 @@ export default class DCFSlideshow
   playToggleButton = null;
   currentSlide = -1;
 
+  transition = 'swap';
+  transitionLock = false;
+
   allowPlay = false;
   autoInterval = null;
   intervalMS = 8000;
@@ -207,9 +210,16 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       });
     }
 
+    if (
+      this.slideshowContainer.hasAttribute('data-transition') &&
+      this.slideshowContainer.dataset.transition.toLowerCase() === 'fade'
+    ) {
+      this.transition = 'fade';
+    }
+
     // Check if we need to shuffle the slides
     if (
-      this.slideshowContainer.hasAttribute('data-shuffle') &
+      this.slideshowContainer.hasAttribute('data-shuffle') &&
       this.slideshowContainer.dataset.shuffle.toLowerCase() === 'true'
     ) {
       this.#shuffleSlides();
@@ -255,6 +265,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       // If we are not the current slide then hide it
       if (slideIndex !== this.currentSlide) {
         slide.classList.add('dcf-d-none');
+        slide.classList.add('dcf-z-0');
+      } else {
+        slide.classList.add('dcf-z-1');
       }
 
       // Figure out if we need to do figcaption toggles
@@ -362,12 +375,13 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
   }
 
   /**
-   * Switches to the previous slide, will loop to end
-   * @returns void
+   * Just swap the slides, no transitions
+   * @param {number} newCurrentSlideIndex
    */
-  previousSlide() {
+  #swapSlides(newCurrentSlideIndex) {
     this.slides.forEach((slide) => {
-      slide.classList.add('dcf-d-none');
+      slide.classList.add('dcf-d-none', 'dcf-z-0');
+      slide.classList.remove('dcf-z-1');
       const captionToggleButton = slide.querySelector('.dcf-btn-toggle-figcaption');
       if (captionToggleButton !== null) {
         const closeEvent = new Event(DCFFigcaptionToggles.events('commandClose'));
@@ -375,12 +389,62 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       }
     });
 
-    this.currentSlide = this.currentSlide - 1;
-    if (this.currentSlide < 0) {
-      this.currentSlide = this.slides.length - 1;
+    this.currentSlide = newCurrentSlideIndex;
+    this.slides[this.currentSlide].classList.remove('dcf-d-none', 'dcf-z-0');
+    this.slides[this.currentSlide].classList.add('dcf-z-1');
+  }
+
+  /**
+   * Fade between the two slides
+   * @param {number} newCurrentSlideIndex
+   */
+  #fadeSlides(newCurrentSlideIndex) {
+    this.transitionLock = true;
+
+    this.slides[this.currentSlide].addEventListener('animationend', () => {
+      this.slides[newCurrentSlideIndex].classList.remove('dcf-z-0');
+      this.slides[newCurrentSlideIndex].classList.add('dcf-z-1');
+
+      this.slides.forEach((slide, slideIndex) => {
+        if (slideIndex === newCurrentSlideIndex) { return; }
+        slide.classList.add('dcf-d-none', 'dcf-z-0');
+        slide.classList.remove('dcf-z-1', 'dcf-slideshow-fade-out');
+        const captionToggleButton = slide.querySelector('.dcf-btn-toggle-figcaption');
+        if (captionToggleButton !== null) {
+          const closeEvent = new Event(DCFFigcaptionToggles.events('commandClose'));
+          captionToggleButton.dispatchEvent(closeEvent);
+        }
+      });
+
+      this.transitionLock = false;
+    }, {
+      once: true,
+    });
+
+    this.slides[newCurrentSlideIndex].classList.remove('dcf-d-none');
+    this.slides[this.currentSlide].classList.add('dcf-slideshow-fade-out');
+    this.currentSlide = newCurrentSlideIndex;
+  }
+
+  /**
+   * Switches to the previous slide, will loop to end
+   * @returns void
+   */
+  previousSlide() {
+    if (this.transitionLock) {
+      return;
     }
 
-    this.slides[this.currentSlide].classList.remove('dcf-d-none');
+    let newCurrentSlideIndex = this.currentSlide - 1;
+    if (newCurrentSlideIndex < 0) {
+      newCurrentSlideIndex = this.slides.length - 1;
+    }
+
+    if (this.transition === 'fade') {
+      this.#fadeSlides(newCurrentSlideIndex);
+    } else {
+      this.#swapSlides(newCurrentSlideIndex);
+    }
   }
 
   /**
@@ -388,21 +452,20 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
    * @returns void
    */
   nextSlide() {
-    this.slides.forEach((slide) => {
-      slide.classList.add('dcf-d-none');
-      const captionToggleButton = slide.querySelector('.dcf-btn-toggle-figcaption');
-      if (captionToggleButton !== null) {
-        const closeEvent = new Event(DCFFigcaptionToggles.events('commandClose'));
-        captionToggleButton.dispatchEvent(closeEvent);
-      }
-    });
-
-    this.currentSlide = this.currentSlide + 1;
-    if (this.currentSlide >= this.slides.length) {
-      this.currentSlide = 0;
+    if (this.transitionLock) {
+      return;
     }
 
-    this.slides[this.currentSlide].classList.remove('dcf-d-none');
+    let newCurrentSlideIndex = this.currentSlide + 1;
+    if (newCurrentSlideIndex >= this.slides.length) {
+      newCurrentSlideIndex = 0;
+    }
+
+    if (this.transition === 'fade') {
+      this.#fadeSlides(newCurrentSlideIndex);
+    } else {
+      this.#swapSlides(newCurrentSlideIndex);
+    }
   }
 
   /**
@@ -477,16 +540,6 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       throw new Error(`Slide ${index} does not exist`);
     }
 
-    this.slides.forEach((slide) => {
-      slide.classList.add('dcf-d-none');
-      const captionToggleButton = slide.querySelector('.dcf-btn-toggle-figcaption');
-      if (captionToggleButton !== null) {
-        const closeEvent = new Event(DCFFigcaptionToggles.events('commandClose'));
-        captionToggleButton.dispatchEvent(closeEvent);
-      }
-    });
-
-    this.currentSlide = index;
-    this.slides[this.currentSlide].classList.remove('dcf-d-none');
+    this.#swapSlides(index);
   }
 }
