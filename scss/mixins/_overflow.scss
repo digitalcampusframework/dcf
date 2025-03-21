@@ -5,14 +5,21 @@
 
 // Visible
 @mixin overflow-visible($imp:null) { overflow: visible $imp; }
-@mixin overflow-x-visible($imp:null) { overflow-x: visible $imp; }  // -x
-@mixin overflow-y-visible($imp:null) { overflow-y: visible $imp; }  // -y
+@mixin overflow-x-visible($imp:null) { overflow-x: visible $imp; }
+@mixin overflow-y-visible($imp:null) { overflow-y: visible $imp; }
 
 
 // Hidden
 @mixin overflow-hidden($imp:null) { overflow: hidden $imp; }
-@mixin overflow-x-hidden($imp:null) { overflow-x: hidden $imp; }    // -x
-@mixin overflow-y-hidden($imp:null) { overflow-y: hidden $imp; }    // -y
+@mixin overflow-x-hidden($imp:null) { overflow-x: hidden $imp; }
+@mixin overflow-y-hidden($imp:null) { overflow-y: hidden $imp; }
+
+
+// Clip
+@mixin overflow-clip($imp:null) { overflow: clip $imp; }
+@mixin overflow-x-clip($imp:null) { overflow-x: clip $imp; }
+@mixin overflow-y-clip($imp:null) { overflow-y: clip $imp; }
+
 
 
 // Auto
