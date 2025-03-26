@@ -9,3 +9,9 @@
 *::after {
   box-sizing: border-box;
 }
+
+
+// Remove default margins
+* {
+  margin: 0;
+}
