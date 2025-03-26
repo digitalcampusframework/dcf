@@ -12,8 +12,7 @@ input[type="button"],
 input[type="submit"] {
   cursor: pointer;
   display: inline-block;
-  font-family: inherit;
-  font-size: #{var.$ms00}em; // Base font-size for interoperability with links-as-buttons
+  font: inherit;
   line-height: var.$line-height-button;
   margin: var.$margin-top-button var.$margin-right-button var.$margin-bottom-button var.$margin-left-button;
   padding: var.$padding-top-button var.$padding-right-button var.$padding-bottom-button var.$padding-left-button;

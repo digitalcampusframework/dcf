@@ -28,6 +28,7 @@ input,
 optgroup,
 select,
 textarea {
+  font: inherit;
   margin: var.$margin-top-input var.$margin-right-input var.$margin-bottom-input var.$margin-left-input; // Reset browser defaults
 }
 
