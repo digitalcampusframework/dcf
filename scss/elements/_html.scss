@@ -9,6 +9,7 @@
 
 html {
   font-size: #{var.$font-size-min-root}em;
+  font-synthesis: none;
   line-height: var.$line-height-root;
 }
 
