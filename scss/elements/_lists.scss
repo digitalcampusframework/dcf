@@ -6,6 +6,13 @@
 @use "../variables/" as var;
 
 
+// Avoid markers altering the line-height in Firefox.
+// See: https://danburzo.ro/notes/moz-bullet-font/
+::marker {
+  line-height: 0;
+}
+
+
 ol,
 ul {
   padding-left: var.$padding-left-ol-ul;
