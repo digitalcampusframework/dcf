@@ -17,3 +17,12 @@
   }
 
 }
+
+// Enable keyword animations
+@media (prefers-reduced-motion: no-preference) {
+
+  html {
+    interpolate-size: allow-keywords;
+  }
+
+}
