@@ -7,3 +7,5 @@
 
 
 .dcf-motion-none { @include mixins.no-motion(!important); }
+
+.dcf-animated { @include mixins.appear(!important); }
