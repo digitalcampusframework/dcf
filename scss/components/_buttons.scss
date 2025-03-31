@@ -40,7 +40,6 @@
   @if (func.to-number(var.$margin-top-button) != func.to-number(0)) {
     margin-top: var.$margin-top-button;
   }
-  // margin: var.$margin-top-button var.$margin-right-button var.$margin-bottom-button var.$margin-left-button;
   padding: var.$padding-top-button var.$padding-right-button var.$padding-bottom-button var.$padding-left-button;
   text-align: center;
   @if (var.$text-transform-button-uppercase) {
