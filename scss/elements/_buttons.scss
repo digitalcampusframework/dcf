@@ -3,23 +3,12 @@
 ////////////////////////////
 
 
-@use "../variables/" as var;
-
-
 // Button
 button,
 input[type="button"],
 input[type="submit"] {
   cursor: pointer;
-  display: inline-block;
   font: inherit;
-  line-height: var.$line-height-button;
-  margin: var.$margin-top-button var.$margin-right-button var.$margin-bottom-button var.$margin-left-button;
-  padding: var.$padding-top-button var.$padding-right-button var.$padding-bottom-button var.$padding-left-button;
-  @if (var.$text-align-button-center) {
-    text-align: center;
-  }
-  @if (var.$text-transform-button-uppercase) {
-    text-transform: uppercase;
-  }
+  letter-spacing: inherit;
+  word-spacing: inherit;
 }
