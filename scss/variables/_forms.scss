@@ -99,7 +99,7 @@ $color-select-arrow-dark-mode: body.$color-body-dark-mode !default;     // Selec
 
 
 // Font size
-$font-size-form: #{ms.$ms00}em !default;                                // Form font-size: 1em
+$font-size-input: #{ms.$ms00}em !default;                               // Input font-size: 1em
 $font-size-label: #{ms.$ms-1}em !default;                               // Label font-size: .84em
 $font-size-legend: #{ms.$ms-1}em !default;                              // Legend font-size: .84em
 $font-size-form-help: #{ms.$ms-2}em !default;                           // Form help font-size: .75em
@@ -120,7 +120,7 @@ $height-width-checkbox-radio: s.$length-em-6 !default;                  // Heigh
 
 
 // Line height
-$line-height-form: #{ms.$ms03} !default;                                // Form line-height
+$line-height-input: #{ms.$ms03} !default;                               // Input line-height
 $line-height-form-help: #{ms.$ms02} !default;                           // Form help line-height
 $line-height-select: #{ms.$ms03} !default;                              // Select line height: 1.5
 

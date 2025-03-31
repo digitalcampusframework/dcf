@@ -6,14 +6,6 @@
 @use "../variables/" as var;
 
 
-form,
-input,
-textarea {
-  font-size: var.$font-size-form;
-  line-height: var.$line-height-form;
-}
-
-
 fieldset {
   margin-inline: var.$margin-inline-fieldset; // Reset browser defaults
 }
@@ -25,11 +17,12 @@ label {
 
 
 input,
-optgroup,
 select,
 textarea {
   font: inherit;
+  letter-spacing: inherit;
   margin: var.$margin-top-input var.$margin-right-input var.$margin-bottom-input var.$margin-left-input; // Reset browser defaults
+  word-spacing: inherit;
 }
 
 
