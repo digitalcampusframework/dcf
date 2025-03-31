@@ -1,0 +1,10 @@
+//////////////////////////
+// CORE / ELEMENTS / MEDIA
+//////////////////////////
+
+
+canvas, embed, iframe, img, object, picture, svg, video {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
