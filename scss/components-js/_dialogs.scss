@@ -1,0 +1,31 @@
+//////////////////////////////////
+// CORE / COMPONENTS / DIALOGS
+/////////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../mixins/" as mixins;
+
+.dcf-dialog::backdrop {
+    @include mixins.bg-overlay-dark(!important);
+}
+
+// Modal wrapper
+.dcf-dialog {
+    background-color: var.$bg-color-modal-wrapper;
+    color: var.$color-body;
+    max-height: var.$height-max-modal-wrapper;
+    width: var.$width-modal-wrapper;
+}
+
+
+// Modal header
+.dcf-dialog-header {
+    background-color: var.$bg-color-modal-header;
+}
+
+
+// Modal content
+.dcf-dialog-content > *:last-child {
+    margin-bottom: 0;
+}
