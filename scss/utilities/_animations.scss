@@ -1,0 +1,20 @@
+////////////////////////////////
+// CORE / UTILITIES / ANIMATIONS
+////////////////////////////////
+
+
+@use "../mixins/" as mixins;
+
+
+// No motion
+.dcf-no-motion { @include mixins.no-motion(!important); }
+
+
+// Fade
+.dcf-fade-in { @include mixins.fade-in(!important); }
+
+
+// Move
+.dcf-move-left  { @include mixins.move-left(!important); }
+.dcf-move-right { @include mixins.move-right(!important); }
+.dcf-move-up    { @include mixins.move-up(!important); }
