@@ -24,7 +24,7 @@
 
 
 // Legend
-.dcf-legend, // TODO: deprecate .dcf-legend?
+.dcf-legend,
 .dcf-form legend {
   @if (func.to-number(var.$font-size-legend) != func.to-number(#{var.$ms00}em)) {
     font-size: var.$font-size-legend;
@@ -40,7 +40,7 @@
 
 // Label
 @if (func.to-number(var.$font-size-label) != func.to-number(#{var.$ms00}em)) {
-  .dcf-label, // TODO: deprecate .dcf-label?
+  .dcf-label,
   .dcf-form label {
     font-size: var.$font-size-label;
   }
@@ -82,11 +82,13 @@
 
 
 // Inputs
-.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-text,
 .dcf-form input:not([type="file"]):not([type="submit"]),
 .dcf-form textarea {
   background-color: var.$bg-color-input;
   border: var.$border-width-input var.$border-style-input var.$border-color-input;
+  font-size: var.$font-size-input;
+  line-height: var.$line-height-input;
   @if (var.$border-radius-input-roundrect) {
     border-radius: var.$roundrect;
   } @else {
@@ -95,14 +97,14 @@
 }
 
 
-.dcf-input-text, // TODO: deprecate .dcf-input-text?
+.dcf-input-text,
 .dcf-form input:not([type="checkbox"]):not([type="file"]):not([type="radio"]):not([type="range"]):not([type="submit"]),
 .dcf-form textarea {
   padding: var.$padding-top-input var.$padding-right-input var.$padding-bottom-input var.$padding-left-input;
 }
 
 
-.dcf-input-text:focus, // TODO: deprecate .dcf-input-text?
+.dcf-input-text:focus,
 .dcf-form input:not([type="submit"]):focus,
 .dcf-form textarea:focus {
   border-color: var.$border-color-input-focus;
@@ -110,15 +112,15 @@
 }
 
 
-.dcf-input-text:enabled:hover, // TODO: deprecate .dcf-input-text?
+.dcf-input-text:enabled:hover,
 .dcf-form input:not([type="submit"]):enabled:hover,
 .dcf-form textarea:enabled:hover {
   border-color: var.$border-color-input-hover;
 }
 
 
-.dcf-input-text, // TODO: deprecate .dcf-input-text?
-.dcf-input-file, // TODO: deprecate .dcf-input-file?
+.dcf-input-text,
+.dcf-input-file,
 .dcf-form textarea,
 .dcf-form input:not([type="button"]):not([type="color"]):not([type="range"]):not([type="reset"]):not([type="submit"]) {
   appearance: none;
@@ -126,8 +128,8 @@
 }
 
 
-.dcf-input-text, // TODO: deprecate .dcf-input-text?
-.dcf-input-file, // TODO: deprecate .dcf-input-file?
+.dcf-input-text,
+.dcf-input-file,
 .dcf-form textarea,
 .dcf-form input:not([type="button"]):not([type="color"]):not([type="reset"]):not([type="submit"]) {
   display: block;
@@ -338,7 +340,7 @@
 
 // Select -- based on Filament Group's select-css: https://www.filamentgroup.com/lab/select-css.html
 
-.dcf-input-select, // TODO: deprecate .dcf-input-select?
+.dcf-input-select,
 .dcf-form select {
   appearance: none;
   background-color: var.$bg-color-select-2; // This is necessary for select options dropdown/popover in dark mode
@@ -367,7 +369,7 @@
 
 @media (prefers-color-scheme: dark) {
 
-  .dcf-input-select, // TODO: deprecate .dcf-input-select?
+  .dcf-input-select,
   .dcf-form select {
     // Change select arrow color for dark mode
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='#{encodecolor(var.$color-select-arrow-dark-mode)}' d='M23.9 2.3c-.1-.2-.2-.3-.4-.3H.5c-.2 0-.3.1-.4.3-.1.1-.1.3 0 .5l11.5 19c.1.1.3.2.4.2s.3-.1.4-.2l11.5-19c.1-.2.1-.4 0-.5z'/%3E%3C/svg%3E"), linear-gradient(var.$bg-color-select-1, var.$bg-color-select-2);
@@ -375,19 +377,19 @@
 }
 
 
-.dcf-input-select::-ms-expand, // TODO: deprecate .dcf-input-select?
+.dcf-input-select::-ms-expand,
 .dcf-form select::-ms-expand {
   display: none;
 }
 
 
-.dcf-input-select:hover, // TODO: deprecate .dcf-input-select?
+.dcf-input-select:hover,
 .dcf-form select:hover {
   border-color: var.$border-color-input-hover;
 }
 
 
-.dcf-input-select:focus, // TODO: deprecate .dcf-input-select?
+.dcf-input-select:focus,
 .dcf-form select:focus {
   border-color: var.$border-color-input-focus;
   outline: none;
@@ -397,7 +399,7 @@
 // Display form controls inline instead of stacked at the small breakpoint
 @include mixins.mq(sm) {
 
-  .dcf-input-group-form, // TODO: deprecate .dcf-input-group-form?
+  .dcf-input-group-form,
   .dcf-form-controls-inline {
     align-items: baseline; // Align to baseline in case there is a difference in size between the label and its corresponding input
     display: flex;
