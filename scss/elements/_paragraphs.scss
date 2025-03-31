@@ -9,6 +9,7 @@
 p {
   margin-bottom: var.$margin-bottom-paragraph;
   margin-top: var.$margin-top-paragraph;
+  overflow-wrap: break-word;
   @if (var.$text-wrap-pretty-paragraph == true) {
     text-wrap: pretty;
   }

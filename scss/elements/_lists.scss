@@ -32,6 +32,7 @@ ol,
 ul {
   margin-bottom: var.$margin-bottom-dl-ol-ul;
   margin-top: var.$margin-top-dl-ol-ul;
+  overflow-wrap: break-word;
   @if (var.$text-wrap-pretty-dl-ol-ul == true) {
     text-wrap: pretty;
   }

@@ -25,6 +25,7 @@ h6 {
   line-height: var.$line-height-heading;
   margin-bottom: var.$margin-bottom-heading;
   margin-top: var.$margin-top-heading;
+  overflow-wrap: break-word;
   @if (var.$text-wrap-balance-heading == true) {
     text-wrap: balance;
   }
