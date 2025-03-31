@@ -117,7 +117,8 @@ a.dcf-btn-inverse-secondary {
 }
 
 
-.dcf-btn-icon {
+.dcf-btn:has(img),
+.dcf-btn:has(svg) {
   align-items: center;
   display: inline-grid;
   grid-auto-flow: column;
