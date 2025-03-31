@@ -1,0 +1,72 @@
+/////////////////////////////
+// CORE / MIXINS / ANIMATIONS
+/////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../functions/" as func;
+
+
+// No motion
+@mixin no-motion($imp:null) {
+  animation-duration: .001ms $imp;
+  animation-iteration-count: 1 $imp;
+  transition-duration: .001ms $imp;
+  transition-delay: .001ms $imp;
+}
+
+
+// Appear
+@mixin appear($imp:null) {
+  animation-fill-mode: forwards;
+  animation-name: appear;
+}
+
+
+// Disppear
+@mixin disappear($imp:null) {
+  animation-fill-mode: forwards;
+  animation-name: disappear;
+}
+
+
+// Fade
+@mixin fade-in($imp:null) {
+  @if (func.to-number(var.$animation-delay-fade-in) != 0) {
+    animation-delay: var.$animation-delay-fade-in;
+  }
+  animation-duration: var.$animation-duration-fade-in;
+  animation-timing-function: var.$animation-timing-fn-fade-in;
+  opacity: 0; // Starting opacity
+}
+
+
+// Move
+@mixin move-left($imp:null) {
+  @if (func.to-number(var.$animation-delay-move-left) != 0) {
+    animation-delay: var.$animation-delay-move-left;
+  }
+  animation-duration: var.$animation-duration-move-left;
+  animation-timing-function: var.$animation-timing-fn-move-left;
+  transform: translateX(var.$animation-transform-move-left);
+}
+
+
+@mixin move-right($imp:null) {
+  @if (func.to-number(var.$animation-delay-move-right) != 0) {
+    animation-delay: var.$animation-delay-move-right;
+  }
+  animation-duration: var.$animation-duration-move-right;
+  animation-timing-function: var.$animation-timing-fn-move-right;
+  transform: translateX(var.$animation-transform-move-right);
+}
+
+
+@mixin move-up($imp:null) {
+  @if (func.to-number(var.$animation-delay-move-up) != 0) {
+    animation-delay: var.$animation-delay-move-up;
+  }
+  animation-duration: var.$animation-duration-move-up;
+  animation-timing-function: var.$animation-timing-fn-move-up;
+  transform: translateY(var.$animation-transform-move-up);
+}
