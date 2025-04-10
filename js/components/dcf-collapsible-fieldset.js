@@ -4,10 +4,14 @@ import DCFButtonToggles from './dcf-button-toggle.js';
 export default class DCFCollapsibleFieldsets {
 
     uuid = uuidv4();
-    fieldset_element = null;
-    legend_element = null;
-    legend_button_element = null;
-    inner_div_element = null;
+
+    fieldsetElement = null;
+
+    legendElement = null;
+
+    legendButtonElement = null;
+
+    innerDivElement = null;
 
     legendButtonClassList = [
         'dcf-btn',
@@ -21,6 +25,7 @@ export default class DCFCollapsibleFieldsets {
     ];
 
     legendButtonInnerHTMLOn = '-';
+
     legendButtonInnerHTMLOff = '+';
 
     fieldsetContentsClassList = [];
@@ -41,13 +46,18 @@ export default class DCFCollapsibleFieldsets {
 
     fieldsetClassListOff = [];
 
-    animationBlockClassList = [ 'dcf-motion-none' ];
+    animationBlockClassList = [
+        'dcf-motion-none',
+    ];
 
     fieldsetReadyEvent = new Event(DCFCollapsibleFieldsets.events('fieldsetReady'));
+
     commandToggle = new Event(DCFButtonToggles.events('commandToggle'));
 
     toggleKeys = [];
+
     onKeys = [];
+
     offKeys = [];
 
     // Set up the button
@@ -55,17 +65,17 @@ export default class DCFCollapsibleFieldsets {
         // Copy the Keys without copying the references
         // Objects plus their properties and arrays are pass by reference
         if (Array.isArray(options.toggleKeys)) {
-            this.toggleKeys = [ ...options.toggleKeys ];
+            this.toggleKeys = [...options.toggleKeys];
         } else if (options.toggleKeys !== null && options.toggleKeys !== undefined && options.toggleKeys !== '') {
             this.toggleKeys.push(options.toggleKeys);
         }
         if (Array.isArray(options.onKeys)) {
-            this.onKeys = [ ...options.onKeys ];
+            this.onKeys = [...options.onKeys];
         } else if (options.onKeys !== null && options.onKeys !== undefined && options.onKeys !== '') {
             this.onKeys.push(options.onKeys);
         }
         if (Array.isArray(options.offKeys)) {
-            this.offKeys = [ ...options.offKeys ];
+            this.offKeys = [...options.offKeys];
         } else if (options.offKeys !== null && options.offKeys !== undefined && options.offKeys !== '') {
             this.offKeys.push(options.offKeys);
         }
@@ -102,88 +112,89 @@ export default class DCFCollapsibleFieldsets {
             this.animationBlockClassList = options.animationBlockClassList;
         }
 
-        this.fieldset_element = fieldset;
+        this.fieldsetElement = fieldset;
 
         // We want to put everything inside the fieldset into a div
         // That div is what will toggle and not the fieldset
         // If we toggle the fieldset then we will also toggle the legend which holds the button
 
         // Gets value for if it starts expanded or not
-        let fieldsetStartExpanded = this.fieldset_element.dataset.startExpanded;
+        let fieldsetStartExpanded = this.fieldsetElement.dataset.startExpanded;
         if (fieldsetStartExpanded === undefined) {
             fieldsetStartExpanded = 'true';
         }
 
         // Checks for legend
-        const legend = this.fieldset_element.querySelector('legend');
+        const legend = this.fieldsetElement.querySelector('legend');
         if (legend === null) {
             throw new Error('Missing Legend In Fieldset');
         }
 
         // Removed the legend and saves it
-        this.legend_element = legend.cloneNode(true);
+        this.legendElement = legend.cloneNode(true);
         legend.remove();
-        this.legend_element.style.cursor = 'pointer';
+        this.legendElement.style.cursor = 'pointer';
 
         // Creates a new div and we copy everything left in the fieldset into it
-        this.inner_div_element = document.createElement('div');
-        this.inner_div_element.id = this.uuid.concat('-collapsible-fieldset-contents');
-        this.inner_div_element.innerHTML = fieldset.innerHTML;
+        this.innerDivElement = document.createElement('div');
+        this.innerDivElement.setAttribute('id', this.uuid.concat('-collapsible-fieldset-contents'));
+        this.innerDivElement.innerHTML = fieldset.innerHTML;
+
         // We will also add any styles
         this.fieldsetContentsClassList.forEach((divClass) => {
-            this.inner_div_element.classList.add(divClass);
+            this.innerDivElement.classList.add(divClass);
         });
         if (fieldsetStartExpanded === 'true') {
             this.fieldsetContentsClassListOn.forEach((divClass) => {
-                this.inner_div_element.classList.add(divClass);
+                this.innerDivElement.classList.add(divClass);
             });
         } else {
             this.fieldsetContentsClassListOff.forEach((divClass) => {
-                this.inner_div_element.classList.add(divClass);
+                this.innerDivElement.classList.add(divClass);
             });
         }
 
         // We can then add the new div and legend back into the fieldset
-        this.fieldset_element.innerHTML = '';
-        this.fieldset_element.append(this.legend_element);
-        this.fieldset_element.append(this.inner_div_element);
+        this.fieldsetElement.innerHTML = '';
+        this.fieldsetElement.append(this.legendElement);
+        this.fieldsetElement.append(this.innerDivElement);
 
         // Block any animations from running on load
         // These get removed during first event listener
         this.animationBlockClassList.forEach((fieldsetClass) => {
-            this.fieldset_element.classList.add(fieldsetClass);
+            this.fieldsetElement.classList.add(fieldsetClass);
         });
 
         // We can also add any styles
         this.fieldsetClassList.forEach((fieldsetClass) => {
-            this.fieldset_element.classList.add(fieldsetClass);
+            this.fieldsetElement.classList.add(fieldsetClass);
         });
         if (fieldsetStartExpanded === 'true') {
             this.fieldsetClassListOn.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.add(fieldsetClass);
+                this.fieldsetElement.classList.add(fieldsetClass);
             });
         } else {
             this.fieldsetClassListOff.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.add(fieldsetClass);
+                this.fieldsetElement.classList.add(fieldsetClass);
             });
         }
 
         // We then make the button to be put into the legend
-        this.legend_button_element = document.createElement('button');
+        this.legendButtonElement = document.createElement('button');
         this.legendButtonClassList.forEach((btnClass) => {
-            this.legend_button_element.classList.add(btnClass);
+            this.legendButtonElement.classList.add(btnClass);
         });
-        this.legend_button_element.innerHTML = this.legendButtonInnerHTMLOn;
-        this.legend_button_element.setAttribute('type', 'button');
+        this.legendButtonElement.innerHTML = this.legendButtonInnerHTMLOn;
+        this.legendButtonElement.setAttribute('type', 'button');
 
         // We set up the toggle button values
-        this.legend_button_element.dataset.controls = this.inner_div_element.id;
-        this.legend_button_element.dataset.labelOn = 'Expand Fieldset';
-        this.legend_button_element.dataset.labelOff = 'Collapse Fieldset';
-        this.legend_button_element.dataset.startExpanded = fieldsetStartExpanded;
+        this.legendButtonElement.dataset.controls = this.innerDivElement.id;
+        this.legendButtonElement.dataset.labelOn = 'Expand Fieldset';
+        this.legendButtonElement.dataset.labelOff = 'Collapse Fieldset';
+        this.legendButtonElement.dataset.startExpanded = fieldsetStartExpanded;
 
         // Append the button and initialize it
-        this.legend_element.prepend(this.legend_button_element);
+        this.legendElement.prepend(this.legendButtonElement);
 
         // We can then add the event listeners
         // We want to do this before the toggle button is initialized
@@ -192,7 +203,7 @@ export default class DCFCollapsibleFieldsets {
 
         // Initialize the toggle button
         //TODO: Use class methods instead of command events
-        new DCFButtonToggles(this.legend_button_element, {
+        new DCFButtonToggles(this.legendButtonElement, {
             toggleKeys: this.toggleKeys,
             onKeys:     this.onKeys,
             offKeys:    this.offKeys,
@@ -200,22 +211,22 @@ export default class DCFCollapsibleFieldsets {
 
         // This lets any outside js that needs to interact with elements inside the fieldset
         // to know that its safe to create references to these elements
-        this.fieldset_element.dispatchEvent(this.fieldsetReadyEvent);
+        this.fieldsetElement.dispatchEvent(this.fieldsetReadyEvent);
 
-        if (this.fieldset_element.getAttribute('hidden') !== null) {
-            this.fieldset_element.removeAttribute('hidden');
+        if (this.fieldsetElement.getAttribute('hidden') !== null) {
+            this.fieldsetElement.removeAttribute('hidden');
         }
 
         // Remove the classes related to block any animation
-        let removeAnimationBlock = () => {
+        const removeAnimationBlock = () => {
             this.animationBlockClassList.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.remove(fieldsetClass);
+                this.fieldsetElement.classList.remove(fieldsetClass);
             });
-            this.fieldset_element.removeEventListener('transitionend', removeAnimationBlock);
+            this.fieldsetElement.removeEventListener('transitionend', removeAnimationBlock);
         };
 
         // We want to wait for the css classes to finish changing before removing the classes
-        this.fieldset_element.addEventListener('transitionend', removeAnimationBlock);
+        this.fieldsetElement.addEventListener('transitionend', removeAnimationBlock);
     }
 
     // The names of the events to be used easily
@@ -241,65 +252,65 @@ export default class DCFCollapsibleFieldsets {
     //  */
     #setEventListeners() {
         // If we click the legend and not the button we want to toggle the fieldset
-        this.legend_element.addEventListener('click', (event) => {
+        this.legendElement.addEventListener('click', (event) => {
             // If the legend does not contain it then we clicked the SVG and the SVG has changed
             // If e.target is the button we do not want to toggle
             // If the button contains e.target then we do not want to toggle
             if (
-                this.legend_element.contains(event.target) &&
-                !this.legend_button_element.isEqualNode(event.target) &&
-                !this.legend_button_element.contains(event.target)
+                this.legendElement.contains(event.target) &&
+                !this.legendButtonElement.isEqualNode(event.target) &&
+                !this.legendButtonElement.contains(event.target)
             ) {
-                this.legend_button_element.dispatchEvent(this.commandToggle);
+                this.legendButtonElement.dispatchEvent(this.commandToggle);
             }
         });
 
         // We listen for when the toggle element is turned on
-        this.inner_div_element.addEventListener(DCFCollapsibleFieldsets.events('toggleElementOn'), () => {
+        this.innerDivElement.addEventListener(DCFCollapsibleFieldsets.events('toggleElementOn'), () => {
             // When it is we will remove the off styles and add the on styles
             this.fieldsetContentsClassListOff.forEach((toggleElementClass) => {
-                this.inner_div_element.classList.remove(toggleElementClass);
+                this.innerDivElement.classList.remove(toggleElementClass);
             });
             this.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
-                this.inner_div_element.classList.add(toggleElementClass);
+                this.innerDivElement.classList.add(toggleElementClass);
             });
 
             // When it is we will remove the off styles and add the on styles
             this.fieldsetClassListOff.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.remove(fieldsetClass);
+                this.fieldsetElement.classList.remove(fieldsetClass);
             });
             this.fieldsetClassListOn.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.add(fieldsetClass);
+                this.fieldsetElement.classList.add(fieldsetClass);
             });
         });
 
         // We listen for when the toggle element is turned off
-        this.inner_div_element.addEventListener(DCFCollapsibleFieldsets.events('toggleElementOff'), () => {
+        this.innerDivElement.addEventListener(DCFCollapsibleFieldsets.events('toggleElementOff'), () => {
             // When it is we will remove the on styles and add the off styles
             this.fieldsetContentsClassListOn.forEach((toggleElementClass) => {
-                this.inner_div_element.classList.remove(toggleElementClass);
+                this.innerDivElement.classList.remove(toggleElementClass);
             });
             this.fieldsetContentsClassListOff.forEach((toggleElementClass) => {
-                this.inner_div_element.classList.add(toggleElementClass);
+                this.innerDivElement.classList.add(toggleElementClass);
             });
 
             // When it is we will remove the on styles and add the off styles
             this.fieldsetClassListOn.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.remove(fieldsetClass);
+                this.fieldsetElement.classList.remove(fieldsetClass);
             });
             this.fieldsetClassListOff.forEach((fieldsetClass) => {
-                this.fieldset_element.classList.add(fieldsetClass);
+                this.fieldsetElement.classList.add(fieldsetClass);
             });
         });
 
         // We listen for when the toggle button is turned on and update the HTML
-        this.legend_button_element.addEventListener(DCFCollapsibleFieldsets.events('toggleButtonOn'), () => {
-            this.legend_button_element.innerHTML = this.legendButtonInnerHTMLOn;
+        this.legendButtonElement.addEventListener(DCFCollapsibleFieldsets.events('toggleButtonOn'), () => {
+            this.legendButtonElement.innerHTML = this.legendButtonInnerHTMLOn;
         });
 
         // We listen for when the toggle button is turned off and update the HTML
-        this.legend_button_element.addEventListener(DCFCollapsibleFieldsets.events('toggleButtonOff'), () => {
-            this.legend_button_element.innerHTML = this.legendButtonInnerHTMLOff;
+        this.legendButtonElement.addEventListener(DCFCollapsibleFieldsets.events('toggleButtonOff'), () => {
+            this.legendButtonElement.innerHTML = this.legendButtonInnerHTMLOff;
         });
     }
 }

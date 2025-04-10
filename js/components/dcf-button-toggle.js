@@ -5,36 +5,42 @@ export default class DCFButtonToggles {
     uuid = uuidv4();
 
     toggleButtonElement = null;
+
     toggleTargetElement = null;
 
     toggleButtonOn = new Event(DCFButtonToggles.events('toggleButtonOn'));
+
     toggleButtonOff = new Event(DCFButtonToggles.events('toggleButtonOff'));
+
     toggleElementOn = new Event(DCFButtonToggles.events('toggleElementOn'));
+
     toggleElementOff = new Event(DCFButtonToggles.events('toggleElementOff'));
 
     toggleKeys = [];
+
     onKeys = [];
+
     offKeys = [];
 
     constructor(toggleButtonElement, options={}) {
         this.toggleButtonElement = toggleButtonElement;
 
         if (Array.isArray(options.toggleKeys)) {
-        this.toggleKeys = [ ...options.toggleKeys ];
+            this.toggleKeys = [...options.toggleKeys];
         } else if (options.toggleKeys !== null && options.toggleKeys !== undefined && options.toggleKeys !== '') {
-        this.toggleKeys.push(options.toggleKeys);
+            this.toggleKeys.push(options.toggleKeys);
         }
 
         if (Array.isArray(options.onKeys)) {
-        this.onKeys = [ ...options.onKeys ];
+            this.onKeys = [...options.onKeys];
         } else if (options.onKeys !== null && options.onKeys !== undefined && options.onKeys !== '') {
-        this.onKeys.push(options.onKeys);
+            this.onKeys.push(options.onKeys);
         }
 
         if (Array.isArray(options.offKeys)) {
-        this.offKeys = [ ...options.offKeys ];
+            this.offKeys = [...options.offKeys];
         } else if (options.offKeys !== null && options.offKeys !== undefined && options.offKeys !== '') {
-        this.offKeys.push(options.offKeys);
+            this.offKeys.push(options.offKeys);
         }
 
         // These keys will always work
@@ -120,28 +126,28 @@ export default class DCFButtonToggles {
         // Hide element when the `escape` is pressed
         this.toggleButtonElement.addEventListener('keydown', (keydownEvent) => {
             this.toggleKeys.forEach((key) => {
-            if (isKeyEvent(keydownEvent, keyEvents(key))) {
-                const switched = this.toggleSwitched();
-                if (switched) {
-                    keydownEvent.preventDefault();
+                if (isKeyEvent(keydownEvent, keyEvents(key))) {
+                    const switched = this.toggleSwitched();
+                    if (switched) {
+                        keydownEvent.preventDefault();
+                    }
                 }
-            }
             });
             this.onKeys.forEach((key) => {
-            if (isKeyEvent(keydownEvent, keyEvents(key))) {
-                const switched = this.toggleSwitched('open');
-                if (switched) {
-                    keydownEvent.preventDefault();
+                if (isKeyEvent(keydownEvent, keyEvents(key))) {
+                    const switched = this.toggleSwitched('open');
+                    if (switched) {
+                        keydownEvent.preventDefault();
+                    }
                 }
-            }
             });
             this.offKeys.forEach((key) => {
-            if (isKeyEvent(keydownEvent, keyEvents(key))) {
-                const switched = this.toggleSwitched('close');
-                if (switched) {
-                    keydownEvent.preventDefault();
+                if (isKeyEvent(keydownEvent, keyEvents(key))) {
+                    const switched = this.toggleSwitched('close');
+                    if (switched) {
+                        keydownEvent.preventDefault();
+                    }
                 }
-            }
             });
         }, false);
 
@@ -192,12 +198,13 @@ export default class DCFButtonToggles {
 
             // Removed transitionend if it was there
             this.toggleTargetElement.removeEventListener('transitionend', function() {
-                this.#removeDisplayNone
+                this.#removeDisplayNone;
             }.bind(this));
 
             // Unhide the stuff now so animations can run after
             this.toggleTargetElement.setAttribute('aria-hidden', 'false');
             this.toggleTargetElement.classList.remove('dcf-d-none');
+
             // If we do not have this the transition will not run on our toggled elements for some reason
             setTimeout(() => {
                 this.toggleTargetElement.classList.remove('dcf-opacity-0', 'dcf-pointer-events-none');
@@ -238,7 +245,7 @@ export default class DCFButtonToggles {
                 this.toggleTargetElement.classList.add('dcf-d-none');
             } else {
                 this.toggleTargetElement.addEventListener('transitionend', function() {
-                    this.#removeDisplayNone
+                    this.#removeDisplayNone;
                 }.bind(this));
             }
 

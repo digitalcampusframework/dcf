@@ -8,7 +8,7 @@ import { uuidv4 } from '../dcf-utility.js';
  * @property {string} value - The option's value
  * @property {bool} disabled - If option is disabled
  * @property {bool} selected - If option is selected
- * @property {string} id - The option's unique ID
+ * @property {string} elemId - The option's unique ID
  * @property {HTMLOptionElement} element - The options's original element
  */
 
@@ -34,43 +34,52 @@ export default class DCFSearchSelect {
     multiple = false;
 
     selectID = null;
+
     selectElement = null;
+
     parsedSelect = [];
 
     searchAndSelectID = null;
+
     searchAndSelectElement = null;
 
     inputID = null;
+
     inputElement = null;
 
     openButtonElement = null;
+
     searchAreaElement = null;
 
     availableItemsListID = null;
+
     availableItemsListElement = null;
+
     listOfAvailableItems = [];
 
     selectedItemsListID = null;
+
     selectedItemsListElement = null;
+
     selectedItemsHelpID = null;
 
     currentFocus = null;
 
     searchAndSelectClassList = [
-        'dcf-relative'
+        'dcf-relative',
     ];
 
     searchAreaClassList = [
         'dcf-relative',
         'dcf-d-grid',
         'dcf-overflow-x-hidden',
-        'dcf-overflow-y-auto'
+        'dcf-overflow-y-auto',
     ];
 
     selectedItemsListClassList = [
         'dcf-d-flex',
         'dcf-flex-wrap',
-        'dcf-m-0'
+        'dcf-m-0',
     ];
 
     selectedItemClassList = [
@@ -79,14 +88,14 @@ export default class DCFSearchSelect {
         'dcf-ai-center',
         'dcf-jc-center',
         'dcf-mb-0',
-        'dcf-relative'
+        'dcf-relative',
     ];
 
     selectedItemButtonClassList = [
         'dcf-btn',
         'dcf-btn-secondary',
         'dcf-h-100%',
-        'dcf-z-1'
+        'dcf-z-1',
     ];
 
     selectedItemButtonSVG = `<svg
@@ -106,13 +115,13 @@ export default class DCFSearchSelect {
         'dcf-top-50%',
         'dcf-h-0',
         'dcf-pl-1',
-        'dcf-pr-1'
+        'dcf-pr-1',
     ];
 
     toggleButtonClassList = [
         'dcf-btn',
         'dcf-btn-tertiary',
-        'dcf-p-3'
+        'dcf-p-3',
     ];
 
     toggleButtonSVG = `<svg
@@ -128,12 +137,12 @@ aria-hidden="true"
 </svg>`;
 
     inputSingleClassList = [
-        'dcf-b-0'
+        'dcf-b-0',
     ];
 
     inputGroupMultiple = [
         'dcf-d-flex',
-        'dcf-flex-wrap'
+        'dcf-flex-wrap',
     ];
 
     inputMultipleClassList = [
@@ -148,17 +157,17 @@ aria-hidden="true"
         'dcf-mb-0',
         'dcf-pl-0',
         'dcf-w-100%',
-        'dcf-z-2'
+        'dcf-z-2',
     ];
 
     availableItemsGroupClassList = [
         'dcf-m-0',
-        'dcf-pl-0'
+        'dcf-pl-0',
     ];
 
     availableItemsGroupLabelClassList = [
         'dcf-mb-0',
-        'dcf-bold'
+        'dcf-bold',
     ];
 
     availableItemClassList = [
@@ -183,7 +192,7 @@ aria-hidden="true"
 
     availableItemsNoResultsClassList = [
         'dcf-mb-0',
-        'dcf-bold'
+        'dcf-bold',
     ];
 
 
@@ -357,7 +366,7 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
         this.availableItemsListElement.setAttribute('id', this.availableItemsListID);
         this.availableItemsListElement.classList.add(
             'dcf-search-and-select-available-items',
-            ...this.availableItemsListClassList
+            ...this.availableItemsListClassList,
         );
         this.searchAndSelectElement.append(this.availableItemsListElement);
 
@@ -382,7 +391,7 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
         const attributesToFix = [
             'for',
             'aria-controls',
-            'aria-describedby'
+            'aria-describedby',
         ];
 
         attributesToFix.forEach((singleAttr) => {
@@ -415,8 +424,8 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
      * @returns { Array<ParsedOptgroup> }
      */
     #parseSelect() {
-        let returnedData = this.#parseSelectInner(this.selectElement);
-        let optgroups = returnedData.optgroups;
+        const returnedData = this.#parseSelectInner(this.selectElement);
+        const optgroups = returnedData.optgroups;
 
         if (returnedData.options.length > 0) {
             optgroups.push({
@@ -441,8 +450,8 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
 
         for (const optgroupOrOption of selectOrOptgroup.children) {
             if (optgroupOrOption.tagName === 'OPTGROUP') {
-                let returnedData = this.#parseSelectInner(optgroupOrOption);
-                let returnedOptgroups = returnedData.optgroups;
+                const returnedData = this.#parseSelectInner(optgroupOrOption);
+                const returnedOptgroups = returnedData.optgroups;
                 optgroups.push(...returnedOptgroups);
 
                 optgroups.push({
@@ -458,7 +467,7 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
                     value: optgroupOrOption.getAttribute('value'),
                     selected: optgroupOrOption.getAttribute('selected') !== null,
                     disabled: optgroupOrOption.getAttribute('disabled') !== null,
-                    id: uuidv4().concat(`-search-and-select-option`),
+                    elemId: uuidv4().concat('-search-and-select-option'),
                     element: optgroupOrOption,
                 });
             }
@@ -484,13 +493,13 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
      * @returns { HTMLUListElement }
      */
     #buildAvailableItemsSingle() {
-        let availableItems = document.createElement('ul');
+        const availableItems = document.createElement('ul');
         availableItems.setAttribute('role', 'listbox');
 
         let lastSelectedOption = null;
 
         this.parsedSelect.forEach((singleOptgroup) => {
-            let groupedItems = document.createElement('ul');
+            const groupedItems = document.createElement('ul');
             groupedItems.setAttribute('role', 'group');
             groupedItems.classList.add('dcf-search-and-select-available-items-group', ...this.availableItemsGroupClassList);
 
@@ -509,15 +518,15 @@ ${ singleOptgroup.label }
                 newItem.classList.add(
                     'dcf-search-and-select-available-item',
                     'dcf-search-and-select-clickable',
-                    ...this.availableItemClassList
+                    ...this.availableItemClassList,
                 );
                 newItem.setAttribute('role', 'option');
                 newItem.setAttribute('aria-selected', 'false');
                 newItem.setAttribute('aria-disabled', singleItem.disabled);
-                newItem.setAttribute('id', `${ singleItem.id }-available`);
+                newItem.setAttribute('id', `${ singleItem.elemId }-available`);
                 newItem.dataset.value = singleItem.value;
                 newItem.dataset.label = singleItem.label;
-                newItem.dataset.id = singleItem.id;
+                newItem.dataset.elemId = singleItem.elemId;
                 newItem.innerHTML = `<span
     class="dcf-search-and-select-available-item-label">
     ${ singleItem.label}
@@ -549,11 +558,11 @@ ${ singleOptgroup.label }
      * @returns { HTMLUListElement }
      */
     #buildAvailableItemsMultiple() {
-        let availableItems = document.createElement('ul');
+        const availableItems = document.createElement('ul');
         availableItems.setAttribute('role', 'listbox');
 
         this.parsedSelect.forEach((singleOptgroup) => {
-            let groupedItems = document.createElement('ul');
+            const groupedItems = document.createElement('ul');
             groupedItems.setAttribute('role', 'group');
             groupedItems.classList.add('dcf-search-and-select-available-items-group', ...this.availableItemsGroupClassList);
 
@@ -573,14 +582,14 @@ ${ singleOptgroup.label }
                 newItem.classList.add(
                     'dcf-search-and-select-available-item',
                     'dcf-search-and-select-clickable',
-                    ...this.availableItemClassList
+                    ...this.availableItemClassList,
                 );
                 newItem.setAttribute('role', 'option');
                 newItem.setAttribute('aria-selected', singleItem.disabled ? 'false' : singleItem.selected);
                 newItem.setAttribute('aria-disabled', singleItem.disabled);
-                newItem.setAttribute('id', `${ singleItem.id }-available`);
+                newItem.setAttribute('id', `${ singleItem.elemId }-available`);
                 newItem.dataset.value = singleItem.value;
-                newItem.dataset.id = singleItem.id;
+                newItem.dataset.elemId = singleItem.elemId;
                 newItem.innerHTML = `<span
     class="dcf-search-and-select-available-item-label">
     ${ singleItem.label}
@@ -612,13 +621,13 @@ ${ singleOptgroup.label }
             throw new Error('Element is not an available item');
         }
 
-        let newSelectedItem = document.createElement('li');
-        newSelectedItem.dataset.id = singleAvailableItem.dataset.id;
-        newSelectedItem.setAttribute('id', `${ singleAvailableItem.dataset.id }-selected`);
+        const newSelectedItem = document.createElement('li');
+        newSelectedItem.dataset.elemId = singleAvailableItem.dataset.elemId;
+        newSelectedItem.setAttribute('id', `${ singleAvailableItem.dataset.elemId }-selected`);
         newSelectedItem.classList.add(
             'dcf-search-and-select-selected-item',
             'dcf-search-and-select-clickable',
-            ... this.selectedItemClassList
+            ... this.selectedItemClassList,
         );
         newSelectedItem.innerHTML = `<button
     class="
@@ -690,106 +699,106 @@ ${ singleOptgroup.label }
             const length = this.inputElement.value.length;
 
             switch (event.code) {
-                case 'Enter':
-                    if (this.#visualFocusOnAvailableItems()) {
-                        const currentItemElement = this.getAvailableItemActiveDescendant();
-                        if (currentItemElement !== false) {
-                            if (!this.#isAvailableItemDisabled(currentItemElement)) {
-                                if (this.#isAvailableItemSelected(currentItemElement)) {
-                                    this.#removeAvailableItem(currentItemElement);
-                                } else {
-                                    this.#selectAvailableItem(currentItemElement);
-                                }
+            case 'Enter':
+                if (this.#visualFocusOnAvailableItems()) {
+                    const currentItemElement = this.getAvailableItemActiveDescendant();
+                    if (currentItemElement !== false) {
+                        if (!this.#isAvailableItemDisabled(currentItemElement)) {
+                            if (this.#isAvailableItemSelected(currentItemElement)) {
+                                this.#removeAvailableItem(currentItemElement);
+                            } else {
+                                this.#selectAvailableItem(currentItemElement);
                             }
                         }
-                    } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
+                    }
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    this.#setVisualFocusOn(this.availableItemsListElement);
+                    this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
+                    this.#scrollActiveAvailableItemInView();
+                }
+                preventDefault = true;
+                break;
+
+            case 'Down':
+            case 'ArrowDown':
+                if (altKey) {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    if (!this.#visualFocusOnAvailableItems()) {
                         this.#setVisualFocusOn(this.availableItemsListElement);
                         this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
                         this.#scrollActiveAvailableItemInView();
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Down':
-                case 'ArrowDown':
-                    if (altKey) {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
                     } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                        if (!this.#visualFocusOnAvailableItems()) {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        } else {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getNextAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        }
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getNextAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
                     }
-                    preventDefault = true;
-                    break;
+                }
+                preventDefault = true;
+                break;
 
-                case 'Esc':
-                case 'Escape':
-                    if (this.isAvailableItemsOpen()) {
-                        this.closeAvailableItems(true);
-                        this.#setVisualFocusOn(this.searchAreaElement);
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Up':
-                case 'ArrowUp':
-                    if (altKey) {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                    } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                        if (!this.#visualFocusOnAvailableItems()) {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getLastAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        } else {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getPreviousAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        }
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Tab':
+            case 'Esc':
+            case 'Escape':
+                if (this.isAvailableItemsOpen()) {
                     this.closeAvailableItems(true);
-                    this.#setVisualFocusOn(false);
-                    break;
+                    this.#setVisualFocusOn(this.searchAreaElement);
+                }
+                preventDefault = true;
+                break;
 
-                case 'Home':
-                    this.inputElement.setSelectionRange(0, 0);
-                    preventDefault = true;
-                    break;
+            case 'Up':
+            case 'ArrowUp':
+                if (altKey) {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    if (!this.#visualFocusOnAvailableItems()) {
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getLastAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
+                    } else {
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getPreviousAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
+                    }
+                }
+                preventDefault = true;
+                break;
 
-                case 'End':
-                    this.inputElement.setSelectionRange(length, length);
-                    preventDefault = true;
-                    break;
+            case 'Tab':
+                this.closeAvailableItems(true);
+                this.#setVisualFocusOn(false);
+                break;
 
-                default:
-                    break;
+            case 'Home':
+                this.inputElement.setSelectionRange(0, 0);
+                preventDefault = true;
+                break;
+
+            case 'End':
+                this.inputElement.setSelectionRange(length, length);
+                preventDefault = true;
+                break;
+
+            default:
+                break;
             }
 
             if (preventDefault) {
@@ -804,40 +813,38 @@ ${ singleOptgroup.label }
             }
 
             const char = event.key;
-            // const altKey = event.altKey;
             let preventDefault = false;
-            // const length = this.inputElement.value.length;
 
             if (event.key === 'Escape' || event.key === 'Esc') {
                 return;
             }
 
             switch (event.code) {
-                case 'Backspace':
+            case 'Backspace':
+                this.#setVisualFocusOn(this.searchAreaElement);
+                this.#filterAvailableItems();
+                this.#setAvailableItemActiveDescendant(false);
+                preventDefault = true;
+                break;
+
+            case 'Left':
+            case 'ArrowLeft':
+            case 'Right':
+            case 'ArrowRight':
+            case 'Home':
+            case 'End':
+                this.#setVisualFocusOn(this.searchAreaElement);
+                preventDefault = true;
+                break;
+
+            default:
+                if (this.#isPrintableCharacter(char)) {
                     this.#setVisualFocusOn(this.searchAreaElement);
                     this.#filterAvailableItems();
+                    this.openAvailableItems();
                     this.#setAvailableItemActiveDescendant(false);
-                    preventDefault = true;
-                    break;
-
-                case 'Left':
-                case 'ArrowLeft':
-                case 'Right':
-                case 'ArrowRight':
-                case 'Home':
-                case 'End':
-                    this.#setVisualFocusOn(this.searchAreaElement);
-                    preventDefault = true;
-                    break;
-
-                default:
-                    if (this.#isPrintableCharacter(char)) {
-                        this.#setVisualFocusOn(this.searchAreaElement);
-                        this.#filterAvailableItems();
-                        this.openAvailableItems();
-                        this.#setAvailableItemActiveDescendant(false);
-                    }
-                    break;
+                }
+                break;
             }
 
             if (preventDefault) {
@@ -923,108 +930,108 @@ ${ singleOptgroup.label }
             const length = this.inputElement.value.length;
 
             switch (event.code) {
-                case 'Enter':
-                    if (this.#visualFocusOnAvailableItems()) {
-                        const currentItemElement = this.getAvailableItemActiveDescendant();
-                        if (currentItemElement !== false) {
-                            if (!this.#isAvailableItemDisabled(currentItemElement)) {
-                                if (this.#isAvailableItemSelected(currentItemElement)) {
-                                    this.#removeAvailableItem(currentItemElement);
-                                } else {
-                                    this.#selectAvailableItem(currentItemElement);
-                                }
+            case 'Enter':
+                if (this.#visualFocusOnAvailableItems()) {
+                    const currentItemElement = this.getAvailableItemActiveDescendant();
+                    if (currentItemElement !== false) {
+                        if (!this.#isAvailableItemDisabled(currentItemElement)) {
+                            if (this.#isAvailableItemSelected(currentItemElement)) {
+                                this.#removeAvailableItem(currentItemElement);
+                            } else {
+                                this.#selectAvailableItem(currentItemElement);
                             }
                         }
-                    } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
+                    }
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    this.#setVisualFocusOn(this.availableItemsListElement);
+                    this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
+                    this.#scrollActiveAvailableItemInView();
+                }
+                preventDefault = true;
+                break;
+
+            case 'Down':
+            case 'ArrowDown':
+                if (altKey) {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    if (!this.#visualFocusOnAvailableItems()) {
                         this.#setVisualFocusOn(this.availableItemsListElement);
                         this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
                         this.#scrollActiveAvailableItemInView();
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Down':
-                case 'ArrowDown':
-                    if (altKey) {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
                     } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                        if (!this.#visualFocusOnAvailableItems()) {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getFirstAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        } else {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getNextAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        }
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getNextAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
                     }
-                    preventDefault = true;
-                    break;
+                }
+                preventDefault = true;
+                break;
 
-                case 'Esc':
-                case 'Escape':
-                    if (this.isAvailableItemsOpen()) {
-                        this.closeAvailableItems(true);
-                        this.#setVisualFocusOn(this.searchAreaElement);
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Up':
-                case 'ArrowUp':
-                    if (altKey) {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                    } else {
-                        if (!this.isAvailableItemsOpen()) {
-                            this.#filterAvailableItems();
-                            this.openAvailableItems();
-                        }
-                        if (!this.#visualFocusOnAvailableItems()) {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getLastAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        } else {
-                            this.#setVisualFocusOn(this.availableItemsListElement);
-                            this.#setAvailableItemActiveDescendant(this.getPreviousAvailableItem());
-                            this.#scrollActiveAvailableItemInView();
-                        }
-                    }
-                    preventDefault = true;
-                    break;
-
-                case 'Tab':
+            case 'Esc':
+            case 'Escape':
+                if (this.isAvailableItemsOpen()) {
                     this.closeAvailableItems(true);
-                    if (this.isSelectedItemTab() === false || !shiftKey) {
-                        this.#setVisualFocusOn(false);
+                    this.#setVisualFocusOn(this.searchAreaElement);
+                }
+                preventDefault = true;
+                break;
+
+            case 'Up':
+            case 'ArrowUp':
+                if (altKey) {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
                     }
-                    break;
+                } else {
+                    if (!this.isAvailableItemsOpen()) {
+                        this.#filterAvailableItems();
+                        this.openAvailableItems();
+                    }
+                    if (!this.#visualFocusOnAvailableItems()) {
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getLastAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
+                    } else {
+                        this.#setVisualFocusOn(this.availableItemsListElement);
+                        this.#setAvailableItemActiveDescendant(this.getPreviousAvailableItem());
+                        this.#scrollActiveAvailableItemInView();
+                    }
+                }
+                preventDefault = true;
+                break;
 
-                case 'Home':
+            case 'Tab':
+                this.closeAvailableItems(true);
+                if (this.isSelectedItemTab() === false || !shiftKey) {
+                    this.#setVisualFocusOn(false);
+                }
+                break;
+
+            case 'Home':
                 this.inputElement.setSelectionRange(0, 0);
-                    preventDefault = true;
-                    break;
+                preventDefault = true;
+                break;
 
-                case 'End':
-                    this.inputElement.setSelectionRange(length, length);
-                    preventDefault = true;
-                    break;
+            case 'End':
+                this.inputElement.setSelectionRange(length, length);
+                preventDefault = true;
+                break;
 
-                default:
-                    break;
+            default:
+                break;
             }
 
             if (preventDefault) {
@@ -1039,40 +1046,38 @@ ${ singleOptgroup.label }
             }
 
             const char = event.key;
-            // const altKey = event.altKey;
             let preventDefault = false;
-            // const length = this.inputElement.value.length;
 
             if (event.key === 'Escape' || event.key === 'Esc') {
                 return;
             }
 
             switch (event.code) {
-                case 'Backspace':
+            case 'Backspace':
+                this.#setVisualFocusOn(this.searchAreaElement);
+                this.#filterAvailableItems();
+                this.#setAvailableItemActiveDescendant(false);
+                preventDefault = true;
+                break;
+
+            case 'Left':
+            case 'ArrowLeft':
+            case 'Right':
+            case 'ArrowRight':
+            case 'Home':
+            case 'End':
+                this.#setVisualFocusOn(this.searchAreaElement);
+                preventDefault = true;
+                break;
+
+            default:
+                if (this.#isPrintableCharacter(char)) {
                     this.#setVisualFocusOn(this.searchAreaElement);
                     this.#filterAvailableItems();
+                    this.openAvailableItems();
                     this.#setAvailableItemActiveDescendant(false);
-                    preventDefault = true;
-                    break;
-
-                case 'Left':
-                case 'ArrowLeft':
-                case 'Right':
-                case 'ArrowRight':
-                case 'Home':
-                case 'End':
-                    this.#setVisualFocusOn(this.searchAreaElement);
-                    preventDefault = true;
-                    break;
-
-                default:
-                    if (this.#isPrintableCharacter(char)) {
-                        this.#setVisualFocusOn(this.searchAreaElement);
-                        this.#filterAvailableItems();
-                        this.openAvailableItems();
-                        this.#setAvailableItemActiveDescendant(false);
-                    }
-                    break;
+                }
+                break;
             }
 
             if (preventDefault) {
@@ -1190,58 +1195,58 @@ ${ singleOptgroup.label }
             const firstItem = this.getFirstSelectedItem();
 
             switch (event.code) {
-                case 'Left':
-                case 'ArrowLeft':
-                    if (currentItem === false) {
-                        this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-                    }
-                    this.#setVisualFocusOn(this.selectedItemsListElement);
-                    this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-                    this.scrollActiveSelectedItemInView();
-                    preventDefault = true;
-                    break;
-
-                case 'Right':
-                case 'ArrowRight':
-                    if (currentItem === false) {
-                        this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                    }
-                    this.#setVisualFocusOn(this.selectedItemsListElement);
-                    this.setSelectedItemActiveDescendant(this.getNextSelectedItem());
-                    this.scrollActiveSelectedItemInView();
-                    preventDefault = true;
-                    break;
-
-                case 'Home':
-                    this.#setVisualFocusOn(this.selectedItemsListElement);
-                    this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                    this.scrollActiveSelectedItemInView();
-                    preventDefault = true;
-                    break;
-
-                case 'End':
-                    this.#setVisualFocusOn(this.selectedItemsListElement);
+            case 'Left':
+            case 'ArrowLeft':
+                if (currentItem === false) {
                     this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-                    this.scrollActiveSelectedItemInView();
-                    preventDefault = true;
-                    break;
+                }
+                this.#setVisualFocusOn(this.selectedItemsListElement);
+                this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
+                this.scrollActiveSelectedItemInView();
+                preventDefault = true;
+                break;
 
-                case 'Backspace':
-                case 'Delete':
-                    if (!this.isComponentReadOnly()) {
-                        if (firstItem.isSameNode(currentItem)) {
-                            this.#removeSelectedItem(currentItem);
-                            this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                        } else {
-                            this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-                            this.#removeSelectedItem(currentItem);
-                        }
-                        preventDefault = true;
+            case 'Right':
+            case 'ArrowRight':
+                if (currentItem === false) {
+                    this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
+                }
+                this.#setVisualFocusOn(this.selectedItemsListElement);
+                this.setSelectedItemActiveDescendant(this.getNextSelectedItem());
+                this.scrollActiveSelectedItemInView();
+                preventDefault = true;
+                break;
+
+            case 'Home':
+                this.#setVisualFocusOn(this.selectedItemsListElement);
+                this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
+                this.scrollActiveSelectedItemInView();
+                preventDefault = true;
+                break;
+
+            case 'End':
+                this.#setVisualFocusOn(this.selectedItemsListElement);
+                this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
+                this.scrollActiveSelectedItemInView();
+                preventDefault = true;
+                break;
+
+            case 'Backspace':
+            case 'Delete':
+                if (!this.isComponentReadOnly()) {
+                    if (firstItem.isSameNode(currentItem)) {
+                        this.#removeSelectedItem(currentItem);
+                        this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
+                    } else {
+                        this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
+                        this.#removeSelectedItem(currentItem);
                     }
-                    break;
+                    preventDefault = true;
+                }
+                break;
 
-                default:
-                    break;
+            default:
+                break;
             }
 
             if (preventDefault) {
@@ -1307,7 +1312,7 @@ ${ singleOptgroup.label }
             this.selectedItemsListElement.removeAttribute('aria-disabled');
             this.selectedItemsListElement.setAttribute(
                 'tabindex',
-                allSelectedItems.length === 0 ? '-1' : '0'
+                allSelectedItems.length === 0 ? '-1' : '0',
             );
             this.selectedItemsListElement.querySelectorAll('button').forEach((selectedItemButton) => {
                 selectedItemButton.removeAttribute('disabled');
@@ -1642,12 +1647,12 @@ ${ singleOptgroup.label }
      * @returns { HTMLLIElement|null } The next selected item or null if there is none
      */
     getNextSelectedItem() {
-        let currentItem = this.getSelectedItemActiveDescendant();
+        const currentItem = this.getSelectedItemActiveDescendant();
         if (currentItem === false) {
             return this.getFirstSelectedItem();
         }
 
-        let nextElement = currentItem.nextElementSibling;
+        const nextElement = currentItem.nextElementSibling;
         if (nextElement === null) {
             return this.getFirstSelectedItem();
         }
@@ -1661,12 +1666,12 @@ ${ singleOptgroup.label }
      * @returns { HTMLLIElement|null } The next selected item or null if there is none
      */
     getPreviousSelectedItem() {
-        let currentItem = this.getSelectedItemActiveDescendant();
+        const currentItem = this.getSelectedItemActiveDescendant();
         if (currentItem === false) {
             return this.getLastSelectedItem();
         }
 
-        let nextElement = currentItem.previousElementSibling;
+        const nextElement = currentItem.previousElementSibling;
         if (nextElement === null) {
             return this.getLastSelectedItem();
         }
@@ -1762,7 +1767,7 @@ ${ singleOptgroup.label }
         });
 
         if (this.multiple) {
-            this.selectedItemsListElement.querySelectorAll(`li[data-id="${itemToRemove.dataset.id}"]`).forEach((singleSelectedItem) => {
+            this.selectedItemsListElement.querySelectorAll(`li[data-elem-id="${itemToRemove.dataset.elemId}"]`).forEach((singleSelectedItem) => {
                 singleSelectedItem.remove();
             });
             if (this.selectedItemsListElement.children.length === 0) {
@@ -1780,7 +1785,7 @@ ${ singleOptgroup.label }
             throw new Error('Element is not a selected item');
         }
 
-        const availableItem = this.availableItemsListElement.querySelector(`li[data-id="${ itemToRemove.dataset.id }"]`);
+        const availableItem = this.availableItemsListElement.querySelector(`li[data-elem-id="${ itemToRemove.dataset.elemId }"]`);
         availableItem.setAttribute('aria-selected', 'false');
         this.selectElement.querySelectorAll('option').forEach((singleOption) => {
             if (singleOption.value === availableItem.dataset.value) {
@@ -1915,7 +1920,7 @@ ${ singleOptgroup.label }
 
         // if there were no items found it will add a note about no items being found
         if (noItemsFound) {
-            let noItemsFoundElement = document.createElement('ul');
+            const noItemsFoundElement = document.createElement('ul');
             noItemsFoundElement.setAttribute('role', 'presentation');
             noItemsFoundElement.classList.add('dcf-search-and-select-no-results', ...this.availableItemsGroupClassList);
 

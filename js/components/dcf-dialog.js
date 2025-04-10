@@ -4,37 +4,49 @@ export default class DCFDialog {
 
     uuid = uuidv4();
 
-    dialog_element = null;
-    toggle_buttons = [];
-    close_button = null;
-    dialog_content_element = null;
-    dialog_header_element = null;
-    heading_element = null;
+    dialogElement = null;
 
-    confirm_close = false;
-    deliberate_close_only = false;
+    toggleButtons = [];
 
-    pre_open = new Event(DCFDialog.events('dialog_pre_open'));
-    post_open = new Event(DCFDialog.events('dialog_post_open'));
-    pre_close = new Event(DCFDialog.events('dialog_pre_close'));
-    post_close = new Event(DCFDialog.events('dialog_post_close'));
+    closeButton = null;
 
-    dialog_element_classList = [
+    dialogContentElement = null;
+
+    dialogHeaderElement = null;
+
+    headingElement = null;
+
+    confirmClose = false;
+
+    deliberateCloseOnly = false;
+
+    preOpen = new Event(DCFDialog.events('dialogPreOpen'));
+
+    postOpen = new Event(DCFDialog.events('dialogPostOpen'));
+
+    preClose = new Event(DCFDialog.events('dialogPreClose'));
+
+    postClose = new Event(DCFDialog.events('dialogPostClose'));
+
+    dialogElementClassList = [
         'dcf-relative',
         'dcf-p-0',
         'dcf-b-0',
     ];
-    dialog_header_element_classList = [
+
+    dialogHeaderElementClassList = [
         'dcf-wrapper',
         'dcf-pt-8',
         'dcf-sticky',
         'dcf-top-0',
     ];
-    dialog_content_element_classList = [
+
+    dialogContentElementClassList = [
         'dcf-wrapper',
         'dcf-pb-8',
     ];
-    dialog_close_button_classList = [
+
+    dialogCloseButtonClassList = [
         'dcf-btn',
         'dcf-btn-tertiary',
         'dcf-absolute',
@@ -43,63 +55,62 @@ export default class DCFDialog {
         'dcf-z-1',
     ];
 
-
     constructor(dialog, options = {}) {
-        if ('dialog_element_classList' in options && Array.isArray(options.dialog_element_classList)) {
-            this.dialog_element_classList = options.dialog_element_classList;
+        if ('dialogElementClassList' in options && Array.isArray(options.dialogElementClassList)) {
+            this.dialogElementClassList = options.dialogElementClassList;
         }
-        if ('dialog_header_element_classList' in options && Array.isArray(options.dialog_header_element_classList)) {
-            this.dialog_header_element_classList = options.dialog_header_element_classList;
+        if ('dialogHeaderElementClassList' in options && Array.isArray(options.dialogHeaderElementClassList)) {
+            this.dialogHeaderElementClassList = options.dialogHeaderElementClassList;
         }
-        if ('dialog_content_element_classList' in options && Array.isArray(options.dialog_content_element_classList)) {
-            this.dialog_content_element_classList = options.dialog_content_element_classList;
+        if ('dialogContentElementClassList' in options && Array.isArray(options.dialogContentElementClassList)) {
+            this.dialogContentElementClassList = options.dialogContentElementClassList;
         }
-        if ('dialog_close_button_classList' in options && Array.isArray(options.dialog_close_button_classList)) {
-            this.dialog_close_button_classList = options.dialog_close_button_classList;
+        if ('dialogCloseButtonClassList' in options && Array.isArray(options.dialogCloseButtonClassList)) {
+            this.dialogCloseButtonClassList = options.dialogCloseButtonClassList;
         }
 
-        this.dialog_element = dialog;
-        if (this.dialog_element.tagName !== 'DIALOG') {
+        this.dialogElement = dialog;
+        if (this.dialogElement.tagName !== 'DIALOG') {
             throw new Error('dcf-dialog used on non-dialog element');
         }
-        if (this.dialog_element.getAttribute('id') === null) {
+        if (this.dialogElement.getAttribute('id') === null) {
             throw new Error('Dialog element is missing ID');
         }
-        if (this.dialog_element.hasAttribute('data-confirmClose')) {
-            this.confirm_close = true;
+        if (this.dialogElement.hasAttribute('data-confirmClose')) {
+            this.confirmClose = true;
         }
-        if (this.dialog_element.hasAttribute('data-deliberateCloseOnly')) {
-            this.deliberate_close_only = true;
+        if (this.dialogElement.hasAttribute('data-deliberateCloseOnly')) {
+            this.deliberateCloseOnly = true;
         }
-        this.dialog_element.classList.add(...this.dialog_element_classList);
+        this.dialogElement.classList.add(...this.dialogElementClassList);
 
-        this.dialog_header_element = this.dialog_element.querySelector('.dcf-dialog-header');
-        if (this.dialog_header_element === null) {
+        this.dialogHeaderElement = this.dialogElement.querySelector('.dcf-dialog-header');
+        if (this.dialogHeaderElement === null) {
             throw new Error('Dialog is missing header (.dcf-dialog-header)');
         }
-        this.dialog_header_element.classList.add(...this.dialog_header_element_classList);
+        this.dialogHeaderElement.classList.add(...this.dialogHeaderElementClassList);
 
-        this.heading = this.dialog_header_element.querySelector('h1, h2, h3, h4, h5, h6');
+        this.heading = this.dialogHeaderElement.querySelector('h1, h2, h3, h4, h5, h6');
         if (this.heading.getAttribute('id') === '') {
             this.heading.setAttribute('id', this.uuid.concat('-heading'));
         }
-        this.dialog_element.setAttribute('aria-labelledby', this.heading.getAttribute('id'));
+        this.dialogElement.setAttribute('aria-labelledby', this.heading.getAttribute('id'));
 
-        this.dialog_content_element = this.dialog_element.querySelector('.dcf-dialog-content');
-        if (this.dialog_content_element === null) {
+        this.dialogContentElement = this.dialogElement.querySelector('.dcf-dialog-content');
+        if (this.dialogContentElement === null) {
             throw new Error('Dialog is missing header (.dcf-dialog-content)');
         }
-        this.dialog_content_element.classList.add(...this.dialog_content_element_classList);
+        this.dialogContentElement.classList.add(...this.dialogContentElementClassList);
 
-        this.close_button = this.dialog_element.querySelector('.dcf-btn-close-dialog');
-        if (this.close_button === null) {
+        this.closeButton = this.dialogElement.querySelector('.dcf-btn-close-dialog');
+        if (this.closeButton === null) {
             throw new Error('Dialog is missing close button (.dcf-btn-close-dialog)');
         }
-        this.close_button.classList.add(...this.dialog_close_button_classList);
-        this.close_button.setAttribute('type', 'button');
+        this.closeButton.classList.add(...this.dialogCloseButtonClassList);
+        this.closeButton.setAttribute('type', 'button');
 
-        this.toggle_buttons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialog_element.getAttribute('id')}']`));
-        if (this.toggle_buttons.length === 0) {
+        this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
+        if (this.toggleButtons.length === 0) {
             throw new Error('Dialog is missing toggle button (.dcf-btn-toggle-dialog)');
         }
 
@@ -109,10 +120,10 @@ export default class DCFDialog {
     // The names of the events to be used easily
     static events(name) {
         const events = {
-            dialog_pre_open: 'dialog_pre_open',
-            dialog_post_open: 'dialog_post_open',
-            dialog_pre_close: 'dialog_pre_close',
-            dialog_post_close: 'dialog_post_close',
+            dialogPreOpen: 'dialogPreOpen',
+            dialogPostOpen: 'dialogPostOpen',
+            dialogPreClose: 'dialogPreClose',
+            dialogPostClose: 'dialogPostClose',
             commandClose: 'commandClose',
             commandOpen: 'commandOpen',
             commandToggle: 'commandToggle',
@@ -124,113 +135,113 @@ export default class DCFDialog {
 
     #addEventListeners() {
         // Set up toggle buttons to open and close modal
-        this.toggle_buttons.forEach((single_toggle_button) => {
-            single_toggle_button.removeAttribute('disabled');
-            single_toggle_button.addEventListener('click', () => {
+        this.toggleButtons.forEach((singleToggleButton) => {
+            singleToggleButton.removeAttribute('disabled');
+            singleToggleButton.addEventListener('click', () => {
                 this.toggle({
-                    'type': 'toggle_button',
-                    'button': single_toggle_button
+                    'type': 'toggleButton',
+                    'button': singleToggleButton,
                 });
             });
         });
 
         // If another modal is opened then close this one
-        document.addEventListener('dialog_pre_open', (e) => {
-            if (!e.target.isSameNode(this.dialog_element)) {
+        document.addEventListener('dialogPreOpen', (event) => {
+            if (!event.target.isSameNode(this.dialogElement)) {
                 this.close({
-                    'type': 'other_dialog_opened'
+                    'type': 'otherDialogOpened',
                 });
             }
         }, true);
 
         // Set up close button to close modal
-        this.close_button.addEventListener('click', (e) => {
+        this.closeButton.addEventListener('click', () => {
             this.close({
-                'type': 'close_button',
-                'button': this.close_button
+                'type': 'closeButton',
+                'button': this.closeButton,
             });
         });
 
-        this.dialog_element.addEventListener(DCFDialog.events('commandClose'), () => {
+        this.dialogElement.addEventListener(DCFDialog.events('commandClose'), () => {
             this.close({
-                'type': 'command_close',
+                'type': 'commandClose',
             });
         });
-        this.dialog_element.addEventListener(DCFDialog.events('commandOpen'), () => {
+        this.dialogElement.addEventListener(DCFDialog.events('commandOpen'), () => {
             this.open({
-                'type': 'command_open',
+                'type': 'commandOpen',
             });
         });
-        this.dialog_element.addEventListener(DCFDialog.events('commandToggle'), () => {
+        this.dialogElement.addEventListener(DCFDialog.events('commandToggle'), () => {
             this.toggle({
-                'type': 'command_toggle',
+                'type': 'commandToggle',
             });
         });
 
-        if (!this.deliberate_close_only) {
+        if (!this.deliberateCloseOnly) {
             // If we click outside the modal then close it
-            this.dialog_element.addEventListener('click', (e) => {
-                if (e.target.tagName !== 'DIALOG') { return; }
-    
-                const rect = e.target.getBoundingClientRect();
+            this.dialogElement.addEventListener('click', (event) => {
+                if (event.target.tagName !== 'DIALOG') { return; }
+
+                const rect = event.target.getBoundingClientRect();
                 const clickedInDialog = (
-                    rect.top <= e.clientY &&
-                    e.clientY <= rect.top + rect.height &&
-                    rect.left <= e.clientX &&
-                    e.clientX <= rect.left + rect.width
+                    rect.top <= event.clientY &&
+                    event.clientY <= rect.top + rect.height &&
+                    rect.left <= event.clientX &&
+                    event.clientX <= rect.left + rect.width
                 );
-    
+
                 if (clickedInDialog === false) {
                     this.close({
-                        'type': 'clicked_outside_dialog'
+                        'type': 'clickedOutsideDialog',
                     });
                 }
             });
         }
     }
 
-    close(event_data = {}) {
-        if (!this.dialog_element.open) { return; }
-        if (this.confirm_close && !window.confirm(this.dialog_element.dataset.confirmclose)) {
+    close(eventData = {}) {
+        if (!this.dialogElement.open) { return; }
+        if (this.confirmClose && !window.confirm(this.dialogElement.dataset.confirmclose)) {
             return;
         }
-        const pre_close_event = new CustomEvent(
-            DCFDialog.events('dialog_pre_close'), {
-                detail: event_data,
-            }
+        const preCloseEvent = new CustomEvent(
+            DCFDialog.events('dialogPreClose'), {
+                detail: eventData,
+            },
         );
-        this.dialog_element.dispatchEvent(pre_close_event);
-        this.dialog_element.close();
-        const post_close_event = new CustomEvent(
-            DCFDialog.events('dialog_close_open'), {
-                detail: event_data,
-            }
+        this.dialogElement.dispatchEvent(preCloseEvent);
+        this.dialogElement.close();
+        const postCloseEvent = new CustomEvent(
+            DCFDialog.events('dialogCloseOpen'), {
+                detail: eventData,
+            },
         );
-        this.dialog_element.dispatchEvent(post_close_event);
+        this.dialogElement.dispatchEvent(postCloseEvent);
     }
 
-    open(event_data = {}) {
-        if (this.dialog_element.open) { return; }
-        const pre_open_event = new CustomEvent(
-            DCFDialog.events('dialog_pre_open'), {
-                detail: event_data,
-            }
+    open(eventData = {}) {
+        if (this.dialogElement.open) { return; }
+        const preOpenEvent = new CustomEvent(
+            DCFDialog.events('dialogPreOpen'), {
+                detail: eventData,
+            },
         );
-        this.dialog_element.dispatchEvent(pre_open_event);
-        this.dialog_element.showModal();
-        const post_open_event = new CustomEvent(
-            DCFDialog.events('dialog_post_open'), {
-                detail: event_data,
-            }
+        this.dialogElement.dispatchEvent(preOpenEvent);
+        this.dialogElement.showModal();
+        const postOpenEvent = new CustomEvent(
+            DCFDialog.events('dialogPostOpen'), {
+                detail: eventData,
+            },
         );
-        this.dialog_element.dispatchEvent(post_open_event);
+        this.dialogElement.dispatchEvent(postOpenEvent);
     }
 
-    toggle(event_data = {}) {
-        if (this.dialog_element.open) {
-            this.close(event_data);
+    toggle(eventData = {}) {
+        if (this.dialogElement.open) {
+            this.close(eventData);
         } else {
-            this.open(event_data);
+            this.open(eventData);
         }
     }
 }

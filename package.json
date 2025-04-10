@@ -1,35 +1,30 @@
 {
   "name": "dcf",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Digital Campus Framework",
   "repository": {
     "type": "git",
-    "url": "git://github.com/d-c-n/dcf.git"
+    "url": "git://github.com/digitalcampusframework/dcf.git"
   },
   "author": {
     "name": "Digital Campus Nebraska",
-    "url": "http://digitalcampus.us/"
+    "url": "https://digitalcampus.us/"
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/d-c-n/dcf/issues"
+    "url": "https://github.com/digitalcampusframework/dcf/issues"
   },
-  "homepage": "https://github.com/d-c-n/dcf#readme",
-  "devDependencies": {
-    "acorn": "^7.4.1",
-    "ajv": "^6.12.6",
-    "copy-props": "^2.0.5",
-    "gulp": "^5.0.0",
-    "gulp-eslint": "^6.0.0",
-    "hosted-git-info": "^2.8.9",
-    "lodash": "^4.17.21",
-    "minimist": "^1.2.6",
-    "path-parse": "^1.0.7",
-    "tar": "^4.4.19",
-    "y18n": "^5.0.8",
-    "yargs-parser": "^20.2.9"
-  },
+  "homepage": "https://github.com/digitalcampusframework/dcf#readme",
   "engines": {
-    "node": ">= 14.17.0"
+    "node": ">= 22.13.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@stylistic/eslint-plugin-js": "^4.2.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0"
+  },
+  "scripts": {
+    "lint": "eslint js/**"
   }
 }
