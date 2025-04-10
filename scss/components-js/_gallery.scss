@@ -6,6 +6,10 @@
 @use "../variables/" as var;
 @use "../functions/" as func;
 
+#dcf-gallery-dialog {
+  height: calc(100vh - 2em);
+}
+
 
 .dcf-gallery-img,
 .dcf-gallery-thumbnails li {

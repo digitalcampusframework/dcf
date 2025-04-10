@@ -29,7 +29,6 @@ export default class DCFDialog {
     postClose = new Event(DCFDialog.events('dialogPostClose'));
 
     dialogElementClassList = [
-        'dcf-relative',
         'dcf-p-0',
         'dcf-b-0',
     ];
@@ -110,11 +109,9 @@ export default class DCFDialog {
         this.closeButton.setAttribute('type', 'button');
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
-        if (this.toggleButtons.length === 0) {
-            throw new Error('Dialog is missing toggle button (.dcf-btn-toggle-dialog)');
-        }
 
         this.#addEventListeners();
+        this.dialogElement.classList.add('dcf-dialog-initialized');
     }
 
     // The names of the events to be used easily
@@ -212,6 +209,7 @@ export default class DCFDialog {
         );
         this.dialogElement.dispatchEvent(preCloseEvent);
         this.dialogElement.close();
+        this.dialogElement.classList.remove('dcf-dialog-is-open');
         const postCloseEvent = new CustomEvent(
             DCFDialog.events('dialogCloseOpen'), {
                 detail: eventData,
@@ -227,8 +225,10 @@ export default class DCFDialog {
                 detail: eventData,
             },
         );
+
         this.dialogElement.dispatchEvent(preOpenEvent);
         this.dialogElement.showModal();
+        this.dialogElement.classList.add('dcf-dialog-is-open');
         const postOpenEvent = new CustomEvent(
             DCFDialog.events('dialogPostOpen'), {
                 detail: eventData,

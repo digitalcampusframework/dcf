@@ -6,6 +6,17 @@
 @use "../variables/" as var;
 @use "../mixins/" as mixins;
 
+body:has(dialog[open]),
+html:has(dialog[open]){
+    overflow: hidden;
+}
+
+// This is only here because safari does not support `:open`
+body:has(dialog.dcf-dialog-is-open),
+html:has(dialog.dcf-dialog-is-open) {
+    overflow: hidden;
+}
+
 .dcf-dialog::backdrop {
     @include mixins.bg-overlay-dark(!important);
 }

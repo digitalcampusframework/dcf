@@ -57,6 +57,10 @@ export function isKeyEvent(event, checkEvent) {
     return validKey || validCode || validKeyCode;
 }
 
+/**
+ * Generates a random UUID
+ * @returns {string} Random UUID
+ */
 export function uuidv4() {
     const NUMERIC_0 = magicNumbers('int0');
     const NUMERIC_16 = magicNumbers('int16');
@@ -82,6 +86,12 @@ export function checkSetElementId(element, defaultElementId = null) {
     return elementId;
 }
 
+/**
+ * Loads a stylesheet
+ * Avoids loading the same stylesheet twice
+ * @param {string} styleSheetSrc 
+ * @returns {Promise<void>}
+ */
 export function loadStyleSheet(styleSheetSrc) {
     return new Promise((resolve, reject) => {
         const linkAlreadyThere = document.querySelector(`link[rel="stylesheet"][href="${styleSheetSrc}"]`);
