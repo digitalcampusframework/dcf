@@ -7,82 +7,82 @@
 
 
 // Height
-.dcf-h-auto { @include mixins.h-auto(!important); }
-.dcf-h-0 { @include mixins.h-0(!important); }
-.dcf-h-1 { @include mixins.h-1(!important); }
-.dcf-h-2 { @include mixins.h-2(!important); }
-.dcf-h-3 { @include mixins.h-3(!important); }
-.dcf-h-4 { @include mixins.h-4(!important); }
-.dcf-h-5 { @include mixins.h-5(!important); }
-.dcf-h-6 { @include mixins.h-6(!important); }
-.dcf-h-7 { @include mixins.h-7(!important); }
-.dcf-h-8 { @include mixins.h-8(!important); }
-.dcf-h-9 { @include mixins.h-9(!important); }
-.dcf-h-10 { @include mixins.h-10(!important); }
-.dcf-h-11 { @include mixins.h-11(!important); }
-.dcf-h-12 { @include mixins.h-12(!important); }
-.dcf-h-25\% { @include mixins.h-25pc(!important); }    // .dcf-h-25%
-.dcf-h-50\% { @include mixins.h-50pc(!important); }    // .dcf-h-50%
-.dcf-h-75\% { @include mixins.h-75pc(!important); }    // .dcf-h-75%
-.dcf-h-100\% { @include mixins.h-100pc(!important); }  // .dcf-h-100%
-.dcf-h-100vh { @include mixins.h-100vh(!important); }
-.dcf-h-fit-content { @include mixins.h-fit-content(!important); }
-.dcf-h-max-content { @include mixins.h-max-content(!important); }
-.dcf-h-min-content { @include mixins.h-min-content(!important); }
+.dcf-h-auto { @include mixins.h-auto; }
+.dcf-h-0 { @include mixins.h-0; }
+.dcf-h-1 { @include mixins.h-1; }
+.dcf-h-2 { @include mixins.h-2; }
+.dcf-h-3 { @include mixins.h-3; }
+.dcf-h-4 { @include mixins.h-4; }
+.dcf-h-5 { @include mixins.h-5; }
+.dcf-h-6 { @include mixins.h-6; }
+.dcf-h-7 { @include mixins.h-7; }
+.dcf-h-8 { @include mixins.h-8; }
+.dcf-h-9 { @include mixins.h-9; }
+.dcf-h-10 { @include mixins.h-10; }
+.dcf-h-11 { @include mixins.h-11; }
+.dcf-h-12 { @include mixins.h-12; }
+.dcf-h-25\% { @include mixins.h-25pc; }    // .dcf-h-25%
+.dcf-h-50\% { @include mixins.h-50pc; }    // .dcf-h-50%
+.dcf-h-75\% { @include mixins.h-75pc; }    // .dcf-h-75%
+.dcf-h-100\% { @include mixins.h-100pc; }  // .dcf-h-100%
+.dcf-h-100vh { @include mixins.h-100vh; }
+.dcf-h-fit-content { @include mixins.h-fit-content; }
+.dcf-h-max-content { @include mixins.h-max-content; }
+.dcf-h-min-content { @include mixins.h-min-content; }
 
 
 // Minimum height
-.dcf-h-min-0 { @include mixins.h-min-0(!important); }
-.dcf-h-min-100vh { @include mixins.h-min-100vh(!important); }
+.dcf-h-min-0 { @include mixins.h-min-0; }
+.dcf-h-min-100vh { @include mixins.h-min-100vh; }
 
 
 // Maximum height
-.dcf-h-max-0 { @include mixins.h-max-0(!important); }
-.dcf-h-max-100\% { @include mixins.h-max-100pc(!important); } // .dcf-h-max-100%
-.dcf-h-max-100vh { @include mixins.h-max-100vh(!important); }
-.dcf-h-max-inf { @include mixins.h-max-inf(!important); }
+.dcf-h-max-0 { @include mixins.h-max-0; }
+.dcf-h-max-100\% { @include mixins.h-max-100pc; } // .dcf-h-max-100%
+.dcf-h-max-100vh { @include mixins.h-max-100vh; }
+.dcf-h-max-inf { @include mixins.h-max-inf; }
 
 
 // Width
-.dcf-w-auto { @include mixins.w-auto(!important); }
-.dcf-w-0 { @include mixins.w-0(!important); }
-.dcf-w-1 { @include mixins.w-1(!important); }
-.dcf-w-2 { @include mixins.w-2(!important); }
-.dcf-w-3 { @include mixins.w-3(!important); }
-.dcf-w-4 { @include mixins.w-4(!important); }
-.dcf-w-5 { @include mixins.w-5(!important); }
-.dcf-w-6 { @include mixins.w-6(!important); }
-.dcf-w-7 { @include mixins.w-7(!important); }
-.dcf-w-8 { @include mixins.w-8(!important); }
-.dcf-w-9 { @include mixins.w-9(!important); }
-.dcf-w-10 { @include mixins.w-10(!important); }
-.dcf-w-11 { @include mixins.w-11(!important); }
-.dcf-w-12 { @include mixins.w-12(!important); }
-.dcf-w-25\% { @include mixins.w-25pc(!important); }    // .dcf-w-25%
-.dcf-w-50\% { @include mixins.w-50pc(!important); }    // .dcf-w-50%
-.dcf-w-75\% { @include mixins.w-75pc(!important); }    // .dcf-w-75%
-.dcf-w-100\% { @include mixins.w-100pc(!important); }  // .dcf-w-100%
-.dcf-w-100vw { @include mixins.w-100vw(!important); }
-.dcf-w-fit-content { @include mixins.w-fit-content(!important); }
-.dcf-w-max-content { @include mixins.w-max-content(!important); }
-.dcf-w-min-content { @include mixins.w-min-content(!important); }
+.dcf-w-auto { @include mixins.w-auto; }
+.dcf-w-0 { @include mixins.w-0; }
+.dcf-w-1 { @include mixins.w-1; }
+.dcf-w-2 { @include mixins.w-2; }
+.dcf-w-3 { @include mixins.w-3; }
+.dcf-w-4 { @include mixins.w-4; }
+.dcf-w-5 { @include mixins.w-5; }
+.dcf-w-6 { @include mixins.w-6; }
+.dcf-w-7 { @include mixins.w-7; }
+.dcf-w-8 { @include mixins.w-8; }
+.dcf-w-9 { @include mixins.w-9; }
+.dcf-w-10 { @include mixins.w-10; }
+.dcf-w-11 { @include mixins.w-11; }
+.dcf-w-12 { @include mixins.w-12; }
+.dcf-w-25\% { @include mixins.w-25pc; }    // .dcf-w-25%
+.dcf-w-50\% { @include mixins.w-50pc; }    // .dcf-w-50%
+.dcf-w-75\% { @include mixins.w-75pc; }    // .dcf-w-75%
+.dcf-w-100\% { @include mixins.w-100pc; }  // .dcf-w-100%
+.dcf-w-100vw { @include mixins.w-100vw; }
+.dcf-w-fit-content { @include mixins.w-fit-content; }
+.dcf-w-max-content { @include mixins.w-max-content; }
+.dcf-w-min-content { @include mixins.w-min-content; }
 
 
 // Minimum width
-.dcf-w-min-0 { @include mixins.w-min-0(!important); }
+.dcf-w-min-0 { @include mixins.w-min-0; }
 
 
 // Maximum width
-.dcf-w-max-3xs { @include mixins.w-max-3xs(!important); }
-.dcf-w-max-2xs { @include mixins.w-max-2xs(!important); }
-.dcf-w-max-xs { @include mixins.w-max-xs(!important); }
-.dcf-w-max-sm { @include mixins.w-max-sm(!important); }
+.dcf-w-max-3xs { @include mixins.w-max-3xs; }
+.dcf-w-max-2xs { @include mixins.w-max-2xs; }
+.dcf-w-max-xs { @include mixins.w-max-xs; }
+.dcf-w-max-sm { @include mixins.w-max-sm; }
 // scss-lint:disable SingleLinePerSelector
-.dcf-measure, .dcf-w-max-md { @include mixins.w-max-md(!important); } // TODO: deprecate .dcf-measure
-.dcf-w-max-lg { @include mixins.w-max-lg(!important); }
-.dcf-w-max-xl { @include mixins.w-max-xl(!important); }
-.dcf-w-max-2xl { @include mixins.w-max-2xl(!important); }
-.dcf-w-max-3xl { @include mixins.w-max-3xl(!important); }
-.dcf-w-max-4xl { @include mixins.w-max-4xl(!important); }
-.dcf-w-max-100\% { @include mixins.w-max-100pc(!important); } // .dcf-w-max-100%
-.dcf-w-max-100vw { @include mixins.w-max-100vw(!important); }
+.dcf-measure, .dcf-w-max-md { @include mixins.w-max-md; } // TODO: deprecate .dcf-measure
+.dcf-w-max-lg { @include mixins.w-max-lg; }
+.dcf-w-max-xl { @include mixins.w-max-xl; }
+.dcf-w-max-2xl { @include mixins.w-max-2xl; }
+.dcf-w-max-3xl { @include mixins.w-max-3xl; }
+.dcf-w-max-4xl { @include mixins.w-max-4xl; }
+.dcf-w-max-100\% { @include mixins.w-max-100pc; } // .dcf-w-max-100%
+.dcf-w-max-100vw { @include mixins.w-max-100vw; }

@@ -7,14 +7,14 @@
 
 
 // No motion
-.dcf-no-motion { @include mixins.no-motion(!important); }
+.dcf-no-motion { @include mixins.no-motion; }
 
 
 // Fade
-.dcf-fade-in { @include mixins.fade-in(!important); }
+.dcf-fade-in { @include mixins.fade-in; }
 
 
 // Move
-.dcf-move-left  { @include mixins.move-left(!important); }
-.dcf-move-right { @include mixins.move-right(!important); }
-.dcf-move-up    { @include mixins.move-up(!important); }
+.dcf-move-left  { @include mixins.move-left; }
+.dcf-move-right { @include mixins.move-right; }
+.dcf-move-up    { @include mixins.move-up; }

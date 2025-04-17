@@ -6,34 +6,34 @@
 @use "../mixins/" as mixins;
 
 
-.dcf-1st { @include mixins.order-1st(!important); }
-.dcf-2nd { @include mixins.order-2nd(!important); }
-.dcf-3rd { @include mixins.order-3rd(!important); }
+.dcf-1st { @include mixins.order-1st; }
+.dcf-2nd { @include mixins.order-2nd; }
+.dcf-3rd { @include mixins.order-3rd; }
 
 
 @include mixins.mq(sm, min, width) {
-  .dcf-1st\@sm { @include mixins.order-1st(!important); }
-  .dcf-2nd\@sm { @include mixins.order-2nd(!important); }
-  .dcf-3rd\@sm { @include mixins.order-3rd(!important); }
+  .dcf-1st\@sm { @include mixins.order-1st; }
+  .dcf-2nd\@sm { @include mixins.order-2nd; }
+  .dcf-3rd\@sm { @include mixins.order-3rd; }
 }
 
 
 @include mixins.mq(md, min, width) {
-  .dcf-1st\@md { @include mixins.order-1st(!important); }
-  .dcf-2nd\@md { @include mixins.order-2nd(!important); }
-  .dcf-3rd\@md { @include mixins.order-3rd(!important); }
+  .dcf-1st\@md { @include mixins.order-1st; }
+  .dcf-2nd\@md { @include mixins.order-2nd; }
+  .dcf-3rd\@md { @include mixins.order-3rd; }
 }
 
 
 @include mixins.mq(lg, min, width) {
-  .dcf-1st\@lg { @include mixins.order-1st(!important); }
-  .dcf-2nd\@lg { @include mixins.order-2nd(!important); }
-  .dcf-3rd\@lg { @include mixins.order-3rd(!important); }
+  .dcf-1st\@lg { @include mixins.order-1st; }
+  .dcf-2nd\@lg { @include mixins.order-2nd; }
+  .dcf-3rd\@lg { @include mixins.order-3rd; }
 }
 
 
 @include mixins.mq(xl, min, width) {
-  .dcf-1st\@xl { @include mixins.order-1st(!important); }
-  .dcf-2nd\@xl { @include mixins.order-2nd(!important); }
-  .dcf-3rd\@xl { @include mixins.order-3rd(!important); }
+  .dcf-1st\@xl { @include mixins.order-1st; }
+  .dcf-2nd\@xl { @include mixins.order-2nd; }
+  .dcf-3rd\@xl { @include mixins.order-3rd; }
 }

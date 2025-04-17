@@ -7,16 +7,16 @@
 
 
 // Invisible
-.dcf-invisible { @include mixins.invisible(!important); }
+.dcf-invisible { @include mixins.invisible; }
 
 
 // Visible
-.dcf-visible { @include mixins.visible(!important); }
+.dcf-visible { @include mixins.visible; }
 
 
 // Screen reader only
-.dcf-sr-only { @include mixins.sr-only(!important); }
+.dcf-sr-only { @include mixins.sr-only; }
 
 
 // Show on focus
-.dcf-show-on-focus:not(:focus):not(:active) { @include mixins.sr-only(!important); }
+.dcf-show-on-focus:not(:focus):not(:active) { @include mixins.sr-only; }

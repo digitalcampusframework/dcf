@@ -7,35 +7,35 @@
 
 
 // All sides
-.dcf-b-0 { @include mixins.b-0(!important); }
-.dcf-b-1 { @include mixins.b-1(!important); }
-.dcf-b-2 { @include mixins.b-2(!important); }
-.dcf-b-3 { @include mixins.b-3(!important); }
+.dcf-b-0 { @include mixins.b-0; }
+.dcf-b-1 { @include mixins.b-1; }
+.dcf-b-2 { @include mixins.b-2; }
+.dcf-b-3 { @include mixins.b-3; }
 
 
 // Top
-.dcf-bt-0 { @include mixins.bt-0(!important); }
-.dcf-bt-1 { @include mixins.bt-1(!important); }
-.dcf-bt-2 { @include mixins.bt-2(!important); }
-.dcf-bt-3 { @include mixins.bt-3(!important); }
+.dcf-bt-0 { @include mixins.bt-0; }
+.dcf-bt-1 { @include mixins.bt-1; }
+.dcf-bt-2 { @include mixins.bt-2; }
+.dcf-bt-3 { @include mixins.bt-3; }
 
 
 // Right
-.dcf-br-0 { @include mixins.br-0(!important); }
-.dcf-br-1 { @include mixins.br-1(!important); }
-.dcf-br-2 { @include mixins.br-2(!important); }
-.dcf-br-3 { @include mixins.br-3(!important); }
+.dcf-br-0 { @include mixins.br-0; }
+.dcf-br-1 { @include mixins.br-1; }
+.dcf-br-2 { @include mixins.br-2; }
+.dcf-br-3 { @include mixins.br-3; }
 
 
 // Bottom
-.dcf-bb-0 { @include mixins.bb-0(!important); }
-.dcf-bb-1 { @include mixins.bb-1(!important); }
-.dcf-bb-2 { @include mixins.bb-2(!important); }
-.dcf-bb-3 { @include mixins.bb-3(!important); }
+.dcf-bb-0 { @include mixins.bb-0; }
+.dcf-bb-1 { @include mixins.bb-1; }
+.dcf-bb-2 { @include mixins.bb-2; }
+.dcf-bb-3 { @include mixins.bb-3; }
 
 
 // Left
-.dcf-bl-0 { @include mixins.bl-0(!important); }
-.dcf-bl-1 { @include mixins.bl-1(!important); }
-.dcf-bl-2 { @include mixins.bl-2(!important); }
-.dcf-bl-3 { @include mixins.bl-3(!important); }
+.dcf-bl-0 { @include mixins.bl-0; }
+.dcf-bl-1 { @include mixins.bl-1; }
+.dcf-bl-2 { @include mixins.bl-2; }
+.dcf-bl-3 { @include mixins.bl-3; }

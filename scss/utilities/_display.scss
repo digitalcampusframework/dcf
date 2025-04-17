@@ -8,50 +8,50 @@
 
 
 // None
-.dcf-d-none { @include mixins.d-none(!important); }
+.dcf-d-none { @include mixins.d-none; }
 
 
 // None (screen, show when printed)
 .dcf-d-none\@screen {
 
   @media only screen {
-    @include mixins.d-none(!important);
+    @include mixins.d-none;
   }
 
 }
 
 
 // Block
-.dcf-d-block { @include mixins.d-block(!important); }
+.dcf-d-block { @include mixins.d-block; }
 
 
 // Inline
-.dcf-d-inline { @include mixins.d-inline(!important); }
+.dcf-d-inline { @include mixins.d-inline; }
 
 
 // Inline block
-.dcf-d-inline-block { @include mixins.d-inline-block(!important); }
+.dcf-d-inline-block { @include mixins.d-inline-block; }
 
 
 // Table
-.dcf-d-table { @include mixins.d-table(!important); }
+.dcf-d-table { @include mixins.d-table; }
 
 
 // Table cell
-.dcf-d-table-cell { @include mixins.d-table-cell(!important); }
+.dcf-d-table-cell { @include mixins.d-table-cell; }
 
 
 // Flex
-.dcf-d-flex { @include mixins.d-flex(!important); }
+.dcf-d-flex { @include mixins.d-flex; }
 
 
 // Inline flex
-.dcf-d-inline-flex { @include mixins.d-inline-flex(!important); }
+.dcf-d-inline-flex { @include mixins.d-inline-flex; }
 
 
 // Grid
-.dcf-d-grid { @include mixins.d-grid(!important); }
+.dcf-d-grid { @include mixins.d-grid; }
 
 
 // Inline grid
-.dcf-d-inline-grid { @include mixins.d-inline-grid(!important); }
+.dcf-d-inline-grid { @include mixins.d-inline-grid; }

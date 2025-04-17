@@ -6,11 +6,11 @@
 @use "../mixins/" as mixins;
 
 
-.dcf-obj-top { @include mixins.obj-top(!important); }
-.dcf-obj-right { @include mixins.obj-right(!important); }
-.dcf-obj-bottom { @include mixins.obj-bottom(!important); }
-.dcf-obj-left { @include mixins.obj-left(!important); }
-.dcf-obj-right-top { @include mixins.obj-right-top(!important); }
-.dcf-obj-right-bottom { @include mixins.obj-right-bottom(!important); }
-.dcf-obj-left-bottom { @include mixins.obj-left-bottom(!important); }
-.dcf-obj-left-top { @include mixins.obj-left-top(!important); }
+.dcf-obj-top { @include mixins.obj-top; }
+.dcf-obj-right { @include mixins.obj-right; }
+.dcf-obj-bottom { @include mixins.obj-bottom; }
+.dcf-obj-left { @include mixins.obj-left; }
+.dcf-obj-right-top { @include mixins.obj-right-top; }
+.dcf-obj-right-bottom { @include mixins.obj-right-bottom; }
+.dcf-obj-left-bottom { @include mixins.obj-left-bottom; }
+.dcf-obj-left-top { @include mixins.obj-left-top; }

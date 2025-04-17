@@ -7,40 +7,40 @@
 
 
 // Gap (Flexbox & Grid)
-.dcf-gap-1 { @include mixins.gap-1(!important); }
-.dcf-gap-2 { @include mixins.gap-2(!important); }
-.dcf-gap-3 { @include mixins.gap-3(!important); }
-.dcf-gap-4 { @include mixins.gap-4(!important); }
-.dcf-gap-5 { @include mixins.gap-5(!important); }
-.dcf-gap-6 { @include mixins.gap-6(!important); }
-.dcf-gap-7 { @include mixins.gap-7(!important); }
-.dcf-gap-8 { @include mixins.gap-8(!important); }
-.dcf-gap-9 { @include mixins.gap-9(!important); }
-.dcf-gap-10 { @include mixins.gap-10(!important); }
+.dcf-gap-1 { @include mixins.gap-1; }
+.dcf-gap-2 { @include mixins.gap-2; }
+.dcf-gap-3 { @include mixins.gap-3; }
+.dcf-gap-4 { @include mixins.gap-4; }
+.dcf-gap-5 { @include mixins.gap-5; }
+.dcf-gap-6 { @include mixins.gap-6; }
+.dcf-gap-7 { @include mixins.gap-7; }
+.dcf-gap-8 { @include mixins.gap-8; }
+.dcf-gap-9 { @include mixins.gap-9; }
+.dcf-gap-10 { @include mixins.gap-10; }
 
 
 // Grid column gap
-.dcf-col-gap-1 { @include mixins.col-gap-1(!important); }
-.dcf-col-gap-2 { @include mixins.col-gap-2(!important); }
-.dcf-col-gap-3 { @include mixins.col-gap-3(!important); }
-.dcf-col-gap-4 { @include mixins.col-gap-4(!important); }
-.dcf-col-gap-5 { @include mixins.col-gap-5(!important); }
-.dcf-col-gap-6 { @include mixins.col-gap-6(!important); }
-.dcf-col-gap-7 { @include mixins.col-gap-7(!important); }
-.dcf-col-gap-8 { @include mixins.col-gap-8(!important); }
-.dcf-col-gap-9 { @include mixins.col-gap-9(!important); }
-.dcf-col-gap-10 { @include mixins.col-gap-10(!important); }
-.dcf-col-gap-vw { @include mixins.col-gap-vw(!important); }
+.dcf-col-gap-1 { @include mixins.col-gap-1; }
+.dcf-col-gap-2 { @include mixins.col-gap-2; }
+.dcf-col-gap-3 { @include mixins.col-gap-3; }
+.dcf-col-gap-4 { @include mixins.col-gap-4; }
+.dcf-col-gap-5 { @include mixins.col-gap-5; }
+.dcf-col-gap-6 { @include mixins.col-gap-6; }
+.dcf-col-gap-7 { @include mixins.col-gap-7; }
+.dcf-col-gap-8 { @include mixins.col-gap-8; }
+.dcf-col-gap-9 { @include mixins.col-gap-9; }
+.dcf-col-gap-10 { @include mixins.col-gap-10; }
+.dcf-col-gap-vw { @include mixins.col-gap-vw; }
 
 
 // Grid row gap
-.dcf-row-gap-1 { @include mixins.row-gap-1(!important); }
-.dcf-row-gap-2 { @include mixins.row-gap-2(!important); }
-.dcf-row-gap-3 { @include mixins.row-gap-3(!important); }
-.dcf-row-gap-4 { @include mixins.row-gap-4(!important); }
-.dcf-row-gap-5 { @include mixins.row-gap-5(!important); }
-.dcf-row-gap-6 { @include mixins.row-gap-6(!important); }
-.dcf-row-gap-7 { @include mixins.row-gap-7(!important); }
-.dcf-row-gap-8 { @include mixins.row-gap-8(!important); }
-.dcf-row-gap-9 { @include mixins.row-gap-9(!important); }
-.dcf-row-gap-10 { @include mixins.row-gap-10(!important); }
+.dcf-row-gap-1 { @include mixins.row-gap-1; }
+.dcf-row-gap-2 { @include mixins.row-gap-2; }
+.dcf-row-gap-3 { @include mixins.row-gap-3; }
+.dcf-row-gap-4 { @include mixins.row-gap-4; }
+.dcf-row-gap-5 { @include mixins.row-gap-5; }
+.dcf-row-gap-6 { @include mixins.row-gap-6; }
+.dcf-row-gap-7 { @include mixins.row-gap-7; }
+.dcf-row-gap-8 { @include mixins.row-gap-8; }
+.dcf-row-gap-9 { @include mixins.row-gap-9; }
+.dcf-row-gap-10 { @include mixins.row-gap-10; }

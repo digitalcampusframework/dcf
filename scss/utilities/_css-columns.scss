@@ -18,42 +18,42 @@
 
 
 // .dcf-columns-1 is unnecessary as content is one column by default
-.dcf-columns-2 { @include mixins.columns-2(!important); }
-.dcf-columns-3 { @include mixins.columns-3(!important); }
-.dcf-columns-auto { @include mixins.columns-auto(!important); }
+.dcf-columns-2 { @include mixins.columns-2; }
+.dcf-columns-3 { @include mixins.columns-3; }
+.dcf-columns-auto { @include mixins.columns-auto; }
 
 
 @include mixins.mq(sm, min, width) {
 
-  .dcf-columns-1\@sm { @include mixins.columns-1(!important); }
-  .dcf-columns-2\@sm { @include mixins.columns-2(!important); }
-  .dcf-columns-3\@sm { @include mixins.columns-3(!important); }
+  .dcf-columns-1\@sm { @include mixins.columns-1; }
+  .dcf-columns-2\@sm { @include mixins.columns-2; }
+  .dcf-columns-3\@sm { @include mixins.columns-3; }
 
 }
 
 
 @include mixins.mq(md, min, width) {
 
-  .dcf-columns-1\@md { @include mixins.columns-1(!important); }
-  .dcf-columns-2\@md { @include mixins.columns-2(!important); }
-  .dcf-columns-3\@md { @include mixins.columns-3(!important); }
+  .dcf-columns-1\@md { @include mixins.columns-1; }
+  .dcf-columns-2\@md { @include mixins.columns-2; }
+  .dcf-columns-3\@md { @include mixins.columns-3; }
 
 }
 
 
 @include mixins.mq(lg, min, width) {
 
-  .dcf-columns-1\@lg { @include mixins.columns-1(!important); }
-  .dcf-columns-2\@lg { @include mixins.columns-2(!important); }
-  .dcf-columns-3\@lg { @include mixins.columns-3(!important); }
+  .dcf-columns-1\@lg { @include mixins.columns-1; }
+  .dcf-columns-2\@lg { @include mixins.columns-2; }
+  .dcf-columns-3\@lg { @include mixins.columns-3; }
 
 }
 
 
 @include mixins.mq(xl, min, width) {
 
-  .dcf-columns-1\@xl { @include mixins.columns-1(!important); }
-  .dcf-columns-2\@xl { @include mixins.columns-2(!important); }
-  .dcf-columns-3\@xl { @include mixins.columns-3(!important); }
+  .dcf-columns-1\@xl { @include mixins.columns-1; }
+  .dcf-columns-2\@xl { @include mixins.columns-2; }
+  .dcf-columns-3\@xl { @include mixins.columns-3; }
 
 }

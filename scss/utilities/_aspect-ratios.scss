@@ -7,44 +7,44 @@
 
 
 // Aspect ratios
-.dcf-16x9 { @include mixins.ratio-16x9(!important); }        // 16:9 Landscape
-.dcf-9x16 { @include mixins.ratio-9x16(!important); }        // 9:16 Portrait
-.dcf-4x3  { @include mixins.ratio-4x3(!important); }         // 4:3  Landscape
-.dcf-3x4  { @include mixins.ratio-3x4(!important); }         // 3:4  Portrait
-.dcf-1x1  { @include mixins.ratio-1x1(!important); }         // 1:1  Square
+.dcf-16x9 { @include mixins.ratio-16x9; }        // 16:9 Landscape
+.dcf-9x16 { @include mixins.ratio-9x16; }        // 9:16 Portrait
+.dcf-4x3  { @include mixins.ratio-4x3; }         // 4:3  Landscape
+.dcf-3x4  { @include mixins.ratio-3x4; }         // 3:4  Portrait
+.dcf-1x1  { @include mixins.ratio-1x1; }         // 1:1  Square
 
 
 @include mixins.mq(sm, min, width) {
-  .dcf-16x9\@sm { @include mixins.ratio-16x9(!important); }  // 16:9 Landscape
-  .dcf-9x16\@sm { @include mixins.ratio-9x16(!important); }  // 9:16 Portrait
-  .dcf-4x3\@sm  { @include mixins.ratio-4x3(!important); }   // 4:3  Landscape
-  .dcf-3x4\@sm  { @include mixins.ratio-3x4(!important); }   // 3:4  Portrait
-  .dcf-1x1\@sm  { @include mixins.ratio-1x1(!important); }   // 1:1  Square
+  .dcf-16x9\@sm { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-9x16\@sm { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-4x3\@sm  { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-3x4\@sm  { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-1x1\@sm  { @include mixins.ratio-1x1; }   // 1:1  Square
 }
 
 
 @include mixins.mq(md, min, width) {
-  .dcf-16x9\@md { @include mixins.ratio-16x9(!important); }  // 16:9 Landscape
-  .dcf-9x16\@md { @include mixins.ratio-9x16(!important); }  // 9:16 Portrait
-  .dcf-4x3\@md  { @include mixins.ratio-4x3(!important); }   // 4:3  Landscape
-  .dcf-3x4\@md  { @include mixins.ratio-3x4(!important); }   // 3:4  Portrait
-  .dcf-1x1\@md  { @include mixins.ratio-1x1(!important); }   // 1:1  Square
+  .dcf-16x9\@md { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-9x16\@md { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-4x3\@md  { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-3x4\@md  { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-1x1\@md  { @include mixins.ratio-1x1; }   // 1:1  Square
 }
 
 
 @include mixins.mq(lg, min, width) {
-  .dcf-16x9\@lg { @include mixins.ratio-16x9(!important); }  // 16:9 Landscape
-  .dcf-9x16\@lg { @include mixins.ratio-9x16(!important); }  // 9:16 Portrait
-  .dcf-4x3\@lg  { @include mixins.ratio-4x3(!important); }   // 4:3  Landscape
-  .dcf-3x4\@lg  { @include mixins.ratio-3x4(!important); }   // 3:4  Portrait
-  .dcf-1x1\@lg  { @include mixins.ratio-1x1(!important); }   // 1:1  Square
+  .dcf-16x9\@lg { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-9x16\@lg { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-4x3\@lg  { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-3x4\@lg  { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-1x1\@lg  { @include mixins.ratio-1x1; }   // 1:1  Square
 }
 
 
 @include mixins.mq(xl, min, width) {
-  .dcf-16x9\@xl { @include mixins.ratio-16x9(!important); }  // 16:9 Landscape
-  .dcf-9x16\@xl { @include mixins.ratio-9x16(!important); }  // 9:16 Portrait
-  .dcf-4x3\@xl  { @include mixins.ratio-4x3(!important); }   // 4:3  Landscape
-  .dcf-3x4\@xl  { @include mixins.ratio-3x4(!important); }   // 3:4  Portrait
-  .dcf-1x1\@xl  { @include mixins.ratio-1x1(!important); }   // 1:1  Square
+  .dcf-16x9\@xl { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-9x16\@xl { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-4x3\@xl  { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-3x4\@xl  { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-1x1\@xl  { @include mixins.ratio-1x1; }   // 1:1  Square
 }

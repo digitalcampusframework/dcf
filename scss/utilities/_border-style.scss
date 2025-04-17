@@ -7,16 +7,16 @@
 
 
 // Dotted
-.dcf-b-dotted { @include mixins.b-dotted(!important); }    // All sides
-.dcf-bt-dotted { @include mixins.bt-dotted(!important); }  // Top
-.dcf-br-dotted { @include mixins.br-dotted(!important); }  // Right
-.dcf-bb-dotted { @include mixins.bb-dotted(!important); }  // Bottom
-.dcf-bl-dotted { @include mixins.bl-dotted(!important); }  // Left
+.dcf-b-dotted { @include mixins.b-dotted; }    // All sides
+.dcf-bt-dotted { @include mixins.bt-dotted; }  // Top
+.dcf-br-dotted { @include mixins.br-dotted; }  // Right
+.dcf-bb-dotted { @include mixins.bb-dotted; }  // Bottom
+.dcf-bl-dotted { @include mixins.bl-dotted; }  // Left
 
 
 // Solid
-.dcf-b-solid { @include mixins.b-solid(!important); }      // All sides
-.dcf-bt-solid { @include mixins.bt-solid(!important); }    // Top
-.dcf-br-solid { @include mixins.br-solid(!important); }    // Right
-.dcf-bb-solid { @include mixins.bb-solid(!important); }    // Bottom
-.dcf-bl-solid { @include mixins.bl-solid(!important); }    // Left
+.dcf-b-solid { @include mixins.b-solid; }      // All sides
+.dcf-bt-solid { @include mixins.bt-solid; }    // Top
+.dcf-br-solid { @include mixins.br-solid; }    // Right
+.dcf-bb-solid { @include mixins.bb-solid; }    // Bottom
+.dcf-bl-solid { @include mixins.bl-solid; }    // Left

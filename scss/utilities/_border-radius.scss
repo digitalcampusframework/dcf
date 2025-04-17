@@ -7,26 +7,26 @@
 
 
 // Circle
-.dcf-circle { @include mixins.circle(!important); }
+.dcf-circle { @include mixins.circle; }
 
 // Sharp, all sides
-.dcf-sharp { @include mixins.sharp(!important); }
+.dcf-sharp { @include mixins.sharp; }
 
 // Rounded, all sides
-.dcf-rounded { @include mixins.rounded(!important); }
+.dcf-rounded { @include mixins.rounded; }
 
 
 // Rounded top (top right, top left)
-.dcf-rounded-top { @include mixins.rounded-top(!important); }
+.dcf-rounded-top { @include mixins.rounded-top; }
 
 
 // Rounded right (top right, bottom right)
-.dcf-rounded-right { @include mixins.rounded-right(!important); }
+.dcf-rounded-right { @include mixins.rounded-right; }
 
 
 // Rounded bottom (bottom right, bottom left)
-.dcf-rounded-bottom { @include mixins.rounded-bottom(!important); }
+.dcf-rounded-bottom { @include mixins.rounded-bottom; }
 
 
 // Rounded left (bottom left, top left)
-.dcf-rounded-left { @include mixins.rounded-left(!important); }
+.dcf-rounded-left { @include mixins.rounded-left; }

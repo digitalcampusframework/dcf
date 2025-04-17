@@ -10,22 +10,22 @@
 
 
 // Direction (columns & rows)
-.dcf-flex-col { @include mixins.flex-col(!important); }
-.dcf-flex-col-rev { @include mixins.flex-col-rev(!important); }
-.dcf-flex-row { @include mixins.flex-row(!important); }
-.dcf-flex-row-rev { @include mixins.flex-row-rev(!important); }
+.dcf-flex-col { @include mixins.flex-col; }
+.dcf-flex-col-rev { @include mixins.flex-col-rev; }
+.dcf-flex-row { @include mixins.flex-row; }
+.dcf-flex-row-rev { @include mixins.flex-row-rev; }
 
 
 // Wrap
-.dcf-flex-wrap { @include mixins.flex-wrap(!important); }
-.dcf-flex-wrap-rev { @include mixins.flex-wrap-rev(!important); }
-.dcf-flex-nowrap { @include mixins.flex-nowrap(!important); }
+.dcf-flex-wrap { @include mixins.flex-wrap; }
+.dcf-flex-wrap-rev { @include mixins.flex-wrap-rev; }
+.dcf-flex-nowrap { @include mixins.flex-nowrap; }
 
 
 // Grow & shrink
-.dcf-flex-none { @include mixins.flex-none(!important); }
-.dcf-flex-initial { @include mixins.flex-initial(!important); }
-.dcf-flex-auto { @include mixins.flex-auto(!important); }
-.dcf-flex-1 { @include mixins.flex-1(!important); }
-.dcf-flex-grow-1 { @include mixins.flex-grow-1(!important); }
-.dcf-flex-shrink-0 { @include mixins.flex-shrink-0(!important); }
+.dcf-flex-none { @include mixins.flex-none; }
+.dcf-flex-initial { @include mixins.flex-initial; }
+.dcf-flex-auto { @include mixins.flex-auto; }
+.dcf-flex-1 { @include mixins.flex-1; }
+.dcf-flex-grow-1 { @include mixins.flex-grow-1; }
+.dcf-flex-shrink-0 { @include mixins.flex-shrink-0; }

@@ -6,5 +6,5 @@
 @use "../mixins/" as mixins;
 
 
-.dcf-fill-current { @include mixins.fill-current(!important); }
-.dcf-stroke-current { @include mixins.stroke-current(!important); }
+.dcf-fill-current { @include mixins.fill-current; }
+.dcf-stroke-current { @include mixins.stroke-current; }

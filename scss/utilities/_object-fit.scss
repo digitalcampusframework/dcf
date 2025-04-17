@@ -7,12 +7,12 @@
 
 
 // Contain
-.dcf-obj-fit-contain { @include mixins.obj-fit-contain(!important); }
+.dcf-obj-fit-contain { @include mixins.obj-fit-contain; }
 
 
 // Cover
-.dcf-obj-fit-cover { @include mixins.obj-fit-cover(!important); }
+.dcf-obj-fit-cover { @include mixins.obj-fit-cover; }
 
 
 // None
-.dcf-obj-fit-none { @include mixins.obj-fit-none(!important); }
+.dcf-obj-fit-none { @include mixins.obj-fit-none; }

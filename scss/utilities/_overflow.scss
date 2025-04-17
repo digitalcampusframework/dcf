@@ -7,30 +7,30 @@
 
 
 // Visible
-.dcf-overflow-visible { @include mixins.overflow-visible(!important); }
-.dcf-overflow-x-visible { @include mixins.overflow-x-visible(!important); }
-.dcf-overflow-y-visible { @include mixins.overflow-y-visible(!important); }
+.dcf-overflow-visible { @include mixins.overflow-visible; }
+.dcf-overflow-x-visible { @include mixins.overflow-x-visible; }
+.dcf-overflow-y-visible { @include mixins.overflow-y-visible; }
 
 
 // Hidden
-.dcf-overflow-hidden { @include mixins.overflow-hidden(!important); }
-.dcf-overflow-x-hidden { @include mixins.overflow-x-hidden(!important); }
-.dcf-overflow-y-hidden { @include mixins.overflow-y-hidden(!important); }
+.dcf-overflow-hidden { @include mixins.overflow-hidden; }
+.dcf-overflow-x-hidden { @include mixins.overflow-x-hidden; }
+.dcf-overflow-y-hidden { @include mixins.overflow-y-hidden; }
 
 
 // Clip
-.dcf-overflow-clip { @include mixins.overflow-clip(!important); }
-.dcf-overflow-x-clip { @include mixins.overflow-x-clip(!important); }
-.dcf-overflow-y-clip { @include mixins.overflow-y-clip(!important); }
+.dcf-overflow-clip { @include mixins.overflow-clip; }
+.dcf-overflow-x-clip { @include mixins.overflow-x-clip; }
+.dcf-overflow-y-clip { @include mixins.overflow-y-clip; }
 
 
 // Auto
-.dcf-overflow-auto { @include mixins.overflow-auto(!important); }
-.dcf-overflow-x-auto { @include mixins.overflow-x-auto(!important); }
-.dcf-overflow-y-auto { @include mixins.overflow-y-auto(!important); }
+.dcf-overflow-auto { @include mixins.overflow-auto; }
+.dcf-overflow-x-auto { @include mixins.overflow-x-auto; }
+.dcf-overflow-y-auto { @include mixins.overflow-y-auto; }
 
 
 // Scroll
-.dcf-overflow-scroll { @include mixins.overflow-scroll(!important); }
-.dcf-overflow-x-scroll { @include mixins.overflow-x-scroll(!important); }
-.dcf-overflow-y-scroll { @include mixins.overflow-y-scroll(!important); }
+.dcf-overflow-scroll { @include mixins.overflow-scroll; }
+.dcf-overflow-x-scroll { @include mixins.overflow-x-scroll; }
+.dcf-overflow-y-scroll { @include mixins.overflow-y-scroll; }

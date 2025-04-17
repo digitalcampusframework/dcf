@@ -7,65 +7,65 @@
 
 
 // Font size
-.dcf-txt-base { @include mixins.txt-base(!important); }
+.dcf-txt-base { @include mixins.txt-base; }
 // Remaining font sizes should be configured in theme _utilities.typography
 
 
 // Horizontal text alignment
-.dcf-txt-center { @include mixins.txt-center(!important); }
-.dcf-txt-left { @include mixins.txt-left(!important); }
-.dcf-txt-right { @include mixins.txt-right(!important); }
+.dcf-txt-center { @include mixins.txt-center; }
+.dcf-txt-left { @include mixins.txt-left; }
+.dcf-txt-right { @include mixins.txt-right; }
 
 
 // Vertical text alignment
-.dcf-txt-baseline { @include mixins.txt-baseline(!important); }
-.dcf-txt-top { @include mixins.txt-top(!important); }
-.dcf-txt-middle { @include mixins.txt-middle(!important); }
-.dcf-txt-bottom { @include mixins.txt-bottom(!important); }
-.dcf-txt-text-top { @include mixins.txt-text-top(!important); }
-.dcf-txt-text-bottom { @include mixins.txt-text-bottom(!important); }
+.dcf-txt-baseline { @include mixins.txt-baseline; }
+.dcf-txt-top { @include mixins.txt-top; }
+.dcf-txt-middle { @include mixins.txt-middle; }
+.dcf-txt-bottom { @include mixins.txt-bottom; }
+.dcf-txt-text-top { @include mixins.txt-text-top; }
+.dcf-txt-text-bottom { @include mixins.txt-text-bottom; }
 
 
 // Text decoration
-.dcf-txt-decor-none { @include mixins.txt-decor-none(!important); }
-.dcf-txt-decor-hover { @include mixins.txt-decor-hover-off(!important); }
-.dcf-txt-decor-hover:hover { @include mixins.txt-decor-hover-on(!important); }
+.dcf-txt-decor-none { @include mixins.txt-decor-none; }
+.dcf-txt-decor-hover { @include mixins.txt-decor-hover-off; }
+.dcf-txt-decor-hover:hover { @include mixins.txt-decor-hover-on; }
 
 
 // Text wrap
-.dcf-txt-balance { @include mixins.txt-balance(!important); }
-.dcf-txt-pretty { @include mixins.txt-pretty(!important); }
-.dcf-txt-nowrap { @include mixins.txt-nowrap(!important); }
-.dcf-txt-wrap-unset { @include mixins.txt-wrap-unset(!important); }
-.dcf-url-wrap { @include mixins.url-wrap(!important); }
-.dcf-word-wrap { @include mixins.word-wrap(!important); }
-.dcf-truncate { @include mixins.truncate(!important); }
+.dcf-txt-balance { @include mixins.txt-balance; }
+.dcf-txt-pretty { @include mixins.txt-pretty; }
+.dcf-txt-nowrap { @include mixins.txt-nowrap; }
+.dcf-txt-wrap-unset { @include mixins.txt-wrap-unset; }
+.dcf-url-wrap { @include mixins.url-wrap; }
+.dcf-word-wrap { @include mixins.word-wrap; }
+.dcf-truncate { @include mixins.truncate; }
 
 
 // Font style
-.dcf-roman { @include mixins.roman(!important); }
-.dcf-italic { @include mixins.italic(!important); }
+.dcf-roman { @include mixins.roman; }
+.dcf-italic { @include mixins.italic; }
 
 
 // Font weight
-.dcf-regular { @include mixins.regular(!important); }
-.dcf-bold { @include mixins.bold(!important); }
-.dcf-bolder { @include mixins.bolder(!important); }
+.dcf-regular { @include mixins.regular; }
+.dcf-bold { @include mixins.bold; }
+.dcf-bolder { @include mixins.bolder; }
 
 
 // Line height
-.dcf-lh-1 { @include mixins.lh-1(!important); }
-.dcf-lh-2 { @include mixins.lh-2(!important); }
-.dcf-lh-3 { @include mixins.lh-3(!important); }
-.dcf-lh-4 { @include mixins.lh-4(!important); }
+.dcf-lh-1 { @include mixins.lh-1; }
+.dcf-lh-2 { @include mixins.lh-2; }
+.dcf-lh-3 { @include mixins.lh-3; }
+.dcf-lh-4 { @include mixins.lh-4; }
 
 
 // Text transform
-.dcf-capitalize { @include mixins.capitalize(!important); }
-.dcf-lowercase { @include mixins.lowercase(!important); }
-.dcf-uppercase { @include mixins.uppercase(!important); }
-.dcf-case-reset { @include mixins.case-reset(!important); }
+.dcf-capitalize { @include mixins.capitalize; }
+.dcf-lowercase { @include mixins.lowercase; }
+.dcf-uppercase { @include mixins.uppercase; }
+.dcf-case-reset { @include mixins.case-reset; }
 
 
 // Writing mode
-.dcf-txt-vertical-lr { @include mixins.txt-vertical-lr(!important); }
+.dcf-txt-vertical-lr { @include mixins.txt-vertical-lr; }

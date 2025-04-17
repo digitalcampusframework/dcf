@@ -7,24 +7,24 @@
 
 
 // Float right
-.dcf-float-right { @include mixins.float-right(!important); }
+.dcf-float-right { @include mixins.float-right; }
 
 
 // Float left
-.dcf-float-left { @include mixins.float-left(!important); }
+.dcf-float-left { @include mixins.float-left; }
 
 
 // Clear right
-.dcf-clear-right { @include mixins.clear-right(!important); }
+.dcf-clear-right { @include mixins.clear-right; }
 
 
 // Clear left
-.dcf-clear-left { @include mixins.clear-left(!important); }
+.dcf-clear-left { @include mixins.clear-left; }
 
 
 // Clear both
-.dcf-clear-both { @include mixins.clear-both(!important); }
+.dcf-clear-both { @include mixins.clear-both; }
 
 
 // Clearfix
-.dcf-clearfix { @include mixins.clearfix(!important); }
+.dcf-clearfix { @include mixins.clearfix; }
