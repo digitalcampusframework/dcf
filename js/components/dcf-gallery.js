@@ -65,7 +65,7 @@ export class DCFGalleryDialog {
 </div>
 <div class="dcf-dialog-content dcf-modal-content-gallery dcf-flex-grow-1 dcf-d-grid">
     <div class="dcf-gallery-prev dcf-d-flex dcf-ai-center">
-        <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-prev dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-p-0 dcf-circle">
+        <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-prev dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Previous Image</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4 dcf-d-block" style="rotate: 180deg;" viewBox="0 0 30 36">
             <path d="M25.5,15.3L9.3,0.9C8.6,0.3,7.6,0,6.7,0c-1,0.1-1.9,0.5-2.5,1.2
@@ -77,7 +77,7 @@ export class DCFGalleryDialog {
         </button>
     </div>
     <div class="dcf-gallery-next dcf-d-flex dcf-ai-center">
-        <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-next dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-p-0 dcf-circle">
+        <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-next dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Next Image</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4 dcf-d-block" viewBox="0 0 30 36">
                 <path d="M25.5,15.3L9.3,0.9C8.6,0.3,7.6,0,6.7,0c-1,0.1-1.9,0.5-2.5,1.2

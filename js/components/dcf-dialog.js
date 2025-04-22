@@ -31,6 +31,7 @@ export default class DCFDialog {
     dialogElementClassList = [
         'dcf-p-0',
         'dcf-b-0',
+        'dcf-m-auto',
     ];
 
     dialogHeaderElementClassList = [
