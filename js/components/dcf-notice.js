@@ -185,7 +185,6 @@ export default class DCFNotice {
             this.notice.append(this.closeNotice);
         }
 
-        console.log('removed class');
         this.notice.classList.add('dcf-notice-initialized');
         this.notice.removeAttribute('hidden');
     }

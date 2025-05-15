@@ -350,6 +350,9 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
     </div>
 </div>`;
 
+            // Re-select these since the elements have changed
+            this.inputElement = this.searchAndSelectElement.querySelector('input');
+            this.openButtonElement = this.searchAndSelectElement.querySelector('.dcf-search-and-select-open-btn button');
             this.selectedItemsListElement = this.searchAndSelectElement.querySelector('.dcf-search-and-select-selected-items');
             this.searchAreaElement = this.searchAndSelectElement.querySelector('.dcf-search-and-select-search-area-multiple');
         }

@@ -8,6 +8,10 @@ export default class DCFAutoplayVideoToggle {
 
     autoplayVideos = [];
 
+    videoContainerClassList = [
+        'dcf-relative',
+    ];
+
     toggleBtnClassList = [
         'dcf-btn-autoplay-video-toggle',
         'dcf-btn',
@@ -23,7 +27,6 @@ export default class DCFAutoplayVideoToggle {
         'dcf-mr-3',
         'dcf-h-7',
         'dcf-w-7',
-        'dcf-p-0',
         'dcf-circle',
     ];
 
@@ -39,6 +42,9 @@ export default class DCFAutoplayVideoToggle {
 
 
     constructor(autoPlayVideoContainer, options = {}) {
+        if ('videoContainerClassList' in options && Array.isArray(options.videoContainerClassList)) {
+            this.videoContainerClassList = options.videoContainerClassList;
+        }
         if ('toggleBtnClassList' in options && Array.isArray(options.toggleBtnClassList)) {
             this.toggleBtnClassList = options.toggleBtnClassList;
         }
@@ -50,6 +56,10 @@ export default class DCFAutoplayVideoToggle {
         }
 
         this.autoplayVideoContainer = autoPlayVideoContainer;
+
+        if (this.videoContainerClassList) {
+            this.autoplayVideoContainer.classList.add(...this.videoContainerClassList);
+        }
 
         this.toggleButton = document.createElement('button');
 

@@ -33,8 +33,6 @@ export default class DCFFigcaptionToggles {
         'dcf-z-1',
         'dcf-d-flex',
         'dcf-ai-center',
-        'dcf-pt-4',
-        'dcf-pb-4',
         'dcf-white',
         'dcf-btn-toggle-figcaption',
     ];
