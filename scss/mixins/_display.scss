@@ -41,3 +41,7 @@
 
 // Inline grid
 @mixin d-inline-grid($imp:null) { display: inline-grid $imp; }
+
+
+// Contents
+@mixin d-contents($imp:null) { display: contents $imp; }

@@ -9,6 +9,7 @@
 
 // None
 .dcf-d-none { @include mixins.d-none; }
+.dcf-d-none\! { @include mixins.d-none(!important); }
 
 
 // None (screen, show when printed)
@@ -19,39 +20,59 @@
   }
 
 }
+.dcf-d-none\@screen\! {
 
+  @media only screen {
+    @include mixins.d-none(!important)
+  }
+
+}
 
 // Block
 .dcf-d-block { @include mixins.d-block; }
+.dcf-d-block\! { @include mixins.d-block(!important); }
 
 
 // Inline
 .dcf-d-inline { @include mixins.d-inline; }
+.dcf-d-inline\! { @include mixins.d-inline(!important); }
 
 
 // Inline block
 .dcf-d-inline-block { @include mixins.d-inline-block; }
+.dcf-d-inline-block\! { @include mixins.d-inline-block(!important); }
 
 
 // Table
 .dcf-d-table { @include mixins.d-table; }
+.dcf-d-table\! { @include mixins.d-table(!important); }
 
 
 // Table cell
 .dcf-d-table-cell { @include mixins.d-table-cell; }
+.dcf-d-table-cell\! { @include mixins.d-table-cell(!important); }
 
 
 // Flex
 .dcf-d-flex { @include mixins.d-flex; }
+.dcf-d-flex\! { @include mixins.d-flex(!important); }
 
 
 // Inline flex
 .dcf-d-inline-flex { @include mixins.d-inline-flex; }
+.dcf-d-inline-flex\! { @include mixins.d-inline-flex(!important); }
 
 
 // Grid
 .dcf-d-grid { @include mixins.d-grid; }
+.dcf-d-grid\! { @include mixins.d-grid(!important); }
 
 
 // Inline grid
 .dcf-d-inline-grid { @include mixins.d-inline-grid; }
+.dcf-d-inline-grid\! { @include mixins.d-inline-grid(!important); }
+
+
+// Contents
+.dcf-d-contents { @include mixins.d-contents; }
+.dcf-d-contents\! { @include mixins.d-contents(!important); }
