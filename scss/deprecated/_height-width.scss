@@ -1,0 +1,39 @@
+/////////////////////////////////////
+// CORE / DEPRECATED / HEIGHT & WIDTH
+/////////////////////////////////////
+
+
+@use "../variables/" as var;
+@use "../mixins/" as mixins;
+
+
+// Minimum height
+.dcf-h-min-0 { @include mixins.min-h-0; }
+.dcf-h-min-100vh { @include mixins.min-h-100vh; }
+
+
+// Maximum height
+.dcf-h-max-0 { @include mixins.max-h-0; }
+.dcf-h-max-100\% { @include mixins.max-h-100pc; } // .dcf-h-max-100%
+.dcf-h-max-100vh { @include mixins.max-h-100vh; }
+.dcf-h-max-inf { @include mixins.max-h-inf; }
+
+
+// Minimum width
+.dcf-w-min-0 { @include mixins.min-w-0; }
+
+
+// Maximum width
+.dcf-w-max-3xs { @include mixins.max-w-3xs; }
+.dcf-w-max-2xs { @include mixins.max-w-2xs; }
+.dcf-w-max-xs { @include mixins.max-w-xs; }
+.dcf-w-max-sm { @include mixins.max-w-sm; }
+// scss-lint:disable SingleLinePerSelector
+.dcf-measure, .dcf-w-max-md { @include mixins.max-w-md; } // TODO: deprecate .dcf-measure
+.dcf-w-max-lg { @include mixins.max-w-lg; }
+.dcf-w-max-xl { @include mixins.max-w-xl; }
+.dcf-w-max-2xl { @include mixins.max-w-2xl; }
+.dcf-w-max-3xl { @include mixins.max-w-3xl; }
+.dcf-w-max-4xl { @include mixins.max-w-4xl; }
+.dcf-w-max-100\% { @include mixins.max-w-100pc; } // .dcf-w-max-100%
+.dcf-w-max-100vw { @include mixins.max-w-100vw; }

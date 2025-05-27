@@ -32,15 +32,15 @@
 
 
 // Minimum height
-.dcf-h-min-0 { @include mixins.h-min-0; }
-.dcf-h-min-100vh { @include mixins.h-min-100vh; }
+.dcf-min-h-0 { @include mixins.min-h-0; }
+.dcf-min-h-100vh { @include mixins.min-h-100vh; }
 
 
 // Maximum height
-.dcf-h-max-0 { @include mixins.h-max-0; }
-.dcf-h-max-100\% { @include mixins.h-max-100pc; } // .dcf-h-max-100%
-.dcf-h-max-100vh { @include mixins.h-max-100vh; }
-.dcf-h-max-inf { @include mixins.h-max-inf; }
+.dcf-max-h-0 { @include mixins.max-h-0; }
+.dcf-max-h-100\% { @include mixins.max-h-100pc; } // .dcf-max-h-100%
+.dcf-max-h-100vh { @include mixins.max-h-100vh; }
+.dcf-max-h-inf { @include mixins.max-h-inf; }
 
 
 // Width
@@ -69,20 +69,20 @@
 
 
 // Minimum width
-.dcf-w-min-0 { @include mixins.w-min-0; }
+.dcf-min-w-0 { @include mixins.min-w-0; }
 
 
 // Maximum width
-.dcf-w-max-3xs { @include mixins.w-max-3xs; }
-.dcf-w-max-2xs { @include mixins.w-max-2xs; }
-.dcf-w-max-xs { @include mixins.w-max-xs; }
-.dcf-w-max-sm { @include mixins.w-max-sm; }
+.dcf-max-w-3xs { @include mixins.max-w-3xs; }
+.dcf-max-w-2xs { @include mixins.max-w-2xs; }
+.dcf-max-w-xs { @include mixins.max-w-xs; }
+.dcf-max-w-sm { @include mixins.max-w-sm; }
 // scss-lint:disable SingleLinePerSelector
-.dcf-measure, .dcf-w-max-md { @include mixins.w-max-md; } // TODO: deprecate .dcf-measure
-.dcf-w-max-lg { @include mixins.w-max-lg; }
-.dcf-w-max-xl { @include mixins.w-max-xl; }
-.dcf-w-max-2xl { @include mixins.w-max-2xl; }
-.dcf-w-max-3xl { @include mixins.w-max-3xl; }
-.dcf-w-max-4xl { @include mixins.w-max-4xl; }
-.dcf-w-max-100\% { @include mixins.w-max-100pc; } // .dcf-w-max-100%
-.dcf-w-max-100vw { @include mixins.w-max-100vw; }
+.dcf-measure, .dcf-max-w-md { @include mixins.max-w-md; } // TODO: deprecate .dcf-measure
+.dcf-max-w-lg { @include mixins.max-w-lg; }
+.dcf-max-w-xl { @include mixins.max-w-xl; }
+.dcf-max-w-2xl { @include mixins.max-w-2xl; }
+.dcf-max-w-3xl { @include mixins.max-w-3xl; }
+.dcf-max-w-4xl { @include mixins.max-w-4xl; }
+.dcf-max-w-100\% { @include mixins.max-w-100pc; } // .dcf-max-w-100%
+.dcf-max-w-100vw { @include mixins.max-w-100vw; }
