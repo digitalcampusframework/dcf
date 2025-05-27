@@ -117,6 +117,21 @@ export default class DCFAutoplayVideoToggle {
             this.pauseAll();
         }
 
+        this.autoplayVideoContainer.dispatchEvent(new CustomEvent(DCFAutoplayVideoToggle.events('autoplayVideoReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+    }
+
+    // The names of the events to be used easily
+    static events(name) {
+        const events = {
+            autoplayVideoReady: 'autoplayVideoReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
     }
 
     playStatus() {

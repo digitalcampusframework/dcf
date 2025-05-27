@@ -188,12 +188,24 @@ export default class DCFPopup {
         if (this.popupElement.getAttribute('hidden') !== null) {
             this.popupElement.removeAttribute('hidden');
         }
+
+        this.popupButton.dispatchEvent(new CustomEvent(DCFPopup.events('popupReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+        this.popupElement.dispatchEvent(new CustomEvent(DCFPopup.events('popupReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
     }
 
     // The names of the events to be used easily
     static events(name) {
         // Define any new events
         const events = {
+            popupReady: 'popupReady',
             popupOpen: 'popupOpen',
         };
         Object.freeze(events);

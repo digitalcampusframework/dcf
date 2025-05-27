@@ -113,11 +113,18 @@ export default class DCFDialog {
 
         this.#addEventListeners();
         this.dialogElement.classList.add('dcf-dialog-initialized');
+
+        this.dialogElement.dispatchEvent(new CustomEvent(DCFDialog.events('dialogReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
     }
 
     // The names of the events to be used easily
     static events(name) {
         const events = {
+            dialogReady: 'dialogReady',
             dialogPreOpen: 'dialogPreOpen',
             dialogPostOpen: 'dialogPostOpen',
             dialogPreClose: 'dialogPreClose',

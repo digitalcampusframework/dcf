@@ -242,6 +242,27 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
         this.#initSlides();
         this.#initControls();
+
+        this.slideshowContainer.dispatchEvent(new CustomEvent(DCFSlideshow.events('slideshowReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+    }
+
+    /**
+     * Validates and returns standardized name of events for tabs
+     * @static
+     * @param { string } name - Name of the event to be returned
+     * @returns { string } Standard name of the event
+     */
+    static events(name) {
+        const events = {
+            slideshowReady: 'slideshowReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
     }
 
     /**

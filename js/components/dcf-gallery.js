@@ -12,7 +12,6 @@ export default class DCFGallery {
 
     // Set up the button
     constructor(galleryImage, options={}) {
-
         if (sharedDialog === null) {
             sharedDialog = new DCFGalleryDialog(options);
         }
@@ -22,12 +21,20 @@ export default class DCFGallery {
         this.image.addEventListener('click', () => {
             this.dialog.open(this.image);
         });
+
+        this.image.dispatchEvent(new CustomEvent(DCFGallery.events('galleryReady'), {
+            detail: {
+                classInstance: this,
+                galleryDialogInstance: sharedDialog,
+            },
+        }));
     }
 
     // The names of the events to be used easily
     static events(name) {
         // Define any new events
         const events = {
+            galleryReady: 'galleryReady',
         };
         Object.freeze(events);
 

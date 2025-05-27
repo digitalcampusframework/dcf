@@ -15,8 +15,6 @@ export default class DCFTabs {
     /** @type { HTMLElement[]|null } tabsPanelList */
     tabsPanelList = null;
 
-    tabsReadyEvent = new Event(DCFTabs.events('tabsReady'));
-
     tabSwitchedEvent = new Event(DCFTabs.events('tabSwitched'));
 
     /**
@@ -180,7 +178,11 @@ export default class DCFTabs {
 
         // We can then set up the tabGroup event listeners and dispatch the even that the tabs are ready
         this.#setTabGroupEventListeners(this.tabsGroup);
-        this.tabsGroup.dispatchEvent(this.tabsReadyEvent);
+        this.tabsGroup.dispatchEvent(new CustomEvent(DCFTabs.events('tabsReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
 
         this.#scrollToHash();
 
@@ -205,7 +207,7 @@ export default class DCFTabs {
      */
     static events(name) {
         const events = {
-            tabsReady: 'ready',
+            tabsReady: 'tabsReady',
             tabSwitched: 'tabSwitched',
             commandSwitch: 'commandSwitch',
             commandPrev: 'commandPrev',

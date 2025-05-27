@@ -385,6 +385,27 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
         if (this.multiple) {
             this.availableItemsListElement.setAttribute('aria-multiselectable', true);
         }
+
+        this.selectElement.dispatchEvent(new CustomEvent(DCFSearchSelect.events('searchSelectReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+    }
+
+    /**
+     * Validates and returns standardized name of events for tabs
+     * @static
+     * @param { string } name - Name of the event to be returned
+     * @returns { string } Standard name of the event
+     */
+    static events(name) {
+        const events = {
+            searchSelectReady: 'searchSelectReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
     }
 
     /**

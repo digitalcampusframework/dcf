@@ -55,6 +55,16 @@ export default class DCFDatepicker {
         this.init();
     }
 
+    // The names of the events to be used easily
+    static events(name) {
+        const events = {
+            datepickerReady: 'datepickerReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
+    }
+
     parseInt(string) {
         const radix = 10;
         return parseInt(string, radix);
@@ -273,6 +283,12 @@ export default class DCFDatepicker {
         this.updateGrid();
         this.close(false);
         this.setDateForButtonLabel();
+
+        this.datepicker.dispatchEvent(new CustomEvent(DCFDatepicker.events('datepickerReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
     }
 
     isSameDay(day1, day2) {

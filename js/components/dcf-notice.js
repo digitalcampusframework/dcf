@@ -187,6 +187,27 @@ export default class DCFNotice {
 
         this.notice.classList.add('dcf-notice-initialized');
         this.notice.removeAttribute('hidden');
+
+        this.notice.dispatchEvent(new CustomEvent(DCFNotice.events('noticeReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+    }
+
+    /**
+     * Validates and returns standardized name of events for tabs
+     * @static
+     * @param { string } name - Name of the event to be returned
+     * @returns { string } Standard name of the event
+     */
+    static events(name) {
+        const events = {
+            noticeReady: 'noticeReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
     }
 
     #getNoticeIconContent() {

@@ -50,8 +50,6 @@ export default class DCFCollapsibleFieldsets {
         'dcf-motion-none',
     ];
 
-    fieldsetReadyEvent = new Event(DCFCollapsibleFieldsets.events('fieldsetReady'));
-
     commandToggle = new Event(DCFButtonToggles.events('commandToggle'));
 
     toggleKeys = [];
@@ -211,7 +209,11 @@ export default class DCFCollapsibleFieldsets {
 
         // This lets any outside js that needs to interact with elements inside the fieldset
         // to know that its safe to create references to these elements
-        this.fieldsetElement.dispatchEvent(this.fieldsetReadyEvent);
+        this.fieldsetElement.dispatchEvent(new CustomEvent(DCFCollapsibleFieldsets.events('collapsibleFieldsetReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
 
         if (this.fieldsetElement.getAttribute('hidden') !== null) {
             this.fieldsetElement.removeAttribute('hidden');
@@ -233,7 +235,7 @@ export default class DCFCollapsibleFieldsets {
     static events(name) {
         // Define any new events
         const events = {
-            fieldsetReady: 'ready',
+            collapsibleFieldsetReady: 'collapsibleFieldsetReady',
         };
         Object.freeze(events);
 

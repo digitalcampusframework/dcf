@@ -126,12 +126,19 @@ export default class DCFFigcaptionToggles {
             onKeys:         this.onKeys,
             offKeys:        this.offKeys,
         });
+
+        this.figcaption.dispatchEvent(new CustomEvent(DCFFigcaptionToggles.events('figcaptionToggleReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
     }
 
     // The names of the events to be used easily
     static events(name) {
         // Define any new events
         const events = {
+            figcaptionToggleReady: 'figcaptionToggleReady',
         };
         Object.freeze(events);
 

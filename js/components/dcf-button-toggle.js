@@ -94,11 +94,24 @@ export default class DCFButtonToggles {
         if (this.toggleTargetElement.getAttribute('hidden') !== null) {
             this.toggleTargetElement.removeAttribute('hidden');
         }
+
+        this.toggleButtonElement.dispatchEvent(new CustomEvent(DCFButtonToggles.events('toggleButtonReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+
+        this.toggleTargetElement.dispatchEvent(new CustomEvent(DCFButtonToggles.events('toggleButtonReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
     }
 
     // The names of the events to be used easily
     static events(name) {
         const events = {
+            toggleButtonReady: 'toggleButtonReady',
             toggleButtonOn: 'toggleButtonOn',
             toggleButtonOff: 'toggleButtonOff',
             toggleElementOn: 'toggleElementOn',

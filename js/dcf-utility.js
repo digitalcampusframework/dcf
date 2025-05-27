@@ -116,3 +116,14 @@ export function loadStyleSheet(styleSheetSrc) {
         document.head.appendChild(link);
     });
 }
+
+/**
+ * Converts a HTML string into a HTMLDocument object
+ * 
+ * @param { String } htmlString 
+ * @returns { ChildNode | null }
+ */
+export function stringToDom(htmlString) {
+    const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+    return doc.body.firstChild;
+}

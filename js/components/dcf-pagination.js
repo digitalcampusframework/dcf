@@ -49,5 +49,26 @@ export default class DCFPagination {
                 span.setAttribute('aria-hidden', true);
             }
         });
+
+        this.paginationNav.dispatchEvent(new CustomEvent(DCFPagination.events('paginationReady'), {
+            detail: {
+                classInstance: this,
+            },
+        }));
+    }
+
+    /**
+     * Validates and returns standardized name of events for tabs
+     * @static
+     * @param { string } name - Name of the event to be returned
+     * @returns { string } Standard name of the event
+     */
+    static events(name) {
+        const events = {
+            paginationReady: 'paginationReady',
+        };
+        Object.freeze(events);
+
+        return name in events ? events[name] : undefined;
     }
 }
