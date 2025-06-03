@@ -16,15 +16,3 @@ button .dcf-icon {
   height: #{var.$ms00}em; // 1em
   width: #{var.$ms00}em;  // 1em
 }
-
-
-.dcf-icon-x {
-  position: relative;
-  top: #{var.$ms-14}em    // .13em
-}
-
-
-.dcf-icon-hang {
-  left: 0;
-  position: absolute;
-}

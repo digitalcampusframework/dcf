@@ -1,0 +1,18 @@
+////////////////////////////
+// CORE / DEPRECATED / ICONS
+////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+.dcf-icon-x {
+  position: relative;
+  top: #{var.$ms-14}em    // .13em
+}
+
+
+.dcf-icon-hang {
+  left: 0;
+  position: absolute;
+}
