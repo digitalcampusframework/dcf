@@ -1,5 +1,5 @@
 /////////////////////////////////
-// CORE / COMPONENTS / PARAGRAPHS
+// CORE / DEPRECATED / PARAGRAPHS
 /////////////////////////////////
 
 
@@ -7,7 +7,7 @@
 
 
 // Drop cap
-.dcf-drop-cap::first-letter {
+.dcf-dropcap::first-letter {
   float: left;
   font-size: var.$font-size-drop-cap;
   line-height: var.$line-height-drop-cap;
