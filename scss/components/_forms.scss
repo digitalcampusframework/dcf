@@ -104,9 +104,9 @@
 }
 
 
-.dcf-input-text:focus,
-.dcf-form input:not([type="submit"]):focus,
-.dcf-form textarea:focus {
+.dcf-input-text:focus-visible,
+.dcf-form input:not([type="submit"]):focus-visible,
+.dcf-form textarea:focus-visible {
   border-color: var.$border-color-input-focus;
   outline: none;
 }
@@ -301,8 +301,8 @@
 
 
 // Checkbox and radio focus state
-.dcf-input-checkbox input[type="checkbox"]:focus + label::before,
-.dcf-input-radio input[type="radio"]:focus + label::before {
+.dcf-input-checkbox input[type="checkbox"]:focus-visible + label::before,
+.dcf-input-radio input[type="radio"]:focus-visible + label::before {
   border-color: var.$border-color-input-focus;
 }
 
@@ -389,8 +389,8 @@
 }
 
 
-.dcf-input-select:focus,
-.dcf-form select:focus {
+.dcf-input-select:focus-visible,
+.dcf-form select:focus-visible {
   border-color: var.$border-color-input-focus;
   outline: none;
 }
