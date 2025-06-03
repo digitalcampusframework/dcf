@@ -7,7 +7,7 @@
 @use "../mixins/" as mixins;
 
 
-.dcf-nav-menu-child ul {
+.dcf-nav-menu-content ul {
   // Fix list-style: none in VoiceOver and Safari: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
   list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
   margin-bottom: 0;
@@ -20,8 +20,8 @@
 }
 
 
-.dcf-nav-menu-child a,
-.dcf-nav-menu-child button {
+.dcf-nav-menu-content a,
+.dcf-nav-menu-content button {
   @include mixins.lh-3;
   display: block;
   padding: #{var.$ms00}em #{var.$ms00}rem;
@@ -34,11 +34,11 @@
     background-color: var.$bg-color-nav-menu;
     bottom: #{var.$ms10}em;
     height: 100vh;
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    // pointer-events: none;
     position: fixed;
     transition: opacity var.$transition-duration-fade-in var.$transition-timing-fn-fade-in, visibility 0ms .4s;
-    visibility: hidden;
+    // visibility: hidden;
     width: 100%;
     z-index: 998; // Ensure that the z-index is below the modal and nav-toggle-group z-indices
   }
@@ -53,25 +53,26 @@
   }
 
 
-  .dcf-nav-menu-child {
+  .dcf-nav-menu-content {
     //@include mixins.bg-scarlet;
-    @include mixins.overflow-y-auto;
+    // @include mixins.overflow-y-auto;
     bottom: #{var.$ms10}em;
-    height: 43vh;
-    padding-left: var.$length-vw-2;
-    padding-right: var.$length-vw-2;
+    height: 56vh;
+    overflow-y: auto;
+    // padding-left: var.$length-vw-2;
+    // padding-right: var.$length-vw-2;
     position: fixed;
   }
 
 
-  .dcf-nav-menu-child > *:first-child {
-    @include mixins.mt-6;
-  }
-
-
-  .dcf-nav-menu-child > *:last-child {
-    @include mixins.mb-7;
-  }
+//   .dcf-nav-menu-child > *:first-child {
+//     @include mixins.mt-6;
+//   }
+//
+//
+//   .dcf-nav-menu-child > *:last-child {
+//     @include mixins.mb-7;
+//   }
 
 
   .dcf-nav-menu a,
@@ -88,8 +89,9 @@
     //@include mixins.bg-scarlet;
     display: flex;
     flex-wrap: nowrap;
-    padding-left: var.$length-vw-2;
-    padding-right: var.$length-vw-2;
+    // padding-left: var.$length-vw-2;
+    // padding-right: var.$length-vw-2;
+    padding-inline: var.$length-vw-2;
   }
 
 
