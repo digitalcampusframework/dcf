@@ -1,0 +1,50 @@
+////////////////////////////////////
+// CORE / DEPRECATED / ASPECT RATIOS
+////////////////////////////////////
+
+
+@use "../mixins/" as mixins;
+
+
+// Aspect ratios
+.dcf-ratio-16x9 .dcf-ratio-child { @include mixins.ratio-16x9; }        // 16:9 Landscape
+.dcf-ratio-9x16 .dcf-ratio-child { @include mixins.ratio-9x16; }        // 9:16 Portrait
+.dcf-ratio-4x3 .dcf-ratio-child  { @include mixins.ratio-4x3; }         // 4:3  Landscape
+.dcf-ratio-3x4 .dcf-ratio-child  { @include mixins.ratio-3x4; }         // 3:4  Portrait
+.dcf-ratio-1x1 .dcf-ratio-child  { @include mixins.ratio-1x1; }         // 1:1  Square
+
+
+@include mixins.mq(sm, min, width) {
+  .dcf-ratio-16x9\@sm .dcf-ratio-child  { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-ratio-9x16\@sm .dcf-ratio-child  { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-ratio-4x3\@sm .dcf-ratio-child   { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-ratio-3x4\@sm .dcf-ratio-child   { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-ratio-1x1\@sm .dcf-ratio-child   { @include mixins.ratio-1x1; }   // 1:1  Square
+}
+
+
+@include mixins.mq(md, min, width) {
+  .dcf-ratio-16x9\@md .dcf-ratio-child  { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-ratio-9x16\@md .dcf-ratio-child  { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-ratio-4x3\@md .dcf-ratio-child   { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-ratio-3x4\@md .dcf-ratio-child   { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-ratio-1x1\@md .dcf-ratio-child   { @include mixins.ratio-1x1; }   // 1:1  Square
+}
+
+
+@include mixins.mq(lg, min, width) {
+  .dcf-ratio-16x9\@lg .dcf-ratio-child  { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-ratio-9x16\@lg .dcf-ratio-child  { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-ratio-4x3\@lg .dcf-ratio-child   { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-ratio-3x4\@lg .dcf-ratio-child   { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-ratio-1x1\@lg .dcf-ratio-child   { @include mixins.ratio-1x1; }   // 1:1  Square
+}
+
+
+@include mixins.mq(xl, min, width) {
+  .dcf-ratio-16x9\@xl .dcf-ratio-child  { @include mixins.ratio-16x9; }  // 16:9 Landscape
+  .dcf-ratio-9x16\@xl .dcf-ratio-child  { @include mixins.ratio-9x16; }  // 9:16 Portrait
+  .dcf-ratio-4x3\@xl .dcf-ratio-child   { @include mixins.ratio-4x3; }   // 4:3  Landscape
+  .dcf-ratio-3x4\@xl .dcf-ratio-child   { @include mixins.ratio-3x4; }   // 3:4  Portrait
+  .dcf-ratio-1x1\@xl .dcf-ratio-child   { @include mixins.ratio-1x1; }   // 1:1  Square
+}
