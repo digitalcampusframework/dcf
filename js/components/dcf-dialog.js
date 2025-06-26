@@ -34,6 +34,10 @@ export default class DCFDialog {
         'dcf-m-auto',
     ];
 
+    dialogNonModalElementClassList = [
+        'dcf-b-0',
+    ];
+
     dialogHeaderElementClassList = [
         'dcf-wrapper',
         'dcf-pt-8',
@@ -55,9 +59,14 @@ export default class DCFDialog {
         'dcf-z-1',
     ];
 
+    dialogNonModal = false;
+
     constructor(dialog, options = {}) {
         if ('dialogElementClassList' in options && Array.isArray(options.dialogElementClassList)) {
             this.dialogElementClassList = options.dialogElementClassList;
+        }
+        if ('dialogNonModalElementClassList' in options && Array.isArray(options.dialogNonModalElementClassList)) {
+            this.dialogNonModalElementClassList = options.dialogNonModalElementClassList;
         }
         if ('dialogHeaderElementClassList' in options && Array.isArray(options.dialogHeaderElementClassList)) {
             this.dialogHeaderElementClassList = options.dialogHeaderElementClassList;
@@ -67,6 +76,9 @@ export default class DCFDialog {
         }
         if ('dialogCloseButtonClassList' in options && Array.isArray(options.dialogCloseButtonClassList)) {
             this.dialogCloseButtonClassList = options.dialogCloseButtonClassList;
+        }
+        if ('dialogNonModal' in options && options.dialogNonModal === true) {
+            this.dialogNonModal = true;
         }
 
         this.dialogElement = dialog;
@@ -82,7 +94,15 @@ export default class DCFDialog {
         if (this.dialogElement.hasAttribute('data-deliberateCloseOnly')) {
             this.deliberateCloseOnly = true;
         }
-        this.dialogElement.classList.add(...this.dialogElementClassList);
+
+        if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+            this.dialogNonModal = true;
+        }
+        if (this.dialogNonModal) {
+            this.dialogElement.classList.add(...this.dialogNonModalElementClassList);
+        } else {
+            this.dialogElement.classList.add(...this.dialogElementClassList);
+        }
 
         this.dialogHeaderElement = this.dialogElement.querySelector('.dcf-dialog-header');
         if (this.dialogHeaderElement === null) {
@@ -241,7 +261,11 @@ export default class DCFDialog {
         );
 
         this.dialogElement.dispatchEvent(preOpenEvent);
-        this.dialogElement.showModal();
+        if (this.dialogNonModal) {
+            this.dialogElement.show();
+        }else{
+            this.dialogElement.showModal();
+        }
         this.dialogElement.classList.add('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
             if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
