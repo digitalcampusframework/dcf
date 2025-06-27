@@ -8,7 +8,7 @@
 
 // Spinner
 .dcf-progress-spinner {
-  animation: rotation var.$animation-duration-spinner var.$animation-timing-spinner var.$animation-iteration-count-spinner;
+  animation: rotateclockwise var.$animation-duration-spinner var.$animation-timing-spinner var.$animation-iteration-count-spinner;
   border: var.$border-width-spinner var.$border-style-spinner var.$border-color-spinner;
   @if (var.$border-right-color-spinner) {
     border-right-color: var.$border-right-color-spinner;
@@ -17,13 +17,4 @@
   height: var.$height-spinner;
   width: var.$width-spinner;
   will-change: transform;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
