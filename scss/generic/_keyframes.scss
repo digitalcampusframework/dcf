@@ -3,6 +3,17 @@
 /////////////////////////////
 
 
+// Flip the bit
+@keyframes flipthebit {
+  from {
+    --bit: 0
+  }
+  to {
+    --bit: 1;
+  }
+}
+
+
 // Appear https://observablehq.com/@argyleink/a-reusable-way-to-present-fresh-dom
 @keyframes appear {
   to {
@@ -20,12 +31,23 @@
 }
 
 
-// Flip the bit
-@keyframes flipthebit {
-  from {
-    --bit: 0
+// Rotate clockwise
+@keyframes rotateclockwise {
+  0% {
+    transform: rotate(0deg);
   }
-  to {
-    --bit: 1;
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+// Rotate counterclockwise
+@keyframes rotatecounterclockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
