@@ -29,7 +29,7 @@ export default class DCFNotice {
     noticeContainerClassList = [
         'dcf-d-grid',
         'dcf-ai-start',
-        'dcf-w-max-xl',
+        'dcf-max-w-xl',
         'dcf-ml-auto',
         'dcf-mr-auto',
         'dcf-mb-6',

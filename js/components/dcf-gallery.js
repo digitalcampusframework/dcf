@@ -107,7 +107,6 @@ export class DCFGalleryDialog {
             dialogElementClassList: [
                 'dcf-p-0',
                 'dcf-b-0',
-                'dcf-d-flex',
                 'dcf-flex-col',
                 'dcf-m-auto',
             ],
@@ -137,12 +136,14 @@ export class DCFGalleryDialog {
         });
 
         this.#replaceMainImage();
+        this.dialogElement.classList.add('dcf-d-flex');
         this.dialogElement.dispatchEvent(new Event('commandOpen'));
         this.#focusOnSelectedImage();
     }
 
     close() {
         this.dialogElement.dispatchEvent(new Event('commandClose'));
+        this.dialogElement.classList.remove('dcf-d-flex');
     }
 
     toggle() {
