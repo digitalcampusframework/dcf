@@ -77,9 +77,6 @@ export default class DCFDialog {
         if ('dialogCloseButtonClassList' in options && Array.isArray(options.dialogCloseButtonClassList)) {
             this.dialogCloseButtonClassList = options.dialogCloseButtonClassList;
         }
-        if ('dialogNonModal' in options && options.dialogNonModal === true) {
-            this.dialogNonModal = true;
-        }
 
         this.dialogElement = dialog;
         if (this.dialogElement.tagName !== 'DIALOG') {
@@ -96,9 +93,6 @@ export default class DCFDialog {
         }
 
         if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
-            this.dialogNonModal = true;
-        }
-        if (this.dialogNonModal) {
             this.dialogElement.classList.add(...this.dialogNonModalElementClassList);
         } else {
             this.dialogElement.classList.add(...this.dialogElementClassList);
@@ -261,7 +255,7 @@ export default class DCFDialog {
         );
 
         this.dialogElement.dispatchEvent(preOpenEvent);
-        if (this.dialogNonModal) {
+        if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
             this.dialogElement.show();
         }else{
             this.dialogElement.showModal();
