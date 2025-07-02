@@ -59,8 +59,6 @@ export default class DCFDialog {
         'dcf-z-1',
     ];
 
-    dialogNonModal = false;
-
     constructor(dialog, options = {}) {
         if ('dialogElementClassList' in options && Array.isArray(options.dialogElementClassList)) {
             this.dialogElementClassList = options.dialogElementClassList;
@@ -92,17 +90,21 @@ export default class DCFDialog {
             this.deliberateCloseOnly = true;
         }
 
-        if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
-            this.dialogElement.classList.add(...this.dialogNonModalElementClassList);
-        } else {
-            this.dialogElement.classList.add(...this.dialogElementClassList);
+        if (this.dialogElement.dataset.defaultClasses !== 'false') {
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                this.dialogElement.classList.add(...this.dialogNonModalElementClassList);
+            } else {
+                this.dialogElement.classList.add(...this.dialogElementClassList);
+            }
         }
 
         this.dialogHeaderElement = this.dialogElement.querySelector('.dcf-dialog-header');
         if (this.dialogHeaderElement === null) {
             throw new Error('Dialog is missing header (.dcf-dialog-header)');
         }
-        this.dialogHeaderElement.classList.add(...this.dialogHeaderElementClassList);
+        if (this.dialogElement.dataset.defaultClasses !== 'false') {
+            this.dialogHeaderElement.classList.add(...this.dialogHeaderElementClassList);
+        }
 
         this.heading = this.dialogHeaderElement.querySelector('h1, h2, h3, h4, h5, h6');
         if (this.heading.getAttribute('id') === '') {
@@ -114,13 +116,17 @@ export default class DCFDialog {
         if (this.dialogContentElement === null) {
             throw new Error('Dialog is missing header (.dcf-dialog-content)');
         }
-        this.dialogContentElement.classList.add(...this.dialogContentElementClassList);
+        if (this.dialogElement.dataset.defaultClasses !== 'false') {
+            this.dialogContentElement.classList.add(...this.dialogContentElementClassList);
+        }
 
         this.closeButton = this.dialogElement.querySelector('.dcf-btn-close-dialog');
         if (this.closeButton === null) {
             throw new Error('Dialog is missing close button (.dcf-btn-close-dialog)');
         }
-        this.closeButton.classList.add(...this.dialogCloseButtonClassList);
+        if (this.dialogElement.dataset.defaultClasses !== 'false') {
+            this.closeButton.classList.add(...this.dialogCloseButtonClassList);
+        }
         this.closeButton.setAttribute('type', 'button');
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
