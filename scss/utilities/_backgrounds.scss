@@ -7,6 +7,7 @@
 
 
 // Color
+.dcf-bg-current-color { @include mixins.bg-current-color; }
 .dcf-bg-transparent { @include mixins.bg-transparent; }
 .dcf-bg-white { @include mixins.bg-white; }
 .dcf-bg-foreground { @include mixins.bg-foreground; }

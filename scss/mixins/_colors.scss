@@ -6,6 +6,10 @@
 @use "../variables/" as var;
 
 
+// currentColor
+@mixin current-color($imp:null) { color: currentColor $imp; }
+
+
 // Inverse (light text for dark backgrounds)
 @mixin inverse($imp:null) { color: var.$color-inverse $imp; }
 @mixin inverse-link($imp:null) { color: var.$color-inverse-link $imp; }         // Link

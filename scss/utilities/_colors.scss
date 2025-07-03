@@ -6,6 +6,10 @@
 @use "../mixins/" as mixins;
 
 
+// currentColor
+.dcf-current-color { @include mixins.current-color; }
+
+
 // Inverse (light text for dark backgrounds)
 .dcf-inverse { @include mixins.inverse; }
 a.dcf-inverse:link { @include mixins.inverse-link; }       // Link

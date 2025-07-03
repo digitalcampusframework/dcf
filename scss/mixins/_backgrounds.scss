@@ -7,6 +7,7 @@
 
 
 // Color
+@mixin bg-current-color($imp:null) { background-color: currentcolor $imp; }
 @mixin bg-transparent($imp:null) { background-color: transparent $imp; }
 @mixin bg-white($imp:null) { background-color: var.$bg-color-white $imp; }
 @mixin bg-foreground($imp:null) { background-color: var.$bg-color-foreground $imp; }
