@@ -14,15 +14,9 @@
 
 // Modal wrapper
 .dcf-modal-wrapper {
-  background-color: var.$bg-color-modal-wrapper;
-  max-height: var.$height-max-modal-wrapper;
-  width: var.$width-modal-wrapper;
-}
-
-
-// Modal header
-.dcf-modal-header {
-  background-color: var.$bg-color-modal-header;
+  background-color: var.$bg-color-dialog;
+  max-height: var.$max-height-dialog;
+  width: var.$width-dialog;
 }
 
 

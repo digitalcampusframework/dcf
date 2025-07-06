@@ -28,10 +28,10 @@ html:has(dialog.dcf-dialog-is-open) {
 
 // Dialog wrapper
 .dcf-dialog {
-  background-color: var.$bg-color-modal-wrapper;
-  color: var.$color-body;
-  max-height: var.$height-max-modal-wrapper;
-  width: var.$width-modal-wrapper;
+  background-color: var.$bg-color-dialog;
+  color: var.$color-dialog;
+  max-height: var.$max-height-dialog;
+  width: var.$width-dialog;
 }
 
 

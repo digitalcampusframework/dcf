@@ -41,8 +41,4 @@ $bg-color-overlay-light-light-mode: color.adjust(color_palette.$white, $alpha: -
 $bg-color-overlay-light-dark-mode: color.adjust(color_palette.$black, $alpha: -0.25) !default;      // Light overlay background-color for modals in dark mode
 $bg-color-overlay-light: var(--bg-overlay-light) !default;
 
-$bg-color-dialog-light-mode: color_palette.$white !default;             // Dialog background-color in light mode
-$bg-color-dialog-dark-mode: color_palette.$gray-88 !default;            // Dialog background-color in dark mode
-$bg-color-dialog: var(--bg-dialog) !default;
-
 $bg-color-foreground: var(--bg-dialog) !default;
