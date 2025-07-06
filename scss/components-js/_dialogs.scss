@@ -20,18 +20,18 @@ html:has(dialog.dcf-dialog-is-open) {
 }
 
 
-// Dialog backdrop
-.dcf-dialog::backdrop {
-  @include mixins.bg-overlay-dark;
-}
-
-
-// Dialog wrapper
+// Dialog
 .dcf-dialog {
   background-color: var.$bg-color-dialog;
   color: var.$color-dialog;
   max-height: var.$max-height-dialog;
   width: var.$width-dialog;
+}
+
+
+// Dialog backdrop
+.dcf-dialog::backdrop {
+  @include mixins.bg-overlay-dark;
 }
 
 
