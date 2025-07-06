@@ -31,7 +31,7 @@ html:has(dialog.dcf-dialog-is-open) {
 
 // Dialog backdrop
 .dcf-dialog::backdrop {
-  @include mixins.bg-overlay-dark;
+  background-color: var.$bg-color-dialog-backdrop;
 }
 
 

@@ -10,6 +10,7 @@
 
 // Background color
 $bg-color-dialog: var(--bg-body) !default;                              // Dialog background-color
+$bg-color-dialog-backdrop: var(--bg-overlay-dark) !default;             // Dialog backdrop background-color
 
 
 // Color
@@ -18,4 +19,4 @@ $color-dialog: var(--body) !default;                                    // Dialo
 
 // Height & width
 $max-height-dialog: calc(100vh - (2 * #{s.$length-em-4})) !default;     // Max-height dialog
-$width-dialog: calc(100% - (2 * #{ms.$ms12}vw)) !default;               // Match width of .dcf-wrapper
+$width-dialog: calc(100% - (2 * #{s.$length-vw-2})) !default;           // Match width of .dcf-wrapper
