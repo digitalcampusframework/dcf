@@ -1,42 +1,41 @@
-//////////////////////////////////
+//////////////////////////////
 // CORE / COMPONENTS / DIALOGS
-/////////////////////////////////
+//////////////////////////////
 
 
 @use "../variables/" as var;
 @use "../mixins/" as mixins;
 
+
 body:has(dialog[open]),
 html:has(dialog[open]){
-    overflow: hidden;
+  overflow: hidden;
 }
 
-// This is only here because safari does not support `:open`
+
+// Safari does not support `:open`, `.dcf-dialog-is-open` is our fallback
 body:has(dialog.dcf-dialog-is-open),
 html:has(dialog.dcf-dialog-is-open) {
-    overflow: hidden;
+  overflow: hidden;
 }
 
+
+// Dialog backdrop
 .dcf-dialog::backdrop {
-    @include mixins.bg-overlay-dark(!important);
+  @include mixins.bg-overlay-dark;
 }
 
-// Modal wrapper
+
+// Dialog wrapper
 .dcf-dialog {
-    background-color: var.$bg-color-modal-wrapper;
-    color: var.$color-body;
-    max-height: var.$height-max-modal-wrapper;
-    width: var.$width-modal-wrapper;
+  background-color: var.$bg-color-modal-wrapper;
+  color: var.$color-body;
+  max-height: var.$height-max-modal-wrapper;
+  width: var.$width-modal-wrapper;
 }
 
 
-// Modal header
-.dcf-dialog-header {
-    background-color: var.$bg-color-modal-header;
-}
-
-
-// Modal content
+// Dialog content
 .dcf-dialog-content > *:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
