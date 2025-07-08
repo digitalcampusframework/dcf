@@ -291,6 +291,7 @@ class="dcf-search-and-select-search-area-single ${ this.searchAreaClassList.join
         class="${ this.toggleButtonClassList.join(' ') }"
         type="button"
         tabindex="-1"
+        aria-label="Toggle Selectable List"
         aria-expanded="false"
         aria-controls="${ this.availableItemsListID }"
     >
@@ -319,12 +320,10 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
     <span id="${ this.selectedItemsHelpID }" class="dcf-sr-only">Press Delete or Backspace to Remove.</span>
     <ul
         class="dcf-search-and-select-selected-items ${ this.selectedItemsListClassList.join(' ') }"
-        role="listbox"
+        role="list"
         aria-describedby="${ this.selectedItemsHelpID }"
         id=${ this.selectedItemsListID }
-        tabindex="-1"
-        aria-activedescendant=""
-        aria-orientation="horizontal"
+        aria-label="Selected Items"
     ></ul>
     <input
         class="${ this.inputMultipleClassList.join(' ') }"
@@ -342,6 +341,7 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
         class="${ this.toggleButtonClassList.join(' ') }"
         type="button"
         tabindex="-1"
+        aria-label="Toggle Selectable List"
         aria-expanded="false"
         aria-controls="${ this.availableItemsListID }"
     >
@@ -626,7 +626,6 @@ ${ singleOptgroup.label }
                 // We need to add the selected options into the selected items list
                 if (singleItem.disabled === false && singleItem.selected === true) {
                     this.#appendNewSelectedItem(newItem);
-                    this.selectedItemsListElement.setAttribute('tabindex', '0');
                 }
             });
 
@@ -645,6 +644,7 @@ ${ singleOptgroup.label }
             throw new Error('Element is not an available item');
         }
 
+        const selectedItemLabel = singleAvailableItem.querySelector('.dcf-search-and-select-available-item-label').innerText;
         const newSelectedItem = document.createElement('li');
         newSelectedItem.dataset.elemId = singleAvailableItem.dataset.elemId;
         newSelectedItem.setAttribute('id', `${ singleAvailableItem.dataset.elemId }-selected`);
@@ -655,18 +655,18 @@ ${ singleOptgroup.label }
         );
         newSelectedItem.innerHTML = `<button
     class="
-    dcf-search-and-select-selected-item-remove-btn
-    ${ this.selectedItemButtonClassList.join(' ') }
+        dcf-search-and-select-selected-item-remove-btn
+        ${ this.selectedItemButtonClassList.join(' ') }
     "
+    aria-label="Remove ${ selectedItemLabel }"
     type="button"
-    tabindex="-1"
 >
     ${ this.selectedItemButtonSVG }
 </button>
 <span class="
     dcf-search-and-select-selected-item-label
     ${ this.selectedItemLabelClassList.join(' ') }">
-    ${ singleAvailableItem.querySelector('.dcf-search-and-select-available-item-label').innerText }
+    ${ selectedItemLabel }
 </span>`;
         this.selectedItemsListElement.append(newSelectedItem);
 
@@ -1039,7 +1039,7 @@ ${ singleOptgroup.label }
 
             case 'Tab':
                 this.closeAvailableItems(true);
-                if (this.isSelectedItemTab() === false || !shiftKey) {
+                if (!shiftKey) {
                     this.#setVisualFocusOn(false);
                 }
                 break;
@@ -1147,137 +1147,9 @@ ${ singleOptgroup.label }
             }
         });
 
-        this.selectedItemsListElement.addEventListener('click', (event) => {
-            if (this.isComponentDisabled()) {
-                return;
-            }
-
-            const closestSelectedItem = event.target.closest('.dcf-search-and-select-selected-item');
-            if (closestSelectedItem === null) {
-                return;
-            }
-
-            const closestDeleteButton = event.target.closest('.dcf-search-and-select-selected-item-remove-btn');
-            if (closestDeleteButton !== null && !this.isComponentReadOnly()) {
-                this.selectedItemsListElement.focus();
-                this.#removeSelectedItem(closestSelectedItem);
-                this.#setAvailableItemActiveDescendant(false);
-                event.stopPropagation();
-                return;
-            }
-
-            this.#setVisualFocusOn(this.selectedItemsListElement);
-            this.#setAvailableItemActiveDescendant(false);
-            this.setSelectedItemActiveDescendant(closestSelectedItem);
-            event.stopPropagation();
-        });
-
-        this.selectedItemsListElement.addEventListener('pointermove', (event) => {
-            if (this.isComponentDisabled()) {
-                return;
-            }
-
-            const currentItem = this.getSelectedItemActiveDescendant();
-            const closestSelectedItem = event.target.closest('.dcf-search-and-select-selected-item');
-            if (closestSelectedItem === null) {
-                return;
-            }
-
-            if (currentItem === false || !closestSelectedItem.isSameNode(currentItem)) {
-                this.setSelectedItemActiveDescendant(closestSelectedItem);
-            }
-            event.stopPropagation();
-        });
-
-        this.selectedItemsListElement.addEventListener('pointerout', (event) => {
-            if (this.selectedItemsListElement.isSameNode(event.target)) {
-                this.setSelectedItemActiveDescendant(false);
-                event.stopPropagation();
-            }
-        });
-
         this.selectedItemsListElement.addEventListener('focus', () => {
-            const currentItem = this.getSelectedItemActiveDescendant();
-            this.#setVisualFocusOn(this.selectedItemsListElement);
-            if (currentItem === false) {
-                this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-            }
-        });
-
-        this.selectedItemsListElement.addEventListener('blur', () => {
             this.#setVisualFocusOn(false);
-            this.setSelectedItemActiveDescendant(false);
-        });
-
-        this.selectedItemsListElement.addEventListener('keydown', (event) => {
-            if (this.isComponentDisabled()) {
-                return;
-            }
-
-            let preventDefault = false;
-            const currentItem = this.getSelectedItemActiveDescendant();
-            const firstItem = this.getFirstSelectedItem();
-
-            switch (event.code) {
-            case 'Left':
-            case 'ArrowLeft':
-                if (currentItem === false) {
-                    this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-                }
-                this.#setVisualFocusOn(this.selectedItemsListElement);
-                this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-                this.scrollActiveSelectedItemInView();
-                preventDefault = true;
-                break;
-
-            case 'Right':
-            case 'ArrowRight':
-                if (currentItem === false) {
-                    this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                }
-                this.#setVisualFocusOn(this.selectedItemsListElement);
-                this.setSelectedItemActiveDescendant(this.getNextSelectedItem());
-                this.scrollActiveSelectedItemInView();
-                preventDefault = true;
-                break;
-
-            case 'Home':
-                this.#setVisualFocusOn(this.selectedItemsListElement);
-                this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                this.scrollActiveSelectedItemInView();
-                preventDefault = true;
-                break;
-
-            case 'End':
-                this.#setVisualFocusOn(this.selectedItemsListElement);
-                this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-                this.scrollActiveSelectedItemInView();
-                preventDefault = true;
-                break;
-
-            case 'Backspace':
-            case 'Delete':
-                if (!this.isComponentReadOnly()) {
-                    if (firstItem.isSameNode(currentItem)) {
-                        this.#removeSelectedItem(currentItem);
-                        this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-                    } else {
-                        this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-                        this.#removeSelectedItem(currentItem);
-                    }
-                    preventDefault = true;
-                }
-                break;
-
-            default:
-                break;
-            }
-
-            if (preventDefault) {
-                event.stopPropagation();
-                event.preventDefault();
-            }
-        });
+        }, true);
     }
 
     /**
@@ -1321,23 +1193,16 @@ ${ singleOptgroup.label }
             this.openButtonElement.setAttribute('disabled', 'disabled');
             this.searchAndSelectElement.classList.add('dcf-search-and-select-disabled');
             this.selectedItemsListElement.setAttribute('aria-disabled', 'true');
-            this.selectedItemsListElement.setAttribute('tabindex', '-1');
             this.selectedItemsListElement.querySelectorAll('button').forEach((selectedItemButton) => {
                 selectedItemButton.setAttribute('disabled', 'disabled');
             });
             this.#setVisualFocusOn(false);
             this.closeAvailableItems();
         } else {
-            const allSelectedItems = this.selectedItemsListElement.querySelectorAll('li');
-
             this.inputElement.removeAttribute('disabled');
             this.openButtonElement.removeAttribute('disabled');
             this.searchAndSelectElement.classList.remove('dcf-search-and-select-disabled');
             this.selectedItemsListElement.removeAttribute('aria-disabled');
-            this.selectedItemsListElement.setAttribute(
-                'tabindex',
-                allSelectedItems.length === 0 ? '-1' : '0',
-            );
             this.selectedItemsListElement.querySelectorAll('button').forEach((selectedItemButton) => {
                 selectedItemButton.removeAttribute('disabled');
             });
@@ -1401,14 +1266,6 @@ ${ singleOptgroup.label }
                 selectedItemButton.removeAttribute('readonly');
             });
         }
-    }
-
-    /**
-     * Determines if the selected items list is in the tab list
-     * @returns { bool } true if the tab-able
-     */
-    isSelectedItemTab() {
-        return this.selectedItemsListElement.getAttribute('tabindex') === '0';
     }
 
     /**
@@ -1528,22 +1385,6 @@ ${ singleOptgroup.label }
     }
 
     /**
-     * Gets the current active item in the select items list
-     * @returns { HTMLLIElement|false } The currently active element in the available items list or false if there is none
-     */
-    getSelectedItemActiveDescendant() {
-        const currentItemID = this.selectedItemsListElement.getAttribute('aria-activedescendant');
-        if (currentItemID !== null && currentItemID !== '') {
-            const currentItemElement = document.getElementById(currentItemID);
-            if (currentItemElement !== null) {
-                return currentItemElement;
-            }
-        }
-
-        return false;
-    }
-
-    /**
      * Handles functionality of setting the active element on the available items list
      * @param { HTMLLIElement|false } itemToSet The list item to set or false if there is none
      */
@@ -1562,39 +1403,11 @@ ${ singleOptgroup.label }
     }
 
     /**
-     * Handles functionality of setting the active element on the selected items list
-     * @param { HTMLLIElement|false } itemToSet The list item to set or false if there is none
-     */
-    setSelectedItemActiveDescendant(itemToSet) {
-        if (itemToSet !== false && !this.#isElementASelectedItem(itemToSet)) {
-            throw new Error('Element is not a selected item');
-        }
-
-        if (itemToSet !== false) {
-            this.selectedItemsListElement.setAttribute('aria-activedescendant', itemToSet.getAttribute('id'));
-            this.#setVisualHover(itemToSet);
-        } else {
-            this.#setVisualHover(false);
-            this.selectedItemsListElement.setAttribute('aria-activedescendant', '');
-        }
-    }
-
-    /**
      * Handles functionality of scrolling the current active item into view
      */
     #scrollActiveAvailableItemInView() {
         const currentItemElement = this.getAvailableItemActiveDescendant();
         if (currentItemElement !== false && !this.#isAvailableItemInView(currentItemElement)) {
-            currentItemElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    }
-
-    /**
-     * Handles functionality of scrolling the current active item into view
-     */
-    scrollActiveSelectedItemInView() {
-        const currentItemElement = this.getSelectedItemActiveDescendant();
-        if (currentItemElement !== false && !this.#isSelectedItemInView(currentItemElement)) {
             currentItemElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     }
@@ -1666,68 +1479,6 @@ ${ singleOptgroup.label }
     }
 
     /**
-     * Gets the next selected item
-     * This will loop the beginning if we are at the end of the list
-     * @returns { HTMLLIElement|null } The next selected item or null if there is none
-     */
-    getNextSelectedItem() {
-        const currentItem = this.getSelectedItemActiveDescendant();
-        if (currentItem === false) {
-            return this.getFirstSelectedItem();
-        }
-
-        const nextElement = currentItem.nextElementSibling;
-        if (nextElement === null) {
-            return this.getFirstSelectedItem();
-        }
-
-        return nextElement;
-    }
-
-    /**
-     * Gets the previous selected item
-     * This will loop the end if we are at the beginning of the list
-     * @returns { HTMLLIElement|null } The next selected item or null if there is none
-     */
-    getPreviousSelectedItem() {
-        const currentItem = this.getSelectedItemActiveDescendant();
-        if (currentItem === false) {
-            return this.getLastSelectedItem();
-        }
-
-        const nextElement = currentItem.previousElementSibling;
-        if (nextElement === null) {
-            return this.getLastSelectedItem();
-        }
-
-        return nextElement;
-    }
-
-    /**
-     * Gets the first selected item
-     * @returns { HTMLLIElement|null } The first selected item or null if there is none
-     */
-    getFirstSelectedItem() {
-        const allSelectedItems = this.selectedItemsListElement.children;
-        if (allSelectedItems.length === 0) {
-            return false;
-        }
-        return allSelectedItems[0];
-    }
-
-    /**
-     * Gets the last selected item
-     * @returns { HTMLLIElement|null } The last selected item or null if there is none
-     */
-    getLastSelectedItem() {
-        const allSelectedItems = this.selectedItemsListElement.children;
-        if (allSelectedItems.length === 0) {
-            return false;
-        }
-        return allSelectedItems[allSelectedItems.length - 1];
-    }
-
-    /**
      * Handles the functionality of selecting an available item
      * @param { HTMLLIElement } itemToSelect The available item to select
      */
@@ -1771,7 +1522,6 @@ ${ singleOptgroup.label }
             }
         });
         this.#appendNewSelectedItem(itemToSelect);
-        this.selectedItemsListElement.setAttribute('tabindex', '0');
     }
 
     /**
@@ -1794,32 +1544,6 @@ ${ singleOptgroup.label }
             this.selectedItemsListElement.querySelectorAll(`li[data-elem-id="${itemToRemove.dataset.elemId}"]`).forEach((singleSelectedItem) => {
                 singleSelectedItem.remove();
             });
-            if (this.selectedItemsListElement.children.length === 0) {
-                this.selectedItemsListElement.setAttribute('tabindex', '-1');
-            }
-        }
-    }
-
-    /**
-     * Handles the functionality of de-selecting a selected item
-     * @param { HTMLLIElement } itemToRemove The selected item to de-select
-     */
-    #removeSelectedItem(itemToRemove) {
-        if (!this.#isElementASelectedItem(itemToRemove)) {
-            throw new Error('Element is not a selected item');
-        }
-
-        const availableItem = this.availableItemsListElement.querySelector(`li[data-elem-id="${ itemToRemove.dataset.elemId }"]`);
-        availableItem.setAttribute('aria-selected', 'false');
-        this.selectElement.querySelectorAll('option').forEach((singleOption) => {
-            if (singleOption.value === availableItem.dataset.value) {
-                singleOption.removeAttribute('selected');
-            }
-        });
-        itemToRemove.remove();
-        if (this.selectedItemsListElement.children.length === 0) {
-            this.selectedItemsListElement.setAttribute('tabindex', '-1');
-            this.inputElement.focus();
         }
     }
 
