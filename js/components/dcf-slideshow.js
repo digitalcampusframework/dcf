@@ -181,7 +181,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         // Set up slide show container
         this.slideshowContainer = slideshowContainer;
         if (this.slideshowContainer.tagName !== 'SECTION') {
-            this.slideshowContainer.setAttribute('aria-role', 'region');
+            this.slideshowContainer.setAttribute('role', 'region');
         }
         this.slideshowContainer.setAttribute('aria-roledescription', 'carousel');
         this.slideshowContainer.classList.add('dcf-slideshow-initialized');
@@ -295,7 +295,6 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
             slide.classList.add('dcf-slide');
             slide.classList.add(...this.slideClassList);
-            slide.setAttribute('aria-role', 'group');
             slide.setAttribute('aria-roledescription', 'slide');
             slide.setAttribute('aria-label', `${slideIndex + 1} of ${this.slides.length}`);
 
