@@ -1150,6 +1150,28 @@ ${ singleOptgroup.label }
         this.selectedItemsListElement.addEventListener('focus', () => {
             this.#setVisualFocusOn(false);
         }, true);
+
+        this.selectedItemsListElement.addEventListener('click', (event) => {
+            if (this.isComponentDisabled()) {
+                return;
+            }
+
+            const closestSelectedItem = event.target.closest('.dcf-search-and-select-selected-item');
+            if (closestSelectedItem === null) {
+                return;
+            }
+
+            const closestDeleteButton = event.target.closest('.dcf-search-and-select-selected-item-remove-btn');
+            if (closestDeleteButton !== null && !this.isComponentReadOnly()) {
+                this.selectedItemsListElement.focus();
+                this.#removeSelectedItem(closestSelectedItem);
+                this.#setAvailableItemActiveDescendant(false);
+                event.stopPropagation();
+                return;
+            }
+
+            event.stopPropagation();
+        });
     }
 
     /**
@@ -1544,6 +1566,29 @@ ${ singleOptgroup.label }
             this.selectedItemsListElement.querySelectorAll(`li[data-elem-id="${itemToRemove.dataset.elemId}"]`).forEach((singleSelectedItem) => {
                 singleSelectedItem.remove();
             });
+        }
+    }
+
+    /**
+     * Handles the functionality of de-selecting a selected item
+     * @param { HTMLLIElement } itemToRemove The selected item to de-select
+     */
+    #removeSelectedItem(itemToRemove) {
+        if (!this.#isElementASelectedItem(itemToRemove)) {
+            throw new Error('Element is not a selected item');
+        }
+
+        const availableItem = this.availableItemsListElement.querySelector(`li[data-elem-id="${ itemToRemove.dataset.elemId }"]`);
+        availableItem.setAttribute('aria-selected', 'false');
+        this.selectElement.querySelectorAll('option').forEach((singleOption) => {
+            if (singleOption.value === availableItem.dataset.value) {
+                singleOption.removeAttribute('selected');
+            }
+        });
+        itemToRemove.remove();
+        if (this.selectedItemsListElement.children.length === 0) {
+            this.selectedItemsListElement.setAttribute('tabindex', '-1');
+            this.inputElement.focus();
         }
     }
 
