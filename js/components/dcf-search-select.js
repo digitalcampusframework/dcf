@@ -1566,6 +1566,9 @@ ${ singleOptgroup.label }
             this.selectedItemsListElement.querySelectorAll(`li[data-elem-id="${itemToRemove.dataset.elemId}"]`).forEach((singleSelectedItem) => {
                 singleSelectedItem.remove();
             });
+        } else {
+            this.inputElement.value = '';
+            this.#filterAvailableItems();
         }
     }
 
