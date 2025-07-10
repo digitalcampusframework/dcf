@@ -60,7 +60,7 @@ export default class DCFTabs {
                 // Creates a new link element with the href pointing to panel
                 const newTabLinkElem = document.createElement('button');
                 newTabLinkElem.innerText = tabText;
-                newTabLinkElem.setAttribute('href', `#${singlePanel.getAttribute('id')}`);
+                newTabLinkElem.setAttribute('data-href', `#${singlePanel.getAttribute('id')}`);
                 if (tabHidden) {
                     newTabLinkElem.setAttribute('hidden', '');
                 }
@@ -114,12 +114,13 @@ export default class DCFTabs {
             tab.parentNode.setAttribute('role', 'presentation');
 
             // If the href does not exist or it is not a fragment it will error
-            if (tab.getAttribute('href') === null || tab.getAttribute('href') === '' || !tab.getAttribute('href').startsWith('#')) {
+            const tabHref = this.#getTabHref(tab);
+            if (tabHref === '' || !tabHref.startsWith('#')) {
                 throw new Error('Invalid Tab href', { cause: tab });
             }
 
             // Checks to see if the panel that matches that link exists
-            const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+            const matchingPanel = document.getElementById(tabHref.replace('#', ''));
             if (matchingPanel === null) {
                 throw new Error('Invalid Tab href reference', { cause: tab });
             }
@@ -141,7 +142,7 @@ export default class DCFTabs {
 
         // Checks hash and it is set try setting it to the matching tab
         if (location.hash !== '') {
-            selectedTab = this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"]:not([hidden])`);
+            selectedTab = this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"]:not([hidden]), .dcf-tab[data-href="${location.hash}"]:not([hidden]`);
         }
 
         // If the tab is still null then go to the next item on the list
@@ -150,7 +151,8 @@ export default class DCFTabs {
 
             // Find the first panel that is in the URL
             allNonHiddenTabs.forEach((tab) => {
-                const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+                const tabHref = this.#getTabHref(tab);
+                const matchingPanel = document.getElementById(tabHref.replace('#', ''));
                 if (selectedTab === null && this.#checkPanelInURL(matchingPanel.getAttribute('id'))) {
                     selectedTab = tab;
                 }
@@ -160,7 +162,8 @@ export default class DCFTabs {
             if (selectedTab === null) {
                 // Find the first panel that has data-default as an attribute
                 allNonHiddenTabs.forEach((tab) => {
-                    const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+                    const tabHref = this.#getTabHref(tab);
+                    const matchingPanel = document.getElementById(tabHref.replace('#', ''));
                     if (selectedTab === null && 'default' in matchingPanel.dataset && matchingPanel.dataset.default === 'true') {
                         selectedTab = tab;
                     }
@@ -189,7 +192,7 @@ export default class DCFTabs {
         // We can set up an event listener on the window for when the hash changes to a tab
         window.addEventListener('hashchange', () => {
             // If the hash is an dcf-tab inside this tab group then we can switch to the tab and scroll down to it
-            const tab =  this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}`);
+            const tab =  this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"], .dcf-tab[data-href="${location.hash}"]`);
             if (tab === null) {
                 return;
             }
@@ -222,7 +225,7 @@ export default class DCFTabs {
 
     #scrollToHash() {
         // If the hash is an dcf-tab then we can switch to the tab and scroll down to it
-        const tab = document.querySelector(`.dcf-tab[href="${location.hash}`);
+        const tab = document.querySelector(`.dcf-tab[href="${location.hash}"], .dcf-tab[data-href="${location.hash}"]`);
         if (tab === null) {
             return;
         }
@@ -506,7 +509,8 @@ export default class DCFTabs {
         const tabs = this.tabsList.querySelectorAll('.dcf-tab');
         tabs.forEach((tab) => {
             // We can then find the matching panel and validate it
-            const matchingPanel = document.getElementById(tab.getAttribute('href').replace('#', ''));
+            const tabHref = this.#getTabHref(tab);
+            const matchingPanel = document.getElementById(tabHref.replace('#', ''));
             if (matchingPanel === null) {
                 throw new Error('Invalid Tab href reference', { cause: tab });
             }
@@ -531,5 +535,9 @@ export default class DCFTabs {
 
         // We can then dispatch and event that the tab has switched
         this.tabsGroup.dispatchEvent(this.tabSwitchedEvent);
+    }
+
+    #getTabHref(tabElem) {
+        return tabElem.getAttribute('href') || tabElem.getAttribute('data-href') || '';
     }
 }
