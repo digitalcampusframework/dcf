@@ -60,7 +60,7 @@ export default class DCFTabs {
                 // Creates a new link element with the href pointing to panel
                 const newTabLinkElem = document.createElement('button');
                 newTabLinkElem.innerText = tabText;
-                newTabLinkElem.setAttribute('href', `#${singlePanel.id}`);
+                newTabLinkElem.setAttribute('href', `#${singlePanel.getAttribute('id')}`);
                 if (tabHidden) {
                     newTabLinkElem.setAttribute('hidden', '');
                 }

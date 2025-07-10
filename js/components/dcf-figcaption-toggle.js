@@ -94,7 +94,10 @@ export default class DCFFigcaptionToggles {
         // Set figure classes/styles
         this.figure.classList.add('dcf-relative');
 
-        if (this.figcaption.id === '') {
+        if (
+            this.figcaption.getAttribute('id') === '' ||
+            this.figcaption.getAttribute('id') === null
+        ) {
             this.figcaption.setAttribute('id', this.uuid.concat('-figcaption-toggle'));
         }
         if (this.figcaptionClassList) {
@@ -106,7 +109,7 @@ export default class DCFFigcaptionToggles {
 
         // Set up the caption button
         this.toggleButton = document.createElement('button');
-        this.toggleButton.dataset.controls = this.figcaption.id;
+        this.toggleButton.dataset.controls = this.figcaption.getAttribute('id');
         this.toggleButton.dataset.labelOn = 'Show caption';
         this.toggleButton.dataset.labelOff = 'Hide caption';
         this.toggleButton.dataset.startExpanded = 'false';
