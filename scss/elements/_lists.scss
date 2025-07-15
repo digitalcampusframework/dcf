@@ -21,7 +21,9 @@ ul {
 
 // Fix list-style: none in VoiceOver and Safari: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
 ol[role=list],
-ul[role=list] {
+ul[role=list],
+ol[role=tablist],
+ul[role=tablist] {
   list-style: none;
   padding: 0;
 }
