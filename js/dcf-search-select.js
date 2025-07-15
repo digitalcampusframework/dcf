@@ -226,6 +226,7 @@ class DCFSearchSelectSingle {
             class="${ this.theme.toggleButtonClassList.join(' ') }"
             type="button"
             tabindex="-1"
+            aria-label="Toggle Selectable List"
             aria-expanded="false"
             aria-controls="${ this.availableItemsListID }"
           >
@@ -973,6 +974,9 @@ class DCFSearchSelectSingle {
         singleOption.removeAttribute('selected');
       }
     });
+
+    this.inputElement.value = '';
+    this.filterAvailableItems();
   }
 
   /**
@@ -1106,12 +1110,10 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
           <span id="${ this.selectedItemsHelpID }" class="dcf-sr-only">Press Delete or Backspace to Remove.</span>
           <ul
             class="dcf-search-and-select-selected-items ${ this.theme.selectedItemsListClassList.join(' ') }"
-            role="listbox"
+            role="list"
             aria-describedby="${ this.selectedItemsHelpID }"
             id=${ this.selectedItemsListID }
-            tabindex="-1"
-            aria-activedescendant=""
-            aria-orientation="horizontal"
+            aria-label="Selected Items"
           ></ul>
           <input
             class="${ this.theme.inputMultipleClassList.join(' ') }"
@@ -1129,6 +1131,7 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
             class="${ this.theme.toggleButtonClassList.join(' ') }"
             type="button"
             tabindex="-1"
+            aria-label="Toggle Selectable List"
             aria-expanded="false"
             aria-controls="${ this.availableItemsListID }"
           >
@@ -1213,7 +1216,6 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
         // We need to add the selected options into the selected items list
         if (singleItem.disabled === false && singleItem.selected === true) {
           this.appendNewSelectedItem(newItem);
-          this.selectedItemsListElement.setAttribute('tabindex', '0');
         }
       });
 
@@ -1232,6 +1234,7 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
       throw new Error('Element is not an available item');
     }
 
+    const selectedItemLabel = singleAvailableItem.querySelector('.dcf-search-and-select-available-item-label').innerText;
     let newSelectedItem = document.createElement('li');
     newSelectedItem.dataset.id = singleAvailableItem.dataset.id;
     newSelectedItem.setAttribute('id', `${ singleAvailableItem.dataset.id }-selected`);
@@ -1247,14 +1250,14 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
           ${ this.theme.selectedItemButtonClassList.join(' ') }
         "
         type="button"
-        tabindex="-1"
+        aria-label="Remove ${ selectedItemLabel }"
       >
         ${ this.theme.selectedItemButtonSVG }
       </button>
       <span class="
         dcf-search-and-select-selected-item-label
         ${ this.theme.selectedItemLabelClassList.join(' ') }">
-        ${ singleAvailableItem.querySelector('.dcf-search-and-select-available-item-label').innerText }
+        ${ selectedItemLabel }
       </span>
     `;
     this.selectedItemsListElement.append(newSelectedItem);
@@ -1392,7 +1395,7 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
 
       case 'Tab':
         this.closeAvailableItems(true);
-        if (this.isSelectedItemTab() === false || !shiftKey) {
+        if (!shiftKey) {
           this.setVisualFocusOn(false);
         }
         break;
@@ -1502,6 +1505,10 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
       }
     });
 
+    this.selectedItemsListElement.addEventListener('focus', () => {
+      this.setVisualFocusOn(false);
+    });
+
     this.selectedItemsListElement.addEventListener('click', (event) => {
       if (this.isComponentDisabled()) {
         return;
@@ -1521,117 +1528,7 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
         return;
       }
 
-      this.setVisualFocusOn(this.selectedItemsListElement);
-      this.setAvailableItemActiveDescendant(false);
-      this.setSelectedItemActiveDescendant(closestSelectedItem);
       event.stopPropagation();
-    });
-
-    this.selectedItemsListElement.addEventListener('pointermove', (event) => {
-      if (this.isComponentDisabled()) {
-        return;
-      }
-
-      const currentItem = this.getSelectedItemActiveDescendant();
-      const closestSelectedItem = event.target.closest('.dcf-search-and-select-selected-item');
-      if (closestSelectedItem === null) {
-        return;
-      }
-
-      if (currentItem === false || !closestSelectedItem.isSameNode(currentItem)) {
-        this.setSelectedItemActiveDescendant(closestSelectedItem);
-      }
-      event.stopPropagation();
-    });
-
-    this.selectedItemsListElement.addEventListener('pointerout', (event) => {
-      if (this.selectedItemsListElement.isSameNode(event.target)) {
-        this.setSelectedItemActiveDescendant(false);
-        event.stopPropagation();
-      }
-    });
-
-    this.selectedItemsListElement.addEventListener('focus', () => {
-      const currentItem = this.getSelectedItemActiveDescendant();
-      this.setVisualFocusOn(this.selectedItemsListElement);
-      if (currentItem === false) {
-        this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-      }
-    });
-
-    this.selectedItemsListElement.addEventListener('blur', () => {
-      this.setVisualFocusOn(false);
-      this.setSelectedItemActiveDescendant(false);
-    });
-
-    this.selectedItemsListElement.addEventListener('keydown', (event) => {
-      if (this.isComponentDisabled()) {
-        return;
-      }
-
-      let preventDefault = false;
-      const currentItem = this.getSelectedItemActiveDescendant();
-      const firstItem = this.getFirstSelectedItem();
-
-      switch (event.code) {
-      case 'Left':
-      case 'ArrowLeft':
-        if (currentItem === false) {
-          this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-        }
-        this.setVisualFocusOn(this.selectedItemsListElement);
-        this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-        this.scrollActiveSelectedItemInView();
-        preventDefault = true;
-        break;
-
-      case 'Right':
-      case 'ArrowRight':
-        if (currentItem === false) {
-          this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-        }
-        this.setVisualFocusOn(this.selectedItemsListElement);
-        this.setSelectedItemActiveDescendant(this.getNextSelectedItem());
-        this.scrollActiveSelectedItemInView();
-        preventDefault = true;
-        break;
-
-      case 'Home':
-        this.setVisualFocusOn(this.selectedItemsListElement);
-        this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-        this.scrollActiveSelectedItemInView();
-        preventDefault = true;
-        break;
-
-      case 'End':
-        this.setVisualFocusOn(this.selectedItemsListElement);
-        this.setSelectedItemActiveDescendant(this.getLastSelectedItem());
-        this.scrollActiveSelectedItemInView();
-        preventDefault = true;
-        break;
-
-      case 'Backspace':
-      case 'Delete':
-        if (!this.isComponentReadOnly()) {
-          if (firstItem.isSameNode(currentItem)) {
-            this.removeSelectedItem(currentItem);
-            this.setSelectedItemActiveDescendant(this.getFirstSelectedItem());
-          } else {
-            this.setSelectedItemActiveDescendant(this.getPreviousSelectedItem());
-            this.removeSelectedItem(currentItem);
-          }
-          preventDefault = true;
-        }
-        break;
-
-      default:
-        break;
-      }
-
-      if (preventDefault) {
-        event.stopPropagation();
-        event.preventDefault();
-      }
     });
   }
 
@@ -1650,23 +1547,16 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
       this.openButtonElement.setAttribute('disabled', 'disabled');
       this.searchAndSelectElement.classList.add('dcf-search-and-select-disabled');
       this.selectedItemsListElement.setAttribute('aria-disabled', 'true');
-      this.selectedItemsListElement.setAttribute('tabindex', '-1');
       this.selectedItemsListElement.querySelectorAll('button').forEach((selectedItemButton) => {
         selectedItemButton.setAttribute('disabled', 'disabled');
       });
       this.setVisualFocusOn(false);
       this.closeAvailableItems();
     } else {
-      const allSelectedItems = this.selectedItemsListElement.querySelectorAll('li');
-
       this.inputElement.removeAttribute('disabled');
       this.openButtonElement.removeAttribute('disabled');
       this.searchAndSelectElement.classList.remove('dcf-search-and-select-disabled');
       this.selectedItemsListElement.removeAttribute('aria-disabled');
-      this.selectedItemsListElement.setAttribute(
-        'tabindex',
-        allSelectedItems.length === DCFUtility.magicNumbers('int0') ? '-1' : '0'
-      );
       this.selectedItemsListElement.querySelectorAll('button').forEach((selectedItemButton) => {
         selectedItemButton.removeAttribute('disabled');
       });
@@ -1702,125 +1592,11 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
   }
 
   /**
-   * Determines if the selected items list is in the tab list
-   * @returns { bool } true if the tab-able
-   */
-  isSelectedItemTab() {
-    return this.selectedItemsListElement.getAttribute('tabindex') === '0';
-  }
-
-  /**
    * Determines if the visual focus is on the selected items list
    * @returns { bool } true if the selected items list has visual focus
    */
   visualFocusOnSelectedItems() {
     return this.selectedItemsListElement.dataset.focused === 'true';
-  }
-
-  /**
-   * Gets the current active item in the select items list
-   * @returns { HTMLLIElement|false } The currently active element in the available items list or false if there is none
-   */
-  getSelectedItemActiveDescendant() {
-    const currentItemID = this.selectedItemsListElement.getAttribute('aria-activedescendant');
-    if (currentItemID !== null && currentItemID !== '') {
-      const currentItemElement = document.getElementById(currentItemID);
-      if (currentItemElement !== null) {
-        return currentItemElement;
-      }
-    }
-
-    return false;
-  }
-
-  /**
-   * Handles functionality of setting the active element on the selected items list
-   * @param { HTMLLIElement|false } itemToSet The list item to set or false if there is none
-   */
-  setSelectedItemActiveDescendant(itemToSet) {
-    if (itemToSet !== false && !this.isElementASelectedItem(itemToSet)) {
-      throw new Error('Element is not a selected item');
-    }
-
-    if (itemToSet !== false) {
-      this.selectedItemsListElement.setAttribute('aria-activedescendant', itemToSet.getAttribute('id'));
-      this.setVisualHover(itemToSet);
-    } else {
-      this.setVisualHover(false);
-      this.selectedItemsListElement.setAttribute('aria-activedescendant', '');
-    }
-  }
-
-  /**
-   * Handles functionality of scrolling the current active item into view
-   */
-  scrollActiveSelectedItemInView() {
-    const currentItemElement = this.getSelectedItemActiveDescendant();
-    if (currentItemElement !== false && !this.isSelectedItemInView(currentItemElement)) {
-      currentItemElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }
-
-  /**
-   * Gets the next selected item
-   * This will loop the beginning if we are at the end of the list
-   * @returns { HTMLLIElement|null } The next selected item or null if there is none
-   */
-  getNextSelectedItem() {
-    let currentItem = this.getSelectedItemActiveDescendant();
-    if (currentItem === false) {
-      return this.getFirstSelectedItem();
-    }
-
-    let nextElement = currentItem.nextElementSibling;
-    if (nextElement === null) {
-      return this.getFirstSelectedItem();
-    }
-
-    return nextElement;
-  }
-
-  /**
-   * Gets the previous selected item
-   * This will loop the end if we are at the beginning of the list
-   * @returns { HTMLLIElement|null } The next selected item or null if there is none
-   */
-  getPreviousSelectedItem() {
-    let currentItem = this.getSelectedItemActiveDescendant();
-    if (currentItem === false) {
-      return this.getLastSelectedItem();
-    }
-
-    let nextElement = currentItem.previousElementSibling;
-    if (nextElement === null) {
-      return this.getLastSelectedItem();
-    }
-
-    return nextElement;
-  }
-
-  /**
-   * Gets the first selected item
-   * @returns { HTMLLIElement|null } The first selected item or null if there is none
-   */
-  getFirstSelectedItem() {
-    const allSelectedItems = this.selectedItemsListElement.children;
-    if (allSelectedItems.length === DCFUtility.magicNumbers('int0')) {
-      return false;
-    }
-    return allSelectedItems[DCFUtility.magicNumbers('int0')];
-  }
-
-  /**
-   * Gets the last selected item
-   * @returns { HTMLLIElement|null } The last selected item or null if there is none
-   */
-  getLastSelectedItem() {
-    const allSelectedItems = this.selectedItemsListElement.children;
-    if (allSelectedItems.length === DCFUtility.magicNumbers('int0')) {
-      return false;
-    }
-    return allSelectedItems[allSelectedItems.length - DCFUtility.magicNumbers('int1')];
   }
 
   /**
@@ -1839,7 +1615,6 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
       }
     });
     this.appendNewSelectedItem(itemToSelect);
-    this.selectedItemsListElement.setAttribute('tabindex', '0');
   }
 
   /**
@@ -1855,9 +1630,6 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
     this.selectedItemsListElement.querySelectorAll(`li[data-id="${itemToRemove.dataset.id}"]`).forEach((singleSelectedItem) => {
       singleSelectedItem.remove();
     });
-    if (this.selectedItemsListElement.children.length === DCFUtility.magicNumbers('int0')) {
-      this.selectedItemsListElement.setAttribute('tabindex', '-1');
-    }
   }
 
   /**
@@ -1878,7 +1650,6 @@ class DCFSearchSelectMultiple extends DCFSearchSelectSingle {
     });
     itemToRemove.remove();
     if (this.selectedItemsListElement.children.length === DCFUtility.magicNumbers('int0')) {
-      this.selectedItemsListElement.setAttribute('tabindex', '-1');
       this.inputElement.focus();
     }
   }
