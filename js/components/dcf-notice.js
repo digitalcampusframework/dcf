@@ -89,7 +89,6 @@ export default class DCFNotice {
         }
 
         this.notice = notice;
-        this.notice.classList.add(this.initializing);
 
         if (
             this.notice.getAttribute('id') === '' ||
