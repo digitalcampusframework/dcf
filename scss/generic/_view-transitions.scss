@@ -1,0 +1,14 @@
+////////////////////////////////////
+// CORE / GENERIC / VIEW TRANSITIONS
+////////////////////////////////////
+
+
+@use "../variables/" as var;
+
+
+// Enable cross-document View Transitions
+@if (var.$view-transitions) {
+  @view-transition {
+    navigation: auto;
+  }
+}
