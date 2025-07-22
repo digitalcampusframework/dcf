@@ -77,8 +77,8 @@ export default class DCFPopup {
         this.closeButtons = this.popupElement.querySelectorAll(
             ':scope > .dcf-popup-content > .dcf-btn-close-popup' +
             ', :scope > .dcf-popup-content > .dcf-btn-popup-close' +
-            `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${this.popupElement.id}"]` +
-            `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${this.popupElement.id}"]`,
+            `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${this.popupElement.getAttribute('id')}"]` +
+            `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${this.popupElement.getAttribute('id')}"]`,
         );
 
         this.closeButtons.forEach((closeButton) => {
@@ -88,13 +88,22 @@ export default class DCFPopup {
         });
 
         // Sets the IDs for the btn and content if they aren't already set
-        if (this.popupElement.id === '') {
+        if (
+            this.popupElement.getAttribute('id') === '' ||
+            this.popupElement.getAttribute('id') === null
+        ) {
             this.popupElement.setAttribute('id', this.uuid.concat('-popup'));
         }
-        if (this.popupButton.id === '') {
+        if (
+            this.popupButton.getAttribute('id') === '' ||
+            this.popupButton.getAttribute('id') === null
+        ) {
             this.popupButton.setAttribute('id', this.uuid.concat('-popup-btn'));
         }
-        if (this.popupContent.id === '') {
+        if (
+            this.popupContent.getAttribute('id') === '' ||
+            this.popupContent.getAttribute('id') === null
+        ) {
             this.popupContent.setAttribute('id', this.uuid.concat('-popup-content'));
         }
 
@@ -112,7 +121,7 @@ export default class DCFPopup {
         }
 
         // Sets up button-toggle related attributes
-        this.popupButton.dataset.controls = this.popupContent.id;
+        this.popupButton.dataset.controls = this.popupContent.getAttribute('id');
         this.popupButton.dataset.startExpanded = 'false';
 
         // Sets up position classes
@@ -137,13 +146,13 @@ export default class DCFPopup {
             // Check if event is coming from a child popup
             let eventIsFromTheInside = false;
             this.popupElement.querySelectorAll('.dcf-popup').forEach((innerPopup) => {
-                if (innerPopup.id === event.target.id) {
+                if (innerPopup.getAttribute('id') === event.target.getAttribute('id')) {
                     eventIsFromTheInside = true;
                 }
             });
 
             // If it is not coming from child and it is not this popup then close the popup
-            if (!eventIsFromTheInside && event.target.id !== this.popupElement.id) {
+            if (!eventIsFromTheInside && event.target.getAttribute('id') !== this.popupElement.getAttribute('id')) {
                 this.popupElement.dispatchEvent(this.commandClose);
             }
         }, true);

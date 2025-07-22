@@ -70,7 +70,10 @@ export default class DCFButtonToggles {
         }
 
         // if it does not have an ID set it to a random one
-        if (this.toggleButtonElement.getAttribute('id') === '') {
+        if (
+            this.toggleButtonElement.getAttribute('id') === '' ||
+            this.toggleButtonElement.getAttribute('id') === null
+        ) {
             this.toggleButtonElement.setAttribute('id', this.uuid.concat('-button-', toggleButtonIdPostfix));
         }
 
@@ -78,11 +81,13 @@ export default class DCFButtonToggles {
         this.toggleButtonElement.setAttribute('aria-controls', toggleElementId);
 
         // set the attributes for the thing being toggled
-        if (this.toggleTargetElement.getAttribute('aria-labelledby') !== null &&
-        this.toggleTargetElement.getAttribute('aria-labelledby') !== this.toggleButtonElement.id) {
+        if (
+            this.toggleTargetElement.getAttribute('aria-labelledby') !== null &&
+            this.toggleTargetElement.getAttribute('aria-labelledby') !== this.toggleButtonElement.getAttribute('id')
+        ) {
             throw new Error('Toggle Element Already Has Toggle Button');
         }
-        this.toggleTargetElement.setAttribute('aria-labelledby', this.toggleButtonElement.id);
+        this.toggleTargetElement.setAttribute('aria-labelledby', this.toggleButtonElement.getAttribute('id'));
 
         // ToggleSwitched will set many of the other attributes and styles
         const expandedState = toggleButtonStartExpanded === 'true' ? 'open' : 'close';

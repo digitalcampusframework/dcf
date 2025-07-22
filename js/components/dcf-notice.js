@@ -91,7 +91,10 @@ export default class DCFNotice {
         this.notice = notice;
         this.notice.classList.add(this.initializing);
 
-        if (this.notice.id === '') {
+        if (
+            this.notice.getAttribute('id') === '' ||
+            this.notice.getAttribute('id') === null
+        ) {
             this.notice.setAttribute('id', this.uuid.concat('-notice'));
         }
         this.notice.setAttribute('role', 'alertdialog');
@@ -112,10 +115,13 @@ export default class DCFNotice {
         const allHeadings = notice.getElementsByTagName('h2');
         this.heading = allHeadings[0] || document.createElement('h2');
         this.heading.classList.add('dcf-notice-heading', 'dcf-txt-h6', 'dcf-mb-0');
-        if (this.heading.id === '') {
+        if (
+            this.heading.getAttribute('id') === '' ||
+            this.heading.getAttribute('id') === null
+        ) {
             this.heading.setAttribute('id', this.uuid.concat('-notice-heading'));
         }
-        this.notice.setAttribute('aria-labelledby', this.heading.id);
+        this.notice.setAttribute('aria-labelledby', this.heading.getAttribute('id'));
 
         this.icon = document.createElement('div');
         this.icon.classList.add('dcf-notice-icon');

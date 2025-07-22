@@ -186,7 +186,7 @@ export default class DCFCollapsibleFieldsets {
         this.legendButtonElement.setAttribute('type', 'button');
 
         // We set up the toggle button values
-        this.legendButtonElement.dataset.controls = this.innerDivElement.id;
+        this.legendButtonElement.dataset.controls = this.innerDivElement.getAttribute('id');
         this.legendButtonElement.dataset.labelOn = 'Expand Fieldset';
         this.legendButtonElement.dataset.labelOff = 'Collapse Fieldset';
         this.legendButtonElement.dataset.startExpanded = fieldsetStartExpanded;

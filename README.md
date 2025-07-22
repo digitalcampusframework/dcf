@@ -23,11 +23,16 @@ TBD
 
 ## Installing the project
 
+<<<<<<< HEAD
 TBD
+=======
+TDB
+>>>>>>> 1e5cefd433c1ba814b4f4da6fd5ec4446316369a
 
 ## Theme implementation
 
 TDB
+<<<<<<< HEAD
 
 ### Theme-defined SASS variables
 
@@ -64,3 +69,5 @@ The theme needs to define a number of variables for DCF:
   - `$color-table-stripe`
 
 If any of these variables is not available, then SASS compilation will fail.
+=======
+>>>>>>> 1e5cefd433c1ba814b4f4da6fd5ec4446316369a
