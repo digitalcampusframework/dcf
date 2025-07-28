@@ -11,4 +11,15 @@
   @view-transition {
     navigation: auto;
   }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: fade var.$animation-duration-fade-in var.$animation-timing-fn-fade-in both;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
 }
