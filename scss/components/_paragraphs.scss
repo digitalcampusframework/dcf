@@ -7,6 +7,11 @@
 
 
 // Drop cap
+.dcf-drop-cap::first-letter {
+  font-weight: var.$font-weight-drop-cap;
+}
+
+
 @supports (initial-letter: 1) or (-webkit-initial-letter: 1) {
 
   .dcf-drop-cap::first-letter {
