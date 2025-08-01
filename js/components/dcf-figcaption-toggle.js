@@ -130,6 +130,9 @@ export default class DCFFigcaptionToggles {
             offKeys:        this.offKeys,
         });
 
+        this.figcaption.classList.add('dcf-figcaption-toggle-initialized');
+        this.figcaption.removeAttribute('hidden');
+
         this.figcaption.dispatchEvent(new CustomEvent(DCFFigcaptionToggles.events('figcaptionToggleReady'), {
             detail: {
                 classInstance: this,

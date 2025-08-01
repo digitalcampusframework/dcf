@@ -243,6 +243,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.#initSlides();
         this.#initControls();
 
+        this.slideshowContainer.classList.add('dcf-slideshow-initialized');
+        this.slideshowContainer.removeAttribute('hidden');
+
         this.slideshowContainer.dispatchEvent(new CustomEvent(DCFSlideshow.events('slideshowReady'), {
             detail: {
                 classInstance: this,

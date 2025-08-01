@@ -207,6 +207,8 @@ export default class DCFCollapsibleFieldsets {
             offKeys:    this.offKeys,
         });
 
+        this.fieldsetElement.classList.add('dcf-collapsible-fieldset-initialized');
+
         // This lets any outside js that needs to interact with elements inside the fieldset
         // to know that its safe to create references to these elements
         this.fieldsetElement.dispatchEvent(new CustomEvent(DCFCollapsibleFieldsets.events('collapsibleFieldsetReady'), {
