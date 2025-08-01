@@ -10,6 +10,10 @@
 $font-size-drop-cap: #{ms.$ms11}em !default;        // Drop cap font-size: 4.74em
 
 
+// Font weight
+$font-weight-drop-cap: bold !default;               // Drop cap font-weight
+
+
 // Line height
 // Adjust line-height for Chrome & Safari after first adjusting margin-top for Firefox
 $line-height-drop-cap: #{ms.$ms-3} !default;        // Drop cap line-height: .63
