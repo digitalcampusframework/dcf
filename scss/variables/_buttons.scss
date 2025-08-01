@@ -105,7 +105,7 @@ $font-size-button: #{ms.$ms-1}em !default;          // Button font-size: .84em
 
 
 // Font weight
-$font-weight-button: bold;                          // Button font-weight
+$font-weight-button: bold !default;                 // Button font-weight
 
 
 // Line height
