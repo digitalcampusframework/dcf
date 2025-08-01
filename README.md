@@ -23,51 +23,8 @@ TBD
 
 ## Installing the project
 
-<<<<<<< HEAD
 TBD
-=======
-TDB
->>>>>>> 1e5cefd433c1ba814b4f4da6fd5ec4446316369a
 
 ## Theme implementation
 
-TDB
-<<<<<<< HEAD
-
-### Theme-defined SASS variables
-
-The theme needs to define a number of variables for DCF:
-
-- Border radius
-  - `$roundrect`
-- Background colors
-  - `$color-body-bg`
-- Text colors
-  - `$color-body`
-  - `$color-heading`
-- Links
-  - `$color-link`
-  - `$color-link-visited`
-  - `$color-link-hover`
-  - `$color-link-active`
-- Inverse
-  - `$color-inverse-link`
-  - `$color-inverse-link-visited`
-  - `$color-inverse-link-hover`
-  - `$color-inverse-link-active`
-- Buttons
-  - `$color-button-hover`
-- Borders
-  - `$color-border`
-- Marks (highlights) background color
-  - `$color-mark`
-- Badges
-  - `$color-badge`
-- Captions
-  - `$color-caption`
-- Tables
-  - `$color-table-stripe`
-
-If any of these variables is not available, then SASS compilation will fail.
-=======
->>>>>>> 1e5cefd433c1ba814b4f4da6fd5ec4446316369a
+TBD
