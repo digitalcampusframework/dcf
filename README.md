@@ -23,8 +23,8 @@ TBD
 
 ## Installing the project
 
-TDB
+TBD
 
 ## Theme implementation
 
-TDB
+TBD
