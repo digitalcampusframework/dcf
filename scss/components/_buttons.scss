@@ -24,9 +24,7 @@
   @if (func.to-number(var.$font-size-button) != func.to-number(#{var.$ms00}em)) {
     font-size: var.$font-size-button;
   }
-  @if (var.$font-weight-button-bold) {
-    font-weight: bold;
-  }
+  font-weight: var.$font-weight-button;
   line-height: var.$line-height-button;
   @if (func.to-number(var.$margin-bottom-button) != func.to-number(0)) {
     margin-bottom: var.$margin-bottom-button;
