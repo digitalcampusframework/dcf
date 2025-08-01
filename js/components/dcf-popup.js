@@ -198,6 +198,8 @@ export default class DCFPopup {
             this.popupElement.removeAttribute('hidden');
         }
 
+        this.popupElement.classList.add('dcf-popup-initialized');
+
         this.popupButton.dispatchEvent(new CustomEvent(DCFPopup.events('popupReady'), {
             detail: {
                 classInstance: this,

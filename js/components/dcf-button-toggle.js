@@ -100,6 +100,8 @@ export default class DCFButtonToggles {
             this.toggleTargetElement.removeAttribute('hidden');
         }
 
+        this.toggleButtonElement.classList.add('dcf-btn-toggle-initialized');
+
         this.toggleButtonElement.dispatchEvent(new CustomEvent(DCFButtonToggles.events('toggleButtonReady'), {
             detail: {
                 classInstance: this,
