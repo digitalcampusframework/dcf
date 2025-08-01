@@ -284,6 +284,9 @@ export default class DCFDatepicker {
         this.close(false);
         this.setDateForButtonLabel();
 
+        this.datepicker.classList.add('dcf-datepicker-initialized');
+        this.datepicker.removeAttribute('hidden');
+
         this.datepicker.dispatchEvent(new CustomEvent(DCFDatepicker.events('datepickerReady'), {
             detail: {
                 classInstance: this,

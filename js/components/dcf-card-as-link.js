@@ -33,6 +33,9 @@ export default class DCFCardAsLink {
             this.card.style.cursor = this.cursorStyle;
         }
 
+        this.card.classList.add('dcf-card-as-link-initialized');
+        this.card.removeAttribute('hidden');
+
         // Dispatch the event to notify that the card is ready.
         this.card.dispatchEvent(new CustomEvent(DCFCardAsLink.events('cardAsLinkReady'), {
             detail: {

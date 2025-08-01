@@ -50,6 +50,9 @@ export default class DCFPagination {
             }
         });
 
+        this.paginationNav.classList.add('dcf-pagination-initialized');
+        this.paginationNav.removeAttribute('hidden');
+
         this.paginationNav.dispatchEvent(new CustomEvent(DCFPagination.events('paginationReady'), {
             detail: {
                 classInstance: this,

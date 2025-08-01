@@ -117,6 +117,9 @@ export default class DCFAutoplayVideoToggle {
             this.pauseAll();
         }
 
+        this.autoplayVideoContainer.classList.add('dcf-autoplay-video-initialized');
+        this.autoplayVideoContainer.removeAttribute('hidden');
+
         this.autoplayVideoContainer.dispatchEvent(new CustomEvent(DCFAutoplayVideoToggle.events('autoplayVideoReady'), {
             detail: {
                 classInstance: this,

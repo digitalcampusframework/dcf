@@ -22,6 +22,9 @@ export default class DCFGallery {
             this.dialog.open(this.image);
         });
 
+        this.image.classList.add('dcf-gallery-img-initialized');
+        this.image.removeAttribute('hidden');
+
         this.image.dispatchEvent(new CustomEvent(DCFGallery.events('galleryReady'), {
             detail: {
                 classInstance: this,

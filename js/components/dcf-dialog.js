@@ -133,6 +133,7 @@ export default class DCFDialog {
 
         this.#addEventListeners();
         this.dialogElement.classList.add('dcf-dialog-initialized');
+        this.dialogElement.removeAttribute('hidden');
 
         this.dialogElement.dispatchEvent(new CustomEvent(DCFDialog.events('dialogReady'), {
             detail: {

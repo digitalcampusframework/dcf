@@ -179,6 +179,9 @@ export default class DCFTabs {
         // Once we are here we should have a selected tab and we can switch to it
         this.switchTab(selectedTab, false);
 
+        this.tabsGroup.classList.add('dcf-tabs-initialized');
+        this.tabsGroup.removeAttribute('hidden');
+
         // We can then set up the tabGroup event listeners and dispatch the even that the tabs are ready
         this.#setTabGroupEventListeners(this.tabsGroup);
         this.tabsGroup.dispatchEvent(new CustomEvent(DCFTabs.events('tabsReady'), {

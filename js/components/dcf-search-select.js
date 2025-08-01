@@ -386,6 +386,8 @@ class="dcf-search-and-select-search-area-multiple ${ this.searchAreaClassList.jo
             this.availableItemsListElement.setAttribute('aria-multiselectable', true);
         }
 
+        this.selectElement.classList.add('dcf-search-select-initialized');
+
         this.selectElement.dispatchEvent(new CustomEvent(DCFSearchSelect.events('searchSelectReady'), {
             detail: {
                 classInstance: this,
