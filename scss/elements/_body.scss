@@ -9,4 +9,6 @@
 body {
   background-color: var.$bg-color-body;
   color: var.$color-body;
+  overflow-x: hidden;
+  width: 100vw;
 }
