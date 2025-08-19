@@ -20,6 +20,7 @@
   flex: 1 1 auto; // Grow/shrink as needed, with auto width
 }
 
+
 .dcf-input-group :focus,
 .dcf-input-group :focus-visible {
   z-index: 1; // Place :focus and :hover states (e.g., borders, outlines) above input group siblings
