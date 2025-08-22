@@ -84,5 +84,6 @@
 .dcf-max-w-2xl { @include mixins.max-w-2xl; }
 .dcf-max-w-3xl { @include mixins.max-w-3xl; }
 .dcf-max-w-4xl { @include mixins.max-w-4xl; }
+.dcf-max-w-75ch { @include mixins.max-w-75ch; }
 .dcf-max-w-100\% { @include mixins.max-w-100pc; } // .dcf-max-w-100%
 .dcf-max-w-100vw { @include mixins.max-w-100vw; }

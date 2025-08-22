@@ -73,16 +73,17 @@
 
 
 // Maximum width
-@mixin max-w-3xs($imp:null) { max-width: #{var.$ms16}rem $imp; } // [1]
-@mixin max-w-2xs($imp:null) { max-width: #{var.$ms18}rem $imp; } // [1]
-@mixin max-w-xs($imp:null) { max-width: #{var.$ms20}rem $imp; }  // [1]
-@mixin max-w-sm($imp:null) { max-width: #{var.$ms22}rem $imp; }  // [1]
-@mixin max-w-md($imp:null) { max-width: #{var.$ms24}rem $imp; }  // [1]
-@mixin max-w-lg($imp:null) { max-width: #{var.$ms26}rem $imp; }  // [1]
-@mixin max-w-xl($imp:null) { max-width: #{var.$ms28}rem $imp; }  // [1]
-@mixin max-w-2xl($imp:null) { max-width: #{var.$ms30}rem $imp; } // [1]
-@mixin max-w-3xl($imp:null) { max-width: #{var.$ms32}rem $imp; } // [1]
-@mixin max-w-4xl($imp:null) { max-width: #{var.$ms34}rem $imp; } // [1]
+@mixin max-w-3xs($imp:null) { max-width: #{var.$ms16}rem $imp; }  // [1]
+@mixin max-w-2xs($imp:null) { max-width: #{var.$ms18}rem $imp; }  // [1]
+@mixin max-w-xs($imp:null) { max-width: #{var.$ms20}rem $imp; }   // [1]
+@mixin max-w-sm($imp:null) { max-width: #{var.$ms22}rem $imp; }   // [1]
+@mixin max-w-md($imp:null) { max-width: #{var.$ms24}rem $imp; }   // [1]
+@mixin max-w-lg($imp:null) { max-width: #{var.$ms26}rem $imp; }   // [1]
+@mixin max-w-xl($imp:null) { max-width: #{var.$ms28}rem $imp; }   // [1]
+@mixin max-w-2xl($imp:null) { max-width: #{var.$ms30}rem $imp; }  // [1]
+@mixin max-w-3xl($imp:null) { max-width: #{var.$ms32}rem $imp; }  // [1]
+@mixin max-w-4xl($imp:null) { max-width: #{var.$ms34}rem $imp; }  // [1]
+@mixin max-w-75ch($imp:null) { max-width: 75ch $imp; }            // [1]
 @mixin max-w-100pc($imp:null) { max-width: 100% $imp; }
 @mixin max-w-100vw($imp:null) { max-width: 100vw $imp; }
 // [1] http://webtypography.net/2.1.2
