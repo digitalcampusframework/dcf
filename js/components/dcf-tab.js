@@ -76,7 +76,7 @@ export default class DCFTabs {
         }
 
         // Adds classes to the tabList and sets role
-        this.tabsList.classList.add('dcf-tabs-list', 'dcf-list-bare', 'dcf-mb-0');
+        this.tabsList.classList.add('dcf-tabs-list', 'dcf-mb-0', 'dcf-pl-0');
         this.tabsList.setAttribute('role', 'tablist');
 
         // Add tab panel semantics and hide them all in each tab group.
