@@ -203,7 +203,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.slideDeck.classList.add(...this.slideDeckClassList);
 
         // Select all the slides
-        this.slides = Array.from(this.slideshowContainer.querySelectorAll('li'));
+        this.slides = Array.from(this.slideDeck.children);
         this.currentSlide = 0;
 
         // Check if we allow play
