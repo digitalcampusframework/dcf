@@ -9,6 +9,7 @@
 // Drop cap
 .dcf-drop-cap::first-letter {
   font-weight: var.$font-weight-drop-cap;
+  padding-right: var.$padding-right-drop-cap;
 }
 
 
@@ -17,7 +18,6 @@
   .dcf-drop-cap::first-letter {
     -webkit-initial-letter: 3;
     initial-letter: 3;
-    padding-right: var.$padding-right-drop-cap;
   }
 
 }
@@ -31,7 +31,6 @@
     line-height: var.$line-height-drop-cap;
     margin-top: var.$margin-top-drop-cap;
     padding-left: var.$padding-left-drop-cap;
-    padding-right: var.$padding-right-drop-cap;
   }
 
 }
