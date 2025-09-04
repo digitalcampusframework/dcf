@@ -193,7 +193,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         // Set up slide show deck
-        this.slideDeck = this.slideshowContainer.querySelector('ul');
+        this.slideDeck = this.slideshowContainer.querySelector(':scope > ul');
         this.slideDeck.setAttribute('tabindex', '0');
         this.slideDeck.classList.add('dcf-slide-deck');
         this.slideDeck.setAttribute('aria-live', 'polite');
