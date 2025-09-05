@@ -99,7 +99,7 @@ export default class DCFSearchSelect {
     ];
 
     selectedItemButtonSVG = `<svg
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="dcf-fill-current dcf-w-4 dcf-h-4 dcf-d-block">
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="dcf-fill-current dcf-w-4 dcf-h-4">
     <path d="M25.4,22.6L15.8,13l9.6-9.6C25.8,3,26,2.5,26,2s-0.2-1-0.6-1.4c-0.8-0.8-2.1-0.8-2.8,0L13,10.2L3.4,0.6
         c-0.8-0.8-2-0.8-2.8,0c-0.8,0.8-0.8,2,0,2.8l9.6,9.6l-9.6,9.6C0.2,23,0,23.5,0,24c0,0.5,0.2,1,0.6,1.4C1,25.8,1.5,26,2,26
         c0.5,0,1-0.2,1.4-0.6l9.6-9.6l9.6,9.6C23,25.8,23.5,26,24,26c0,0,0,0,0,0c0.5,0,1-0.2,1.4-0.6C25.8,25,26,24.5,26,24
@@ -127,7 +127,7 @@ export default class DCFSearchSelect {
     toggleButtonSVG = `<svg
 xmlns="http://www.w3.org/2000/svg"
 viewBox="0 0 24 24"
-class="dcf-fill-current dcf-w-3 dcf-h-3 dcf-d-block"
+class="dcf-fill-current dcf-w-3 dcf-h-3"
 aria-hidden="true"
 >
 <path d="M23.936,2.255C23.848,2.098,23.681,2,23.5,2h-23
@@ -181,7 +181,7 @@ aria-hidden="true"
     ];
 
     availableItemIndicatorSVG = `<svg
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="dcf-fill-current dcf-h-4 dcf-w-4 dcf-d-block">
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="dcf-fill-current dcf-h-4 dcf-w-4">
     <path d="M31,0.4C30.6,0.1,30-0.1,29.4,0c-0.6,0.1-1.1,0.4-1.5,0.9
     L10.1,26.3L3.8,20c-0.4-0.4-1-0.6-1.6-0.6c0,0,0,0,0,0
     c-0.6,0-1.2,0.2-1.6,0.6C0.2,20.5,0,21,0,21.6
