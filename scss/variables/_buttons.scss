@@ -8,6 +8,7 @@
 @use './color-palette' as color_palette;
 @use './modular-scale' as ms;
 @use './sizing' as s;
+@use './typography' as txt;
 
 
 // Background color (inverse listed first for use with non-inverse in dark mode)
@@ -101,34 +102,34 @@ $color-button-secondary-tertiary-hover: var(--btn-secondary-tertiary-hover) !def
 
 
 // Font size
-$font-size-button: #{ms.$ms-1}em !default;          // Button font-size: .84em
+$font-size-button: #{ms.$ms-1}em !default;              // Button font-size: .84em
 
 
 // Font weight
-$font-weight-button: bold !default;                 // Button font-weight
+$font-weight-button: txt.$font-weight-bold !default;    // Button font-weight
 
 
 // Line height
-$line-height-button: #{ms.$ms03} !default;          // Button line-height
+$line-height-button: #{ms.$ms03} !default;              // Button line-height
 
 
 // Margin
-$margin-bottom-button: 0 !default;                  // Margin-bottom of button: 0
-$margin-left-button: 0 !default;                    // Margin-left of button: 0
-$margin-right-button: 0 !default;                   // Margin-right of button: 0
-$margin-top-button: 0 !default;                     // Margin-top of button: 0
+$margin-bottom-button: 0 !default;                      // Margin-bottom of button: 0
+$margin-left-button: 0 !default;                        // Margin-left of button: 0
+$margin-right-button: 0 !default;                       // Margin-right of button: 0
+$margin-top-button: 0 !default;                         // Margin-top of button: 0
 
 
 // Padding
-$padding-bottom-button: s.$length-em-3 !default;    // Padding-bottom of button: .75em
-$padding-left-button: s.$length-em-4 !default;      // Padding-left of button: 1em
-$padding-right-button: s.$length-em-4 !default;     // Padding-right of button: 1em
-$padding-top-button: s.$length-em-3 !default;       // Padding-top of button: .75em
+$padding-bottom-button: s.$length-em-3 !default;        // Padding-bottom of button: .75em
+$padding-left-button: s.$length-em-4 !default;          // Padding-left of button: 1em
+$padding-right-button: s.$length-em-4 !default;         // Padding-right of button: 1em
+$padding-top-button: s.$length-em-3 !default;           // Padding-top of button: .75em
 
 
 // Text alignment
-$text-align-button-center: true !default;           // Center align button text? True/false
+$text-align-button-center: true !default;               // Center align button text? True/false
 
 
 // Text transform
-$text-transform-button-uppercase: false !default;   // Uppercase button text? True/false
+$text-transform-button-uppercase: false !default;       // Uppercase button text? True/false
