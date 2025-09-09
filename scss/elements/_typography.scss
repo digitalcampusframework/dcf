@@ -4,9 +4,10 @@
 
 
 @use "../variables/" as var;
+@use "../mixins/" as mixins;
 
 
 // Bold, strong
 b, strong {
-  font-weight: var.$font-weight-bold;
+  @include mixins.bold;
 }

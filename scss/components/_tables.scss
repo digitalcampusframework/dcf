@@ -4,8 +4,8 @@
 
 
 @use "../variables/" as var;
-@use "../functions/" as func;
 @use "../mixins/" as mixins;
+@use "../functions/" as func;
 
 
 .dcf-table caption {
@@ -16,7 +16,7 @@
   }
   // If the var.$font-weight-caption-bold variable = true, then change the font-weight to bold
   @if (var.$font-weight-caption-bold) {
-    font-weight: bold;
+    @include mixins.bold;
   }
   padding-bottom: var.$padding-bottom-caption;
   @if (var.$text-wrap-balance-caption == true) {
@@ -169,7 +169,7 @@
   .dcf-table-responsive tbody td[data-label]::before {
     content: attr(data-label);
     display: table-cell;
-    font-weight: bold;
+    @include mixins.bold;
     padding-right: var.$padding-right-table-cell;
     width: var.$width-table-responsive-data-label;
   }

@@ -4,6 +4,7 @@
 
 
 @use "../variables/" as var;
+@use "../mixins/" as mixins;
 @use "../functions/" as func;
 
 
@@ -37,7 +38,7 @@ summary {
     font-size: var.$font-size-summary;
   }
   @if (var.$font-weight-summary-bold) {
-    font-weight: bold;
+    @include mixins.bold;
   }
 }
 
