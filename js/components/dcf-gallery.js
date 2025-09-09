@@ -77,7 +77,7 @@ export class DCFGalleryDialog {
     <div class="dcf-gallery-prev dcf-d-flex dcf-ai-center">
         <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-prev dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Previous Image</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4 dcf-d-block" style="rotate: 180deg;" viewBox="0 0 30 36">
+            <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4" style="rotate: 180deg;" viewBox="0 0 30 36">
             <path d="M25.5,15.3L9.3,0.9C8.6,0.3,7.6,0,6.7,0c-1,0.1-1.9,0.5-2.5,1.2
             C3.5,2,3.2,2.9,3.3,3.8c0.1,1,0.5,1.9,1.2,2.5L17.7,18
             L4.5,29.7c-0.7,0.6-1.2,1.5-1.2,2.5c-0.1,1,0.3,1.9,0.9,2.6
@@ -89,7 +89,7 @@ export class DCFGalleryDialog {
     <div class="dcf-gallery-next dcf-d-flex dcf-ai-center">
         <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-next dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Next Image</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4 dcf-d-block" viewBox="0 0 30 36">
+            <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4" viewBox="0 0 30 36">
                 <path d="M25.5,15.3L9.3,0.9C8.6,0.3,7.6,0,6.7,0c-1,0.1-1.9,0.5-2.5,1.2
                 C3.5,2,3.2,2.9,3.3,3.8c0.1,1,0.5,1.9,1.2,2.5L17.7,18
                 L4.5,29.7c-0.7,0.6-1.2,1.5-1.2,2.5c-0.1,1,0.3,1.9,0.9,2.6
@@ -210,7 +210,6 @@ export class DCFGalleryDialog {
         newLi.setAttribute('tabindex', selected ? '0' : '-1');
         newLi.innerHTML = `<div class="dcf-1x1 dcf-w-9 dcf-rounded">
     <img
-        class="dcf-d-block"
         ${imageElement.getAttribute('src') !== null ? `src='${imageElement.getAttribute('src')}'` : ''}
         ${imageElement.getAttribute('srcset') !== null ? `srcset='${imageElement.getAttribute('srcset')}'` : ''}
         ${imageElement.getAttribute('crossorigin') !== null ? `crossorigin='${imageElement.getAttribute('crossorigin')}'` : ''}

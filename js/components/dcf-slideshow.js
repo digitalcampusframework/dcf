@@ -331,11 +331,6 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             figure.classList.add('dcf-slide-figure');
         });
 
-        // Images default to display inline which causes a weird gap below image
-        // This class will remove that gap
-        this.slideshowContainer.querySelectorAll('img').forEach((image) => {
-            image.classList.add('dcf-d-block');
-        });
     }
 
     /**
