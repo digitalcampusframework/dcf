@@ -4,6 +4,7 @@
 
 
 @use "../variables/" as var;
+@use "../mixins/" as mixins;
 
 
 // Avoid markers altering the line-height in Firefox.
@@ -63,7 +64,7 @@ li {
 @if (var.$font-weight-dt-bold) {
 
   dt {
-    font-weight: bold;
+    @include mixins.bold;
   }
 
 }

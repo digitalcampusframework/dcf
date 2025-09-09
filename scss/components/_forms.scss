@@ -31,7 +31,7 @@
     font-size: var.$font-size-legend;
   }
   @if (var.$font-weight-legend-bold) {
-    font-weight: bold;
+    @include mixins.bold;
   }
   margin-left: -#{var.$padding-legend}; // Left align legend with form elements
   padding-left: var.$padding-legend;

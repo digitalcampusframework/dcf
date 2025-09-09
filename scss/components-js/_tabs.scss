@@ -4,8 +4,8 @@
 
 
 @use "../variables/" as var;
-@use "../functions/" as func;
 @use "../mixins/" as mixins;
+@use "../functions/" as func;
 
 
 .dcf-tabs-list-item {
@@ -42,7 +42,7 @@
   }
   // If the $font-weight-tab-bold variable = true, then change the font-weight to bold
   @if (var.$font-weight-tab-bold) {
-    font-weight: bold;
+    @include mixins.bold;
   }
   padding: var.$padding-top-tab var.$padding-right-tab var.$padding-bottom-tab var.$padding-left-tab;
 }
