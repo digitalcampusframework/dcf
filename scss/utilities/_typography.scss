@@ -8,7 +8,24 @@
 
 // Font size
 .dcf-txt-base { @include mixins.txt-base; }
-// Remaining font sizes should be configured in theme _utilities.typography
+.dcf-txt-3xs { @include mixins.txt-3xs; }
+.dcf-txt-2xs { @include mixins.txt-2xs; }
+.dcf-txt-xs { @include mixins.txt-xs; }
+.dcf-txt-sm { @include mixins.txt-sm; }
+.dcf-txt-md { @include mixins.txt-md; }
+.dcf-txt-lg { @include mixins.txt-lg; }
+.dcf-txt-h6 { @include mixins.txt-h6; }
+.dcf-txt-h5 { @include mixins.txt-h5; }
+.dcf-txt-h4 { @include mixins.txt-h4; }
+.dcf-txt-h3 { @include mixins.txt-h3; }
+.dcf-txt-h2 { @include mixins.txt-h2; }
+.dcf-txt-h1 { @include mixins.txt-h1; }
+.dcf-txt-xl { @include mixins.txt-xl; }
+.dcf-txt-2xl { @include mixins.txt-2xl; }
+.dcf-txt-3xl { @include mixins.txt-3xl; }
+.dcf-txt-4xl { @include mixins.txt-4xl; }
+.dcf-txt-5xl { @include mixins.txt-5xl; }
+.dcf-txt-6xl { @include mixins.txt-6xl; }
 
 
 // Horizontal text alignment
