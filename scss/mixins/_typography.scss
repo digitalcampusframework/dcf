@@ -4,7 +4,7 @@
 
 
 @use "../variables/" as var;
-@use "_media-queries" as mixin;
+@use "_media-queries" as mq;
 
 
 // Font size
@@ -19,7 +19,7 @@
 @mixin txt-h6($imp:null) {
   font-size: var.$font-size-h6-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h6-desktop $imp;
   }
 
@@ -28,7 +28,7 @@
 @mixin txt-h5($imp:null) {
   font-size: var.$font-size-h5-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h5-desktop $imp;
   }
 
@@ -37,7 +37,7 @@
 @mixin txt-h4($imp:null) {
   font-size: var.$font-size-h4-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h4-desktop $imp;
   }
 
@@ -46,7 +46,7 @@
 @mixin txt-h3($imp:null) {
   font-size: var.$font-size-h3-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h3-desktop $imp;
   }
 
@@ -55,7 +55,7 @@
 @mixin txt-h2($imp:null) {
   font-size: var.$font-size-h2-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h2-desktop $imp;
   }
 
@@ -64,7 +64,7 @@
 @mixin txt-h1($imp:null) {
   font-size: var.$font-size-h1-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-h1-desktop $imp;
   }
 
@@ -73,7 +73,7 @@
 @mixin txt-xl($imp:null) {
   font-size: var.$font-size-xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-xl-desktop $imp;
   }
 
@@ -82,7 +82,7 @@
 @mixin txt-2xl($imp:null) {
   font-size: var.$font-size-2xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-2xl-desktop $imp;
   }
 
@@ -92,7 +92,7 @@
 @mixin txt-3xl($imp:null) {
   font-size: var.$font-size-3xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-3xl-desktop $imp;
   }
 
@@ -101,7 +101,7 @@
 @mixin txt-4xl($imp:null) {
   font-size: var.$font-size-4xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-4xl-desktop $imp;
   }
 
@@ -110,7 +110,7 @@
 @mixin txt-5xl($imp:null) {
   font-size: var.$font-size-5xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-5xl-desktop $imp;
   }
 
@@ -119,7 +119,7 @@
 @mixin txt-6xl($imp:null) {
   font-size: var.$font-size-6xl-mobile $imp;
 
-  @include mixin.mq(md, min, width) {
+  @include mq.mq(md, min, width) {
     font-size: var.$font-size-6xl-desktop $imp;
   }
 
