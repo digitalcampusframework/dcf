@@ -3,11 +3,55 @@
 ////////////////////////////////
 
 
+@use './modular-scale' as ms;
+
+
 // Font family
 $font-family-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+
+
+// Font size
+$font-size-base: #{ms.$ms00}rem !default; // Base font-size should act as a reset and always be 1rem
+$font-size-3xs: #{ms.$ms-4}em !default;
+$font-size-2xs: #{ms.$ms-3}em !default;
+$font-size-xs: #{ms.$ms-2}em !default;
+$font-size-sm: #{ms.$ms-1}em !default;
+$font-size-md: #{ms.$ms00}em !default;
+$font-size-lg: #{ms.$ms01}em !default;
+$font-size-h6-mobile: #{ms.$ms00}em !default;
+$font-size-h6-desktop: #{ms.$ms01}em !default;
+$font-size-h5-mobile: #{ms.$ms01}em !default;
+$font-size-h5-desktop: #{ms.$ms02}em !default;
+$font-size-h4-mobile: #{ms.$ms02}em !default;
+$font-size-h4-desktop: #{ms.$ms03}em !default;
+$font-size-h3-mobile: #{ms.$ms03}em !default;
+$font-size-h3-desktop: #{ms.$ms04}em !default;
+$font-size-h2-mobile: #{ms.$ms04}em !default;
+$font-size-h2-desktop: #{ms.$ms05}em !default;
+$font-size-h1-mobile: #{ms.$ms05}em !default;
+$font-size-h1-desktop: #{ms.$ms06}em !default;
+$font-size-xl-mobile: #{ms.$ms06}em !default;
+$font-size-xl-desktop: #{ms.$ms07}em !default;
+$font-size-2xl-mobile: #{ms.$ms07}em !default;
+$font-size-2xl-desktop: #{ms.$ms08}em !default;
+$font-size-3xl-mobile: #{ms.$ms08}em !default;
+$font-size-3xl-desktop: #{ms.$ms09}em !default;
+$font-size-4xl-mobile: #{ms.$ms09}em !default;
+$font-size-4xl-desktop: #{ms.$ms10}em !default;
+$font-size-5xl-mobile: #{ms.$ms10}em !default;
+$font-size-5xl-desktop: #{ms.$ms11}em !default;
+$font-size-6xl-mobile: #{ms.$ms11}em !default;
+$font-size-6xl-desktop: #{ms.$ms12}em !default;
 
 
 // Font weight
 $font-weight-normal: 300 !default;
 $font-weight-bold: 600 !default;
 $font-weight-bolder: 700 !default;
+
+
+// Line height
+$line-height-1: #{ms.$ms00} !default;
+$line-height-2: #{ms.$ms01} !default;
+$line-height-3: #{ms.$ms02} !default;
+$line-height-4: #{ms.$ms03} !default;
