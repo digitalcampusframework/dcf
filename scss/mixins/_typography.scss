@@ -4,7 +4,7 @@
 
 
 @use "../variables/" as var;
-@use "./media-queries" as media_query;
+@use "_media-queries" as mixin;
 
 
 // Font size
@@ -20,7 +20,7 @@
 @mixin txt-h6($imp:null) {
   font-size: #{var.$ms00}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms01}em $imp;
   }
 
@@ -29,7 +29,7 @@
 @mixin txt-h5($imp:null) {
   font-size: #{var.$ms01}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms02}em $imp;
   }
 
@@ -38,7 +38,7 @@
 @mixin txt-h4($imp:null) {
   font-size: #{var.$ms02}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms03}em $imp;
   }
 
@@ -47,7 +47,7 @@
 @mixin txt-h3($imp:null) {
   font-size: #{var.$ms03}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms04}em $imp;
   }
 
@@ -56,7 +56,7 @@
 @mixin txt-h2($imp:null) {
   font-size: #{var.$ms04}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms05}em $imp;
   }
 
@@ -65,7 +65,7 @@
 @mixin txt-h1($imp:null) {
   font-size: #{var.$ms05}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms06}em $imp;
   }
 
@@ -74,7 +74,7 @@
 @mixin txt-xl($imp:null) {
   font-size: #{var.$ms06}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms07}em $imp;
   }
 
@@ -83,7 +83,7 @@
 @mixin txt-2xl($imp:null) {
   font-size: #{var.$ms07}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms08}em $imp;
   }
 
@@ -93,7 +93,7 @@
 @mixin txt-3xl($imp:null) {
   font-size: #{var.$ms08}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms09}em $imp;
   }
 
@@ -102,7 +102,7 @@
 @mixin txt-4xl($imp:null) {
   font-size: #{var.$ms09}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms10}em $imp;
   }
 
@@ -111,7 +111,7 @@
 @mixin txt-5xl($imp:null) {
   font-size: #{var.$ms10}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms11}em $imp;
   }
 
@@ -120,7 +120,7 @@
 @mixin txt-6xl($imp:null) {
   font-size: #{var.$ms11}em $imp;
 
-  @include media_query.mq(md, min, width) {
+  @include mixin.mq(md, min, width) {
     font-size: #{var.$ms12}em $imp;
   }
 
