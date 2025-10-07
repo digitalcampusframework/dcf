@@ -14,12 +14,22 @@ $bg-color-card-dark-mode: color_palette.$gray-80 !default;    // Card background
 $bg-color-card: var(--bg-card) !default;
 
 
+// Container query cards
+$cq-cards: true !default;                                     // Container query cards? True/false
+
+
 // Font size
 $font-size-card: #{ms.$ms-1}em !default;                      // Card font-size: .84em
+
+
+// Min-width
+$min-width-cq-card: #{ms.$ms22}em !default;                   // Min-width card container query
 
 
 // Padding
 $padding-bottom-card-block: s.$length-em-7 !default;          // Padding-bottom of card block: 2.37em
 $padding-left-card-block: s.$length-em-6 !default;            // Padding-left of card block: 1.77em
+$padding-left-cq-card-block: s.$length-em-8 !default;         // Padding-left of container query card block: 3.16em
 $padding-right-card-block: s.$length-em-6 !default;           // Padding-right of card block: 1.77em
+$padding-right-cq-card-block: s.$length-em-8 !default;        // Padding-right of container query card block: 3.16em
 $padding-top-card-block: s.$length-em-7 !default;             // Padding-bottom of card block: 2.37em

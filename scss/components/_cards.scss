@@ -9,6 +9,9 @@
 // Individual card
 .dcf-card {
   background-color: var.$bg-color-card;
+  @if (var.$cq-cards) {
+    container-type: inline-size;
+  }
   font-size: var.$font-size-card;
   margin-bottom: 0;
 }
@@ -23,6 +26,15 @@
 // Card block
 .dcf-card-block {
   padding: var.$padding-top-card-block var.$padding-right-card-block var.$padding-bottom-card-block var.$padding-left-card-block;
+}
+
+
+@if (var.$cq-cards) {
+  @container (min-width: #{var.$min-width-cq-card}) {
+    .dcf-card-block {
+      padding: var.$padding-top-card-block var.$padding-right-cq-card-block var.$padding-bottom-card-block var.$padding-left-cq-card-block;
+    }
+  }
 }
 
 
