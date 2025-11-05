@@ -20,6 +20,13 @@ html:has(dialog.dcf-dialog-is-open) {
 }
 
 
+// Make sure to hide dialogs if they are closed
+.dcf-dialog:not(.dcf-dialog-is-open),
+.dcf-dialog:not([open]) {
+  display: none !important;
+}
+
+
 // Dialog
 .dcf-dialog {
   background-color: var.$bg-color-dialog;
