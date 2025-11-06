@@ -11,9 +11,49 @@ export default class DCFImageCropper {
 
     cropperCanvasContext = null;
 
-    fieldsetElement = null;
-
     imageSource = null;
+
+    imageToBeCropped = null;
+
+    gridGuidesCheckbox = null;
+
+    guideFieldsetElement = null;
+
+    gridGuides = false;
+
+    centerGuidesCheckbox = null;
+
+    centerGuides = false;
+
+    cropperScaleRange = null;
+
+    controlsFieldsetElement = null;
+
+    moveUpBtn = null;
+
+    moveDownBtn = null;
+
+    moveLeftBtn = null;
+
+    moveRightBtn = null;
+
+    growBtn = null;
+
+    shrinkBtn = null;
+
+    croppedX = -1;
+
+    croppedY = -1;
+
+    croppedScale = 100;
+
+    minCroppedScale = 25;
+
+    cropperMaxWidth = -1;
+
+    croppedRatio = 1;
+
+    canvasSize = 300;
 
     constructor(imageCropper, options = {}) {
         this.cropperElement = imageCropper;
@@ -25,6 +65,26 @@ export default class DCFImageCropper {
             this.cropperElement.setAttribute('id', this.uuid.concat('-image-cropper-container'));
         }
 
+        switch (this.cropperElement.dataset.ratio) {
+        case '1x1':
+            this.croppedRatio = 1;
+            break;
+        case '16x9':
+            this.croppedRatio = 16/9;
+            break;
+        case '9x16':
+            this.croppedRatio = 9/16;
+            break;
+        case '3x4':
+            this.croppedRatio = 3/4;
+            break;
+        case '4x3':
+            this.croppedRatio = 4/3;
+            break;
+        default:
+            this.croppedRatio = 1;
+        }
+
         // Sets the cropperElement's inner HTML
         this.#setInnerHTML();
 
@@ -32,16 +92,50 @@ export default class DCFImageCropper {
         this.cropperCanvas = document.getElementById(this.uuid.concat('-image-cropper-canvas'));
         this.cropperCanvasContext = this.cropperCanvas.getContext('2d');
 
+        this.cropperScaleRange = document.getElementById(this.uuid.concat('-image-cropper-scale'));
+        this.cropperScaleRange.addEventListener('input', this.updateScale.bind(this));
+
         // Sets up the cropperElement's fieldset
-        this.fieldsetElement = document.getElementById(this.uuid.concat('-image-cropper-guides'));
+        this.guideFieldsetElement = document.getElementById(this.uuid.concat('-image-cropper-guides'));
+        this.guideFieldsetElement.addEventListener('collapsibleFieldsetReady', () => {
+            this.gridGuidesCheckbox = document.getElementById(this.uuid.concat('-image-cropper-grid-guides'));
+            this.lineGuidesCheckbox = document.getElementById(this.uuid.concat('-image-cropper-grid-guides'));
+        });
         if (options.collapsibleFieldset === undefined) {
-            new DCFCollapsibleFieldsets(this.fieldsetElement);
+            new DCFCollapsibleFieldsets(this.guideFieldsetElement);
         } else {
-            new options.collapsibleFieldset(this.fieldsetElement);
+            new options.collapsibleFieldset(this.guideFieldsetElement);
+        }
+
+        // Sets up the cropperElement's fieldset
+        this.controlsFieldsetElement = document.getElementById(this.uuid.concat('-image-cropper-controls'));
+        this.controlsFieldsetElement.addEventListener('collapsibleFieldsetReady', () => {
+
+            this.moveUpBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-up'));
+            this.moveUpBtn.addEventListener('click', this.moveUp.bind(this));
+
+            this.moveDownBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-down'));
+            this.moveDownBtn.addEventListener('click', this.moveDown.bind(this));
+
+            this.moveLeftBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-left'));
+            this.moveLeftBtn.addEventListener('click', this.moveLeft.bind(this));
+
+            this.moveRightBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-right'));
+            this.moveRightBtn.addEventListener('click', this.moveRight.bind(this));
+
+            this.growBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-grow'));
+            this.growBtn.addEventListener('click', this.grow.bind(this));
+
+            this.shrinkBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-shrink'));
+            this.shrinkBtn.addEventListener('click', this.shrink.bind(this));
+        });
+        if (options.collapsibleFieldset === undefined) {
+            new DCFCollapsibleFieldsets(this.controlsFieldsetElement);
+        } else {
+            new options.collapsibleFieldset(this.controlsFieldsetElement);
         }
 
         // Finds the image file input
-        console.log(this.cropperElement.dataset.dataImageCropperInput);
         this.imageSource = document.getElementById(this.cropperElement.dataset.imageCropperInput);
         if (this.imageSource === null) {
             throw new Error('Missing image cropper file input');
@@ -81,8 +175,41 @@ export default class DCFImageCropper {
     </div>
     <div class="dcf-input-group dcf-col-gap-vw dcf-mb-3">
         <label for="${this.uuid.concat('-image-cropper-scale')}">Selection size: </label>
-        <input id="${this.uuid.concat('-image-cropper-scale')}" type="range" min="50" max="100" value="100">
+        <input id="${this.uuid.concat('-image-cropper-scale')}" type="range" min="${this.minCroppedScale}" max="100" value="100">
     </div>
+    <fieldset class="dcf-collapsible-fieldset" data-start-expanded="false" id="${this.uuid.concat('-image-cropper-controls')}">
+        <legend>Control Buttons</legend>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-up')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Move Up</button>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-down')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Move Down</button>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-left')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Move Left</button>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-right')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Move Right</button>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-grow')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Increase Size</button>
+        <button
+            id="${this.uuid.concat('-image-cropper-controls-shrink')}"
+            class="dcf-btn dcf-btn-secondary"
+            type="button"
+        >Decrease Size</button>
+    </fieldset>
     <fieldset class="dcf-collapsible-fieldset" data-start-expanded="false" id="${this.uuid.concat('-image-cropper-guides')}">
         <legend>Guides</legend>
         <div class="dcf-input-checkbox">
@@ -111,11 +238,112 @@ export default class DCFImageCropper {
             return;
         }
 
-        const imageObj = await this.#getSrcImage();
-        this.cropperCanvasContext.drawImage(imageObj, 0, 0, this.cropperCanvas.width, this.cropperCanvas.height);
+        this.imageToBeCropped = await this.#getSrcImage();
+        this.#draw();
 
         this.cropperElement.querySelector('.dcf-image-cropper-yes-image').classList.remove('dcf-d-none');
         this.cropperElement.querySelector('.dcf-image-cropper-no-image').classList.add('dcf-d-none');
+    }
+
+    updateScale() {
+        this.croppedScale = parseInt(this.cropperScaleRange.value, 10);
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    moveUp(delta=5) {
+        this.croppedY -= delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    moveDown(delta=5) {
+        this.croppedY += delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    moveLeft(delta=5) {
+        this.croppedX -= delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    moveRight(delta=5) {
+        this.croppedX += delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    grow(delta=5) {
+        this.croppedScale += delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    shrink(delta=5) {
+        this.croppedScale -= delta;
+        this.#checkIfBoxIsInBounds();
+        this.#draw();
+        this.#syncInputs();
+    }
+
+    #checkIfBoxIsInBounds() {
+        if (this.croppedScale < this.minCroppedScale) {
+            this.croppedScale = this.minCroppedScale;
+        }
+        if (this.croppedScale > 100) {
+            this.croppedScale = 100;
+        }
+
+        const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
+        const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
+        if (this.croppedX > this.cropperCanvas.width - croppedWidth) {
+            this.croppedX = this.cropperCanvas.width - croppedWidth;
+        }
+        if (this.croppedY > this.cropperCanvas.height - croppedHeight) {
+            this.croppedY = this.cropperCanvas.height - croppedHeight;
+        }
+
+        if (this.croppedY < 0) {
+            this.croppedY = 0;
+        }
+        if (this.croppedX < 0) {
+            this.croppedX = 0;
+        }
+    }
+
+    #draw() {
+        this.cropperCanvasContext.drawImage(this.imageToBeCropped, 0, 0, this.cropperCanvas.width, this.cropperCanvas.height);
+
+        const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
+        const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
+
+        this.cropperCanvasContext.strokeStyle = 'black';
+        this.cropperCanvasContext.lineWidth = 4;
+        this.cropperCanvasContext.strokeRect(this.croppedX, this.croppedY, croppedWidth, croppedHeight);
+
+        this.cropperCanvasContext.strokeStyle = 'white';
+        this.cropperCanvasContext.lineWidth = 2;
+        this.cropperCanvasContext.strokeRect(this.croppedX, this.croppedY, croppedWidth, croppedHeight);
+
+        // this.cropperCanvasContext.drawImage(
+        //     this.imageToBeCropped,
+        //     -1 * this.croppedX,
+        //     -1 * this.croppedY,
+        //     this.cropperCanvas.width * (1 / (croppedWidth / this.cropperCanvas.width)),
+        //     this.cropperCanvas.height * (1 / (croppedHeight / this.cropperCanvas.height)),
+        // );
+    }
+
+    #syncInputs() {
+        this.cropperScaleRange.value = this.croppedScale;
     }
 
     #getSrcImage() {
@@ -141,8 +369,25 @@ export default class DCFImageCropper {
                 const aspectRatio = imageObj.width / imageObj.height;
 
                 // Sets up the canvas size
-                this.cropperCanvas.width = 300;
-                this.cropperCanvas.height = 300 / aspectRatio;
+                if (imageObj.width > imageObj.height) {
+                    this.cropperCanvas.width = this.canvasSize;
+                    this.cropperCanvas.height = this.canvasSize / aspectRatio;
+                } else {
+                    this.cropperCanvas.width = this.canvasSize / (1 / aspectRatio);
+                    this.cropperCanvas.height = this.canvasSize;
+                }
+                console.log('getSrcImage', this.cropperCanvas.width, this.cropperCanvas.height);
+
+                if (this.cropperCanvas.width / this.croppedRatio > this.cropperCanvas.height) {
+                    this.cropperMaxWidth = this.cropperCanvas.height / (1 / this.croppedRatio);
+                } else {
+                    this.cropperMaxWidth = this.cropperCanvas.width;
+                }
+
+                this.croppedX = 0;
+                this.croppedY = 0;
+                this.cropperScale = 100;
+
                 resolve(imageObj);
             };
 
