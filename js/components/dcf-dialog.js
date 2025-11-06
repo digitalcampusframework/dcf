@@ -188,6 +188,30 @@ export default class DCFDialog {
             });
         });
 
+        // Close dialog if we are no longer on it (this is important for the non-modal)
+        this.dialogElement.addEventListener('focusout', () => {
+            if (this.dialogElement.open) {
+                requestAnimationFrame(() => {
+                    const active = document.activeElement;
+                    if (!this.dialogElement.contains(active)) {
+                        this.close({
+                            'type': 'focusout',
+                        });
+                    }
+                });
+            }
+        });
+
+        // Close the dialog if we hit escape (this is important for the non-modal)
+        this.dialogElement.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                this.close({
+                    'type': 'escapeKey',
+                });
+            }
+        });
+
         this.dialogElement.addEventListener(DCFDialog.events('commandClose'), () => {
             this.close({
                 'type': 'commandClose',
