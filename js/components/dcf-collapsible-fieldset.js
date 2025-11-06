@@ -44,7 +44,10 @@ export default class DCFCollapsibleFieldsets {
 
     fieldsetClassListOn = [];
 
-    fieldsetClassListOff = [];
+    fieldsetClassListOff = [
+        'dcf-pt-0',
+        'dcf-pb-0',
+    ];
 
     animationBlockClassList = [
         'dcf-motion-none',
