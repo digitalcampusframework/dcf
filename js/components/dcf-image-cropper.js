@@ -55,6 +55,8 @@ export default class DCFImageCropper {
 
     canvasSize = 300;
 
+    imagePreviews = [];
+
     constructor(imageCropper, options = {}) {
         this.cropperElement = imageCropper;
 
@@ -64,6 +66,8 @@ export default class DCFImageCropper {
         ) {
             this.cropperElement.setAttribute('id', this.uuid.concat('-image-cropper-container'));
         }
+
+        this.imagePreviews = document.querySelectorAll(`.dcf-image-cropper-preview[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`);
 
         switch (this.cropperElement.dataset.ratio) {
         case '1x1':
@@ -91,9 +95,13 @@ export default class DCFImageCropper {
         // Set up cropperElement's canvas
         this.cropperCanvas = document.getElementById(this.uuid.concat('-image-cropper-canvas'));
         this.cropperCanvasContext = this.cropperCanvas.getContext('2d');
+        this.canvasSize = parseInt(this.cropperElement.dataset.maxCanvasWidth, 10);
+        if (this.canvasSize <= 20) {
+            this.canvasSize = 300;
+        }
 
         this.cropperScaleRange = document.getElementById(this.uuid.concat('-image-cropper-scale'));
-        this.cropperScaleRange.addEventListener('input', this.updateScale.bind(this));
+        this.cropperScaleRange.addEventListener('input', () => { this.updateScale(); });
 
         // Sets up the cropperElement's fieldset
         this.guideFieldsetElement = document.getElementById(this.uuid.concat('-image-cropper-guides'));
@@ -112,22 +120,22 @@ export default class DCFImageCropper {
         this.controlsFieldsetElement.addEventListener('collapsibleFieldsetReady', () => {
 
             this.moveUpBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-up'));
-            this.moveUpBtn.addEventListener('click', this.moveUp.bind(this));
+            this.moveUpBtn.addEventListener('click', () => { this.moveUp(); });
 
             this.moveDownBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-down'));
-            this.moveDownBtn.addEventListener('click', this.moveDown.bind(this));
+            this.moveDownBtn.addEventListener('click', () => { this.moveDown(); });
 
             this.moveLeftBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-left'));
-            this.moveLeftBtn.addEventListener('click', this.moveLeft.bind(this));
+            this.moveLeftBtn.addEventListener('click', () => { this.moveLeft(); });
 
             this.moveRightBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-right'));
-            this.moveRightBtn.addEventListener('click', this.moveRight.bind(this));
+            this.moveRightBtn.addEventListener('click', () => { this.moveRight(); });
 
             this.growBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-grow'));
-            this.growBtn.addEventListener('click', this.grow.bind(this));
+            this.growBtn.addEventListener('click', () => { this.grow(); });
 
             this.shrinkBtn = document.getElementById(this.uuid.concat('-image-cropper-controls-shrink'));
-            this.shrinkBtn.addEventListener('click', this.shrink.bind(this));
+            this.shrinkBtn.addEventListener('click', () => { this.shrink(); });
         });
         if (options.collapsibleFieldset === undefined) {
             new DCFCollapsibleFieldsets(this.controlsFieldsetElement);
@@ -145,6 +153,9 @@ export default class DCFImageCropper {
 
         this.cropperElement.classList.add('dcf-image-cropper-initialized');
         this.cropperElement.removeAttribute('hidden');
+        this.imagePreviews.forEach((previewElement) => {
+            previewElement.removeAttribute('hidden');
+        });
         this.cropperElement.dispatchEvent(new CustomEvent(DCFImageCropper.events('imageCropperReady'), {
             detail: {
                 classInstance: this,
@@ -229,12 +240,25 @@ export default class DCFImageCropper {
         Use the guides to help align your avatar.
     </p>
 </div>`;
+
+        this.imagePreviews.forEach((previewElement, index) => {
+            previewElement.innerHTML = `
+<div class="dcf-image-cropper-yes-image dcf-d-none">
+    <canvas id="${this.uuid.concat(`-image-cropper-preview-canvas-${index}`)}" class="dcf-b-grey dcf-b-2 dcf-b-solid" height="225" width="300" aria-hidden="true"></canvas>
+</div>
+`;
+        });
     }
 
     async #changeState() {
         if (this.imageSource.value === '') {
             this.cropperElement.querySelector('.dcf-image-cropper-yes-image').classList.add('dcf-d-none');
             this.cropperElement.querySelector('.dcf-image-cropper-no-image').classList.remove('dcf-d-none');
+
+            this.imagePreviews.forEach((previewElement) => {
+                previewElement.querySelector('.dcf-image-cropper-yes-image').classList.add('dcf-d-none');
+            });
+
             return;
         }
 
@@ -243,6 +267,10 @@ export default class DCFImageCropper {
 
         this.cropperElement.querySelector('.dcf-image-cropper-yes-image').classList.remove('dcf-d-none');
         this.cropperElement.querySelector('.dcf-image-cropper-no-image').classList.add('dcf-d-none');
+
+        this.imagePreviews.forEach((previewElement) => {
+            previewElement.querySelector('.dcf-image-cropper-yes-image').classList.remove('dcf-d-none');
+        });
     }
 
     updateScale() {
@@ -320,7 +348,13 @@ export default class DCFImageCropper {
     }
 
     #draw() {
-        this.cropperCanvasContext.drawImage(this.imageToBeCropped, 0, 0, this.cropperCanvas.width, this.cropperCanvas.height);
+        this.cropperCanvasContext.drawImage(
+            this.imageToBeCropped,
+            0,
+            0,
+            this.cropperCanvas.width,
+            this.cropperCanvas.height,
+        );
 
         const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
         const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
@@ -333,13 +367,40 @@ export default class DCFImageCropper {
         this.cropperCanvasContext.lineWidth = 2;
         this.cropperCanvasContext.strokeRect(this.croppedX, this.croppedY, croppedWidth, croppedHeight);
 
-        // this.cropperCanvasContext.drawImage(
-        //     this.imageToBeCropped,
-        //     -1 * this.croppedX,
-        //     -1 * this.croppedY,
-        //     this.cropperCanvas.width * (1 / (croppedWidth / this.cropperCanvas.width)),
-        //     this.cropperCanvas.height * (1 / (croppedHeight / this.cropperCanvas.height)),
-        // );
+        this.imagePreviews.forEach((previewElement) => {
+            const previewCanvas = previewElement.querySelector('canvas');
+            const previewContext = previewCanvas.getContext('2d');
+
+            let previewSize = parseInt(previewElement.dataset.maxCanvasWidth, 10);
+            if (previewSize <= 20) {
+                previewSize = this.canvasSize;
+            }
+
+            if (this.croppedRatio > 1) {
+                previewCanvas.width = previewSize;
+                previewCanvas.height = previewSize / this.croppedRatio;
+            } else {
+                previewCanvas.width = previewSize / (1 / this.croppedRatio);
+                previewCanvas.height = previewSize;
+            }
+
+            // Scale factors from canvas back to original image
+            const scaleX = this.imageToBeCropped.width / this.cropperCanvas.width;
+            const scaleY = this.imageToBeCropped.height / this.cropperCanvas.height;
+
+            // Get the cropped region in original image coordinates
+            const scaledX = this.croppedX * scaleX;
+            const scaledY = this.croppedY * scaleY;
+            const scaledWidth = croppedWidth * scaleX;
+            const scaledHeight = croppedHeight * scaleY;
+
+            // Draw the cropped area into the preview canvas
+            previewContext.drawImage(
+                this.imageToBeCropped,
+                scaledX, scaledY, scaledWidth, scaledHeight,     // source rect (in original image)
+                0, 0, previewCanvas.width, previewCanvas.height, // destination rect (fit to preview canvas)
+            );
+        });
     }
 
     #syncInputs() {
@@ -376,7 +437,6 @@ export default class DCFImageCropper {
                     this.cropperCanvas.width = this.canvasSize / (1 / aspectRatio);
                     this.cropperCanvas.height = this.canvasSize;
                 }
-                console.log('getSrcImage', this.cropperCanvas.width, this.cropperCanvas.height);
 
                 if (this.cropperCanvas.width / this.croppedRatio > this.cropperCanvas.height) {
                     this.cropperMaxWidth = this.cropperCanvas.height / (1 / this.croppedRatio);
