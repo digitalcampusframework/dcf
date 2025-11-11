@@ -259,6 +259,8 @@ export default class DCFImageCropper {
                 previewElement.querySelector('.dcf-image-cropper-yes-image').classList.add('dcf-d-none');
             });
 
+            this.#clearInputs();
+
             return;
         }
 
@@ -271,6 +273,8 @@ export default class DCFImageCropper {
         this.imagePreviews.forEach((previewElement) => {
             previewElement.querySelector('.dcf-image-cropper-yes-image').classList.remove('dcf-d-none');
         });
+
+        this.#syncInputs();
     }
 
     updateScale() {
@@ -403,8 +407,145 @@ export default class DCFImageCropper {
         });
     }
 
+    #clearInputs() {
+        this.cropperScaleRange.value = '100';
+
+        // dcf-image-cropper-x inputs
+        document.querySelectorAll(`.dcf-image-cropper-x[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-x2 inputs
+        document.querySelectorAll(`.dcf-image-cropper-x2[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-y inputs
+        document.querySelectorAll(`.dcf-image-cropper-y[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-y2 inputs
+        document.querySelectorAll(`.dcf-image-cropper-y2[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-width inputs
+        document.querySelectorAll(`.dcf-image-cropper-width[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-height inputs
+        document.querySelectorAll(`.dcf-image-cropper-height[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '-1';
+        });
+
+        // dcf-image-cropper-ratio inputs
+        document.querySelectorAll(`.dcf-image-cropper-ratio[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (this.croppedRatio).toFixed(2);
+        });
+
+        // dcf-image-cropper-ratio-text inputs
+        document.querySelectorAll(`.dcf-image-cropper-ratio-text[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            switch ((this.croppedRatio).toFixed(2)) {
+            case ((3/4).toFixed(2)):
+                inputElement.value = '3x4';
+                break;
+            case ((4/3).toFixed(2)):
+                inputElement.value = '4x3';
+                break;
+            case ((9/16).toFixed(2)):
+                inputElement.value = '9x16';
+                break;
+            case ((16/9).toFixed(2)):
+                inputElement.value = '16x9';
+                break;
+            default:
+                inputElement.value = '1x1';
+            }
+        });
+
+        // dcf-image-cropper-cropped-image inputs
+        document.querySelectorAll(`.dcf-image-cropper-cropped-image[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = '';
+        });
+    }
+
     #syncInputs() {
         this.cropperScaleRange.value = this.croppedScale;
+
+        const scaleX = this.imageToBeCropped.width / this.cropperCanvas.width;
+        const scaleY = this.imageToBeCropped.height / this.cropperCanvas.height;
+
+        const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
+        const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
+
+        // dcf-image-cropper-x inputs
+        document.querySelectorAll(`.dcf-image-cropper-x[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleX * this.croppedX).toFixed(2);
+        });
+
+        // dcf-image-cropper-x2 inputs
+        document.querySelectorAll(`.dcf-image-cropper-x2[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleX * (this.croppedX + croppedWidth)).toFixed(2);
+        });
+
+        // dcf-image-cropper-y inputs
+        document.querySelectorAll(`.dcf-image-cropper-y[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleY * this.croppedY).toFixed(2);
+        });
+
+        // dcf-image-cropper-y2 inputs
+        document.querySelectorAll(`.dcf-image-cropper-y2[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleY * (this.croppedY + croppedHeight)).toFixed(2);
+        });
+
+        // dcf-image-cropper-width inputs
+        document.querySelectorAll(`.dcf-image-cropper-width[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleX * croppedWidth).toFixed(2);
+        });
+
+        // dcf-image-cropper-height inputs
+        document.querySelectorAll(`.dcf-image-cropper-height[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (scaleY * croppedHeight).toFixed(2);
+        });
+
+        // dcf-image-cropper-ratio inputs
+        document.querySelectorAll(`.dcf-image-cropper-ratio[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            inputElement.value = (this.croppedRatio).toFixed(2);
+        });
+
+        // dcf-image-cropper-ratio-text inputs
+        document.querySelectorAll(`.dcf-image-cropper-ratio-text[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`).forEach((inputElement) => {
+            switch ((this.croppedRatio).toFixed(2)) {
+            case ((3/4).toFixed(2)):
+                inputElement.value = '3x4';
+                break;
+            case ((4/3).toFixed(2)):
+                inputElement.value = '4x3';
+                break;
+            case ((9/16).toFixed(2)):
+                inputElement.value = '9x16';
+                break;
+            case ((16/9).toFixed(2)):
+                inputElement.value = '16x9';
+                break;
+            default:
+                inputElement.value = '1x1';
+            }
+        });
+
+        // dcf-image-cropper-cropped-image inputs
+        const croppedImageInputs = document.querySelectorAll(`.dcf-image-cropper-cropped-image[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`);
+        if (croppedImageInputs.length > 0) {
+            this.#getCroppedImageSrc().then((croppedImageFile) => {
+                croppedImageInputs.forEach((inputElement) => {
+                    const dataTransferObj = new DataTransfer();
+                    dataTransferObj.items.add(croppedImageFile);
+                    inputElement.files = dataTransferObj.files;
+                });
+            });
+        }
     }
 
     #getSrcImage() {
@@ -454,5 +595,45 @@ export default class DCFImageCropper {
             // Assigns the file uploaded's url to the image object
             imageObj.src = imageFileURL;
         });
+    }
+
+    async #getCroppedImageSrc() {
+        const hiddenCanvas = document.createElement('canvas');
+        const hiddenCanvasContext = hiddenCanvas.getContext('2d');
+
+        const previewSize = 1000;
+        if (this.croppedRatio > 1) {
+            hiddenCanvas.width = previewSize;
+            hiddenCanvas.height = previewSize / this.croppedRatio;
+        } else {
+            hiddenCanvas.width = previewSize / (1 / this.croppedRatio);
+            hiddenCanvas.height = previewSize;
+        }
+
+        const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
+        const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
+
+        // Scale factors from canvas back to original image
+        const scaleX = this.imageToBeCropped.width / this.cropperCanvas.width;
+        const scaleY = this.imageToBeCropped.height / this.cropperCanvas.height;
+
+        // Get the cropped region in original image coordinates
+        const scaledX = this.croppedX * scaleX;
+        const scaledY = this.croppedY * scaleY;
+        const scaledWidth = croppedWidth * scaleX;
+        const scaledHeight = croppedHeight * scaleY;
+
+        // Draw the cropped area into the preview canvas
+        hiddenCanvasContext.drawImage(
+            this.imageToBeCropped,
+            scaledX, scaledY, scaledWidth, scaledHeight,     // source rect (in original image)
+            0, 0, hiddenCanvas.width, hiddenCanvas.height, // destination rect (fit to preview canvas)
+        );
+
+        // Convert the canvas back to a Blob
+        const blob = await new Promise(resolve => hiddenCanvas.toBlob(resolve, this.imageToBeCropped.type));
+
+        // Convert the Blob into a File (so it can go into another <input type="file">)
+        return new File([blob], 'cropped_image', { type: this.imageToBeCropped.type });
     }
 }
