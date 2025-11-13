@@ -89,10 +89,13 @@ export default class DCFImageCropper {
         }
 
         // Sets the cropperElement's inner HTML
-        this.#setInnerHTML();
+        this.#setInnerHTMLCropper();
 
         // Finds all the image previews
         this.imagePreviews = document.querySelectorAll(`.dcf-image-cropper-preview[data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"]`);
+
+        // We do this separate from the main cropper since the main cropper might have a preview in it
+        this.#setInnerHTMLPreviews();
 
         // Set up cropperElement's canvas
         this.cropperCanvas = document.getElementById(this.uuid.concat('-image-cropper-canvas'));
@@ -151,7 +154,7 @@ export default class DCFImageCropper {
      * Sets the inner HTML to the cropped element and the image previews
      * @returns { Void }
      */
-    #setInnerHTML() {
+    #setInnerHTMLCropper() {
         this.cropperElement.innerHTML = `
 <div class="dcf-image-cropper-no-image">
     <p>No image selected</p>
@@ -161,7 +164,7 @@ export default class DCFImageCropper {
     aria-labelledby="${this.uuid.concat('-image-cropper-title')}"
 >
     <p id="${this.uuid.concat('-image-cropper-title')}">Image Cropper Tool</p>
-    <div class="dcf-d-flex dcf-jc-center dcf-ai-center dcf-mb-3">
+    <div class="dcf-d-flex dcf-jc-center dcf-ai-center dcf-gap-3 dcf-mb-3">
         <canvas
             id="${this.uuid.concat('-image-cropper-canvas')}"
             class="dcf-b-grey dcf-b-2 dcf-b-solid"
@@ -172,6 +175,15 @@ export default class DCFImageCropper {
             role="img"
             aria-describedby="${this.uuid.concat('-image-cropper-instructions')}"
         ></canvas>
+        <div class="dcf-d-flex dcf-flex-col dcf-jc-center dcf-ai-start dcf-mb-3">
+            <p>Preview</p>
+            <div
+                class="dcf-image-cropper-preview"
+                data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"
+                data-max-canvas-width="150"
+                hidden
+            ></div>
+        </div>
         <div id="${this.uuid.concat('-image-cropper-status')}" role="status" aria-live="polite"></div>
     </div>
 
@@ -212,7 +224,9 @@ export default class DCFImageCropper {
         Toggle on the guides to help align your cropped area perfectly.
     </p>
 </section>`;
+    }
 
+    #setInnerHTMLPreviews() {
         this.imagePreviews.forEach((previewElement, index) => {
             previewElement.innerHTML = `
 <div class="dcf-image-cropper-yes-image dcf-d-none">
