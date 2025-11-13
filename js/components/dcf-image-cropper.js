@@ -206,21 +206,23 @@ export default class DCFImageCropper {
 
     <fieldset class="dcf-collapsible-fieldset" data-start-expanded="false" id="${this.uuid.concat('-image-cropper-guides')}">
         <legend>Guides</legend>
-        <div class="dcf-input-checkbox">
-            <input
-                id="${this.uuid.concat('-image-cropper-grid-guides')}"
-                type="checkbox"
-                aria-controls="${this.uuid.concat('-image-cropper-canvas')}"
-            >
-            <label for="${this.uuid.concat('-image-cropper-grid-guides')}">Grid guides </label>
-        </div>
-        <div class="dcf-input-checkbox">
-            <input
-                id="${this.uuid.concat('-image-cropper-center-guides')}"
-                type="checkbox"
-                aria-controls="${this.uuid.concat('-image-cropper-canvas')}"
-            >
-            <label for="${this.uuid.concat('-image-cropper-center-guides')}">Center guides </label>
+        <div class="dcf-d-flex dcf-flex-row dcf-gap-3">
+            <div class="dcf-input-checkbox">
+                <input
+                    id="${this.uuid.concat('-image-cropper-grid-guides')}"
+                    type="checkbox"
+                    aria-controls="${this.uuid.concat('-image-cropper-canvas')}"
+                >
+                <label for="${this.uuid.concat('-image-cropper-grid-guides')}">Grid guides </label>
+            </div>
+            <div class="dcf-input-checkbox">
+                <input
+                    id="${this.uuid.concat('-image-cropper-center-guides')}"
+                    type="checkbox"
+                    aria-controls="${this.uuid.concat('-image-cropper-canvas')}"
+                >
+                <label for="${this.uuid.concat('-image-cropper-center-guides')}">Center guides </label>
+            </div>
         </div>
     </fieldset>
 
