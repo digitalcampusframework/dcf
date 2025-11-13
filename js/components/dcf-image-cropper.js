@@ -43,6 +43,8 @@ export default class DCFImageCropper {
 
     canvasSize = 300;
 
+    croppedImageOutputWidth = 1000;
+
     imagePreviews = [];
 
     mouseState = {
@@ -71,8 +73,14 @@ export default class DCFImageCropper {
 
         // Get the canvas size (this is used for the preview)
         this.canvasSize = parseInt(this.cropperElement.dataset.maxCanvasWidth, 10);
-        if (this.canvasSize <= 20) {
+        if (this.canvasSize <= 20 || isNaN(this.canvasSize)) {
             this.canvasSize = 300;
+        }
+
+        // Get the canvas size (this is used for the preview)
+        this.croppedImageOutputWidth = parseInt(this.cropperElement.dataset.croppedImageOutputWidth, 10);
+        if (this.croppedImageOutputWidth <= 20 || isNaN(this.croppedImageOutputWidth)) {
+            this.croppedImageOutputWidth = 1000;
         }
 
         // Figure out the cropper ratio
@@ -836,14 +844,8 @@ export default class DCFImageCropper {
         const hiddenCanvas = document.createElement('canvas');
         const hiddenCanvasContext = hiddenCanvas.getContext('2d');
 
-        const previewSize = 1000;
-        if (this.croppedRatio > 1) {
-            hiddenCanvas.width = previewSize;
-            hiddenCanvas.height = previewSize / this.croppedRatio;
-        } else {
-            hiddenCanvas.width = previewSize / (1 / this.croppedRatio);
-            hiddenCanvas.height = previewSize;
-        }
+        hiddenCanvas.width = this.croppedImageOutputWidth;
+        hiddenCanvas.height = this.croppedImageOutputWidth / this.croppedRatio;
 
         const croppedWidth = (this.cropperMaxWidth * (this.croppedScale / 100));
         const croppedHeight = (this.cropperMaxWidth * (this.croppedScale / 100)) / this.croppedRatio;
