@@ -380,8 +380,16 @@ export default class DCFImageCropper {
 
         // If we made it here then we do have an image
 
-        // Get the image and draw it to the canvas
+        // Get the image
         this.imageToBeCropped = await this.#getSrcImage();
+
+        // Set up the canvas and reset cropped area
+        this.#setUpCanvas();
+        this.croppedX = 0;
+        this.croppedY = 0;
+        this.croppedScale = 100;
+
+        // Draw the cropped image and area to the canvas
         this.#draw();
 
         // Show the image canvas and hide the no image selected message
@@ -765,6 +773,30 @@ export default class DCFImageCropper {
     }
 
     /**
+     * Sets up the cropper canvas to match the aspect ratio of the of the image to be cropped
+     * @returns { Void }
+     */
+    #setUpCanvas() {
+        // Calculates the aspect ratio of the image
+        const aspectRatio = this.imageToBeCropped.width / this.imageToBeCropped.height;
+
+        // Sets up the canvas size
+        if (this.imageToBeCropped.width > this.imageToBeCropped.height) {
+            this.cropperCanvas.width = this.canvasSize;
+            this.cropperCanvas.height = this.canvasSize / aspectRatio;
+        } else {
+            this.cropperCanvas.width = this.canvasSize / (1 / aspectRatio);
+            this.cropperCanvas.height = this.canvasSize;
+        }
+
+        if (this.cropperCanvas.width / this.croppedRatio > this.cropperCanvas.height) {
+            this.cropperMaxWidth = this.cropperCanvas.height / (1 / this.croppedRatio);
+        } else {
+            this.cropperMaxWidth = this.cropperCanvas.width;
+        }
+    }
+
+    /**
      * Gets the image file for the inputted image
      * @returns { Promise<HTMLImageElement> }
      */
@@ -786,28 +818,6 @@ export default class DCFImageCropper {
             imageObj.onload = () => {
                 // Destroys the URL for that image file
                 URL.revokeObjectURL(imageFileURL);
-
-                // Calculates the aspect ratio of the image
-                const aspectRatio = imageObj.width / imageObj.height;
-
-                // Sets up the canvas size
-                if (imageObj.width > imageObj.height) {
-                    this.cropperCanvas.width = this.canvasSize;
-                    this.cropperCanvas.height = this.canvasSize / aspectRatio;
-                } else {
-                    this.cropperCanvas.width = this.canvasSize / (1 / aspectRatio);
-                    this.cropperCanvas.height = this.canvasSize;
-                }
-
-                if (this.cropperCanvas.width / this.croppedRatio > this.cropperCanvas.height) {
-                    this.cropperMaxWidth = this.cropperCanvas.height / (1 / this.croppedRatio);
-                } else {
-                    this.cropperMaxWidth = this.cropperCanvas.width;
-                }
-
-                this.croppedX = 0;
-                this.croppedY = 0;
-                this.cropperScale = 100;
 
                 resolve(imageObj);
             };
