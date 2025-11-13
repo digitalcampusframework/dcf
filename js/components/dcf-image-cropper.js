@@ -182,7 +182,7 @@ export default class DCFImageCropper {
             role="img"
             aria-describedby="${this.uuid.concat('-image-cropper-instructions')}"
         ></canvas>
-        <div class="dcf-d-flex dcf-flex-col dcf-jc-center dcf-ai-start dcf-mb-3">
+        <div class="dcf-d-flex dcf-flex-col dcf-jc-center dcf-ai-center dcf-mb-3">
             <p>Preview</p>
             <div
                 class="dcf-image-cropper-preview"
