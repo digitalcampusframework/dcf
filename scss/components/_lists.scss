@@ -6,6 +6,14 @@
 @use "../variables/" as var;
 
 
+// Bare list
+.dcf-list-bare {
+  // Fix list-style: none in VoiceOver and Safari: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+  list-style-type: "";
+  padding-left: 0;
+}
+
+
 // Inline list
 .dcf-list-inline li {
   display: inline-block;
