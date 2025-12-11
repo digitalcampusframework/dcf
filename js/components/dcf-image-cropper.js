@@ -49,6 +49,7 @@ export default class DCFImageCropper {
 
     mouseState = {
         down: false,
+        moved: false,
         downX: -1,
         croppedX: -1,
         downY: -1,
@@ -179,7 +180,16 @@ export default class DCFImageCropper {
     aria-labelledby="${this.uuid.concat('-image-cropper-title')}"
 >
     <p id="${this.uuid.concat('-image-cropper-title')}" class="dcf-sr-only">Image Cropper Tool</p>
-    <div class="dcf-d-flex dcf-jc-center dcf-ai-center dcf-gap-3 dcf-mb-3">
+    <div class="dcf-d-flex dcf-flex-row-rev dcf-flex-wrap dcf-jc-center dcf-ai-center dcf-gap-3 dcf-mb-3">
+        <div class="dcf-d-flex dcf-flex-col dcf-jc-center dcf-ai-center dcf-mb-3">
+            <p>Preview</p>
+            <div
+                class="dcf-image-cropper-preview"
+                data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"
+                data-max-canvas-width="${ this.canvasSize / 3 }"
+                hidden
+            ></div>
+        </div>
         <canvas
             id="${this.uuid.concat('-image-cropper-canvas')}"
             class="dcf-b-grey dcf-b-2 dcf-b-solid"
@@ -190,15 +200,6 @@ export default class DCFImageCropper {
             role="img"
             aria-describedby="${this.uuid.concat('-image-cropper-instructions')}"
         ></canvas>
-        <div class="dcf-d-flex dcf-flex-col dcf-jc-center dcf-ai-center dcf-mb-3">
-            <p>Preview</p>
-            <div
-                class="dcf-image-cropper-preview"
-                data-image-cropper-input="${this.cropperElement.dataset.imageCropperInput}"
-                data-max-canvas-width="${ this.canvasSize / 3 }"
-                hidden
-            ></div>
-        </div>
     </div>
     <div id="${this.uuid.concat('-image-cropper-status')}" role="status" aria-live="polite" class="dcf-sr-only"></div>
 
@@ -289,7 +290,9 @@ export default class DCFImageCropper {
 
         // Mouse interactions
         this.cropperCanvas.addEventListener('mousedown', (event) => {
+            event.preventDefault();
             this.mouseState.down = true;
+            this.mouseState.moved = false;
             this.mouseState.downX = event.clientX;
             this.mouseState.croppedX = this.croppedX;
             this.mouseState.downY = event.clientY;
@@ -297,6 +300,9 @@ export default class DCFImageCropper {
         });
         this.cropperCanvas.addEventListener('mousemove', (event) => {
             if (!this.mouseState.down) { return; }
+            event.preventDefault();
+
+            this.mouseState.moved = true;
             const deltaX = event.clientX - this.mouseState.downX;
             const deltaY = event.clientY - this.mouseState.downY;
 
@@ -314,9 +320,22 @@ export default class DCFImageCropper {
             this.mouseState.downY = event.clientY;
             this.mouseState.croppedY = this.croppedY;
         });
-        this.cropperCanvas.addEventListener('mouseup', () => {
+        this.cropperCanvas.addEventListener('mouseup', (event) => {
             if (!this.mouseState.down) { return; }
+            event.preventDefault();
+
+            if (!this.mouseState.moved) {
+                const boundingRect = this.cropperCanvas.getBoundingClientRect();
+                this.croppedX = this.mouseState.downX - boundingRect.x;
+                this.croppedY = this.mouseState.downY - boundingRect.y;
+
+                this.#checkIfBoxIsInBounds();
+                this.#draw();
+                this.#syncInputs();
+            }
+
             this.mouseState.down = false;
+            this.mouseState.moved = false;
             this.mouseState.downX = -1;
             this.mouseState.croppedX = -1;
             this.mouseState.downY = -1;
@@ -325,6 +344,7 @@ export default class DCFImageCropper {
         this.cropperCanvas.addEventListener('mouseleave', () => {
             if (!this.mouseState.down) { return; }
             this.mouseState.down = false;
+            this.mouseState.moved = false;
             this.mouseState.downX = -1;
             this.mouseState.croppedX = -1;
             this.mouseState.downY = -1;
