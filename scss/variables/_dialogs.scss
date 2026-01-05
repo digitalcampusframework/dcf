@@ -18,5 +18,5 @@ $color-dialog: var(--body) !default;                                    // Dialo
 
 
 // Height & width
-$max-height-dialog: calc(100vh - (2 * #{s.$length-em-4})) !default;     // Max-height dialog
+$max-height-dialog: calc(100dvh - (2 * #{s.$length-em-4})) !default;    // Max-height dialog
 $width-dialog: calc(100% - (2 * #{s.$length-vw-2})) !default;           // Match width of .dcf-wrapper
