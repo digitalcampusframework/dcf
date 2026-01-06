@@ -47,9 +47,13 @@ export default class DCFFileSizeValidator {
 
             // File is too big do not keep it and show error
             if (this.fileInputElement.files[0].size > this.sizeLimit) {
-                this.errorElement.innerText = `The file '${this.fileInputElement.files[0].name}' is too large!`;
-                this.errorElement.classList.remove('dcf-d-none!');
+                const filename = this.fileInputElement.files[0].name;
+
                 this.fileInputElement.value = '';
+                this.fileInputElement.dispatchEvent(new CustomEvent('change'));
+
+                this.errorElement.innerText = `The file '${filename}' is too large!`;
+                this.errorElement.classList.remove('dcf-d-none!');
                 return;
             }
         });
