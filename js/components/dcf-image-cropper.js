@@ -133,9 +133,9 @@ export default class DCFImageCropper {
 
         // Initialize the fieldset
         if (options.collapsibleFieldset === undefined) {
-            new DCFCollapsibleFieldsets(this.guideFieldsetElement);
+            new DCFCollapsibleFieldsets(this.guideFieldsetElement, options);
         } else {
-            new options.collapsibleFieldset(this.guideFieldsetElement);
+            new options.collapsibleFieldset(this.guideFieldsetElement, options);
         }
 
         // Initialize the state of the component
