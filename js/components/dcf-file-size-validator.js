@@ -10,6 +10,8 @@ export default class DCFFileSizeValidator {
 
     sizeLimit = -1;
 
+    validationFailedClass = null;
+
     constructor(fileInput, options) {
 
         if ('errorElementClassList' in options && Array.isArray(options.errorElementClassList)) {
@@ -25,6 +27,7 @@ export default class DCFFileSizeValidator {
 
         // Get the max size limit
         this.sizeLimit = this.#parseSize(this.fileInputElement.dataset.maxSize);
+        this.validationFailedClass = this.fileInputElement.dataset.validationFailedClass;
 
         this.formattedSizeOutputs.forEach((singleOutputElement) => {
             singleOutputElement.innerHTML = this.#formatSize(this.sizeLimit);
@@ -39,6 +42,9 @@ export default class DCFFileSizeValidator {
         // Run logic when the file input's file changes
         this.fileInputElement.addEventListener('change', () => {
             this.errorElement.classList.add('dcf-d-none!');
+            if (this.validationFailedClass !== null) {
+                this.fileInputElement.classList.remove(this.validationFailedClass);
+            }
 
             // There is no file so we are good
             if (this.fileInputElement.files.length === 0) {
@@ -50,6 +56,9 @@ export default class DCFFileSizeValidator {
                 const filename = this.fileInputElement.files[0].name;
 
                 this.fileInputElement.value = '';
+                if (this.validationFailedClass !== null) {
+                    this.fileInputElement.classList.add(this.validationFailedClass);
+                }
                 this.fileInputElement.dispatchEvent(new CustomEvent('change'));
 
                 this.errorElement.innerText = `The file '${filename}' is too large!`;
