@@ -47,6 +47,7 @@
 .dcf-txt-decor-none { @include mixins.txt-decor-none; }
 .dcf-txt-decor-hover { @include mixins.txt-decor-hover-off; }
 .dcf-txt-decor-hover:hover { @include mixins.txt-decor-hover-on; }
+.dcf-txt-decor-hover:focus { @include mixins.txt-decor-hover-on; }
 
 
 // Text wrap
