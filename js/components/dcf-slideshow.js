@@ -218,10 +218,10 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                     throw new Error(`Bad auto slide advance rate: ${this.slideshowContainer.dataset.rate}`);
                 }
             }
-            this.slideDeck.addEventListener('mouseOver', () => {
+            this.slideshowContainer.addEventListener('mouseover', () => {
                 this.mouseOver = true;
             });
-            this.slideDeck.addEventListener('mouseOut', () => {
+            this.slideshowContainer.addEventListener('mouseout', () => {
                 this.mouseOver = false;
             });
         }
@@ -242,6 +242,18 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
         this.#initSlides();
         this.#initControls();
+
+        // This needs to go after init controls so we can change the state of the toggle button
+        if (this.allowPlay) {
+            if (!(window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+                const startPlaying = this.slideshowContainer.hasAttribute('data-start-playing') && (
+                    this.slideshowContainer.dataset.startPlaying.toLowerCase() === 'true'
+                );
+                if (startPlaying) {
+                    this.play();
+                }
+            }
+        }
 
         this.slideshowContainer.classList.add('dcf-slideshow-initialized');
         this.slideshowContainer.removeAttribute('hidden');
