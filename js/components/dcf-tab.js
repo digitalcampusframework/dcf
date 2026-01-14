@@ -135,20 +135,34 @@ export default class DCFTabs {
         // SelectedTab is the final selected tab for the tabGroup
         // This will follow the priority list of
         // - 1. What ever is in the URL Fragment or Hash (Page will also auto scroll down to this one)
-        // - 2. The first panel in the URL "Tabs" Param
-        // - 3. The first panel with data-default attribute set to true
-        // - 4. The first panel in the tabGroup
+        // - 2. The panel whose content contains the URL Fragment or Hash element
+        // - 3. The first panel in the URL "Tabs" Param
+        // - 4. The first panel with data-default attribute set to true
+        // - 5. The first panel in the tabGroup
         let selectedTab = null;
+        const allNonHiddenTabs = Array.from(this.tabsGroup.querySelectorAll('.dcf-tab:not([hidden])'));
 
         // Checks hash and it is set try setting it to the matching tab
         if (location.hash !== '') {
             selectedTab = this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"]:not([hidden]), .dcf-tab[data-href="${location.hash}"]:not([hidden]`);
+
+            // If the anchor element is in the tabs group look through each tab until you find it
+            if (selectedTab === null) {
+                const anchoredElement = document.querySelector(location.hash);
+                if (anchoredElement !== null && this.tabsGroup.contains(anchoredElement)) {
+                    allNonHiddenTabs.forEach((tab) => {
+                        const tabHref = this.#getTabHref(tab);
+                        const matchingPanel = document.getElementById(tabHref.replace('#', ''));
+                        if (matchingPanel.contains(anchoredElement)) {
+                            selectedTab = tab;
+                        }
+                    });
+                }
+            }
         }
 
         // If the tab is still null then go to the next item on the list
         if (selectedTab === null) {
-            const allNonHiddenTabs = Array.from(this.tabsGroup.querySelectorAll('.dcf-tab:not([hidden])'));
-
             // Find the first panel that is in the URL
             allNonHiddenTabs.forEach((tab) => {
                 const tabHref = this.#getTabHref(tab);
@@ -195,12 +209,28 @@ export default class DCFTabs {
         // We can set up an event listener on the window for when the hash changes to a tab
         window.addEventListener('hashchange', () => {
             // If the hash is an dcf-tab inside this tab group then we can switch to the tab and scroll down to it
-            const tab =  this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"], .dcf-tab[data-href="${location.hash}"]`);
-            if (tab === null) {
+            const tab = this.tabsGroup.querySelector(`.dcf-tab[href="${location.hash}"], .dcf-tab[data-href="${location.hash}"]`);
+            if (tab !== null) {
+                this.switchTab(tab);
+                this.#scrollToHash();
                 return;
             }
-            this.switchTab(tab);
-            this.#scrollToHash();
+            if (location.hash !== '') {
+                // If the anchor element is in the tabs group then scroll to it
+                const anchoredElement = document.querySelector(location.hash);
+                if (anchoredElement !== null && this.tabsGroup.contains(anchoredElement)) {
+                    const allNonHiddenTabs = Array.from(this.tabsGroup.querySelectorAll('.dcf-tab:not([hidden])'));
+                    allNonHiddenTabs.forEach((singleTabToCheck) => {
+                        const tabHref = this.#getTabHref(singleTabToCheck);
+                        const matchingPanel = document.getElementById(tabHref.replace('#', ''));
+                        if (matchingPanel.contains(anchoredElement)) {
+                            this.switchTab(singleTabToCheck);
+                            this.#scrollToHash();
+                        }
+                    });
+                    return;
+                }
+            }
         });
 
     }
@@ -229,10 +259,18 @@ export default class DCFTabs {
     #scrollToHash() {
         // If the hash is an dcf-tab then we can switch to the tab and scroll down to it
         const tab = document.querySelector(`.dcf-tab[href="${location.hash}"], .dcf-tab[data-href="${location.hash}"]`);
-        if (tab === null) {
+        if (tab !== null) {
+            document.getElementById(location.hash.replace('#', '')).scrollIntoView();
             return;
         }
-        document.getElementById(location.hash.replace('#', '')).scrollIntoView();
+        if (location.hash !== '') {
+            // If the anchor element is in the tabs group then scroll to it
+            const anchoredElement = document.querySelector(location.hash);
+            if (anchoredElement !== null && this.tabsGroup.contains(anchoredElement)) {
+                anchoredElement.scrollIntoView(true);
+                return;
+            }
+        }
     }
 
     /**
