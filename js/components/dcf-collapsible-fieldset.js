@@ -139,7 +139,6 @@ export default class DCFCollapsibleFieldsets {
         // Creates a new div and we copy everything left in the fieldset into it
         this.innerDivElement = document.createElement('div');
         this.innerDivElement.setAttribute('id', this.uuid.concat('-collapsible-fieldset-contents'));
-        this.innerDivElement.innerHTML = fieldset.innerHTML;
 
         // We will also add any styles
         this.fieldsetContentsClassList.forEach((divClass) => {
@@ -155,8 +154,12 @@ export default class DCFCollapsibleFieldsets {
             });
         }
 
+        const childNodes = Array.from(fieldset.childNodes);
+        childNodes.forEach(node => {
+            this.innerDivElement.appendChild(node);
+        });
+
         // We can then add the new div and legend back into the fieldset
-        this.fieldsetElement.innerHTML = '';
         this.fieldsetElement.append(this.legendElement);
         this.fieldsetElement.append(this.innerDivElement);
 
