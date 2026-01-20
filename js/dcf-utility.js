@@ -86,16 +86,32 @@ export function checkSetElementId(element, defaultElementId = null) {
     return elementId;
 }
 
+// Track in-flight stylesheet loads to avoid race conditions
+const pendingStyleSheets = new Map();
+
 /**
  * Loads a stylesheet
- * Avoids loading the same stylesheet twice
+ * Avoids loading the same stylesheet twice and handles concurrent requests
  * @param {string} styleSheetSrc 
  * @returns {Promise<void>}
  */
 export function loadStyleSheet(styleSheetSrc) {
-    return new Promise((resolve, reject) => {
-        const linkAlreadyThere = document.querySelector(`link[rel="stylesheet"][href="${styleSheetSrc}"]`);
-        if (linkAlreadyThere !== null) {
+    // Check if stylesheet is already loaded
+    const linkAlreadyThere = document.querySelector(`link[rel="stylesheet"][href="${styleSheetSrc}"]`);
+    if (linkAlreadyThere !== null) {
+        return Promise.resolve();
+    }
+
+    // Check if there's already a pending load for this stylesheet
+    if (pendingStyleSheets.has(styleSheetSrc)) {
+        return pendingStyleSheets.get(styleSheetSrc);
+    }
+
+    // Create new promise for this stylesheet load
+    const promise = new Promise((resolve, reject) => {
+        // Double-check in case another load completed while we were checking the map
+        const linkCheck = document.querySelector(`link[rel="stylesheet"][href="${styleSheetSrc}"]`);
+        if (linkCheck !== null) {
             resolve();
             return;
         }
@@ -107,14 +123,30 @@ export function loadStyleSheet(styleSheetSrc) {
 
         // Handle load and error events
         link.addEventListener('load', () => {
+            pendingStyleSheets.delete(styleSheetSrc);
             resolve();
         });
         link.addEventListener('error', () => {
+            pendingStyleSheets.delete(styleSheetSrc);
             reject(new Error(`Failed to load stylesheet: ${styleSheetSrc}`));
         });
 
         document.head.appendChild(link);
     });
+
+    // Store the promise so concurrent requests can share it
+    pendingStyleSheets.set(styleSheetSrc, promise);
+
+    return promise;
+}
+
+/**
+ * Loads multiple stylesheets in parallel
+ * @param {string[]} styleSheetSrcs 
+ * @returns {Promise<void>}
+ */
+export function loadStyleSheets(styleSheetSrcs) {
+    return Promise.all(styleSheetSrcs.map(src => loadStyleSheet(src)));
 }
 
 /**
