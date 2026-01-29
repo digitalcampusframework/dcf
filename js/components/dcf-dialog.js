@@ -189,8 +189,15 @@ export default class DCFDialog {
         });
 
         // Close dialog if we are no longer on it (this is important for the non-modal)
-        this.dialogElement.addEventListener('focusout', () => {
-            if (this.dialogElement.open) {
+        this.dialogElement.addEventListener('focusout', (event) => {
+            let isToggleButtonFocusout = false;
+            for (const singleToggleButton of this.toggleButtons) {
+                if (singleToggleButton.isSameNode(event.relatedTarget) || singleToggleButton.contains(event.relatedTarget)) {
+                    isToggleButtonFocusout = true;
+                }
+            }
+
+            if (this.dialogElement.open && !isToggleButtonFocusout) {
                 requestAnimationFrame(() => {
                     const active = document.activeElement;
                     if (!this.dialogElement.contains(active)) {
