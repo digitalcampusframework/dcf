@@ -60,7 +60,7 @@
 
     &::before {
       clip-path: polygon(50% 0, 0 100%, 100% 100%);
-      top: calc(calc(-1 * #{var.$size-block-popup-point}) + .5px);
+      top: calc(calc(-1 * #{var.$size-block-popup-point}) + .25px);
     }
   }
 
@@ -70,7 +70,7 @@
 
     &::before {
       clip-path: polygon(100% 0, 0 0, 50% 100%);
-      top: calc(100% - .5px);
+      top: calc(100% - .25px);
     }
   }
 
@@ -80,7 +80,7 @@
 
     &::before {
       clip-path: polygon(0 0, 0 100%, 100% 50%);
-      left: calc(100% - .5px);
+      left: calc(100% - .25px);
     }
   }
 
@@ -90,7 +90,7 @@
 
     &::before {
       clip-path: polygon(100% 100%, 100% 0, 0 50%);
-      left: calc(calc(-1 * #{var.$size-block-popup-point}) + .5px);
+      left: calc(calc(-1 * #{var.$size-block-popup-point}) + .25px);
     }
   }
 
