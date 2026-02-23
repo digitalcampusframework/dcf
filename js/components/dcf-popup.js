@@ -153,7 +153,7 @@ export default class DCFPopup {
 
             // If it is not coming from child and it is not this popup then close the popup
             if (!eventIsFromTheInside && event.target.getAttribute('id') !== this.popupElement.getAttribute('id')) {
-                this.popupElement.dispatchEvent(this.commandClose);
+                this.popupButton.dispatchEvent(this.commandClose);
             }
         }, true);
 
