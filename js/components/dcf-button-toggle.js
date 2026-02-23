@@ -217,11 +217,6 @@ export default class DCFButtonToggles {
             }
             this.toggleButtonElement.dispatchEvent(this.toggleButtonOn);
 
-            // Removed transitionend if it was there
-            this.toggleTargetElement.removeEventListener('transitionend', function() {
-                this.#removeDisplayNone;
-            }.bind(this));
-
             // Unhide the stuff now so animations can run after
             this.toggleTargetElement.setAttribute('aria-hidden', 'false');
             this.toggleTargetElement.classList.remove('dcf-d-none');
@@ -232,7 +227,7 @@ export default class DCFButtonToggles {
                 this.toggleTargetElement.classList.add('dcf-opacity-100', 'dcf-pointer-events-auto');
             }, timeoutTime);
 
-            // Dispatch event incase something else is using it
+            // Dispatch event in case something else is using it
             this.toggleTargetElement.dispatchEvent(this.toggleElementOn);
 
             // Focus on newly opened thing
@@ -260,17 +255,9 @@ export default class DCFButtonToggles {
             this.toggleTargetElement.classList.remove('dcf-opacity-100', 'dcf-pointer-events-auto');
             this.toggleTargetElement.classList.add('dcf-pointer-events-none', 'dcf-opacity-0');
 
-            // If it has a transition wait for it to finish before removing display none
-            // If not just remove the class
-            if (onload || window.getComputedStyle(this.toggleTargetElement, null).getPropertyValue('transition') === '') {
-                this.toggleTargetElement.classList.add('dcf-d-none');
-            } else {
-                this.toggleTargetElement.addEventListener('transitionend', function() {
-                    this.#removeDisplayNone;
-                }.bind(this));
-            }
+            this.#hideElement(this.toggleTargetElement, onload);
 
-            // Dispatch event incase something else is using it
+            // Dispatch event in case something else is using it
             this.toggleTargetElement.dispatchEvent(this.toggleElementOff);
             return true;
         }
@@ -279,11 +266,27 @@ export default class DCFButtonToggles {
     }
 
     /**
-     * We only have this so we can easily add and remove the transitionend event listeners
-     * @param {Event} event The event which holds the event target which we will remove the dcf-d-none from
+     * Hides element with dcf-d-none but if it has a transition or animation it will wait for that to finish
+     * @param {HTMLElement} element The element we want to hide
+     * @param {Boolean} onload If we are initializing the element or not
+     * @returns { Void }
      */
-    #removeDisplayNone(event) {
-        event.currentTarget.classList.add('dcf-d-none');
-        event.currentTarget.removeEventListener('transitionend', this.#removeDisplayNone);
+    #hideElement(element, onload) {
+        const hasAnimation =
+            getComputedStyle(element).animationName !== 'none' ||
+            getComputedStyle(element).transitionDuration !== '0s';
+
+
+        if (onload || !hasAnimation) {
+            element.classList.add('dcf-d-none');
+            return;
+        }
+
+        const onEnd = () => {
+            element.classList.add('dcf-d-none');
+        };
+
+        element.addEventListener('transitionend', onEnd, {once: true});
+        element.addEventListener('animationend', onEnd, {once: true});
     }
 }
