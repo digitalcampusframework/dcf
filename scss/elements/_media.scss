@@ -8,3 +8,9 @@ audio, canvas, embed, iframe, img, object, picture, svg, video {
   height: auto;
   max-width: 100%;
 }
+
+
+// Remove browser default borders from iframes
+iframe {
+  border: 0;
+}
