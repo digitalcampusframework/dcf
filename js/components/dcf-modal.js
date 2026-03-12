@@ -269,11 +269,9 @@ export default class DCFModal {
         const preCloseEventName = `ModalPreCloseEvent_${modalId}`;
         document.dispatchEvent(new CustomEvent(preCloseEventName));
 
-        /* eslint-disable */    // Allow non-custom confirm
         if (confirmClose && !window.confirm(confirmClose)) {
             return;
         }
-        /* eslint-enable */
 
         // Remove `.dcf-modal-is-open` helper class from body
         this.body.classList.remove('dcf-modal-is-open');
