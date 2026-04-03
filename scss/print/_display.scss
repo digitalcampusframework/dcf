@@ -3,7 +3,10 @@
 /////////////////////////
 
 
+@use "../mixins/" as mixins;
+
+
 // Hide when printed
 .dcf-d-none\@print {
-  display: block !important;
+  @include mixins.d-none;
 }
