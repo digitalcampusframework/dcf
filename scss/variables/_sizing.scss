@@ -7,24 +7,24 @@
 
 
 // Em-based spacing
-$length-em-1: #{ms.$ms-6}em !default;   //  .42em
-$length-em-2: #{ms.$ms-4}em !default;   //  .56em
-$length-em-3: #{ms.$ms-2}em !default;   //  .75em
-$length-em-4: #{ms.$ms00}em !default;   // 1em
-$length-em-5: #{ms.$ms02}em !default;   // 1.33em
-$length-em-6: #{ms.$ms04}em !default;   // 1.78em
-$length-em-7: #{ms.$ms06}em !default;   // 2.37em
-$length-em-8: #{ms.$ms08}em !default;   // 3.16em
-$length-em-9: #{ms.$ms10}em !default;   // 4.21em
-$length-em-10: #{ms.$ms12}em !default;  // 5.62em
-$length-em-11: #{ms.$ms14}em !default;  // 7.49em
-$length-em-12: #{ms.$ms16}em !default;  // 10em
+$length-em-1: ms.$ms-6 * 1em !default;    //  .42em
+$length-em-2: ms.$ms-4 * 1em !default;    //  .56em
+$length-em-3: ms.$ms-2 * 1em !default;    //  .75em
+$length-em-4: ms.$ms00 * 1em !default;    // 1em
+$length-em-5: ms.$ms02 * 1em !default;    // 1.33em
+$length-em-6: ms.$ms04 * 1em !default;    // 1.78em
+$length-em-7: ms.$ms06 * 1em !default;    // 2.37em
+$length-em-8: ms.$ms08 * 1em !default;    // 3.16em
+$length-em-9: ms.$ms10 * 1em !default;    // 4.21em
+$length-em-10: ms.$ms12 * 1em !default;   // 5.62em
+$length-em-11: ms.$ms14 * 1em !default;   // 7.49em
+$length-em-12: ms.$ms16 * 1em !default;   // 10em
 
 
 // Viewport-width-based spacing
-$length-vw-1: #{ms.$ms08}vw !default;   // 3.16vw
-$length-vw-2: #{ms.$ms12}vw !default;   // 5.62vw
+$length-vw-1: ms.$ms08 * 1vw !default;    // 3.16vw
+$length-vw-2: ms.$ms12 * 1vw !default;    // 5.62vw
 
 
 // Toggles for navigation, search, login and chat
-$height-mobile-toolbar: #{ms.$ms10}em !default;
+$height-mobile-toolbar: ms.$ms10 * 1em !default;
