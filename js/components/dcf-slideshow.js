@@ -40,6 +40,7 @@ export default class DCFSlideshow {
 
     slideDeckClassList = [
         'dcf-d-grid',
+        'dcf-grid-cols-1',
         'dcf-ai-center',
         'dcf-jc-center',
         'dcf-mb-0',
