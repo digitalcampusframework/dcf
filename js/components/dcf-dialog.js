@@ -131,6 +131,14 @@ export default class DCFDialog {
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
 
+        this.toggleButtons.forEach((singleToggleButton) => {
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                singleToggleButton.setAttribute('aria-expanded', false);
+            } else {
+                singleToggleButton.setAttribute('aria-haspopup', 'dialog');
+            }
+        });
+
         this.#addEventListeners();
         this.dialogElement.classList.add('dcf-dialog-initialized');
         this.dialogElement.removeAttribute('hidden');
@@ -271,6 +279,9 @@ export default class DCFDialog {
         this.dialogElement.close();
         this.dialogElement.classList.remove('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                singleToggleButton.setAttribute('aria-expanded', false);
+            }
             if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
                 this.setNavToggleBtnState(singleToggleButton, 'open');
             }
@@ -295,13 +306,16 @@ export default class DCFDialog {
         this.dialogElement.dispatchEvent(preOpenEvent);
         if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
             this.dialogElement.show();
-        }else{
+        } else {
             this.dialogElement.showModal();
         }
         this.dialogElement.classList.add('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
             if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
                 this.setNavToggleBtnState(singleToggleButton, 'closed');
+            }
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                singleToggleButton.setAttribute('aria-expanded', true);
             }
         });
 
