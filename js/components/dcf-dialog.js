@@ -131,11 +131,13 @@ export default class DCFDialog {
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
 
-        if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
-            this.toggleButtons.forEach((singleToggleButton) => {
+        this.toggleButtons.forEach((singleToggleButton) => {
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
-            });
-        }
+            } else {
+                singleToggleButton.setAttribute('aria-haspopup', 'dialog');
+            }
+        });
 
         this.#addEventListeners();
         this.dialogElement.classList.add('dcf-dialog-initialized');
@@ -304,9 +306,6 @@ export default class DCFDialog {
         this.dialogElement.dispatchEvent(preOpenEvent);
         if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
             this.dialogElement.show();
-            this.toggleButtons.forEach((singleToggleButton) => {
-                singleToggleButton.setAttribute('aria-expanded', true);
-            });
         } else {
             this.dialogElement.showModal();
         }
@@ -314,6 +313,9 @@ export default class DCFDialog {
         this.toggleButtons.forEach((singleToggleButton) => {
             if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
                 this.setNavToggleBtnState(singleToggleButton, 'closed');
+            }
+            if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                singleToggleButton.setAttribute('aria-expanded', true);
             }
         });
 
