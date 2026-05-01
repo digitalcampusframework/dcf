@@ -4,10 +4,10 @@
 
 
 .dcf-bleed {
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  position: relative;
-  right: 50%;
-  width: 100vw;
+  /* Expand the width to exactly match the body container */
+  width: 100cqw;
+
+  /* Pull the element out from its container mathematically */
+  margin-inline-start: calc(50% - 50cqw);
+  margin-inline-end: calc(50% - 50cqw);
 }
