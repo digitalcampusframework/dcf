@@ -20,11 +20,17 @@ export default class DCFCardAsLink {
 
         // Add event listeners only if a link is present in the card
         if (this.link) {
-            this.card.addEventListener('mousedown', () => {
+            this.card.addEventListener('mousedown', (event) => {
+                if (event.button !== 0) {
+                    return;
+                }
                 this.mouseDown = Number(new Date());
             });
 
-            this.card.addEventListener('mouseup', () => {
+            this.card.addEventListener('mouseup', (event) => {
+                if (event.button !== 0) {
+                    return;
+                }
                 this.mouseUp = Number(new Date());
                 if ((this.mouseUp - this.mouseDown) < this.clickThresholdMs) {
                     this.link.click();
