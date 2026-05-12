@@ -74,7 +74,7 @@ export class DCFGalleryDialog {
     <button class="dcf-btn-close-dialog dcf-btn dcf-btn-tertiary">Close</button>
 </div>
 <div class="dcf-dialog-content dcf-modal-content-gallery dcf-flex-grow-1 dcf-d-grid">
-    <div class="dcf-gallery-prev dcf-d-flex dcf-ai-center">
+    <div class="dcf-gallery-prev dcf-d-flex dcf-ai-center dcf-gallery-multi-only">
         <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-prev dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Previous Image</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4" style="rotate: 180deg;" viewBox="0 0 30 36">
@@ -86,7 +86,7 @@ export class DCFGalleryDialog {
             </svg>
         </button>
     </div>
-    <div class="dcf-gallery-next dcf-d-flex dcf-ai-center">
+    <div class="dcf-gallery-next dcf-d-flex dcf-ai-center dcf-gallery-multi-only">
         <button class="dcf-btn dcf-btn-secondary dcf-gallery-btn-next dcf-d-flex dcf-jc-center dcf-ai-center dcf-h-7 dcf-w-7 dcf-circle" style="padding: 0px;">
             <span class="dcf-sr-only">Next Image</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="dcf-fill-current dcf-h-4 dcf-w-4" viewBox="0 0 30 36">
@@ -98,7 +98,7 @@ export class DCFGalleryDialog {
             </svg>
         </button>
     </div>
-    <div class="dcf-gallery-thumbnails dcf-overflow-y-hidden dcf-overflow-x-auto">
+    <div class="dcf-gallery-thumbnails dcf-overflow-y-hidden dcf-overflow-x-auto dcf-gallery-multi-only">
         <ul class="dcf-gallery-thumbnails-list dcf-d-flex dcf-flex-nowrap dcf-mb-0" aria-label="images" role="tablist">
         </ul>
     </div>
@@ -130,7 +130,14 @@ export class DCFGalleryDialog {
     }
 
     open(imageClicked=null) {
-        const allImages = document.querySelectorAll('.dcf-gallery-img');
+        this.#clearImages();
+
+        let querySelector = '.dcf-gallery-img:not([data-group])';
+        if (imageClicked.dataset.group !== undefined) {
+            querySelector = `.dcf-gallery-img[data-group=${imageClicked.dataset.group}]`;
+        }
+
+        const allImages = document.querySelectorAll(querySelector);
         allImages.forEach((image, index) => {
             if (image.isSameNode(imageClicked)) {
                 this.selectedIndex = index;
@@ -139,6 +146,19 @@ export class DCFGalleryDialog {
         });
 
         this.#replaceMainImage();
+
+        if (this.thumbnailListElement.children.length === 1) {
+            const elementsToHide = this.dialogElement.querySelectorAll('.dcf-gallery-multi-only');
+            elementsToHide.forEach((singleElement) => {
+                singleElement.classList.add('dcf-d-none!');
+            });
+        } else {
+            const elementsToShow = this.dialogElement.querySelectorAll('.dcf-gallery-multi-only');
+            elementsToShow.forEach((singleElement) => {
+                singleElement.classList.remove('dcf-d-none!');
+            });
+        }
+
         this.dialogElement.classList.add('dcf-d-flex');
         this.dialogElement.dispatchEvent(new Event('commandOpen'));
         this.#focusOnSelectedImage();
@@ -186,6 +206,9 @@ export class DCFGalleryDialog {
 
     #replaceMainImage() {
         const selectedImage = this.thumbnailListElement.querySelector('li[aria-selected="true"] img');
+        if (selectedImage === null) {
+            return;
+        }
         this.figureElement.innerHTML = `<div class="dcf-gallery-img-box dcf-d-flex dcf-ai-center dcf-jc-center dcf-overflow-auto">
     ${selectedImage.outerHTML}
 </div>
@@ -197,6 +220,10 @@ export class DCFGalleryDialog {
     ${selectedImage.dataset.credit || ''}
     </small>
 </figcaption>`;
+    }
+
+    #clearImages() {
+        this.thumbnailListElement.innerHTML = '';
     }
 
     #addNewImage(imageElement, selected=false) {
