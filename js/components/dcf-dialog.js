@@ -107,7 +107,7 @@ export default class DCFDialog {
         }
 
         this.heading = this.dialogHeaderElement.querySelector('h1, h2, h3, h4, h5, h6');
-        if (this.heading.getAttribute('id') === '') {
+        if (this.heading.getAttribute('id') === '' || this.heading.getAttribute('id') === null) {
             this.heading.setAttribute('id', this.uuid.concat('-heading'));
         }
         this.dialogElement.setAttribute('aria-labelledby', this.heading.getAttribute('id'));

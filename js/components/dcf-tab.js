@@ -33,7 +33,7 @@ export default class DCFTabs {
         this.tabsPanelList = Array.from(this.tabsGroup.querySelectorAll('.dcf-tabs > div:not(:empty), .dcf-tabs > section:not(:empty)'));
 
         // If the tabGroup has no ID then it will set it
-        if (this.tabsGroup.getAttribute('id') === null) {
+        if (this.tabsGroup.getAttribute('id') === '' || this.tabsGroup.getAttribute('id') === null) {
             this.tabsGroup.setAttribute('id', checkSetElementId(this.tabsGroup, this.uuid.concat('-tab-group')));
         }
 

@@ -114,6 +114,9 @@ export default class DCFCollapsibleFieldsets {
         }
 
         this.fieldsetElement = fieldset;
+        if (this.fieldsetElement.getAttribute('id') === '' || this.fieldsetElement.getAttribute('id') === null) {
+            this.fieldsetElement.setAttribute('id', this.uuid.concat('-collapsible-fieldset'));
+        }
 
         // We want to put everything inside the fieldset into a div
         // That div is what will toggle and not the fieldset

@@ -261,13 +261,19 @@ aria-hidden="true"
         }
 
         this.selectElement = selectElement;
+        if (
+            this.selectElement.getAttribute('id') === '' ||
+            this.selectElement.getAttribute('id') === null
+        ) {
+            this.selectElement.setAttribute('id', this.uuid.concat('-search-and-select-select'));
+        }
 
         if (this.selectElement.getAttribute('multiple') !== null) {
             this.multiple = true;
         }
 
         // These are the IDs that will be used for the whole component
-        this.selectID = this.selectElement.getAttribute('id') || this.uuid.concat('-search-and-select-select');
+        this.selectID = this.selectElement.getAttribute('id');
         this.searchAndSelectID = this.uuid.concat('-search-and-select');
         this.inputID = this.uuid.concat('-search-and-select-input');
         this.availableItemsListID = this.uuid.concat('-search-and-select-available-items-list');
