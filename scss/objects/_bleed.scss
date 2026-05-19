@@ -4,10 +4,7 @@
 
 
 .dcf-bleed {
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  position: relative;
-  right: 50%;
-  width: 100vw;
+  width: 100cqw;
+  margin-inline-start: calc(50% - 50cqw);
+  margin-inline-end: calc(50% - 50cqw);
 }
