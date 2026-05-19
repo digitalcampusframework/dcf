@@ -279,7 +279,7 @@ export default class DCFDialog {
         this.dialogElement.close();
         this.dialogElement.classList.remove('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
-            singleToggleButton.classList.remove('dcf-dialog-open');
+            singleToggleButton.classList.remove('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
             }
@@ -309,7 +309,7 @@ export default class DCFDialog {
         }
         this.dialogElement.classList.add('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
-            singleToggleButton.classList.add('dcf-dialog-open');
+            singleToggleButton.classList.add('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', true);
             }
