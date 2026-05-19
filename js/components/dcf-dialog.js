@@ -279,11 +279,9 @@ export default class DCFDialog {
         this.dialogElement.close();
         this.dialogElement.classList.remove('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
+            singleToggleButton.classList.remove('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
-            }
-            if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
-                this.setNavToggleBtnState(singleToggleButton, 'open');
             }
         });
 
@@ -311,9 +309,7 @@ export default class DCFDialog {
         }
         this.dialogElement.classList.add('dcf-dialog-is-open');
         this.toggleButtons.forEach((singleToggleButton) => {
-            if (singleToggleButton.getAttribute('data-with-nav-toggle-group') === 'true') {
-                this.setNavToggleBtnState(singleToggleButton, 'closed');
-            }
+            singleToggleButton.classList.add('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', true);
             }
@@ -332,44 +328,6 @@ export default class DCFDialog {
             this.close(eventData);
         } else {
             this.open(eventData);
-        }
-    }
-
-    // Set nav toggle button state as open or closed
-    // Note: Assumes nav toggle buttons are svgs with expected markup
-    setNavToggleBtnState(btn, btnState = 'open') {
-        const btnSVGs = btn.getElementsByTagName('svg');
-        const btnLabels = btn.getElementsByClassName('dcf-nav-toggle-label');
-
-        // Set SVG state
-        if (btnSVGs.length) {
-            const gTags = btnSVGs[0].getElementsByTagName('g');
-            Array.from(gTags).forEach((tag) => {
-                if (tag.classList.contains('dcf-nav-toggle-icon-open')) {
-                    if (btnState.toLowerCase() === 'open') {
-                        tag.classList.remove('dcf-d-none');
-                    } else {
-                        tag.classList.add('dcf-d-none');
-                    }
-                } else if (tag.classList.contains('dcf-nav-toggle-icon-close')) {
-                    if (btnState.toLowerCase() === 'open') {
-                        tag.classList.add('dcf-d-none');
-                    } else {
-                        tag.classList.remove('dcf-d-none');
-                    }
-                }
-            });
-        }
-
-        // Set Button Label
-        if (btnLabels.length) {
-            if (btnState.toLowerCase() === 'open') {
-                btnLabels[0].textContent =
-                btn.getAttribute('data-nav-toggle-label-open') ? btn.getAttribute('data-nav-toggle-label-open') : 'Open';
-            } else {
-                btnLabels[0].textContent =
-                btn.getAttribute('data-nav-toggle-label-closed') ? btn.getAttribute('data-nav-toggle-label-closed') : 'Close';
-            }
         }
     }
 }
