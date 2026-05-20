@@ -29,3 +29,7 @@
 .dcf-flex-1 { @include mixins.flex-1; }
 .dcf-flex-grow-1 { @include mixins.flex-grow-1; }
 .dcf-flex-shrink-0 { @include mixins.flex-shrink-0; }
+
+
+// Flex-basis
+.dcf-flex-basis-0 { @include mixins.flex-basis-0; }

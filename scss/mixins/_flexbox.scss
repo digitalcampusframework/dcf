@@ -26,3 +26,7 @@
 @mixin flex-1($imp:null) { flex: 1 $imp; }
 @mixin flex-grow-1($imp:null) { flex-grow: 1 $imp; }
 @mixin flex-shrink-0($imp:null) { flex-shrink: 0 $imp; }
+
+
+// Flex-basis
+@mixin flex-basis-0($imp:null) { flex-basis: 0 $imp; }
