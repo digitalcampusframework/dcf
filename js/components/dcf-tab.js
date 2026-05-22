@@ -359,7 +359,7 @@ export default class DCFTabs {
             this.switchToFirstTab();
         }, true);
         this.tabsGroup.addEventListener(DCFTabs.events('commandEnd'), () => {
-            this.switchToEndTab();
+            this.switchToLastTab();
         }, true);
     }
 

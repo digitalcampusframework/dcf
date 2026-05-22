@@ -131,7 +131,10 @@ export default class DCFDialog {
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
 
-        this.toggleButtons.forEach((singleToggleButton) => {
+        this.toggleButtons.forEach((singleToggleButton, index) => {
+            if (singleToggleButton.getAttribute('id') === '' || singleToggleButton.getAttribute('id') === null) {
+                singleToggleButton.setAttribute('id', this.uuid.concat(`-dialog-toggle-button-${index}`));
+            }
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
             } else {
