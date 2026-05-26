@@ -107,7 +107,7 @@ export default class DCFDialog {
         }
 
         this.heading = this.dialogHeaderElement.querySelector('h1, h2, h3, h4, h5, h6');
-        if (this.heading.getAttribute('id') === '') {
+        if (this.heading.getAttribute('id') === '' || this.heading.getAttribute('id') === null) {
             this.heading.setAttribute('id', this.uuid.concat('-heading'));
         }
         this.dialogElement.setAttribute('aria-labelledby', this.heading.getAttribute('id'));
@@ -131,7 +131,10 @@ export default class DCFDialog {
 
         this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
 
-        this.toggleButtons.forEach((singleToggleButton) => {
+        this.toggleButtons.forEach((singleToggleButton, index) => {
+            if (singleToggleButton.getAttribute('id') === '' || singleToggleButton.getAttribute('id') === null) {
+                singleToggleButton.setAttribute('id', this.uuid.concat(`-dialog-toggle-button-${index}`));
+            }
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
             } else {

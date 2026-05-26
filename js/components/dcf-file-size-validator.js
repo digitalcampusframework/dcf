@@ -20,10 +20,11 @@ export default class DCFFileSizeValidator {
 
         // Get the input element
         this.fileInputElement = fileInput;
-
-        if (this.fileInputElement.getAttribute('id') !== null && this.fileInputElement.getAttribute('id') !== '') {
-            this.formattedSizeOutputs = document.querySelectorAll(`.dcf-file-size-validator-size[data-input="${this.fileInputElement.getAttribute('id')}"]`);
+        if (this.fileInputElement.getAttribute('id') === null) {
+            throw new Error('File Input element is missing ID');
         }
+
+        this.formattedSizeOutputs = document.querySelectorAll(`.dcf-file-size-validator-size[data-input="${this.fileInputElement.getAttribute('id')}"]`);
 
         // Get the max size limit
         this.sizeLimit = this.#parseSize(this.fileInputElement.dataset.maxSize);

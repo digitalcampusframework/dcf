@@ -189,7 +189,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.slideshowContainer.classList.add(...this.slideContainerClassList);
 
         // If the tabGroup has no ID then it will set it
-        if (this.slideshowContainer.getAttribute('id') === null) {
+        if (this.slideshowContainer.getAttribute('id') === '' || this.slideshowContainer.getAttribute('id') === null) {
             this.slideshowContainer.setAttribute('id', this.uuid.concat('-slideshow'));
         }
 
@@ -198,7 +198,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.slideDeck.setAttribute('tabindex', '0');
         this.slideDeck.classList.add('dcf-slide-deck');
         this.slideDeck.setAttribute('aria-live', 'polite');
-        if (this.slideDeck.getAttribute('id') === null) {
+        if (this.slideDeck.getAttribute('id') === '' || this.slideDeck.getAttribute('id') === null) {
             this.slideDeck.setAttribute('id', this.uuid.concat('-slide-deck'));
         }
         this.slideDeck.classList.add(...this.slideDeckClassList);

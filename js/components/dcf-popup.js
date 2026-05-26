@@ -73,20 +73,6 @@ export default class DCFPopup {
             throw new Error('Popup Content Is Missing');
         }
 
-        // We need do do some funky stuff to get the correct close button and not the nested one
-        this.closeButtons = this.popupElement.querySelectorAll(
-            ':scope > .dcf-popup-content > .dcf-btn-close-popup' +
-            ', :scope > .dcf-popup-content > .dcf-btn-popup-close' +
-            `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${this.popupElement.getAttribute('id')}"]` +
-            `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${this.popupElement.getAttribute('id')}"]`,
-        );
-
-        this.closeButtons.forEach((closeButton) => {
-            if (closeButton !== null && closeButton.tagName !== 'BUTTON') {
-                throw new Error('Close Button is Not a Button Tag');
-            }
-        });
-
         // Sets the IDs for the btn and content if they aren't already set
         if (
             this.popupElement.getAttribute('id') === '' ||
@@ -129,8 +115,20 @@ export default class DCFPopup {
 
         this.toggleButtonObj = new DCFButtonToggles(this.popupButton);
 
+
+        // We need do do some funky stuff to get the correct close button and not the nested one
+        this.closeButtons = this.popupElement.querySelectorAll(
+            ':scope > .dcf-popup-content > .dcf-btn-close-popup' +
+            ', :scope > .dcf-popup-content > .dcf-btn-popup-close' +
+            `, :scope > .dcf-popup-content .dcf-btn-close-popup[data-for="${this.popupElement.getAttribute('id')}"]` +
+            `, :scope > .dcf-popup-content .dcf-btn-popup-close[data-for="${this.popupElement.getAttribute('id')}"]`,
+        );
+
         // if there is a close button and its clicked close the popup
         this.closeButtons.forEach((closeButton) => {
+            if (closeButton.tagName !== 'BUTTON') {
+                throw new Error('Close Button is Not a Button Tag');
+            }
             closeButton.addEventListener('click', () => {
                 this.popupButton.dispatchEvent(this.commandClose);
             });

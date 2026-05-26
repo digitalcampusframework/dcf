@@ -1,4 +1,8 @@
+import { uuidv4 } from '../dcf-utility.js';
+
 export default class DCFAutoplayVideoToggle {
+
+    uuid = uuidv4();
 
     autoplayVideoContainer = null;
 
@@ -56,6 +60,9 @@ export default class DCFAutoplayVideoToggle {
         }
 
         this.autoplayVideoContainer = autoPlayVideoContainer;
+        if (this.autoplayVideoContainer.getAttribute('id') === '' || this.autoplayVideoContainer.getAttribute('id') === null) {
+            this.autoplayVideoContainer.setAttribute('id', this.uuid.concat('-autoplay-video'));
+        }
 
         if (this.videoContainerClassList) {
             this.autoplayVideoContainer.classList.add(...this.videoContainerClassList);

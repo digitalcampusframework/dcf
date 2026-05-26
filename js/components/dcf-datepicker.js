@@ -1,6 +1,8 @@
 import { magicNumbers, uuidv4 } from '../dcf-utility.js';
 
 export default class DCFDatepicker {
+    uuid = uuidv4();
+
     constructor(datepicker) {
         // Define common magic numbers used
         this.int0 = magicNumbers('int0');
@@ -12,7 +14,10 @@ export default class DCFDatepicker {
         this.intMinus1 = magicNumbers('intMinus1');
 
         this.datepicker = datepicker;
-        this.uuid = uuidv4();
+        if (this.datepicker.getAttribute('id') === '' || this.datepicker.getAttribute('id') === null) {
+            this.datepicker.setAttribute('id', this.uuid.concat('-datepicker'));
+        }
+
         this.buttonLabelChoose = 'Choose Date';
         this.buttonLabelChange = 'Change Date';
         this.dayLabels = [
@@ -49,6 +54,9 @@ export default class DCFDatepicker {
         this.isMouseDownOnBackground = false;
 
         this.textboxNode = this.datepicker.querySelector('input[type="text"]');
+        if (this.textboxNode.getAttribute('id') === '' || this.textboxNode.getAttribute('id') === null) {
+            this.textboxNode.setAttribute('id', this.uuid.concat('-datepicker-text-box'));
+        }
 
         this.appendPickerContainer();
         this.appendDialog();
@@ -90,7 +98,7 @@ export default class DCFDatepicker {
         const dialogGridID = this.uuid.concat('-dialog-grid');
 
         this.dialogNode = document.createElement('div');
-        this.dialogNode.setAttribute('id', this.uuid.concat('-datepicker'));
+        this.dialogNode.setAttribute('id', this.uuid.concat('-datepicker-dialog'));
         this.dialogNode.setAttribute('role', 'dialog');
         this.dialogNode.setAttribute('aria-modal', 'true');
         this.dialogNode.setAttribute('aria-labelledby', dialogLabelID);

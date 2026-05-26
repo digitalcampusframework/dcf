@@ -1,4 +1,9 @@
+import { uuidv4 } from '../dcf-utility.js';
+
 export default class DCFPagination {
+
+    uuid = uuidv4();
+
     paginationNav = null;
 
     list = null;
@@ -9,6 +14,9 @@ export default class DCFPagination {
 
     constructor(paginationNav) {
         this.paginationNav = paginationNav;
+        if (this.paginationNav.getAttribute('id') === '' || this.paginationNav.getAttribute('id') === null) {
+            this.paginationNav.setAttribute('id', this.uuid.concat('-pagination'));
+        }
 
         this.paginationNav.setAttribute('role', 'navigation');
         this.paginationNav.setAttribute('aria-label', 'Pagination Navigation');

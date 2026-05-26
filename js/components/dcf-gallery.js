@@ -18,6 +18,9 @@ export default class DCFGallery {
         this.dialog = sharedDialog;
 
         this.image = galleryImage;
+        if (this.image.getAttribute('id') === '' || this.image.getAttribute('id') === null) {
+            this.image.setAttribute('id', this.uuid.concat('-gallery-image'));
+        }
         this.image.addEventListener('click', () => {
             this.dialog.open(this.image);
         });
