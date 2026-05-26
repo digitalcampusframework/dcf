@@ -7,15 +7,15 @@
 @use "../mixins/" as mixins;
 
 
-body:has(dialog[open]),
-html:has(dialog[open]){
+body:has(dialog:not(.dcf-dialog-non-modal)[open]),
+html:has(dialog:not(.dcf-dialog-non-modal)[open]){
   overflow: hidden;
 }
 
 
 // Safari does not support `:open`, `.dcf-dialog-is-open` is our fallback
-body:has(dialog.dcf-dialog-is-open),
-html:has(dialog.dcf-dialog-is-open) {
+body:has(dialog.dcf-dialog-is-open:not(.dcf-dialog-non-modal)),
+html:has(dialog.dcf-dialog-is-open:not(.dcf-dialog-non-modal)) {
   overflow: hidden;
 }
 
