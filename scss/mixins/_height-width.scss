@@ -70,6 +70,9 @@
 
 // Minimum width
 @mixin min-w-0($imp:null) { min-width: 0 $imp; }
+@mixin min-w-fit-content($imp:null) { min-width: fit-content $imp; }
+@mixin min-w-max-content($imp:null) { min-width: max-content $imp; }
+@mixin min-w-min-content($imp:null) { min-width: min-content $imp; }
 
 
 // Maximum width

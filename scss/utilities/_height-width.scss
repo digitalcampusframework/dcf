@@ -70,6 +70,9 @@
 
 // Minimum width
 .dcf-min-w-0 { @include mixins.min-w-0; }
+.dcf-min-w-fit-content { @include mixins.min-w-fit-content; }
+.dcf-min-w-max-content { @include mixins.min-w-max-content; }
+.dcf-min-w-min-content { @include mixins.min-w-min-content; }
 
 
 // Maximum width
