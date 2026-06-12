@@ -34,6 +34,8 @@ export default class DCFSlideshow {
 
     mouseOver = false;
 
+    layout = 'default';
+
     slideContainerClassList = [
         'dcf-relative',
     ];
@@ -186,7 +188,13 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
         this.slideshowContainer.setAttribute('aria-roledescription', 'carousel');
         this.slideshowContainer.classList.add('dcf-slideshow-initialized');
-        this.slideshowContainer.classList.add(...this.slideContainerClassList);
+        if (this.layout !== 'cover-flow') {
+            this.slideshowContainer.classList.add(...this.slideContainerClassList);
+        }
+
+        if (this.slideshowContainer.dataset.layout === 'cover-flow') {
+            this.layout = this.slideshowContainer.dataset.layout;
+        }
 
         // If the tabGroup has no ID then it will set it
         if (this.slideshowContainer.getAttribute('id') === '' || this.slideshowContainer.getAttribute('id') === null) {
@@ -201,7 +209,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         if (this.slideDeck.getAttribute('id') === '' || this.slideDeck.getAttribute('id') === null) {
             this.slideDeck.setAttribute('id', this.uuid.concat('-slide-deck'));
         }
-        this.slideDeck.classList.add(...this.slideDeckClassList);
+        if (this.layout !== 'cover-flow') {
+            this.slideDeck.classList.add(...this.slideDeckClassList);
+        }
 
         // Select all the slides
         this.slides = Array.from(this.slideDeck.children);
@@ -242,7 +252,10 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.#shuffleSlides();
         }
         this.#initSlides();
-        this.#initControls();
+
+        if (this.layout !== 'cover-flow') {
+            this.#initControls();
+        }
 
         // This needs to go after init controls so we can change the state of the toggle button
         if (this.allowPlay) {
@@ -310,16 +323,21 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             // Set up slide
             slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
             slide.classList.add('dcf-slide');
-            slide.classList.add(...this.slideClassList);
+            if (this.layout !== 'cover-flow') {
+                slide.classList.add(...this.slideClassList);
+            }
+
             slide.setAttribute('aria-roledescription', 'slide');
             slide.setAttribute('aria-label', `${slideIndex + 1} of ${this.slides.length}`);
 
-            // If we are not the current slide then hide it
-            if (slideIndex !== this.currentSlide) {
-                slide.classList.add('dcf-d-none');
-                slide.classList.add('dcf-z-0');
-            } else {
-                slide.classList.add('dcf-z-1');
+            if (this.layout !== 'cover-flow') {
+                // If we are not the current slide then hide it
+                if (slideIndex !== this.currentSlide) {
+                    slide.classList.add('dcf-d-none');
+                    slide.classList.add('dcf-z-0');
+                } else {
+                    slide.classList.add('dcf-z-1');
+                }
             }
 
             // Figure out if we need to do figcaption toggles

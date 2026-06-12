@@ -10,12 +10,12 @@
   padding-left: 0;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck li {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]) .dcf-slide-deck li {
   grid-column: 1;
   grid-row: 1;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 2) - (#{var.$border-width-button} * 5) - #{var.$size-clip-path}) 0,
@@ -26,8 +26,8 @@
   );
 }
 
-.dcf-slideshow.dcf-slideshow-initialized[data-play="true"] .dcf-slide-deck,
-.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"] .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized[data-play="true"]:not([data-layout="cover-flow"]) .dcf-slide-deck,
+.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"]:not([data-layout="cover-flow"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 3) - (#{var.$border-width-button} * 8) - #{var.$size-clip-path}) 0,
@@ -44,4 +44,45 @@
   animation-duration: var.$animation-duration-fade-in;
   animation-timing-function: var.$animation-timing-fn-fade-in;
   opacity: 1; // Starting opacity
+}
+
+.dcf-slideshow[data-layout="cover-flow"] {
+  container-type: inline-size;
+}
+
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck {
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0px;
+  padding: 0px;
+}
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck::before {
+  content: ' ';
+  width: 25cqw;
+  display: inline-block;
+}
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck::after {
+  content: ' ';
+  width: 25cqw;
+  display: inline-block;
+}
+
+/* List item setup */
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li {
+  display: inline-block;
+  scroll-snap-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/* Image styling and animation */
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li figure,
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li div {
+  width: 100%;
+  height: auto;
+
+  position: relative;
 }
