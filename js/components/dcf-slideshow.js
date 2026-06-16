@@ -1,4 +1,4 @@
-import { uuidv4 } from '../dcf-utility.js';
+import { uuidv4, waitForTransition } from '../dcf-utility.js';
 import DCFFigcaptionToggles from './dcf-figcaption-toggle.js';
 
 export default class DCFSlideshow {
@@ -255,6 +255,42 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
 
         if (this.layout !== 'cover-flow') {
             this.#initControls();
+        }
+
+        if (this.layout === 'cover-flow') {
+            // Set up the Intersection Observer
+            const observerOptions = {
+                root: this.slideDeck,
+
+                // This rootMargin creates a narrow "detection band" right in the middle 
+                // of the container (shrinks the detection area by 48% on the left and right)
+                rootMargin: '0px -48% 0px -48%',
+                threshold: 0,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Item is in the center
+                        entry.target.classList.add('active');
+                        waitForTransition(entry.target).then(() => {
+                            this.slides.forEach((singleSlide) => {
+                                if (!singleSlide.isSameNode(entry.target)) {
+                                    singleSlide.classList.remove('active');
+                                }
+                            });
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Tell the observer to watch every item
+            this.slides.forEach((item) => {
+                observer.observe(item);
+                item.addEventListener('click', () => {
+                    item.scrollIntoView({'inline': 'center'});
+                });
+            });
         }
 
         // This needs to go after init controls so we can change the state of the toggle button

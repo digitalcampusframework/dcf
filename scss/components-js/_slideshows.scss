@@ -52,37 +52,45 @@
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck {
   list-style: none;
-  white-space: nowrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 1rem;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   margin: 0px;
-  padding: 0px;
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck::before {
-  content: ' ';
-  width: 25cqw;
-  display: inline-block;
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck::after {
-  content: ' ';
-  width: 25cqw;
-  display: inline-block;
+  padding-block: 0px;
+  scroll-behavior: smooth;
+  padding-inline: calc(50cqw - (33cqw / 2) + 2cqw); // We add +2 to fix some browser rounding issues
 }
 
-/* List item setup */
+// /* List item setup */
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li {
-  display: inline-block;
+  overflow: hidden;
   scroll-snap-align: center;
   margin: 0px;
   padding: 0px;
+  position: relative;
+  width: calc(33cqw * 2 / 3);
+  flex-shrink: 0;
+  height: 100%;
+  transition: width 0.25s ease-in-out;
 }
 
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active {
+  width: 33cqw;
+  height: 100%;
+}
 
-/* Image styling and animation */
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li figure,
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li div {
+.dcf-slideshow-test-2 {
+  height: 100%;
   width: 100%;
-  height: auto;
+}
 
-  position: relative;
+.dcf-slideshow-test {
+  aspect-ratio: 9 / 16;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
