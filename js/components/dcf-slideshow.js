@@ -258,39 +258,23 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         if (this.layout === 'cover-flow') {
-            // Set up the Intersection Observer
-            const observerOptions = {
-                root: this.slideDeck,
-
-                // This rootMargin creates a narrow "detection band" right in the middle 
-                // of the container (shrinks the detection area by 48% on the left and right)
-                rootMargin: '0px -48% 0px -48%',
-                threshold: 0,
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Item is in the center
-                        entry.target.classList.add('active');
-                        waitForTransition(entry.target).then(() => {
-                            this.slides.forEach((singleSlide) => {
-                                if (!singleSlide.isSameNode(entry.target)) {
-                                    singleSlide.classList.remove('active');
-                                }
-                            });
+            this.slides.forEach((singleSlide) => {
+                singleSlide.addEventListener('click', () => {
+                    singleSlide.classList.add('active');
+                    singleSlide.scrollIntoView({'inline': 'center'});
+                    waitForTransition(singleSlide).then(() => {
+                        this.slides.forEach((slideToRemoveClass) => {
+                            if (!slideToRemoveClass.isSameNode(singleSlide) && slideToRemoveClass.classList.contains('active')) {
+                                slideToRemoveClass.classList.remove('active');
+                                waitForTransition(slideToRemoveClass).then(() => {
+                                    singleSlide.scrollIntoView({'inline': 'center'});
+                                });
+                            }
                         });
-                    }
-                });
-            }, observerOptions);
-
-            // Tell the observer to watch every item
-            this.slides.forEach((item) => {
-                observer.observe(item);
-                item.addEventListener('click', () => {
-                    item.scrollIntoView({'inline': 'center'});
+                    });
                 });
             });
+            this.slides[0].classList.add('active');
         }
 
         // This needs to go after init controls so we can change the state of the toggle button
