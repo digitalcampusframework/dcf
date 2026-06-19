@@ -188,17 +188,18 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
 
         // Set up slide show container
         this.slideshowContainer = slideshowContainer;
+        if (this.slideshowContainer.dataset.layout === 'cover-flow') {
+            this.layout = this.slideshowContainer.dataset.layout;
+        }
+
         if (this.slideshowContainer.tagName !== 'SECTION') {
             this.slideshowContainer.setAttribute('role', 'region');
         }
         this.slideshowContainer.setAttribute('aria-roledescription', 'carousel');
-        this.slideshowContainer.classList.add('dcf-slideshow-initialized');
-        if (this.layout !== 'cover-flow') {
+        if (this.layout === 'cover-flow') {
+            this.slideshowContainer.classList.add(...['dcf-relative', 'dcf-overflow-x-hidden']);
+        } else {
             this.slideshowContainer.classList.add(...this.slideContainerClassList);
-        }
-
-        if (this.slideshowContainer.dataset.layout === 'cover-flow') {
-            this.layout = this.slideshowContainer.dataset.layout;
         }
 
         if (
@@ -221,7 +222,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         if (this.slideDeck.getAttribute('id') === '' || this.slideDeck.getAttribute('id') === null) {
             this.slideDeck.setAttribute('id', this.uuid.concat('-slide-deck'));
         }
-        if (this.layout !== 'cover-flow') {
+        if (this.layout === 'cover-flow') {
+            this.slideDeck.classList.add(...['dcf-d-flex', 'dcf-flex-row', 'dcf-flex-nowrap', 'dcf-relative', 'dcf-m-0', 'dcf-pt-0', 'dcf-pb-0']);
+        } else {
             this.slideDeck.classList.add(...this.slideDeckClassList);
         }
 
@@ -267,12 +270,11 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.#initControls();
 
         if (this.layout === 'cover-flow') {
-            this.slides.forEach((singleSlide, index) => {
-                singleSlide.addEventListener('click', () => {
-                    this.#coverFlowSwapSlides(index);
-                });
+            // If we resize then the active slide might not be in the middle
+            // so we will need to re-scroll to it
+            window.addEventListener('resize', () => {
+                this.#coverFlowSwapSlides(this.currentSlide, true);
             });
-            this.#coverFlowSwapSlides(0);
         }
 
         // This needs to go after init controls so we can change the state of the toggle button
@@ -297,9 +299,19 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }));
     }
 
+    jumpScrollToItem(item) {
+        const newLeft = this.calculateSlideDeckOffset(item);
+        this.slideDeck.style.left = `${newLeft}px`;
+    }
+
     smoothScrollToItem(item, currentId) {
-        //!IMPORTANT: This needs to be a little longer than the animation to grow the item
-        const scrollDurationMs = 505;
+        //!IMPORTANT: This needs to be a little longer than the transition to grow the item
+        let scrollDurationMs = parseFloat(window.getComputedStyle(this.slideshowContainer).getPropertyValue('--transition-time'));
+        if (Number.isNaN(scrollDurationMs)) {
+            scrollDurationMs = 500;
+        } else if (scrollDurationMs < 100) {
+            scrollDurationMs = scrollDurationMs * 1000;
+        }
         let scrollProgressMs = 0;
         let oldLeft = parseFloat(this.slideDeck.style.getPropertyValue('left'));
         if (Number.isNaN(oldLeft)) {
@@ -320,8 +332,6 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             if (scrollProgressMs < scrollDurationMs) {
                 const easedPercent = easingInOutCubic(scrollProgressMs / scrollDurationMs);
                 const lerpLeft = lerp(oldLeft, newLeft, easedPercent);
-                console.log('lerpLeft', lerpLeft);
-
                 this.slideDeck.style.left = `${lerpLeft}px`;
 
                 window.requestAnimationFrame(animationLoop);
@@ -388,21 +398,35 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             // Set up slide
             slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
             slide.classList.add('dcf-slide');
-            if (this.layout !== 'cover-flow') {
+            if (this.layout === 'cover-flow') {
+                slide.classList.add(...['dcf-relative', 'dcf-overflow-hidden', 'dcf-mt-0', 'dcf-mb-0', 'dcf-p-0', 'dcf-flex-shrink-0', 'dcf-h-100%']);
+            } else {
                 slide.classList.add(...this.slideClassList);
             }
 
             slide.setAttribute('aria-roledescription', 'slide');
             slide.setAttribute('aria-label', `${slideIndex + 1} of ${this.slides.length}`);
 
-            if (this.layout !== 'cover-flow') {
+
+            // Cover-flow layout will let us see all the slides so if we click on one then jump to it
+            if (slideIndex !== this.currentSlide && this.layout === 'cover-flow') {
+                slide.addEventListener('click', () => {
+                    this.#coverFlowSwapSlides(slideIndex);
+                });
+            } else if (this.layout === 'cover-flow') {
+                slide.addEventListener('click', () => {
+                    this.#coverFlowSwapSlides(slideIndex);
+                });
+
+                // This is the selected slide so go to it
+                this.#coverFlowSwapSlides(slideIndex);
+            } else if (slideIndex !== this.currentSlide) {
+
                 // If we are not the current slide then hide it
-                if (slideIndex !== this.currentSlide) {
-                    slide.classList.add('dcf-d-none');
-                    slide.classList.add('dcf-z-0');
-                } else {
-                    slide.classList.add('dcf-z-1');
-                }
+                slide.classList.add('dcf-d-none');
+                slide.classList.add('dcf-z-0');
+            } else {
+                slide.classList.add('dcf-z-1');
             }
 
             // Figure out if we need to do figcaption toggles
@@ -588,7 +612,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.currentSlide = newCurrentSlideIndex;
     }
 
-    #coverFlowSwapSlides(newCurrentSlideIndex) {
+    #coverFlowSwapSlides(newCurrentSlideIndex, jump = false) {
         this.currentSlide = newCurrentSlideIndex;
 
         this.slides[newCurrentSlideIndex].classList.add('active');
@@ -601,7 +625,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             }
         });
 
-        if (this.scrollingId !== this.slides[newCurrentSlideIndex].id) {
+        if (jump) {
+            this.jumpScrollToItem(this.slides[newCurrentSlideIndex]);
+        } else if (this.scrollingId !== this.slides[newCurrentSlideIndex].id) {
             this.scrollingId = this.slides[newCurrentSlideIndex].id;
             this.smoothScrollToItem( this.slides[newCurrentSlideIndex], this.slides[newCurrentSlideIndex].id);
         }

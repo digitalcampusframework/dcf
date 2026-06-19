@@ -48,88 +48,52 @@
 
 .dcf-slideshow[data-layout="cover-flow"] {
   container-type: inline-size;
-  position: relative;
-  overflow-x: hidden;
-}
-.dcf-slideshow[data-layout="cover-flow"]::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 49.75%;
-  right: 49.75%;
-  background-color: rgba(0, 0, 255, 0.5);
-  z-index: 999;
-}
-.dcf-slideshow[data-layout="cover-flow"]::after {
-  content: " ";
-  display: block;
-  position: absolute;
-  right: 0px;
-  left: 0px;
-  top: 49.75%;
-  bottom: 49.75%;
-  background-color: rgba(0, 0, 255, 0.5);
-  z-index: 999;
+  --item-width: 25cqw;
+  --button-padding: 1rem;
+  --clip-path-inline: 10%;
+  --clip-path-block: 10%;
+  --transition-time: 400ms; //!IMPORTANT this is referenced in the JS
+  --transition-easing: cubic-bezier(.25, .46, .45, .94);
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck {
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  // overflow: hidden;
-  position: relative;
-  // scroll-snap-type: x mandatory;
-  margin: 0px;
-  padding-block: 0px;
-  // scroll-behavior: smooth;
-  padding-inline: calc(50cqw - (33cqw / 2) + 2cqw); // We add +2 to fix some browser rounding issues
+  padding-inline: calc(50cqw - (var(--item-width) / 2) + 2cqw); // We add +2 to fix some browser rounding issues
 }
 
 // /* List item setup */
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li {
-  overflow: hidden;
-  // scroll-snap-align: center;
-  margin: 0px;
-  margin-inline: 0px;
-  padding: 0px;
-  position: relative;
-  width: 25cqw;
-  flex-shrink: 0;
-  height: 100%;
-  clip-path: inset(10% 10% 10% 10% round 14px);
-  transition: clip-path 0.5s ease-in-out, margin-inline 0.5s ease-in-out;
+  width: var(--item-width);
+  clip-path: inset(var(--clip-path-block) var(--clip-path-inline) var(--clip-path-block) var(--clip-path-inline) round var.$roundrect);
+  transition:
+    clip-path var(--transition-time) var(--transition-easing),
+    margin-inline var(--transition-time) var(--transition-easing);
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active {
-  clip-path: inset(0% 0% 0% 0% round 14px);
-  margin-inline: 10%;
+  clip-path: inset(0% 0% 0% 0% round var.$roundrect);
+  margin-inline: var(--clip-path-inline);
 }
 
-.dcf-slideshow-test-2 {
-  height: 100%;
-  width: 100%;
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li .dcf-slideshow-nonactive-hide {
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-easing);
 }
 
-.dcf-slideshow-test {
-  aspect-ratio: 9 / 16;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active .dcf-slideshow-nonactive-hide {
+  opacity: 1;
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) {
-  width: 35cqw;
+  width: calc(var(--item-width) * 1.4);
   transform: translate(-50%, -50%);
 }
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls.dcf-slideshow-controls-top {
-  top: 1rem;
-  width: calc(25cqw - (2 * 1rem));
+  top: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
   transform: translateX(-50%);
 }
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls.dcf-slideshow-controls-bottom {
-  bottom: 1rem;
-  width: calc(25cqw - (2 * 1rem));
+  bottom: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
   transform: translateX(-50%);
 }
