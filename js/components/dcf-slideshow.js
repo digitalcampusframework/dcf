@@ -1,4 +1,5 @@
-import { uuidv4, waitForTransition } from '../dcf-utility.js';
+import { uuidv4 } from '../dcf-utility.js';
+import { easingInOutCubic, lerp } from '../dcf-animation.js';
 import DCFFigcaptionToggles from './dcf-figcaption-toggle.js';
 
 export default class DCFSlideshow {
@@ -35,6 +36,8 @@ export default class DCFSlideshow {
     mouseOver = false;
 
     layout = 'default';
+
+    scrollingId = null;
 
     slideContainerClassList = [
         'dcf-relative',
@@ -261,17 +264,16 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.slides.forEach((singleSlide) => {
                 singleSlide.addEventListener('click', () => {
                     singleSlide.classList.add('active');
-                    singleSlide.scrollIntoView({'inline': 'center'});
-                    waitForTransition(singleSlide).then(() => {
-                        this.slides.forEach((slideToRemoveClass) => {
-                            if (!slideToRemoveClass.isSameNode(singleSlide) && slideToRemoveClass.classList.contains('active')) {
-                                slideToRemoveClass.classList.remove('active');
-                                waitForTransition(slideToRemoveClass).then(() => {
-                                    singleSlide.scrollIntoView({'inline': 'center'});
-                                });
-                            }
-                        });
+                    this.slides.forEach((slideToRemoveClass) => {
+                        if (!slideToRemoveClass.isSameNode(singleSlide) && slideToRemoveClass.classList.contains('active')) {
+                            slideToRemoveClass.classList.remove('active');
+                        }
                     });
+
+                    if (this.scrollingId !== singleSlide.id) {
+                        this.scrollingId = singleSlide.id;
+                        this.smoothScrollToItem(singleSlide, singleSlide.id);
+                    }
                 });
             });
             this.slides[0].classList.add('active');
@@ -297,6 +299,53 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 classInstance: this,
             },
         }));
+    }
+
+    smoothScrollToItem(item, currentId) {
+        //!IMPORTANT: This needs to be a little longer than the animation to grow the item
+        const scrollDurationMs = 505;
+        let scrollProgressMs = 0;
+        let oldLeft = parseFloat(this.slideDeck.style.getPropertyValue('left'));
+        if (Number.isNaN(oldLeft)) {
+            oldLeft = 0;
+        }
+        let previousLoopTime = Date.now();
+        const animationLoop = () => {
+            if (this.scrollingId !== currentId) {
+                return;
+            }
+
+            const startLoopTime = Date.now();
+            const deltaTime = startLoopTime - previousLoopTime;
+            scrollProgressMs += deltaTime;
+
+            const newLeft = this.calculateSlideDeckOffset(item);
+
+            if (scrollProgressMs < scrollDurationMs) {
+                const easedPercent = easingInOutCubic(scrollProgressMs / scrollDurationMs);
+                const lerpLeft = lerp(oldLeft, newLeft, easedPercent);
+                console.log('lerpLeft', lerpLeft);
+
+                this.slideDeck.style.left = `${lerpLeft}px`;
+
+                window.requestAnimationFrame(animationLoop);
+            } else {
+                this.slideDeck.style.left = `${newLeft}px`;
+                this.scrollingId = null;
+            }
+            previousLoopTime = startLoopTime;
+        };
+
+        window.requestAnimationFrame(animationLoop);
+    }
+
+    calculateSlideDeckOffset(item) {
+        const itemMidPoint = item.offsetWidth / 2;
+        const itemOffsetToList = item.offsetLeft;
+        const wrapperMidPoint = this.slideshowContainer.offsetWidth / 2;
+
+        const getMidItemToLeftEdge = (-1 * ( itemOffsetToList + itemMidPoint));
+        return getMidItemToLeftEdge + wrapperMidPoint;
     }
 
     /**

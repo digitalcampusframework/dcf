@@ -48,38 +48,52 @@
 
 .dcf-slideshow[data-layout="cover-flow"] {
   container-type: inline-size;
+  position: relative;
+  overflow-x: hidden;
+}
+.dcf-slideshow[data-layout="cover-flow"]::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 49.5%;
+  right: 49.5%;
+  background-color: blue;
+  z-index: 999;
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck {
   list-style: none;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  gap: 1rem;
-  overflow: hidden;
-  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-flow: row nowrap;
+  // overflow: hidden;
+  position: relative;
+  // scroll-snap-type: x mandatory;
   margin: 0px;
   padding-block: 0px;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   padding-inline: calc(50cqw - (33cqw / 2) + 2cqw); // We add +2 to fix some browser rounding issues
 }
 
 // /* List item setup */
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li {
   overflow: hidden;
-  scroll-snap-align: center;
+  // scroll-snap-align: center;
   margin: 0px;
+  margin-inline: 0px;
   padding: 0px;
   position: relative;
-  width: calc(33cqw * 2 / 3);
+  width: 25cqw;
   flex-shrink: 0;
   height: 100%;
-  transition: width 0.25s ease-in-out;
+  clip-path: inset(10% 10% 10% 10% round 14px);
+  transition: clip-path 0.5s ease-in-out, margin-inline 0.5s ease-in-out;
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active {
-  width: 33cqw;
-  height: 100%;
+  clip-path: inset(0% 0% 0% 0% round 14px);
+  margin-inline: 10%;
 }
 
 .dcf-slideshow-test-2 {
