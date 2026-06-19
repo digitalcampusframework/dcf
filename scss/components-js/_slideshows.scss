@@ -48,7 +48,7 @@
 
 .dcf-slideshow[data-layout="cover-flow"] {
   container-type: inline-size;
-  --item-width: 25cqw;
+  --item-width: clamp(15rem, 25cqw, 20rem);
   --button-padding: 1rem;
   --clip-path-inline: 10%;
   --clip-path-block: 10%;
