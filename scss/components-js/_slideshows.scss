@@ -84,8 +84,14 @@
 }
 
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) {
-  width: calc(var(--item-width) * 1.4);
+  width: calc(var(--item-width) + var(--button-padding));
   transform: translate(-50%, -50%);
+}
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) .dcf-btn-slide-prev {
+  transform: translateX(-100%);
+}
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) .dcf-btn-slide-next {
+  transform: translateX(100%);
 }
 .dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls.dcf-slideshow-controls-top {
   top: var(--button-padding);
