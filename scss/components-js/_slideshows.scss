@@ -57,9 +57,20 @@
   position: absolute;
   top: 0px;
   bottom: 0px;
-  left: 49.5%;
-  right: 49.5%;
-  background-color: blue;
+  left: 49.75%;
+  right: 49.75%;
+  background-color: rgba(0, 0, 255, 0.5);
+  z-index: 999;
+}
+.dcf-slideshow[data-layout="cover-flow"]::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 49.75%;
+  bottom: 49.75%;
+  background-color: rgba(0, 0, 255, 0.5);
   z-index: 999;
 }
 
@@ -106,4 +117,9 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls {
+  width: 35cqw;
+  transform: translate(-50%, -50%);
 }

@@ -255,28 +255,15 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.#shuffleSlides();
         }
         this.#initSlides();
-
-        if (this.layout !== 'cover-flow') {
-            this.#initControls();
-        }
+        this.#initControls();
 
         if (this.layout === 'cover-flow') {
-            this.slides.forEach((singleSlide) => {
+            this.slides.forEach((singleSlide, index) => {
                 singleSlide.addEventListener('click', () => {
-                    singleSlide.classList.add('active');
-                    this.slides.forEach((slideToRemoveClass) => {
-                        if (!slideToRemoveClass.isSameNode(singleSlide) && slideToRemoveClass.classList.contains('active')) {
-                            slideToRemoveClass.classList.remove('active');
-                        }
-                    });
-
-                    if (this.scrollingId !== singleSlide.id) {
-                        this.scrollingId = singleSlide.id;
-                        this.smoothScrollToItem(singleSlide, singleSlide.id);
-                    }
+                    this.coverFlowSwapSlides(index);
                 });
             });
-            this.slides[0].classList.add('active');
+            this.coverFlowSwapSlides(0);
         }
 
         // This needs to go after init controls so we can change the state of the toggle button
@@ -442,48 +429,73 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.prevButton = document.createElement('button');
         this.nextButton = document.createElement('button');
 
-        // Set up controls container
-        this.controlsContainer.classList.add('dcf-slideshow-controls');
-        this.controlsContainer.classList.add(...this.slideButtonContainerClassList);
+        if (this.layout !== 'cover-flow') {
+            // Set up controls container
+            this.controlsContainer.classList.add('dcf-slideshow-controls');
+            this.controlsContainer.classList.add(...this.slideButtonContainerClassList);
 
-        // Set up previous button
-        this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
-        this.prevButton.classList.add(...this.slidePrevBtnClassList);
-        this.prevButton.classList.add(...this.slideBtnClassList);
-        this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
-        this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
-        this.prevButton.setAttribute('aria-label', 'Previous slide');
-        this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-        this.prevButton.addEventListener('click', () => {
-            this.previousSlide();
-        });
+            // Set up previous button
+            this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+            this.prevButton.classList.add(...this.slidePrevBtnClassList);
+            this.prevButton.classList.add(...this.slideBtnClassList);
+            this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
+            this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
+            this.prevButton.setAttribute('aria-label', 'Previous slide');
+            this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+            this.prevButton.addEventListener('click', () => {
+                this.previousSlide();
+            });
 
-        // Set up next button
-        this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
-        this.nextButton.classList.add(...this.slideNextBtnClassList);
-        this.nextButton.classList.add(...this.slideBtnClassList);
-        this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
-        this.nextButton.setAttribute('id', this.uuid.concat('-next'));
-        this.nextButton.setAttribute('aria-label', 'Next slide');
-        this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-        this.nextButton.addEventListener('click', () => {
-            this.nextSlide();
-        });
+            // Set up next button
+            this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
+            this.nextButton.classList.add(...this.slideNextBtnClassList);
+            this.nextButton.classList.add(...this.slideBtnClassList);
+            this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
+            this.nextButton.setAttribute('id', this.uuid.concat('-next'));
+            this.nextButton.setAttribute('aria-label', 'Next slide');
+            this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+            this.nextButton.addEventListener('click', () => {
+                this.nextSlide();
+            });
 
-        // If we allow play then set up the play button
-        if (this.allowPlay) {
-            this.playToggleButton = document.createElement('button');
-            this.playToggleButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
-            this.playToggleButton.classList.add(...this.slidePlayToggleBtnClassList);
-            this.playToggleButton.classList.add(...this.slideBtnClassList);
-            this.playToggleButton.innerHTML = this.slidePlayBtnInnerHTML;
-            this.playToggleButton.setAttribute('aria-label', 'Start automatic slideshow');
-            this.playToggleButton.setAttribute('id', this.uuid.concat('-play-toggle'));
-            this.playToggleButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-            this.playToggleButton.addEventListener('click', () => {
-                this.togglePlayState();
+            // If we allow play then set up the play button
+            if (this.allowPlay) {
+                this.playToggleButton = document.createElement('button');
+                this.playToggleButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+                this.playToggleButton.classList.add(...this.slidePlayToggleBtnClassList);
+                this.playToggleButton.classList.add(...this.slideBtnClassList);
+                this.playToggleButton.innerHTML = this.slidePlayBtnInnerHTML;
+                this.playToggleButton.setAttribute('aria-label', 'Start automatic slideshow');
+                this.playToggleButton.setAttribute('id', this.uuid.concat('-play-toggle'));
+                this.playToggleButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+                this.playToggleButton.addEventListener('click', () => {
+                    this.togglePlayState();
+                });
+            }
+        } else {
+            this.controlsContainer.classList.add('dcf-slideshow-controls');
+            this.controlsContainer.classList.add(...['dcf-absolute', 'dcf-d-flex', 'dcf-jc-between', 'dcf-top-50%', 'dcf-left-50%', 'dcf-z-1']);
+
+            // Set up previous button
+            this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-circle', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+            this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
+            this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
+            this.prevButton.setAttribute('aria-label', 'Previous slide');
+            this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+            this.prevButton.addEventListener('click', () => {
+                this.previousSlide();
+            });
+
+            this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-circle', 'dcf-btn-slide', 'dcf-btn-slide-next');
+            this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
+            this.nextButton.setAttribute('id', this.uuid.concat('-next'));
+            this.nextButton.setAttribute('aria-label', 'Next slide');
+            this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+            this.nextButton.addEventListener('click', () => {
+                this.nextSlide();
             });
         }
+
 
         // Add relative class for absolute positioning of slideshow controls
         this.slideshowContainer.classList.add('dcf-relative');
@@ -560,6 +572,25 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.currentSlide = newCurrentSlideIndex;
     }
 
+    coverFlowSwapSlides(newCurrentSlideIndex) {
+        this.currentSlide = newCurrentSlideIndex;
+
+        this.slides[newCurrentSlideIndex].classList.add('active');
+        this.slides.forEach((slideToRemoveClass) => {
+            if (
+                !slideToRemoveClass.isSameNode(this.slides[newCurrentSlideIndex])
+                && slideToRemoveClass.classList.contains('active')
+            ) {
+                slideToRemoveClass.classList.remove('active');
+            }
+        });
+
+        if (this.scrollingId !== this.slides[newCurrentSlideIndex].id) {
+            this.scrollingId = this.slides[newCurrentSlideIndex].id;
+            this.smoothScrollToItem( this.slides[newCurrentSlideIndex], this.slides[newCurrentSlideIndex].id);
+        }
+    }
+
     /**
      * Switches to the previous slide, will loop to end
      * @returns void
@@ -574,7 +605,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             newCurrentSlideIndex = this.slides.length - 1;
         }
 
-        if (this.transition === 'fade') {
+        if (this.layout === 'cover-flow') {
+            this.coverFlowSwapSlides(newCurrentSlideIndex);
+        } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
         } else {
             this.#swapSlides(newCurrentSlideIndex);
@@ -595,7 +628,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             newCurrentSlideIndex = 0;
         }
 
-        if (this.transition === 'fade') {
+        if (this.layout === 'cover-flow') {
+            this.coverFlowSwapSlides(newCurrentSlideIndex);
+        } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
         } else {
             this.#swapSlides(newCurrentSlideIndex);
@@ -674,6 +709,10 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             throw new Error(`Slide ${index} does not exist`);
         }
 
-        this.#swapSlides(index);
+        if (this.layout === 'cover-flow') {
+            this.coverFlowSwapSlides(index);
+        } else {
+            this.#swapSlides(index);
+        }
     }
 }
