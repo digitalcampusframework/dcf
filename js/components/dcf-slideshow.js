@@ -37,6 +37,8 @@ export default class DCFSlideshow {
 
     layout = 'default';
 
+    coverFlowButtonPosition = 'middle';
+
     scrollingId = null;
 
     slideContainerClassList = [
@@ -199,6 +201,13 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.layout = this.slideshowContainer.dataset.layout;
         }
 
+        if (
+            this.slideshowContainer.dataset.buttonPosition === 'top' ||
+            this.slideshowContainer.dataset.buttonPosition === 'bottom'
+        ) {
+            this.coverFlowButtonPosition = this.slideshowContainer.dataset.buttonPosition;
+        }
+
         // If the tabGroup has no ID then it will set it
         if (this.slideshowContainer.getAttribute('id') === '' || this.slideshowContainer.getAttribute('id') === null) {
             this.slideshowContainer.setAttribute('id', this.uuid.concat('-slideshow'));
@@ -260,10 +269,10 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         if (this.layout === 'cover-flow') {
             this.slides.forEach((singleSlide, index) => {
                 singleSlide.addEventListener('click', () => {
-                    this.coverFlowSwapSlides(index);
+                    this.#coverFlowSwapSlides(index);
                 });
             });
-            this.coverFlowSwapSlides(0);
+            this.#coverFlowSwapSlides(0);
         }
 
         // This needs to go after init controls so we can change the state of the toggle button
@@ -474,7 +483,14 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             }
         } else {
             this.controlsContainer.classList.add('dcf-slideshow-controls');
-            this.controlsContainer.classList.add(...['dcf-absolute', 'dcf-d-flex', 'dcf-jc-between', 'dcf-top-50%', 'dcf-left-50%', 'dcf-z-1']);
+            this.controlsContainer.classList.add(...['dcf-absolute', 'dcf-d-flex', 'dcf-jc-between', 'dcf-left-50%', 'dcf-z-1']);
+            if (this.coverFlowButtonPosition === 'top') {
+                this.controlsContainer.classList.add('dcf-slideshow-controls-top');
+            } else if (this.coverFlowButtonPosition === 'bottom') {
+                this.controlsContainer.classList.add('dcf-slideshow-controls-bottom');
+            } else {
+                this.controlsContainer.classList.add('dcf-top-50%');
+            }
 
             // Set up previous button
             this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-circle', 'dcf-btn-slide', 'dcf-btn-slide-prev');
@@ -572,7 +588,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.currentSlide = newCurrentSlideIndex;
     }
 
-    coverFlowSwapSlides(newCurrentSlideIndex) {
+    #coverFlowSwapSlides(newCurrentSlideIndex) {
         this.currentSlide = newCurrentSlideIndex;
 
         this.slides[newCurrentSlideIndex].classList.add('active');
@@ -606,7 +622,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         if (this.layout === 'cover-flow') {
-            this.coverFlowSwapSlides(newCurrentSlideIndex);
+            this.#coverFlowSwapSlides(newCurrentSlideIndex);
         } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
         } else {
@@ -629,7 +645,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         if (this.layout === 'cover-flow') {
-            this.coverFlowSwapSlides(newCurrentSlideIndex);
+            this.#coverFlowSwapSlides(newCurrentSlideIndex);
         } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
         } else {
@@ -710,7 +726,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         if (this.layout === 'cover-flow') {
-            this.coverFlowSwapSlides(index);
+            this.#coverFlowSwapSlides(index);
         } else {
             this.#swapSlides(index);
         }
