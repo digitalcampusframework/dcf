@@ -275,6 +275,41 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             window.addEventListener('resize', () => {
                 this.#coverFlowSwapSlides(this.currentSlide, true);
             });
+
+            // Add swipe gestures for mobile
+            const mouseStatus = {
+                down: false,
+                xPos: 0,
+                yPos: 0,
+            };
+            this.slideshowContainer.addEventListener('pointerdown', (event) => {
+                if (event.target.closest('dcf-btn-slide')) {
+                    return;
+                }
+                mouseStatus.down = true;
+                mouseStatus.xPos = event.clientX;
+                mouseStatus.yPos = event.clientY;
+            });
+            this.slideshowContainer.addEventListener('pointermove', (event) => {
+                if (mouseStatus.down === false) {
+                    return;
+                }
+                event.preventDefault();
+                if (event.clientX - mouseStatus.xPos > 100) {
+                    this.previousSlide();
+                    mouseStatus.down = false;
+                }
+                if (event.clientX - mouseStatus.xPos < -100) {
+                    this.nextSlide();
+                    mouseStatus.down = false;
+                }
+            });
+            this.slideshowContainer.addEventListener('pointerup', () => {
+                mouseStatus.down = false;
+            });
+            this.slideshowContainer.addEventListener('pointerleave', () => {
+                mouseStatus.down = false;
+            });
         }
 
         // This needs to go after init controls so we can change the state of the toggle button
