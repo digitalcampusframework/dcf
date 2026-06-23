@@ -286,6 +286,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 if (event.target.closest('.dcf-btn-slide') !== null) {
                     return;
                 }
+                if (event.pointerType === 'mouse') {
+                    return;
+                }
                 mouseStatus.down = true;
                 mouseStatus.xPos = event.clientX;
                 mouseStatus.yPos = event.clientY;
