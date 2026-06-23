@@ -25,6 +25,9 @@
 .dcf-h-50\% { @include mixins.h-50pc; }    // .dcf-h-50%
 .dcf-h-75\% { @include mixins.h-75pc; }    // .dcf-h-75%
 .dcf-h-100\% { @include mixins.h-100pc; }  // .dcf-h-100%
+.dcf-h-25vh { @include mixins.h-25vh; }
+.dcf-h-50vh { @include mixins.h-50vh; }
+.dcf-h-75vh { @include mixins.h-75vh; }
 .dcf-h-100vh { @include mixins.h-100vh; }
 .dcf-h-fit-content { @include mixins.h-fit-content; }
 .dcf-h-max-content { @include mixins.h-max-content; }
@@ -62,6 +65,9 @@
 .dcf-w-50\% { @include mixins.w-50pc; }    // .dcf-w-50%
 .dcf-w-75\% { @include mixins.w-75pc; }    // .dcf-w-75%
 .dcf-w-100\% { @include mixins.w-100pc; }  // .dcf-w-100%
+.dcf-h-25vw { @include mixins.h-25vw; }
+.dcf-h-50vw { @include mixins.h-50vw; }
+.dcf-h-75vw { @include mixins.h-75vw; }
 .dcf-w-100vw { @include mixins.w-100vw; }
 .dcf-w-fit-content { @include mixins.w-fit-content; }
 .dcf-w-max-content { @include mixins.w-max-content; }
