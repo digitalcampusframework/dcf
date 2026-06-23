@@ -283,7 +283,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 yPos: 0,
             };
             this.slideshowContainer.addEventListener('pointerdown', (event) => {
-                if (event.target.closest('dcf-btn-slide')) {
+                if (event.target.closest('.dcf-btn-slide') !== null) {
                     return;
                 }
                 mouseStatus.down = true;
