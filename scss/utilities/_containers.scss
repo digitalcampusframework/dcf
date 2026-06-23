@@ -1,0 +1,14 @@
+////////////////////////////////
+// CORE / UTILITIES / CONTAINERS
+////////////////////////////////
+
+
+@use "../mixins/" as mixins;
+
+
+// Container type
+.dcf-ct-anchored { @include mixins.ct-anchored; }
+.dcf-ct-inline-size { @include mixins.ct-inline-size; }
+.dcf-ct-normal { @include mixins.ct-normal; }
+.dcf-ct-scroll-state { @include mixins.ct-scroll-state; }
+.dcf-ct-size { @include mixins.ct-size; }

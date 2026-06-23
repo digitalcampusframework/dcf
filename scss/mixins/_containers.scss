@@ -1,0 +1,11 @@
+/////////////////////////////
+// CORE / MIXINS / CONTAINERS
+/////////////////////////////
+
+
+// Container type
+@mixin ct-anchored($imp:null) { container-type: anchored $imp; }
+@mixin ct-inline-size($imp:null) { container-type: inline-size $imp; }
+@mixin ct-normal($imp:null) { container-type: normal $imp; }
+@mixin ct-scroll-state($imp:null) { container-type: scroll-state $imp; }
+@mixin ct-size($imp:null) { container-type: size $imp; }
