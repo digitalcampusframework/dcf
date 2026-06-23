@@ -45,6 +45,11 @@ export default class DCFSlideshow {
         'dcf-relative',
     ];
 
+    slideContainerCoverFlowClassList = [
+        'dcf-relative',
+        'dcf-overflow-x-hidden',
+    ];
+
     slideDeckClassList = [
         'dcf-d-grid',
         'dcf-grid-cols-1',
@@ -55,6 +60,16 @@ export default class DCFSlideshow {
         'dcf-h-100%',
     ];
 
+    slideDeckCoverFlowClassList = [
+        'dcf-d-flex',
+        'dcf-flex-row',
+        'dcf-flex-nowrap',
+        'dcf-relative',
+        'dcf-m-0',
+        'dcf-pt-0',
+        'dcf-pb-0',
+    ];
+
     slideButtonContainerClassList = [
         'dcf-btn-group',
         'dcf-absolute',
@@ -62,8 +77,26 @@ export default class DCFSlideshow {
         'dcf-top-0',
     ];
 
+    slideButtonContainerCoverFlowClassList = [
+        'dcf-absolute',
+        'dcf-d-flex',
+        'dcf-jc-between',
+        'dcf-left-50%',
+        'dcf-z-1',
+    ];
+
     slideClassList = [
         'dcf-mb-0',
+    ];
+
+    slideCoverFlowClassList = [
+        'dcf-relative',
+        'dcf-overflow-hidden',
+        'dcf-mt-0',
+        'dcf-mb-0',
+        'dcf-p-0',
+        'dcf-flex-shrink-0',
+        'dcf-h-100%',
     ];
 
     slideBtnClassList = [
@@ -72,6 +105,10 @@ export default class DCFSlideshow {
         'dcf-pt-4',
         'dcf-pb-4',
         'dcf-white',
+    ];
+
+    slideBtnCoverFlowClassList = [
+        'dcf-circle',
     ];
 
     slidePrevBtnClassList = [
@@ -149,17 +186,32 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         if ('slideContainerClassList' in options && Array.isArray(options.slideContainerClassList)) {
             this.slideContainerClassList = options.slideContainerClassList;
         }
+        if ('slideContainerCoverFlowClassList' in options && Array.isArray(options.slideContainerCoverFlowClassList)) {
+            this.slideContainerCoverFlowClassList = options.slideContainerCoverFlowClassList;
+        }
         if ('slideDeckClassList' in options && Array.isArray(options.slideDeckClassList)) {
             this.slideDeckClassList = options.slideDeckClassList;
+        }
+        if ('slideDeckCoverFlowClassList' in options && Array.isArray(options.slideDeckCoverFlowClassList)) {
+            this.slideDeckCoverFlowClassList = options.slideDeckCoverFlowClassList;
         }
         if ('slideButtonContainerClassList' in options && Array.isArray(options.slideButtonContainerClassList)) {
             this.slideButtonContainerClassList = options.slideButtonContainerClassList;
         }
+        if ('slideButtonContainerCoverFlowClassList' in options && Array.isArray(options.slideButtonContainerCoverFlowClassList)) {
+            this.slideButtonContainerCoverFlowClassList = options.slideButtonContainerCoverFlowClassList;
+        }
         if ('slideClassList' in options && Array.isArray(options.slideClassList)) {
             this.slideClassList = options.slideClassList;
         }
+        if ('slideCoverFlowClassList' in options && Array.isArray(options.slideCoverFlowClassList)) {
+            this.slideCoverFlowClassList = options.slideCoverFlowClassList;
+        }
         if ('slideBtnClassList' in options && Array.isArray(options.slideBtnClassList)) {
             this.slideBtnClassList = options.slideBtnClassList;
+        }
+        if ('slideBtnCoverFlowClassList' in options && Array.isArray(options.slideBtnCoverFlowClassList)) {
+            this.slideBtnCoverFlowClassList = options.slideBtnCoverFlowClassList;
         }
         if ('slidePrevBtnClassList' in options && Array.isArray(options.slidePrevBtnClassList)) {
             this.slidePrevBtnClassList = options.slidePrevBtnClassList;
@@ -197,7 +249,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
         this.slideshowContainer.setAttribute('aria-roledescription', 'carousel');
         if (this.layout === 'cover-flow') {
-            this.slideshowContainer.classList.add(...['dcf-relative', 'dcf-overflow-x-hidden']);
+            this.slideshowContainer.classList.add(...this.slideContainerCoverFlowClassList);
         } else {
             this.slideshowContainer.classList.add(...this.slideContainerClassList);
         }
@@ -223,7 +275,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.slideDeck.setAttribute('id', this.uuid.concat('-slide-deck'));
         }
         if (this.layout === 'cover-flow') {
-            this.slideDeck.classList.add(...['dcf-d-flex', 'dcf-flex-row', 'dcf-flex-nowrap', 'dcf-relative', 'dcf-m-0', 'dcf-pt-0', 'dcf-pb-0']);
+            this.slideDeck.classList.add(...this.slideDeckCoverFlowClassList);
         } else {
             this.slideDeck.classList.add(...this.slideDeckClassList);
         }
@@ -343,61 +395,6 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }));
     }
 
-    jumpScrollToItem(item) {
-        const newLeft = this.calculateSlideDeckOffset(item);
-        this.slideDeck.style.left = `${newLeft}px`;
-    }
-
-    smoothScrollToItem(item, currentId) {
-        //!IMPORTANT: This needs to be a little longer than the transition to grow the item
-        let scrollDurationMs = parseFloat(window.getComputedStyle(this.slideshowContainer).getPropertyValue('--transition-time'));
-        if (Number.isNaN(scrollDurationMs)) {
-            scrollDurationMs = 500;
-        } else if (scrollDurationMs < 100) {
-            scrollDurationMs = scrollDurationMs * 1000;
-        }
-        let scrollProgressMs = 0;
-        let oldLeft = parseFloat(this.slideDeck.style.getPropertyValue('left'));
-        if (Number.isNaN(oldLeft)) {
-            oldLeft = 0;
-        }
-        let previousLoopTime = Date.now();
-        const animationLoop = () => {
-            if (this.scrollingId !== currentId) {
-                return;
-            }
-
-            const startLoopTime = Date.now();
-            const deltaTime = startLoopTime - previousLoopTime;
-            scrollProgressMs += deltaTime;
-
-            const newLeft = this.calculateSlideDeckOffset(item);
-
-            if (scrollProgressMs < scrollDurationMs) {
-                const easedPercent = easingInOutCubic(scrollProgressMs / scrollDurationMs);
-                const lerpLeft = lerp(oldLeft, newLeft, easedPercent);
-                this.slideDeck.style.left = `${lerpLeft}px`;
-
-                window.requestAnimationFrame(animationLoop);
-            } else {
-                this.slideDeck.style.left = `${newLeft}px`;
-                this.scrollingId = null;
-            }
-            previousLoopTime = startLoopTime;
-        };
-
-        window.requestAnimationFrame(animationLoop);
-    }
-
-    calculateSlideDeckOffset(item) {
-        const itemMidPoint = item.offsetWidth / 2;
-        const itemOffsetToList = item.offsetLeft;
-        const wrapperMidPoint = this.slideshowContainer.offsetWidth / 2;
-
-        const getMidItemToLeftEdge = (-1 * ( itemOffsetToList + itemMidPoint));
-        return getMidItemToLeftEdge + wrapperMidPoint;
-    }
-
     /**
      * Validates and returns standardized name of events for tabs
      * @static
@@ -475,7 +472,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
             slide.classList.add('dcf-slide');
             if (this.layout === 'cover-flow') {
-                slide.classList.add(...['dcf-relative', 'dcf-overflow-hidden', 'dcf-mt-0', 'dcf-mb-0', 'dcf-p-0', 'dcf-flex-shrink-0', 'dcf-h-100%']);
+                slide.classList.add(...this.slideCoverFlowClassList);
             } else {
                 slide.classList.add(...this.slideClassList);
             }
@@ -538,34 +535,57 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.prevButton = document.createElement('button');
         this.nextButton = document.createElement('button');
 
-        if (this.layout !== 'cover-flow') {
-            // Set up controls container
-            this.controlsContainer.classList.add('dcf-slideshow-controls');
+        // Set up controls container
+        this.controlsContainer.classList.add('dcf-slideshow-controls');
+
+        // Set up previous button
+        this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+        this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
+        this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
+        this.prevButton.setAttribute('aria-label', 'Previous slide');
+        this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+        this.prevButton.addEventListener('click', () => {
+            this.previousSlide();
+        });
+
+        // Set up next button
+        this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
+        this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
+        this.nextButton.setAttribute('id', this.uuid.concat('-next'));
+        this.nextButton.setAttribute('aria-label', 'Next slide');
+        this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
+        this.nextButton.addEventListener('click', () => {
+            this.nextSlide();
+        });
+
+        // Set cover flow specific classes
+        if (this.layout === 'cover-flow') {
+
+            // Set the classes for the button container
+            this.controlsContainer.classList.add(...this.slideButtonContainerCoverFlowClassList);
+            if (this.coverFlowButtonPosition === 'top') {
+                this.controlsContainer.classList.add('dcf-slideshow-controls-top');
+            } else if (this.coverFlowButtonPosition === 'bottom') {
+                this.controlsContainer.classList.add('dcf-slideshow-controls-bottom');
+            } else {
+                this.controlsContainer.classList.add('dcf-top-50%');
+            }
+
+            // Set the classes for the prev and next buttons
+            this.prevButton.classList.add(...this.slideBtnCoverFlowClassList);
+            this.nextButton.classList.add(...this.slideBtnCoverFlowClassList);
+
+        // If we are in a normal layout
+        } else {
+
+            // Set the classes for the button container
             this.controlsContainer.classList.add(...this.slideButtonContainerClassList);
 
-            // Set up previous button
-            this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-prev');
+            // Set the classes for the prev and next buttons
             this.prevButton.classList.add(...this.slidePrevBtnClassList);
             this.prevButton.classList.add(...this.slideBtnClassList);
-            this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
-            this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
-            this.prevButton.setAttribute('aria-label', 'Previous slide');
-            this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-            this.prevButton.addEventListener('click', () => {
-                this.previousSlide();
-            });
-
-            // Set up next button
-            this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-btn-slide', 'dcf-btn-slide-next');
             this.nextButton.classList.add(...this.slideNextBtnClassList);
             this.nextButton.classList.add(...this.slideBtnClassList);
-            this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
-            this.nextButton.setAttribute('id', this.uuid.concat('-next'));
-            this.nextButton.setAttribute('aria-label', 'Next slide');
-            this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-            this.nextButton.addEventListener('click', () => {
-                this.nextSlide();
-            });
 
             // If we allow play then set up the play button
             if (this.allowPlay) {
@@ -581,37 +601,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                     this.togglePlayState();
                 });
             }
-        } else {
-            this.controlsContainer.classList.add('dcf-slideshow-controls');
-            this.controlsContainer.classList.add(...['dcf-absolute', 'dcf-d-flex', 'dcf-jc-between', 'dcf-left-50%', 'dcf-z-1']);
-            if (this.coverFlowButtonPosition === 'top') {
-                this.controlsContainer.classList.add('dcf-slideshow-controls-top');
-            } else if (this.coverFlowButtonPosition === 'bottom') {
-                this.controlsContainer.classList.add('dcf-slideshow-controls-bottom');
-            } else {
-                this.controlsContainer.classList.add('dcf-top-50%');
-            }
-
-            // Set up previous button
-            this.prevButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-circle', 'dcf-btn-slide', 'dcf-btn-slide-prev');
-            this.prevButton.innerHTML = this.slidePrevBtnInnerHTML;
-            this.prevButton.setAttribute('id', this.uuid.concat('-previous'));
-            this.prevButton.setAttribute('aria-label', 'Previous slide');
-            this.prevButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-            this.prevButton.addEventListener('click', () => {
-                this.previousSlide();
-            });
-
-            this.nextButton.classList.add('dcf-btn', 'dcf-btn-primary', 'dcf-circle', 'dcf-btn-slide', 'dcf-btn-slide-next');
-            this.nextButton.innerHTML = this.slideNextBtnInnerHTML;
-            this.nextButton.setAttribute('id', this.uuid.concat('-next'));
-            this.nextButton.setAttribute('aria-label', 'Next slide');
-            this.nextButton.setAttribute('aria-controls', this.slideDeck.getAttribute('id'));
-            this.nextButton.addEventListener('click', () => {
-                this.nextSlide();
-            });
         }
-
 
         // Add relative class for absolute positioning of slideshow controls
         this.slideshowContainer.classList.add('dcf-relative');
@@ -688,10 +678,18 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.currentSlide = newCurrentSlideIndex;
     }
 
+    /**
+     * In cover flow layout adjust the left position of the slide deck to "scroll" to image
+     * @param { Number } newCurrentSlideIndex The new slide which to scroll to
+     * @param { Boolean } jump Do the animation to scroll, or jump right to it and avoid animation
+     */
     #coverFlowSwapSlides(newCurrentSlideIndex, jump = false) {
         this.currentSlide = newCurrentSlideIndex;
 
+        // Add the active class to start that transition
         this.slides[newCurrentSlideIndex].classList.add('active');
+
+        // Remove the active class from all the other slides
         this.slides.forEach((slideToRemoveClass) => {
             if (
                 !slideToRemoveClass.isSameNode(this.slides[newCurrentSlideIndex])
@@ -701,12 +699,105 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             }
         });
 
+        // "Scroll" to the the new item
         if (jump) {
-            this.jumpScrollToItem(this.slides[newCurrentSlideIndex]);
+            this.#jumpScrollToItem(this.slides[newCurrentSlideIndex]);
         } else if (this.scrollingId !== this.slides[newCurrentSlideIndex].id) {
             this.scrollingId = this.slides[newCurrentSlideIndex].id;
-            this.smoothScrollToItem( this.slides[newCurrentSlideIndex], this.slides[newCurrentSlideIndex].id);
+            this.#smoothScrollToItem( this.slides[newCurrentSlideIndex], this.slides[newCurrentSlideIndex].id);
         }
+    }
+
+    /**
+     * We calculate the new left position of the slide deck and we jump right to it
+     * @param { HTMLElement } slideToJumpTo The slide to jump to
+     */
+    #jumpScrollToItem(slideToJumpTo) {
+        const newLeft = this.#calculateSlideDeckOffset(slideToJumpTo);
+        this.slideDeck.style.left = `${newLeft}px`;
+    }
+
+    /**
+     * We calculate the new left position of the slide deck and we smoothly animate to it
+     * we also recalculate the scroll position in case it changes like the widths of the slides change
+     * @param { HTMLElement } slideToScrollTo The slide to scroll to
+     * @param { String } thisScrollsId The id of this scroll, this is to cancel the animation if needed
+     */
+    #smoothScrollToItem(slideToScrollTo, thisScrollsId) {
+        //!IMPORTANT: This needs to be a little longer than the transition to grow the item
+        let scrollDurationMs = parseFloat(window.getComputedStyle(this.slideshowContainer).getPropertyValue('--transition-time'));
+        if (Number.isNaN(scrollDurationMs)) {
+            scrollDurationMs = 500;
+        } else if (scrollDurationMs < 100) {
+            scrollDurationMs = scrollDurationMs * 1000;
+        }
+        let scrollProgressMs = 0;
+
+        // Get the starting point for the animation
+        let oldLeft = parseFloat(this.slideDeck.style.getPropertyValue('left'));
+        if (Number.isNaN(oldLeft)) {
+            oldLeft = 0;
+        }
+
+        // We use this to determine how much time between animation frames we had
+        let previousLoopTime = Date.now();
+        const animationLoop = () => {
+            // If we started a new animation then cancel this one
+            if (this.scrollingId !== thisScrollsId) {
+                return;
+            }
+
+            // Calculate how long between loops we were and increment the progress time
+            const startLoopTime = Date.now();
+            const deltaTime = startLoopTime - previousLoopTime;
+            scrollProgressMs += deltaTime;
+
+            // Figure out where we need to scroll to
+            const newLeft = this.#calculateSlideDeckOffset(slideToScrollTo);
+
+            // If we are still in the animation
+            if (scrollProgressMs < scrollDurationMs) {
+
+                // Use the easing function to do a nicer animation
+                const easedPercent = easingInOutCubic(scrollProgressMs / scrollDurationMs);
+
+                // Based on the end, start, and how far into the animation we are
+                // determine where we need to set the left value to
+                const lerpLeft = lerp(oldLeft, newLeft, easedPercent);
+
+                // Set the left style to simulate a scroll
+                this.slideDeck.style.left = `${lerpLeft}px`;
+
+                // Request the next animation frame for the next loop
+                window.requestAnimationFrame(animationLoop);
+
+            // If the animation has finished
+            } else {
+
+                // Once the animation set the left to what the target endpoint it
+                // this is in case the scrollProgressMs makes the animation percent not 100%
+                this.slideDeck.style.left = `${newLeft}px`;
+                this.scrollingId = null;
+            }
+            previousLoopTime = startLoopTime;
+        };
+
+        // Start the animation loop
+        window.requestAnimationFrame(animationLoop);
+    }
+
+    /**
+     * Determine where the slide deck's left style needs to be to have the slide in the middle of the container
+     * @param { HTMLElement } targetSlide Slide we are calculating for
+     * @returns { Number } The px that the left style of the slide deck should be set to
+     */
+    #calculateSlideDeckOffset(targetSlide) {
+        const slideMidPoint = targetSlide.offsetWidth / 2;
+        const slideOffsetToList = targetSlide.offsetLeft;
+        const wrapperMidPoint = this.slideshowContainer.offsetWidth / 2;
+
+        const getMidItemToLeftEdge = (-1 * ( slideOffsetToList + slideMidPoint));
+        return getMidItemToLeftEdge + wrapperMidPoint;
     }
 
     /**
