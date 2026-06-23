@@ -267,6 +267,12 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.#shuffleSlides();
         }
         this.#initSlides();
+        if (
+            this.slideshowContainer.hasAttribute('data-infinite') &&
+            this.slideshowContainer.dataset.infinite.toLowerCase() === 'true'
+        ) {
+            this.#setupInfiniteScroll();
+        }
         this.#initControls();
 
         if (this.layout === 'cover-flow') {
@@ -426,6 +432,38 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.slides.forEach((listItem) => {
             this.slideDeck.append(listItem);
         });
+    }
+
+    #setupInfiniteScroll() {
+        const originalLength = this.slides.length;
+        const numCopies = 5;
+
+        for (let copyCount = 0; copyCount < numCopies; copyCount++) {
+            const prevList = [];
+            this.slides.forEach((slide) => {
+                slide.dataset.original = true;
+                const newSlidePrev = slide.cloneNode(true);
+                newSlidePrev.removeAttribute('data-original');
+                const newSlideNext = slide.cloneNode(true);
+                newSlideNext.removeAttribute('data-original');
+                prevList.push(newSlidePrev);
+                this.slideDeck.append(newSlideNext);
+            });
+            prevList.reverse().forEach((newSlidePrev) => {
+                this.slideDeck.prepend(newSlidePrev);
+            });
+        }
+
+        this.slides = Array.from(this.slideDeck.children);
+        this.currentSlide = numCopies * originalLength;
+        this.#coverFlowSwapSlides(this.currentSlide);
+
+        // Loop through all the slides
+        // Give the original slides some data attribute so we can get them later
+        // Append/prepend each slide a couple times
+        // Reset slides
+        // Reset currentSlide to the first original slide
+
     }
 
     /**
