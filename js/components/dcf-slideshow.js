@@ -41,6 +41,8 @@ export default class DCFSlideshow {
 
     scrollingId = null;
 
+    infiniteSlideOriginalLength = 0;
+
     slideContainerClassList = [
         'dcf-relative',
     ];
@@ -318,13 +320,13 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         ) {
             this.#shuffleSlides();
         }
-        this.#initSlides();
         if (
             this.slideshowContainer.hasAttribute('data-infinite') &&
             this.slideshowContainer.dataset.infinite.toLowerCase() === 'true'
         ) {
             this.#setupInfiniteScroll();
         }
+        this.#initSlides();
         this.#initControls();
 
         if (this.layout === 'cover-flow') {
@@ -432,7 +434,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     }
 
     #setupInfiniteScroll() {
-        const originalLength = this.slides.length;
+        this.infiniteSlideOriginalLength = this.slides.length;
         const numCopies = 5;
 
         for (let copyCount = 0; copyCount < numCopies; copyCount++) {
@@ -452,15 +454,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         this.slides = Array.from(this.slideDeck.children);
-        this.currentSlide = numCopies * originalLength;
-        this.#coverFlowSwapSlides(this.currentSlide);
-
-        // Loop through all the slides
-        // Give the original slides some data attribute so we can get them later
-        // Append/prepend each slide a couple times
-        // Reset slides
-        // Reset currentSlide to the first original slide
-
+        this.currentSlide = numCopies * this.infiniteSlideOriginalLength;
     }
 
     /**
@@ -478,8 +472,12 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             }
 
             slide.setAttribute('aria-roledescription', 'slide');
-            slide.setAttribute('aria-label', `${slideIndex + 1} of ${this.slides.length}`);
-
+            if (this.infiniteSlideOriginalLength !== 0) {
+                const originalSlideIndex = (slideIndex % this.infiniteSlideOriginalLength) + 1;
+                slide.setAttribute('aria-label', `${originalSlideIndex} of ${this.infiniteSlideOriginalLength}`);
+            } else {
+                slide.setAttribute('aria-label', `${slideIndex + 1} of ${this.slides.length}`);
+            }
 
             // Cover-flow layout will let us see all the slides so if we click on one then jump to it
             if (slideIndex !== this.currentSlide && this.layout === 'cover-flow') {
