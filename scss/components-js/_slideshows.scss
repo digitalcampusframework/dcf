@@ -10,12 +10,12 @@
   padding-left: 0;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]) .dcf-slide-deck li {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck li {
   grid-column: 1;
   grid-row: 1;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]) .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 2) - (#{var.$border-width-button} * 5) - #{var.$size-clip-path}) 0,
@@ -26,8 +26,8 @@
   );
 }
 
-.dcf-slideshow.dcf-slideshow-initialized[data-play="true"]:not([data-layout="cover-flow"]) .dcf-slide-deck,
-.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"]:not([data-layout="cover-flow"]) .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized[data-play="true"]:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck,
+.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"]:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 3) - (#{var.$border-width-button} * 8) - #{var.$size-clip-path}) 0,
@@ -102,4 +102,25 @@
   bottom: var(--button-padding);
   width: calc(var(--item-width) - (2 * var(--button-padding)));
   transform: translateX(-50%);
+}
+
+.dcf-slideshow[data-layout="multi-view"] {
+  container-type: inline-size;
+  --gap: 1rem;
+  --item-width: clamp(15rem, 25cqw, 20rem);
+  --transition-time: 400ms; //!IMPORTANT this is referenced in the JS
+  --transition-easing: cubic-bezier(.25, .46, .45, .94);
+}
+
+.dcf-slideshow[data-layout="multi-view"] .dcf-slide-deck {
+  gap: var(--gap);
+}
+
+.dcf-slideshow[data-layout="multi-view"] .dcf-slide-deck li {
+  width: var(--item-width);
+}
+
+.dcf-slideshow[data-layout="multi-view"] .dcf-slideshow-controls {
+  gap: var(--gap);
+  margin-left: var(--gap);
 }

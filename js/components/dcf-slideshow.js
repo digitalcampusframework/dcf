@@ -244,13 +244,15 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.slideshowContainer = slideshowContainer;
         if (this.slideshowContainer.dataset.layout === 'cover-flow') {
             this.layout = this.slideshowContainer.dataset.layout;
+        } else if (this.slideshowContainer.dataset.layout === 'multi-view') {
+            this.layout = this.slideshowContainer.dataset.layout;
         }
 
         if (this.slideshowContainer.tagName !== 'SECTION') {
             this.slideshowContainer.setAttribute('role', 'region');
         }
         this.slideshowContainer.setAttribute('aria-roledescription', 'carousel');
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             this.slideshowContainer.classList.add(...this.slideContainerCoverFlowClassList);
         } else {
             this.slideshowContainer.classList.add(...this.slideContainerClassList);
@@ -276,7 +278,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         if (this.slideDeck.getAttribute('id') === '' || this.slideDeck.getAttribute('id') === null) {
             this.slideDeck.setAttribute('id', this.uuid.concat('-slide-deck'));
         }
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             this.slideDeck.classList.add(...this.slideDeckCoverFlowClassList);
         } else {
             this.slideDeck.classList.add(...this.slideDeckClassList);
@@ -329,7 +331,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         this.#initSlides();
         this.#initControls();
 
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             // If we resize then the active slide might not be in the middle
             // so we will need to re-scroll to it
             window.addEventListener('resize', () => {
@@ -465,7 +467,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             // Set up slide
             slide.setAttribute('id', this.uuid.concat('-slide-', slideIndex));
             slide.classList.add('dcf-slide');
-            if (this.layout === 'cover-flow') {
+            if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
                 slide.classList.add(...this.slideCoverFlowClassList);
             } else {
                 slide.classList.add(...this.slideClassList);
@@ -480,11 +482,11 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             }
 
             // Cover-flow layout will let us see all the slides so if we click on one then jump to it
-            if (slideIndex !== this.currentSlide && this.layout === 'cover-flow') {
+            if (slideIndex !== this.currentSlide && (this.layout === 'cover-flow' || this.layout === 'multi-view')) {
                 slide.addEventListener('click', () => {
                     this.#coverFlowSwapSlides(slideIndex);
                 });
-            } else if (this.layout === 'cover-flow') {
+            } else if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
                 slide.addEventListener('click', () => {
                     this.#coverFlowSwapSlides(slideIndex);
                 });
@@ -573,6 +575,15 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.prevButton.classList.add(...this.slideBtnCoverFlowClassList);
             this.nextButton.classList.add(...this.slideBtnCoverFlowClassList);
 
+        } else if (this.layout === 'multi-view') {
+
+            // Set the classes for the button container
+            this.controlsContainer.classList.add(...['dcf-d-flex', 'dcf-jc-start', 'dcf-ai-center', 'dcf-mt-4']);
+
+            // Set the classes for the prev and next buttons
+            this.prevButton.classList.add(...this.slideBtnCoverFlowClassList);
+            this.nextButton.classList.add(...this.slideBtnCoverFlowClassList);
+
         // If we are in a normal layout
         } else {
 
@@ -610,7 +621,12 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.controlsContainer.appendChild(this.playToggleButton);
         }
         this.controlsContainer.appendChild(this.nextButton);
-        this.slideshowContainer.prepend(this.controlsContainer);
+
+        if (this.layout === 'multi-view') {
+            this.slideshowContainer.append(this.controlsContainer);
+        } else {
+            this.slideshowContainer.prepend(this.controlsContainer);
+        }
     }
 
     /**
@@ -795,6 +811,22 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         const wrapperMidPoint = this.slideshowContainer.offsetWidth / 2;
 
         const getMidItemToLeftEdge = (-1 * ( slideOffsetToList + slideMidPoint));
+
+        // If we are in multi-view then images snap to edge
+        if (this.layout === 'multi-view') {
+
+            // Determine the width (in px) the css var --gap is
+            const dummy = document.createElement('div');
+            dummy.style.position = 'absolute';
+            dummy.style.visibility = 'hidden';
+            dummy.style.width = 'var(--gap)';
+            this.slideshowContainer.appendChild(dummy);
+            const gapPx = dummy.getBoundingClientRect().width;
+            this.slideshowContainer.removeChild(dummy);
+
+            return getMidItemToLeftEdge + slideMidPoint + gapPx;
+        }
+
         return getMidItemToLeftEdge + wrapperMidPoint;
     }
 
@@ -812,7 +844,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             newCurrentSlideIndex = this.slides.length - 1;
         }
 
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             this.#coverFlowSwapSlides(newCurrentSlideIndex);
         } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
@@ -835,7 +867,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             newCurrentSlideIndex = 0;
         }
 
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             this.#coverFlowSwapSlides(newCurrentSlideIndex);
         } else if (this.transition === 'fade') {
             this.#fadeSlides(newCurrentSlideIndex);
@@ -916,7 +948,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             throw new Error(`Slide ${index} does not exist`);
         }
 
-        if (this.layout === 'cover-flow') {
+        if (this.layout === 'cover-flow' || this.layout === 'multi-view') {
             this.#coverFlowSwapSlides(index);
         } else {
             this.#swapSlides(index);
