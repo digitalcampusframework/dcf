@@ -85,9 +85,8 @@
 
 
 // Place self
-.dcf-ps-auto { @include mixins.pi-auto; }
-.dcf-ps-center { @include mixins.pi-center; }
-.dcf-ps-start { @include mixins.pi-start; }
-.dcf-ps-end { @include mixins.pi-end; }
-.dcf-ps-stretch { @include mixins.pi-stretch; }
-
+.dcf-ps-auto { @include mixins.ps-auto; }
+.dcf-ps-center { @include mixins.ps-center; }
+.dcf-ps-start { @include mixins.ps-start; }
+.dcf-ps-end { @include mixins.ps-end; }
+.dcf-ps-stretch { @include mixins.ps-stretch; }
