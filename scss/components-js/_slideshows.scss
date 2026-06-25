@@ -48,7 +48,7 @@
 
 .dcf-slideshow[data-layout="multi-view"] {
   container-type: inline-size;
-  --gap: 1rem;
+  --gap: 1rem; //!IMPORTANT this is referenced in the JS
   --button-padding: 1rem;
   --item-width: clamp(15rem, 25cqw, 20rem);
   --transition-time: 400ms; //!IMPORTANT this is referenced in the JS

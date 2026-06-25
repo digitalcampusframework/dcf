@@ -830,7 +830,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             const dummy = document.createElement('div');
             dummy.style.position = 'absolute';
             dummy.style.visibility = 'hidden';
-            dummy.style.width = 'var(--gap)';
+            dummy.style.width = 'var(--gap, 1rem)';
             this.slideshowContainer.appendChild(dummy);
             const gapPx = dummy.getBoundingClientRect().width;
             this.slideshowContainer.removeChild(dummy);
@@ -842,7 +842,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             const dummy = document.createElement('div');
             dummy.style.position = 'absolute';
             dummy.style.visibility = 'hidden';
-            dummy.style.width = 'var(--gap)';
+            dummy.style.width = 'var(--gap, 1rem)';
             this.slideshowContainer.appendChild(dummy);
             const gapPx = dummy.getBoundingClientRect().width;
             this.slideshowContainer.removeChild(dummy);
