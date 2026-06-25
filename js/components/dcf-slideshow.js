@@ -89,6 +89,13 @@ export default class DCFSlideshow {
         'dcf-z-1',
     ];
 
+    slideButtonContainerMultiViewUnderClassList = [
+        'dcf-d-flex',
+        'dcf-jc-start',
+        'dcf-ai-center',
+        'dcf-mt-4',
+    ];
+
     slideClassList = [
         'dcf-mb-0',
     ];
@@ -204,6 +211,9 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
         if ('slideButtonContainerMultiViewClassList' in options && Array.isArray(options.slideButtonContainerMultiViewClassList)) {
             this.slideButtonContainerMultiViewClassList = options.slideButtonContainerMultiViewClassList;
+        }
+        if ('slideButtonContainerMultiViewUnderClassList' in options && Array.isArray(options.slideButtonContainerMultiViewUnderClassList)) {
+            this.slideButtonContainerMultiViewUnderClassList = options.slideButtonContainerMultiViewUnderClassList;
         }
         if ('slideClassList' in options && Array.isArray(options.slideClassList)) {
             this.slideClassList = options.slideClassList;
@@ -574,7 +584,7 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 this.controlsContainer.classList.add(...this.slideButtonContainerMultiViewClassList);
                 this.controlsContainer.classList.add('dcf-slideshow-controls-top');
             } else if (this.multiViewButtonPosition === 'under') {
-                this.controlsContainer.classList.add(...['dcf-d-flex', 'dcf-jc-start', 'dcf-ai-center', 'dcf-mt-4']);
+                this.controlsContainer.classList.add(...this.slideButtonContainerMultiViewUnderClassList);
                 this.controlsContainer.classList.add('dcf-slideshow-controls-under');
             } else if (this.multiViewButtonPosition === 'bottom') {
                 this.controlsContainer.classList.add(...this.slideButtonContainerMultiViewClassList);
