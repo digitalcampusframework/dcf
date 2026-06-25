@@ -46,67 +46,10 @@
   opacity: 1; // Starting opacity
 }
 
-.dcf-slideshow[data-layout="cover-flow"] {
-  container-type: inline-size;
-  --item-width: clamp(15rem, 25cqw, 20rem);
-  --button-padding: 1rem;
-  --clip-path-inline: 10%;
-  --clip-path-block: 10%;
-  --transition-time: 400ms; //!IMPORTANT this is referenced in the JS
-  --transition-easing: cubic-bezier(.25, .46, .45, .94);
-}
-
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck {
-  padding-inline: calc(50cqw - (var(--item-width) / 2) + 2cqw); // We add +2 to fix some browser rounding issues
-}
-
-// /* List item setup */
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li {
-  width: var(--item-width);
-  clip-path: inset(var(--clip-path-block) var(--clip-path-inline) var(--clip-path-block) var(--clip-path-inline) round var.$roundrect);
-  transition:
-    clip-path var(--transition-time) var(--transition-easing),
-    margin-inline var(--transition-time) var(--transition-easing);
-}
-
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active {
-  clip-path: inset(0% 0% 0% 0% round var.$roundrect);
-  margin-inline: var(--clip-path-inline);
-}
-
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li .dcf-slideshow-nonactive-hide {
-  opacity: 0;
-  transition: opacity var(--transition-time) var(--transition-easing);
-}
-
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slide-deck li.active .dcf-slideshow-nonactive-hide {
-  opacity: 1;
-}
-
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) {
-  width: calc(var(--item-width) + var(--button-padding));
-  transform: translate(-50%, -50%);
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) .dcf-btn-slide-prev {
-  transform: translateX(-100%);
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls:not(.dcf-slideshow-controls-top):not(.dcf-slideshow-controls-bottom) .dcf-btn-slide-next {
-  transform: translateX(100%);
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls.dcf-slideshow-controls-top {
-  top: var(--button-padding);
-  width: calc(var(--item-width) - (2 * var(--button-padding)));
-  transform: translateX(-50%);
-}
-.dcf-slideshow[data-layout="cover-flow"] .dcf-slideshow-controls.dcf-slideshow-controls-bottom {
-  bottom: var(--button-padding);
-  width: calc(var(--item-width) - (2 * var(--button-padding)));
-  transform: translateX(-50%);
-}
-
 .dcf-slideshow[data-layout="multi-view"] {
   container-type: inline-size;
   --gap: 1rem;
+  --button-padding: 1rem;
   --item-width: clamp(15rem, 25cqw, 20rem);
   --transition-time: 400ms; //!IMPORTANT this is referenced in the JS
   --transition-easing: cubic-bezier(.25, .46, .45, .94);
@@ -120,7 +63,38 @@
   width: var(--item-width);
 }
 
-.dcf-slideshow[data-layout="multi-view"] .dcf-slideshow-controls {
+// Center
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls {
+  width: calc(var(--item-width) + var(--button-padding));
+  transform: translate(-50%, -50%);
+}
+
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls .dcf-btn-slide-prev,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls .dcf-btn-slide-prev {
+  transform: translateX(-100%);
+}
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls .dcf-btn-slide-next,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls .dcf-btn-slide-next {
+  transform: translateX(100%);
+}
+
+// Top
+.dcf-slideshow[data-layout="multi-view"][data-button-position="top"] .dcf-slideshow-controls {
+  top: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
+  transform: translateX(-50%);
+}
+
+// Bottom
+.dcf-slideshow[data-layout="multi-view"][data-button-position="bottom"] .dcf-slideshow-controls {
+  bottom: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
+  transform: translateX(-50%);
+}
+
+// Under
+.dcf-slideshow[data-layout="multi-view"][data-button-position="under"] .dcf-slideshow-controls {
   gap: var(--gap);
   margin-left: var(--gap);
 }
