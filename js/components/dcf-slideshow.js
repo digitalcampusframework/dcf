@@ -277,8 +277,8 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
         }
 
         if (
-            this.slideshowContainer.dataset.snap === 'center' ||
-            this.slideshowContainer.dataset.snap === 'left'
+            this.slideshowContainer.dataset.snap === 'left' ||
+            this.slideshowContainer.dataset.snap === 'right'
         ) {
             this.multiViewSlidePosition = this.slideshowContainer.dataset.snap;
         }
@@ -836,6 +836,18 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             this.slideshowContainer.removeChild(dummy);
 
             return getMidItemToLeftEdge + slideMidPoint + gapPx;
+        } else if (this.multiViewSlidePosition === 'right') {
+
+            // Determine the width (in px) the css var --gap is
+            const dummy = document.createElement('div');
+            dummy.style.position = 'absolute';
+            dummy.style.visibility = 'hidden';
+            dummy.style.width = 'var(--gap)';
+            this.slideshowContainer.appendChild(dummy);
+            const gapPx = dummy.getBoundingClientRect().width;
+            this.slideshowContainer.removeChild(dummy);
+
+            return getMidItemToLeftEdge + (wrapperMidPoint * 2) - slideMidPoint - gapPx;
         }
 
         return getMidItemToLeftEdge + wrapperMidPoint;
