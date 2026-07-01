@@ -716,13 +716,13 @@ width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
 
         // Remove the active class from all the other slides
         this.slides.forEach((slideToRemoveClass) => {
-            slideToRemoveClass.classList.remove('dcf-slideshow-active');
-            slideToRemoveClass.classList.add('dcf-slideshow-inactive');
+            slideToRemoveClass.classList.remove('dcf-slide-active');
+            slideToRemoveClass.classList.add('dcf-slide-inactive');
         });
 
-        // Add the active class to start that transition
-        this.slides[newCurrentSlideIndex].classList.remove('dcf-slideshow-active');
-        this.slides[newCurrentSlideIndex].classList.add('dcf-slideshow-active');
+        // Add the active class to start that transitions
+        this.slides[newCurrentSlideIndex].classList.remove('dcf-slide-inactive');
+        this.slides[newCurrentSlideIndex].classList.add('dcf-slide-active');
 
         // "Scroll" to the the new item
         if (jump) {
