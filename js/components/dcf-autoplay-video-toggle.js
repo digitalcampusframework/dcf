@@ -89,16 +89,14 @@ export default class DCFAutoplayVideoToggle {
         this.toggleButton.addEventListener('click', () => {
             if (this.isPlaying()) {
                 this.pauseAll();
-                window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.pausedStatus());
             } else {
                 this.playAll();
-                window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.playStatus());
             }
             window.dispatchEvent(this.toggleEvent);
         });
         this.autoplayVideoContainer.append(this.toggleButton);
 
-        window.addEventListener('dcfAutoplayVideoToggle', () => {
+        window.addEventListener(DCFAutoplayVideoToggle.events('dcfAutoplayVideoToggle'), () => {
             if (this.isPlaying()) {
                 // show pause button
                 this.toggleButton.setAttribute('aria-label', 'pause autoplay video');
@@ -112,14 +110,14 @@ export default class DCFAutoplayVideoToggle {
 
         const videos = Array.from(document.getElementsByTagName('video'));
         videos.forEach((video) => {
-            if (this.isAutoplayVideo(video)) {
+            if (this.#isAutoplayVideo(video)) {
                 this.autoplayVideos.push(video);
             }
         });
 
         if (this.isPlaying()) {
             this.playAll();
-            window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.playStatus());
+            window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.#playStatus());
         } else {
             this.pauseAll();
         }
@@ -138,37 +136,42 @@ export default class DCFAutoplayVideoToggle {
     static events(name) {
         const events = {
             autoplayVideoReady: 'autoplayVideoReady',
+            dcfAutoplayVideoToggle: 'dcfAutoplayVideoToggle',
         };
         Object.freeze(events);
 
         return name in events ? events[name] : undefined;
     }
 
-    playStatus() {
+    #playStatus() {
         return 'play';
     }
 
-    pausedStatus() {
+    #pausedStatus() {
         return 'paused';
     }
 
     isPlaying() {
-        return window.localStorage.getItem('dcfAutoplayVideoToggleStatus') !== this.pausedStatus();
+        return window.localStorage.getItem('dcfAutoplayVideoToggleStatus') !== this.#pausedStatus();
     }
 
     playAll() {
         this.autoplayVideos.forEach((video) => {
             video.play();
         });
+        window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.#playStatus());
+        window.dispatchEvent(this.toggleEvent);
     }
 
     pauseAll() {
         this.autoplayVideos.forEach((video) => {
             video.pause();
         });
+        window.localStorage.setItem('dcfAutoplayVideoToggleStatus', this.#pausedStatus());
+        window.dispatchEvent(this.toggleEvent);
     }
 
-    isAutoplayVideo(video) {
+    #isAutoplayVideo(video) {
         return video.hasAttribute('autoplay') && video.hasAttribute('muted') && video.hasAttribute('playsinline');
     }
 }
