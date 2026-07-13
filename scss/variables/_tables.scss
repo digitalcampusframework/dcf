@@ -50,8 +50,12 @@ $grid-col-2-table-responsive: 2fr !default;                       // Second grid
 $grid-col-gap-table-responsive: s.$length-vw-1 !default;          // Grid column-gap in responsive table
 
 
+// Line height
+$line-height-caption: #{ms.$ms02};  // Line height of table captions
+
+
 // Padding
-$padding-bottom-caption: #{ms.$ms-4}rem !default;                                 // Padding-bottom for table captions
+$padding-bottom-caption: #{ms.$ms00}rem !default;                                 // Padding-bottom for table captions
 
 $padding-right-table-cell: s.$length-em-6 !default;                               // Padding-right for <th> and <td> cells
 
