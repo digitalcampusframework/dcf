@@ -66,7 +66,7 @@
 // Center
 .dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls,
 .dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls {
-  width: calc(var(--item-width) + var(--button-padding));
+  width: var(--item-width);
   transform: translate(-50%, -50%);
 }
 
