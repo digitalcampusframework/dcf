@@ -18,6 +18,10 @@
   @if (var.$font-weight-caption-bold) {
     @include mixins.bold;
   }
+  // If the caption line-height is not 1.5, then change the line-height
+  @if (func.to-number(var.$line-height-caption) != func.to-number(#{var.$ms03})) {
+    line-height: var.$line-height-caption;
+  }
   padding-bottom: var.$padding-bottom-caption;
   @if (var.$text-wrap-balance-caption == true) {
     text-wrap: balance;
