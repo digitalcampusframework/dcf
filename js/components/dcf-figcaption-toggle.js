@@ -10,6 +10,8 @@ export default class DCFFigcaptionToggles {
 
     toggleButton = null;
 
+    toggleButtonInstance = null;
+
     toggleButtonInnerHTML = `<svg class="dcf-h-4 dcf-w-4 dcf-fill-current"
         width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
     <path class="dcf-btn-toggle-figcaption-icon-open"
@@ -124,7 +126,7 @@ export default class DCFFigcaptionToggles {
 
         // Append the button and initialize it
         this.figure.appendChild(this.toggleButton);
-        new DCFButtonToggles(this.toggleButton, {
+        this.toggleButtonInstance = new DCFButtonToggles(this.toggleButton, {
             toggleKeys: this.toggleKeys,
             onKeys:         this.onKeys,
             offKeys:        this.offKeys,
