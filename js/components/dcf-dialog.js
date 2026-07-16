@@ -186,15 +186,26 @@ export default class DCFDialog {
     }
 
     #addEventListeners() {
-        window.addEventListener('click', (event) => {
-            const toggleButton = event.target.closest(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`);
-            if (toggleButton !== null) {
-                this.toggle({
-                    'type': 'toggleButton',
-                    'button': toggleButton,
+        if (this.dynamicToggles) {
+            window.addEventListener('click', (event) => {
+                const toggleButton = event.target.closest(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`);
+                if (toggleButton !== null) {
+                    this.toggle({
+                        'type': 'toggleButton',
+                        'button': toggleButton,
+                    });
+                }
+            });
+        } else {
+            this.toggleButtons.forEach((singleToggleButton) => {
+                singleToggleButton.addEventListener('click', () => {
+                    this.toggle({
+                        'type': 'toggleButton',
+                        'button': singleToggleButton,
+                    });
                 });
-            }
-        });
+            });
+        }
 
         // If another modal is opened then close this one
         document.addEventListener('dialogPreOpen', (event) => {
