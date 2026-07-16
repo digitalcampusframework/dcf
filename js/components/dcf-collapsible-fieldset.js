@@ -53,6 +53,8 @@ export default class DCFCollapsibleFieldsets {
         'dcf-motion-none',
     ];
 
+    toggleButtonInstance = null;
+
     commandToggle = new Event(DCFButtonToggles.events('commandToggle'));
 
     toggleKeys = [];
@@ -210,7 +212,7 @@ export default class DCFCollapsibleFieldsets {
 
         // Initialize the toggle button
         //TODO: Use class methods instead of command events
-        new DCFButtonToggles(this.legendButtonElement, {
+        this.toggleButtonInstance = new DCFButtonToggles(this.legendButtonElement, {
             toggleKeys: this.toggleKeys,
             onKeys:     this.onKeys,
             offKeys:    this.offKeys,
