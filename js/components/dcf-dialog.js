@@ -6,7 +6,11 @@ export default class DCFDialog {
 
     dialogElement = null;
 
+    dynamicToggles = false;
+
     toggleButtons = [];
+
+    toggleButtonSelector = null;
 
     closeButton = null;
 
@@ -89,6 +93,9 @@ export default class DCFDialog {
         if (this.dialogElement.hasAttribute('data-deliberateCloseOnly')) {
             this.deliberateCloseOnly = true;
         }
+        if (this.dialogElement.hasAttribute('data-dynamicToggleBtns')) {
+            this.dynamicToggles = true;
+        }
 
         if (this.dialogElement.dataset.defaultClasses !== 'false') {
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
@@ -129,9 +136,16 @@ export default class DCFDialog {
         }
         this.closeButton.setAttribute('type', 'button');
 
-        this.toggleButtons = Array.from(document.querySelectorAll(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`));
+        this.toggleButtonSelector = `.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`;
 
-        this.toggleButtons.forEach((singleToggleButton, index) => {
+        let toggleButtonList = [];
+        if (this.dynamicToggles) {
+            toggleButtonList = document.querySelectorAll(this.toggleButtonSelector);
+        } else {
+            this.toggleButtons = Array.from(document.querySelectorAll(this.toggleButtonSelector));
+            toggleButtonList = this.toggleButtons;
+        }
+        toggleButtonList.forEach((singleToggleButton, index) => {
             if (singleToggleButton.getAttribute('id') === '' || singleToggleButton.getAttribute('id') === null) {
                 singleToggleButton.setAttribute('id', this.uuid.concat(`-dialog-toggle-button-${index}`));
             }
@@ -140,6 +154,7 @@ export default class DCFDialog {
             } else {
                 singleToggleButton.setAttribute('aria-haspopup', 'dialog');
             }
+            singleToggleButton.removeAttribute('disabled');
         });
 
         this.#addEventListeners();
@@ -171,16 +186,26 @@ export default class DCFDialog {
     }
 
     #addEventListeners() {
-        // Set up toggle buttons to open and close modal
-        this.toggleButtons.forEach((singleToggleButton) => {
-            singleToggleButton.removeAttribute('disabled');
-            singleToggleButton.addEventListener('click', () => {
-                this.toggle({
-                    'type': 'toggleButton',
-                    'button': singleToggleButton,
+        if (this.dynamicToggles) {
+            window.addEventListener('click', (event) => {
+                const toggleButton = event.target.closest(`.dcf-btn-toggle-dialog[data-controls='${this.dialogElement.getAttribute('id')}']`);
+                if (toggleButton !== null) {
+                    this.toggle({
+                        'type': 'toggleButton',
+                        'button': toggleButton,
+                    });
+                }
+            });
+        } else {
+            this.toggleButtons.forEach((singleToggleButton) => {
+                singleToggleButton.addEventListener('click', () => {
+                    this.toggle({
+                        'type': 'toggleButton',
+                        'button': singleToggleButton,
+                    });
                 });
             });
-        });
+        }
 
         // If another modal is opened then close this one
         document.addEventListener('dialogPreOpen', (event) => {
@@ -202,7 +227,11 @@ export default class DCFDialog {
         // Close dialog if we are no longer on it (this is important for the non-modal)
         this.dialogElement.addEventListener('focusout', (event) => {
             let isToggleButtonFocusout = false;
-            for (const singleToggleButton of this.toggleButtons) {
+            let allToggleButtons = this.toggleButtons;
+            if (this.dynamicToggles) {
+                allToggleButtons = document.querySelectorAll(this.toggleButtonSelector);
+            }
+            for (const singleToggleButton of allToggleButtons) {
                 if (singleToggleButton.isSameNode(event.relatedTarget) || singleToggleButton.contains(event.relatedTarget)) {
                     isToggleButtonFocusout = true;
                 }
@@ -281,7 +310,11 @@ export default class DCFDialog {
         this.dialogElement.dispatchEvent(preCloseEvent);
         this.dialogElement.close();
         this.dialogElement.classList.remove('dcf-dialog-is-open');
-        this.toggleButtons.forEach((singleToggleButton) => {
+        let allToggleButtons = this.toggleButtons;
+        if (this.dynamicToggles) {
+            allToggleButtons = document.querySelectorAll(this.toggleButtonSelector);
+        }
+        allToggleButtons.forEach((singleToggleButton) => {
             singleToggleButton.classList.remove('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', false);
@@ -311,7 +344,11 @@ export default class DCFDialog {
             this.dialogElement.showModal();
         }
         this.dialogElement.classList.add('dcf-dialog-is-open');
-        this.toggleButtons.forEach((singleToggleButton) => {
+        let allToggleButtons = this.toggleButtons;
+        if (this.dynamicToggles) {
+            allToggleButtons = document.querySelectorAll(this.toggleButtonSelector);
+        }
+        allToggleButtons.forEach((singleToggleButton) => {
             singleToggleButton.classList.add('dcf-dialog-is-open');
             if (this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
                 singleToggleButton.setAttribute('aria-expanded', true);
