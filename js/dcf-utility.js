@@ -159,3 +159,26 @@ export function stringToDom(htmlString) {
     const doc = new DOMParser().parseFromString(htmlString, 'text/html');
     return doc.body.firstChild;
 }
+
+export function waitForTransition(element) {
+    return new Promise((resolve) => {
+        const styles = window.getComputedStyle(element);
+        const duration = parseFloat(styles.transitionDuration);
+
+        if (!duration) {
+            resolve();
+            return;
+        }
+
+        const propertyCount = styles.transitionProperty.split(',').length;
+        let fired = 0;
+
+        element.addEventListener('transitionend', function handler() {
+            fired++;
+            if (fired >= propertyCount) {
+                element.removeEventListener('transitionend', handler);
+                resolve();
+            }
+        });
+    });
+}

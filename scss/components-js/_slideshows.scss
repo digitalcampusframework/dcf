@@ -10,12 +10,12 @@
   padding-left: 0;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck li {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck li {
   grid-column: 1;
   grid-row: 1;
 }
 
-.dcf-slideshow.dcf-slideshow-initialized .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 2) - (#{var.$border-width-button} * 5) - #{var.$size-clip-path}) 0,
@@ -26,8 +26,8 @@
   );
 }
 
-.dcf-slideshow.dcf-slideshow-initialized[data-play="true"] .dcf-slide-deck,
-.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"] .dcf-slide-deck {
+.dcf-slideshow.dcf-slideshow-initialized[data-play="true"]:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck,
+.dcf-slideshow.dcf-slideshow-initialized[data-play="auto"]:not([data-layout="cover-flow"]):not([data-layout="multi-view"]) .dcf-slide-deck {
   clip-path: polygon(
     0 0,
     calc(100% - (#{var.$size-btn-x} * 3) - (#{var.$border-width-button} * 8) - #{var.$size-clip-path}) 0,
@@ -44,4 +44,57 @@
   animation-duration: var.$animation-duration-fade-in;
   animation-timing-function: var.$animation-timing-fn-fade-in;
   opacity: 1; // Starting opacity
+}
+
+.dcf-slideshow[data-layout="multi-view"] {
+  container-type: inline-size;
+  --gap: 1rem; //!IMPORTANT this is referenced in the JS
+  --button-padding: 1rem;
+  --item-width: clamp(15rem, 25cqw, 20rem);
+  --transition-time: 400ms; //!IMPORTANT this is referenced in the JS
+  --transition-easing: cubic-bezier(.25, .46, .45, .94);
+}
+
+.dcf-slideshow[data-layout="multi-view"] .dcf-slide-deck {
+  gap: var(--gap);
+}
+
+.dcf-slideshow[data-layout="multi-view"] .dcf-slide-deck li {
+  width: var(--item-width);
+}
+
+// Center
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls {
+  width: var(--item-width);
+  transform: translate(-50%, -50%);
+}
+
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls .dcf-btn-slide-prev,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls .dcf-btn-slide-prev {
+  transform: translateX(calc(-100% + calc(var(--clip-path-inline) * 2)));
+}
+.dcf-slideshow[data-layout="multi-view"]:not([data-button-position]) .dcf-slideshow-controls .dcf-btn-slide-next,
+.dcf-slideshow[data-layout="multi-view"][data-button-position="center"] .dcf-slideshow-controls .dcf-btn-slide-next {
+  transform: translateX(calc(100% - calc(var(--clip-path-inline) * 2)));
+}
+
+// Top
+.dcf-slideshow[data-layout="multi-view"][data-button-position="top"] .dcf-slideshow-controls {
+  top: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
+  transform: translateX(-50%);
+}
+
+// Bottom
+.dcf-slideshow[data-layout="multi-view"][data-button-position="bottom"] .dcf-slideshow-controls {
+  bottom: var(--button-padding);
+  width: calc(var(--item-width) - (2 * var(--button-padding)));
+  transform: translateX(-50%);
+}
+
+// Under
+.dcf-slideshow[data-layout="multi-view"][data-button-position="under"] .dcf-slideshow-controls {
+  gap: var(--gap);
+  margin-left: var(--gap);
 }
