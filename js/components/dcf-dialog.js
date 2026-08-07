@@ -45,8 +45,6 @@ export default class DCFDialog {
     dialogHeaderElementClassList = [
         'dcf-wrapper',
         'dcf-pt-8',
-        'dcf-sticky',
-        'dcf-top-0',
     ];
 
     dialogContentElementClassList = [
