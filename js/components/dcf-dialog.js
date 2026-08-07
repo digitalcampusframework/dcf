@@ -36,6 +36,7 @@ export default class DCFDialog {
         'dcf-p-0',
         'dcf-b-0',
         'dcf-m-auto',
+        'dcf-rounded',
     ];
 
     dialogNonModalElementClassList = [
