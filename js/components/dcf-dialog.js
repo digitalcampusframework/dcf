@@ -58,6 +58,8 @@ export default class DCFDialog {
         'dcf-absolute',
         'dcf-top-0',
         'dcf-right-0',
+        'dcf-mt-1',
+        'dcf-mr-1',
         'dcf-z-1',
     ];
 
