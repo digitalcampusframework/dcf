@@ -1,0 +1,28 @@
+//////////////////////////////
+// CORE / COMPONENTS / REGIONS
+//////////////////////////////
+
+
+@use "../mixins/" as mixins;
+
+
+.dcf-hide-institution #dcf-institution-title,
+.dcf-hide-search #dcf-search,
+.dcf-hide-nav .dcf-nav-toggle-item:has(.dcf-btn-nav-mobile),
+.dcf-hide-nav .dcf-nav,
+.dcf-hide-breadcrumbs #dcf-breadcrumbs,
+.dcf-hide-footer-contact #dcf-footer-group-1,
+.dcf-hide-footer-related #dcf-footer-group-2,
+.dcf-hide-footer-campus-links #dcf-footer-group-3,
+.dcf-hide-footer-logos #dcf-footer-group-4,
+.dcf-terminal .dcf-nav-toggle-item:has(.dcf-btn-nav-mobile),
+.dcf-terminal .dcf-nav,
+.dcf-terminal #dcf-breadcrumbs,
+.dcf-terminal .dcf-footer-groups {
+  display: none !important;
+}
+
+
+.dcf-hide-page-title #dcf-page-title {
+  @include mixins.sr-only; // Keep the text readable by screen readers and search engines since it contains the h1
+}
