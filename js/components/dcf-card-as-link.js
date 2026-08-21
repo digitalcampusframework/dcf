@@ -1,10 +1,6 @@
-import { uuidv4 } from '../dcf-utility.js';
-
 // Based on https://inclusive-components.design/cards/
 // Using mousedown and mouseup to allow selecting text without trigger click
 export default class DCFCardAsLink {
-    uuid = uuidv4();
-
     card = null;
 
     link = null;
@@ -20,13 +16,10 @@ export default class DCFCardAsLink {
     // Set up the Card as Link component
     constructor(card) {
         this.card = card;
-        if (this.card.getAttribute('id') === '' || this.card.getAttribute('id') === null) {
-            this.card.setAttribute('id', this.uuid.concat('-card-as-link'));
-        }
 
         this.link = card.querySelector('.dcf-card-link');
-        if (this.link.getAttribute('id') === '' || this.link.getAttribute('id') === null) {
-            this.link.setAttribute('id', this.uuid.concat('-card-as-link-link'));
+        if (!this.link) {
+            this.link = card.querySelector('a');
         }
 
         // Add event listeners only if a link is present in the card
