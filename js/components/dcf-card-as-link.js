@@ -17,10 +17,7 @@ export default class DCFCardAsLink {
     constructor(card) {
         this.card = card;
 
-        this.link = card.querySelector('.dcf-card-link');
-        if (!this.link) {
-            this.link = card.querySelector('a');
-        }
+        this.link = card.querySelector('.dcf-card-link') || card.querySelector('a);
 
         // Add event listeners only if a link is present in the card
         if (this.link) {
