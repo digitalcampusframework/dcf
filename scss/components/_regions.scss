@@ -11,14 +11,14 @@
 .dcf-hide-nav .dcf-nav-toggle-item:has(.dcf-btn-nav-mobile),
 .dcf-hide-nav .dcf-nav,
 .dcf-hide-breadcrumbs #dcf-breadcrumbs,
+.dcf-hide-footer-groups .dcf-footer-groups,
 .dcf-hide-footer-contact #dcf-footer-group-1,
 .dcf-hide-footer-related #dcf-footer-group-2,
 .dcf-hide-footer-campus-links #dcf-footer-group-3,
 .dcf-hide-footer-logos #dcf-footer-group-4,
 .dcf-terminal .dcf-nav-toggle-item:has(.dcf-btn-nav-mobile),
 .dcf-terminal .dcf-nav,
-.dcf-terminal #dcf-breadcrumbs,
-.dcf-terminal .dcf-footer-groups {
+.dcf-terminal #dcf-breadcrumbs {
   display: none !important;
 }
 
