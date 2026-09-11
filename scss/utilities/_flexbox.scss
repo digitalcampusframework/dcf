@@ -22,14 +22,14 @@
 .dcf-flex-nowrap { @include mixins.flex-nowrap; }
 
 
-// Grow & shrink
+// Grow, shrink & basis
 .dcf-flex-none { @include mixins.flex-none; }
 .dcf-flex-initial { @include mixins.flex-initial; }
 .dcf-flex-auto { @include mixins.flex-auto; }
 .dcf-flex-1 { @include mixins.flex-1; }
+.dcf-flex-grow-0 { @include mixins.flex-grow-0; }
 .dcf-flex-grow-1 { @include mixins.flex-grow-1; }
 .dcf-flex-shrink-0 { @include mixins.flex-shrink-0; }
-
-
-// Flex-basis
+.dcf-flex-shrink-1 { @include mixins.flex-shrink-1; }
+.dcf-flex-basis-auto { @include mixins.flex-basis-auto; }
 .dcf-flex-basis-0 { @include mixins.flex-basis-0; }

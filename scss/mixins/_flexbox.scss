@@ -19,14 +19,14 @@
 @mixin flex-nowrap($imp:null) { flex-wrap: nowrap $imp; }
 
 
-// Grow & shrink
+// Grow, shrink & basis
 @mixin flex-none($imp:null) { flex: none $imp; }
 @mixin flex-initial($imp:null) { flex: initial $imp; }
 @mixin flex-auto($imp:null) { flex: auto $imp; }
 @mixin flex-1($imp:null) { flex: 1 $imp; }
+@mixin flex-grow-0($imp:null) { flex-grow: 0 $imp; }
 @mixin flex-grow-1($imp:null) { flex-grow: 1 $imp; }
 @mixin flex-shrink-0($imp:null) { flex-shrink: 0 $imp; }
-
-
-// Flex-basis
+@mixin flex-shrink-1($imp:null) { flex-shrink: 1 $imp; }
+@mixin flex-basis-auto($imp:null) { flex-basis: auto $imp; }
 @mixin flex-basis-0($imp:null) { flex-basis: 0 $imp; }
