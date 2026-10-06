@@ -4,24 +4,12 @@
 
 
 // Contain
-@mixin obj-fit-contain($imp:null) {
-  height: 100% $imp;
-  object-fit: contain $imp;
-  width: 100% $imp;
-}
+@mixin obj-fit-contain($imp:null) { object-fit: contain $imp; }
 
 
 // Cover
-@mixin obj-fit-cover($imp:null) {
-  height: 100% $imp;
-  object-fit: cover $imp;
-  width: 100% $imp;
-}
+@mixin obj-fit-cover($imp:null) { object-fit: cover $imp; }
 
 
 // None
-@mixin obj-fit-none($imp:null) {
-  height: 100% $imp;
-  object-fit: none $imp;
-  width: 100% $imp;
-}
+@mixin obj-fit-none($imp:null) { object-fit: none $imp; }
