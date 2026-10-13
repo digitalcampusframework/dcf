@@ -88,13 +88,13 @@ export default class DCFDialog {
         if (this.dialogElement.getAttribute('id') === null) {
             throw new Error('Dialog element is missing ID');
         }
-        if (this.dialogElement.hasAttribute('data-confirm-close')) {
+        if (this.dialogElement.hasAttribute('data-confirm-close') || this.dialogElement.hasAttribute('data-confirmClose')) {
             this.confirmClose = true;
         }
-        if (this.dialogElement.hasAttribute('data-deliberate-close-only')) {
+        if (this.dialogElement.hasAttribute('data-deliberate-close-only') || this.dialogElement.hasAttribute('data-deliberateCloseOnly')) {
             this.deliberateCloseOnly = true;
         }
-        if (this.dialogElement.hasAttribute('data-dynamic-toggle-btns')) {
+        if (this.dialogElement.hasAttribute('data-dynamic-toggle-btns') || this.dialogElement.hasAttribute('data-dynamicToggleBtns')) {
             this.dynamicToggles = true;
         }
 
