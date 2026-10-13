@@ -38,6 +38,9 @@ html:has(dialog.dcf-dialog-is-open:not(.dcf-dialog-non-modal)) {
 
 // Dialog backdrop
 .dcf-dialog::backdrop {
+  @if var.$backdrop-filter-blur != 0 {
+    backdrop-filter: blur(var.$backdrop-filter-blur);
+  }
   background-color: var.$bg-color-dialog-backdrop;
 }
 
