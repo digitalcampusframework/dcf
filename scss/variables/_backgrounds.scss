@@ -8,10 +8,6 @@
 @use './color-palette' as color_palette;
 
 
-// Backdrop filter
-$backdrop-filter-blur: 3px !default;                                    // Backdrop-filter blur amount (in pixels)
-
-
 // Background color
 $bg-color-white-light-mode: color_palette.$white !default;              // White background-color in light mode
 $bg-color-white-dark-mode: color_palette.$black !default;               // White background-color in dark mode

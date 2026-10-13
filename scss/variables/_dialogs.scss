@@ -8,6 +8,10 @@
 @use './sizing' as s;
 
 
+// Backdrop filter
+$backdrop-filter-blur: 5px !default;                                    // Backdrop-filter blur amount (in pixels)
+
+
 // Background color
 $bg-color-dialog: var(--bg-body) !default;                              // Dialog background-color
 $bg-color-dialog-backdrop: var(--bg-overlay-dark) !default;             // Dialog backdrop background-color
