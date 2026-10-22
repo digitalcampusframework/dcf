@@ -227,6 +227,10 @@ export default class DCFDialog {
 
         // Close dialog if we are no longer on it (this is important for the non-modal)
         this.dialogElement.addEventListener('focusout', (event) => {
+            if (!this.dialogElement.classList.contains('dcf-dialog-non-modal')) {
+                return;
+            }
+
             let isToggleButtonFocusout = false;
             let allToggleButtons = this.toggleButtons;
             if (this.dynamicToggles) {
