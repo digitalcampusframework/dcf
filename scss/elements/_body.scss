@@ -10,4 +10,8 @@ body {
   background-color: var.$bg-color-body;
   color: var.$color-body;
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
